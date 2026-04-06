@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   THE ARCHIVAL PROTOCOL — Design System Tokens
+   CSS custom properties for light + dark themes.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Surface hierarchy */
+    --color-background: #fbf9f3;
+    --color-surface: #fbf9f3;
+    --color-surface-dim: #dcdad4;
+    --color-surface-bright: #fbf9f3;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f5f3ed;
+    --color-surface-container: #f0eee8;
+    --color-surface-container-high: #eae8e2;
+    --color-surface-container-highest: #e4e2dd;
+
+    /* Content */
+    --color-on-background: #1b1c18;
+    --color-on-surface: #1b1c18;
+    --color-on-surface-variant: #404847;
+    --color-surface-variant: #e4e2dd;
+
+    /* Primary — archival ink teal */
+    --color-primary: #2d5a54;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #2d5a54;
+    --color-on-primary-container: #a1cfc8;
+    --color-primary-fixed: #bcece4;
+    --color-primary-fixed-dim: #a1d0c8;
+    --color-on-primary-fixed: #00201d;
+    --color-on-primary-fixed-variant: #204e48;
+
+    /* Secondary */
+    --color-secondary: #4a6267;
+    --color-on-secondary: #ffffff;
+    --color-secondary-container: #cde7ed;
+    --color-on-secondary-container: #50686d;
+    --color-secondary-fixed: #cde7ed;
+    --color-secondary-fixed-dim: #b1cbd1;
+    --color-on-secondary-fixed: #051f23;
+    --color-on-secondary-fixed-variant: #334b4f;
+
+    /* Tertiary — highlighter accent */
+    --color-tertiary: #3a3f00;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #505700;
+    --color-on-tertiary-container: #c2cf47;
+    --color-tertiary-fixed: #dae058;
+    --color-tertiary-fixed-dim: #c2cf47;
+    --color-on-tertiary-fixed: #1a1d00;
+    --color-on-tertiary-fixed-variant: #444b00;
+
+    /* Error */
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+
+    /* Utility */
+    --color-outline: #707977;
+    --color-outline-variant: #c0c8c6;
+    --color-inverse-surface: #30312d;
+    --color-inverse-on-surface: #f3f1eb;
+    --color-inverse-primary: #a1d0c8;
+    --color-surface-tint: #396660;
+  }
+
+  /* Dark theme overrides */
+  .dark {
+    --color-background: #131411;
+    --color-surface: #131411;
+    --color-surface-dim: #131411;
+    --color-surface-bright: #393a36;
+    --color-surface-container-lowest: #0e0f0c;
+    --color-surface-container-low: #1b1c18;
+    --color-surface-container: #1f201c;
+    --color-surface-container-high: #2a2b27;
+    --color-surface-container-highest: #343531;
+
+    --color-on-background: #e4e2dd;
+    --color-on-surface: #e4e2dd;
+    --color-on-surface-variant: #c0c8c6;
+    --color-surface-variant: #404847;
+
+    --color-primary: #a1d0c8;
+    --color-on-primary: #003732;
+    --color-primary-container: #13423d;
+    --color-on-primary-container: #bcece4;
+    --color-primary-fixed: #bcece4;
+    --color-primary-fixed-dim: #a1d0c8;
+    --color-on-primary-fixed: #00201d;
+    --color-on-primary-fixed-variant: #204e48;
+
+    --color-secondary: #b1cbd1;
+    --color-on-secondary: #1c3438;
+    --color-secondary-container: #334b4f;
+    --color-on-secondary-container: #cde7ed;
+    --color-secondary-fixed: #cde7ed;
+    --color-secondary-fixed-dim: #b1cbd1;
+    --color-on-secondary-fixed: #051f23;
+    --color-on-secondary-fixed-variant: #334b4f;
+
+    --color-tertiary: #c2cf47;
+    --color-on-tertiary: #2d3200;
+    --color-tertiary-container: #444b00;
+    --color-on-tertiary-container: #dfec60;
+    --color-tertiary-fixed: #dae058;
+    --color-tertiary-fixed-dim: #c2cf47;
+    --color-on-tertiary-fixed: #1a1d00;
+    --color-on-tertiary-fixed-variant: #444b00;
+
+    --color-error: #ffb4ab;
+    --color-on-error: #690005;
+    --color-error-container: #93000a;
+    --color-on-error-container: #ffdad6;
+
+    --color-outline: #8a9390;
+    --color-outline-variant: #404847;
+    --color-inverse-surface: #e4e2dd;
+    --color-inverse-on-surface: #1b1c18;
+    --color-inverse-primary: #2d5a54;
+    --color-surface-tint: #a1d0c8;
+  }
+}
+
+/* ============================================================
+   Base styles
+   ============================================================ */
+
+@layer base {
+  html {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-on-surface;
+  }
+
+  ::selection {
+    background-color: var(--color-tertiary-fixed);
+    color: var(--color-on-tertiary-fixed);
+  }
+}
+
+/* ============================================================
+   Dot-grid background pattern
+   ============================================================ */
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--color-outline) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.dark .dot-grid {
+  opacity: 0.06;
+}
+
+/* ============================================================
+   Marginalia — vertical side notes
+   ============================================================ */
+
+.marginalia {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* ============================================================
+   Ruled-paper texture (for quiz answer input)
+   ============================================================ */
+
+.ruled-paper {
+  background-image: linear-gradient(var(--color-outline-variant) 1px, transparent 1px);
+  background-size: 100% 2rem;
+  background-attachment: local;
+  line-height: 2rem;
+}
+
+/* ============================================================
+   Scrollbar — minimal, archival style
+   ============================================================ */
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-outline);
+  }
+}

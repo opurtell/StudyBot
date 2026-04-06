@@ -1,0 +1,45 @@
+{
+  "name": "clinical-recall-assistant",
+  "version": "0.1.0",
+  "description": "ACTAS paramedic clinical study tool",
+  "main": "src/electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && NODE_ENV=development electron .\"",
+    "build": "vite build && electron-builder",
+    "build:backend-mac-arm64": "bash scripts/package-backend.sh arm64",
+    "build:backend-mac-x64": "bash scripts/package-backend.sh x64",
+    "build:backend-win": "pwsh -File scripts/package-backend.ps1",
+    "build:mac-arm64": "npm run build:backend-mac-arm64 && vite build && electron-builder --arm64",
+    "build:mac-x64": "npm run build:backend-mac-x64 && vite build && electron-builder --x64",
+    "build:win-x64": "npm run build:backend-win && vite build && electron-builder --win --x64",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "python:start": "python3 src/python/main.py"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.0.0",
+    "concurrently": "^9.0.0",
+    "electron": "^32.0.0",
+    "electron-builder": "^25.0.0",
+    "jsdom": "^25.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "vitest": "^2.0.0",
+    "wait-on": "^8.0.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.13.2"
+  }
+}

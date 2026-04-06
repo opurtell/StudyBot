@@ -1,0 +1,28 @@
+appId: com.studybot.clinical-recall
+productName: Clinical Recall Assistant
+directories:
+  output: release/
+files:
+  - dist/**/*
+  - src/electron/**/*
+extraResources:
+  - from: build/resources/backend
+    to: backend
+    filter:
+      - "**/*"
+  - from: config/settings.example.json
+    to: config/settings.example.json
+  - from: data/cmgs/structured
+    to: data/cmgs/structured
+    filter:
+      - "**/*.json"
+mac:
+  category: public.app-category.education
+  target:
+    - target: dmg
+win:
+  target:
+    - target: nsis
+asar: true
+asarUnpack:
+  - "**/*.node"

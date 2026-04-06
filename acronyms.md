@@ -1,0 +1,13 @@
+- AHPRA — Australian Health Practitioner Regulation Agency
+- ACTAS — ACT Ambulance Service
+- ACT — Australian Capital Territory
+- AP — Ambulance Paramedic
+- GAP — Graduate Ambulance Paramedic
+- ATS — Australian Triage Scale
+- STEMI — ST-Elevation Myocardial Infarction
+- NSTEMI — Non-ST-Elevation Myocardial Infarction
+- CPAP — Continuous Positive Airway Pressure
+- NIPPV — Non-Invasive Positive Pressure Ventilation
+- WHS — Work Health and Safety
+- ED — Emergency Department
+- CMG — clinical management guideline
