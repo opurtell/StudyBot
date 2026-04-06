@@ -392,6 +392,10 @@ Add dated entries here as packaging work progresses. Record failures as well as 
 - Phase F2 (tests): All 30 packaging path tests pass. Pre-existing failures in quiz router tests (7 collection errors from missing `capture_assets.py`, 11 quiz router 404s) and 5 frontend quiz tests are unrelated to packaging changes.
 - Phase H (CI): Created `.github/workflows/release-build.yml` with matrix: `macos-latest` (arm64), `macos-13` (x64), `windows-latest` (x64). Draft release via `softprops/action-gh-release@v2`.
 
+### 2026-04-06 — Node 20 deprecation fix in CI
+
+- GitHub Actions deprecated Node.js 20 for JavaScript actions. Added `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` env var to `.github/workflows/release-build.yml` so `actions/checkout@v4`, `actions/setup-node@v4`, `actions/upload-artifact@v4`, and `actions/download-artifact@v4` run on Node 24. Bumped `node-version` from `"20"` to `"22"` (current LTS) in all three build jobs. Once upstream v5 versions of these actions ship (natively targeting Node 24), the env var can be removed.
+
 ### 2026-04-06 — Per-architecture Mac build fix
 
 - Removed `arch` list from `electron-builder.yml` mac target. Previously both `arm64` and `x64` were listed, causing `npm run build:mac-x64` to produce DMGs for both architectures. Both DMGs bundled the same x64 backend payload because `build/resources/backend/` is overwritten per build. With the arch list removed, the CLI flag (`--arm64` or `--x64`) now controls which single arch gets built.
