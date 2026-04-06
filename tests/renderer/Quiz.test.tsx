@@ -74,7 +74,7 @@ beforeEach(() => {
 describe("Quiz page", () => {
   it("renders session setup initially", async () => {
     renderQuizFlow();
-    expect(await screen.findByText("Active Recall Protocol")).toBeInTheDocument();
+    expect(await screen.findByText("Start Quiz")).toBeInTheDocument();
     expect(screen.getByText("Random")).toBeInTheDocument();
     expect(screen.getByText("Gap-Driven")).toBeInTheDocument();
   });
@@ -87,7 +87,7 @@ describe("Quiz page", () => {
     await user.keyboard("1");
 
     await waitFor(() => expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument());
-    expect(screen.getByText("Question 1")).toBeInTheDocument();
+    expect(screen.getAllByText("Question 1").length).toBeGreaterThanOrEqual(1);
   });
 
   it("toggles variety mode with the v shortcut", async () => {
@@ -124,10 +124,10 @@ describe("Quiz page", () => {
     renderQuizFlow();
 
     await user.keyboard("1");
-    await waitFor(() => expect(screen.getByText("Discard Draft")).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText("Skip")).toBeInTheDocument());
 
-    const discardButton = screen.getByRole("button", { name: /discard draft/i });
-    discardButton.focus();
+    const skipButton = screen.getByRole("button", { name: /skip/i });
+    skipButton.focus();
 
     await user.keyboard("{Control>}{Enter}{/Control}");
 
@@ -245,7 +245,7 @@ describe("Quiz page", () => {
 
     await user.keyboard("{Control>}{Shift>}A{/Shift}{/Control}");
 
-    await waitFor(() => expect(screen.getByText("Feedback & Citation Panel")).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText("Answer Feedback")).toBeInTheDocument());
   });
 
   it("advances to the next question with ctrl+arrowright from inline feedback", async () => {
@@ -263,7 +263,7 @@ describe("Quiz page", () => {
     await user.keyboard("{Control>}{ArrowRight}{/Control}");
 
     await waitFor(() => expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument());
-    expect(screen.getByText("Question 2")).toBeInTheDocument();
+    expect(screen.getAllByText("Question 2").length).toBeGreaterThanOrEqual(1);
   });
 
   it("exits to the archive with escape from feedback", async () => {

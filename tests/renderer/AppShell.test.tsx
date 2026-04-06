@@ -32,7 +32,7 @@ async function renderWithRouter(route = "/") {
 describe("AppShell", () => {
   it("renders the sidebar", async () => {
     await renderWithRouter();
-    expect(screen.getByText("Clinical Registry")).toBeInTheDocument();
+    expect(screen.getByText("Study Assistant")).toBeInTheDocument();
   });
 
   it("renders the search bar", async () => {

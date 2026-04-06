@@ -11,7 +11,7 @@ describe("QuizQuestion", () => {
         category="Cardiac"
       />
     );
-    expect(screen.getByText(/ACTIVE RECALL 014/)).toBeInTheDocument();
+    expect(screen.getByText("Question 14")).toBeInTheDocument();
     expect(screen.getByText("Define the clinical presentation of hypovolemic shock.")).toBeInTheDocument();
   });
 });

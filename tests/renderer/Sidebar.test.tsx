@@ -17,12 +17,12 @@ function renderSidebar() {
 describe("Sidebar", () => {
   it("renders the app title", () => {
     renderSidebar();
-    expect(screen.getByText("Clinical Registry")).toBeInTheDocument();
+    expect(screen.getByText("Study Assistant")).toBeInTheDocument();
   });
 
   it("renders the version label", () => {
     renderSidebar();
-    expect(screen.getByText(/Archival Protocol/i)).toBeInTheDocument();
+    expect(screen.getByText(/Clinical Recall/i)).toBeInTheDocument();
   });
 
   it("renders all primary navigation items", () => {
@@ -35,7 +35,7 @@ describe("Sidebar", () => {
 
   it("renders the settings link", () => {
     renderSidebar();
-    expect(screen.getByText("Curator Settings")).toBeInTheDocument();
+    expect(screen.getByText("Settings")).toBeInTheDocument();
   });
 
   it("renders the Start Session button", () => {

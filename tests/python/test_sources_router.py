@@ -43,7 +43,7 @@ def test_get_sources_returns_repository_cards(monkeypatch, tmp_path):
     monkeypatch.setattr(sources_router, "REFDOCS_DIR", ref_dir)
     monkeypatch.setattr(sources_router, "CPDDOCS_DIR", cpd_dir)
     monkeypatch.setattr(sources_router, "PERSONAL_STRUCTURED_DIR", personal_dir)
-    monkeypatch.setattr(sources_router, "NOTABILITY_DIR", note_dir)
+    monkeypatch.setattr(sources_router, "NOTABILITY_NOTE_DOCS_DIR", note_dir)
     monkeypatch.setattr(sources_router, "RAW_NOTES_DIR", raw_dir)
     monkeypatch.setattr(sources_router, "CLEANED_NOTES_DIR", cleaned_dir)
     monkeypatch.setattr(
@@ -73,7 +73,7 @@ def test_get_sources_handles_missing_directories(monkeypatch, tmp_path):
     monkeypatch.setattr(sources_router, "REFDOCS_DIR", missing / "ref")
     monkeypatch.setattr(sources_router, "CPDDOCS_DIR", missing / "cpd")
     monkeypatch.setattr(sources_router, "PERSONAL_STRUCTURED_DIR", missing / "personal")
-    monkeypatch.setattr(sources_router, "NOTABILITY_DIR", missing / "notes")
+    monkeypatch.setattr(sources_router, "NOTABILITY_NOTE_DOCS_DIR", missing / "notes")
     monkeypatch.setattr(sources_router, "RAW_NOTES_DIR", missing / "raw")
     monkeypatch.setattr(sources_router, "CLEANED_NOTES_DIR", missing / "cleaned")
     monkeypatch.setattr(

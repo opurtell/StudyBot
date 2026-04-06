@@ -40,11 +40,11 @@ function renderFeedback(initialEntries = [{ pathname: "/feedback", state: feedba
 }
 
 describe("Feedback page shortcuts", () => {
-  it("returns to quiz with ctrl+arrowleft", async () => {
+  it("returns to quiz with ctrl+arrowright", async () => {
     const user = userEvent.setup();
 
     renderFeedback();
-    await user.keyboard("{Control>}{ArrowLeft}{/Control}");
+    await user.keyboard("{Control>}{ArrowRight}{/Control}");
 
     await waitFor(() => expect(screen.getByText("Quiz Home")).toBeInTheDocument());
   });

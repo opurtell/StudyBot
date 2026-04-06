@@ -12,7 +12,7 @@ describe("App", () => {
 
   it("renders the sidebar with app title", async () => {
     render(<App />);
-    expect(await screen.findByText("Clinical Registry")).toBeInTheDocument();
+    expect(await screen.findByText("Study Assistant")).toBeInTheDocument();
   });
 
   it("renders the search bar", async () => {

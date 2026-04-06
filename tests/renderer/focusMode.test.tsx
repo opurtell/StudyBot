@@ -15,18 +15,18 @@ describe("Focus mode routing", () => {
 
   it("renders sidebar on dashboard route", async () => {
     renderAppAt("/");
-    expect(await screen.findByText("Clinical Registry")).toBeInTheDocument();
+    expect(await screen.findByText("Study Assistant")).toBeInTheDocument();
   });
 
   it("hides sidebar on quiz route", async () => {
     renderAppAt("/quiz");
-    expect(await screen.findByText("Active Recall Protocol")).toBeInTheDocument();
-    expect(screen.queryByText("Clinical Registry")).not.toBeInTheDocument();
+    expect(await screen.findByText("Start Quiz")).toBeInTheDocument();
+    expect(screen.queryByText("Study Assistant")).not.toBeInTheDocument();
   });
 
   it("hides sidebar on feedback route", async () => {
     renderAppAt("/feedback");
     expect(await screen.findByText("No evaluation data available")).toBeInTheDocument();
-    expect(screen.queryByText("Clinical Registry")).not.toBeInTheDocument();
+    expect(screen.queryByText("Study Assistant")).not.toBeInTheDocument();
   });
 });

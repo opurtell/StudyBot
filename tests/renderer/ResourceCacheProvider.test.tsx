@@ -24,7 +24,7 @@ describe("ResourceCacheProvider persistence", () => {
 
   it("hydrates safe persisted cache entries on first render", async () => {
     window.localStorage.setItem(
-      "studybot.resource-cache.v1",
+      "studybot.resource-cache.v2",
       JSON.stringify({
         "/guidelines::3": {
           data: [

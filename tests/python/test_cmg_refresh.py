@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import sys
+import types
 
 import pytest
 
@@ -71,7 +73,9 @@ def test_run_refresh_persists_success_status_and_history(monkeypatch, tmp_path):
     def fake_capture() -> None:
         calls.append("capture")
 
-    def fake_run_pipeline(*, stages: str, dry_run: bool, investigation_dir: str) -> dict:
+    def fake_run_pipeline(
+        *, stages: str, dry_run: bool, investigation_dir: str
+    ) -> dict:
         calls.append(f"pipeline:{stages}:{dry_run}:{investigation_dir}")
         return {
             "version_summary": {
@@ -84,10 +88,20 @@ def test_run_refresh_persists_success_status_and_history(monkeypatch, tmp_path):
             }
         }
 
-    monkeypatch.setattr(refresh, "capture_all_assets", fake_capture)
+    fake_capture_mod = types.ModuleType("pipeline.cmg.capture_assets")
+    fake_capture_mod.capture_all_assets = fake_capture
+    monkeypatch.setitem(sys.modules, "pipeline.cmg.capture_assets", fake_capture_mod)
     monkeypatch.setattr(refresh, "run_pipeline", fake_run_pipeline)
-    monkeypatch.setattr(refresh, "invalidate_guideline_cache", lambda: calls.append("invalidate-guidelines"))
-    monkeypatch.setattr(refresh, "invalidate_medication_cache", lambda: calls.append("invalidate-medications"))
+    monkeypatch.setattr(
+        refresh,
+        "invalidate_guideline_cache",
+        lambda: calls.append("invalidate-guidelines"),
+    )
+    monkeypatch.setattr(
+        refresh,
+        "invalidate_medication_cache",
+        lambda: calls.append("invalidate-medications"),
+    )
 
     result = refresh.run_refresh(
         dry_run=True,
@@ -138,10 +152,14 @@ def test_run_refresh_preserves_last_successful_time_on_failure(monkeypatch, tmp_
         },
     )
 
-    def fake_run_pipeline(*, stages: str, dry_run: bool, investigation_dir: str) -> dict:
+    def fake_run_pipeline(
+        *, stages: str, dry_run: bool, investigation_dir: str
+    ) -> dict:
         raise RuntimeError("boom")
 
-    monkeypatch.setattr(refresh, "capture_all_assets", lambda: None)
+    fake_capture_mod = types.ModuleType("pipeline.cmg.capture_assets")
+    fake_capture_mod.capture_all_assets = lambda: None
+    monkeypatch.setitem(sys.modules, "pipeline.cmg.capture_assets", fake_capture_mod)
     monkeypatch.setattr(refresh, "run_pipeline", fake_run_pipeline)
 
     with pytest.raises(RuntimeError, match="boom"):

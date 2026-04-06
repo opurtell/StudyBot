@@ -16,12 +16,12 @@ const evaluation: EvaluateResponse = {
 describe("FeedbackSplitView", () => {
   it("renders practitioner response section", () => {
     render(<FeedbackSplitView userAnswer="Low blood pressure" evaluation={evaluation} />);
-    expect(screen.getByText("Practitioner Response")).toBeInTheDocument();
+    expect(screen.getByText("Your Answer")).toBeInTheDocument();
   });
 
   it("renders AI analysis section", () => {
     render(<FeedbackSplitView userAnswer="Low blood pressure" evaluation={evaluation} />);
-    expect(screen.getByText("AI Protocol Analysis")).toBeInTheDocument();
+    expect(screen.getByText("Evaluation")).toBeInTheDocument();
   });
 
   it("renders correct elements and missing items", () => {
