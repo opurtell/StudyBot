@@ -78,10 +78,14 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: release-artifacts
+      - name: Flatten artifacts
+        run: |
+          mkdir -p release-staging
+          find release-artifacts -type f \( -name '*.dmg' -o -name '*.exe' -o -name '*.blockmap' -o -name '*.zip' -o -name 'latest*.yml' \) -exec cp {} release-staging/ \;
       - name: Create draft release
         uses: softprops/action-gh-release@v2
         with:
           draft: true
-          files: release-artifacts/**/*
+          files: release-staging/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
