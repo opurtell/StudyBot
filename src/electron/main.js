@@ -105,7 +105,7 @@ function getBackendCommand() {
   const isWin = process.platform === "win32";
   const pythonExe = isWin
     ? path.join(resourcesPath, "backend", "python.exe")
-    : path.join(resourcesPath, "backend", "bin", "python");
+    : path.join(resourcesPath, "backend", "bin", "python3");
   const backendEntry = path.join(
     resourcesPath,
     "backend",
