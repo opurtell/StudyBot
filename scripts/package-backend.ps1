@@ -109,11 +109,13 @@ print('backend code: OK')
 Write-Host "--- Cleaning temp artifacts ---"
 if (Test-Path $ExtractDir) { Remove-Item -Recurse -Force $ExtractDir }
 
-Write-Host "--- Pre-building ChromaDB index from bundled CMGs ---"
 $ChromaOutput = Join-Path $RepoRoot "build\resources\data\chroma_db"
-if (Test-Path $ChromaOutput) { Remove-Item -Recurse -Force $ChromaOutput }
-New-Item -ItemType Directory -Force -Path $ChromaOutput | Out-Null
-& $StagedPython -c @"
+
+if ($env:PERSONAL_BUILD -ne "1") {
+  Write-Host "--- Pre-building ChromaDB index from bundled CMGs ---"
+  if (Test-Path $ChromaOutput) { Remove-Item -Recurse -Force $ChromaOutput }
+  New-Item -ItemType Directory -Force -Path $ChromaOutput | Out-Null
+  & $StagedPython -c @"
 import sys
 sys.path.insert(0, '$SitePackagesDir')
 sys.path.insert(0, '$AppDir\src\python')
@@ -124,5 +126,13 @@ client = chromadb.PersistentClient(path=r'$ChromaOutput')
 col = client.get_or_create_collection('cmg_guidelines')
 print(f'Pre-built index: {col.count()} chunks')
 "@
+} else {
+  Write-Host "--- Personal build: using pre-built ChromaDB ---"
+  if (-not (Test-Path $ChromaOutput)) {
+    Write-Host "ERROR: PERSONAL_BUILD=1 but no pre-built ChromaDB at $ChromaOutput"
+    exit 1
+  }
+  Write-Host "    Found pre-built ChromaDB at $ChromaOutput"
+}
 
 Write-Host "=== Backend payload ready at $OutputDir ==="

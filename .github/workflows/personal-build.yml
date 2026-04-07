@@ -1,0 +1,140 @@
+name: Personal Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag (e.g. v0.2.0)"
+        required: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build-mac-arm64:
+    runs-on: macos-latest
+    env:
+      PERSONAL_BUILD: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Download personal ChromaDB
+        uses: dsaltares/fetch-gh-release-asset@1.1.2
+        with:
+          release: "personal-data"
+          asset: "chroma_db.tar.gz"
+      - name: Extract personal ChromaDB
+        run: |
+          mkdir -p build/resources/data
+          tar -xzf chroma_db.tar.gz -C build/resources/data
+          echo "ChromaDB contents:"
+          ls -lh build/resources/data/chroma_db/
+      - run: npm ci
+      - run: bash scripts/package-backend.sh arm64
+      - run: bash scripts/verify-backend-payload.sh
+      - run: npx vite build && npx electron-builder --arm64
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac-arm64-personal
+          path: release/**
+
+  build-mac-x64:
+    runs-on: macos-latest
+    env:
+      PERSONAL_BUILD: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Download personal ChromaDB
+        uses: dsaltares/fetch-gh-release-asset@1.1.2
+        with:
+          release: "personal-data"
+          asset: "chroma_db.tar.gz"
+      - name: Extract personal ChromaDB
+        run: |
+          mkdir -p build/resources/data
+          tar -xzf chroma_db.tar.gz -C build/resources/data
+      - run: npm ci
+      - run: bash scripts/package-backend.sh x64
+      - run: bash scripts/verify-backend-payload.sh
+      - run: npx vite build && npx electron-builder --x64
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac-x64-personal
+          path: release/**
+
+  build-win-x64:
+    runs-on: windows-latest
+    env:
+      PERSONAL_BUILD: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Download personal ChromaDB
+        uses: dsaltares/fetch-gh-release-asset@1.1.2
+        with:
+          release: "personal-data"
+          asset: "chroma_db.tar.gz"
+      - name: Extract personal ChromaDB
+        run: |
+          New-Item -ItemType Directory -Force -Path build\resources\data | Out-Null
+          tar -xzf chroma_db.tar.gz -C build\resources\data
+          Write-Host "ChromaDB contents:"
+          Get-ChildItem -Recurse build\resources\data\chroma_db | Format-Table Name, Length
+      - run: npm ci
+      - run: pwsh -File scripts/package-backend.ps1
+      - run: pwsh -File scripts/verify-backend-payload.ps1
+      - run: npx vite build && npx electron-builder --win --x64
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: win-x64-personal
+          path: release/**
+
+  draft-release:
+    needs: [build-mac-arm64, build-mac-x64, build-win-x64]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+      - name: Flatten artifacts
+        run: |
+          mkdir -p release-staging
+          find release-artifacts -type f \( -name '*.dmg' -o -name '*.exe' \) -exec cp {} release-staging/ \;
+      - name: Determine version
+        id: version
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [[ -z "$VERSION" ]]; then
+            VERSION="v$(date +%Y.%m.%d-%H%M)"
+          fi
+          echo "tag=personal-${VERSION}" >> "$GITHUB_OUTPUT"
+      - name: Create draft release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          draft: true
+          name: "Personal Build ${{ steps.version.outputs.tag }}"
+          body: |
+            Personal build including all data sources:
+            - ACTAS CMGs (clinical guidelines)
+            - Notability notes (380 cleaned markdown files)
+            - REFdocs & CPDdocs (personal study documents)
+          files: release-staging/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

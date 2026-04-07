@@ -181,6 +181,8 @@ No runtime writes should target the install directory.
 | `scripts/verify-backend-payload.sh` | macOS automated verification of staged backend payload |
 | `scripts/verify-backend-payload.ps1` | Windows automated verification of staged backend payload |
 | `.github/workflows/release-build.yml` | Packaging CI and artifact workflow |
+| `.github/workflows/personal-build.yml` | Personal build workflow (all data sources) |
+| `scripts/upload-personal-data.sh` | Uploads archive chroma_db to GitHub Release for personal builds |
 | `tests/python/test_paths_packaging.py` | Packaging path resolution tests |
 
 ## Future Rebuild Workflow
@@ -355,7 +357,40 @@ When major repo changes land and a new app build is needed, use this sequence:
 | 2026-04-06 | Bundle CMG structured JSON as read-only assets; defer ChromaDB pre-population | Guidelines and medication endpoints need data at first launch; ChromaDB for quiz/search requires user pipeline run | Superseded — ChromaDB now pre-built and bundled |
 | 2026-04-07 | Pre-build ChromaDB index during packaging; copy to user data on first launch | Eliminates first-launch embedding delay and removes dependency on embedding model availability at startup. Bundled DB is copied from read-only app root to writable user data. Auto-seed falls back to chunker if no bundled DB exists (dev environments). Per-source clear endpoints let users selectively remove indexed data. | Active |
 | 2026-04-06 | Remove `arch` list from `electron-builder.yml` mac and win targets | The `--x64`/`--arm64` CLI flag does not override the yml arch list, so both arches were built on every run; each arch DMG bundled the same payload from the single flat `build/resources/backend/` directory | Active |
+| 2026-04-07 | Add personal build workflow that bundles all data sources | The standard release only bundles CMG data. The personal build includes notability notes, REFdocs, and CPDdocs by uploading the archive's pre-built ChromaDB to a GitHub Release and downloading it in CI. `PERSONAL_BUILD=1` env var opts out of the CMG-only ChromaDB pre-build step. | Active |
 | 2026-04-06 | Build per-arch Mac DMGs sequentially, never in parallel | The backend payload directory is overwritten per build; sequential builds with rename between them ensures each DMG contains the correct arch-specific binaries | Active |
+
+## Personal Build Workflow
+
+The personal build produces a desktop app that includes all data sources in the bundled ChromaDB — CMGs, notability notes, REFdocs, and CPDdocs — instead of CMG-only data.
+
+### How it works
+
+1. The pre-built ChromaDB from `../studyBotcode-archive/data/chroma_db/` is uploaded to a GitHub Release tagged `personal-data` via `scripts/upload-personal-data.sh`.
+2. The `.github/workflows/personal-build.yml` workflow (manual trigger only) downloads the tarball, extracts it, and bundles it with the app.
+3. The `PERSONAL_BUILD=1` env var tells `package-backend.sh`/`.ps1` to skip the CMG-only ChromaDB pre-build and use the pre-extracted index instead.
+
+### Refreshing the personal data
+
+After updating notes or other data in the archive:
+
+```bash
+# 1. Rebuild the ChromaDB locally if needed
+# 2. Re-upload to GitHub
+bash scripts/upload-personal-data.sh
+
+# 3. Trigger a new personal build
+gh workflow run personal-build.yml
+```
+
+### Key files
+
+| Path | Responsibility |
+|------|----------------|
+| `scripts/upload-personal-data.sh` | Uploads archive chroma_db to GitHub Release |
+| `.github/workflows/personal-build.yml` | CI workflow: download data, build, draft release |
+| `scripts/package-backend.sh` | Skips ChromaDB pre-build when `PERSONAL_BUILD=1` |
+| `scripts/package-backend.ps1` | Windows equivalent of the above |
 
 ## Known Risks and Deferred Work
 
