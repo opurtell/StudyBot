@@ -115,7 +115,7 @@ jobs:
       - name: Flatten artifacts
         run: |
           mkdir -p release-staging
-          find release-artifacts -type f \( -name '*.dmg' -o -name '*.exe' \) -exec cp {} release-staging/ \;
+          find release-artifacts -type f \( -name '*.dmg' -o -name '*Setup*.exe' \) -exec cp {} release-staging/ \;
       - name: Determine version
         id: version
         run: |
