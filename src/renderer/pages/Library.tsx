@@ -3,16 +3,18 @@ import SourceCard from "../components/SourceCard";
 import CleaningFeed from "../components/CleaningFeed";
 import RepositoryFilter from "../components/RepositoryFilter";
 import Button from "../components/Button";
+import UploadDialog from "../components/UploadDialog";
 import { useApi } from "../hooks/useApi";
 import type { LibraryStatusResponse } from "../types/api";
 
 export default function Library() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [feedVisible, setFeedVisible] = useState(true);
-  const { data, loading, error } = useApi<LibraryStatusResponse>("/sources", 1);
+  const [uploadOpen, setUploadOpen] = useState(false);
+  const { data, loading, error, refetch } = useApi<LibraryStatusResponse>("/sources", 1);
 
   const sources = data?.sources ?? [];
-  const cleaningItems = data?.cleaning_feed ?? [];
+  const cleaningItems = data?.cleaningFeed ?? [];
 
   const filtered =
     activeFilter === "all"
@@ -30,7 +32,7 @@ export default function Library() {
             Source Pipeline
           </h2>
         </div>
-        <Button variant="secondary">
+        <Button variant="secondary" onClick={() => setUploadOpen(true)}>
           <span className="material-symbols-outlined text-sm">add</span>
           New Documentation
         </Button>
@@ -91,6 +93,11 @@ export default function Library() {
           </div>
         </div>
       </div>
+      <UploadDialog
+        isOpen={uploadOpen}
+        onClose={() => setUploadOpen(false)}
+        onUploaded={refetch}
+      />
     </div>
   );
 }
