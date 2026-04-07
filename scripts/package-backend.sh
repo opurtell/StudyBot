@@ -119,5 +119,18 @@ print('backend code: OK')
 echo "--- Cleaning temp artifacts ---"
 rm -rf "$EXTRACT_DIR"
 
+echo "--- Pre-building ChromaDB index from bundled CMGs ---"
+CHROMA_OUTPUT="$REPO_ROOT/build/resources/data/chroma_db"
+rm -rf "$CHROMA_OUTPUT"
+mkdir -p "$CHROMA_OUTPUT"
+PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
+from pipeline.cmg.chunker import chunk_and_ingest
+chunk_and_ingest(structured_dir='$REPO_ROOT/data/cmgs/structured', db_path='$CHROMA_OUTPUT')
+import chromadb
+client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
+col = client.get_or_create_collection('cmg_guidelines')
+print(f'Pre-built index: {col.count()} chunks')
+"
+
 PAYLOAD_SIZE=$(du -sh "$OUTPUT_DIR" | cut -f1)
 echo "=== Backend payload ready at $OUTPUT_DIR ($PAYLOAD_SIZE) ==="

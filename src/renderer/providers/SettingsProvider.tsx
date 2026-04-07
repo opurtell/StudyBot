@@ -11,7 +11,7 @@ import {
 import { apiGet, apiPost, apiPut, getApiErrorMessage } from "../lib/apiClient";
 import { useCachedResource } from "../hooks/useCachedResource";
 import { useResourceCacheStore } from "./ResourceCacheProvider";
-import type { CmgManifest, CmgRefreshStatus, ModelRegistry, SettingsConfig } from "../types/api";
+import type { CmgManifest, CmgRefreshStatus, ModelRegistry, SettingsConfig, VectorStoreStatus } from "../types/api";
 
 interface SettingsContextValue {
   config: SettingsConfig | null;
@@ -25,6 +25,9 @@ interface SettingsContextValue {
   saveModels: (registry: ModelRegistry) => Promise<boolean>;
   rerunPipeline: () => Promise<void>;
   clearVectorStore: () => Promise<void>;
+  clearSourceType: (sourceType: string) => Promise<void>;
+  vectorStoreStatus: VectorStoreStatus | null;
+  refetchVectorStoreStatus: () => Promise<void>;
   cmgRefreshStatus: CmgRefreshStatus | null;
   cmgRefreshLoading: boolean;
   startCmgRefresh: () => Promise<void>;
@@ -111,6 +114,31 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       setActionError(getApiErrorMessage(error, "Failed to clear vector store"));
     }
   }, []);
+
+  const [vectorStoreStatus, setVectorStoreStatus] = useState<VectorStoreStatus | null>(null);
+
+  const refetchVectorStoreStatus = useCallback(async () => {
+    try {
+      const data = await apiGet<VectorStoreStatus>("/settings/vector-store/status");
+      setVectorStoreStatus(data);
+    } catch {
+      // silently ignore — status is best-effort
+    }
+  }, []);
+
+  useEffect(() => {
+    refetchVectorStoreStatus();
+  }, [refetchVectorStoreStatus]);
+
+  const clearSourceType = useCallback(async (sourceType: string) => {
+    setActionError(null);
+    try {
+      await apiPost(`/settings/vector-store/clear?source_type=${encodeURIComponent(sourceType)}`);
+      await refetchVectorStoreStatus();
+    } catch (error) {
+      setActionError(getApiErrorMessage(error, "Failed to clear source data"));
+    }
+  }, [refetchVectorStoreStatus]);
 
   const [cmgRefreshStatus, setCmgRefreshStatus] = useState<CmgRefreshStatus | null>(null);
   const [cmgRefreshLoading, setCmgRefreshLoading] = useState(false);
@@ -237,6 +265,9 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       saveModels,
       rerunPipeline,
       clearVectorStore,
+      clearSourceType,
+      vectorStoreStatus,
+      refetchVectorStoreStatus,
       cmgRefreshStatus,
       cmgRefreshLoading,
       startCmgRefresh,
@@ -247,6 +278,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     }),
     [
       actionError,
+      clearSourceType,
       clearVectorStore,
       cmgManifest,
       cmgRefreshLoading,
@@ -256,12 +288,14 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       rebuildIndex,
       rebuildRunning,
       refetch,
+      refetchVectorStoreStatus,
       rerunPipeline,
       save,
       saveModels,
       saving,
       savingModels,
       startCmgRefresh,
+      vectorStoreStatus,
     ]
   );
 

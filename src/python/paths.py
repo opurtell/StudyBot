@@ -18,6 +18,7 @@ DATA_DIR = USER_DATA_DIR / "data"
 SETTINGS_PATH = CONFIG_DIR / "settings.json"
 EXAMPLE_SETTINGS_PATH = APP_ROOT / "config" / "settings.example.json"
 CHROMA_DB_DIR = DATA_DIR / "chroma_db"
+BUNDLED_CHROMA_DB_DIR = APP_ROOT / "data" / "chroma_db"
 MASTERY_DB_PATH = DATA_DIR / "mastery.db"
 LOGS_DIR = USER_DATA_DIR / "logs"
 

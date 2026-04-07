@@ -73,6 +73,9 @@ export default function Settings() {
     saveModels,
     rerunPipeline,
     clearVectorStore,
+    clearSourceType,
+    vectorStoreStatus,
+    refetchVectorStoreStatus,
     cmgRefreshStatus,
     cmgRefreshLoading,
     startCmgRefresh,
@@ -403,36 +406,20 @@ export default function Settings() {
 
       <section className="space-y-6">
         <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
-          CMG Data
+          Indexed Data
         </h3>
-        {cmgManifest && (
-          <p className="font-mono text-[10px] text-on-surface-variant">
-            Bundled CMG data captured: {new Date(cmgManifest.captured_at).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })} — {cmgManifest.guideline_count} guidelines, {cmgManifest.medication_count} medications, {cmgManifest.clinical_skill_count} clinical skills
-          </p>
-        )}
-        {cmgRefreshStatus?.last_successful_at && (
-          <p className="font-mono text-[10px] text-on-surface-variant">
-            Last web update: {new Date(cmgRefreshStatus.last_successful_at).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}
-          </p>
-        )}
-        {cmgRefreshStatus?.summary && (
-          <p className="font-mono text-[10px] text-on-surface-variant">
-            {cmgRefreshStatus.summary.checked_item_count} checked · {cmgRefreshStatus.summary.new_count} new · {cmgRefreshStatus.summary.updated_count} updated · {cmgRefreshStatus.summary.error_count} errors
-          </p>
-        )}
-        {cmgRefreshStatus?.is_running && (
-          <p className="font-mono text-[10px] text-on-surface-variant">
-            Updating from web...
-          </p>
-        )}
-        {cmgRefreshStatus?.status === "failed" && cmgRefreshStatus.last_error && (
-          <p className="font-mono text-[10px] text-status-critical">
-            {cmgRefreshStatus.last_error}
-          </p>
-        )}
+
+        {/* Per-source rows */}
         <div className="space-y-3">
-          <div>
-            <div className="flex gap-4">
+          {/* CMG row */}
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-label text-label-sm text-on-surface">Clinical Management Guidelines</span>
+              <span className="font-mono text-[10px] text-on-surface-variant ml-2">
+                {vectorStoreStatus?.cmg ?? "—"} chunks
+              </span>
+            </div>
+            <div className="flex gap-2">
               <Button variant="secondary" onClick={rebuildIndex} disabled={rebuildRunning}>
                 {rebuildRunning ? "Rebuilding\u2026" : "Rebuild Index"}
               </Button>
@@ -443,27 +430,91 @@ export default function Settings() {
               >
                 {cmgRefreshStatus?.is_running ? "Updating..." : "Update from Web"}
               </Button>
-              <Button variant="tertiary" onClick={clearVectorStore}>
-                Clear Vector Store
+              <Button variant="tertiary" onClick={() => clearSourceType("cmg")}>
+                Clear
               </Button>
             </div>
-            <p className="font-body text-[10px] text-on-surface-variant mt-1">
-              Rebuild Index re-ingests the bundled CMG data into the search index. Update from Web downloads the latest guidelines from cmg.ambulance.act.gov.au. Clear Vector Store deletes all indexed data.
+          </div>
+
+          {/* CMG metadata */}
+          {cmgManifest && (
+            <p className="font-mono text-[10px] text-on-surface-variant pl-1">
+              Bundled data captured: {new Date(cmgManifest.captured_at).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })} — {cmgManifest.guideline_count} guidelines, {cmgManifest.medication_count} medications, {cmgManifest.clinical_skill_count} clinical skills
             </p>
+          )}
+          {cmgRefreshStatus?.last_successful_at && (
+            <p className="font-mono text-[10px] text-on-surface-variant pl-1">
+              Last web update: {new Date(cmgRefreshStatus.last_successful_at).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}
+            </p>
+          )}
+          {cmgRefreshStatus?.summary && (
+            <p className="font-mono text-[10px] text-on-surface-variant pl-1">
+              {cmgRefreshStatus.summary.checked_item_count} checked · {cmgRefreshStatus.summary.new_count} new · {cmgRefreshStatus.summary.updated_count} updated · {cmgRefreshStatus.summary.error_count} errors
+            </p>
+          )}
+          {cmgRefreshStatus?.is_running && (
+            <p className="font-mono text-[10px] text-on-surface-variant pl-1">
+              Updating from web...
+            </p>
+          )}
+          {cmgRefreshStatus?.status === "failed" && cmgRefreshStatus.last_error && (
+            <p className="font-mono text-[10px] text-status-critical pl-1">
+              {cmgRefreshStatus.last_error}
+            </p>
+          )}
+
+          {/* Reference Documents row */}
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-label text-label-sm text-on-surface">Reference Documents</span>
+              <span className="font-mono text-[10px] text-on-surface-variant ml-2">
+                {vectorStoreStatus?.ref_doc ?? "—"} chunks
+              </span>
+            </div>
+            <Button variant="tertiary" onClick={() => clearSourceType("ref_doc")}>
+              Clear
+            </Button>
+          </div>
+
+          {/* CPD Study Documents row */}
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-label text-label-sm text-on-surface">CPD Study Documents</span>
+              <span className="font-mono text-[10px] text-on-surface-variant ml-2">
+                {vectorStoreStatus?.cpd_doc ?? "—"} chunks
+              </span>
+            </div>
+            <Button variant="tertiary" onClick={() => clearSourceType("cpd_doc")}>
+              Clear
+            </Button>
+          </div>
+
+          {/* Personal Notes row */}
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-label text-label-sm text-on-surface">Personal Notes</span>
+              <span className="font-mono text-[10px] text-on-surface-variant ml-2">
+                {vectorStoreStatus?.notability_note ?? "—"} chunks
+              </span>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="secondary" onClick={rerunPipeline}>
+                Re-run Pipeline
+              </Button>
+              <Button variant="tertiary" onClick={() => clearSourceType("notability_note")}>
+                Clear
+              </Button>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section className="space-y-6">
-        <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
-          Notes Pipeline
-        </h3>
+        {/* Nuclear clear */}
         <div>
-          <Button variant="secondary" onClick={rerunPipeline}>
-            Re-run Notes Pipeline
+          <Button variant="tertiary" onClick={clearVectorStore}>
+            Clear All Indexed Data
           </Button>
           <p className="font-body text-[10px] text-on-surface-variant mt-1">
-            Re-process personal study notes into the search index.
+            Deletes the entire search index. Individual source types can be cleared above.
           </p>
         </div>
       </section>

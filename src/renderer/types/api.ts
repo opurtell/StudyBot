@@ -197,3 +197,10 @@ export interface CmgManifest {
   medication_count: number;
   clinical_skill_count: number;
 }
+
+export interface VectorStoreStatus {
+  cmg: number;
+  ref_doc: number;
+  cpd_doc: number;
+  notability_note: number;
+}

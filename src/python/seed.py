@@ -6,6 +6,7 @@ from pathlib import Path
 import chromadb
 
 from paths import (
+    BUNDLED_CHROMA_DB_DIR,
     CHROMA_DB_DIR,
     CMG_STRUCTURED_DIR,
     CONFIG_DIR,
@@ -56,6 +57,12 @@ def _start_cmg_seed_if_needed() -> None:
         _seeding_complete.set()
         return
 
+    # Try copying pre-built bundled ChromaDB (from packaged app)
+    if _copy_bundled_chroma_db():
+        _seed_status = "complete"
+        _seeding_complete.set()
+        return
+
     _seed_status = "seeding"
 
     def _seed() -> None:
@@ -70,6 +77,30 @@ def _start_cmg_seed_if_needed() -> None:
             _seeding_complete.set()
 
     threading.Thread(target=_seed, daemon=True, name="cmg-auto-seed").start()
+
+
+def _copy_bundled_chroma_db() -> bool:
+    """Copy pre-built ChromaDB from bundled app resources to user data dir."""
+    if not BUNDLED_CHROMA_DB_DIR.exists():
+        return False
+    # Check the bundled DB actually has data
+    try:
+        bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
+        collection = bundled_client.get_or_create_collection("cmg_guidelines")
+        if collection.count() == 0:
+            return False
+    except Exception:
+        logger.warning("Bundled chroma_db exists but could not be read")
+        return False
+
+    logger.info(f"Copying bundled ChromaDB from {BUNDLED_CHROMA_DB_DIR} to {CHROMA_DB_DIR}")
+    try:
+        CHROMA_DB_DIR.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(str(BUNDLED_CHROMA_DB_DIR), str(CHROMA_DB_DIR))
+        return True
+    except Exception:
+        logger.exception("Failed to copy bundled ChromaDB")
+        return False
 
 
 def _cmg_collection_has_data() -> bool:

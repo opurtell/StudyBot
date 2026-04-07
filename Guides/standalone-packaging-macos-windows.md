@@ -122,6 +122,7 @@ resources/
   app-root/
     config/settings.example.json
     data/cmgs/...
+    data/chroma_db/...
     data/... other bundled read-only runtime seeds
 ```
 
@@ -351,7 +352,8 @@ When major repo changes land and a new app build is needed, use this sequence:
 | 2026-04-06 | Install deps from `pyproject.toml` directly with `pip install --target` instead of `requirements.txt` | Avoids lockfile maintenance; `pyproject.toml` is already the dependency source of truth | Active |
 | 2026-04-06 | Output payload to `build/resources/backend/` (flat) matching electron-builder expectations | Arch-specific naming was unnecessary since only one payload is staged per build invocation | Active |
 | 2026-04-06 | Add `PYTHONHOME` env var in Electron production spawn so standalone Python finds its stdlib | python-build-standalone sets `sys.prefix` at build time; `PYTHONHOME` overrides it at runtime | Active |
-| 2026-04-06 | Bundle CMG structured JSON as read-only assets; defer ChromaDB pre-population | Guidelines and medication endpoints need data at first launch; ChromaDB for quiz/search requires user pipeline run | Active |
+| 2026-04-06 | Bundle CMG structured JSON as read-only assets; defer ChromaDB pre-population | Guidelines and medication endpoints need data at first launch; ChromaDB for quiz/search requires user pipeline run | Superseded — ChromaDB now pre-built and bundled |
+| 2026-04-07 | Pre-build ChromaDB index during packaging; copy to user data on first launch | Eliminates first-launch embedding delay and removes dependency on embedding model availability at startup. Bundled DB is copied from read-only app root to writable user data. Auto-seed falls back to chunker if no bundled DB exists (dev environments). Per-source clear endpoints let users selectively remove indexed data. | Active |
 | 2026-04-06 | Remove `arch` list from `electron-builder.yml` mac and win targets | The `--x64`/`--arm64` CLI flag does not override the yml arch list, so both arches were built on every run; each arch DMG bundled the same payload from the single flat `build/resources/backend/` directory | Active |
 | 2026-04-06 | Build per-arch Mac DMGs sequentially, never in parallel | The backend payload directory is overwritten per build; sequential builds with rename between them ensures each DMG contains the correct arch-specific binaries | Active |
 
@@ -370,7 +372,7 @@ When major repo changes land and a new app build is needed, use this sequence:
 - Exact Python lockfile format for deterministic cross-platform backend staging. → Resolved: install directly from `pyproject.toml` with `pip install --target`.
 - Whether first-run seeding is cleaner in Electron or Python for this repo. → Resolved: Python (`seed.py`).
 - Final signed-distribution requirements and secrets handling for Apple and Windows.
-- The exact minimal read-only asset set required for first-launch guidelines and medication data. → Resolved: `data/cmgs/structured/*.json` bundled via `electron-builder.yml extraResources`. Quiz/search require ChromaDB which needs user pipeline run.
+- The exact minimal read-only asset set required for first-launch guidelines and medication data. → Resolved: `data/cmgs/structured/*.json` bundled via `electron-builder.yml extraResources`. ChromaDB now also pre-built and bundled at `build/resources/data/chroma_db/`.
 - macOS x64 build on arm64 runner: → Resolved: `macos-13` (Intel) GitHub Actions runner used for `release-build.yml`.
 
 ## Build Notes and Learnings
@@ -395,6 +397,16 @@ Add dated entries here as packaging work progresses. Record failures as well as 
 ### 2026-04-06 — Node 20 deprecation fix in CI
 
 - GitHub Actions deprecated Node.js 20 for JavaScript actions. Added `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` env var to `.github/workflows/release-build.yml` so `actions/checkout@v4`, `actions/setup-node@v4`, `actions/upload-artifact@v4`, and `actions/download-artifact@v4` run on Node 24. Bumped `node-version` from `"20"` to `"22"` (current LTS) in all three build jobs. Once upstream v5 versions of these actions ship (natively targeting Node 24), the env var can be removed.
+
+### 2026-04-07 — Pre-built ChromaDB bundling and per-source data management
+
+- **Pre-built index:** Packaging scripts (`package-backend.sh`, `package-backend.ps1`) now run the CMG chunker after dependency installation to produce a pre-built ChromaDB index at `build/resources/data/chroma_db/`. This is bundled via `electron-builder.yml` `extraResources` as a read-only asset.
+- **First-launch copy:** `seed.py` now checks for a bundled ChromaDB at `APP_ROOT/data/chroma_db/` before falling back to the chunker auto-seed. If the bundled DB exists and contains CMG data, it is copied to `CHROMA_DB_DIR` (user data). This eliminates the first-launch embedding delay in packaged builds.
+- **Dev fallback:** In dev environments (no `STUDYBOT_APP_ROOT` set), `BUNDLED_CHROMA_DB_DIR` points to the same directory as `CHROMA_DB_DIR`, so the bundled check is a no-op and the existing auto-seed chunker runs as before.
+- **Per-source clear:** `POST /settings/vector-store/clear` now accepts an optional `source_type` query parameter (`cmg`, `ref_doc`, `cpd_doc`, `notability_note`). Without it, the nuclear "delete entire chroma_db directory" behaviour is preserved. With it, only the specified source type is removed from the relevant collection.
+- **Vector store status:** `GET /settings/vector-store/status` returns chunk counts per source type.
+- **Settings UI:** The "CMG Data" and "Notes Pipeline" sections have been merged into a unified "Indexed Data" section showing per-source chunk counts and individual clear buttons.
+- **Path constant:** Added `BUNDLED_CHROMA_DB_DIR` to `paths.py`.
 
 ### 2026-04-06 — Per-architecture Mac build fix
 

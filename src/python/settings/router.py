@@ -6,6 +6,7 @@ import subprocess
 import threading
 from pathlib import Path
 
+import chromadb
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
@@ -211,8 +212,66 @@ def get_seed_status() -> dict:
     return _get_seed_status()
 
 
+@router.get("/vector-store/status")
+def vector_store_status() -> dict:
+    """Return chunk counts per source type across all collections."""
+    if not CHROMA_DB_DIR.exists():
+        return {"cmg": 0, "ref_doc": 0, "cpd_doc": 0, "notability_note": 0}
+
+    client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
+    counts: dict[str, int] = {"cmg": 0, "ref_doc": 0, "cpd_doc": 0, "notability_note": 0}
+
+    try:
+        cmg_col = client.get_or_create_collection("cmg_guidelines")
+        counts["cmg"] = cmg_col.count()
+    except Exception:
+        pass
+
+    try:
+        notes_col = client.get_or_create_collection("paramedic_notes")
+        for st in ("ref_doc", "cpd_doc", "notability_note"):
+            result = notes_col.get(where={"source_type": st})
+            counts[st] = len(result["ids"])
+    except Exception:
+        pass
+
+    return counts
+
+
 @router.post("/vector-store/clear")
-def clear_vector_store() -> dict:
-    if CHROMA_DB_DIR.exists():
-        shutil.rmtree(CHROMA_DB_DIR)
-    return {"status": "cleared"}
+def clear_vector_store(source_type: str | None = None) -> dict:
+    """Clear indexed data. Optional source_type for selective clearing."""
+    if source_type is None:
+        # Nuclear option: delete entire ChromaDB directory
+        if CHROMA_DB_DIR.exists():
+            shutil.rmtree(CHROMA_DB_DIR)
+        _invalidate_read_caches()
+        return {"status": "cleared"}
+
+    valid_types = ("cmg", "ref_doc", "cpd_doc", "notability_note")
+    if source_type not in valid_types:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid source_type. Must be one of: {', '.join(valid_types)}",
+        )
+
+    if not CHROMA_DB_DIR.exists():
+        return {"status": "cleared", "source_type": source_type}
+
+    client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
+
+    if source_type == "cmg":
+        try:
+            client.delete_collection("cmg_guidelines")
+        except Exception:
+            pass
+    else:
+        # Clear from paramedic_notes collection by source_type metadata
+        try:
+            notes_col = client.get_or_create_collection("paramedic_notes")
+            notes_col.delete(where={"source_type": source_type})
+        except Exception:
+            pass
+
+    _invalidate_read_caches()
+    return {"status": "cleared", "source_type": source_type}

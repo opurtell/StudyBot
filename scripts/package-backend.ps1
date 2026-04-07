@@ -109,4 +109,20 @@ print('backend code: OK')
 Write-Host "--- Cleaning temp artifacts ---"
 if (Test-Path $ExtractDir) { Remove-Item -Recurse -Force $ExtractDir }
 
+Write-Host "--- Pre-building ChromaDB index from bundled CMGs ---"
+$ChromaOutput = Join-Path $RepoRoot "build\resources\data\chroma_db"
+if (Test-Path $ChromaOutput) { Remove-Item -Recurse -Force $ChromaOutput }
+New-Item -ItemType Directory -Force -Path $ChromaOutput | Out-Null
+& $StagedPython -c @"
+import sys
+sys.path.insert(0, '$SitePackagesDir')
+sys.path.insert(0, '$AppDir\src\python')
+from pipeline.cmg.chunker import chunk_and_ingest
+chunk_and_ingest(structured_dir=r'$RepoRoot\data\cmgs\structured', db_path=r'$ChromaOutput')
+import chromadb
+client = chromadb.PersistentClient(path=r'$ChromaOutput')
+col = client.get_or_create_collection('cmg_guidelines')
+print(f'Pre-built index: {col.count()} chunks')
+"@
+
 Write-Host "=== Backend payload ready at $OutputDir ==="
