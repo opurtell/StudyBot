@@ -23,8 +23,8 @@ jobs:
       - name: Download personal ChromaDB
         uses: dsaltares/fetch-gh-release-asset@1.1.2
         with:
-          release: "personal-data"
-          asset: "chroma_db.tar.gz"
+          version: "tags/personal-data"
+          file: "chroma_db.tar.gz"
       - name: Extract personal ChromaDB
         run: |
           mkdir -p build/resources/data
@@ -54,8 +54,8 @@ jobs:
       - name: Download personal ChromaDB
         uses: dsaltares/fetch-gh-release-asset@1.1.2
         with:
-          release: "personal-data"
-          asset: "chroma_db.tar.gz"
+          version: "tags/personal-data"
+          file: "chroma_db.tar.gz"
       - name: Extract personal ChromaDB
         run: |
           mkdir -p build/resources/data
@@ -83,8 +83,8 @@ jobs:
       - name: Download personal ChromaDB
         uses: dsaltares/fetch-gh-release-asset@1.1.2
         with:
-          release: "personal-data"
-          asset: "chroma_db.tar.gz"
+          version: "tags/personal-data"
+          file: "chroma_db.tar.gz"
       - name: Extract personal ChromaDB
         run: |
           New-Item -ItemType Directory -Force -Path build\resources\data | Out-Null
