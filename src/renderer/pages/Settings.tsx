@@ -78,6 +78,7 @@ export default function Settings() {
     startCmgRefresh,
     cmgManifest,
     rebuildIndex,
+    rebuildRunning,
   } = useSettings();
 
   const [quizModel, setQuizModel] = useState(config?.quiz_model ?? "claude-haiku-4-5-20251001");
@@ -432,8 +433,8 @@ export default function Settings() {
         <div className="space-y-3">
           <div>
             <div className="flex gap-4">
-              <Button variant="secondary" onClick={rebuildIndex}>
-                Rebuild Index
+              <Button variant="secondary" onClick={rebuildIndex} disabled={rebuildRunning}>
+                {rebuildRunning ? "Rebuilding\u2026" : "Rebuild Index"}
               </Button>
               <Button
                 variant="secondary"

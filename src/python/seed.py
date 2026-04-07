@@ -18,10 +18,15 @@ from paths import resolve_cmg_structured_dir
 logger = logging.getLogger(__name__)
 
 _seeding_complete = threading.Event()
+_seed_status: str = "idle"  # "idle" | "seeding" | "complete" | "failed"
 
 
 def is_seeding_complete() -> bool:
     return _seeding_complete.is_set()
+
+
+def get_seed_status() -> dict:
+    return {"is_seeding": _seed_status == "seeding", "status": _seed_status}
 
 
 def seed_user_data() -> None:
@@ -45,14 +50,21 @@ def _ensure_dirs() -> None:
 
 
 def _start_cmg_seed_if_needed() -> None:
+    global _seed_status
     if _cmg_collection_has_data():
+        _seed_status = "complete"
         _seeding_complete.set()
         return
 
+    _seed_status = "seeding"
+
     def _seed() -> None:
+        global _seed_status
         try:
             _seed_cmg_index()
+            _seed_status = "complete"
         except Exception:
+            _seed_status = "failed"
             logger.exception("CMG auto-seed failed")
         finally:
             _seeding_complete.set()

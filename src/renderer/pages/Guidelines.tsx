@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import { useApi } from "../hooks/useApi";
@@ -9,6 +9,7 @@ import PageStateNotice from "../components/PageStateNotice";
 import type { GuidelineSummary, GuidelineDetail } from "../types/api";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
+import { useBackgroundProcesses } from "../providers/BackgroundProcessProvider";
 
 const SECTION_ORDER = [
   "Cardiac",
@@ -49,6 +50,7 @@ export default function Guidelines() {
   const { data: guidelines, loading, error, refetch } = useApi<GuidelineSummary[]>("/guidelines");
   const backendStatus = useBackendStatus();
   const { restart } = useBackendStatusActions();
+  const { isSeeding } = useBackgroundProcesses();
 
   const [selectedType, setSelectedType] = useState<string>("all");
   const [selectedSection, setSelectedSection] = useState<string>("all");
@@ -59,6 +61,16 @@ export default function Guidelines() {
     selectedId ? `/guidelines/${selectedId}` : ""
   );
   const errorCopy = getErrorStateCopy(error, backendStatus, "guidelines");
+
+  // Track previous seeding state to detect completion
+  const wasSeedingRef = useRef(false);
+  useEffect(() => {
+    if (wasSeedingRef.current && !isSeeding) {
+      // Seeding just completed — refetch guidelines
+      void refetch();
+    }
+    wasSeedingRef.current = isSeeding;
+  }, [isSeeding, refetch]);
 
   const filtered = useMemo(() => {
     if (!guidelines) return [];
@@ -123,8 +135,15 @@ export default function Guidelines() {
 
       {loading && !guidelines && (
         <PageStateNotice
-          title="Loading guidelines"
-          message="Preparing the ACTAS guideline index."
+          title={isSeeding ? "Indexing clinical guidelines" : "Loading guidelines"}
+          message={isSeeding ? "Building search index from bundled CMG data. This may take a moment on first launch." : "Preparing the ACTAS guideline index."}
+        />
+      )}
+
+      {!loading && !error && guidelines && guidelines.length === 0 && isSeeding && (
+        <PageStateNotice
+          title="Indexing clinical guidelines"
+          message="Building search index from bundled CMG data. This may take a moment on first launch."
         />
       )}
 

@@ -16,11 +16,13 @@ from medication.router import invalidate_medication_cache
 from pipeline.cmg.refresh import load_refresh_status, start_refresh_in_background
 from paths import CHROMA_DB_DIR, SETTINGS_PATH as _SETTINGS_PATH
 from paths import resolve_cmg_structured_dir
+from seed import get_seed_status as _get_seed_status
 
 router = APIRouter(prefix="/settings", tags=["settings"])
 _settings_cache: dict | None = None
 _models_cache: dict | None = None
 _cache_lock = threading.Lock()
+_rebuild_status: dict = {"is_running": False, "status": "idle", "last_completed_at": None}
 
 
 def _invalidate_read_caches() -> None:
@@ -168,19 +170,45 @@ def get_cmg_manifest() -> dict:
 
 
 def _run_cmg_rebuild_in_background() -> None:
+    global _rebuild_status
     try:
         from pipeline.cmg.chunker import chunk_and_ingest
         chunk_and_ingest(structured_dir=str(resolve_cmg_structured_dir()))
+        _rebuild_status = {
+            "is_running": False,
+            "status": "complete",
+            "last_completed_at": __import__("datetime").datetime.utcnow().isoformat(),
+        }
+    except Exception:
+        _rebuild_status = {
+            "is_running": False,
+            "status": "failed",
+            "last_completed_at": _rebuild_status.get("last_completed_at"),
+        }
     finally:
         _invalidate_read_caches()
 
 
 @router.post("/cmg-rebuild")
 def rebuild_cmg_index() -> dict:
+    global _rebuild_status
+    if _rebuild_status["is_running"]:
+        raise HTTPException(status_code=409, detail="Rebuild already in progress")
     _invalidate_read_caches()
+    _rebuild_status = {"is_running": True, "status": "running", "last_completed_at": _rebuild_status.get("last_completed_at")}
     thread = threading.Thread(target=_run_cmg_rebuild_in_background, daemon=True)
     thread.start()
     return {"status": "started"}
+
+
+@router.get("/cmg-rebuild-status")
+def get_cmg_rebuild_status() -> dict:
+    return _rebuild_status
+
+
+@router.get("/seed-status")
+def get_seed_status() -> dict:
+    return _get_seed_status()
 
 
 @router.post("/vector-store/clear")

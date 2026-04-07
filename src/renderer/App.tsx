@@ -12,6 +12,7 @@ import BackendBootGate from "./components/BackendBootGate";
 import { BackendStatusProvider } from "./hooks/useBackendStatus";
 import { ResourceCacheProvider } from "./providers/ResourceCacheProvider";
 import { SettingsProvider } from "./providers/SettingsProvider";
+import { BackgroundProcessProvider } from "./providers/BackgroundProcessProvider";
 
 function StandardLayout() {
   return (
@@ -58,11 +59,13 @@ export default function App() {
       <BackendStatusProvider>
         <ResourceCacheProvider>
           <SettingsProvider>
+            <BackgroundProcessProvider>
             <BrowserRouter>
               <BackendBootGate>
                 <AppRoutes />
               </BackendBootGate>
             </BrowserRouter>
+            </BackgroundProcessProvider>
           </SettingsProvider>
         </ResourceCacheProvider>
       </BackendStatusProvider>

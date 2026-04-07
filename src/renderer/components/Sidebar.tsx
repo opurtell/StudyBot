@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
+import { useBackgroundProcesses } from "../providers/BackgroundProcessProvider";
 
 interface NavItem {
   icon: string;
@@ -21,6 +22,7 @@ const secondaryNav: NavItem[] = [
 export default function Sidebar() {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
+  const { activeProcesses } = useBackgroundProcesses();
 
   return (
     <aside className="h-screen w-64 fixed left-0 top-0 bg-surface-container-low flex flex-col py-8 z-40">
@@ -66,6 +68,23 @@ export default function Sidebar() {
         >
           Start Revision
         </button>
+
+        {/* Background processes */}
+        {activeProcesses.length > 0 && (
+          <div className="space-y-2 px-4">
+            {activeProcesses.map((process) => (
+              <div key={process.id} className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-caution opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-status-caution" />
+                </span>
+                <span className="font-mono text-[10px] text-on-surface-variant">
+                  {process.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Theme toggle */}
         <button

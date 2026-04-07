@@ -30,6 +30,7 @@ interface SettingsContextValue {
   startCmgRefresh: () => Promise<void>;
   cmgManifest: CmgManifest | null;
   rebuildIndex: () => Promise<void>;
+  rebuildRunning: boolean;
   refetch: () => Promise<void>;
 }
 
@@ -162,6 +163,42 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const [rebuildRunning, setRebuildRunning] = useState(false);
+  const rebuildPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    apiGet<{ is_running: boolean }>("/settings/cmg-rebuild-status")
+      .then((data) => setRebuildRunning(data.is_running))
+      .catch(() => {});
+    return () => {
+      if (rebuildPollRef.current !== null) {
+        clearInterval(rebuildPollRef.current);
+        rebuildPollRef.current = null;
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (rebuildRunning) {
+      if (rebuildPollRef.current !== null) return;
+      rebuildPollRef.current = setInterval(async () => {
+        try {
+          const data = await apiGet<{ is_running: boolean }>("/settings/cmg-rebuild-status");
+          if (!data.is_running) {
+            setRebuildRunning(false);
+          }
+        } catch {
+          // retry next interval
+        }
+      }, 3000);
+    } else {
+      if (rebuildPollRef.current !== null) {
+        clearInterval(rebuildPollRef.current);
+        rebuildPollRef.current = null;
+      }
+    }
+  }, [rebuildRunning]);
+
   const [cmgManifest, setCmgManifest] = useState<CmgManifest | null>(null);
 
   useEffect(() => {
@@ -174,6 +211,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     setActionError(null);
     try {
       await apiPost("/settings/cmg-rebuild");
+      setRebuildRunning(true);
     } catch (error) {
       setActionError(getApiErrorMessage(error, "Failed to rebuild CMG index"));
     }
@@ -204,6 +242,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       startCmgRefresh,
       cmgManifest,
       rebuildIndex,
+      rebuildRunning,
       refetch,
     }),
     [
@@ -215,6 +254,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       configResource,
       modelsResource,
       rebuildIndex,
+      rebuildRunning,
       refetch,
       rerunPipeline,
       save,
