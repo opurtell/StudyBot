@@ -9,6 +9,7 @@ from pydantic import BaseModel
 
 from llm.base import LLMClient
 from llm.factory import create_client_for_model, load_config
+from seed import is_seeding_complete
 
 from .agent import generate_question
 from .agent import evaluate_answer
@@ -54,6 +55,11 @@ def _get_tracker() -> Tracker:
             if _tracker is None:
                 _tracker = Tracker()
     return _tracker
+
+
+def _check_seeding() -> None:
+    if not is_seeding_complete():
+        raise HTTPException(status_code=503, detail="CMG index is still seeding. Please try again in a moment.")
 
 
 def warm_quiz_dependencies() -> None:
@@ -104,6 +110,7 @@ def start_session(req: StartSessionRequest) -> dict:
 
 @router.post("/question/generate")
 def generate(req: GenerateQuestionRequest) -> dict:
+    _check_seeding()
     session = get_session(req.session_id)
     if session is None:
         raise HTTPException(status_code=404, detail="Session not found")

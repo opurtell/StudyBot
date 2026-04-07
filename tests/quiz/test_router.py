@@ -26,6 +26,7 @@ def mock_deps():
         patch("quiz.router._get_retriever", return_value=mock_retriever),
         patch("quiz.router._get_tracker", return_value=mock_tracker),
         patch("quiz.router.load_config", return_value=TEST_CONFIG),
+        patch("quiz.router.is_seeding_complete", return_value=True),
     ):
         yield {"llm": mock_llm, "retriever": mock_retriever, "tracker": mock_tracker}
 
@@ -216,3 +217,18 @@ class TestBlacklist:
     def test_remove_from_blacklist(self, client, mock_deps):
         response = client.delete("/quiz/blacklist/Paediatrics")
         assert response.status_code == 200
+
+
+class TestSeedingGuard:
+    def test_generate_returns_503_when_seeding(self, client, mock_deps, monkeypatch):
+        from seed import _seeding_complete
+
+        _seeding_complete.clear()
+        monkeypatch.setattr("quiz.router.is_seeding_complete", lambda: False)
+
+        response = client.post(
+            "/quiz/question/generate",
+            json={"session_id": "test"},
+        )
+        assert response.status_code == 503
+        assert "seeding" in response.json()["detail"].lower()

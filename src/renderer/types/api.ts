@@ -188,3 +188,12 @@ export interface CmgRefreshStatus {
   } | null;
   last_error: string | null;
 }
+
+export interface CmgManifest {
+  captured_at: string;
+  source: string;
+  pipeline_version: string;
+  guideline_count: number;
+  medication_count: number;
+  clinical_skill_count: number;
+}

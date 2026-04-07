@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 
 from quiz.retriever import Retriever, get_retriever as get_shared_retriever
+from seed import is_seeding_complete
 from .models import SearchResult
 
 router = APIRouter(prefix="/search", tags=["search"])
@@ -17,8 +18,14 @@ def _get_retriever() -> Retriever:
     return _retriever
 
 
+def _check_seeding() -> None:
+    if not is_seeding_complete():
+        raise HTTPException(status_code=503, detail="CMG index is still seeding. Please try again in a moment.")
+
+
 @router.get("")
 def search(q: str = "") -> list[dict]:
+    _check_seeding()
     if not q.strip():
         raise HTTPException(status_code=400, detail="Query parameter 'q' is required")
 

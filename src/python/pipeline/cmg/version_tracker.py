@@ -95,3 +95,33 @@ def update_version_tracking(
         "items": new_records,
     }
     return summary
+
+
+def generate_manifest(
+    structured_dir: str = "data/cmgs/structured/",
+    source: str = "cmg.ambulance.act.gov.au",
+    pipeline_version: str = "1",
+) -> dict:
+    from datetime import datetime, timezone
+    from pathlib import Path
+
+    structured = Path(structured_dir)
+    manifest_path = structured / ".manifest.json"
+
+    cmg_count = len([f for f in structured.glob("*.json") if "index" not in f.name and not f.name.startswith(".")])
+    med_count = len([f for f in (structured / "med").glob("*.json") if "index" not in f.name]) if (structured / "med").exists() else 0
+    csm_count = len([f for f in (structured / "csm").glob("*.json") if "index" not in f.name]) if (structured / "csm").exists() else 0
+
+    manifest = {
+        "captured_at": datetime.now(timezone.utc).isoformat(),
+        "source": source,
+        "pipeline_version": pipeline_version,
+        "guideline_count": cmg_count,
+        "medication_count": med_count,
+        "clinical_skill_count": csm_count,
+    }
+
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2)
+
+    return manifest

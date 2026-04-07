@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 import json
-import sys
-import types
 
 import pytest
 
@@ -70,9 +68,6 @@ def test_run_refresh_persists_success_status_and_history(monkeypatch, tmp_path):
 
     calls: list[str] = []
 
-    def fake_capture() -> None:
-        calls.append("capture")
-
     def fake_run_pipeline(
         *, stages: str, dry_run: bool, investigation_dir: str
     ) -> dict:
@@ -88,9 +83,6 @@ def test_run_refresh_persists_success_status_and_history(monkeypatch, tmp_path):
             }
         }
 
-    fake_capture_mod = types.ModuleType("pipeline.cmg.capture_assets")
-    fake_capture_mod.capture_all_assets = fake_capture
-    monkeypatch.setitem(sys.modules, "pipeline.cmg.capture_assets", fake_capture_mod)
     monkeypatch.setattr(refresh, "run_pipeline", fake_run_pipeline)
     monkeypatch.setattr(
         refresh,
@@ -105,13 +97,13 @@ def test_run_refresh_persists_success_status_and_history(monkeypatch, tmp_path):
 
     result = refresh.run_refresh(
         dry_run=True,
-        skip_capture=False,
+        skip_capture=True,
         investigation_dir="tmp/investigation",
         status_path=status_path,
         history_path=history_path,
     )
 
-    assert calls[:2] == ["capture", "pipeline:all:True:tmp/investigation"]
+    assert calls[0] == "pipeline:all:True:tmp/investigation"
     assert result["status"] == "succeeded"
     assert result["is_running"] is False
     assert result["last_successful_at"] == result["last_completed_at"]
@@ -120,7 +112,7 @@ def test_run_refresh_persists_success_status_and_history(monkeypatch, tmp_path):
     assert result["summary"]["updated_count"] == 1
     assert result["summary"]["unchanged_count"] == 1
     assert result["summary"]["dry_run"] is True
-    assert result["summary"]["skip_capture"] is False
+    assert result["summary"]["skip_capture"] is True
     assert calls[-2:] == ["invalidate-guidelines", "invalidate-medications"]
 
     persisted_status = refresh.load_refresh_status(status_path)
@@ -157,14 +149,11 @@ def test_run_refresh_preserves_last_successful_time_on_failure(monkeypatch, tmp_
     ) -> dict:
         raise RuntimeError("boom")
 
-    fake_capture_mod = types.ModuleType("pipeline.cmg.capture_assets")
-    fake_capture_mod.capture_all_assets = lambda: None
-    monkeypatch.setitem(sys.modules, "pipeline.cmg.capture_assets", fake_capture_mod)
     monkeypatch.setattr(refresh, "run_pipeline", fake_run_pipeline)
 
     with pytest.raises(RuntimeError, match="boom"):
         refresh.run_refresh(
-            skip_capture=False,
+            skip_capture=True,
             investigation_dir="tmp/investigation",
             status_path=status_path,
             history_path=history_path,
@@ -180,3 +169,31 @@ def test_run_refresh_preserves_last_successful_time_on_failure(monkeypatch, tmp_
         history = json.load(f)
     assert history[-1]["status"] == "failed"
     assert history[-1]["last_error"] == "boom"
+
+
+def test_generate_manifest_creates_file(tmp_path):
+    from pipeline.cmg.version_tracker import generate_manifest
+
+    structured_dir = tmp_path / "structured"
+    structured_dir.mkdir()
+    (structured_dir / "med").mkdir()
+    (structured_dir / "csm").mkdir()
+
+    with open(structured_dir / "CMG_1.json", "w") as f:
+        json.dump({"id": "CMG_1", "title": "Test"}, f)
+    with open(structured_dir / "med" / "MED_1.json", "w") as f:
+        json.dump({"id": "MED_1", "title": "Med"}, f)
+    with open(structured_dir / "csm" / "CSM_1.json", "w") as f:
+        json.dump({"id": "CSM_1", "title": "Skill"}, f)
+    with open(structured_dir / "guidelines-index.json", "w") as f:
+        json.dump({"items": []}, f)
+
+    generate_manifest(structured_dir=str(structured_dir))
+
+    manifest_path = structured_dir / ".manifest.json"
+    assert manifest_path.exists()
+    manifest = json.loads(manifest_path.read_text())
+    assert "captured_at" in manifest
+    assert manifest["guideline_count"] == 1
+    assert manifest["medication_count"] == 1
+    assert manifest["clinical_skill_count"] == 1

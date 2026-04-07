@@ -6,20 +6,26 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 
 from paths import CMG_STRUCTURED_DIR
+from paths import resolve_cmg_structured_dir
 
 from .markdown import normalise_markdown_payload, normalise_markdown_syntax
 from .models import GuidelineDetail, GuidelineSummary
 
 router = APIRouter(prefix="/guidelines", tags=["guidelines"])
 
-STRUCTURED_DIR = CMG_STRUCTURED_DIR
-GUIDELINES_INDEX_PATH = STRUCTURED_DIR / "guidelines-index.json"
 
-_TYPE_DIRS = {
-    "cmg": STRUCTURED_DIR,
-    "med": STRUCTURED_DIR / "med",
-    "csm": STRUCTURED_DIR / "csm",
-}
+def _get_structured_dir() -> Path:
+    return resolve_cmg_structured_dir()
+
+
+def _get_type_dirs() -> dict[str, Path]:
+    structured_dir = _get_structured_dir()
+    return {
+        "cmg": structured_dir,
+        "med": structured_dir / "med",
+        "csm": structured_dir / "csm",
+    }
+
 
 _guideline_summaries_cache: list[dict] | None = None
 _guideline_detail_cache: dict[str, dict] = {}
@@ -27,7 +33,7 @@ _guideline_detail_cache: dict[str, dict] = {}
 
 def _load_all_raw() -> list[dict]:
     results: list[dict] = []
-    for source_type, directory in _TYPE_DIRS.items():
+    for source_type, directory in _get_type_dirs().items():
         if not directory.exists():
             continue
         for fpath in sorted(directory.glob("*.json")):
@@ -64,9 +70,10 @@ def _load_guideline_summaries() -> list[dict]:
     if _guideline_summaries_cache is not None:
         return _guideline_summaries_cache
 
-    if GUIDELINES_INDEX_PATH.exists():
+    index_path = _get_structured_dir() / "guidelines-index.json"
+    if index_path.exists():
         try:
-            with open(GUIDELINES_INDEX_PATH, encoding="utf-8") as f:
+            with open(index_path, encoding="utf-8") as f:
                 payload = json.load(f)
             items = payload.get("items", payload)
             if isinstance(items, list):
@@ -85,7 +92,7 @@ def _load_guideline_summaries() -> list[dict]:
 
 
 def _detail_path(source_type: str, guideline_id: str) -> Path:
-    return _TYPE_DIRS.get(source_type, STRUCTURED_DIR) / f"{guideline_id}.json"
+    return _get_type_dirs().get(source_type, _get_structured_dir()) / f"{guideline_id}.json"
 
 
 def _find_summary(guideline_id: str) -> dict | None:

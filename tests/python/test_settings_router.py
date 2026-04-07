@@ -170,3 +170,48 @@ def test_rerun_pipeline_invalidates_read_caches(monkeypatch):
     assert response.status_code == 200
     assert response.json() == {"status": "started"}
     assert calls[:2] == ["guidelines", "medications"]
+
+
+def test_get_cmg_manifest(monkeypatch, tmp_path):
+    manifest = {
+        "captured_at": "2026-04-07T10:00:00+00:00",
+        "source": "cmg.ambulance.act.gov.au",
+        "guideline_count": 55,
+        "medication_count": 35,
+        "clinical_skill_count": 99,
+        "pipeline_version": "1",
+    }
+    structured_dir = tmp_path / "structured"
+    structured_dir.mkdir()
+    (structured_dir / ".manifest.json").write_text(json.dumps(manifest))
+
+    monkeypatch.setattr(settings_router, "resolve_cmg_structured_dir", lambda: structured_dir)
+
+    response = client.get("/settings/cmg-manifest")
+    assert response.status_code == 200
+    assert response.json()["captured_at"] == "2026-04-07T10:00:00+00:00"
+    assert response.json()["guideline_count"] == 55
+
+
+def test_get_cmg_manifest_returns_404_when_missing(monkeypatch, tmp_path):
+    structured_dir = tmp_path / "structured"
+    structured_dir.mkdir()
+    monkeypatch.setattr(settings_router, "resolve_cmg_structured_dir", lambda: structured_dir)
+
+    response = client.get("/settings/cmg-manifest")
+    assert response.status_code == 404
+
+
+def test_cmg_rebuild_starts_background_job(monkeypatch):
+    calls: list[str] = []
+    monkeypatch.setattr(settings_router, "invalidate_guideline_cache", lambda: calls.append("guidelines"))
+    monkeypatch.setattr(settings_router, "invalidate_medication_cache", lambda: calls.append("medications"))
+
+    def fake_rebuild():
+        calls.append("rebuild")
+
+    monkeypatch.setattr(settings_router, "_run_cmg_rebuild_in_background", fake_rebuild)
+
+    response = client.post("/settings/cmg-rebuild")
+    assert response.status_code == 200
+    assert response.json()["status"] == "started"

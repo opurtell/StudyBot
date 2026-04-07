@@ -90,7 +90,9 @@ def test_guideline_summaries_are_cached(monkeypatch, tmp_path):
         ]
 
     guidelines_router.invalidate_guideline_cache()
-    monkeypatch.setattr(guidelines_router, "GUIDELINES_INDEX_PATH", tmp_path / "missing.json")
+    monkeypatch.setattr(
+        guidelines_router, "_get_structured_dir", lambda: tmp_path
+    )
     monkeypatch.setattr(guidelines_router, "_load_all_raw", fake_load_all_raw)
 
     first = guidelines_router.list_guidelines()

@@ -11,7 +11,7 @@ import {
 import { apiGet, apiPost, apiPut, getApiErrorMessage } from "../lib/apiClient";
 import { useCachedResource } from "../hooks/useCachedResource";
 import { useResourceCacheStore } from "./ResourceCacheProvider";
-import type { CmgRefreshStatus, ModelRegistry, SettingsConfig } from "../types/api";
+import type { CmgManifest, CmgRefreshStatus, ModelRegistry, SettingsConfig } from "../types/api";
 
 interface SettingsContextValue {
   config: SettingsConfig | null;
@@ -28,6 +28,8 @@ interface SettingsContextValue {
   cmgRefreshStatus: CmgRefreshStatus | null;
   cmgRefreshLoading: boolean;
   startCmgRefresh: () => Promise<void>;
+  cmgManifest: CmgManifest | null;
+  rebuildIndex: () => Promise<void>;
   refetch: () => Promise<void>;
 }
 
@@ -153,10 +155,27 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     try {
       await apiPost("/settings/cmg-refresh/run");
       setCmgRefreshStatus((prev) =>
-        prev ? { ...prev, status: "running", is_running: true } : prev
+        prev? { ...prev, status: "running", is_running: true } : prev
       );
     } catch (error) {
       setActionError(getApiErrorMessage(error, "Failed to start CMG refresh"));
+    }
+  }, []);
+
+  const [cmgManifest, setCmgManifest] = useState<CmgManifest | null>(null);
+
+  useEffect(() => {
+    apiGet<CmgManifest>("/settings/cmg-manifest")
+      .then(setCmgManifest)
+      .catch(() => setCmgManifest(null));
+  }, [cmgRefreshStatus?.last_successful_at]);
+
+  const rebuildIndex = useCallback(async () => {
+    setActionError(null);
+    try {
+      await apiPost("/settings/cmg-rebuild");
+    } catch (error) {
+      setActionError(getApiErrorMessage(error, "Failed to rebuild CMG index"));
     }
   }, []);
 
@@ -183,15 +202,19 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       cmgRefreshStatus,
       cmgRefreshLoading,
       startCmgRefresh,
+      cmgManifest,
+      rebuildIndex,
       refetch,
     }),
     [
       actionError,
       clearVectorStore,
+      cmgManifest,
       cmgRefreshLoading,
       cmgRefreshStatus,
       configResource,
       modelsResource,
+      rebuildIndex,
       refetch,
       rerunPipeline,
       save,

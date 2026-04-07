@@ -22,6 +22,13 @@ MASTERY_DB_PATH = DATA_DIR / "mastery.db"
 LOGS_DIR = USER_DATA_DIR / "logs"
 
 CMG_STRUCTURED_DIR = APP_ROOT / "data" / "cmgs" / "structured"
+USER_CMG_STRUCTURED_DIR = DATA_DIR / "cmgs" / "structured"
+
+
+def resolve_cmg_structured_dir() -> Path:
+    if USER_CMG_STRUCTURED_DIR.exists() and any(USER_CMG_STRUCTURED_DIR.glob("*.json")):
+        return USER_CMG_STRUCTURED_DIR
+    return CMG_STRUCTURED_DIR
 REFDOCS_DIR = APP_ROOT / "docs" / "REFdocs"
 CPDDOCS_DIR = APP_ROOT / "docs" / "CPDdocs"
 NOTABILITY_NOTE_DOCS_DIR = APP_ROOT / "docs" / "notabilityNotes" / "noteDocs"

@@ -374,3 +374,31 @@ class TestPackagedDataPaths:
         assert (
             paths.CLEANED_NOTES_DIR == tmp_path / "ud" / "data" / "notes_md" / "cleaned"
         )
+
+
+class TestResolveCmgStructuredDir:
+    def test_prefers_user_data_when_populated(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("STUDYBOT_USER_DATA", str(tmp_path / "ud"))
+        monkeypatch.setenv("STUDYBOT_APP_ROOT", str(tmp_path / "ar"))
+        paths = _reload_paths()
+
+        user_dir = tmp_path / "ud" / "data" / "cmgs" / "structured"
+        user_dir.mkdir(parents=True)
+        (user_dir / "test.json").write_text("{}")
+        bundled_dir = tmp_path / "ar" / "data" / "cmgs" / "structured"
+        bundled_dir.mkdir(parents=True)
+
+        assert paths.resolve_cmg_structured_dir() == user_dir
+
+    def test_falls_back_to_bundled_when_user_empty(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("STUDYBOT_USER_DATA", str(tmp_path / "ud"))
+        monkeypatch.setenv("STUDYBOT_APP_ROOT", str(tmp_path / "ar"))
+        paths = _reload_paths()
+
+        user_dir = tmp_path / "ud" / "data" / "cmgs" / "structured"
+        user_dir.mkdir(parents=True)
+        bundled_dir = tmp_path / "ar" / "data" / "cmgs" / "structured"
+        bundled_dir.mkdir(parents=True)
+        (bundled_dir / "test.json").write_text("{}")
+
+        assert paths.resolve_cmg_structured_dir() == bundled_dir

@@ -15,6 +15,7 @@ from guidelines.router import invalidate_guideline_cache
 from medication.router import invalidate_medication_cache
 from pipeline.cmg.refresh import load_refresh_status, start_refresh_in_background
 from paths import CHROMA_DB_DIR, SETTINGS_PATH as _SETTINGS_PATH
+from paths import resolve_cmg_structured_dir
 
 router = APIRouter(prefix="/settings", tags=["settings"])
 _settings_cache: dict | None = None
@@ -154,6 +155,32 @@ def run_cmg_refresh() -> dict:
         return start_refresh_in_background()
     except RuntimeError as exc:
         raise HTTPException(status_code=409, detail=str(exc))
+
+
+@router.get("/cmg-manifest")
+def get_cmg_manifest() -> dict:
+    structured_dir = resolve_cmg_structured_dir()
+    manifest_path = structured_dir / ".manifest.json"
+    if not manifest_path.exists():
+        raise HTTPException(status_code=404, detail="No CMG manifest found")
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _run_cmg_rebuild_in_background() -> None:
+    try:
+        from pipeline.cmg.chunker import chunk_and_ingest
+        chunk_and_ingest(structured_dir=str(resolve_cmg_structured_dir()))
+    finally:
+        _invalidate_read_caches()
+
+
+@router.post("/cmg-rebuild")
+def rebuild_cmg_index() -> dict:
+    _invalidate_read_caches()
+    thread = threading.Thread(target=_run_cmg_rebuild_in_background, daemon=True)
+    thread.start()
+    return {"status": "started"}
 
 
 @router.post("/vector-store/clear")

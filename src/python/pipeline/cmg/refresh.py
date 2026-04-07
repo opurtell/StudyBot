@@ -109,9 +109,26 @@ def run_refresh(
 
     try:
         if not skip_capture:
-            from .capture_assets import capture_all_assets
+            from .discover_metadata import discover_metadata
+            from .web_structurer import structure_crawled_guidelines
+            from .version_tracker import generate_manifest
+            from paths import USER_CMG_STRUCTURED_DIR
 
-            capture_all_assets()
+            metadata = discover_metadata()
+            changed_ids = metadata.get("changed_ids", [])
+
+            if changed_ids:
+                logger.info(f"Found {len(changed_ids)} changed guidelines. Starting structuring.")
+                structured = structure_crawled_guidelines(
+                    changed_ids=changed_ids,
+                    crawled_dir="data/cmgs/raw",
+                    output_dir=str(USER_CMG_STRUCTURED_DIR),
+                )
+                logger.info(f"Structured {len(structured)} changed guidelines.")
+            else:
+                logger.info("No changed guidelines detected.")
+
+            generate_manifest()
 
         pipeline_result = run_pipeline(
             stages="all",

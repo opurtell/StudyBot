@@ -76,6 +76,8 @@ export default function Settings() {
     cmgRefreshStatus,
     cmgRefreshLoading,
     startCmgRefresh,
+    cmgManifest,
+    rebuildIndex,
   } = useSettings();
 
   const [quizModel, setQuizModel] = useState(config?.quiz_model ?? "claude-haiku-4-5-20251001");
@@ -400,11 +402,16 @@ export default function Settings() {
 
       <section className="space-y-6">
         <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
-          Data Management
+          CMG Data
         </h3>
+        {cmgManifest && (
+          <p className="font-mono text-[10px] text-on-surface-variant">
+            Bundled CMG data captured: {new Date(cmgManifest.captured_at).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })} — {cmgManifest.guideline_count} guidelines, {cmgManifest.medication_count} medications, {cmgManifest.clinical_skill_count} clinical skills
+          </p>
+        )}
         {cmgRefreshStatus?.last_successful_at && (
           <p className="font-mono text-[10px] text-on-surface-variant">
-            Last refreshed: {new Date(cmgRefreshStatus.last_successful_at).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })} · Recommended: {cmgRefreshStatus.recommended_cadence}
+            Last web update: {new Date(cmgRefreshStatus.last_successful_at).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}
           </p>
         )}
         {cmgRefreshStatus?.summary && (
@@ -414,7 +421,7 @@ export default function Settings() {
         )}
         {cmgRefreshStatus?.is_running && (
           <p className="font-mono text-[10px] text-on-surface-variant">
-            Refreshing CMGs...
+            Updating from web...
           </p>
         )}
         {cmgRefreshStatus?.status === "failed" && cmgRefreshStatus.last_error && (
@@ -422,20 +429,41 @@ export default function Settings() {
             {cmgRefreshStatus.last_error}
           </p>
         )}
-        <div className="flex gap-4">
+        <div className="space-y-3">
+          <div>
+            <div className="flex gap-4">
+              <Button variant="secondary" onClick={rebuildIndex}>
+                Rebuild Index
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={startCmgRefresh}
+                disabled={cmgRefreshStatus?.is_running || cmgRefreshLoading}
+              >
+                {cmgRefreshStatus?.is_running ? "Updating..." : "Update from Web"}
+              </Button>
+              <Button variant="tertiary" onClick={clearVectorStore}>
+                Clear Vector Store
+              </Button>
+            </div>
+            <p className="font-body text-[10px] text-on-surface-variant mt-1">
+              Rebuild Index re-ingests the bundled CMG data into the search index. Update from Web downloads the latest guidelines from cmg.ambulance.act.gov.au. Clear Vector Store deletes all indexed data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
+          Notes Pipeline
+        </h3>
+        <div>
           <Button variant="secondary" onClick={rerunPipeline}>
-            Re-run Pipeline
+            Re-run Notes Pipeline
           </Button>
-          <Button
-            variant="secondary"
-            onClick={startCmgRefresh}
-            disabled={cmgRefreshStatus?.is_running || cmgRefreshLoading}
-          >
-            {cmgRefreshStatus?.is_running ? "Refreshing CMGs..." : "Refresh CMGs"}
-          </Button>
-          <Button variant="tertiary" onClick={clearVectorStore}>
-            Clear Vector Store
-          </Button>
+          <p className="font-body text-[10px] text-on-surface-variant mt-1">
+            Re-process personal study notes into the search index.
+          </p>
         </div>
       </section>
 

@@ -65,6 +65,37 @@ beforeEach(() => {
           }),
       });
     }
+    if (url.includes("/settings/cmg-manifest")) {
+      return Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            captured_at: "2026-04-07T10:00:00+00:00",
+            source: "cmg.ambulance.act.gov.au",
+            pipeline_version: "1",
+            guideline_count: 55,
+            medication_count: 35,
+            clinical_skill_count: 99,
+          }),
+      });
+    }
+    if (url.includes("/settings/cmg-refresh")) {
+      return Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            status: "idle",
+            is_running: false,
+            last_started_at: null,
+            last_completed_at: null,
+            last_successful_at: null,
+            trigger: null,
+            recommended_cadence: "weekly",
+            summary: null,
+            last_error: null,
+          }),
+      });
+    }
     return Promise.resolve({ ok: false, status: 404 });
   });
 });

@@ -5,6 +5,10 @@ from main import app
 client = TestClient(app)
 
 
+def _patch_seeding():
+    return patch("search.router.is_seeding_complete", return_value=True)
+
+
 class TestSearchEndpoint:
     def test_search_returns_results(self):
         mock_retriever = MagicMock()
@@ -23,7 +27,7 @@ class TestSearchEndpoint:
             )
         ]
 
-        with patch("search.router._get_retriever", return_value=mock_retriever):
+        with _patch_seeding(), patch("search.router._get_retriever", return_value=mock_retriever):
             response = client.get("/search?q=adrenaline+cardiac+arrest")
         assert response.status_code == 200
         data = response.json()
@@ -33,9 +37,11 @@ class TestSearchEndpoint:
         assert data[0]["cmg_number"] == "4"
 
     def test_search_empty_query_returns_400(self):
-        response = client.get("/search?q=")
+        with _patch_seeding():
+            response = client.get("/search?q=")
         assert response.status_code == 400
 
     def test_search_missing_query_returns_400(self):
-        response = client.get("/search")
+        with _patch_seeding():
+            response = client.get("/search")
         assert response.status_code == 400
