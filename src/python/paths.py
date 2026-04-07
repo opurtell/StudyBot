@@ -36,6 +36,8 @@ NOTABILITY_NOTE_DOCS_DIR = APP_ROOT / "docs" / "notabilityNotes" / "noteDocs"
 PERSONAL_STRUCTURED_DIR = DATA_DIR / "personal_docs" / "structured"
 RAW_NOTES_DIR = DATA_DIR / "notes_md" / "raw"
 CLEANED_NOTES_DIR = DATA_DIR / "notes_md" / "cleaned"
+UPLOADS_DIR = DATA_DIR / "uploads"
+UPLOADS_STRUCTURED_DIR = DATA_DIR / "uploads" / "structured"
 
 HOST = os.environ.get("STUDYBOT_HOST", "127.0.0.1")
 PORT = int(os.environ.get("STUDYBOT_PORT", "7777"))
