@@ -77,6 +77,8 @@ def _notability_status(
     if note_count == 0:
         return 0, "NO FILES", "0 files"
     if raw_count == 0:
+        if cleaned_count > 0:
+            return 100, "CLEANED", _pluralise(cleaned_count, "cleaned file")
         return 0, "EXTRACTION PENDING", _pluralise(note_count, "file")
     if cleaned_count >= raw_count:
         return 100, "CLEANED", f"{cleaned_count} of {raw_count} cleaned"
@@ -167,10 +169,14 @@ def _build_cleaning_feed() -> list[CleaningFeedItem]:
     else:
         personal_state = "active"
 
-    if note_count == 0:
+    if note_count == 0 and cleaned_count == 0:
         note_state = "waiting"
         note_preview = "No Notability note files detected."
         note_detail = None
+    elif raw_count == 0 and cleaned_count > 0:
+        note_state = "complete"
+        note_preview = "All cleaned markdown files are available."
+        note_detail = _pluralise(cleaned_count, "cleaned file")
     elif raw_count == 0:
         note_state = "waiting"
         note_preview = "Source notes detected but markdown extraction has not been run."
