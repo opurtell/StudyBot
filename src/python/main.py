@@ -14,6 +14,7 @@ from search.router import router as search_router
 from settings.router import router as settings_router
 from guidelines.router import router as guidelines_router
 from sources.router import router as sources_router
+from upload.router import router as upload_router
 from quiz.router import warm_quiz_dependencies
 from llm.base import LLMError, ErrorCategory
 from paths import HOST as _HOST, PORT as _PORT
@@ -85,6 +86,7 @@ app.include_router(medication_router)
 app.include_router(search_router)
 app.include_router(guidelines_router)
 app.include_router(sources_router)
+app.include_router(upload_router)
 
 
 @app.get("/health")

@@ -204,3 +204,17 @@ export interface VectorStoreStatus {
   cpd_doc: number;
   notability_note: number;
 }
+
+export interface UploadResponse {
+  filename: string;
+  status: "processed" | "failed";
+  chunks: number;
+  categories: string[];
+  source_type: string;
+  error?: string | null;
+}
+
+export interface AcceptedFormatsResponse {
+  extensions: string[];
+  max_size_mb: number;
+}
