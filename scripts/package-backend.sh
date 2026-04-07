@@ -126,13 +126,13 @@ if [[ "${PERSONAL_BUILD:-}" != "1" ]]; then
   rm -rf "$CHROMA_OUTPUT"
   mkdir -p "$CHROMA_OUTPUT"
   PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
-  from pipeline.cmg.chunker import chunk_and_ingest
-  chunk_and_ingest(structured_dir='$REPO_ROOT/data/cmgs/structured', db_path='$CHROMA_OUTPUT')
-  import chromadb
-  client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
-  col = client.get_or_create_collection('cmg_guidelines')
-  print(f'Pre-built index: {col.count()} chunks')
-  "
+from pipeline.cmg.chunker import chunk_and_ingest
+chunk_and_ingest(structured_dir='$REPO_ROOT/data/cmgs/structured', db_path='$CHROMA_OUTPUT')
+import chromadb
+client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
+col = client.get_or_create_collection('cmg_guidelines')
+print(f'Pre-built index: {col.count()} chunks')
+"
 else
   echo "--- Personal build: using pre-built ChromaDB ---"
   if [[ ! -d "$CHROMA_OUTPUT" ]] || [[ -z "$(ls -A "$CHROMA_OUTPUT")" ]]; then
