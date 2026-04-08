@@ -108,7 +108,12 @@ async def upload_document(file: UploadFile = File(...)) -> UploadResponse:
     if not file.filename:
         raise HTTPException(status_code=400, detail="No filename provided")
 
-    suffix = Path(file.filename).suffix.lower()
+    # Sanitise filename to prevent path traversal
+    safe_name = Path(file.filename).name
+    if safe_name != file.filename or ".." in safe_name or "/" in safe_name or "\\" in safe_name:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+
+    suffix = Path(safe_name).suffix.lower()
     if suffix not in SUPPORTED_EXTENSIONS:
         raise HTTPException(
             status_code=400,
@@ -121,7 +126,7 @@ async def upload_document(file: UploadFile = File(...)) -> UploadResponse:
 
     # Save uploaded file to temp location for extraction
     UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
-    temp_path = UPLOADS_DIR / f"_temp_{file.filename}"
+    temp_path = UPLOADS_DIR / f"_temp_{safe_name}"
     temp_path.write_bytes(contents)
 
     try:
@@ -137,7 +142,7 @@ async def upload_document(file: UploadFile = File(...)) -> UploadResponse:
 
     return _structure_and_ingest(
         text=text,
-        filename=file.filename,
+        filename=safe_name,
         uploads_dir=UPLOADS_DIR,
         structured_dir=UPLOADS_STRUCTURED_DIR,
         db_path=CHROMA_DB_DIR,

@@ -24,6 +24,7 @@ _settings_cache: dict | None = None
 _models_cache: dict | None = None
 _cache_lock = threading.Lock()
 _rebuild_status: dict = {"is_running": False, "status": "idle", "last_completed_at": None}
+_rebuild_lock = threading.Lock()
 
 
 def _invalidate_read_caches() -> None:
@@ -175,17 +176,19 @@ def _run_cmg_rebuild_in_background() -> None:
     try:
         from pipeline.cmg.chunker import chunk_and_ingest
         chunk_and_ingest(structured_dir=str(resolve_cmg_structured_dir()))
-        _rebuild_status = {
-            "is_running": False,
-            "status": "complete",
-            "last_completed_at": __import__("datetime").datetime.utcnow().isoformat(),
-        }
+        with _rebuild_lock:
+            _rebuild_status = {
+                "is_running": False,
+                "status": "complete",
+                "last_completed_at": __import__("datetime").datetime.utcnow().isoformat(),
+            }
     except Exception:
-        _rebuild_status = {
-            "is_running": False,
-            "status": "failed",
-            "last_completed_at": _rebuild_status.get("last_completed_at"),
-        }
+        with _rebuild_lock:
+            _rebuild_status = {
+                "is_running": False,
+                "status": "failed",
+                "last_completed_at": _rebuild_status.get("last_completed_at"),
+            }
     finally:
         _invalidate_read_caches()
 
@@ -193,10 +196,11 @@ def _run_cmg_rebuild_in_background() -> None:
 @router.post("/cmg-rebuild")
 def rebuild_cmg_index() -> dict:
     global _rebuild_status
-    if _rebuild_status["is_running"]:
-        raise HTTPException(status_code=409, detail="Rebuild already in progress")
-    _invalidate_read_caches()
-    _rebuild_status = {"is_running": True, "status": "running", "last_completed_at": _rebuild_status.get("last_completed_at")}
+    with _rebuild_lock:
+        if _rebuild_status["is_running"]:
+            raise HTTPException(status_code=409, detail="Rebuild already in progress")
+        _invalidate_read_caches()
+        _rebuild_status = {"is_running": True, "status": "running", "last_completed_at": _rebuild_status.get("last_completed_at")}
     thread = threading.Thread(target=_run_cmg_rebuild_in_background, daemon=True)
     thread.start()
     return {"status": "started"}
@@ -204,7 +208,8 @@ def rebuild_cmg_index() -> dict:
 
 @router.get("/cmg-rebuild-status")
 def get_cmg_rebuild_status() -> dict:
-    return _rebuild_status
+    with _rebuild_lock:
+        return dict(_rebuild_status)
 
 
 @router.get("/seed-status")

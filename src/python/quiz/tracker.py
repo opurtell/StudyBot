@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sqlite3
+import threading
 from pathlib import Path
 
 from paths import MASTERY_DB_PATH
@@ -14,6 +15,7 @@ class Tracker:
         self._db_path.parent.mkdir(parents=True, exist_ok=True)
         self._conn = sqlite3.connect(str(self._db_path), check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
+        self._lock = threading.Lock()
         self._init_schema()
 
     def _init_schema(self) -> None:
@@ -48,40 +50,42 @@ class Tracker:
         elapsed_seconds: float,
         source_citation: str,
     ) -> None:
-        self._conn.execute(
-            "INSERT OR IGNORE INTO categories (name) VALUES (?)", (category,)
-        )
-        row = self._conn.execute(
-            "SELECT id FROM categories WHERE name = ?", (category,)
-        ).fetchone()
-        cat_id = row["id"]
+        with self._lock:
+            self._conn.execute(
+                "INSERT OR IGNORE INTO categories (name) VALUES (?)", (category,)
+            )
+            row = self._conn.execute(
+                "SELECT id FROM categories WHERE name = ?", (category,)
+            ).fetchone()
+            cat_id = row["id"]
 
-        self._conn.execute(
-            """INSERT INTO quiz_history
-               (question_id, category_id, question_type, score, elapsed_seconds, source_citation)
-               VALUES (?, ?, ?, ?, ?, ?)""",
-            (
-                question_id,
-                cat_id,
-                question_type,
-                score,
-                elapsed_seconds,
-                source_citation,
-            ),
-        )
-        self._conn.commit()
+            self._conn.execute(
+                """INSERT INTO quiz_history
+                   (question_id, category_id, question_type, score, elapsed_seconds, source_citation)
+                   VALUES (?, ?, ?, ?, ?, ?)""",
+                (
+                    question_id,
+                    cat_id,
+                    question_type,
+                    score,
+                    elapsed_seconds,
+                    source_citation,
+                ),
+            )
+            self._conn.commit()
 
     def get_mastery(self) -> list[CategoryMastery]:
-        rows = self._conn.execute("""
-            SELECT c.name,
-                   COUNT(*) FILTER (WHERE h.score IS NOT NULL) AS total,
-                   COUNT(*) FILTER (WHERE h.score = 'correct') AS correct,
-                   COUNT(*) FILTER (WHERE h.score = 'partial') AS partial,
-                   COUNT(*) FILTER (WHERE h.score = 'incorrect') AS incorrect
-            FROM categories c
-            JOIN quiz_history h ON h.category_id = c.id
-            GROUP BY c.name
-        """).fetchall()
+        with self._lock:
+            rows = self._conn.execute("""
+                SELECT c.name,
+                       COUNT(*) FILTER (WHERE h.score IS NOT NULL) AS total,
+                       COUNT(*) FILTER (WHERE h.score = 'correct') AS correct,
+                       COUNT(*) FILTER (WHERE h.score = 'partial') AS partial,
+                       COUNT(*) FILTER (WHERE h.score = 'incorrect') AS incorrect
+                FROM categories c
+                JOIN quiz_history h ON h.category_id = c.id
+                GROUP BY c.name
+            """).fetchall()
 
         results = []
         for row in rows:
@@ -114,9 +118,10 @@ class Tracker:
         return [m.category for m in mastery[:n]]
 
     def get_streak(self) -> int:
-        rows = self._conn.execute(
-            "SELECT score FROM quiz_history WHERE score IS NOT NULL ORDER BY id DESC"
-        ).fetchall()
+        with self._lock:
+            rows = self._conn.execute(
+                "SELECT score FROM quiz_history WHERE score IS NOT NULL ORDER BY id DESC"
+            ).fetchall()
         streak = 0
         for row in rows:
             if row["score"] == "correct":
@@ -126,30 +131,32 @@ class Tracker:
         return streak
 
     def get_accuracy(self) -> float:
-        row = self._conn.execute("""
-            SELECT
-                COUNT(*) AS total,
-                COUNT(*) FILTER (WHERE score = 'correct') AS correct
-            FROM quiz_history
-            WHERE score IS NOT NULL
-        """).fetchone()
+        with self._lock:
+            row = self._conn.execute("""
+                SELECT
+                    COUNT(*) AS total,
+                    COUNT(*) FILTER (WHERE score = 'correct') AS correct
+                FROM quiz_history
+                WHERE score IS NOT NULL
+            """).fetchone()
         if not row or row["total"] == 0:
             return 0.0
         return round(row["correct"] / row["total"] * 100, 1)
 
     def get_recent_history(self, limit: int = 20, offset: int = 0) -> list[QuizAttempt]:
-        rows = self._conn.execute(
-            """
-            SELECT h.id, h.question_id, c.name AS category, h.question_type,
-                   h.score, h.elapsed_seconds, h.source_citation, h.created_at
-            FROM quiz_history h
-            JOIN categories c ON h.category_id = c.id
-            ORDER BY h.id DESC
-            LIMIT ?
-            OFFSET ?
-        """,
-            (limit, offset),
-        ).fetchall()
+        with self._lock:
+            rows = self._conn.execute(
+                """
+                SELECT h.id, h.question_id, c.name AS category, h.question_type,
+                       h.score, h.elapsed_seconds, h.source_citation, h.created_at
+                FROM quiz_history h
+                JOIN categories c ON h.category_id = c.id
+                ORDER BY h.id DESC
+                LIMIT ?
+                OFFSET ?
+            """,
+                (limit, offset),
+            ).fetchall()
         return [
             QuizAttempt(
                 id=row["id"],
@@ -165,18 +172,21 @@ class Tracker:
         ]
 
     def add_to_blacklist(self, category_name: str) -> None:
-        self._conn.execute(
-            "INSERT OR IGNORE INTO blacklist (category_name) VALUES (?)",
-            (category_name,),
-        )
-        self._conn.commit()
+        with self._lock:
+            self._conn.execute(
+                "INSERT OR IGNORE INTO blacklist (category_name) VALUES (?)",
+                (category_name,),
+            )
+            self._conn.commit()
 
     def remove_from_blacklist(self, category_name: str) -> None:
-        self._conn.execute(
-            "DELETE FROM blacklist WHERE category_name = ?", (category_name,)
-        )
-        self._conn.commit()
+        with self._lock:
+            self._conn.execute(
+                "DELETE FROM blacklist WHERE category_name = ?", (category_name,)
+            )
+            self._conn.commit()
 
     def get_blacklist(self) -> list[str]:
-        rows = self._conn.execute("SELECT category_name FROM blacklist").fetchall()
+        with self._lock:
+            rows = self._conn.execute("SELECT category_name FROM blacklist").fetchall()
         return [row["category_name"] for row in rows]

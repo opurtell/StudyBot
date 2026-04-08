@@ -311,12 +311,13 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
+      sandbox: true,
     },
   });
 
   const url = isDev
     ? "http://localhost:5173"
-    : `file://${path.join(app.getAppPath(), "dist/index.html")}`;
+    : require("url").pathToFileURL(path.join(app.getAppPath(), "dist/index.html")).href;
 
   mainWindow.loadURL(url);
 }

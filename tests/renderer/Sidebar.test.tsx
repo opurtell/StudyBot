@@ -2,14 +2,17 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "../../src/renderer/hooks/useTheme";
+import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import Sidebar from "../../src/renderer/components/Sidebar";
 
 function renderSidebar() {
   return render(
     <ThemeProvider>
-      <MemoryRouter>
-        <Sidebar />
-      </MemoryRouter>
+      <BackgroundProcessProvider>
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>
+      </BackgroundProcessProvider>
     </ThemeProvider>
   );
 }

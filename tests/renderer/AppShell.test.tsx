@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "../../src/renderer/hooks/useTheme";
 import AppShell from "../../src/renderer/components/AppShell";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
+import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { stubWindowBackendApi } from "./testUtils";
 
@@ -15,13 +16,15 @@ async function renderWithRouter(route = "/") {
   const rendered = render(
     <ThemeProvider>
       <BackendStatusProvider>
-        <ResourceCacheProvider>
-          <MemoryRouter initialEntries={[route]}>
-            <AppShell>
-              <div data-testid="child-content">Child Content</div>
-            </AppShell>
-          </MemoryRouter>
-        </ResourceCacheProvider>
+        <BackgroundProcessProvider>
+          <ResourceCacheProvider>
+            <MemoryRouter initialEntries={[route]}>
+              <AppShell>
+                <div data-testid="child-content">Child Content</div>
+              </AppShell>
+            </MemoryRouter>
+          </ResourceCacheProvider>
+        </BackgroundProcessProvider>
       </BackendStatusProvider>
     </ThemeProvider>
   );

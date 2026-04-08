@@ -14,7 +14,7 @@ export default function Library() {
   const { data, loading, error, refetch } = useApi<LibraryStatusResponse>("/sources", 1);
 
   const sources = data?.sources ?? [];
-  const cleaningItems = data?.cleaningFeed ?? [];
+  const cleaningItems = data?.cleaning_feed ?? [];
 
   const filtered =
     activeFilter === "all"

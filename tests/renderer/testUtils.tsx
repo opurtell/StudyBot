@@ -4,6 +4,7 @@ import { MemoryRouter, type MemoryRouterProps } from "react-router-dom";
 import { vi } from "vitest";
 import { ThemeProvider } from "../../src/renderer/hooks/useTheme";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
+import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
 
@@ -49,9 +50,11 @@ function AppProviderStack({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider>
       <BackendStatusProvider>
-        <ResourceCacheProvider>
-          <SettingsProvider>{children}</SettingsProvider>
-        </ResourceCacheProvider>
+        <BackgroundProcessProvider>
+          <ResourceCacheProvider>
+            <SettingsProvider>{children}</SettingsProvider>
+          </ResourceCacheProvider>
+        </BackgroundProcessProvider>
       </BackendStatusProvider>
     </ThemeProvider>
   );

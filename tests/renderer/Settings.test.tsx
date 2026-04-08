@@ -8,6 +8,7 @@ import Settings from "../../src/renderer/pages/Settings";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
+import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { stubWindowBackendApi } from "./testUtils";
 
 beforeEach(() => {
@@ -105,17 +106,19 @@ describe("Settings", () => {
     render(
       <ThemeProvider>
         <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter>
+          <BackgroundProcessProvider>
+            <ResourceCacheProvider>
+              <SettingsProvider>
+                <MemoryRouter>
                 <Routes>
                   <Route path="/" element={<AppShell><Settings /></AppShell>} />
                 </Routes>
               </MemoryRouter>
             </SettingsProvider>
           </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+        </BackgroundProcessProvider>
+      </BackendStatusProvider>
+    </ThemeProvider>
     );
     expect(await screen.findByRole("heading", { name: "Curator Settings" })).toBeInTheDocument();
   });
@@ -126,17 +129,19 @@ describe("Settings", () => {
     render(
       <ThemeProvider>
         <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter>
+          <BackgroundProcessProvider>
+            <ResourceCacheProvider>
+              <SettingsProvider>
+                <MemoryRouter>
                 <Routes>
                   <Route path="/" element={<AppShell><Settings /></AppShell>} />
                 </Routes>
               </MemoryRouter>
             </SettingsProvider>
           </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+        </BackgroundProcessProvider>
+      </BackendStatusProvider>
+    </ThemeProvider>
     );
 
     await screen.findByRole("heading", { name: "Curator Settings" });

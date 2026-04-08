@@ -7,6 +7,7 @@ import Dashboard from "../../src/renderer/pages/Dashboard";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
+import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { stubWindowBackendApi } from "./testUtils";
 
 beforeEach(() => {
@@ -32,80 +33,67 @@ beforeEach(() => {
   });
 });
 
-describe("Dashboard", () => {
-  it("renders knowledge heatmap with categories", async () => {
-    render(
-      <ThemeProvider>
-        <BackendStatusProvider>
+function wrapDashboard(children: React.ReactNode, initialEntries?: string[]) {
+  return (
+    <ThemeProvider>
+      <BackendStatusProvider>
+        <BackgroundProcessProvider>
           <ResourceCacheProvider>
             <SettingsProvider>
-              <MemoryRouter>
-                <Routes>
-                  <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
-                </Routes>
+              <MemoryRouter initialEntries={initialEntries}>
+                {children}
               </MemoryRouter>
             </SettingsProvider>
           </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+        </BackgroundProcessProvider>
+      </BackendStatusProvider>
+    </ThemeProvider>
+  );
+}
+
+describe("Dashboard", () => {
+  it("renders knowledge heatmap with categories", async () => {
+    render(
+      wrapDashboard(
+        <Routes>
+          <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
+        </Routes>
+      )
     );
     expect(await screen.findByText("Cardiac")).toBeInTheDocument();
   });
 
   it("renders Start Session button", async () => {
     render(
-      <ThemeProvider>
-        <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter>
-                <Routes>
-                  <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
-                </Routes>
-              </MemoryRouter>
-            </SettingsProvider>
-          </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+      wrapDashboard(
+        <Routes>
+          <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
+        </Routes>
+      )
     );
     expect(await screen.findByText("Start Session")).toBeInTheDocument();
   });
 
   it("renders review suggestion with weakest category", async () => {
     render(
-      <ThemeProvider>
-        <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter>
-                <Routes>
-                  <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
-                </Routes>
-              </MemoryRouter>
-            </SettingsProvider>
-          </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+      wrapDashboard(
+        <Routes>
+          <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
+        </Routes>
+      )
     );
     expect(await screen.findByText(/Review Paediatrics/)).toBeInTheDocument();
   });
 
   it("navigates to quiz when heatmap card is clicked", async () => {
     render(
-      <ThemeProvider>
-        <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter initialEntries={["/"]}>
-                <Routes>
-                  <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
-                  <Route path="/quiz" element={<div data-testid="quiz-page">Quiz</div>} />
-                </Routes>
-              </MemoryRouter>
-            </SettingsProvider>
-          </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+      wrapDashboard(
+        <Routes>
+          <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
+          <Route path="/quiz" element={<div data-testid="quiz-page">Quiz</div>} />
+        </Routes>,
+        ["/"]
+      )
     );
     const cardiac = await screen.findByText("Cardiac");
     fireEvent.click(cardiac);
@@ -114,20 +102,13 @@ describe("Dashboard", () => {
 
   it("navigates to quiz when review suggestion card is clicked", async () => {
     render(
-      <ThemeProvider>
-        <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter initialEntries={["/"]}>
-                <Routes>
-                  <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
-                  <Route path="/quiz" element={<div data-testid="quiz-page">Quiz</div>} />
-                </Routes>
-              </MemoryRouter>
-            </SettingsProvider>
-          </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+      wrapDashboard(
+        <Routes>
+          <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
+          <Route path="/quiz" element={<div data-testid="quiz-page">Quiz</div>} />
+        </Routes>,
+        ["/"]
+      )
     );
     const suggestion = await screen.findByText(/Review Paediatrics/);
     fireEvent.click(suggestion);
@@ -155,20 +136,13 @@ describe("Dashboard", () => {
     });
 
     render(
-      <ThemeProvider>
-        <BackendStatusProvider>
-          <ResourceCacheProvider>
-            <SettingsProvider>
-              <MemoryRouter initialEntries={["/"]}>
-                <Routes>
-                  <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
-                  <Route path="/quiz" element={<div data-testid="quiz-page">Quiz</div>} />
-                </Routes>
-              </MemoryRouter>
-            </SettingsProvider>
-          </ResourceCacheProvider>
-        </BackendStatusProvider>
-      </ThemeProvider>
+      wrapDashboard(
+        <Routes>
+          <Route path="/" element={<AppShell><Dashboard /></AppShell>} />
+          <Route path="/quiz" element={<div data-testid="quiz-page">Quiz</div>} />
+        </Routes>,
+        ["/"]
+      )
     );
     const unknownCard = await screen.findByText("XyzUnknown");
     fireEvent.click(unknownCard);

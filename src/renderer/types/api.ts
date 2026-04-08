@@ -168,7 +168,7 @@ export interface CleaningFeedItem {
 
 export interface LibraryStatusResponse {
   sources: LibrarySource[];
-  cleaningFeed: CleaningFeedItem[];
+  cleaning_feed: CleaningFeedItem[];
 }
 
 export interface CmgRefreshStatus {
