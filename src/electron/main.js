@@ -5,6 +5,15 @@ const path = require("path");
 
 const isDev = process.env.NODE_ENV === "development";
 
+function getDisplayName() {
+  try {
+    const pkg = require(path.join(app.getAppPath(), "package.json"));
+    return pkg.displayName || "StudyBot";
+  } catch {
+    return "StudyBot";
+  }
+}
+
 const BackendState = {
   STARTING: "starting",
   READY: "ready",
@@ -310,12 +319,18 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 800,
+    title: getDisplayName(),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
     },
+  });
+
+  // Prevent renderer <title> from overriding the window title
+  mainWindow.on("page-title-updated", (event) => {
+    event.preventDefault();
   });
 
   const url = isDev

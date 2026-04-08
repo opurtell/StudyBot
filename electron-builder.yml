@@ -35,6 +35,8 @@ win:
   artifactName: "StudyBot - ACTAS CMGs-${version}-${arch}.${ext}"
   target:
     - target: nsis
+extraMetadata:
+  displayName: "StudyBot CMGs"
 asar: true
 asarUnpack:
   - "**/*.node"

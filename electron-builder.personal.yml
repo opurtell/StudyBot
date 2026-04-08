@@ -35,6 +35,8 @@ win:
   artifactName: "StudyBot - Personal Build-${version}-${arch}.${ext}"
   target:
     - target: nsis
+extraMetadata:
+  displayName: "StudyBot Personal"
 asar: true
 asarUnpack:
   - "**/*.node"
