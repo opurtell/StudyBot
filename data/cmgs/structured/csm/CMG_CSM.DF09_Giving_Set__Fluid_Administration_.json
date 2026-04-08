@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.DF09_Giving_Set__Fluid_Administration_",
+  "cmg_number": "CSM.DF09",
+  "title": "Giving Set (Fluid Administration)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Administration of intravenous fluids and medications. \n\n#### Procedure\n\n- Remove fluid from outer bag and check for discolouration or sedimentation.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Remove giving set from pack and reposition drip regulator near fluid chamber and turn off the roller regulator.\n\n- Remove protective cap from both fluid bag and perforator, taking care not to contaminate either. Discard should contamination occur.\n\n- Carefully insert perforator into fluid bag port taking care not to puncture the port wall. A small amount of fluid should enter the chamber.\n\n- Suspend the bag and squeeze the lower half of the drip chamber until half full.\n\n- Prime the line by opening the regulator allowing fluid to run. Ensure all air is removed from the line and needleless access port.\n\n- Close the regulator roller when the line is full and no air bubbles remain.\n\n- Remove protective cap and insert the end of the line into the cannula. Secure by tightening the rotating collar.\n\n- Secure the IV line to the patient with tape, armlock, bandage, etc.\n\n#### Specific Notes\n- Control flow rate by toggling roller regulator.\n- Regularly reassess for dislodgment, swelling, reddening or discomfort.\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "2f790c391b9fec06ad2d742f07bd3e2c2bc752a298f9f09be16f365105bc19a2",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.877898+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_05_Atropine_Sulphate",
+  "cmg_number": "05",
+  "title": "Atropine Sulphate",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "efcde45757d94289cd2cc1830049d79b5aeca6ad1fee5c819735786be0dd6b04",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.763314+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

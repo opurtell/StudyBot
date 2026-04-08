@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.DF05_BD_Eclipse_Needle__IMI_and_SC_",
+  "cmg_number": "CSM.DF05",
+  "title": "BD Eclipse Needle (IMI and SC)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Administration of subcutaneous or intramuscular injection.\n\n#### Procedure\n\n- Attach the needle to a luerlok syringe.\n\n- Pull back the pink safety cover.\n\n- Remove the clear needle shield (note bevel = safety cover up).\n\n- Inject the medication.\n\n- Activate the safety mechanism immediately after injection: \n- Center your thumb or forefinger on the wide textured finger pad (use a one handed technique and activate away from self and others)\n- Push the safety cover forward over the needle until you hear or feel it lock. Activation of the protective mechanism may cause minimal splatter of any fluid remaining in the needle after injection.\n- Visually confirm that the needle is covered.\n- Discard the needle immediately into a sharps container.\n\nFigure 1\n\nFigure 2",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "6d2b8f41aa1d9c7e4ab2aec281ffdac2c756da9680424d8e6c4fbc8401504ab9",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.875416+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_22a_Psychogenic_Non_Epileptic_Seizures__PNES_",
+  "cmg_number": "22a",
+  "title": "Psychogenic Non-Epileptic Seizures (PNES)",
+  "version_date": null,
+  "section": "Neurology",
+  "content_markdown": "#### Target Patient Cohort\n- Patients presenting with signs suggestive of PNES: \n- Fluctuating seizure course.\n- Asynchronous or side-to-side movements.\n- Pelvic thrusting.\n- Forced eye closure.\n- Crying.\n- Preserved awareness.\n- Absence of post-ictal confusion/agitation.\n- Seizure course susceptible to interference from external stimuli.##### 6-signs suggesting epileptic seizures\n  **Epileptic**  **Non-epileptic ** \n **Eyes **  Opened  Closed  \n **Head**  Fixed / unilateral version   Side-to-side head movements \n **Limb movements **  In phase / same direction   Out-of-phase limb movement  \n **Body axis **  Straight / anterior flexion   Opisthotonus / arching  \n **Body movement **  No rotation   Intense rotation in bed  \n **Evolution **  Non-interrupted / continuous course   Interrupted / fluctuating course  \n\nEpilectic seizures\n\nNon-elipeptic seizures\n\n#### Note\nA PNES is defined as self-limiting event characterised by changes in consciousness, movement and/or behaviour, which may present similarly to an epileptic seizure but are not associated with EEG changes. Despite maintained patient awareness, PNES episodes are not voluntary or due to patient maleficence.\n\n#### Critical\nPNES patients can also have confirmed epileptic seizures and frequently access health services, seizure aetiology can change from one presentation to the next. Be mindful of potential bias and take special care during assessment to reduce the chance of misdiagnosis. If in doubt, treat for epileptic seizures/status epilepticus as per CMG22 Seizures\n\n#### Management\n**Note:** The most common PNES trigger is emotional distress. Care should be taken to avoid exacerbating distress. Generally, adopting a nurturing, reassuring and supportive approach is best.\n\n- Reassurance.\n- Soft and calm verbal tone and open body language.\n- Remove stressful stimuli/remove patient from stressful environment.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "f1144b01e98855884cb4596560980b8d60d00dd0830014d00c1295bfbc4c889a",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.728609+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.P08_Sitting",
+  "cmg_number": "CSM.P08",
+  "title": "Sitting",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\nFor the comfort of patients who are travelling on the stretcher:\n\n- Particularly patients who are short of breath or in respiratory distress.\n- Eye injuries.\n- Croup and Epiglottitis.\n- Vomiting (conscious patient).\n- Hypertensive crisis.\n- STEMI (monitor perfusion).\n#### Procedure\n\n- Have the patient lean forward if possible.\n\n- Lift the red leaver located at the head end of the stretcher and raise the head end to the desired height (see **Figure 1**).\n\nFigure 1\n\n- Release the red leaver.\n\n- Reassess patient’s respiratory and perfusion status.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "b76608766d79de440659aab8234ed3d72b621bf73ed9f3b4415db53ee92d2ad9",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.868347+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "id": "CMG_CSM.DF06_Intravenous_Cannulation",
+  "cmg_number": "CSM.DF06",
+  "title": "Intravenous Cannulation",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Patients requiring intravenous access for drug or fluid administration. \n\n#### Procedure\n\n- Apply a venous tourniquet proximal to attempt site.\n\n- Locate by palpation an appropriate vein and swab the site with an alcohol wipe. \n- Do not touch the swab site again as this will result in contamination.\n\n- Prepare equipment required: \n- Cannula, bung, normal saline flush, tegaderm, sharps container and ambulance cannula sticker.\n\n- Tension the vein with the non-cannulation hand.\n\n- Insert the cannula, bevel up, at approx 25-30\\xb0 angle.\n\n- When flashback is observed, lower and advance the stylet further to ensure the cannula sheath is securely within the vein.\n\n- Advance the cannula sheath fully into the vein while retracting the stylet within the self-locking cover.\n\n- Remove venous tourniquet.\n\n- Apply digital pressure to the vein, disconnect the protective cover and dispose within a sharps container. Secure a needleless injection port to the cannula.\n\n- Flush cannula with saline to confirm patency, ensuring no extravasation occurs.\n\n- Secure with tegaderm adhesive dressing, fill out and apply the time/date sticker and yellow cannula advisory sticker.\n\n- Reassess for dislodgment, haemorrhage, swelling, reddening or discomfort.\n\n#### Complications\n- Extravasation.\n- Thrombophlebitis.\n- Haematoma formation.\n- Venous air embolism.\n- Dislodgement.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Normal Saline": [
+      {
+        "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 10ml/kg Volume: 30ml",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 100ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 140ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "140",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 220ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "220",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 260ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "260",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 300ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 340ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "340",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 380ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "380",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 420ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "420",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 460ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "460",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 500ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 540ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "540",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 600ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "600",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Volume: 660ml",
+        "dose_values": [
+          {
+            "amount": "660",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " up to 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Normal saline 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "10ml/kg normal saline unless in pulmonary oedema.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+        "dose_values": [
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+        "dose_values": [
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+        "dose_values": [
+          {
+            "amount": "18",
+            "unit": "G"
+          }
+        ]
+      },
+      {
+        "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+        "dose_values": []
+      },
+      {
+        "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+        "dose_values": [
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "1000",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "mL"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-normal-saline"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "15ce1165ec1ee1b2b84ab4aee226ece008800574dde5ed600df3695dda523fa9",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.875966+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

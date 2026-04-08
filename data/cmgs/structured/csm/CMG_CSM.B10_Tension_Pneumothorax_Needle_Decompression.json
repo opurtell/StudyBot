@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.B10_Tension_Pneumothorax_Needle_Decompression",
+  "cmg_number": "CSM.B10",
+  "title": "Tension Pneumothorax Needle Decompression",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Tension pneumothorax which may be indicated by: \n- Absent air entry on the affected side.\n- Decreased chest movement.\n- Decreased blood pressure.\n- Increased heart rate.\n- Raised JVP.\n- Subcutaneous emphysema.\n- Tracheal shift (late sign).\n#### Procedure: Adult\n\n- Determine which side the tension pneumothorax is on.\n\n- Locate the 2nd intercostal space, mid clavicular line on the affected side (see **Figure 1**). \n- Walk your fingers down the manubrium a few centimetres until you feel a distinct bone ridge. This is the Angle of Louis.\n- The second rib is continuous with the sternal angle, slide your finger down to locate the second intercostal space.\n\nFigure 1\n\n- Clean the skin with an alcohol wipe.\n\n- Unscrew the port at the end of the Russell needle (see **Figure 2**).\n\nFigure 2\n\n- Hold the needle by the end not the body (see **Figure 3**). Insert the needle over the 3rd rib at 90 degrees to the patient’s chest. As the tip enters the pleural space the green indicators moves forward (see **Figure 4**). Now advance the catheter another 2 or 3 cm into the chest. (Note: a scalpel may be used to make a small incision through chest tissue).\n\nFigure 3\n\nFigure 4\n\n- Once the catheter is in position, remove the needle.\n\n- Secure in place by cutting a Hyfin vent chest seal in half than place each half around the catheter (see **Figure 5**). \n\nFigure 5\n\n- Secure the sharp into the red needleVISE.\n\n- Auscultate chest. Contiune to **reassess** the chest often.\n\n- If attempt failed, **do not** remove plastic cannula.\n\n#### Procedure: \n\n- Determine which side the tension pneumothorax is on.\n\n- Locate the 2nd intercostal space, mid clavicular line on the affected side (see **Figure 1**). \n- Walk your fingers down the manubrium a few centimetres until you feel a distinct bone ridge. This is the Angle of Louis.\n- The second rib is continuous with the sternal angle, slide your finger down to loacte the second intercostal space.\n\n- Clean the skin with an alcohol wipe.\n\n- Select an appropriate sized cannula based on the patient’s size and weight (16, 18 or 20 gauge cannula). \n- **Note:** there is no clear consensus on cannula size. Cannula selected needs to be able to fit the gap between the 2nd and 3rd rib without causing damage to the vital structures on the inferior surface of the 2nd rib.\n\n- Insert the needle over the 3rd rib at 90 degrees to the patient’s chest. Continue until loss of resistance is felt or audible hiss heard.\n\n- Advance the plastic sheath and withdraw the needle.\n\n- Secure in place by cutting a Hyfin vent chest seal in half than place each half around the catheter (see **Figure 5**).\n\n- Dispose of sharp appropriately.\n\n- Auscultate chest. Continue to reassess the chest often.\n\n- Tension Pneumothorax may reform. If indicated repeat procedure lateral to the previous location.\n\n- If attempt failed, do not remove plastic cannula.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Specific Notes\n- When using 16g cannula ensure that it does not have a one-way valve that stops fluid/air escaping from cannula.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "e63b9ea2c7d60b289376a4e8627abccb2456723990f9691fbc16fd905ef235de",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.845245+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

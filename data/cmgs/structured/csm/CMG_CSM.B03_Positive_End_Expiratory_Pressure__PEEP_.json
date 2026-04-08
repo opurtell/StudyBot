@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.B03_Positive_End_Expiratory_Pressure__PEEP_",
+  "cmg_number": "CSM.B03",
+  "title": "Positive End Expiratory Pressure (PEEP)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- For use with ventilated patients who meet PEEP criteria: \n- Cardiac arrest.\n- Near drowning.\n- Severe asthma/COPD exacerbation.\n- Severe pulmonary oedema.\n- Carbon monoxide poisoning.\n- Intubated patients.\n#### Procedure\n\nFigure 1\n\n- Attach the PEEP valve to the bag valve (see **Figure 1**).\n\n- Start PEEP level at 5cm.\n\n- Increase to 10cm if not responding to 5cmH2O (max for asthma, CAL, infants and children).\n\n- Increase to 15cm as required for pulmonary oedema, near drowning and CO poisoning (only if still desaturated with 10 cmH2O).\n\n- Maintain continuous PEEP.\n\n#### Contraindications\n- Suspected pneumothorax.\n\n#### Precautions\n- Conditions with suspicion of raised ICP, CVA, traumatic brain injury, etc.\n\n#### Complications\n- Hypotension – use cautiously in shocked patients.\n- At higher PEEP values, decreased cardiac output or barotrauma can occur.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "6dd545e34e64fe855a40ac3c8c4112741a9046aacaed00d20041d0448a73d075",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.836833+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

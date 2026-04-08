@@ -1,0 +1,18 @@
+{
+  "id": "CMG_29_Salbutamol__Ventolin_",
+  "cmg_number": "29",
+  "title": "Salbutamol (Ventolin)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nSynthetic \\u03b22 receptor stimulant [S4]\n\n##### Presentations\nPressurised metered dose inhaler (pMDI) – 100mcg per activation\n\n##### Actions\n\n- Bronchodilation\n\n- Relaxation of involuntary muscle\n\n- Moves K+ from extracellular to intracellular space\n\n#### Uses\n\n- Respiratory distress due to asthma or COPD\n\n- Emergency treatment of suspected hyperkalaemia \n\n#### Adverse Effects\n\n- Tachycardia\n\n- Tremors\n\n- Hypotension\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Mild to moderate respiratory distress\n**pMDI via spacer**\n##### Adult ≥6 years\n- 4-12 actuations \n- Repeat every 20-30 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "9f379a80bf5058ee5c3a7cdbfb6fd6ccaf6d737ad2dc24b8dc10ab6f85e27eaa",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.796274+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

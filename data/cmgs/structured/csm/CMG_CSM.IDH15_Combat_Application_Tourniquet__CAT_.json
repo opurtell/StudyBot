@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.IDH15_Combat_Application_Tourniquet__CAT_",
+  "cmg_number": "CSM.IDH15",
+  "title": "Combat Application Tourniquet (CAT)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Uncontrolled, life threatening haemorrhage of a limb.\n\n#### Procedure\n\n- Apply the tourniquet 5-10 cm proximal to the bleeding site. Route the band around the limb and pass the tip through the buckle. Pull the band **very tight** and firmly fasten the band back on itself (see **Figure 1**).\n\n- Grasp the windlass rod and twist until the haemorrhage has been controlled. \n- Once the desired tightness has been achieved, place the rod inside the plastic clip (see **Figure 2**)\n- Reassess for bleeding and distal pulse\n- If required, consider additional tightening of the tourniquet or the application of a second tourniquet proximal to the first.\n\n- Secure the rod inside the clip with the ‘Time’ strap and record the time of application on the same strap. \n- **Constantly** reassess for bleeding and distal pulse.\n\nFigure 1\n\nFigure 2\n\n#### Specific Notes\n- This is a procedure of last resort - saving a **life** or saving a **limb**.\n- If a CAT is not available, utilise a manual BP cuff or Triangular bandage to construct a makeshift tourniquet. All efforts must be exhausted to arrest the life threatening haemorrhage.\n- CAT 6 tourniquets with dual friction belt should no longer be stocked. If found, ensure they are removed and replaced with generation 7 tourniquet (with single loop buckle).\n- **Once the tourniquet is applied and haemorrhage is controlled, the tourniquet should not be released or removed.**",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "6c26c52db443049f3aee8831d49b04ec3dce401bdfcb75bb6963fb95f2dda086",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.906132+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.DF03_Subcutaneous_Injection",
+  "cmg_number": "CSM.DF03",
+  "title": "Subcutaneous Injection",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Administering subcutaneous medication. \n\n#### Procedure\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Draw up confirmed medication into appropriate sized syringe: \n- blunt needle for drawing up and 25G needle to administer.\n\n- Select an appropriate site of administration and swab the skin with an alcohol wipe.\n\n- Gently pinch a fold of the patient’s skin at the injection site.\n\n- Insert the needle at 45\\xb0, bevel up, into the subcutaneous tissue.\n\n- Continue to hold tissue and apply back pressure on plunger ensuring no blood is aspirated: \n- If blood appears, withdraw the needle and discard. Blood indicates insertion into a blood vessel and continuing injection may be dangerous.\n\n- Inject medication slowly using steady pressure.\n\n- Withdraw the needle and immediately dispose in a sharps container: \n- Do not resheath any needle.\n\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "6f5b5fab82eb85789bf9aa3be2e155dc1265df1eb4dcfcde0dc799c825e0ac0b",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.869999+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

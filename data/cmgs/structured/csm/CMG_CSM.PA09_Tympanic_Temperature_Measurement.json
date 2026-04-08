@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.PA09_Tympanic_Temperature_Measurement",
+  "cmg_number": "CSM.PA09",
+  "title": "Tympanic Temperature Measurement",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- As part of a normal patient assessment.\n\n#### Procedure\n\n- Place a clean probe over the thermometer, this will activate the thermometer.\n\n- Wait for the signalling “on” beep and then insert probe snugly into the ear canal.\n\n- Push and release the start button.\n\n- Wait for the “completion” beep and then withdraw the probe from the ear.\n\n- If the procedure has been completed correctly, the temperature measurement will be displayed on the screen.\n\n- If the procedure has not been successful, a sequence of short beeps will sound and an error message will show. Attempt the procedure once more.\n\n- Once a result has been recorded, press the probe ejector button and dispose of the used probe cover.\n\n- The thermometer will automatically turn off after 60 seconds.\n\n#### Contraindications\n- Obvious trauma or infection to the ear.\n\n#### Specific Notes\n- Ambient temperatures below 10\\xb0C and above 40\\xb0C may produce inaccurate results.\n- A reading displayed as “HI” or “LOW” indicates temperatures 42.2\\xb0C.\n- Temperature readings should always be considered in relationship to patient presentation as there are a number of things that can result in inaccurate readings.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "2d9d4f7482e03438e4c9cfb901663c42925340cc1d9d164a2f12c53dcd379536",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.862984+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.M08_Post_Partum_Haemorrhage__Fundal_Massage",
+  "cmg_number": "CSM.M08",
+  "title": "Post Partum Haemorrhage: Fundal Massage",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Placenta delivered (exception in Specific Notes below).\n- Significant vaginal haemorrhage > 500mls.\n- Fundus not firm – large, spongy, soft uterus upon palpation.\n\n#### Procedure\n\nFigure 1\n\n**Prompt transport is essential.**\n\n- Posture supine.\n\n- Hand position (see** Figure 1**): \n- Place lower hand over the symphysis pubis to stabilize the uterus.\n- Cup upper hand around the uterine fundus (about the level of the umbilicus).\n\n- With the upper hand, apply firm pressure in a circular massaging motion (see **Figure 1**).\n\n- Continue massage until the uterus firms and contracts.\n\n- Repeat vital signs and PV haemorrhage checks every 15 minutes.\n\n- Repeat fundal massage if fundus remains soft.\n\n#### Complications\n- Pain.\n\n#### Considerations\n- Encourage mother to empty bladder prior to fundal massage.\n- Haemorrhage from another cause (i.e. lacerated vagina, cervix, perineum, uterine rupture). Remember the 4 T’s of delivery.\n\n#### Specific Notes\n- **Placenta insitu:** As a last resort in the event of a torrential haemorrhage with signs of haemodynamic compromise – tachycardia, hypotensive, pale, restless, it is permissible to apply fundal massage with the placenta insitu.\n- **Fundal massage with the placenta insitu is a last resort exception!**",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "a995292f4fded2d6ee334c526af1f85b3dbeb34b9d1898581d328be42ed35299",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.922814+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

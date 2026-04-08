@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.P06_Supine_with_Legs_Elevated_or_Flexed",
+  "cmg_number": "CSM.P06",
+  "title": "Supine with Legs Elevated or Flexed",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- To improve venous return in patients in “shocked” states.\n- To aid in relaxing abdominal muscles in patients with abdominal injuries (legs raised and flexed).\n\n#### Procedure\n\n- Equipment kits and household objects can be utilised to elevate the legs.\n\n- If the patient is on the stretcher, utilise two assistants: \n- ##### Leg elevation\n- Lift the foot end of the stretcher until it locks into leg elevated position.\n- To disengage, lift the red tab at the foot of the stretcher and lower the leg section.\n\n- ##### Legs flexed\n- Each operator to grasp the red loop handles on either side of the patient’s knees.\n- Lift until the stretcher locks in the legs flexed position.\n- To disengaged left the red tab at the foot of the stretcher and lower the leg section.\n- Coordinate with the other paramedic to raise legs in one synchronised motion.\n- To raise and flex the legs, a pillow or rolled blanket can be used underneath the knees.\n\nLegs elevated\n\nSupine with legs flexed",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "1d945b89e77f2cf1380422b95c13dc5b39231e8dfc2fa63a588150032daede28",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.867508+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

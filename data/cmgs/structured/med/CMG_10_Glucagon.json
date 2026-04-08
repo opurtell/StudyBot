@@ -1,0 +1,239 @@
+{
+  "id": "CMG_10_Glucagon",
+  "cmg_number": "10",
+  "title": "Glucagon",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nPancreatic hormone [S4]\n\n##### Presentations\nVial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution\n\n##### Actions\nCauses the liver to metabolise stores of glycogen to glucose, resulting in a rise in the blood glucose level. \n Only effective if liver glycogen is available. \n Onset IM: 5 – 20 minutes \n\n#### Uses\nTreatment of hypoglycaemia (BGL 20kg: 1 IU – IM \n- Single dose only.\n\n#### Special Notes\n- Patients who respond to glucagon should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Glucose": [
+      {
+        "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.75",
+            "unit": "ml"
+          },
+          {
+            "amount": "7.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Glucose 10%",
+        "dose_values": []
+      },
+      {
+        "text": "BGL < 4 mmol/L",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Glucose 10% IV (repeat once if required).",
+        "dose_values": []
+      },
+      {
+        "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Hypertonic glucose solution – containing 0.1g dextrose per ml",
+        "dose_values": [
+          {
+            "amount": "0.1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "10% glucose – in 250ml in collapsible plastic flask",
+        "dose_values": [
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Treat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
+        "dose_values": []
+      },
+      {
+        "text": "37.5g tube containing 15g glucose",
+        "dose_values": [
+          {
+            "amount": "37.5",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "1 x tube of 15g glucose orally  May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered Total maximum dose 30g glucose",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
+        "dose_values": [
+          {
+            "amount": "0.1",
+            "unit": "g"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-glucose-ten-pct"
+      },
+      {
+        "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
+        "dose_values": [
+          {
+            "amount": "37.5",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "source": "app-oral-glucose-gel"
+      },
+      {
+        "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+        "dose_values": [
+          {
+            "amount": "27.8",
+            "unit": "mmol"
+          }
+        ],
+        "source": "app-blood-glucose-measurement"
+      }
+    ],
+    "Glucagon": [
+      {
+        "text": "Formula: weight <20kg = 0.5 IU Preparation: 1IU in 1ml Dose: 0.5 IU Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "IU"
+          },
+          {
+            "amount": "1",
+            "unit": "IU"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.5",
+            "unit": "IU"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "BGL > 15 mmol/L",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Vial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nPancreatic hormone [S4]\n\n##### Presentations\nVial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution\n\n##### Actions\nCauses the liver to metabolise stores of glycogen to glucose, resulting in a rise in the blood glucose level. \n Only effective if liver glycogen is available. \n Onset IM: 5 – 20 minutes \n\n#### Uses\nTreatment of hypoglycaemia (BGL 20kg: 1 IU – IM \n- Single dose only.\n\n#### Special Notes\n- Patients who respond to glucagon should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "IU"
+          }
+        ],
+        "source": "app-glucagon"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "4c4e7394166cb8f8df71f59e64623d7e757bf11c51ed5f740c2991841f5de74f",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.768668+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

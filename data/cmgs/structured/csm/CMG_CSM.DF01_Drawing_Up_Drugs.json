@@ -1,0 +1,994 @@
+{
+  "id": "CMG_CSM.DF01_Drawing_Up_Drugs",
+  "cmg_number": "CSM.DF01",
+  "title": "Drawing Up Drugs",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Any drug that is contained within a glass/plastic ampoule or vial. \n\n#### Procedure\n\n- Select the equipment: \n- VanishPoint\\xae syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).\n- Drawing up needle or vial access cannula.\n- Alcohol swab.\n- Drug required for injection.\n- Drug for dilution if required (normal saline or sterile water).\n- Select the drug that is to be used, checking with your partner: \n- Correct drug.\n- Correct dose/concentration.\n- Correct use by date.\n- Correct drug for dilution.\nEnsure sound, aseptic technique is used. If there is any doubt that aseptic technique has been breached, dispose of the medication and start again.\n\n#### Drugs in Glass/Plastic Ampoules\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- Prepare the ampoule \n- Gently twist or “flick” the ampoule to ensure that all of the drug is in the bottom of the container and not in the piece that will be removed (see **Figure 1**).\n\n- Break open the ampoule: \n- **For plastic ampoules:** twist the top of the ampoule off.\n- **For glass ampoules:** hold the bottom of the ampoule with one hand and hold the top of the ampoule with your thumb and first finger and “snap” the top of the ampoule in a “sideways and upwards” motion (see **Figure 2**).\n\n- Insert the syringe and needle into the open ampoule and withdraw the drug quantity required. For plastic ampoules, insert end of syringe into plastic neck to withdraw drug (see **Figure 3**).\n\n- Expel any excess air from the syringe taking care not to activate the retraction mechanism when using VanishPoint\\xae. If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).\n\n- The syringe contents should be labeled by using a drug name sticker, or the piece of the paper from the packaging of the drug taped onto the syringe.\n\n#### Drugs Contained in Vials\n\n- Remove protective cap from vial and wipe top of vial with alcohol swab.\n\n- Insert VanishPoint\\xae syringe needle or syringe with drawing up needle and withdraw the drug from vial.\n\n- Remove syringe and cannula from vial.\n\n- Expel any excess air from the syringe.\n\n#### Drugs Requiring Reconstitution\n\n- Draw up the fluid required for reconstitution into syringe: \n- **For hydrocortisone:** draw up 2mls of saline.\n- **For glucagon:** use the fluid in the pre-filled syringe.\n- **For ceftriaxone:** use 10mls of saline for IV administration, or 3mls of saline for IM administration.\n\n- Draw these up in the same manner as described in the previous section (drugs contained in vials).\n\n#### Specific Notes\n- To prepare glucagon, use pre-packaged syringe and needle and insert needle into vial instead of cannula. Caution should be used with exposed needle.\n- Prior to administering the drugs, expel any excess air from the syringe and hand the syringe and an alcohol swab to the officer administering the drug. This officer will re-check the drug, use-by date and patient allergies prior to administration.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Normal Saline": [
+      {
+        "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 10ml/kg Volume: 30ml",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 100ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 140ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "140",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 220ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "220",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 260ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "260",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 300ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 340ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "340",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 380ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "380",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 420ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "420",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 460ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "460",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 500ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 540ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "540",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 600ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "600",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Volume: 660ml",
+        "dose_values": [
+          {
+            "amount": "660",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " up to 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Normal saline 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "10ml/kg normal saline unless in pulmonary oedema.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+        "dose_values": [
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+        "dose_values": [
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+        "dose_values": [
+          {
+            "amount": "18",
+            "unit": "G"
+          }
+        ]
+      },
+      {
+        "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+        "dose_values": []
+      },
+      {
+        "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+        "dose_values": [
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "1000",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "mL"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-normal-saline"
+      }
+    ],
+    "Morphine": [
+      {
+        "text": "Morphine: 2.5mg – 5mg SC",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Calculated dose of morphine above 10 mg Doses above 10 mg are rarely required.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Calculated dose of morphine above 20 mg",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "0.05mg/kg IV/IO over 60 seconds. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "IV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg) 0.025mg/kg IV/IO over 60 seconds. ",
+        "dose_values": [
+          {
+            "amount": "0.025",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Morphine: IM (Max 2 Doses)",
+        "dose_values": []
+      },
+      {
+        "text": "Morphine: IV (To a total of 20mg)",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Repeat @10/60 if requires (max. 60mg)",
+        "dose_values": [
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nOpioid analgesic [S8]\n\n##### Presentations\n10mg in 1ml – glass ampoule\n\n##### Actions\n\n- Analgesia\n\n- Anxiolytic\n\n- Vasodilation\n\n##### Pharmacokinetics\n**IV**\n Onset: 5 - 10 minutes\n Max Effect: 20 minutes\n Duration: 4 - 5 hours\n\n**IM**\n Onset: 10 - 30 minutes\n Max Effect: 30 minutes\n Duration: 4 - 5 hours\n\n#### Uses\n\n- Analgesia for moderate to severe pain\n\n- Maintain analgosedation in intubated patients in conjunction with midazolam.\n\n- Reduce dyspnoea in palliative care patients.\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment).\n\n#### Adverse Effects\n\n- Nausea and vomiting\n\n- Altered level of consciousness\n\n- Respiratory depression\n\n- Hypotension\n\n- Bradycardia\n\n#### Contraindications\n\n- Respiratory depression\n\n- Systolic blood pressure Disregard contraindications when managing palliative care emergencies (no active treatment) patients.\n\n#### Precautions\n\n- GCS ≤13\n\n- Known hypersensitivity\n\n- Frail patients\n\n- COPD patients\n\n- Hypovolaemic patients\n\n- Systolic BP 70 – 90mmHg (see below)\n\n- Children **AP:** max. total dose 20mg\n- **ICP:** no max. total dose\n- Consider IM: \n- IV/IO unobtainable\n- Little risk of hypotension- Patient contact estimated >20/60- No ischaemic chest pain- 0.1mg/kg IM \n- Repeat once @30/60 if required\n- **AP:** max. total dose 20mg##### Adults only\nIV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg)\n\n- 0.025mg/kg IV/IO over 60 seconds. \n- Repeat @10/60 as required.\n- Do not repeat if sBP drops ≥10mmHg, even if it remains above 70mmHg. \n- **AP:** max. total dose 20mg- **ICP:** no max. total dose#### Post-intubation analgosedation (as adjunct to midazolam)##### Adult (infusion pump)\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL\n\n- **ICP: **Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP: **Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with dyspnoea\n- 2.5 - 5mg SC/IM/IV\nConsider patient weight when selecting dose\n##### Adult with distressing pain\n- Refer to Palliative Care Medication Calculator\n##### Adult with terminal palliative care emergency\n- SC/IM/IV: 10mg\nIn conjunction with midazolam\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.1",
+            "unit": "mg"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.025",
+            "unit": "mg"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-morphine-sulphate"
+      }
+    ],
+    "Glucagon": [
+      {
+        "text": "Formula: weight <20kg = 0.5 IU Preparation: 1IU in 1ml Dose: 0.5 IU Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "IU"
+          },
+          {
+            "amount": "1",
+            "unit": "IU"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.5",
+            "unit": "IU"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "BGL > 15 mmol/L",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Vial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nPancreatic hormone [S4]\n\n##### Presentations\nVial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution\n\n##### Actions\nCauses the liver to metabolise stores of glycogen to glucose, resulting in a rise in the blood glucose level. \n Only effective if liver glycogen is available. \n Onset IM: 5 – 20 minutes \n\n#### Uses\nTreatment of hypoglycaemia (BGL 20kg: 1 IU – IM \n- Single dose only.\n\n#### Special Notes\n- Patients who respond to glucagon should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "IU"
+          }
+        ],
+        "source": "app-glucagon"
+      }
+    ],
+    "Ceftriaxone": [
+      {
+        "text": "1g ceftriaxone powder for reconstitution – vial",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "It is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone",
+        "dose_values": []
+      },
+      {
+        "text": "10mg in 2ml – vial ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Up to 5ml subcutaneously ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g in 5 ml (50% solution) – glass ampoule",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\n3rd generation cephalosporin antibiotic [S4]\n\n##### Presentations\n1g ceftriaxone powder for reconstitution – vial\n\n##### Actions\n\n- Broad spectrum antibiotic – especially effective against gram-negative bacteria (e.g., meningococcus)\n\n- Effective crossing of blood-brain barrier\n\n#### Uses\nSuspected meningococcal disease, in acutely ill patients\n\n#### Adverse Effects\n\n- Hypersensitivity reactions (not common)\n\n- Diarrhoea\n\n- Skin rash\n\n#### Contraindications\nKnown sensitivity to cephalosporins\n\n#### Precautions\nIt is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\n- 50mg/kg, to a total of 2g – IV preferred \n- Make up to 10ml with normal saline\n- Give slowly over 2 - 4 minutes\n- May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer into two separate injection sites.\n- **ICP:** May also be given IO if no IV available. \n#### Special Notes\n- An incident report should be submitted to CGU if ceftriaxone is administered.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-ceftriaxone-rocephin"
+      }
+    ],
+    "Hydrocortisone": [
+      {
+        "text": "200mg tablet  100mg/5ml liquid ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nAdrenocorticosteroid [S4]\n\n##### Presentations\n100mg powder in 2ml vial (reconstitute with 2ml normal saline)\n\n##### Actions\nNumerous and widespread. ACTAS administration for:\n\n- Anti-inflammatory effects on the airways\n\n- Stimulates the normal increase in cortisol secretion in response to stress \n\n#### Uses\n\n- Moderate to severe respiratory distress due to asthma or exacerbation of COPD \n\n- Patients with a diagnosed adrenal insufficiency who experience a stress response and exhibit altered conscious state and/or refractory hypotension \n\n#### Adverse Effects\nNil significant with single use\n\n#### Contraindications\nKnown previous reaction to corticosteroids\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, advise against breastfeeding for 4 hours post administration \n\n#### Doses#### Asthma and COPD##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n\n##### Paediatric\n- **ICP:** 4mg/kg IV (to a maximum of 100mg) – slowly over 2 minutes \n\n#### Adrenal crisis##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n- May be administered IM.\n\n##### Paediatric\n- **ICP:** IV (slowly over 2 minutes): \n- 12 years = 100mg IV.\n- **ICP:** May be administered IM.\n#### Special Notes\n- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.",
+        "dose_values": [
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-hydrocortisone"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "8798892e20a5c0ca29dcb99e11c7276934c57e79e6ab8f4c072052302003d52c",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.868981+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

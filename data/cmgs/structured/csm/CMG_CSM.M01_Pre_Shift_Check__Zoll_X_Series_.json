@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.M01_Pre_Shift_Check__Zoll_X_Series_",
+  "cmg_number": "CSM.M01",
+  "title": "Pre-Shift Check (Zoll X Series)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- As a part of a normal pre-shift equipment and ambulance check.\n\n#### Procedure\n\n- Start ZOLL - ZOLL will perform Self-Test.\n\n- Complete 30 Joule Test Shock: \n- Remove defib lead from grey connector and insert into test socket.\n- Complete a 30J defibrillation via the test socket.\n- Success message will appear.\n- Press Home button to return to main screen.\n\n- Test Connectivity to STEMI iPhone.\n\n- Arrow across to Connectivity Icon.\n\n- Arrow down and click on Update Distribution List\n\n- The ZOLL will attempt to connect to the Network via the paired STEMI iPhone. The paired **STEMI iPhone** will show Personal Hotspot: 1 Connection ‘flashing’.\n\n- Transmission Complete message indicates successful test.\n\n#### Troubleshooting: Transmission Failure\n- Transmission failed will flash reason for failure (i.e. STEMI Phone switched off, unpaired Personal Hotspot is switched off or no phone reception)\n\n- Check STEMI iPhone / Settings for ZOLL transmission: \n- WiFi should be off, bluetooth on, personal hotspot on",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "8c7f3394840e03de21d59b31d6e499a14c5f56295cdeddaf227545297743e8fe",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.908969+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

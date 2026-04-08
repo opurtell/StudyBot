@@ -1,0 +1,286 @@
+{
+  "id": "CMG_CSM.C02_Defibrillation_Manual_Mode__Zoll_X_Series_",
+  "cmg_number": "CSM.C02",
+  "title": "Defibrillation Manual Mode (Zoll X Series)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- To deliver DCCS in a pulseless, unconscious patient presenting with: \n- Ventricular Fibrillation (VF).\n- Pulseless Ventricular Tachycardia (VT).\n- Pulseless narrow complex tachycardia >200bpm.\n- Torsades de pointes.\n\n#### Procedure\n\n- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: \n- Confirm ECG rhythm via 3 lead ECG.\n- Multiple people using multiple checks at multiple times.\n\n- Begin cardiac arrest algorithm.\n\n- Attach the defibrillation pads to patient: \n- Place pads either apex/sternal or anterior/posterior\n- Ensure CPR feedback pad is in center of chest on sternum\n- Ensure good pad adherence.\n- Use **COACHED** method (see Specific Notes below): \n- Adult: will default to 200 joules when ENERGY SELECT button is pressed\n- Pediatric: will default to 50 Joules when ENERGY SELECT button is pressed\n- For smaller pediatrics: Calculate 4 joules per kg. If the joule setting falls outside the available settings, go to the next highest setting. (i.e. 10kg child = 40 joules this is not available so select 50 joules).\n- CPR dashboard will display on screen and metronome will start as soon as compressions commence\n\n- Continue with **COACHED** method.\n\n- Select **DISARM** if the patient is not in a shockable rhythm (PEA, Asystole)\n\n- Immediately recommence CPR as required.\n\n#### Specific Notes: COACHED Method\nA pulse and rhythm check (and shock, if appropriate) should be completed approximately every 2 minutes coincided with a CPR swap.\n\nThe CPR dashboard displays a continual 2-minute loop.\n\nC\n\n**Compressions continue**\n- Person in charge of defibrillator to say, **“Compressions continue”**.\n\nO\n\n**Oxygen away**\n- Person in charge of the defibrillator to say **“Remove free flowing oxygen”**.\n- Any free flowing oxygen is removed.\n\nA\n\n**All else clear**\n- Person in charge of the defibrillator to say **“Everyone else to stand clear”**.\n- Everyone other than the person doing compressions stands clear.\n\nC\n\n**Charging**\n- Charge the defibrillator to the appropriate joules.\n\nH\n\n**Hands off / I'm safe**\n- Person in charge of the defibrillator to say **“Hands off”** to the person doing compressions who will stand clear and respond ****\n#### Medical##### Airway/Breathing\n- Respiratory arrest\n- Severe/life threatening respiratory distress\n- Airway adjuncts in place (specify)\n- Threatened airway, including severe stridor with drooling unrelieved by treatment- CPAP in use##### Circulation\n- Cardiac arrest\n- HR >150 (≥12)- Systolic BP 3sec- Ischaemic ECG changes- Dysrhythmias resulting in haemodynamic compromise unrelieved by treatment- Ongoing need for inotropic/vasoactive medication to maintain haemodynamics##### Disability\n- GCS pre-notify and transport direct to appropriate Birth Suite\n- Imminent or complex delivery – contact appropriate obstetric service: NCH 51036034 or TCH 0403804014 to discuss destination.\n- Maternal or neonatal compromise – pre-notify and transport direct to closest ED- Primary or secondary PPH – pre-notify and transport direct to closest ED- Complex delivery – contact appropriate obstetric service: NCH 51036034 or TCH 0403804014#### Other\n- Patients who may require HAZMAT decontamination\n- Bariatric patient (requiring MPV)- Pre-existing tracheostomy patient- Other patient causing paramedic concern",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Oxygen": [
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": []
+      },
+      {
+        "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
+        "dose_values": []
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "1ml Luer lock syringe",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Pre-oxygenation for at least 3 mins",
+        "dose_values": []
+      },
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": []
+      },
+      {
+        "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
+        "dose_values": []
+      },
+      {
+        "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
+        "dose_values": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " High flow oxygen (aim for >94% SpO",
+        "dose_values": []
+      },
+      {
+        "text": " 100% oxygen with PEEP.",
+        "dose_values": []
+      },
+      {
+        "text": " consider oxygen (aim for >94% SpO",
+        "dose_values": []
+      },
+      {
+        "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
+        "dose_values": []
+      },
+      {
+        "text": "Add 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen",
+        "dose_values": []
+      },
+      {
+        "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
+        "dose_values": []
+      },
+      {
+        "text": "Notify hospital and urgent transport (100% oxygen).",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "Give 100% oxygen and attempt IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "200mg tablet  100mg/5ml liquid ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
+        "dose_values": []
+      },
+      {
+        "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
+        "dose_values": []
+      },
+      {
+        "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
+        "dose_values": []
+      },
+      {
+        "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ensure all drugs are administered in a minimum volume of 5 ml (for adults).",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
+        "dose_values": []
+      },
+      {
+        "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
+        "dose_values": []
+      },
+      {
+        "text": "< 5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "Select oxygen flow rate of 8 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
+        "dose_values": []
+      },
+      {
+        "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
+        "dose_values": []
+      },
+      {
+        "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
+        "dose_values": []
+      },
+      {
+        "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
+        "dose_values": []
+      },
+      {
+        "text": "Select oxygen flow rate of >10 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "High flow, high concentration mask; consider 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen; IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
+        "dose_values": []
+      },
+      {
+        "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 seconds (see ",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Treat with 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "dose_values": [],
+        "source": "app-oxygen"
+      },
+      {
+        "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
+        "dose_values": [],
+        "source": "app-oxygen-administration"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "d3c0ae5ee853e60a219e789ea6ae701d329c7f99a6cb6d0a235ccfce1f1d61fd",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.848187+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

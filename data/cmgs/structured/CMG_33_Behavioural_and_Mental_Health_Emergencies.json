@@ -1,0 +1,18 @@
+{
+  "id": "CMG_33_Behavioural_and_Mental_Health_Emergencies",
+  "cmg_number": "33",
+  "title": "Behavioural and Mental Health Emergencies",
+  "version_date": null,
+  "section": "Behavioural",
+  "content_markdown": "#### Assessment\nThere are three main aetiological groups implicated in behavioural emergencies:\n\n- **Medical disorders**, usually associated with delirium (e.g. hypoxia, hypoglycaemia, post‐ictal state, head injury, etc).\n- **Substance intoxication or withdrawal** with or without delirium. \n- **Mental health** (e.g. schizophrenia, mania, depression, personality disorder, etc). \n\nHistory should be sought from all appropriate sources to help guide treatment regime.\n\n#### Management\n- If concerned about your safety or the safety of others: \n- Call for police assistance.\n\n- Identify yourself clearly, including your role.\n- Consider / exclude / treat potentially reversible (medical) causes of altered behaviour, as above assessment.\n- Be reassuring, empathetic and non‐judgemental when conversing with the patient. Speak quietly, do not shout.\n- Listen actively and adopt non‐aggressive body language.\n- Protect the patient’s privacy and dignity wherever possible.\n- Do not leave the patient alone.\n- If concerned about suicide or risk of serious harm (to patient them self, or to others consider Emergency Apprehension. - Consider use of CMG 37 Combative and Agitated Patients.\n- Consider patient’s usual support services \n- E.g. community mental health services.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "4a7a5d1e9316568af29d1b392bbedaaa1193c957c552b95b4205cba888478783",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.740080+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

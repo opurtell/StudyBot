@@ -1,0 +1,799 @@
+{
+  "id": "CMG_02_Adenosine__Adenocor_",
+  "cmg_number": "02",
+  "title": "Adenosine (Adenocor)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nEndogenous purine nucleoside, found in all body cells [S4]\n\n##### Presentations\n6mg in 2ml – vial\n\n##### Actions\n- Causes transient inhibition of conduction in the heart, especially in the AV node.\n- Onset: 5-10 seconds\n- Duration: approximately 10 seconds\n\n#### Uses\n\n- Treatment of supraventricular tachycardia.\n\n- Not for the treatment of atrial flutter or fibrillation; however, if mistakenly administered to patients in these arrhythmias, the decrease in AV conduction may unmask atrial activity. \n\n#### Adverse Effects\nCommon, although transient and generally minor:\n\n- Arrhythmias at the time of conversion are common (up to 55% patients) – including PVCs, PACs, sinus bradycardia, AV blocks\n\n- Transient flushing of the skin\n\n- Mild dyspnoea\n\n- Chest tightness\n\n- Nausea\n\n- Headache\n\n- Feelings of apprehension and fear\n\n#### Contraindications\n\n- 2\\xb0 or 3\\xb0 heart block\n\n- Known hypersensitivity\n\n#### Precautions\n\n- Asthma – may exacerbate bronchospasm\n\n- Antagonised by: theophylline (Nuelin)\n\n- Potentiated by: \n- dipyridamole (Persantin, Asasantin)\n- carbamazepine (Tegretol, Teril)\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult (symptomatic adults only)\n- **ICP: **6mg IV - rapid bolus (over 1 - 2 seconds) \n- Give into a fast flowing pump set.\n\n- **ICP: **If first is unsuccessful: \n- Give second dose (2 minutes between doses)\n- 12mg IV - rapid bolus (over 1 - 2 seconds).##### Paediatric\n- **ICP:** First dose: 0.05mg/kg – given as above \n- **ICP:** Second dose: 0.1mg/kg\n#### Special Notes\n- Use only after Valsalva manoeuvre x 2.\n- Record a 12 lead ECG prior to use of adenosine.\n- Rapid injection with a pump set increases likelihood of success.\n- Elevate limb if possible.\n- Even if the arrhythmia is successfully converted, the patient should still be transported to hospital as the incidence of recurrent arrhythmias is quite high (10 – 15%).\n- If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Midazolam": [
+      {
+        "text": "Midazolam: 2.5mg – 5mg SC",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "52.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.75",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.75",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.2",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "67.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.25",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.25",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "75",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "90",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.8",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "105",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "120",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.4",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "135",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "4.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "4.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": " Up to 4mg/kg IM injection",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+        "dose_values": []
+      },
+      {
+        "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "0.2mg/kg IM (max. 10mg) ",
+        "dose_values": [
+          {
+            "amount": "0.2",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.2",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.2",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-midazolam"
+      }
+    ],
+    "Adenosine": [
+      {
+        "text": "Record a 12 lead ECG prior to use of adenosine.",
+        "dose_values": []
+      },
+      {
+        "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nEndogenous purine nucleoside, found in all body cells [S4]\n\n##### Presentations\n6mg in 2ml – vial\n\n##### Actions\n- Causes transient inhibition of conduction in the heart, especially in the AV node.\n- Onset: 5-10 seconds\n- Duration: approximately 10 seconds\n\n#### Uses\n\n- Treatment of supraventricular tachycardia.\n\n- Not for the treatment of atrial flutter or fibrillation; however, if mistakenly administered to patients in these arrhythmias, the decrease in AV conduction may unmask atrial activity. \n\n#### Adverse Effects\nCommon, although transient and generally minor:\n\n- Arrhythmias at the time of conversion are common (up to 55% patients) – including PVCs, PACs, sinus bradycardia, AV blocks\n\n- Transient flushing of the skin\n\n- Mild dyspnoea\n\n- Chest tightness\n\n- Nausea\n\n- Headache\n\n- Feelings of apprehension and fear\n\n#### Contraindications\n\n- 2\\xb0 or 3\\xb0 heart block\n\n- Known hypersensitivity\n\n#### Precautions\n\n- Asthma – may exacerbate bronchospasm\n\n- Antagonised by: theophylline (Nuelin)\n\n- Potentiated by: \n- dipyridamole (Persantin, Asasantin)\n- carbamazepine (Tegretol, Teril)\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult (symptomatic adults only)\n- **ICP: **6mg IV - rapid bolus (over 1 - 2 seconds) \n- Give into a fast flowing pump set.\n\n- **ICP: **If first is unsuccessful: \n- Give second dose (2 minutes between doses)\n- 12mg IV - rapid bolus (over 1 - 2 seconds).##### Paediatric\n- **ICP:** First dose: 0.05mg/kg – given as above \n- **ICP:** Second dose: 0.1mg/kg\n#### Special Notes\n- Use only after Valsalva manoeuvre x 2.\n- Record a 12 lead ECG prior to use of adenosine.\n- Rapid injection with a pump set increases likelihood of success.\n- Elevate limb if possible.\n- Even if the arrhythmia is successfully converted, the patient should still be transported to hospital as the incidence of recurrent arrhythmias is quite high (10 – 15%).\n- If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+        "dose_values": [
+          {
+            "amount": "6",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "6",
+            "unit": "mg"
+          },
+          {
+            "amount": "12",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-adenosine-adenocor"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "6f31bbf4a181a598af13ae4de6e5c1abdcb88d2616db5297432bba9a8bdb104a",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.760345+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

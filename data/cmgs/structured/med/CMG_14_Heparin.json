@@ -1,0 +1,58 @@
+{
+  "id": "CMG_14_Heparin",
+  "cmg_number": "14",
+  "title": "Heparin",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nUnfractioned heparin anticoagulant\n\n- **High-risk medication**\n\n##### Presentations\n5000u heparin in 1 ml – glass ampoule\n\n##### Actions\n\n- Inhibits blood clotting\n\n- Combines with antithrombin III, a naturally occurring anti-clotting factor in plasma, and inhibits the conversion of prothrombin to thrombin\n\n- It also interferes with the actions of other clotting factors with fibrin stabilising factor\n\n#### Uses\nPatients with an acute ST elevation myocardial infarction who meet the requirements for early percutaneous coronary intervention (PCI) procedure\n\n#### Adverse Effects\n\n- Bleeding\n\n- Thrombocytopenia\n\n- Anaphylactoid reactions (rare)\n\n#### Contraindications\nRefer to heparin checklist\n\n#### Precautions\nUse with care in patients with extensive history of allergies\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Approved for administration in ACTAS setting, **contraindicated** during labour\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- 5000u IV – over 30-60 seconds\n\n##### Paediatric\nNot used.\n\n#### Special Notes\n- This treatment should not delay transport time to hospital.",
+  "is_icp_only": true,
+  "dose_lookup": {
+    "Heparin": [
+      {
+        "text": "5000u heparin in 1 ml – glass ampoule",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Heparin 5000u IV",
+        "dose_values": []
+      },
+      {
+        "text": "Remember that these patients are often on fluid restrictions. 100-200ml IV fluids will often resolve a hypotensive episode. Consult the patient’s treatment records to ascertain their usual blood pressure. ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nUnfractioned heparin anticoagulant\n\n- **High-risk medication**\n\n##### Presentations\n5000u heparin in 1 ml – glass ampoule\n\n##### Actions\n\n- Inhibits blood clotting\n\n- Combines with antithrombin III, a naturally occurring anti-clotting factor in plasma, and inhibits the conversion of prothrombin to thrombin\n\n- It also interferes with the actions of other clotting factors with fibrin stabilising factor\n\n#### Uses\nPatients with an acute ST elevation myocardial infarction who meet the requirements for early percutaneous coronary intervention (PCI) procedure\n\n#### Adverse Effects\n\n- Bleeding\n\n- Thrombocytopenia\n\n- Anaphylactoid reactions (rare)\n\n#### Contraindications\nRefer to heparin checklist\n\n#### Precautions\nUse with care in patients with extensive history of allergies\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Approved for administration in ACTAS setting, **contraindicated** during labour\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- 5000u IV – over 30-60 seconds\n\n##### Paediatric\nNot used.\n\n#### Special Notes\n- This treatment should not delay transport time to hospital.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-heparin"
+      },
+      {
+        "text": "Patient is symptomatic of STEMI?\n\nYesNo / unsure\n\n- Treat as per normal ACTAS guidelines\n\nAre ALL of the following criteria present:\n\n- Systolic BP Yes to allNo / unsure\n\n- Phone TCH STEMI Doctor and discuss presentation\n\nAre ANY of the following criteria present:\n\n- Known allergy to heparin\n- Current use of warfarin / clexane / novel anticoagulants (e.g. apixaban (Eliquis); rivaroxaban (Xarelto); dabigatran (Pradaxa)) \n- Pregnancy or delivery in last 2 weeks- Active pathologic bleeding of any origin- Severe renal or hepatic disease- Severe head injury or facial trauma in the last 3 months- Non-compressible vascular punctures- Clotting problem (e.g. haemophilia)- Known internal bleed within 6 months\nYes / unsureNo to all\n\n- Heparin **not** recommended\n- Phone TCH STEMI Doctor\n\n- Heparin recommended\n- Phone TCH STEMI Doctor and handover as below: \n- Patient DOB\n- Patient age\n- Gender- F / M- Signs and symptoms- Time of symptom onset- Diagnosis of ECG- Results of heparin checklist- Recommended / Not recommended- ETA to TCH- If agreed, administer **Heparin 5000u IV**",
+        "dose_values": [],
+        "source": "app-heparin-checklist"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "087dab422880a5a52ddf3ab8a5dc57cd37d4dcba92c8eebb7a5ca321ef3530da",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.772281+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

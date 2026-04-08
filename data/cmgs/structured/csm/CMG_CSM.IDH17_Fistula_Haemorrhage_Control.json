@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.IDH17_Fistula_Haemorrhage_Control",
+  "cmg_number": "CSM.IDH17",
+  "title": "Fistula Haemorrhage Control",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Bleeding from an AV graft or fistula site.\n\n#### Procedure\n\n- Assess for bleeding at the graft or fistula site.\n\n- Assess if patient already has a lid covering the fistula site.\n\n- If not, apply patient issued lid or lid supplied in haemorrhage kit.\n\n- Cover the bleeding site with the hollow part of the lid and press firmly to create a seal.\n\n- Do no remove the lid.\n\n- Once the bleeding is contained in the lid, apply tape over the lid to secure, making sure blood does not spill out of the lid.\n\n- If it begins to bleed outside of the lid, continue with manual pressure.\n\n- If bleeding continues, despite firm pressure, the lid may be too big. Replace with a smaller lid and repeat steps 3 – 6.\n\n- If the bleeding continues despite all above steps and the patient is presenting with signs of life-threatening haemorrhage, apply pressure bandage or tourniquet to control the bleeding as a last resort\n\n- Manage as per CMG 14C Shock and Hypoperfusion as required.\n\n- Transport to TCH with prenotification.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Complications\n- Nil.\n\n#### Specific Notes\n- Fistula site bleeds can cause blood loss of 1-2L per minute.\n- The use of pressure bandages and arterial torniquets is **not** recommended in these patients and this can damage the fistula site and limb. This should only be used in cases of severe, life-threatening haemorrhage that can’t be controlled by a lid.\n- Even in minor bleeds, these patients must be transported to TCH as they will need vascular intervention. Refer to Patient Destination Guideline.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "0ae27560f51431479334e739fa3ba2aee58a9fbcc29cbbe52365672b3a269ecb",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.906767+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

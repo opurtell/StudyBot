@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.PA07_12_Lead_ECG_Monitoring",
+  "cmg_number": "CSM.PA07",
+  "title": "12 Lead ECG Monitoring",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- For assessment of patients with cardiovascular complaints.\n\n#### Procedure\n\n- Clip and clean areas as required.\n\n- Locate and apply electrode to V1: \n- 4th intercostal space, right lateral to the sternum.\n\n- Locate and apply electrode to V2: \n- 4th intercostal space, left lateral to the sternum.\n\n- Locate and apply electrode to V4: \n- 5th intercostal space, mid clavicular line of the left side of the chest.\n\n- Locate and apply electrode to V6: \n- 5th intercostal space, mid axillary line, of the left side of the chest.\n\n- Locate and apply electrode to V3 and V5: \n- V3 is placed diagonally between V2 and V4.\n- V5 is placed on the fifth intercostal space between V4 and V6.\n\n- Print ECG, ensure the patient is as still as possible.\n\n#### Specific Notes\n- For women with large breast tissue, place V4-V6 at the highest point beneath the breast. Bras may be left in place.\n- Ensure the patient is fully aware that their chest and breasts may need to be exposed and obtain their consent prior to commencement of the procedure.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "02a51785ec36ca405972a9fedf044c3b6602e834c470871ddda9ff22a9efb77a",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.861965+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,1115 @@
+{
+  "id": "CMG_20_Magnesium_Sulphate",
+  "cmg_number": "20",
+  "title": "Magnesium Sulphate",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n2.5g in 5 ml (50% solution) – glass ampoule\n\n##### Actions\nMagnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.\n\n#### Uses\n\n- Torsades de pointes / polymorphic VT **- ICP only**\n\n- Refractory VF (3rd drug) **- ICP only**\n\n- Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation\n\n- Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**\n\n#### Adverse Effects\nRare – more common if serum magnesium is normal:\n\n- Respiratory depression\n\n- Nausea and vomiting\n\n- Hypotension\n\n- Confusion\n\n- Bradycardia\n\n#### Contraindications\n\n- AV block\n\n- Renal failure\n\n- Hepatic failure\n\n#### Precautions\nMyasthenia gravis\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **ICP: ****With cardiac output: **2.5g IV/IO \n- Diluted up to 10ml with normal saline\n- Given over 5 minutes. \n\n- **ICP: ****Refractory VF: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Torsades de pointes: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).##### Paediatric\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.\n#### Special Notes\n- Prolonged hypotension post-magnesium administration – if unresponsive to fluids, patient may be treated with IV calcium.",
+  "is_icp_only": true,
+  "dose_lookup": {
+    "Normal Saline": [
+      {
+        "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 10ml/kg Volume: 30ml",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 100ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 140ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "140",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 220ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "220",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 260ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "260",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 300ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 340ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "340",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 380ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "380",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 420ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "420",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 460ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "460",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 500ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 540ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "540",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 600ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "600",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Volume: 660ml",
+        "dose_values": [
+          {
+            "amount": "660",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " up to 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Normal saline 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "10ml/kg normal saline unless in pulmonary oedema.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+        "dose_values": [
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+        "dose_values": [
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+        "dose_values": [
+          {
+            "amount": "18",
+            "unit": "G"
+          }
+        ]
+      },
+      {
+        "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+        "dose_values": []
+      },
+      {
+        "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+        "dose_values": [
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "1000",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "mL"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-normal-saline"
+      }
+    ],
+    "Magnesium": [
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 250mg Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "250",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 350mg Volume: 1.4ml (when diluted to 10ml)",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "350",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.4",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 550mg Volume: 1.1ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "550",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 650mg Volume: 1.3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "650",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 750mg Volume: 1.5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "750",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 850mg Volume: 1.7ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "850",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 950mg  Volume: 1.9ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "950",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.9",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.05g Volume: 2.1ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.05",
+            "unit": "g"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.15g Volume: 2.3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.15",
+            "unit": "g"
+          },
+          {
+            "amount": "2.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.25g Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.35g Volume: 2.7ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.35",
+            "unit": "g"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.5g Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.65g Volume: 3.3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.65",
+            "unit": "g"
+          },
+          {
+            "amount": "3.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Formula: 50mg/kg Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Magnesium sulphate 50mg/kg (max 2.5kg)",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Postpartum haemorrhage is generally defined as an acute haemorrhage with blood loss of ≥ 500ml occurring within 12 weeks post‐delivery. Severe PPH is defined as ≥ 1,000ml of blood loss.",
+        "dose_values": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "000",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 10mg/kg (up to 1g) IV/IO ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
+        "dose_values": []
+      },
+      {
+        "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "3ml bottle",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Using a 10ml syringe, dilute the medication with the required volume of NaCl to give a total volume of 7mls.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n2.5g in 5 ml (50% solution) – glass ampoule\n\n##### Actions\nMagnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.\n\n#### Uses\n\n- Torsades de pointes / polymorphic VT **- ICP only**\n\n- Refractory VF (3rd drug) **- ICP only**\n\n- Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation\n\n- Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**\n\n#### Adverse Effects\nRare – more common if serum magnesium is normal:\n\n- Respiratory depression\n\n- Nausea and vomiting\n\n- Hypotension\n\n- Confusion\n\n- Bradycardia\n\n#### Contraindications\n\n- AV block\n\n- Renal failure\n\n- Hepatic failure\n\n#### Precautions\nMyasthenia gravis\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **ICP: ****With cardiac output: **2.5g IV/IO \n- Diluted up to 10ml with normal saline\n- Given over 5 minutes. \n\n- **ICP: ****Refractory VF: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Torsades de pointes: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).##### Paediatric\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.\n#### Special Notes\n- Prolonged hypotension post-magnesium administration – if unresponsive to fluids, patient may be treated with IV calcium.",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "250",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-magnesium-sulphate"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "3a92e66487ed7f35dbd3832ab3c23e6f88508477574b8c89d664e4d0ed772a73",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.780142+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

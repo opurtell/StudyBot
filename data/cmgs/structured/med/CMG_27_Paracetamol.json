@@ -1,0 +1,60 @@
+{
+  "id": "CMG_27_Paracetamol",
+  "cmg_number": "27",
+  "title": "Paracetamol",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nSimple analgesic / antipyretic \n\n##### Presentations\n**PO:** 48mg/ml colour free liquid (oral) \n**IV:** 1g in 100ml in collapsible plastic flask (IV) \n**PO:** 500mg tablet (oral) \n\n##### Actions\n\n- Antipyretic\n\n- Mild—moderate analgesic\n\nOnset Oral: 30 minutes \n IV: 5-10 minutes \n\n#### Uses\n\n- Pyrexia in children who have had or may have a febrile convulsion (for ACTAS treatment, pyrexia is generally >38\\xb0C)\n\n- Mild to moderate pain (oral)\n\n- Moderate to severe pain (IV)\n\n#### Adverse Effects\nRare – none of these side effects have been confirmed or refuted as being linked to the casual use of paracetamol:\n\n- Dyspepsia\n\n- Nausea\n\n- Allergic reactions\n\n- Haematological reactions\n\n- Dizziness\n\n- Pain at injection site\n\n#### Contraindications\n\n- Known or suspected allergy to paracetamol\n\n- Previous paracetamol dose in last 4 hours (oral doses only)\n\n- Previous paracetamol dose in last 6 hours (IV doses only)\n\n- Children who do not have a sufficient gag reflex to swallow the measured dose \n\n- Not to be given to children",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Paracetamol": [
+      {
+        "text": "Previous paracetamol dose in last 4 hours (oral doses only) Previous paracetamol dose in last 6 hours (IV doses only)",
+        "dose_values": []
+      },
+      {
+        "text": "Do not exceed 60mg/kg/24hours. Children aged 10-12 may take a 500mg tablet if preferred.",
+        "dose_values": [
+          {
+            "amount": "60",
+            "unit": "mg"
+          },
+          {
+            "amount": "500",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nSimple analgesic / antipyretic \n\n##### Presentations\n**PO:** 48mg/ml colour free liquid (oral) \n**IV:** 1g in 100ml in collapsible plastic flask (IV) \n**PO:** 500mg tablet (oral) \n\n##### Actions\n\n- Antipyretic\n\n- Mild—moderate analgesic\n\nOnset Oral: 30 minutes \n IV: 5-10 minutes \n\n#### Uses\n\n- Pyrexia in children who have had or may have a febrile convulsion (for ACTAS treatment, pyrexia is generally >38\\xb0C)\n\n- Mild to moderate pain (oral)\n\n- Moderate to severe pain (IV)\n\n#### Adverse Effects\nRare – none of these side effects have been confirmed or refuted as being linked to the casual use of paracetamol:\n\n- Dyspepsia\n\n- Nausea\n\n- Allergic reactions\n\n- Haematological reactions\n\n- Dizziness\n\n- Pain at injection site\n\n#### Contraindications\n\n- Known or suspected allergy to paracetamol\n\n- Previous paracetamol dose in last 4 hours (oral doses only)\n\n- Previous paracetamol dose in last 6 hours (IV doses only)\n\n- Children who do not have a sufficient gag reflex to swallow the measured dose \n\n- Not to be given to children",
+        "dose_values": [
+          {
+            "amount": "48",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-paracetamol"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "cec6c17fb3611157d02fa8758351d2e55be580013ceb3effc236fa91823c0564",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.793726+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

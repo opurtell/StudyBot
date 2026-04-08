@@ -1,0 +1,107 @@
+{
+  "id": "CMG_35B_Bites_and_Stings",
+  "cmg_number": "35B",
+  "title": "Bites and Stings",
+  "version_date": null,
+  "section": "Toxicology",
+  "content_markdown": "#### Snake / Spider Bite\n**Snake:** The majority of snakes found in and around the ACT are venomous to some degree. Snakes in Canberra are most active from October to March. Pre‐hospital management of all snake bites is the same, regardless of species.\n\n**Spider:** There are three medically relevant groups of spider bites:\n\n- **Big black spiders** (to be treated as funnel‐web spider bites until proven otherwise in hospital).\n- **Red‐back spiders** and **all other Australian spiders** (minor effects, no specific treatment required). \n- If the spider was unseen and there are developing systemic effects, manage as per symptoms. \n\n- Do not wash bite site \n- Identification can be made at hospital by swabbing traces of remaining venom from skin/clothing.\n\n- Utilise pressure and immobilisation technique if appropriate, using wide elasticised bandage. \n- Remember that the bandage should be firm and tight, so that you cannot easily slide a finger between the bandage and the skin\n- **Note:** Resuscitation takes priority over application of pressure and immobilisation, but this should be applied as soon as is practical.\n- With the positive identification of a **red back spider:**\n- Pressure and immobilisation is not required\n- Iced compresses should be applied to the area (but not directly onto the skin).\n- Treat cholinergic symptoms (e.g. salivation, lacrimation, urination, diaphoresis, GI upset, emesis) of spider bite with atropine.\n- Treat other signs and symptoms as they arise, as per appropriate CMG (e.g. anaphylaxis, cardiorespiratory effects, pain, etc).\n- Identification: \n- The creature should be brought to the hospital, but only if this can be done safely. \n- Do not rely on non‐expert identification of the creature. - Remember that signs and symptoms can take up to several hours to present.\n- Calvary Hospital, TCH and Queanbeyan Hospital all have both Venom Detection Kits and antivenom available. \n- Transport to the closest hospital.\n\n#### Insect Bite / Sting (Excluding Spider)\n- Including bee, wasp, tick, ant, centipede, caterpillar, flea, scorpion, lice, etc. \n\n- Treat allergic/anaphylactic reactions as per CMG 29 Allergic and Anaphylactic Reactions.\n- **Bee:** if stinger still in situ, scrape out from the side with fingernail or card. \n- Do not squeeze with tweezers.\n- **Wasp:** the wasp can withdraw its stinger cleanly, and therefore sting multiple times. \n- There is no stinger left in situ to remove.\n- **Tick:** use fine point tweezers to grasp tick close to skin and pull out with steady, even pressure. - Wash affected area(s) with clean water.\n- Applying a cold compress may help with pain relief and swelling.\n- Analgesia if required.\n- Treat other symptoms as per appropriate CMG.\n#### Mammal Bite\n- Including human, bat, etc.\n\n- Thoroughly clean the bite site, and apply sterile dressing.\n- All mammal bites should be seen by a doctor (GP, hospital or other, as appropriate to the situation). - Treat other symptoms as per appropriate CMG.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Atropine": [
+      {
+        "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
+        "dose_values": []
+      },
+      {
+        "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+        "dose_values": []
+      },
+      {
+        "text": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+        "dose_values": [
+          {
+            "amount": "1200",
+            "unit": "mcg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "2400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "2400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "2.4",
+            "unit": "mg"
+          },
+          {
+            "amount": "4.8",
+            "unit": "mg"
+          },
+          {
+            "amount": "9.6",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mcg"
+          },
+          {
+            "amount": "2400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "50",
+            "unit": "mcg"
+          },
+          {
+            "amount": "2400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "20",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "20",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          }
+        ],
+        "source": "app-atropine-sulphate"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "b66d4c9a01537ef590daae3f95e4aae0767316786aea1576126a9ec36b1b243a",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.744500+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

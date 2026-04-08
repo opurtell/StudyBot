@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.A08_Nasopharyngeal_Airway__NPA_",
+  "cmg_number": "CSM.A08",
+  "title": "Nasopharyngeal Airway (NPA)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Used with patients where an oropharyngeal airway cannot be used. \n- e.g. trismus or extensive oral injuries\n\n#### Procedure\n\n- Select appropriate nasopharyngeal size - width of tube should approximate the diameter of patient's little finger. \n- **Large adults:** 8 mm\n- **Small adults:** 7 mm\n- **Adolescents:** 6mm\n- **Children:** 4-5 mm\n- **Neonates:** 2.5-3.5 mm\n- Measure from the tip of the nose to the earlobe to ensure correct size (see above).\n\n- Lubricate the NPA.\n\n- Place the patient’s head in a neutral position and select widest nostril (generally the right hand nostril).\n\n- Insert the NPA by pushing the tip of the nose upwards, and passing the tube parallel to the floor of the nasal cavity.\n\n- If obstruction occurs, attempt to gently rotate the tube and continue to insert.\n\n- If the obstruction remains, attempt insertion through the other nostril or use smaller NPA.\n\n- Ensure to observe any signs of gag reflex.\n\n- Maintain the patient’s head in a triple airway manoeuvre.\n\n#### Contraindications\n- Resistance during insertion/unable to insert easily.\n\n#### Complications\n- Some minor nasal trauma may occur.\n- Can induce gag reflex in sensitive patients – remove is this occurs.\n- May exacerbate base of skull fracture (see specific notes).\n#### Specific Notes\n- Suctioning can be performed by placing a Y catheter down the nasopharyngeal tube.\n- Can be used in head trauma patient with a base of skull fracture. However, consider the use of other airway adjuncts first.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "043236d67fe635aa3e097d4d11ece37a380b67ca6b503c36849323d507c11bcc",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.817983+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

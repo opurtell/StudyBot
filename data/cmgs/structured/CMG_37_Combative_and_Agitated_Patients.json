@@ -1,0 +1,1518 @@
+{
+  "id": "CMG_37_Combative_and_Agitated_Patients",
+  "cmg_number": "37",
+  "title": "Combative and Agitated Patients",
+  "version_date": null,
+  "section": "Behavioural",
+  "content_markdown": "#### Management\n- For use in situations where the patient cannot be managed with less aggressive means. \n\n- If concerned about safety, call for police assistance.\n- Consider / exclude medical causes: \n- E.g. hypoxia, hypoglycaemia, head injury, drug overdose, post‐ictal state, infection. \n- Treat as appropriate.\n- Attempt quiet reassurance in an attempt to persuade the patient to accept treatment \n- Speak quietly (do not shout)\n- Do not leave the patient alone.\n- Consider Emergency Apprehension where the patient has a mental health disorder or mental illness, and there is risk of serious harm to the patient or another person.\n- If reassurance and persuasion are ineffective or impractical, move to pharmacological management \n- Pharmacological management should be a last resort after completing a mental competency assessment.\n- Sedation as required per SAT (Sedation Assessment Tool)\n- APs must call ICP backup after using ketamine for sedation. \n- **ICP:** Consider escalating to polypharmacy sedation with repeat ketamine / midazolam if required.\n- **Use of limb restraints should be considered in conjunction with pharmacological restraint.**\n- Clinical reasoning for restraint/non‐restraint should be thoroughly documented on the PCR. \n- Once restrained and on oxygen: \n- Monitor ECG, temperature, SpO2, EtCO2. \n- Patients managed with pharmacological control must be transported to hospital. - Ensure thorough documentation on PCR. \n- All patients sedated with ketamine / midazolam under this CMG will require an incident report to be submitted to CGU.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Midazolam": [
+      {
+        "text": "Midazolam: 2.5mg – 5mg SC",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "52.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.75",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.75",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.2",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "67.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.25",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.25",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "75",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "90",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.8",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "105",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "120",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.4",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "135",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "4.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "4.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": " Up to 4mg/kg IM injection",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+        "dose_values": []
+      },
+      {
+        "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "0.2mg/kg IM (max. 10mg) ",
+        "dose_values": [
+          {
+            "amount": "0.2",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.2",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.2",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-midazolam"
+      }
+    ],
+    "Ketamine": [
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 35mg Volume: 3.5ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "35",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 40mg Volume: 4ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 45mg Volume: 4.5ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "45",
+            "unit": "mg"
+          },
+          {
+            "amount": "4.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 50mg Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 60mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 70mg Volume: 7ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "70",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 80mg Volume: 8ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 90mg Volume: 9ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "90",
+            "unit": "mg"
+          },
+          {
+            "amount": "9",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 100mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 110mg Volume: 11ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "110",
+            "unit": "mg"
+          },
+          {
+            "amount": "11",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 120mg Volume: 12ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "120",
+            "unit": "mg"
+          },
+          {
+            "amount": "12",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
+        "dose_values": [
+          {
+            "amount": "14",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "4",
+            "unit": "mL"
+          },
+          {
+            "amount": "400",
+            "unit": "mg"
+          },
+          {
+            "amount": "400",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
+        "dose_values": []
+      },
+      {
+        "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
+        "dose_values": [
+          {
+            "amount": "0.3",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.15",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Ketamine: 1mg/kg fast push",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
+        "dose_values": [
+          {
+            "amount": "2",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.05mg/kg IV/IO push over 60 sec. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n200mg in 2ml – vial \n\n50mg in 5ml - vial\n\n##### Actions\nComplex, multiple actions:\n\n- Analgesic at low doses\n\n- Sedative\n\n- Amnestic/dissociative properties\n\n- Has bronchodilating properties\n\nOnset of action is rapid: IV = 1 – 2 min; IM = 4 – 8 min.\n\n#### Uses\n\n- Sedation of combative/agitated patients, who are an immediate danger to themselves or others\n\n- Induction agent for intubation **- ICP only**\n\n- Maintenance of sedation **- ICP only**\n\n- Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**\n\n- Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**\n\n- Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose\n\n- Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids\n\n#### Adverse Effects\n\n- Laryngospasm\n\n- Hypersalivation\n\n- Dysphoria/emergence reactions\n\n- Muscle twitching and purposeless movements\n\n- Respiratory depression → apnoea (seen in extreme doses or fast administration)\n\n- Hypotension (generally seen in hypovolaemic/cardiac depressed patients)\n\n#### Contraindications\n\n- Known sensitivity\n\n- Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT) \n\n- Children 65 years, or with general debility.\n- Repeat 1mg/kg IM injection after 5 minutes (if required).\n\n#### For intubation induction with Suxamethonium##### Adult only\n- **ICP:** 1mg/kg IV/IO over 30-60 seconds \n\n#### For intubation when suxamethonium is contraindiated ##### Adult only\n- **ICP:** 2mg/kg IV/IO over 30-60 seconds \n\n#### Post intubation analgosedation##### Adult and Paediatric (Syringe bolus)\n- **ICP:** Up to 1mg/kg IV or IO \n- 1-5 minute intervals as required.\n\n##### Adult (Infusion pump)\n**Note:** Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL \n\n- **ICP:** Initial infusion rate: 100mg/hr \n- Lower soft infusion limit: 10mg/hr \n- Upper soft infusion limit: 400mg/hr \n- Upper hard infusion limit: 800mg/hr \n- **ICP:** Default bolus: 20mg (2mL) \n- Lower hard bolus limit: 5mg (0.5mL)\n- Upper hard bolus limit: 100mg (10mL)\n\n#### Ketamine Analgesia Dose Chart\n- Following mild-moderate analgesic options opioids should be considered prior to ketamine.\n- Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.\n- Ketamine is a first line analgesic only in the setting of current or foreseen hypoperfusion; and in the patient unable to receive opioids due to either allergy, hypersensitivity, or tolerance.**Dose:******≥65 years old**\nINITIAL IV\n\n(ICP/AP)\n\n0.3mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\n0.15mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\nREPEAT IV\n\n(ICP/AP)\n\nAs initial\n\n15 mins post end of initial infusion.\n\nAs initial\n\n15 mins post end of initial infusion.\n\nINITIAL IM\n\n(ICP/AP)\n\n0.5mg/kg\n\n0.25mg/kg\n\nREPEAT IM\n\n(ICP/AP)\n\nAfter 30 minutes:\n\n0.5mg/kg\n\nAfter 30 minutes:\n\n0.25mg/kg\n\nHYPOPERFUSED PATIENT\n\n(ICP)\n\nHalve above doses\n\nHalve above doses\n\n#### Special Notes\n- Patients who have received ketamine may still have a significant awareness, despite an appearance of unconsciousness. They may be able to hear and have some recall. Patients should be advised that they will experience strange / unusual sensations.\n- Ketamine is a Controlled Medicine. Use must be checked by both crew members. Under CL207 – Controlled Medicines Procedure, recording and accounting for its use is a legal requirement.\n- The unused portion of the dose must be appropriately disposed of, and the disposal recorded.",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "14",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "4",
+            "unit": "mL"
+          },
+          {
+            "amount": "400",
+            "unit": "mg"
+          },
+          {
+            "amount": "400",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mL"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "400",
+            "unit": "mg"
+          },
+          {
+            "amount": "800",
+            "unit": "mg"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mL"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.3",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.15",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.25",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.25",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-ketamine-hydrochloride-ketalar"
+      }
+    ],
+    "Oxygen": [
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": []
+      },
+      {
+        "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
+        "dose_values": []
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "1ml Luer lock syringe",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Pre-oxygenation for at least 3 mins",
+        "dose_values": []
+      },
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": []
+      },
+      {
+        "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
+        "dose_values": []
+      },
+      {
+        "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
+        "dose_values": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " High flow oxygen (aim for >94% SpO",
+        "dose_values": []
+      },
+      {
+        "text": " 100% oxygen with PEEP.",
+        "dose_values": []
+      },
+      {
+        "text": " consider oxygen (aim for >94% SpO",
+        "dose_values": []
+      },
+      {
+        "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
+        "dose_values": []
+      },
+      {
+        "text": "Add 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen",
+        "dose_values": []
+      },
+      {
+        "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
+        "dose_values": []
+      },
+      {
+        "text": "Notify hospital and urgent transport (100% oxygen).",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "Give 100% oxygen and attempt IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "200mg tablet  100mg/5ml liquid ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
+        "dose_values": []
+      },
+      {
+        "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
+        "dose_values": []
+      },
+      {
+        "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
+        "dose_values": []
+      },
+      {
+        "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ensure all drugs are administered in a minimum volume of 5 ml (for adults).",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
+        "dose_values": []
+      },
+      {
+        "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
+        "dose_values": []
+      },
+      {
+        "text": "< 5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "Select oxygen flow rate of 8 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
+        "dose_values": []
+      },
+      {
+        "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
+        "dose_values": []
+      },
+      {
+        "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
+        "dose_values": []
+      },
+      {
+        "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
+        "dose_values": []
+      },
+      {
+        "text": "Select oxygen flow rate of >10 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "High flow, high concentration mask; consider 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen; IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
+        "dose_values": []
+      },
+      {
+        "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 seconds (see ",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Treat with 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "dose_values": [],
+        "source": "app-oxygen"
+      },
+      {
+        "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
+        "dose_values": [],
+        "source": "app-oxygen-administration"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "89ec046396e5304674b09ffdff6d31cb78759111efa97d5e3129edbf7bd36282",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.742078+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,1263 @@
+{
+  "id": "CMG_CSM.DF12_Springfuser_and_Flow_Control_Tubing",
+  "cmg_number": "CSM.DF12",
+  "title": "Springfuser and Flow Control Tubing",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Patients that require administration of medication as an infusion: \n- Amiodarone for VT, rapid AF or AFl, with output.\n- Magnesium for eclampsia.\n\n#### Procedure\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Using a 10ml syringe, dilute the medication with the required volume of NaCl to give a total volume of 7mls.\n\n- Remove any air bubbles from the syringe and firmly attach flow control tubing.\n\n- Prime the tubing (approx 0.2mls).\n\n- Connect the flow control tubing to the patient’s cannula.\n\n- Insert the syringe plunger fully into the Springfuser unit, rotating the flange 90\\xb0 to lock into place (see **Figure 1**).\n\nFigure 1\n\n- Tape the Springfuser securely to the limb in line with the cannula.\n\n- Regularly reassess the cannula site for dislodgment, swelling, reddening or discomfort and the flow control tubing for kinks or blockages. If a blockage occurs, replace the tubing.\n\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Amiodarone": [
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 25mg Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "25",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 35mg Volume: 0.7ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "35",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 55mg Volume: 1.1ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "55",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 65mg Volume: 1.3ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "65",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "75",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 85mg Volume: 1.7ml ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "85",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 95mg Volume: 1.9ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "95",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.9",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "105",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 115mg Volume: 2.3ml ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "115",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 125mg Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "125",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "135",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 165mg Volume: 3.3ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "165",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml Volume: 6ml Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Amiodarone 5mg/kg  (max 150mg) ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 300mg after 3",
+        "dose_values": [
+          {
+            "amount": "300",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "1200mcg in 1ml – plastic ampoule ",
+        "dose_values": [
+          {
+            "amount": "1200",
+            "unit": "mcg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nPotent anti-arrhythmic agent [S4]\n\n##### Presentations\n150mg in 3ml – glass ampoule\n\n##### Actions\nComplex electrophysiological and pharmacological profile:\n\n- Prolongs the action potential duration; increases the refractoriness of all cardiac tissues\n\n- Blocks Na+ channels (class I action)\n\n- Has some anti-adrenergic effects (class II action)\n\n- Ca2+ blockade (class IV action)\n\n- Prolongs QT interval – reflects global prolongation of repolarisation \n\n- When given IV, there is a significant effect on the AV node which causes a delay in nodal conduction\n\n- Also effective for accessory pathway conduction \n\n#### Uses\nEffective for both supraventricular and ventricular arrhythmias. ACTAS uses: \n\n- To slow the ventricular rate in atrial fibrillation and flutter \n\n- To treat VF and VT\n\n#### Adverse Effects\nWhen given IV, can cause vasodilation, negative inotropic effects and hypotension (dose and rate dependent).\n\nOccasionally may cause:\n\n- Bradycardia (especially in older patients)\n\n- Phlebitis\n\n- Hot flushes / sweating\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Cross sensitivity to iodine\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Only use in the setting of cardiac arrest or peri-arrest\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR\n\n#### Doses#### VF/VT cardiac arrest##### Adult\n- **ICP:** 300mg IV/IO \n- Over 30-60 seconds.\n\n##### Paediatric\n- **ICP:** 5mg/kg IV/IO (to maximum 300mg) \n- Over 30-60 seconds.\n\n#### VT, AF and A.flutter - with cardiac output##### Adult\n- **ICP:** 150mg IV via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n##### Paediatric\n- **ICP:** 5mg/kg IV (to maximum 150mg) via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n#### Special Notes\n- Significant potential drug interactions.\n- The following may potentiate the actions of amiodarone: \n- Digoxin\n- Phenytoin (Dilantin)\n- \\u03b2 blockers- Ca2+ channel blocker- Other antiarrhythmics.",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-amiodarone-cordarone"
+      }
+    ],
+    "Magnesium": [
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 250mg Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "250",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 350mg Volume: 1.4ml (when diluted to 10ml)",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "350",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.4",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 550mg Volume: 1.1ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "550",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 650mg Volume: 1.3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "650",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 750mg Volume: 1.5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "750",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 850mg Volume: 1.7ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "850",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 950mg  Volume: 1.9ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "950",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.9",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.05g Volume: 2.1ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.05",
+            "unit": "g"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.15g Volume: 2.3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.15",
+            "unit": "g"
+          },
+          {
+            "amount": "2.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.25g Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.35g Volume: 2.7ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.35",
+            "unit": "g"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.5g Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.65g Volume: 3.3ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1.65",
+            "unit": "g"
+          },
+          {
+            "amount": "3.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Formula: 50mg/kg Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Magnesium sulphate 50mg/kg (max 2.5kg)",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Postpartum haemorrhage is generally defined as an acute haemorrhage with blood loss of ≥ 500ml occurring within 12 weeks post‐delivery. Severe PPH is defined as ≥ 1,000ml of blood loss.",
+        "dose_values": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "000",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 10mg/kg (up to 1g) IV/IO ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
+        "dose_values": []
+      },
+      {
+        "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "3ml bottle",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Using a 10ml syringe, dilute the medication with the required volume of NaCl to give a total volume of 7mls.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n2.5g in 5 ml (50% solution) – glass ampoule\n\n##### Actions\nMagnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.\n\n#### Uses\n\n- Torsades de pointes / polymorphic VT **- ICP only**\n\n- Refractory VF (3rd drug) **- ICP only**\n\n- Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation\n\n- Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**\n\n#### Adverse Effects\nRare – more common if serum magnesium is normal:\n\n- Respiratory depression\n\n- Nausea and vomiting\n\n- Hypotension\n\n- Confusion\n\n- Bradycardia\n\n#### Contraindications\n\n- AV block\n\n- Renal failure\n\n- Hepatic failure\n\n#### Precautions\nMyasthenia gravis\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **ICP: ****With cardiac output: **2.5g IV/IO \n- Diluted up to 10ml with normal saline\n- Given over 5 minutes. \n\n- **ICP: ****Refractory VF: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Torsades de pointes: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).##### Paediatric\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.\n#### Special Notes\n- Prolonged hypotension post-magnesium administration – if unresponsive to fluids, patient may be treated with IV calcium.",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "250",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-magnesium-sulphate"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "d29a326138a15d3703fd79466eef5867c576acdb2f399e71451116cb368a89e6",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.879095+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

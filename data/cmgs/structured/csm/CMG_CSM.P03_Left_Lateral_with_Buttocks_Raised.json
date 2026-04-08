@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.P03_Left_Lateral_with_Buttocks_Raised",
+  "cmg_number": "CSM.P03",
+  "title": "Left Lateral with Buttocks Raised",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- To improve venous return of blood flow to the heart in a pregnant patient >24 weeks gestation.\n- Venous air embolism from lacerated neck veins.\n- Dialysis emergencies.\n\n#### Procedure\n\n- Have the patient position themself in the left lateral position (if possible). \n- In an unconscious patient, utilising two (or more, if necessary) paramedics; position the patient in a left lateral position.\n\n- Place a rolled blanket or pillow under the left buttock.\n\n- The head end can be raised slightly for patient comfort by lifting the red leaver and raising the head end upwards until the desired height is reached, then release the yellow tab.\n\nFigure 1",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "6c595b34dc4ca8d0db4d39a21109d01af22a58de75d698f740cedacf9bb8851b",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.865322+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

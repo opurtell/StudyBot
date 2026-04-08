@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.C08_Precordial_Thump",
+  "cmg_number": "CSM.C08",
+  "title": "Precordial Thump",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- To be performed within 15 seconds of a witnessed ventricular fibrillation (VF) or pulseless ventricular tachycardia (VT) cardiac arrest. \n\n#### Procedure\n\n- Confirm cardiac arrest: \n- No pulse and unconscious.\n- Analyse ECG rhythm.\n\n- If possible, have a second person confirm that a VF or pulseless VT cardiac arrest has occurred.\n\n- If confirmed: \n- Hold one clenched fist approximately 30cms above patient’s mid sternum.\n- Bring fist down sharply so that medial (ulna) aspect of fist makes contact with patient’s chest.\n\n- Reassess patient for a central pulse and check the patient’s rhythm.\n\n#### Contraindications\n- Recent sternotomy for coronary artery bypass graft, valve replacement, or recent significant chest trauma.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "30b9d1ecd338234d4dc4de8aa838a4c09b07db4e92cedecc0df0d14519bc9b36",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.856406+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

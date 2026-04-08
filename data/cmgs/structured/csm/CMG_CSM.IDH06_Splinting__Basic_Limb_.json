@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.IDH06_Splinting__Basic_Limb_",
+  "cmg_number": "CSM.IDH06",
+  "title": "Splinting (Basic Limb)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- For the comfort and support of limb fractures, or soft tissue injuries.\n\n#### Procedure\n- If required, administer pain relief prior to applying splint.\n- Confirm distal pulses are present.\n- Realign limb if perfusion is compromised.\n##### Cardboard Splint\n\n- Select appropriate cardboard splint size, trauma combines or a towel for padding, and a roller bandage.\n\n- Support the patient’s injured limb and position on cardboard splint and padding so that fingers/toes are at the rounded end (see **Figures 1 & 2**).\n\nFigure 1\n\nFigure 2\n\n- Fold up sides of cardboard splint and secure with roller bandage and tape roller bandage in place with the help of a second person.\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.\n\n##### Anatomical Leg Splint\n\n- Place padding in between legs at level of any bony prominences (knees and ankles).\n\n- Secure legs together with triangular bandage at proximal, middle, and distal regions appropriate to injury (see **Figure 3**).\n\nFigure 3\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "b2dad1ddab71aaa861d416b5d4246fa39153a0281cfca57c298d7dfff5733185",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.900387+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.IDH14_Arterial_Tourniquet",
+  "cmg_number": "CSM.IDH14",
+  "title": "Arterial Tourniquet",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Uncontrolled, life-threatening haemorrhage of a limb.\n\n#### Procedure\n\n- Use a blood pressure cuff if available (see **Figure 1**). This spreads the pressure across the limb, minimising compressive injury. Inflate cuff until haemorrhage slows satisfactorily.\n\n- Alternatively utilise a bandage 5cm or greater in diameter (see **Figure 2**).\n\n- Apply the tourniquet between the wound and the heart, 5 to 10 centimetres above the wound site. Never place it directly over the wound or a fracture.\n\n- Note carefully the time that the tourniquet was applied. Write this clearly on the tourniquet itself or on the patient.\n\n- Apply only enough pressure to slow/stop the haemorrhage satisfactorily.\n\n- Ensure the tourniquet is not covered up by clothing, blankets etc.\n\nFigure 1\n\nFigure 2\n\n#### Specific Notes\n- This is a procedure of last resort - saving a **life** or saving a **limb**.\n- **Once the tourniquet is applied and haemorrhage is controlled, the tourniquet should not be released or removed.**",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "79ab57bdbf895b672c2e9ff3d6d90bc331aa2cb6b7a271c2fc1f0d695597ddb5",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.905675+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -21,7 +21,8 @@ npm-debug.log*
 data/notes_md/raw/
 data/notes_md/extraction_log.json
 data/notes_md/ingestion_log.json
-data/cmgs/
+data/cmgs/*
+!data/cmgs/structured/
 data/notes_md/cleaned/
 .opencode/
 opencode.json

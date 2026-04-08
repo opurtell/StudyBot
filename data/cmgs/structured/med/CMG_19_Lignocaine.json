@@ -1,0 +1,1293 @@
+{
+  "id": "CMG_19_Lignocaine",
+  "cmg_number": "19",
+  "title": "Lignocaine",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Local anaesthesia##### Adult and Paediatric\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output##### Adult and Paediatric\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient##### Adult\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine##### Paediatric\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n#### Solvent for IM Ceftriaxone\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Normal Saline": [
+      {
+        "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 10ml/kg Volume: 30ml",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 100ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 140ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "140",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 220ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "220",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 260ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "260",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 300ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 340ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "340",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 380ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "380",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 420ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "420",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 460ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "460",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 500ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 540ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "540",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Dose: 20ml/kg Volume: 600ml",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "600",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Volume: 660ml",
+        "dose_values": [
+          {
+            "amount": "660",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " up to 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Normal saline 20ml/kg.",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "10ml/kg normal saline unless in pulmonary oedema.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+        "dose_values": [
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+        "dose_values": [
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+        "dose_values": [
+          {
+            "amount": "18",
+            "unit": "G"
+          }
+        ]
+      },
+      {
+        "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+        "dose_values": []
+      },
+      {
+        "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+        "dose_values": [
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "151",
+            "unit": "mMol"
+          },
+          {
+            "amount": "1000",
+            "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "mL"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-normal-saline"
+      }
+    ],
+    "Amiodarone": [
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 25mg Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "25",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 35mg Volume: 0.7ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "35",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 55mg Volume: 1.1ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "55",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 65mg Volume: 1.3ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "65",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "75",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 85mg Volume: 1.7ml ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "85",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 95mg Volume: 1.9ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "95",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.9",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "105",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 115mg Volume: 2.3ml ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "115",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 125mg Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "125",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "135",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 165mg Volume: 3.3ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "165",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml Volume: 6ml Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Amiodarone 5mg/kg  (max 150mg) ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 300mg after 3",
+        "dose_values": [
+          {
+            "amount": "300",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "1200mcg in 1ml – plastic ampoule ",
+        "dose_values": [
+          {
+            "amount": "1200",
+            "unit": "mcg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nPotent anti-arrhythmic agent [S4]\n\n##### Presentations\n150mg in 3ml – glass ampoule\n\n##### Actions\nComplex electrophysiological and pharmacological profile:\n\n- Prolongs the action potential duration; increases the refractoriness of all cardiac tissues\n\n- Blocks Na+ channels (class I action)\n\n- Has some anti-adrenergic effects (class II action)\n\n- Ca2+ blockade (class IV action)\n\n- Prolongs QT interval – reflects global prolongation of repolarisation \n\n- When given IV, there is a significant effect on the AV node which causes a delay in nodal conduction\n\n- Also effective for accessory pathway conduction \n\n#### Uses\nEffective for both supraventricular and ventricular arrhythmias. ACTAS uses: \n\n- To slow the ventricular rate in atrial fibrillation and flutter \n\n- To treat VF and VT\n\n#### Adverse Effects\nWhen given IV, can cause vasodilation, negative inotropic effects and hypotension (dose and rate dependent).\n\nOccasionally may cause:\n\n- Bradycardia (especially in older patients)\n\n- Phlebitis\n\n- Hot flushes / sweating\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Cross sensitivity to iodine\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Only use in the setting of cardiac arrest or peri-arrest\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR\n\n#### Doses#### VF/VT cardiac arrest##### Adult\n- **ICP:** 300mg IV/IO \n- Over 30-60 seconds.\n\n##### Paediatric\n- **ICP:** 5mg/kg IV/IO (to maximum 300mg) \n- Over 30-60 seconds.\n\n#### VT, AF and A.flutter - with cardiac output##### Adult\n- **ICP:** 150mg IV via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n##### Paediatric\n- **ICP:** 5mg/kg IV (to maximum 150mg) via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n#### Special Notes\n- Significant potential drug interactions.\n- The following may potentiate the actions of amiodarone: \n- Digoxin\n- Phenytoin (Dilantin)\n- \\u03b2 blockers- Ca2+ channel blocker- Other antiarrhythmics.",
+        "dose_values": [
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-amiodarone-cordarone"
+      }
+    ],
+    "Ceftriaxone": [
+      {
+        "text": "1g ceftriaxone powder for reconstitution – vial",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "It is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone",
+        "dose_values": []
+      },
+      {
+        "text": "10mg in 2ml – vial ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Up to 5ml subcutaneously ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g in 5 ml (50% solution) – glass ampoule",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\n3rd generation cephalosporin antibiotic [S4]\n\n##### Presentations\n1g ceftriaxone powder for reconstitution – vial\n\n##### Actions\n\n- Broad spectrum antibiotic – especially effective against gram-negative bacteria (e.g., meningococcus)\n\n- Effective crossing of blood-brain barrier\n\n#### Uses\nSuspected meningococcal disease, in acutely ill patients\n\n#### Adverse Effects\n\n- Hypersensitivity reactions (not common)\n\n- Diarrhoea\n\n- Skin rash\n\n#### Contraindications\nKnown sensitivity to cephalosporins\n\n#### Precautions\nIt is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\n- 50mg/kg, to a total of 2g – IV preferred \n- Make up to 10ml with normal saline\n- Give slowly over 2 - 4 minutes\n- May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer into two separate injection sites.\n- **ICP:** May also be given IO if no IV available. \n#### Special Notes\n- An incident report should be submitted to CGU if ceftriaxone is administered.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-ceftriaxone-rocephin"
+      }
+    ],
+    "Lignocaine": [
+      {
+        "text": "May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer into two separate injection sites.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+        "dose_values": [
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "5g tube of cream containing lignocaine 40mg/g",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "g"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+        "dose_values": []
+      },
+      {
+        "text": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Local anaesthesia##### Adult and Paediatric\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output##### Adult and Paediatric\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient##### Adult\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine##### Paediatric\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n#### Solvent for IM Ceftriaxone\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "80",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "40",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-lignocaine"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "4475fc6669ebb968c0e919911cd3848d2b075c1a9ae4832d0420199c3652f8fe",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.779050+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

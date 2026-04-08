@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.IDH09_Pelvic_Splint",
+  "cmg_number": "CSM.IDH09",
+  "title": "Pelvic Splint",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Patients suspected of having a pelvic fracture, particularly if hypotensive.\n- Patients with significant decreased LOC where pelvic fracture cannot be excluded.\n\n#### Procedure\n\n- Position the patient supine and remove any clothing that will be under the binder. Underwear can remain in place but avoid bunching of material under binder.\n\n- Unfold sling with white surface facing up.\n\n- Place white side of sling beneath patient at level of buttocks (greater trochanter/symphysis pubis) (see **Figure 1**).\n\nFigure 1\n\n- Firmly close sling by placing black Velcro side of flap down on the black Velcro strip. Fold back material as needed. Try to place buckle close to midlines (see **Figure 2**).\n\nFigure 2\n\n- Grab orange free handle on outer surface of flap and release from flap by pulling upward.\n\n- With or without assistance firmly pull both orange handles in opposite directions to tighten sling (see **Figure 3**).\n\nFigure 3\n\n- Keep pulling free handle until you feel or hear the buckle lock or click.\n\n- As soon as the buckle clicks, maintain tension and firmly press orange handle onto the black Velcro strip. A second click may be heard after the sling is secured (see **Figure 4**).\n\nFigure 4\n\n- To remove sling, lift orange free handle away from flap by pulling upward. Maintain tension and slowly allow sling to loosen. Do not cut sling off patient (see **Figure 5**).\n\nFigure 5\n\n#### Contraindications\n- Not to be used on children/adolescents.\n\n#### Specific Notes\n- ACTAS carries the medium size belt that fits 95% of the adult population.\n- Only to be applied on supine patients.\n- Replace splint on a one for one swap with the hospital (i.e. not single use unless significantly contaminated).\n- May be applied over clothing.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "9c7bf0bb0cb8ec7f48aa23d4b415ea1e61d85a7eb9495f65a107d6df963af416",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.902557+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

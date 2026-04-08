@@ -1,0 +1,52 @@
+{
+  "id": "CMG_25_Olanzapine",
+  "cmg_number": "25",
+  "title": "Olanzapine",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\nAntipsychotic\n\n- **High-risk medication**\n\n##### Presentations\n5mg and 10mg wafer \n\n##### Actions\nOlanzapine is an atypical antipsychotic. \n Acts on several neurotransmitters; antipsychotic actions are thought to be mediated by dopamine blockade. \n Onset of action: PO 10-20 min | Duration 12-24 hours\n\n#### Uses\nPharmacological intervention for mild to moderately agitated patients.\n\n#### Adverse Effects\n\n- Prolonged QT interval (particularly in the elderly)\n\n- Extrapyramidal effects (rare)\n\n- Neuroleptic malignant syndrome (rare)\n\n- May lower seizure threshold\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Parkinson’s disease\n\n- Post ictal\n\n#### Precautions\nIncreased effects in patients who have consumed alcohol, recreational drugs and with other sedative agents.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated** when 14 years)\n- 10mg wafer \n- Repeat once, after 20 minutes, if required.\n\n- Modify dose to 5mg wafer if: \n- Frail/elderly (>65 years) or\n- Aboriginal/Torres Straight Island background >55 years- Repeat once, after 10-15 minutes, if required.##### Paediatric (",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Olanzapine": [
+      {
+        "text": "10mg wafer ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nAntipsychotic\n\n- **High-risk medication**\n\n##### Presentations\n5mg and 10mg wafer \n\n##### Actions\nOlanzapine is an atypical antipsychotic. \n Acts on several neurotransmitters; antipsychotic actions are thought to be mediated by dopamine blockade. \n Onset of action: PO 10-20 min | Duration 12-24 hours\n\n#### Uses\nPharmacological intervention for mild to moderately agitated patients.\n\n#### Adverse Effects\n\n- Prolonged QT interval (particularly in the elderly)\n\n- Extrapyramidal effects (rare)\n\n- Neuroleptic malignant syndrome (rare)\n\n- May lower seizure threshold\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Parkinson’s disease\n\n- Post ictal\n\n#### Precautions\nIncreased effects in patients who have consumed alcohol, recreational drugs and with other sedative agents.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated** when 14 years)\n- 10mg wafer \n- Repeat once, after 20 minutes, if required.\n\n- Modify dose to 5mg wafer if: \n- Frail/elderly (>65 years) or\n- Aboriginal/Torres Straight Island background >55 years- Repeat once, after 10-15 minutes, if required.##### Paediatric (",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-olanzapine"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "02f0ca7ff8b8dd161442524b23f7b005b196d4138a101f714f3cfc87a1e94122",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.785932+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

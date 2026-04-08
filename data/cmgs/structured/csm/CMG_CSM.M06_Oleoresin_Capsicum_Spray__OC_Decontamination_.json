@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.M06_Oleoresin_Capsicum_Spray__OC_Decontamination_",
+  "cmg_number": "CSM.M06",
+  "title": "Oleoresin Capsicum Spray (OC Decontamination)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- The management of physiological effects of exposure to OC spray. \n\n#### Decontamination Procedure\n\n- Ensure that you don’t become contaminated. Stand in an upwind position and wear PPE appropriate to the scene (i.e. gloves, eye protection and masks if required).\n\n- Reassure patient that their symptoms will disappear during decontamination.\n\n- Remove contaminated clothing to limit further exposure to the spray.\n\n- Tell the patient not to rub their face, eyes or skin, as this will increase any pain that is being experienced.\n\n- Expose the patient to fresh air where a breeze is present, preferably. A fan can also be used with good effect.\n\n- Flush the affected area with copious amounts of cool water. A tap or hose can be utilised if available, otherwise a giving set and saline will suffice. If spray is dried in the hair, take care not to re-wet the hair, as its runoff will re-contaminate the face.\n\n- Washing the face and eyelids with a mild oil free soap will assist in breaking down the oily consistency of the OC resin, thus speeding up its removal from the skin.\n\n- Assist the patient in removing contact lenses as spray residue may accumulate under the lenses and continue irritating the eye.\n\n- Continue to flush the eyes and concentrate on irrigating the eye under the lids.\n\n#### Specific Notes\n- Physiological effects may include: \n- **Eyes** - pain, burning, stinging, inflammation, tearing, eyelid spasm.\n- **Respiratory** - swelling, bronchospasm, coughing, gagging, gasping, dysphasia. Respiratory function usually resolves in 10-45 minutes. Rarely, cyanosis and respiratory arrest can occur.\n- **Skin** - swelling, burning, tingling, redness, blistering.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "3f1d0323c0118945dd618b2023cacff5f285d1259f5cd9e58cb21eb74340d65e",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.914711+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

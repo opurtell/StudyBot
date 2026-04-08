@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.IDH12_Compression_Bandage",
+  "cmg_number": "CSM.IDH12",
+  "title": "Compression Bandage",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Envenomation.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- Inform the patient to move as little as possible.\n\n- If possible, mark the location of the envenomation (see **Figure 1**).\n\n- Utilise 2 separate bandages, a roller or crepe (preferred) bandage: \n- Bandage 1 = over the top of the site (see **Figure 2**).\n- Bandage 2 = start at the distal end of the limb working your way up proximally (see **Figure 3**).\n\n- Splint limb utilising cardboard splint or anatomical splinting if nil cardboard splint available.\n\n- Confirm distal pulse is present, sensation, and capillary refill.\n\n#### Contraindications\n- Envenomation by Red Back spider – consider ice pack.\n\n#### Specific Notes\n- If safe to do so, try to identify the creature (e.g. photo, description).",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "efa8ecd59fa88e3e2579f04d71d0530a2b9b1b99ba04c3f4ef913d966f303861",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.904888+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "CMG_18A_Autonomic_Dysreflexia",
+  "cmg_number": "18A",
+  "title": "Autonomic Dysreflexia",
+  "version_date": null,
+  "section": "Trauma",
+  "content_markdown": "# Autonomic Dysreflexia\n\nAutonomic dysreflexia results from widespread reflex activity of the sympathetic nervous system below the level of spinal cord injury (SCI) triggered by an ascending sensory (usually noxious) stimulus. This activity remains uncontrolled due to isolation of the spinal cord below the injury from the regulatory centre in the brainstem. Parasympathetic activity above the level of SCI occurs in response.\n\nCommon causes of autonomic dysreflexia include:\n\n- **Bladder:** Distended or hyperactive bladder, urinary tract infection, bladder/kidney stones, urological procedure (e.g., catheter insertion), blockage of urinary catheter.\n- **Bowel:** Constipation, faecal impaction, rectal irritation (e.g., enema or manual evacuation), haemorrhoids.\n- **Skin:** Ingrown toenail, burn, pressure area, tight clothing. \n- **Other:** Any irritating stimulus, including fracture, distended stomach, sexual intercourse, labour or severe menstrual cramping.\n#### Spinal Cord Injury\n**Autonomic dysreflexia affects individuals with spinal cord injury typically at or above T6 level.** The sudden onset of any of the following is significant:\n\n- Sudden hypertension (this may fall within the normal limits for the rest of the population). \n- Pounding headache.\n- Bradycardia.\n- Flushing/blotching of skin and profuse sweating above spinal injury level.\n- Skin pallor and piloerection below the spinal injury level.\n- Chills without fever.\n- Nasal congestion.\n- Blurred vision.\n- Shortness of breath, sense of apprehension and / or anxiety.\n- Irritability or combative behaviour (in people with limited cognitive and communication skills). \n#### Initial Actions\n- Ask the patient and carer if they suspect a cause.\n- Elevate patient’s head and position with legs dependent, if possible.\n- Loosen any constrictive clothing.\n- Check bladder drainage equipment for kinks or obstruction \n- **If found:** drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.\n- Monitor BP every 2-5 minutes.\n- Avoid pressing over the bladder.\n#### Treatment\n**If, despite initial actions, BP remains elevated (≥ 150mmHg systolic or ≥ 20mmHg above known resting level), commence treatment:**\n\n- Glyceryl trinitrate: \n- Adult: 400mcg spray or 300mcg tablet – sublingually. \n- Paediatric (12-16yrs): 150mcg tablet – sublingually (do not use spray. \n\n- If little or no effect: \n- Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. \n- Analgesia with caution as required (especially if noxious stimuli are the suspected cause, noting that the patient may not be able to feel or report this).\n- **ICP:** Sedation with caution as required.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Glyceryl Trinitrate": [
+      {
+        "text": "Glyceryl trinitrate:  Adult: 400mcg spray or 300mcg tablet – sublingually.  Paediatric (12-16yrs): 150mcg tablet – sublingually (do not use spray. ",
+        "dose_values": [
+          {
+            "amount": "400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "150",
+            "unit": "mcg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nNitrate smooth muscle relaxant and vasodilator [S3]\n\n##### Presentations\n\n- White 300mcg or 600mcg sublingual tablets\n\n- Metered dose pump spray – multiple patient use 400mcg/dose – 200 dose bottle \n\n##### Actions\n\n- Arterial and venous vasodilation\n\n- Dilation of collateral coronary vessels\n\n#### Uses\n\n- Relieve cardiac pain of ischaemic origin\n\n- Relieve acute pulmonary oedema\n\n- Management of autonomic dysreflexia\n\n#### Adverse Effects\n\n- Hypotension\n\n- Headache\n\n- Flushing of skin\n\n- Occasionally – bradycardia\n\n#### Contraindications\n\n- Do not administer if systolic BP is",
+        "dose_values": [
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "400",
+            "unit": "mcg"
+          }
+        ],
+        "source": "app-glyceryl-trinitrate-anginine-or-nitrolingual-pumpspray"
+      }
+    ],
+    "Gtn": [
+      {
+        "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
+        "dose_values": []
+      },
+      {
+        "text": "Respiratory rate: ",
+        "dose_values": []
+      },
+      {
+        "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients ",
+        "dose_values": []
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "d42cb4d1fea1e967252c7cf893df86629ed758e1e00f2b38c07ec94a658756a7",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.714987+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.B08_Expiratory_Assistance__Lateral_Chest_Squeeze_",
+  "cmg_number": "CSM.B08",
+  "title": "Expiratory Assistance (Lateral Chest Squeeze)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Patients experiencing moderate to severe respiratory distress with prolonged expiratory phase and gas trapping, such as asthmatic and COPD patients.\n\n#### Procedure\n\n- Explain the procedure to the patient, if conscious.\n\n- If the patient is sitting, sit in front of patient and place both hands on either side of the lower rib cage.\n\n- If the patient is supine, kneel astride hips and place both hands on either side of the lower rib cage.\n\n- As the patient ceases inspiration (either spontaneously or with manual ventilation), compress ribs medially and in a synchronistic and slow manner to accommodate the entire expiratory phase.\n\n- Do not compress the patient's ribs during inspiration.\n\n- Compressions should be slow, rhythmic and sustained to assist in forcing trapped air out of the lungs.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Complications\n- Hypotension.\n- Fractured ribs.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "ea2ac7d72772e01d63d2793e43ab0f56adc820ed175b18a22f8b0feccb6a708e",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.839863+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

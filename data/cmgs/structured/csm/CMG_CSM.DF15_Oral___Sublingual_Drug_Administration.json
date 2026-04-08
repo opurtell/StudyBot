@@ -1,0 +1,444 @@
+{
+  "id": "CMG_CSM.DF15_Oral___Sublingual_Drug_Administration",
+  "cmg_number": "CSM.DF15",
+  "title": "Oral / Sublingual Drug Administration",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Patients requiring administration of a drug via the oral or sublingual route (e.g. Aspirin, Glucose Gel, Glyceryl Trinitrate (tablet or spray) or Panadol).\n\n#### Procedure\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time- Route##### Aspirin\n- Chewed or may be dissolved in a small amount of water and swallowed.\n##### Glucose Gel\n- Administer small amounts to the patient if unable to self administer.\n- Regularly check to ensure patient is swallowing gel completely.##### Glyceryl Trinitrate\n- Tablet should be placed under the tongue and allowed to dissolve. Inform the patient not to chew or swallow tablet.\n- Spray should be primed by pressing nozzle 5 times prior to first use and once for subsequent uses (directed away from any person/animal). Hold spray upright and close to the mouth and spray sublingually. Instruct patient to close mouth and not inhale or swallow. Following use, wipe pumpspray with alcohol wipe. Can be used for multiple patients unless significantly contaminated.##### Ondansetron\n- Oral disintegrating tablet (ODT) dissolved sublingually.\n##### Panadol, Ibuprofen (oral only)\n- PO: Drawn up in a syringe and administered orally.\n- PO: Tablet swallowed.\n- IV: \n- ≤ 50kg = 1g (100mls) over 5 minutes.\n- ≥50kg = 15mg/kg over 15 minutes (via burette).\n#### Specific Notes\n- Always ensure medication preadministration checks are completed prior to any drug administration.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Glucose": [
+      {
+        "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.75",
+            "unit": "ml"
+          },
+          {
+            "amount": "7.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Glucose 10%",
+        "dose_values": []
+      },
+      {
+        "text": "BGL < 4 mmol/L",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Glucose 10% IV (repeat once if required).",
+        "dose_values": []
+      },
+      {
+        "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Hypertonic glucose solution – containing 0.1g dextrose per ml",
+        "dose_values": [
+          {
+            "amount": "0.1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "10% glucose – in 250ml in collapsible plastic flask",
+        "dose_values": [
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Treat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
+        "dose_values": []
+      },
+      {
+        "text": "37.5g tube containing 15g glucose",
+        "dose_values": [
+          {
+            "amount": "37.5",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "1 x tube of 15g glucose orally  May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered Total maximum dose 30g glucose",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
+        "dose_values": [
+          {
+            "amount": "0.1",
+            "unit": "g"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-glucose-ten-pct"
+      },
+      {
+        "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
+        "dose_values": [
+          {
+            "amount": "37.5",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "source": "app-oral-glucose-gel"
+      },
+      {
+        "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+        "dose_values": [
+          {
+            "amount": "27.8",
+            "unit": "mmol"
+          }
+        ],
+        "source": "app-blood-glucose-measurement"
+      }
+    ],
+    "Glyceryl Trinitrate": [
+      {
+        "text": "Glyceryl trinitrate:  Adult: 400mcg spray or 300mcg tablet – sublingually.  Paediatric (12-16yrs): 150mcg tablet – sublingually (do not use spray. ",
+        "dose_values": [
+          {
+            "amount": "400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "150",
+            "unit": "mcg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nNitrate smooth muscle relaxant and vasodilator [S3]\n\n##### Presentations\n\n- White 300mcg or 600mcg sublingual tablets\n\n- Metered dose pump spray – multiple patient use 400mcg/dose – 200 dose bottle \n\n##### Actions\n\n- Arterial and venous vasodilation\n\n- Dilation of collateral coronary vessels\n\n#### Uses\n\n- Relieve cardiac pain of ischaemic origin\n\n- Relieve acute pulmonary oedema\n\n- Management of autonomic dysreflexia\n\n#### Adverse Effects\n\n- Hypotension\n\n- Headache\n\n- Flushing of skin\n\n- Occasionally – bradycardia\n\n#### Contraindications\n\n- Do not administer if systolic BP is",
+        "dose_values": [
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "400",
+            "unit": "mcg"
+          }
+        ],
+        "source": "app-glyceryl-trinitrate-anginine-or-nitrolingual-pumpspray"
+      }
+    ],
+    "Ondansetron": [
+      {
+        "text": "Ondansetron may be given in exceptional circumstances, but is not recommended (category B1). ",
+        "dose_values": []
+      },
+      {
+        "text": "##### Type\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n4mg in 2ml – plastic or glass ampoule \n 4mg – orally disintegrating tablet (ODT) \n\n##### Actions\n\n- Potent, highly specific and selective serotonin 5-HT receptor antagonist. \n\n- Precise mode of action in control of nausea and vomiting is not known. Likely to have actions peripherally and in the central nervous system.\n\n- Maximum effect is approximately 10 minutes following IV administration. \n\n- Hepatic metabolism.\n\n#### Uses\nFor the prevention or treatment of nausea and vomiting\n\n#### Adverse Effects\n\n- Headache\n\n- Flushing of skin\n\n- Occasional reaction at the site of IV injection\n\n- Drowsiness\n\n- Anxiety and agitation\n\n- Transient visual disturbances\n\n#### Contraindications\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Use only for hyperemesis\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- IV: 8mg slowly over 2 minutes \n- May be administered IM if necessary\n- Single dose only.\n\n- ODT: 8mg sublingually \n- Single dose only.\n##### Paediatric\n- IV: 0.1mg/kg (max. 4mg) \n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT: \n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.1",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-ondansetron-zofran"
+      }
+    ],
+    "Aspirin": [
+      {
+        "text": "6mg in 2ml – vial",
+        "dose_values": [
+          {
+            "amount": "6",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nNon – steroidal anti-inflammatory drug [S2]\n\n##### Presentation\n300mg tablet\n\n##### Actions\n\n- Inhibits platelet function (for up to 7 days)\n\n- Suppresses inflammation, reduces fever, relieves pain (rapidly absorbed from the stomach and small bowel)\n\n#### Uses\nSuspected myocardial ischaemia\n\n#### Adverse Effects\n\n- Allergic reactions\n\n- Aggravation of bleeding tendencies\n\n- Gastric irritation (unlikely after single dose)\n\n#### Contraindications\n\n- Known or suspected allergy to salicylates\n\n- Known or suspected active bleeding\n\n- Known bleeding tendency\n\n- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) \n\n#### Precautions\n\n- Peptic ulcer\n\n- Patients on anticoagulants\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- 300mg until 32 weeks, then reduce to 75mg\n\n##### Breastfeeding\n- 150mg when breastfeeding\n\n#### Doses##### Adult\n- 1 tablet (300mg) \n- Chewed and swallowed, or dissolved in a small amount of water. \n\n- \\xbd tablet (150mg) if on warfarin.\n#### Special Notes\n- Single dose only.\n- Administer even when patient is on slow release aspirin.",
+        "dose_values": [
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "75",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "150",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-acetylsalicylic-acid-aspirin"
+      }
+    ],
+    "Ibuprofen": [
+      {
+        "text": "Previous ibuprofen administration within 4 hours",
+        "dose_values": []
+      },
+      {
+        "text": "Tablets: 20-40kg: 200mg PO (liquid): Ibuprofen 100mg/5ml  3-6 months (6-8 kg): 3 - 4ml 6-12 months (8-10 kg): 4 - 5ml 1-3 years (10-14 kg): 5 - 7ml 3-5 years (14-18 kg): 7 - 9ml 5-7 years (18-22 kg): 9 - 11ml 7-9 years (22-28 kg): 11 - 14ml 9-12 years (28-40 kg): 14 - 20ml",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "9",
+            "unit": "ml"
+          },
+          {
+            "amount": "11",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "≤ 50kg = 1g (100mls) over 5 minutes. ≥50kg = 15mg/kg over 15 minutes (via burette).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nNon-steroidal anti-inflammatory\n\n##### Presentations\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated**\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n##### Paediatric\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "400",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          },
+          {
+            "amount": "9",
+            "unit": "ml"
+          },
+          {
+            "amount": "11",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-ibuprofen"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "6fea8346c5b009a39e43591f82421857073ba7d6d8d53739561e19276fcd5df7",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.888755+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

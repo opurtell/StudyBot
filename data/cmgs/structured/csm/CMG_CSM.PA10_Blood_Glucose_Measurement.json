@@ -1,0 +1,18 @@
+{
+  "id": "CMG_CSM.PA10_Blood_Glucose_Measurement",
+  "cmg_number": "CSM.PA10",
+  "title": "Blood Glucose Measurement",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "2aaf571f52152c8c6330acc9e5a2f0ec5ef85d7c95c3f22d4f48420f64677cf1",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.863307+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}
