@@ -137,6 +137,7 @@ class TestRecordAsked:
         store.record_asked("s-1", q)
         got = store.get_session("s-1")
         assert len(got.asked_chunk_contents) == 1
+        assert got.asked_question_ids == ["q-1", "q-1"]  # duplicates allowed for IDs
 
     def test_record_asked_missing_session_is_noop(self, store):
         q = _make_question()
