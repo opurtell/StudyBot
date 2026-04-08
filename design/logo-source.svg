@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Clinical Recall Assistant Logo</title>
+  <desc>Folder icon with Star of Life medical symbol — Clinical Recall Assistant brand mark</desc>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#FBF9F3" rx="0"/>
+
+  <!-- === FOLDER BODY === -->
+  <!-- Folder back panel -->
+  <rect x="144" y="210" width="736" height="580" rx="16" ry="16" fill="#2D5A54"/>
+
+  <!-- Folder tab -->
+  <path d="M144 226 L144 178 Q144 162 160 162 L340 162 Q352 162 358 174 L384 226 Z" fill="#2D5A54"/>
+
+  <!-- Folder front panel (slightly lighter) -->
+  <rect x="144" y="260" width="736" height="530" rx="16" ry="16" fill="#3A756C"/>
+
+  <!-- === STAR OF LIFE === -->
+  <g transform="translate(512, 505)">
+
+    <!-- Six-pointed star (Star of Life) -->
+    <!-- Created from two overlapping equilateral triangles -->
+    <polygon
+      points="0,-155 134.2,77.5 -134.2,77.5"
+      fill="#2D5A54"
+      stroke="#DAE058"
+      stroke-width="3"
+    />
+    <polygon
+      points="0,155 134.2,-77.5 -134.2,-77.5"
+      fill="#2D5A54"
+      stroke="#DAE058"
+      stroke-width="3"
+    />
+
+    <!-- Circle in center of star -->
+    <circle cx="0" cy="0" r="52" fill="#DAE058"/>
+
+    <!-- Simplified staff of Asclepius inside circle -->
+    <!-- Vertical staff -->
+    <rect x="-3.5" y="-38" width="7" height="76" rx="2" fill="#2D5A54"/>
+
+    <!-- Snake body - simplified curved path -->
+    <path d="M 3.5,-28 C 22,-28 28,-18 22,-8 C 16,2 3.5,2 3.5,12 C 3.5,22 22,22 22,12"
+          fill="none" stroke="#2D5A54" stroke-width="5.5" stroke-linecap="round"/>
+
+    <!-- Snake head -->
+    <ellipse cx="22" cy="-30" rx="6" ry="5" fill="#2D5A54"/>
+
+  </g>
+
+  <!-- === HIGHLIGHT ACCENT LINE === -->
+  <!-- Thin accent line at bottom of folder -->
+  <rect x="144" y="774" width="736" height="6" rx="3" fill="#DAE058" opacity="0.8"/>
+
+</svg>
