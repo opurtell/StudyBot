@@ -6,9 +6,19 @@ A desktop study tool for paramedics that quizzes you on clinical knowledge using
 
 ## Download and Install
 
-Pre-built installers are available from [GitHub Releases](https://github.com/opurtell/studyBotcode/releases).
+Pre-built installers are available from [GitHub Releases](https://github.com/opurtell/studyBotcode/releases). There are two types of release:
 
-### 1. Choose the right download
+### Which release should I download?
+
+**Standard release** (tagged `v0.x.x`) — includes ACTAS Clinical Management Guidelines only. This is the right choice for most users. Quiz questions are generated from the ACTAS CMGs -- the authoritative clinical reference for ACT Ambulance Service paramedics.
+
+**Personal build** (tagged `personal-v0.x.x`) — includes everything in the standard release, plus personal study documents:
+- **University paramedicine notes** -- handwritten Notability notes from lectures and study sessions, converted to text via OCR
+- **CPD study documents** -- continuing professional development notes covering topics like ECG interpretation, neurological assessment, febrile seizures, and pharmacology
+
+These personal documents are the developer's own study material. They may contain errors, may not reflect current best practice, and should not be treated as authoritative clinical reference. That said, they can add useful depth to quiz questions -- particularly for pathophysiology and pharmacology topics that the CMGs cover at a higher level.
+
+### Choose the right download for your machine
 
 | Your machine | Download file |
 |--------------|---------------|
@@ -51,7 +61,7 @@ The app needs an API key from an AI provider to generate quiz questions and eval
 
 ### 4. Start studying
 
-Once your API key is set, you're ready to go. The app comes pre-loaded with ACTAS Clinical Management Guidelines. Start a quiz from the dashboard -- you can quiz across all categories or target specific topics.
+Once your API key is set, you're ready to go. The app comes pre-loaded with ACTAS Clinical Management Guidelines (and personal study documents, if you downloaded the personal build). Start a quiz from the dashboard -- you can quiz across all categories or target specific topics.
 
 ---
 
