@@ -1,7 +1,7 @@
 {
   "name": "clinical-recall-assistant",
   "version": "0.1.0",
-  "description": "ACTAS paramedic clinical study tool",
+  "description": "ACTAS CMG Build",
   "main": "src/electron/main.js",
   "homepage": "./",
   "scripts": {

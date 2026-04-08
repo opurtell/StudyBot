@@ -1,5 +1,5 @@
 appId: com.studybot.clinical-recall
-productName: Clinical Recall Assistant
+productName: ACTAS CMG Build
 directories:
   output: release/
 files:
