@@ -5,6 +5,6 @@
     "zai": { "api_key": "", "default_model": "glm-4.7-flash" }
   },
   "active_provider": "anthropic",
-  "quiz_model": "claude-haiku-4-5-20251001",
+  "quiz_model": "gemini-3.1-flash-lite-preview",
   "clean_model": "claude-opus-4.6"
 }
