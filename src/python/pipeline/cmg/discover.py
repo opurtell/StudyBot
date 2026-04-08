@@ -7,12 +7,18 @@ import logging
 import os
 import time
 from datetime import datetime, timezone
-from playwright.sync_api import sync_playwright, TimeoutError
+try:
+    from playwright.sync_api import sync_playwright, TimeoutError
+except ImportError:  # pragma: no cover — playwright is an optional scraping dependency
+    sync_playwright = None  # type: ignore[assignment]
+    TimeoutError = Exception  # type: ignore[assignment,misc]
 
 logger = logging.getLogger(__name__)
 
 def discover(url: str = "https://cmg.ambulance.act.gov.au/tabs/guidelines", output_dir: str = "data/cmgs/raw") -> str:
     """Run Playwright to crawl the SPA and save raw guideline HTML outputs."""
+    if sync_playwright is None:
+        raise ImportError("playwright is required for CMG scraping. Install with: pip install studybot-backend[scraping]")
     os.makedirs(output_dir, exist_ok=True)
     
     crawled_cmgs = []
