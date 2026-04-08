@@ -28,7 +28,7 @@ Legend: `[ ]` not started | `[~]` in progress | `[x]` complete | `[!]` blocked
 
 **Release objective:** installable standalone apps for macOS and Windows that do not require a pre-installed Python and that start the bundled FastAPI backend automatically.
 
-**Current packaging maturity:** Phases A-E and P complete. Verification (Phase F) partially complete — automated validation scripts and tests pass. CI/release automation (Phase H) complete. Signing (Phase G) deferred — unsigned builds are functional; certificates only suppress Gatekeeper/SmartScreen warnings.
+**Current packaging maturity:** Phases A-E and P complete. Verification (Phase F) partially complete — automated validation scripts and tests pass. CI/release automation (Phase H) complete. Signing (Phase G) partially complete — macOS ad-hoc signing with hardenedRuntime and entitlements configured; paid certificate signing and notarisation deferred.
 
 ## Decision Summary
 
@@ -298,8 +298,9 @@ When major repo changes land and a new app build is needed, use this sequence:
 
 **Objective:** move from working installers to publicly distributable installers.
 
-- [ ] Step G1: Apple Developer Program enrolment, Developer ID Application certificate, signing and notarisation secrets, and Gatekeeper validation. **Deferred** — unsigned builds are functional; Gatekeeper shows a bypassable warning.
-- [ ] Step G2: Windows Authenticode certificate, Electron Builder signing config, and clean-machine signed installer validation. **Deferred** — unsigned builds are functional; SmartScreen shows a bypassable warning.
+- [x] Step G1 (macOS): Ad-hoc signing with hardenedRuntime and entitlements configured. `identity: "-"` in `electron-builder.yml` triggers ad-hoc codesign without a paid Apple Developer certificate. Entitlements in `build/entitlements.mac.plist` allow V8 JIT, unsigned executable memory, and library validation bypass (needed for bundled Python dylibs). Gatekeeper will still show a bypassable warning until a Developer ID certificate and notarisation are configured.
+- [ ] Step G1 (macOS, paid): Apple Developer Program enrolment, Developer ID Application certificate, notarisation secrets, and Gatekeeper validation. **Deferred** — requires paid certificate ($99/year Apple Developer Program).
+- [ ] Step G2 (Windows): Authenticode certificate and signed installer validation. **Deferred** — requires paid Authenticode certificate. Self-signed certs can be created for free but do not suppress SmartScreen warnings. electron-builder is configured with `signingHashAlgorithms: ['sha256']` so signing works when `CSC_LINK` and `CSC_KEY_PASSWORD` env vars are set.
 
 ### Phase H: CI and release automation
 
@@ -359,6 +360,8 @@ When major repo changes land and a new app build is needed, use this sequence:
 | 2026-04-06 | Remove `arch` list from `electron-builder.yml` mac and win targets | The `--x64`/`--arm64` CLI flag does not override the yml arch list, so both arches were built on every run; each arch DMG bundled the same payload from the single flat `build/resources/backend/` directory | Active |
 | 2026-04-07 | Add personal build workflow that bundles all data sources | The standard release only bundles CMG data. The personal build includes notability notes, REFdocs, and CPDdocs by uploading the archive's pre-built ChromaDB to a GitHub Release and downloading it in CI. `PERSONAL_BUILD=1` env var opts out of the CMG-only ChromaDB pre-build step. | Active |
 | 2026-04-06 | Build per-arch Mac DMGs sequentially, never in parallel | The backend payload directory is overwritten per build; sequential builds with rename between them ensures each DMG contains the correct arch-specific binaries | Active |
+| 2026-04-08 | Ad-hoc macOS signing with hardenedRuntime and entitlements | Free alternative to paid Apple Developer signing. `identity: "-"` triggers `codesign --sign -` without a certificate. Entitlements (`allow-jit`, `allow-unsigned-executable-memory`, `disable-library-validation`) are required for Electron + bundled Python under hardenedRuntime. Gatekeeper still warns but the warning is bypassable. | Active |
+| 2026-04-08 | Configure Windows `signingHashAlgorithms` for future Authenticode signing | electron-builder is ready to sign Windows builds when `CSC_LINK`/`CSC_KEY_PASSWORD` env vars are provided. No cert is bundled; unsigned builds work as before. | Active |
 
 ## Personal Build Workflow
 
@@ -400,7 +403,7 @@ gh workflow run personal-build.yml
 - Windows portable builds remain deferred.
 - PyInstaller and Nuitka remain deferred.
 - Auto-update infrastructure remains deferred.
-- Apple Developer Program signing and notarisation (Step G1) remains deferred.
+- Apple Developer Program signing and notarisation (Step G1, paid) remains deferred. Ad-hoc signing is configured as a free alternative.
 
 ## Known Unknowns
 

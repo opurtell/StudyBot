@@ -23,10 +23,16 @@ extraResources:
 mac:
   category: public.app-category.education
   hardenedRuntime: true
+  identity: "-"
+  entitlements: "build/entitlements.mac.plist"
+  entitlementsInherit: "build/entitlements.mac.plist"
   artifactName: "${productName}-${version}-${arch}.${ext}"
   target:
     - target: dmg
 win:
+  signingHashAlgorithms:
+    - sha256
+  artifactName: "${productName}-${version}-${arch}.${ext}"
   target:
     - target: nsis
 asar: true
