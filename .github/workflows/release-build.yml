@@ -81,11 +81,28 @@ jobs:
       - name: Flatten artifacts
         run: |
           mkdir -p release-staging
-          find release-artifacts -type f \( -name '*.dmg' -o -name '*.exe' \) ! -path '*/win-unpacked/*' -exec cp {} release-staging/ \;
+          find release-artifacts -type f \( -name '*.dmg' -o -name 'StudyBot*.exe' \) ! -path '*/win-unpacked/*' -exec cp {} release-staging/ \;
+          echo "Staged files:"
+          ls -lh release-staging/
+      - name: Determine version
+        id: version
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [[ -z "$VERSION" ]]; then
+            # For tag-triggered runs, extract from GITHUB_REF
+            if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+              VERSION="${GITHUB_REF#refs/tags/}"
+            else
+              VERSION="v$(date +%Y.%m.%d-%H%M)"
+            fi
+          fi
+          echo "tag=$VERSION" >> "$GITHUB_OUTPUT"
       - name: Create draft release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.version.outputs.tag }}
           draft: true
+          name: "Standard Build ${{ steps.version.outputs.tag }}"
           files: release-staging/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
