@@ -215,3 +215,29 @@ def test_cmg_rebuild_starts_background_job(monkeypatch):
     response = client.post("/settings/cmg-rebuild")
     assert response.status_code == 200
     assert response.json()["status"] == "started"
+
+
+def test_rerun_pipeline_starts_both_pipelines(monkeypatch):
+    """Re-run Pipeline should trigger both notability notes and personal docs ingestion."""
+    commands_run: list[list[str]] = []
+
+    def mock_run(cmd, **kwargs):
+        commands_run.append(cmd)
+
+    monkeypatch.setattr(settings_router.subprocess, "run", mock_run)
+    monkeypatch.setattr(settings_router, "invalidate_guideline_cache", lambda: None)
+    monkeypatch.setattr(settings_router, "invalidate_medication_cache", lambda: None)
+
+    response = client.post("/settings/pipeline/rerun")
+    assert response.status_code == 200
+    assert response.json()["status"] == "started"
+
+    # Wait for background thread to finish
+    import time
+    time.sleep(1)
+
+    # Should have run both pipelines
+    assert len(commands_run) >= 2
+    cmd_strs = [" ".join(c) for c in commands_run]
+    assert any("pipeline.run" in c for c in cmd_strs), f"Notability pipeline not found in {cmd_strs}"
+    assert any("pipeline.personal_docs.run" in c for c in cmd_strs), f"Personal docs pipeline not found in {cmd_strs}"

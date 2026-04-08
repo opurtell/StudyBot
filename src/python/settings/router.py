@@ -39,6 +39,11 @@ def _run_pipeline_ingest_in_background() -> None:
             cwd=str(Path(__file__).resolve().parent.parent),
             check=False,
         )
+        subprocess.run(
+            ["python3", "-m", "pipeline.personal_docs.run", "ingest"],
+            cwd=str(Path(__file__).resolve().parent.parent),
+            check=False,
+        )
     finally:
         _invalidate_read_caches()
 
