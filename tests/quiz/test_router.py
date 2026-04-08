@@ -15,6 +15,15 @@ from quiz.models import (
 TEST_CONFIG = load_config("config/settings.example.json")
 
 
+@pytest.fixture(autouse=True)
+def _clean_store():
+    from quiz import store
+
+    store.clear_all()
+    yield
+    store.clear_all()
+
+
 @pytest.fixture
 def mock_deps():
     mock_llm = MagicMock()
@@ -33,9 +42,12 @@ def mock_deps():
 
 @pytest.fixture
 def client(mock_deps):
-    from main import app
+    from fastapi import FastAPI
+    from quiz.router import router as quiz_router
 
-    return TestClient(app)
+    _app = FastAPI()
+    _app.include_router(quiz_router)
+    return TestClient(_app)
 
 
 def _make_question():
