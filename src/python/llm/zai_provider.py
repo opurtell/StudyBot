@@ -18,7 +18,15 @@ class ZaiProvider:
             )
             return response.choices[0].message.content
         except Exception as e:
-            raise LLMError(str(e), ErrorCategory.UNKNOWN) from e
+            error_msg = str(e)
+            category = ErrorCategory.UNKNOWN
+
+            if "429" in error_msg or "quota" in error_msg.lower() or "limit" in error_msg.lower():
+                category = ErrorCategory.RATE_LIMIT
+            elif "401" in error_msg or "authentication" in error_msg.lower() or "api key" in error_msg.lower():
+                category = ErrorCategory.AUTH
+
+            raise LLMError(error_msg, category) from e
 
     def get_provider(self) -> str:
         return "zai"

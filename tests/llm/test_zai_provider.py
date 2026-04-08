@@ -51,6 +51,38 @@ def test_complete_wraps_error(mock_zhipuai):
     assert exc_info.value.category == ErrorCategory.UNKNOWN
 
 
+def test_complete_categorises_rate_limit_429(mock_zhipuai):
+    mock_zhipuai.chat.completions.create.side_effect = Exception("429 Too Many Requests")
+    provider = ZaiProvider(api_key="test-key")
+    with pytest.raises(LLMError) as exc_info:
+        provider.complete([{"role": "user", "content": "Hi"}])
+    assert exc_info.value.category == ErrorCategory.RATE_LIMIT
+
+
+def test_complete_categorises_rate_limit_quota(mock_zhipuai):
+    mock_zhipuai.chat.completions.create.side_effect = Exception("Quota exceeded for this API key")
+    provider = ZaiProvider(api_key="test-key")
+    with pytest.raises(LLMError) as exc_info:
+        provider.complete([{"role": "user", "content": "Hi"}])
+    assert exc_info.value.category == ErrorCategory.RATE_LIMIT
+
+
+def test_complete_categorises_auth_401(mock_zhipuai):
+    mock_zhipuai.chat.completions.create.side_effect = Exception("401 Unauthorized")
+    provider = ZaiProvider(api_key="test-key")
+    with pytest.raises(LLMError) as exc_info:
+        provider.complete([{"role": "user", "content": "Hi"}])
+    assert exc_info.value.category == ErrorCategory.AUTH
+
+
+def test_complete_categorises_auth_api_key(mock_zhipuai):
+    mock_zhipuai.chat.completions.create.side_effect = Exception("Invalid API key provided")
+    provider = ZaiProvider(api_key="test-key")
+    with pytest.raises(LLMError) as exc_info:
+        provider.complete([{"role": "user", "content": "Hi"}])
+    assert exc_info.value.category == ErrorCategory.AUTH
+
+
 def test_get_provider_returns_zai():
     provider = ZaiProvider(api_key="test-key")
     assert provider.get_provider() == "zai"
