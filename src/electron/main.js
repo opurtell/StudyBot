@@ -126,7 +126,10 @@ function getBackendCommand() {
       STUDYBOT_HOST: "127.0.0.1",
       STUDYBOT_PORT: "7777",
       PYTHONPATH: [
-        path.join(resourcesPath, "backend", "lib"),
+        path.join(resourcesPath, "backend", isWin ? "Lib" : "lib"),
+        ...(isWin
+          ? [path.join(resourcesPath, "backend", "Lib", "site-packages")]
+          : []),
         path.join(resourcesPath, "backend", "app", "src", "python"),
       ].join(isWin ? ";" : ":"),
       PYTHONHOME: path.join(resourcesPath, "backend"),
