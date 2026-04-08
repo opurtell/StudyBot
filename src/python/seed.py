@@ -96,7 +96,7 @@ def _copy_bundled_chroma_db() -> bool:
     logger.info(f"Copying bundled ChromaDB from {BUNDLED_CHROMA_DB_DIR} to {CHROMA_DB_DIR}")
     try:
         CHROMA_DB_DIR.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copytree(str(BUNDLED_CHROMA_DB_DIR), str(CHROMA_DB_DIR))
+        shutil.copytree(str(BUNDLED_CHROMA_DB_DIR), str(CHROMA_DB_DIR), dirs_exist_ok=True)
         return True
     except Exception:
         logger.exception("Failed to copy bundled ChromaDB")
