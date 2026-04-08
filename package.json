@@ -1,7 +1,7 @@
 {
   "name": "clinical-recall-assistant",
   "version": "0.1.0",
-  "description": "ACTAS CMG Build",
+  "description": "StudyBot CMGs",
   "main": "src/electron/main.js",
   "homepage": "./",
   "scripts": {
@@ -13,6 +13,9 @@
     "build:mac-arm64": "npm run build:backend-mac-arm64 && vite build && electron-builder --arm64",
     "build:mac-x64": "npm run build:backend-mac-x64 && vite build && electron-builder --x64",
     "build:win-x64": "npm run build:backend-win && vite build && electron-builder --win --x64",
+    "build:personal-mac-arm64": "npm run build:backend-mac-arm64 && vite build && electron-builder --config electron-builder.personal.yml --arm64",
+    "build:personal-mac-x64": "npm run build:backend-mac-x64 && vite build && electron-builder --config electron-builder.personal.yml --x64",
+    "build:personal-win-x64": "npm run build:backend-win && vite build && electron-builder --config electron-builder.personal.yml --win --x64",
     "test": "vitest run",
     "test:watch": "vitest",
     "python:start": "python3 src/python/main.py"

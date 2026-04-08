@@ -1,5 +1,5 @@
-appId: com.studybot.clinical-recall
-productName: StudyBot CMGs
+appId: com.studybot.personal
+productName: StudyBot Personal
 directories:
   output: release/
 files:
@@ -12,10 +12,6 @@ extraResources:
       - "**/*"
   - from: config/settings.example.json
     to: config/settings.example.json
-  - from: data/cmgs/structured
-    to: data/cmgs/structured
-    filter:
-      - "**/*.json"
   - from: build/resources/data/chroma_db
     to: data/chroma_db
     filter:
@@ -26,13 +22,13 @@ mac:
   identity: "-"
   entitlements: "build/entitlements.mac.plist"
   entitlementsInherit: "build/entitlements.mac.plist"
-  artifactName: "StudyBot - ACTAS CMGs-${version}-${arch}.${ext}"
+  artifactName: "StudyBot - Personal Build-${version}-${arch}.${ext}"
   target:
     - target: dmg
 win:
   signingHashAlgorithms:
     - sha256
-  artifactName: "StudyBot - ACTAS CMGs-${version}-${arch}.${ext}"
+  artifactName: "StudyBot - Personal Build-${version}-${arch}.${ext}"
   target:
     - target: nsis
 asar: true
