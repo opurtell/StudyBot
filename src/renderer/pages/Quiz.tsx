@@ -134,6 +134,20 @@ export default function Quiz() {
       },
     },
     {
+      key: "6",
+      enabled: session.phase === "idle",
+      action: () => {
+        void session.startSession({ mode: "topic", topic: "Pharmacology", randomize });
+      },
+    },
+    {
+      key: "7",
+      enabled: session.phase === "idle",
+      action: () => {
+        void session.startSession({ mode: "topic", topic: "Pathophysiology", randomize });
+      },
+    },
+    {
       key: "v",
       enabled: session.phase === "idle",
       action: () => setRandomize((current) => !current),
@@ -228,7 +242,7 @@ export default function Quiz() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-2xl mx-auto pt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto pt-4">
             <Button
               onClick={() => session.startSession({ mode: "random", randomize })}
               aria-keyshortcuts="1"
@@ -277,6 +291,26 @@ export default function Quiz() {
             >
               Clinical Skills
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">5</span>
+            </Button>
+            <Button
+              onClick={() => session.startSession({ mode: "topic", topic: "Pharmacology", randomize })}
+              variant="secondary"
+              aria-keyshortcuts="6"
+              disabled={!session.backendReady}
+              className="w-full justify-center"
+            >
+              Pharmacology
+              <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">6</span>
+            </Button>
+            <Button
+              onClick={() => session.startSession({ mode: "topic", topic: "Pathophysiology", randomize })}
+              variant="secondary"
+              aria-keyshortcuts="7"
+              disabled={!session.backendReady}
+              className="w-full justify-center"
+            >
+              Pathophysiology
+              <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">7</span>
             </Button>
           </div>
 

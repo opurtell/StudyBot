@@ -16,4 +16,6 @@ export const QUIZ_CATEGORIES = [
   { display: "General Care", section: "General Care" },
   { display: "Medications", section: "Medicine" },
   { display: "Clinical Skills", section: "Clinical Skill" },
+  { display: "Pharmacology", section: "Pharmacology" },
+  { display: "Pathophysiology", section: "Pathophysiology" },
 ] as const;
