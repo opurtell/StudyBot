@@ -34,7 +34,7 @@ jobs:
       - run: npm ci
       - run: bash scripts/package-backend.sh arm64
       - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --arm64
+      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --arm64
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
@@ -63,7 +63,7 @@ jobs:
       - run: npm ci
       - run: bash scripts/package-backend.sh x64
       - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --x64
+      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --x64
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
@@ -94,7 +94,7 @@ jobs:
       - run: npm ci
       - run: pwsh -File scripts/package-backend.ps1
       - run: pwsh -File scripts/verify-backend-payload.ps1
-      - run: npx vite build && npx electron-builder --win --x64
+      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --win --x64
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
