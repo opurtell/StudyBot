@@ -16,6 +16,10 @@ extraResources:
     to: data/chroma_db
     filter:
       - "**/*"
+  - from: data/cmgs/structured
+    to: data/cmgs/structured
+    filter:
+      - "**/*.json"
 mac:
   category: public.app-category.education
   hardenedRuntime: true
