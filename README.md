@@ -72,7 +72,7 @@ Everything below is for contributors and developers who want to run from source 
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/opurtell/studyBotcode.git
+git clone https://github.com/opurtell/StudyBot.git
 cd studyBotcode
 
 # 2. Install Node dependencies
