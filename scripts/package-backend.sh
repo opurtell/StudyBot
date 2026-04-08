@@ -134,12 +134,64 @@ col = client.get_or_create_collection('cmg_guidelines')
 print(f'Pre-built index: {col.count()} chunks')
 "
 else
-  echo "--- Personal build: using pre-built ChromaDB ---"
-  if [[ ! -d "$CHROMA_OUTPUT" ]] || [[ -z "$(ls -A "$CHROMA_OUTPUT")" ]]; then
-    echo "ERROR: PERSONAL_BUILD=1 but no pre-built ChromaDB at $CHROMA_OUTPUT"
-    exit 1
+  echo "--- Personal build: building complete ChromaDB ---"
+  rm -rf "$CHROMA_OUTPUT"
+  mkdir -p "$CHROMA_OUTPUT"
+  PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
+from pipeline.cmg.chunker import chunk_and_ingest
+chunk_and_ingest(structured_dir='$REPO_ROOT/data/cmgs/structured', db_path='$CHROMA_OUTPUT')
+import chromadb
+client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
+col = client.get_or_create_collection('cmg_guidelines')
+print(f'CMG chunks: {col.count()}')
+"
+  # Ingest notability notes if cleaned data exists
+  if [[ -d "$REPO_ROOT/data/notes_md/cleaned" ]] && [[ -n "$(ls -A "$REPO_ROOT/data/notes_md/cleaned")" ]]; then
+    echo "--- Personal build: ingesting notability notes ---"
+    PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
+import sys
+sys.path.insert(0, '$REPO_ROOT/src/python')
+from pathlib import Path
+from pipeline.chunker import chunk_and_ingest
+from paths import CHROMA_DB_DIR
+db_path = Path('$CHROMA_OUTPUT')
+cleaned = Path('$REPO_ROOT/data/notes_md/cleaned')
+md_files = sorted(cleaned.rglob('*.md'))
+print(f'Found {len(md_files)} cleaned notability notes')
+count = 0
+for md in md_files:
+    try:
+        chunk_and_ingest(md, db_path)
+        count += 1
+    except Exception as e:
+        print(f'  SKIP: {md.name}: {e}')
+import chromadb
+client = chromadb.PersistentClient(path=str(db_path))
+col = client.get_or_create_collection('paramedic_notes')
+print(f'Notability notes ingested: {count} files, total paramedic_notes: {col.count()} chunks')
+"
   fi
-  echo "    Found pre-built ChromaDB at $CHROMA_OUTPUT"
+
+  # Ingest personal docs (REFdocs/CPDdocs) if structured data exists
+  if [[ -d "$REPO_ROOT/data/personal_docs/structured" ]] && [[ -n "$(find "$REPO_ROOT/data/personal_docs/structured" -name '*.md')" ]]; then
+    echo "--- Personal build: ingesting personal docs ---"
+    PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
+import sys
+sys.path.insert(0, '$REPO_ROOT/src/python')
+from pathlib import Path
+from pipeline.personal_docs.chunker import chunk_and_ingest_directory
+result = chunk_and_ingest_directory(Path('$REPO_ROOT/data/personal_docs/structured'), Path('$CHROMA_OUTPUT'))
+print(f'Personal docs: {result[\"processed\"]} files, {result[\"total_chunks\"]} chunks')
+"
+  fi
+
+  echo "--- Personal build: ChromaDB build complete ---"
+  PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
+import chromadb
+client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
+for col in client.list_collections():
+    print(f'  {col.name}: {col.count()} chunks')
+"
 fi
 
 PAYLOAD_SIZE=$(du -sh "$OUTPUT_DIR" | cut -f1)
