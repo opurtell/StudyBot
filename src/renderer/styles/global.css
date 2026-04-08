@@ -207,3 +207,22 @@
     background: var(--color-outline);
   }
 }
+
+/* ============================================================
+   Loading spinner — archival ink ring
+   ============================================================ */
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-outline-variant);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: archival-spin 0.8s linear infinite;
+}
+
+@keyframes archival-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

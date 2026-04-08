@@ -40,7 +40,7 @@ export default function Dashboard() {
         };
 
   if (loading && !hasDashboardData) {
-    return <PageStateNotice title="Loading dashboard" message="Preparing mastery, streak, and recent activity." />;
+    return <PageStateNotice loading title="Loading dashboard" message="Preparing mastery, streak, and recent activity." />;
   }
 
   if (dashboardError && !hasDashboardData) {

@@ -135,6 +135,7 @@ export default function Guidelines() {
 
       {loading && !guidelines && (
         <PageStateNotice
+          loading
           title={isSeeding ? "Indexing clinical guidelines" : "Loading guidelines"}
           message={isSeeding ? "Building search index from bundled CMG data. This may take a moment on first launch." : "Preparing the ACTAS guideline index."}
         />
@@ -142,6 +143,7 @@ export default function Guidelines() {
 
       {!loading && !error && guidelines && guidelines.length === 0 && isSeeding && (
         <PageStateNotice
+          loading
           title="Indexing clinical guidelines"
           message="Building search index from bundled CMG data. This may take a moment on first launch."
         />

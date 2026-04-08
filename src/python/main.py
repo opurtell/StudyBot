@@ -46,7 +46,7 @@ app = FastAPI(title="StudyBot Backend", version="0.1.0", lifespan=lifespan)
 _ALLOW_ORIGINS = ["http://localhost:5173", "http://localhost:5174"]
 _ALLOW_ORIGIN_REGEX = None
 if os.environ.get("STUDYBOT_USER_DATA"):
-    _ALLOW_ORIGIN_REGEX = r"file://.*"
+    _ALLOW_ORIGIN_REGEX = r"(file://.*|null)"
 
 app.add_middleware(
     CORSMiddleware,

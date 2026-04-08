@@ -48,6 +48,7 @@ export default function Medication() {
 
       {loading && !medicines && (
         <PageStateNotice
+          loading
           title="Loading medications"
           message="Preparing the ACTAS medication reference."
         />

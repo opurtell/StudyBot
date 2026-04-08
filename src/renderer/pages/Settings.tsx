@@ -127,7 +127,7 @@ export default function Settings() {
   const errorCopy = getErrorStateCopy(error, backendStatus, "configuration");
 
   if (loading && !config) {
-    return <PageStateNotice title="Loading configuration" message="Preparing local settings and model selections." />;
+    return <PageStateNotice loading title="Loading configuration" message="Preparing local settings and model selections." />;
   }
 
   if (error && !config) {
