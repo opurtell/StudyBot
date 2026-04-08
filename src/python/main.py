@@ -76,7 +76,7 @@ async def generic_error_handler(request: Request, exc: Exception):
     traceback.print_exc()
     return JSONResponse(
         status_code=500,
-        content={"detail": str(exc)},
+        content={"detail": "Internal server error"},
     )
 
 
