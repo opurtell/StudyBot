@@ -447,6 +447,13 @@ Add dated entries here as packaging work progresses. Record failures as well as 
 - **Settings UI:** The "CMG Data" and "Notes Pipeline" sections have been merged into a unified "Indexed Data" section showing per-source chunk counts and individual clear buttons.
 - **Path constant:** Added `BUNDLED_CHROMA_DB_DIR` to `paths.py`.
 
+### 2026-04-09 — Windows DLL-not-found fix
+
+- **Symptom:** Windows personal build exits immediately with code 3221225781 (`0xC0000135` = `STATUS_DLL_NOT_FOUND`).
+- **Root cause:** `package-backend.ps1` copied `python.exe`, `Lib/`, and `DLLs/` but missed the top-level DLLs (`python312.dll`, `python3.dll`, `vcruntime140.dll`, etc.) that sit alongside `python.exe` in the python-build-standalone distribution. Windows needs these in the same directory as the executable.
+- **Fix:** Added a `Get-ChildItem -Filter "*.dll"` pass after copying executables to stage all top-level DLLs into the output directory.
+- **Lesson:** The macOS script already had a `lib/libpython*.dylib` copy step, but the Windows equivalent was missing. When staging standalone Python runtimes, always verify that shared libraries (`.dll`/`.dylib`/`.so`) at the executable level are included.
+
 ### 2026-04-06 — Per-architecture Mac build fix
 
 - Removed `arch` list from `electron-builder.yml` mac target. Previously both `arm64` and `x64` were listed, causing `npm run build:mac-x64` to produce DMGs for both architectures. Both DMGs bundled the same x64 backend payload because `build/resources/backend/` is overwritten per build. With the arch list removed, the CLI flag (`--arm64` or `--x64`) now controls which single arch gets built.

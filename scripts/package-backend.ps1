@@ -53,6 +53,15 @@ Copy-Item -Path (Join-Path $PythonPrefix.FullName "python.exe") -Destination (Jo
 Copy-Item -Path (Join-Path $PythonPrefix.FullName "python3.exe") -Destination (Join-Path $OutputDir "python3.exe") -ErrorAction SilentlyContinue
 Copy-Item -Path (Join-Path $PythonPrefix.FullName "pythonw.exe") -Destination (Join-Path $OutputDir "pythonw.exe") -ErrorAction SilentlyContinue
 
+# Copy top-level DLLs (python312.dll, python3.dll, vcruntime140.dll, etc.)
+$TopLevelDlls = Get-ChildItem -Path $PythonPrefix.FullName -Filter "*.dll" -File
+if ($TopLevelDlls) {
+    Copy-Item -Path $TopLevelDlls.FullName -Destination $OutputDir
+    Write-Host "    Copied $($TopLevelDlls.Count) DLLs: $($TopLevelDlls.Name -join ', ')"
+} else {
+    Write-Host "    WARNING: No top-level DLLs found in $($PythonPrefix.FullName)"
+}
+
 $LibDir = Join-Path $PythonPrefix.FullName "Lib"
 if (Test-Path $LibDir) {
     Copy-Item -Recurse -Path $LibDir -Destination (Join-Path $OutputDir "Lib")
