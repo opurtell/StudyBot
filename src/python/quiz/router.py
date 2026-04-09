@@ -243,3 +243,10 @@ def remove_blacklist(category: str) -> dict:
     tracker = _get_tracker()
     tracker.remove_from_blacklist(category)
     return {"status": "ok"}
+
+
+@router.post("/mastery/clear")
+def clear_mastery() -> dict:
+    tracker = _get_tracker()
+    deleted = tracker.clear_mastery_data()
+    return {"status": "ok", "deleted_history": deleted}

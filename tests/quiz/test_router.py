@@ -244,3 +244,39 @@ class TestSeedingGuard:
         )
         assert response.status_code == 503
         assert "seeding" in response.json()["detail"].lower()
+
+
+class TestClearMastery:
+    def test_clear_mastery(self, client, mock_deps):
+        mock_tracker = mock_deps["tracker"]
+
+        # Configure the mock tracker to return seeded mastery data
+        from quiz.models import CategoryMastery
+
+        mock_tracker.get_mastery.return_value = [
+            CategoryMastery(
+                category="Cardiac",
+                total_attempts=1,
+                correct=1,
+                partial=0,
+                incorrect=0,
+                mastery_percent=100.0,
+                status="mastered",
+            )
+        ]
+
+        # Configure the mock to return deleted count
+        mock_tracker.clear_mastery_data.return_value = 1
+
+        # Start a session (required for router init)
+        client.post("/quiz/session/start", json={"mode": "random"})
+
+        # Clear mastery data
+        response = client.post("/quiz/mastery/clear")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["status"] == "ok"
+        assert data["deleted_history"] == 1
+
+        # Verify clear_mastery_data was called
+        mock_tracker.clear_mastery_data.assert_called_once()
