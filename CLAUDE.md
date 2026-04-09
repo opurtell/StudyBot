@@ -101,10 +101,19 @@ StudyBot/
 │       ├── library_pipeline_v6.1/         # Library / source pipeline view
 │       └── clinical_archive/              # DESIGN.md — full design system spec
 │
+├── scripts/                           # Build and data management scripts
+│   ├── package-backend.sh             # macOS backend staging (python-build-standalone, Python 3.12.13)
+│   ├── package-backend.ps1            # Windows backend staging
+│   ├── verify-backend-payload.sh      # macOS payload structural validation
+│   ├── verify-backend-payload.ps1     # Windows payload structural validation
+│   └── upload-personal-data.sh        # Upload ChromaDB + CMG data to GitHub Release (personal build)
+│
 ├── src/                               # Application source code
 │   ├── electron/                      # Electron main + preload process
-│   ├── python/                        # FastAPI backend (pipeline, quiz, llm stubs)
-│   │   ├── main.py                    # FastAPI app on :7777
+│   ├── python/                        # FastAPI backend
+│   │   ├── main.py                    # FastAPI app on :7777 (lifespan: auto-seed + warmup thread)
+│   │   ├── seed.py                    # Auto-seed ChromaDB on startup (bundled copy or chunker fallback)
+│   │   ├── paths.py                   # All runtime path constants + resolve_cmg_structured_dir()
 │   │   ├── pipeline/                  # Data ingestion pipeline
 │   │   │   ├── extractor.py           # .note → raw text extraction
 │   │   │   ├── clinical_dictionary.py # Category mappings + clinical terms
@@ -112,12 +121,18 @@ StudyBot/
 │   │   │   ├── chunker.py             # Text splitting + ChromaDB ingestion
 │   │   │   ├── run.py                 # CLI entrypoint (extract, ingest, status)
 │   │   │   ├── cleaning_prompt.md     # Claude Code OCR cleaning prompt
-│   │   │   └── cmg/                   # ACTAS CMG extraction pipeline
-│   │   ├── quiz/                      # Quiz agent (retriever, agent, tracker, router)
+│   │   │   ├── cmg/                   # ACTAS CMG extraction pipeline
+│   │   │   └── personal_docs/         # REFdocs/CPDdocs chunk + ingest pipeline
+│   │   ├── quiz/                      # Quiz agent (retriever, agent, tracker, router, store)
+│   │   │   └── store.py               # SQLite-backed question/session store (thread-safe, clears stale on startup)
 │   │   ├── medication/                # Medication doses API (reads structured CMG med files)
 │   │   ├── search/                    # Vector search API (ChromaDB-backed)
 │   │   ├── settings/                  # Settings persistence API
-│   │   ├── guidelines/                # Clinical guidelines browser API (reads structured CMG/med/CSM JSON)
+│   │   ├── guidelines/                # Clinical guidelines browser API (CMG/med/CSM JSON)
+│   │   ├── sources/                   # Source repository status API (/sources)
+│   │   ├── upload/                    # User document upload API (/upload)
+│   │   │   ├── router.py              # POST /upload, GET /upload/formats
+│   │   │   └── extractor.py           # PDF/TXT → Markdown conversion (pypdf)
 │   │   └── llm/                       # Provider abstraction (multi-provider)
 │   │       ├── models.py              # Model registry (.env backed)
 │   │       ├── factory.py             # Provider factory
@@ -133,36 +148,49 @@ StudyBot/
 │       │   ├── Input.tsx              # "Field Note" style input (bottom-border)
 │       │   ├── Card.tsx               # Document-stack card with hover lift
 │       │   ├── Tag.tsx                # Metadata chip
-│       │   └── MasteryIndicator.tsx   # Progress bar + status dot
+│       │   ├── MasteryIndicator.tsx   # Progress bar + status dot
+│       │   ├── Modal.tsx              # Reusable overlay modal (backdrop, escape/click dismiss)
+│       │   └── UploadDialog.tsx       # File picker + drag-and-drop upload UI
 │       ├── pages/                     # Route-level views
 │       │   ├── Dashboard.tsx          # Knowledge heatmap + metrics + recent entries
 │       │   ├── Quiz.tsx               # Active recall protocol (random, gap-driven, topic modes)
 │       │   ├── Feedback.tsx           # Split-view analysis
-│       │   ├── Library.tsx            # Source pipeline view
+│       │   ├── Library.tsx            # Source pipeline view (wired to /sources + /upload)
 │       │   ├── Medication.tsx         # Medication reference (typed MedicationDose)
 │       │   ├── Guidelines.tsx         # Clinical guidelines browser (card grid + side panel + quiz launcher)
-│       │   └── Settings.tsx           # Curator settings (API keys, models, data management)
+│       │   └── Settings.tsx           # Curator settings (API keys, models, indexed data management)
 │       ├── hooks/                     # React hooks
 │       │   ├── useTheme.tsx           # ThemeProvider context + dark mode toggle
 │       │   ├── useApi.ts              # Generic fetch hook with loading/error states
 │       │   ├── useQuizSession.ts      # Quiz session state machine (start, answer, evaluate)
 │       │   ├── useMastery.ts          # Mastery + streak data from backend
 │       │   └── useHistory.ts          # Quiz history from backend
+│       ├── providers/                 # React context providers
+│       │   ├── SettingsProvider.tsx   # Global settings + CMG manifest context
+│       │   └── ResourceCacheProvider.tsx  # Stale-while-refresh cache for read-mostly data
 │       ├── types/
-│       │   └── api.ts                 # Shared TypeScript interfaces (MedicationDose, SearchResult, etc.)
+│       │   └── api.ts                 # Shared TypeScript interfaces (MedicationDose, SearchResult, UploadResponse, CmgManifest, etc.)
 │       └── styles/
 │           └── global.css             # Tailwind layers + CSS custom properties (light/dark)
-├── data/                              # Processed data stores
-│   ├── cmgs/                          # Extracted CMG JSON/markdown
-│   ├── notes_md/                      # Cleaned notability markdown
-│   └── chroma_db/                     # Vector store
+├── data/                              # Processed data stores (gitignored, user-local)
+│   ├── cmgs/structured/               # Per-CMG JSON files (also bundled in packaged app via electron-builder.yml)
+│   ├── notes_md/raw/                  # Extracted uncleaned notability markdown
+│   ├── notes_md/cleaned/              # LLM-cleaned notability markdown (380 files)
+│   ├── personal_docs/structured/      # Structured REFdocs + CPDdocs (11 files)
+│   ├── uploads/                       # User-uploaded documents + structured output
+│   └── chroma_db/                     # Vector store (user-data copy, seeded from bundled on first launch)
+├── build/resources/data/chroma_db/    # Pre-built ChromaDB bundled in packaged app (CMG data only)
 ├── tests/                             # Test suites
 │   ├── python/                        # pytest tests for FastAPI backend
+│   ├── quiz/                          # pytest tests for quiz agent
 │   ├── pipeline/                      # pytest tests for data pipeline
 │   └── renderer/                      # vitest + @testing-library/react tests
 ├── config/                            # App configuration
 │   ├── settings.example.json          # Committed reference config
 │   └── settings.json                  # User config (gitignored)
+├── electron-builder.yml               # Release build (bundles CMG structured data + pre-built ChromaDB)
+├── electron-builder.personal.yml      # Personal build (downloads ChromaDB from GitHub Release)
+├── KNOWN_TEST_FAILURES.md             # Pre-existing test failures (17 frontend, 4 Python) — do not treat as regressions
 ├── .env.example                       # Model name template
 └── .env                               # Local model names (gitignored)
 ```
@@ -185,7 +213,7 @@ Non-exhaustive; a single piece of information may span multiple categories.
 
 ## Data Pipeline Architecture
 
-The app requires two data ingestion pipelines that produce a unified vector store.
+The app has three data ingestion pipelines feeding a unified ChromaDB instance, plus a user document upload path.
 
 ### Pipeline 1: ACTAS CMG Extraction
 
@@ -194,13 +222,12 @@ The app requires two data ingestion pipelines that produce a unified vector stor
 - **Source:** `https://cmg.ambulance.act.gov.au` (Ionic/Angular SPA)
 - **Strategy:** Extract raw JSON from the ~10MB main JS bundle, not rendered HTML
 - **Key finding:** Medicine "calculators" are pre-computed database lookup tables (24 weight bands x medicines x indications), NOT formula-based calculators
-- **Medicines:** 35 ACTAS medicines extracted across 538 dose groups. Selector-based extraction catches medicines whose `.EFF()` texts lack keywords (Fentanyl, Calcium Chloride, Ipratropium, Salbutamol, Topical Anaesthetic)
-- **Selector extraction:** Scans ALL JS bundles (not just `7_common`) — some CSMs (e.g. Skills Matrix) live in separate chunks
-- **Medicines:** 35 ACTAS medicines extracted across 538 dose groups (35 from `.EFF()` text + selector-based extraction for 5 medicines whose texts lack keywords)
+- **Medicines:** 35 ACTAS medicines extracted across 538 dose groups (35 from `.EFF()` text + selector-based extraction for 5 medicines whose texts lack keywords: Fentanyl, Calcium Chloride, Ipratropium, Salbutamol, Topical Anaesthetic)
 - **Selector extraction:** Scans ALL JS bundles (not just `7_common`) — some CSMs (e.g., Skills Matrix) live in separate chunks
 - **Output schema:** JSON conforming to the CMG Guideline Schema (see guide Section 4.1)
 - **Flowcharts:** Store as Mermaid.js; use vision LLM for image-based flowcharts
 - **Tools:** Playwright (SPA rendering), BeautifulSoup4, Pandas
+- **CMG structured data path:** `data/cmgs/structured/` — resolved at runtime via `resolve_cmg_structured_dir()` which prefers user-fetched data in `USER_CMG_STRUCTURED_DIR` over bundled app data
 
 ### Pipeline 2: Notability Notes Extraction
 
@@ -220,21 +247,41 @@ The app requires two data ingestion pipelines that produce a unified vector stor
 
 ### Pipeline 3: REF and CPD Docs
 
+**Module:** `src/python/pipeline/personal_docs/`
+
 - **Sources:**
   - `docs/REFdocs/` — 2 high-authority reference files (ACTAS policies, CMG reference tables)
   - `docs/CPDdocs/` — 9 clinical study/CPD files (ECGs, assessments, clinical topics)
+- **Structured output:** `data/personal_docs/structured/` (11 files)
 - **Processing:** Already in Markdown — chunk and ingest directly (no OCR cleaning needed)
 - **Metadata:** Each chunk must carry `source_type: "ref_doc"` or `"cpd_doc"` to preserve the source hierarchy distinction
 
+### Pipeline 4: User Document Uploads
+
+**Module:** `src/python/upload/`
+
+- **Trigger:** User uploads via Library page "+New Documentation" button → `POST /upload`
+- **Accepted formats:** Markdown (`.md`), PDF (`.pdf`), plain text (`.txt`); max 20 MB
+- **PDF extraction:** `pypdf` — text only (no image OCR)
+- **Output:** Saved to `data/uploads/`, structured to `data/uploads/structured/`, chunked and ingested with `source_type: "upload"`
+- **Frontend:** `Modal.tsx` + `UploadDialog.tsx` components; file picker with drag-and-drop and progress feedback
+
 ### Unified Vector Store
 
-All three pipelines feed into a single ChromaDB instance. Each chunk carries metadata:
-- `source_type`: `"cmg"` | `"ref_doc"` | `"cpd_doc"` | `"notability_note"`
+All pipelines feed into a single ChromaDB instance (`data/chroma_db/`). Each chunk carries metadata:
+- `source_type`: `"cmg"` | `"ref_doc"` | `"cpd_doc"` | `"notability_note"` | `"upload"`
 - `source_file`: original filename
 - `category`: clinical category
 - `last_modified`: ISO date
 - `has_review_flag`: boolean (notability notes only)
 - `cmg_number`: CMG reference number (CMGs only)
+
+### ChromaDB First-Launch Seeding
+
+`seed.py` runs in the FastAPI lifespan on every startup:
+1. If a bundled `APP_ROOT/data/chroma_db/` exists with CMG data → copy to user data dir (packaged app fast path)
+2. Otherwise → run CMG chunker as fallback auto-seed (dev environment path)
+3. Personal notes / REFdocs / CPDdocs are not auto-seeded — user must run the pipeline or use the "Re-run Pipeline" button in Settings
 
 ---
 
@@ -246,6 +293,8 @@ The quiz agent is a lightweight LLM-powered component that:
 2. **Evaluates answers** by retrieving relevant chunks and comparing user response
 3. **Provides feedback** with exact source citations (e.g. `Ref: ACTAS CMG 14.1`)
 4. **Tracks mastery** per topic/category for the knowledge heatmap
+
+**Session and question state** is persisted in SQLite (`quiz/store.py` → `QuizStore` class, stored in `data/mastery.db`). Stale data is cleared on backend startup. Public module-level API is unchanged so `router.py` is unaffected by the store implementation.
 
 ### Model Selection
 
@@ -379,3 +428,8 @@ The design system is called **"The Archival Protocol"** — a high-end editorial
 8. **The `mdDocs/` directory is currently empty** — this is the intended output location for converted notability notes.
 9. **Route matching needs number normalization** — "12 Lead ECG" maps to selector `twelve-lead-ecg-monitoring`, not `12-lead-ecg-monitoring`.
 10. **Phantom medicine keywords removed** — entinox, tetracaine, tranexamic acid, clopidogrel, ticagrelor, diazepam, furosemide, rocuronium, promethazine, sodium chloride are NOT in the ACTAS formulary and have been removed from `_MEDICINE_KEYWORDS`.
+11. **All runtime paths go through `paths.py`** — never use bare relative `Path("data/...")` calls in backend modules. Always import from `paths`.
+12. **`resolve_cmg_structured_dir()` must be used** in guidelines/medication routers — it prefers user-fetched data in `USER_CMG_STRUCTURED_DIR` over bundled `CMG_STRUCTURED_DIR`.
+13. **`KNOWN_TEST_FAILURES.md`** documents 17 frontend + 4 Python pre-existing failures — do not treat as regressions. Fix them as part of dedicated test-repair work, not as part of unrelated PRs.
+14. **macOS builds must run sequentially** (arm64 then x64). `build/resources/backend/` is overwritten per build — rename or move the first DMG out of `release/` before starting the next arch.
+15. **Windows PYTHONPATH** requires both `backend/Lib` (stdlib) and `backend/Lib/site-packages` (pip packages). macOS uses `backend/lib` only.

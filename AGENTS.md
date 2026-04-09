@@ -34,11 +34,13 @@ cp config/settings.example.json config/settings.json
 | GUI | Electron 32 + React 19 + Vite 6 |
 | Styling | Tailwind CSS 3 (Archival Protocol design tokens, darkMode: "class") |
 | Backend | FastAPI on 127.0.0.1:7777 |
-| Vector DB | ChromaDB (local PersistentClient) |
+| Vector DB | ChromaDB (local PersistentClient, seeded from bundled copy on first launch) |
 | LLM | Multi-provider abstraction (Anthropic, Google, Z.ai/Zhipu) |
-| State | SQLite for quiz history + user prefs |
+| State | SQLite (`data/mastery.db`) for quiz history + user prefs; quiz session/question store is also SQLite-backed |
 | Testing | vitest + @testing-library/react (frontend), pytest + httpx (Python) |
 | Language | TypeScript 5 (renderer), Python 3.10+ (backend) |
+| Packaging | python-build-standalone (Python 3.12.13, tag `20260325`), bundled via electron-builder |
+| CI | GitHub Actions: release-build.yml (macOS arm64, macOS x64, Windows x64 matrix) |
 
 ## Code Style
 
@@ -67,13 +69,16 @@ cp config/settings.example.json config/settings.json
 
 ## Data Pipeline Summary
 
-Three pipelines feed a unified ChromaDB instance. Each chunk carries `source_type`, `source_file`, `category`, and `last_modified` metadata.
+Four pipelines feed a unified ChromaDB instance. Each chunk carries `source_type`, `source_file`, `category`, and `last_modified` metadata.
 
 | Pipeline | Source | Key Detail |
 |----------|--------|------------|
-| CMG Extraction | `cmg.ambulance.act.gov.au` (SPA JS bundles) | Extract raw JSON from ~10MB main bundle, not HTML. Medicine doses are pre-computed lookup tables, not formulas. |
-| Notability Notes | 476 `.note` files (ZIP archives with binary plists) | OCR text from `HandwritingIndex/index.plist`. Clean with LLM + clinical dictionary. |
-| REF/CPD Docs | `docs/REFdocs/` (2 files), `docs/CPDdocs/` (9 files) | Already Markdown — chunk and ingest directly. |
+| CMG Extraction | `cmg.ambulance.act.gov.au` (SPA JS bundles) | Extract raw JSON from ~10MB main bundle, not HTML. Medicine doses are pre-computed lookup tables, not formulas. Resolved via `resolve_cmg_structured_dir()`. |
+| Notability Notes | 476 `.note` files (ZIP archives with binary plists) | OCR text from `HandwritingIndex/index.plist`. Clean with LLM + clinical dictionary. 380 files cleaned, 2,209 chunks ingested. |
+| REF/CPD Docs | `docs/REFdocs/` (2 files), `docs/CPDdocs/` (9 files) | Already Markdown — chunk and ingest via `pipeline/personal_docs/`. Structured output: `data/personal_docs/structured/`. |
+| User Uploads | Library page "+New Documentation" button | MD/PDF/TXT → `data/uploads/` → structured → ChromaDB (`source_type: "upload"`). Backend: `upload/router.py` + `upload/extractor.py`. |
+
+ChromaDB is seeded from a bundled pre-built index on first launch (`seed.py`). Personal notes and REFdocs/CPDdocs require a pipeline run or Settings → "Re-run Pipeline".
 
 See CLAUDE.md for full pipeline architecture, chunking parameters, and metadata schema.
 
@@ -88,6 +93,11 @@ See CLAUDE.md for full pipeline architecture, chunking parameters, and metadata 
 7. `docs/notabilityNotes/mdDocs/` is intentionally empty (output directory).
 8. Route matching needs number normalization — "12 Lead ECG" maps to selector `twelve-lead-ecg-monitoring`, not `12-lead-ecg-monitoring`.
 9. Phantom medicine keywords removed — entinox, tetracaine, tranexamic acid, clopidogrel, ticagrelor, diazepam, furosemide, rocuronium, promethazine, sodium chloride are NOT in the ACTAS formulary.
+10. `KNOWN_TEST_FAILURES.md` documents 17 frontend + 4 Python pre-existing failures — do not treat as regressions introduced by your changes.
+11. All runtime paths go through `paths.py` constants — never use bare relative `Path("data/...")` calls in backend modules.
+12. `resolve_cmg_structured_dir()` returns user-fetched CMG data if present, otherwise bundled app data — always use this in guidelines/medication routers.
+13. macOS builds must run sequentially (arm64 then x64) and rename artifacts between runs — `build/resources/backend/` is overwritten per build.
+14. Windows PYTHONPATH includes both `backend/Lib` (stdlib) and `backend/Lib/site-packages` (pip packages) — macOS uses `backend/lib` only.
 
 ## What to Run
 
@@ -112,13 +122,31 @@ See CLAUDE.md for full pipeline architecture, chunking parameters, and metadata 
 | `GET /guidelines` | List all CMGs, medicine monographs, clinical skills (type/section filters) |
 | `GET /guidelines/{id}` | Single guideline detail with markdown content |
 | `GET /search?q=...` | Vector search across ChromaDB collections |
+| `GET /sources` | Source repository status cards (for Library page) |
+| `POST /upload` | Upload user document (MD/PDF/TXT → structured → ChromaDB) |
+| `GET /upload/formats` | Accepted file formats and size limit |
 | `GET /settings` | Current settings config |
 | `PUT /settings` | Update settings |
+| `GET /settings/vector-store/status` | Chunk counts per source type |
+| `POST /settings/vector-store/clear?source_type=...` | Clear indexed data (per-source or all) |
+| `GET /settings/cmg-manifest` | CMG capture date manifest |
+| `POST /settings/cmg-rebuild` | Rebuild CMG index from user-fetched data |
+| `POST /settings/pipeline/rerun` | Re-run ingestion for notes + personal docs |
+
+## Standalone Packaging
+
+- Backend uses **python-build-standalone** (Python 3.12.13, tag `20260325`) — not a venv from host Python.
+- `scripts/package-backend.sh` (macOS) / `scripts/package-backend.ps1` (Windows) — stage backend to `build/resources/backend/`.
+- `PERSONAL_BUILD=1` env var skips the ChromaDB pre-build step (personal build downloads it from GitHub Release instead).
+- Personal build workflow: `scripts/upload-personal-data.sh` uploads the full ChromaDB to a GitHub Release tagged `personal-data`; CI downloads it during the personal build.
+- Validation: `scripts/verify-backend-payload.sh` / `.ps1` — run after staging to verify layout before packaging.
+- Always update `Guides/standalone-packaging-macos-windows.md` when packaging decisions change.
 
 ## Reference Documents
 
 - **Definitive project guide:** `CLAUDE.md`
 - Progress tracker: `TODO.md`
+- Known test failures: `KNOWN_TEST_FAILURES.md`
 - Standalone packaging playbook: `Guides/standalone-packaging-macos-windows.md`
 - Design system: `stitchDesign/stitch_remix_of_studybot/clinical_archive/DESIGN.md`
 - Acronyms: `acronyms.md`
