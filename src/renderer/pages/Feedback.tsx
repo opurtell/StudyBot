@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { FeedbackNavigationState } from "../types/api";
+import { apiPost, getApiErrorMessage } from "../lib/apiClient";
 import { useQuizShortcuts } from "../hooks/useQuizShortcuts";
 import FeedbackSplitView from "../components/FeedbackSplitView";
 import GroundTruth from "../components/GroundTruth";
 import ResponseTimeMetrics from "../components/ResponseTimeMetrics";
 import Button from "../components/Button";
 import SourceFootnotes from "../components/SourceFootnotes";
-
-const API_BASE = import.meta.env.VITE_API_BASE ?? "http://127.0.0.1:7777";
 
 type Score = "correct" | "partial" | "incorrect";
 
@@ -81,20 +80,13 @@ export default function Feedback() {
     setCorrecting(true);
     setCorrectionError(null);
     try {
-      const res = await fetch(`${API_BASE}/quiz/question/correct`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          question_id: state.questionId,
-          corrected_score: newScore,
-        }),
+      await apiPost("/quiz/question/correct", {
+        question_id: state.questionId,
+        corrected_score: newScore,
       });
-      if (!res.ok) {
-        throw new Error(`Correction failed (${res.status})`);
-      }
       setCorrectedTo(newScore);
     } catch (err) {
-      setCorrectionError(err instanceof Error ? err.message : "Correction failed");
+      setCorrectionError(getApiErrorMessage(err, "Correction failed"));
     } finally {
       setCorrecting(false);
     }
