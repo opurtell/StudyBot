@@ -31,6 +31,7 @@ export default function Quiz() {
   const [answer, setAnswer] = useState("");
   const [timerRunning, setTimerRunning] = useState(false);
   const [randomize, setRandomize] = useState(true);
+  const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
   const revisionLaunched = useRef(false);
   const resumeLaunched = useRef(false);
 
@@ -51,9 +52,9 @@ export default function Quiz() {
     navigate(location.pathname, { replace: true, state: null });
 
     if (state.scope === "all") {
-      session.startSession({ mode: "clinical_guidelines", randomize });
+      session.startSession({ mode: "clinical_guidelines", randomize, difficulty });
     } else if (state.section) {
-      session.startSession({ mode: "topic", topic: state.section, randomize });
+      session.startSession({ mode: "topic", topic: state.section, randomize, difficulty });
     }
   }, [location.state, session.phase]);
 
@@ -113,55 +114,63 @@ export default function Quiz() {
       key: "1",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "random", randomize });
+        void session.startSession({ mode: "random", randomize, difficulty });
       },
     },
     {
       key: "2",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "gap_driven", randomize });
+        void session.startSession({ mode: "gap_driven", randomize, difficulty });
       },
     },
     {
       key: "3",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "clinical_guidelines", randomize });
+        void session.startSession({ mode: "clinical_guidelines", randomize, difficulty });
       },
     },
     {
       key: "4",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "topic", topic: "Medicine", randomize });
+        void session.startSession({ mode: "topic", topic: "Medicine", randomize, difficulty });
       },
     },
     {
       key: "5",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "topic", topic: "Clinical Skill", randomize });
+        void session.startSession({ mode: "topic", topic: "Clinical Skill", randomize, difficulty });
       },
     },
     {
       key: "6",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "topic", topic: "Pharmacology", randomize });
+        void session.startSession({ mode: "topic", topic: "Pharmacology", randomize, difficulty });
       },
     },
     {
       key: "7",
       enabled: session.phase === "idle",
       action: () => {
-        void session.startSession({ mode: "topic", topic: "Pathophysiology", randomize });
+        void session.startSession({ mode: "topic", topic: "Pathophysiology", randomize, difficulty });
       },
     },
     {
       key: "v",
       enabled: session.phase === "idle",
       action: () => setRandomize((current) => !current),
+    },
+    {
+      key: "d",
+      enabled: session.phase === "idle",
+      action: () =>
+        setDifficulty((current) =>
+          current === "easy" ? "medium" : current === "medium" ? "hard" : "easy"
+        ),
     },
     {
       key: "Escape",
@@ -253,9 +262,35 @@ export default function Quiz() {
             </div>
           </div>
 
+          <div className="space-y-3">
+            <div className="space-y-1">
+              <span className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">
+                Question Difficulty
+              </span>
+              <p className="font-mono text-[10px] text-on-surface-variant/80">
+                `D` cycles difficulty
+              </p>
+            </div>
+            <div className="flex gap-2 justify-center">
+              {(["easy", "medium", "hard"] as const).map((level) => (
+                <button
+                  key={level}
+                  onClick={() => setDifficulty(level)}
+                  className={`px-4 py-2 font-label text-[10px] uppercase tracking-wider transition-colors border border-outline-variant/20 ${
+                    difficulty === level
+                      ? "bg-primary text-on-primary border-primary"
+                      : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
+                  }`}
+                >
+                  {level.charAt(0).toUpperCase() + level.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto pt-4">
             <Button
-              onClick={() => session.startSession({ mode: "random", randomize })}
+              onClick={() => session.startSession({ mode: "random", randomize, difficulty })}
               aria-keyshortcuts="1"
               disabled={!session.backendReady}
               className="w-full justify-center"
@@ -264,7 +299,7 @@ export default function Quiz() {
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">1</span>
             </Button>
             <Button
-              onClick={() => session.startSession({ mode: "gap_driven", randomize })}
+              onClick={() => session.startSession({ mode: "gap_driven", randomize, difficulty })}
               variant="secondary"
               aria-keyshortcuts="2"
               disabled={!session.backendReady}
@@ -274,7 +309,7 @@ export default function Quiz() {
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">2</span>
             </Button>
             <Button
-              onClick={() => session.startSession({ mode: "clinical_guidelines", randomize })}
+              onClick={() => session.startSession({ mode: "clinical_guidelines", randomize, difficulty })}
               variant="secondary"
               aria-keyshortcuts="3"
               disabled={!session.backendReady}
@@ -284,7 +319,7 @@ export default function Quiz() {
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">3</span>
             </Button>
             <Button
-              onClick={() => session.startSession({ mode: "topic", topic: "Medicine", randomize })}
+              onClick={() => session.startSession({ mode: "topic", topic: "Medicine", randomize, difficulty })}
               variant="secondary"
               aria-keyshortcuts="4"
               disabled={!session.backendReady}
@@ -294,7 +329,7 @@ export default function Quiz() {
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">4</span>
             </Button>
             <Button
-              onClick={() => session.startSession({ mode: "topic", topic: "Clinical Skill", randomize })}
+              onClick={() => session.startSession({ mode: "topic", topic: "Clinical Skill", randomize, difficulty })}
               variant="secondary"
               aria-keyshortcuts="5"
               disabled={!session.backendReady}
@@ -304,7 +339,7 @@ export default function Quiz() {
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">5</span>
             </Button>
             <Button
-              onClick={() => session.startSession({ mode: "topic", topic: "Pharmacology", randomize })}
+              onClick={() => session.startSession({ mode: "topic", topic: "Pharmacology", randomize, difficulty })}
               variant="secondary"
               aria-keyshortcuts="6"
               disabled={!session.backendReady}
@@ -314,7 +349,7 @@ export default function Quiz() {
               <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">6</span>
             </Button>
             <Button
-              onClick={() => session.startSession({ mode: "topic", topic: "Pathophysiology", randomize })}
+              onClick={() => session.startSession({ mode: "topic", topic: "Pathophysiology", randomize, difficulty })}
               variant="secondary"
               aria-keyshortcuts="7"
               disabled={!session.backendReady}
@@ -333,7 +368,7 @@ export default function Quiz() {
               {QUIZ_CATEGORIES.map((cat) => (
                 <button
                   key={cat.section}
-                  onClick={() => session.startSession({ mode: "topic", topic: cat.section, randomize })}
+                  onClick={() => session.startSession({ mode: "topic", topic: cat.section, randomize, difficulty })}
                   disabled={!session.backendReady}
                   className="px-3 py-2 font-label text-[10px] uppercase tracking-wider transition-colors border border-outline-variant/20 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-primary"
                 >

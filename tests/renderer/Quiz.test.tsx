@@ -376,4 +376,57 @@ describe("Quiz page", () => {
 
     expect(screen.queryByRole("progressbar")).not.toBeInTheDocument();
   });
+
+  it("renders a difficulty selector with Easy, Medium, Hard options", async () => {
+    renderQuizFlow();
+    expect(await screen.findByText("Start Quiz")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /easy/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /medium/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /hard/i })).toBeInTheDocument();
+  });
+
+  it("defaults difficulty to Medium", async () => {
+    renderQuizFlow();
+    expect(await screen.findByText("Start Quiz")).toBeInTheDocument();
+    const mediumBtn = screen.getByRole("button", { name: /^medium$/i });
+    expect(mediumBtn).toHaveClass("bg-primary");
+  });
+
+  it("cycles difficulty with the D shortcut", async () => {
+    const user = userEvent.setup();
+    renderQuizFlow();
+    expect(await screen.findByText("Start Quiz")).toBeInTheDocument();
+
+    const mediumBtn = screen.getByRole("button", { name: /^medium$/i });
+    expect(mediumBtn).toHaveClass("bg-primary");
+
+    await user.keyboard("d");
+    const hardBtn = screen.getByRole("button", { name: /^hard$/i });
+    expect(hardBtn).toHaveClass("bg-primary");
+
+    await user.keyboard("d");
+    const easyBtn = screen.getByRole("button", { name: /^easy$/i });
+    expect(easyBtn).toHaveClass("bg-primary");
+  });
+
+  it("sends selected difficulty when starting a session", async () => {
+    const user = userEvent.setup();
+    renderQuizFlow();
+    expect(await screen.findByText("Start Quiz")).toBeInTheDocument();
+
+    await user.keyboard("d");
+    await user.keyboard("d"); // now Easy
+
+    const fetchSpy = vi.mocked(global.fetch);
+    await user.keyboard("1");
+
+    await waitFor(() => expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument());
+
+    const startCall = fetchSpy.mock.calls.find(
+      (call) => (call[0] as string).includes("/session/start")
+    );
+    expect(startCall).toBeDefined();
+    const body = JSON.parse(startCall![1]!.body as string);
+    expect(body.difficulty).toBe("easy");
+  });
 });
