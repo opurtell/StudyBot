@@ -51,7 +51,13 @@ class GoogleProvider:
                     continue
                 # Gemini uses 'user' and 'model'
                 role = "user" if m["role"] == "user" else "model"
-                contents.append({"role": role, "parts": [m["content"]]})
+                if self._client.is_legacy:
+                    contents.append({"role": role, "parts": [m["content"]]})
+                else:
+                    types = self._client.types
+                    contents.append(
+                        types.Content(role=role, parts=[types.Part(text=m["content"])])
+                    )
 
             if self._client.is_legacy:
                 client = self._client.client.GenerativeModel(
