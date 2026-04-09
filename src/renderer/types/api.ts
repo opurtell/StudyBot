@@ -61,6 +61,11 @@ export interface EvaluateResponse {
   model_id: string;
 }
 
+export interface CorrectScoreRequest {
+  question_id: string;
+  corrected_score: "correct" | "partial" | "incorrect";
+}
+
 export interface StreakResponse {
   streak: number;
   accuracy: number;
@@ -79,6 +84,7 @@ export interface FeedbackNavigationState {
   questionType: string;
   sessionId: string | null;
   questionCount: number;
+  questionId: string;
 }
 
 export interface SettingsConfig {
