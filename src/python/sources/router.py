@@ -61,6 +61,9 @@ def _pluralise(count: int, singular: str, plural: str | None = None) -> str:
 
 
 def _personal_status(source_count: int, structured_count: int) -> tuple[int, str]:
+    # Source dirs missing but structured output exists — data was ingested previously
+    if source_count == 0 and structured_count > 0:
+        return 100, "INGESTED"
     if source_count == 0:
         return 0, "NO DOCUMENTS"
     if structured_count >= source_count:
@@ -119,7 +122,7 @@ def _build_sources() -> list[LibrarySource]:
             filter_type="reference",
             progress=ref_progress,
             status_text=ref_status,
-            detail=_pluralise(ref_count, "Document"),
+            detail=_pluralise(ref_structured_count if ref_count == 0 else ref_count, "Document"),
         ),
         LibrarySource(
             id="SRC-0003",
@@ -128,7 +131,7 @@ def _build_sources() -> list[LibrarySource]:
             filter_type="study",
             progress=cpd_progress,
             status_text=cpd_status,
-            detail=_pluralise(cpd_count, "Document"),
+            detail=_pluralise(cpd_structured_count if cpd_count == 0 else cpd_count, "Document"),
         ),
         LibrarySource(
             id="SRC-0004",
@@ -162,7 +165,10 @@ def _build_cleaning_feed() -> list[CleaningFeedItem]:
         cmg_preview = "CMG refresh currently running."
 
     personal_total = ref_count + cpd_count
-    if personal_total == 0:
+    if personal_total == 0 and personal_structured_count > 0:
+        # Source dirs missing but structured output exists — ingested previously
+        personal_state = "complete"
+    elif personal_total == 0:
         personal_state = "waiting"
     elif personal_structured_count >= personal_total:
         personal_state = "complete"
@@ -202,7 +208,11 @@ def _build_cleaning_feed() -> list[CleaningFeedItem]:
         CleaningFeedItem(
             status=personal_state,
             label="Reference Documents Ingestion",
-            preview=f"{personal_structured_count} of {personal_total} REF/CPD documents structured.",
+            preview=(
+                f"{personal_structured_count} REF/CPD documents structured."
+                if personal_total == 0
+                else f"{personal_structured_count} of {personal_total} REF/CPD documents structured."
+            ),
             detail=None,
         ),
         CleaningFeedItem(
