@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMastery } from "../hooks/useMastery";
 import { useHistory } from "../hooks/useHistory";
@@ -5,11 +6,13 @@ import KnowledgeHeatmap from "../components/KnowledgeHeatmap";
 import MetricCard from "../components/MetricCard";
 import RecentEntries from "../components/RecentEntries";
 import Button from "../components/Button";
+import Modal from "../components/Modal";
 import { useBackendStatus } from "../hooks/useBackendStatus";
 import { useBackendStatusActions } from "../hooks/useBackendStatus";
 import PageStateNotice from "../components/PageStateNotice";
 import { getErrorStateCopy } from "../lib/loadingState";
 import { resolveTopic } from "../utils/resolveTopic";
+import { useSettings } from "../hooks/useSettings";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -22,6 +25,8 @@ export default function Dashboard() {
   } = useHistory(3);
   const backendStatus = useBackendStatus();
   const { restart } = useBackendStatusActions();
+  const { clearMastery } = useSettings();
+  const [showClearMastery, setShowClearMastery] = useState(false);
   const hasDashboardData = categories.length > 0 || Boolean(entries?.length);
   const dashboardError = error ?? historyError;
   const errorCopy = getErrorStateCopy(dashboardError, backendStatus, "dashboard data");
@@ -114,9 +119,18 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-12 lg:col-span-8">
-          <h3 className="font-label text-label-sm text-on-surface-variant mb-4">
-            Knowledge Heatmap
-          </h3>
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="font-label text-label-sm text-on-surface-variant">
+              Knowledge Heatmap
+            </h3>
+            <button
+              onClick={() => setShowClearMastery(true)}
+              className="p-1 text-on-surface-variant hover:text-primary transition-colors"
+              title="Reset mastery scores"
+            >
+              <span className="material-symbols-outlined text-sm">restart_alt</span>
+            </button>
+          </div>
           <KnowledgeHeatmap categories={categories} onCategoryClick={handleCategoryClick} />
         </div>
 
@@ -160,6 +174,33 @@ export default function Dashboard() {
           <RecentEntries entries={entries ?? []} />
         </div>
       </div>
+
+      <Modal isOpen={showClearMastery} onClose={() => setShowClearMastery(false)}>
+        <div className="space-y-4">
+          <h3 className="font-headline text-title-lg text-primary">
+            Clear Mastery &amp; Quiz History
+          </h3>
+          <p className="font-body text-body-sm text-on-surface-variant">
+            This will permanently delete all quiz history and reset mastery scores to zero. This cannot be undone.
+          </p>
+          <div className="flex gap-3 justify-end">
+            <Button variant="secondary" onClick={() => setShowClearMastery(false)}>
+              Cancel
+            </Button>
+            <Button
+              variant="primary"
+              onClick={async () => {
+                await clearMastery();
+                setShowClearMastery(false);
+                refetch();
+                refetchHistory();
+              }}
+            >
+              Clear Mastery
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

@@ -49,6 +49,12 @@ Respond with valid JSON only:
   "feedback_summary": "2-3 sentence clinical feedback"
 }"""
 
+DIFFICULTY_INSTRUCTIONS = {
+    "easy": "Difficulty adjustment: Ask straightforward recall questions — single-fact definitions, drug names, basic indications. The answer should be 1-2 sentences maximum.",
+    "medium": "",
+    "hard": "Difficulty adjustment: Ask multi-step scenario questions requiring integration of 2+ clinical concepts. Include patient context (age, vitals, presentation). Expect detailed structured answers covering assessment, treatment rationale, and dose calculations where relevant.",
+}
+
 
 def generate_question(
     mode: str,
@@ -98,6 +104,12 @@ def generate_question(
     )
 
     user_content = f"Source material:\n\n{source_text}\n\nDifficulty: {difficulty}"
+
+    # Add difficulty-specific instructions if any
+    difficulty_instruction = DIFFICULTY_INSTRUCTIONS.get(difficulty, "")
+    if difficulty_instruction:
+        user_content += f"\n\n{difficulty_instruction}"
+
     if previous_questions:
         avoid_block = "\n".join(f"- {q}" for q in previous_questions)
         user_content += (

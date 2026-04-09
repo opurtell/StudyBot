@@ -211,6 +211,95 @@ class TestGenerateQuestion:
         assert result.primary_chunk_index == 1
         assert result.source_citation == "ACTAS CMG 14"
 
+    def test_difficulty_easy_adds_easy_instructions(self):
+        mock_llm = MagicMock()
+        mock_retriever = MagicMock()
+        mock_tracker = MagicMock()
+
+        mock_retriever.retrieve.return_value = _make_chunks()
+        mock_llm.complete.return_value = json.dumps(
+            {
+                "question_text": "What is the adrenaline dose?",
+                "question_type": "drug_dose",
+                "source_citation": "ACTAS CMG 14",
+                "category": "Cardiac",
+            }
+        )
+
+        generate_question(
+            mode="topic",
+            topic="Cardiac",
+            difficulty="easy",
+            llm=mock_llm,
+            retriever=mock_retriever,
+            tracker=mock_tracker,
+        )
+
+        call_args = mock_llm.complete.call_args[0][0]
+        user_msg = [m for m in call_args if m["role"] == "user"][0]["content"]
+        assert "straightforward recall" in user_msg
+        assert "single-fact" in user_msg
+
+    def test_difficulty_hard_adds_hard_instructions(self):
+        mock_llm = MagicMock()
+        mock_retriever = MagicMock()
+        mock_tracker = MagicMock()
+
+        mock_retriever.retrieve.return_value = _make_chunks()
+        mock_llm.complete.return_value = json.dumps(
+            {
+                "question_text": "A 65-year-old patient presents with...",
+                "question_type": "scenario",
+                "source_citation": "ACTAS CMG 14",
+                "category": "Cardiac",
+            }
+        )
+
+        generate_question(
+            mode="topic",
+            topic="Cardiac",
+            difficulty="hard",
+            llm=mock_llm,
+            retriever=mock_retriever,
+            tracker=mock_tracker,
+        )
+
+        call_args = mock_llm.complete.call_args[0][0]
+        user_msg = [m for m in call_args if m["role"] == "user"][0]["content"]
+        assert "multi-step scenario" in user_msg
+        assert "2+ clinical concepts" in user_msg
+
+    def test_difficulty_medium_adds_no_extra_instructions(self):
+        mock_llm = MagicMock()
+        mock_retriever = MagicMock()
+        mock_tracker = MagicMock()
+
+        mock_retriever.retrieve.return_value = _make_chunks()
+        mock_llm.complete.return_value = json.dumps(
+            {
+                "question_text": "What is the adrenaline dose?",
+                "question_type": "drug_dose",
+                "source_citation": "ACTAS CMG 14",
+                "category": "Cardiac",
+            }
+        )
+
+        generate_question(
+            mode="topic",
+            topic="Cardiac",
+            difficulty="medium",
+            llm=mock_llm,
+            retriever=mock_retriever,
+            tracker=mock_tracker,
+        )
+
+        call_args = mock_llm.complete.call_args[0][0]
+        user_msg = [m for m in call_args if m["role"] == "user"][0]["content"]
+        assert "straightforward recall" not in user_msg
+        assert "single-fact" not in user_msg
+        assert "multi-step scenario" not in user_msg
+        assert "2+ clinical concepts" not in user_msg
+
 
 class TestEvaluateAnswer:
     def test_correct_answer(self):
