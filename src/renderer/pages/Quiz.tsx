@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useQuizSession } from "../hooks/useQuizSession";
 import { useQuizShortcuts } from "../hooks/useQuizShortcuts";
 import { useResourceCacheStore } from "../providers/ResourceCacheProvider";
-import ProgressBar from "../components/ProgressBar";
 import QuizQuestion from "../components/QuizQuestion";
 import AnswerInput from "../components/AnswerInput";
 import QuizTimer from "../components/QuizTimer";
@@ -399,7 +398,6 @@ export default function Quiz() {
   if (session.phase === "loading") {
     return (
       <div className="min-h-screen flex flex-col">
-        <ProgressBar percent={(session.questionCount / 10) * 100} />
         <div className="flex-1 flex items-center justify-center">
           <div className="space-y-3 text-center">
             <LoadingIndicator type="generation" />
@@ -418,7 +416,6 @@ export default function Quiz() {
 
     return (
       <div className="min-h-screen flex flex-col">
-        <ProgressBar percent={(session.questionCount / 10) * 100} />
         <div className="flex-1 px-8 py-12 max-w-3xl mx-auto w-full">
           <div className="mb-8">
             <span className="font-mono text-[10px] text-on-surface-variant">
@@ -515,11 +512,10 @@ export default function Quiz() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <ProgressBar percent={(session.questionCount / 10) * 100} />
       <div className="flex-1 px-8 py-12 max-w-3xl mx-auto w-full flex flex-col">
         <div className="flex items-center justify-between mb-8">
           <span className="font-mono text-[10px] text-on-surface-variant">
-            Session {session.sessionId?.slice(-4)}
+            Session {session.sessionId?.slice(-4)} · Q {session.questionCount}
           </span>
           <QuizTimer running={timerRunning} onTick={session.setElapsedSeconds} />
         </div>
@@ -564,8 +560,11 @@ export default function Quiz() {
               </button>
               <div className="flex items-center gap-3">
                 <Button onClick={handleExit} variant="tertiary" aria-keyshortcuts="Escape">
-                  Skip
+                  End Session
                   <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">Esc</span>
+                </Button>
+                <Button onClick={() => { void session.nextQuestion(); }} variant="tertiary">
+                  Skip
                 </Button>
                 <Button
                   onClick={handleSubmit}
@@ -580,12 +579,6 @@ export default function Quiz() {
             </div>
           </>
         )}
-
-        <div className="flex items-center justify-between mt-12 pt-4 border-t border-outline-variant/10">
-          <span className="font-mono text-[10px] text-on-surface-variant">
-            Question {session.questionCount}
-          </span>
-        </div>
       </div>
     </div>
   );

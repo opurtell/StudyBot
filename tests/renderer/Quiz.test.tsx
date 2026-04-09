@@ -315,4 +315,65 @@ describe("Quiz page", () => {
     await waitFor(() => expect(screen.getByText("LLM Rate Limit Reached")).toBeInTheDocument());
     expect(screen.getByText(/switch to a different provider in Settings/i)).toBeInTheDocument();
   });
+
+  it("Skip button advances to the next question without exiting", async () => {
+    const user = userEvent.setup();
+
+    renderQuizFlow();
+
+    await user.keyboard("1");
+    await waitFor(() =>
+      expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument()
+    );
+    expect(screen.getAllByText("Question 1").length).toBeGreaterThanOrEqual(1);
+
+    await user.click(screen.getByRole("button", { name: /^skip$/i }));
+
+    await waitFor(() =>
+      expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument()
+    );
+    expect(screen.getAllByText("Question 2").length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryByText("Archive Home")).not.toBeInTheDocument();
+  });
+
+  it("End Session button exits to the dashboard from the question phase", async () => {
+    const user = userEvent.setup();
+
+    renderQuizFlow();
+
+    await user.keyboard("1");
+    await waitFor(() =>
+      expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument()
+    );
+
+    await user.click(screen.getByRole("button", { name: /end session/i }));
+
+    await waitFor(() => expect(screen.getByText("Archive Home")).toBeInTheDocument());
+  });
+
+  it("shows a Q counter in the question-phase header", async () => {
+    const user = userEvent.setup();
+
+    renderQuizFlow();
+
+    await user.keyboard("1");
+    await waitFor(() =>
+      expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument()
+    );
+
+    expect(screen.getByText(/Q 1/)).toBeInTheDocument();
+  });
+
+  it("does not render a ProgressBar during an active session", async () => {
+    const user = userEvent.setup();
+
+    renderQuizFlow();
+
+    await user.keyboard("1");
+    await waitFor(() =>
+      expect(screen.getByPlaceholderText("Enter your clinical observations here...")).toBeInTheDocument()
+    );
+
+    expect(screen.queryByRole("progressbar")).not.toBeInTheDocument();
+  });
 });
