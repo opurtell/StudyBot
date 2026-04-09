@@ -123,6 +123,12 @@ jobs:
             VERSION="v$(date +%Y.%m.%d-%H%M)"
           fi
           echo "tag=personal-${VERSION}" >> "$GITHUB_OUTPUT"
+      - name: Push tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -f ${{ steps.version.outputs.tag }}
+          git push origin ${{ steps.version.outputs.tag }} --force
       - name: Create draft release
         uses: softprops/action-gh-release@v2
         with:
