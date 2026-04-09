@@ -26,6 +26,7 @@ interface SettingsContextValue {
   rerunPipeline: () => Promise<void>;
   clearVectorStore: () => Promise<void>;
   clearSourceType: (sourceType: string) => Promise<void>;
+  clearMastery: () => Promise<void>;
   vectorStoreStatus: VectorStoreStatus | null;
   refetchVectorStoreStatus: () => Promise<void>;
   cmgRefreshStatus: CmgRefreshStatus | null;
@@ -139,6 +140,16 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       setActionError(getApiErrorMessage(error, "Failed to clear source data"));
     }
   }, [refetchVectorStoreStatus]);
+
+  const clearMastery = useCallback(async () => {
+    setActionError(null);
+    try {
+      await apiPost("/quiz/mastery/clear");
+      store.invalidate("/quiz/dashboard-mastery");
+    } catch (error) {
+      setActionError(getApiErrorMessage(error, "Failed to clear mastery data"));
+    }
+  }, [store]);
 
   const [cmgRefreshStatus, setCmgRefreshStatus] = useState<CmgRefreshStatus | null>(null);
   const [cmgRefreshLoading, setCmgRefreshLoading] = useState(false);
@@ -266,6 +277,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       rerunPipeline,
       clearVectorStore,
       clearSourceType,
+      clearMastery,
       vectorStoreStatus,
       refetchVectorStoreStatus,
       cmgRefreshStatus,
@@ -278,6 +290,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     }),
     [
       actionError,
+      clearMastery,
       clearSourceType,
       clearVectorStore,
       cmgManifest,
