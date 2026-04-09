@@ -74,6 +74,19 @@ class Tracker:
             )
             self._conn.commit()
 
+    def correct_answer(self, question_id: str, corrected_score: str) -> None:
+        with self._lock:
+            self._conn.execute(
+                """UPDATE quiz_history
+                   SET score = ?
+                   WHERE id = (
+                       SELECT MAX(id) FROM quiz_history
+                       WHERE question_id = ?
+                   )""",
+                (corrected_score, question_id),
+            )
+            self._conn.commit()
+
     def get_mastery(self) -> list[CategoryMastery]:
         with self._lock:
             rows = self._conn.execute("""

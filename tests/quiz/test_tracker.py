@@ -161,3 +161,44 @@ def test_blacklist_persists_across_tracker_restart(tmp_path):
     second = Tracker(db_path=db_path)
 
     assert sorted(second.get_blacklist()) == ["Obstetrics", "Paediatrics"]
+
+
+def test_correct_answer_updates_score(tracker):
+    tracker.record_answer("q1", "Cardiac", "recall", "incorrect", 10.0, "CMG 14")
+    tracker.correct_answer("q1", "correct")
+    mastery = tracker.get_mastery()
+    assert mastery[0].correct == 1
+    assert mastery[0].incorrect == 0
+
+
+def test_correct_answer_updates_mastery_percent(tracker):
+    tracker.record_answer("q1", "Cardiac", "recall", "incorrect", 30.0, "CMG 14")
+    tracker.record_answer("q2", "Cardiac", "recall", "incorrect", 30.0, "CMG 14")
+    tracker.correct_answer("q1", "correct")
+    mastery = tracker.get_mastery()
+    assert mastery[0].mastery_percent == pytest.approx(75.0)
+
+
+def test_correct_answer_no_history_row(tracker):
+    """Correcting a question with no history should not raise."""
+    tracker.correct_answer("nonexistent", "correct")
+    # No crash, no rows created
+    assert tracker.get_mastery() == []
+
+
+def test_correct_answer_updates_latest_only(tracker):
+    """If the same question_id appears twice, only the latest row is corrected."""
+    tracker.record_answer("q1", "Cardiac", "recall", "incorrect", 10.0, "CMG 14")
+    tracker.record_answer("q1", "Cardiac", "recall", "incorrect", 15.0, "CMG 14")
+    tracker.correct_answer("q1", "correct")
+    history = tracker.get_recent_history(limit=10)
+    # Two rows: latest corrected to "correct", earlier still "incorrect"
+    assert history[0].score == "correct"
+    assert history[1].score == "incorrect"
+
+
+def test_correct_answer_updates_streak(tracker):
+    tracker.record_answer("q1", "Cardiac", "recall", "incorrect", 10.0, "CMG 14")
+    tracker.record_answer("q2", "Cardiac", "recall", "correct", 10.0, "CMG 14")
+    tracker.correct_answer("q1", "correct")
+    assert tracker.get_streak() == 2
