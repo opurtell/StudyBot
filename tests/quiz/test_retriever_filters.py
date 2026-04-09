@@ -8,7 +8,9 @@ def test_build_where_ap_uses_visibility_filter():
     retriever = Retriever(client=mock_client)
 
     filters = {"section": {"$in": ["Cardiac", "Trauma"]}}
-    where = retriever._build_where(filters, exclude=None, collection="cmgs", skill_level="AP")
+    where = retriever._build_where(
+        filters, exclude=None, collection="cmgs", skill_level="AP"
+    )
 
     assert where == {
         "$and": [
@@ -22,15 +24,30 @@ def test_build_where_icp_uses_visibility_filter():
     mock_client = MagicMock()
     retriever = Retriever(client=mock_client)
 
-    where = retriever._build_where(None, exclude=None, collection="cmgs", skill_level="ICP")
+    where = retriever._build_where(
+        None, exclude=None, collection="cmgs", skill_level="ICP"
+    )
 
     assert where == {"visibility": {"$in": ["both", "icp"]}}
 
 
-def test_build_where_no_filter_for_notes():
+def test_build_where_notes_ap_uses_visibility_filter():
     mock_client = MagicMock()
     retriever = Retriever(client=mock_client)
 
-    where = retriever._build_where(None, exclude=None, collection="notes", skill_level="AP")
+    where = retriever._build_where(
+        None, exclude=None, collection="notes", skill_level="AP"
+    )
 
-    assert where is None
+    assert where == {"visibility": {"$in": ["both", "ap"]}}
+
+
+def test_build_where_notes_icp_uses_visibility_filter():
+    mock_client = MagicMock()
+    retriever = Retriever(client=mock_client)
+
+    where = retriever._build_where(
+        None, exclude=None, collection="notes", skill_level="ICP"
+    )
+
+    assert where == {"visibility": {"$in": ["both", "icp"]}}

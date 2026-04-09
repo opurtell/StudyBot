@@ -9,6 +9,7 @@ from pathlib import Path
 
 import chromadb
 import yaml
+from guidelines.markdown import has_icp_content, strip_icp_content
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 CHUNK_SIZE = 800
@@ -67,26 +68,61 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
     if existing["ids"]:
         collection.delete(ids=existing["ids"])
 
-    # Prepare chunk data
-    ids = [f"{id_prefix}_chunk_{i:04d}" for i in range(len(chunks))]
-    metadatas = [
-        {
-            "source_type": "notability_note",
-            "source_file": source_file,
-            "categories": ",".join(categories),
-            "chunk_index": i,
-            "last_modified": last_modified,
-            "has_review_flag": bool(review_flags),
-        }
-        for i in range(len(chunks))
-    ]
+    ids = []
+    documents = []
+    metadatas = []
+    for i, chunk_text in enumerate(chunks):
+        chunk_has_icp = has_icp_content(chunk_text)
+        if chunk_has_icp:
+            ids.append(f"{id_prefix}_chunk_{i:04d}_icp")
+            documents.append(chunk_text)
+            metadatas.append(
+                {
+                    "source_type": "notability_note",
+                    "source_file": source_file,
+                    "categories": ",".join(categories),
+                    "chunk_index": i,
+                    "last_modified": last_modified,
+                    "has_review_flag": bool(review_flags),
+                    "visibility": "icp",
+                }
+            )
+            stripped = strip_icp_content(chunk_text)
+            if stripped:
+                ids.append(f"{id_prefix}_chunk_{i:04d}_ap")
+                documents.append(stripped)
+                metadatas.append(
+                    {
+                        "source_type": "notability_note",
+                        "source_file": source_file,
+                        "categories": ",".join(categories),
+                        "chunk_index": i,
+                        "last_modified": last_modified,
+                        "has_review_flag": bool(review_flags),
+                        "visibility": "ap",
+                    }
+                )
+        else:
+            ids.append(f"{id_prefix}_chunk_{i:04d}")
+            documents.append(chunk_text)
+            metadatas.append(
+                {
+                    "source_type": "notability_note",
+                    "source_file": source_file,
+                    "categories": ",".join(categories),
+                    "chunk_index": i,
+                    "last_modified": last_modified,
+                    "has_review_flag": bool(review_flags),
+                    "visibility": "both",
+                }
+            )
 
-    collection.add(documents=chunks, ids=ids, metadatas=metadatas)
+    collection.add(documents=documents, ids=ids, metadatas=metadatas)
 
     return {
         "success": True,
         "source_file": source_file,
-        "chunk_count": len(chunks),
+        "chunk_count": len(documents),
         "categories": categories,
         "has_review_flag": bool(review_flags),
     }

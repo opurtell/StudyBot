@@ -9,7 +9,9 @@ from .models import Question, Evaluation
 from .retriever import Retriever
 from .tracker import Tracker
 
-GENERATION_SYSTEM_PROMPT = """You are a clinical quiz generator for ACT Ambulance Service paramedics.
+
+def build_generation_prompt(skill_level: str = "AP") -> str:
+    base = """You are a clinical quiz generator for ACT Ambulance Service paramedics.
 Generate one question from the provided source material.
 
 Rules:
@@ -18,7 +20,13 @@ Rules:
 - Vary question types: recall, definition, scenario, drug_dose
 - Use Australian English (adrenaline, haemorrhage, colour)
 - Tone: direct, clinical
-- Do NOT repeat or closely rephrase any previously asked questions listed below
+- Do NOT repeat or closely rephrase any previously asked questions listed below"""
+
+    if skill_level == "AP":
+        base += """
+- The user is an Ambulance Paramedic (AP). Do NOT generate questions about Intensive Care Paramedic (ICP) interventions, medications, or procedures. If source material contains ICP-only content, ignore it and only use AP-applicable content."""
+
+    base += """
 
 Each source is labelled [Source 1], [Source 2], etc. You MUST identify which single source the question is drawn from.
 
@@ -30,6 +38,8 @@ Respond with valid JSON only:
   "category": "e.g. Cardiac",
   "source_index": 1
 }"""
+    return base
+
 
 EVALUATION_SYSTEM_PROMPT = """You are evaluating a paramedic student's answer against clinical source material.
 
@@ -117,7 +127,7 @@ def generate_question(
         )
 
     messages = [
-        {"role": "system", "content": GENERATION_SYSTEM_PROMPT},
+        {"role": "system", "content": build_generation_prompt(skill_level)},
         {"role": "user", "content": user_content},
     ]
 

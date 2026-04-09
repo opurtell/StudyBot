@@ -21,9 +21,7 @@ def test_all_cmg_chunks_have_visibility(_cmg_collection):
     all_data = col.get(include=["metadatas"])
     missing = [
         (i, mid)
-        for i, (mid, meta) in enumerate(
-            zip(all_data["ids"], all_data["metadatas"])
-        )
+        for i, (mid, meta) in enumerate(zip(all_data["ids"], all_data["metadatas"]))
         if "visibility" not in meta
     ]
     assert missing == [], (
@@ -42,12 +40,31 @@ def test_visibility_values_are_valid(_cmg_collection):
     valid = {"both", "icp", "ap"}
     invalid = [
         (i, mid, meta.get("visibility"))
-        for i, (mid, meta) in enumerate(
-            zip(all_data["ids"], all_data["metadatas"])
-        )
+        for i, (mid, meta) in enumerate(zip(all_data["ids"], all_data["metadatas"]))
         if meta.get("visibility") not in valid
     ]
     assert invalid == [], (
-        f"{len(invalid)} chunks have invalid visibility values. "
-        f"First 5: {invalid[:5]}"
+        f"{len(invalid)} chunks have invalid visibility values. First 5: {invalid[:5]}"
+    )
+
+
+def test_ap_chunks_contain_no_icp_markers(_cmg_collection):
+    """AP-visibility chunks must not contain any ICP content markers."""
+    col = _cmg_collection
+    if col.count() == 0:
+        pytest.skip("No CMG chunks in local ChromaDB")
+
+    ap_data = col.get(where={"visibility": "ap"}, include=["documents"])
+    if not ap_data["ids"]:
+        pytest.skip("No AP-visibility chunks found")
+
+    leaks = []
+    for chunk_id, doc in zip(ap_data["ids"], ap_data["documents"]):
+        if "**ICP" in doc:
+            leaks.append(chunk_id)
+
+    assert leaks == [], (
+        f"{len(leaks)} AP chunks contain ICP markers. "
+        f"IDs: {leaks[:10]}. "
+        f"Re-run CMG chunker with fixed strip_icp_content."
     )
