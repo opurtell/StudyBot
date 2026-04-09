@@ -98,6 +98,7 @@ export default function Quiz() {
         questionType: session.question.question_type,
         sessionId: session.sessionId,
         questionCount: session.questionCount,
+        questionId: session.question.question_id,
       }
     });
   };
