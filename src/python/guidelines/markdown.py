@@ -12,6 +12,12 @@ _GLUED_LIST_ITEM_PATTERN = re.compile(r"(?<=[A-Za-z0-9%)])(?=-\s+\*\*)")
 _GLUED_BOLD_PATTERN = re.compile(r"(?<=[A-Za-z0-9])(?=\*\*[^*\n]+:\*\*)")
 _GLUED_SENTENCE_PATTERN = re.compile(r"([.!?])([A-Z][a-z])")
 
+_ICP_LIST_ITEM_PATTERN = re.compile(r"(?m)^\s*-\s*\*\*ICP[^*]*\*\*")
+_ICP_BLOCK_PATTERN = re.compile(
+    r"(?m)^(?P<indent>\s*-\s*\*\*ICP[^*]*\*\*.*?)\n"
+    r"(?P<sub>(?:\s+-\s.*\n|\s{2,}[^-\s].*\n)*)"
+)
+
 
 def _normalise_bold_label(match: re.Match[str]) -> str:
     return f"**{match.group(1).strip()}:**"
@@ -32,6 +38,19 @@ def normalise_markdown_syntax(content: str) -> str:
         normalised = _GLUED_LIST_ITEM_PATTERN.sub("\n", normalised)
     normalised = _GLUED_SENTENCE_PATTERN.sub(r"\1 \2", normalised)
     return normalised
+
+
+def has_icp_content(text: str) -> bool:
+    """Return True if the text contains ICP-specific list items."""
+    return bool(_ICP_LIST_ITEM_PATTERN.search(text))
+
+
+def strip_icp_content(text: str) -> str:
+    """Remove ICP-marked list items and their indented sub-bullets."""
+    result = _ICP_BLOCK_PATTERN.sub("", text)
+    # Clean up double blank lines left behind
+    result = re.sub(r"\n{3,}", "\n\n", result)
+    return result.strip()
 
 
 def normalise_markdown_payload(value: Any) -> Any:

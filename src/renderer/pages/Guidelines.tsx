@@ -47,7 +47,9 @@ const TYPE_TAG_COLOUR: Record<string, string> = {
 export default function Guidelines() {
   const navigate = useNavigate();
   const { config } = useSettings();
-  const { data: guidelines, loading, error, refetch } = useApi<GuidelineSummary[]>("/guidelines");
+  const { data: guidelines, loading, error, refetch } = useApi<GuidelineSummary[]>(
+    config?.skill_level === "AP" ? "/guidelines?skill_level=AP" : "/guidelines"
+  );
   const backendStatus = useBackendStatus();
   const { restart } = useBackendStatusActions();
   const { isSeeding } = useBackgroundProcesses();
@@ -58,7 +60,11 @@ export default function Guidelines() {
   const [scopePickerOpen, setScopePickerOpen] = useState(false);
 
   const { data: detail } = useApi<GuidelineDetail>(
-    selectedId ? `/guidelines/${selectedId}` : ""
+    selectedId
+      ? config?.skill_level === "AP"
+        ? `/guidelines/${selectedId}?skill_level=AP`
+        : `/guidelines/${selectedId}`
+      : ""
   );
   const errorCopy = getErrorStateCopy(error, backendStatus, "guidelines");
 

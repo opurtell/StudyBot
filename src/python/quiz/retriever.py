@@ -100,9 +100,11 @@ class Retriever:
                 for cat in exclude:
                     conditions.append({"section": {"$nin": [cat]}})
 
-        # Add skill level filtering for CMGs
+        # Add skill level filtering for CMGs using visibility metadata
         if collection == "cmgs" and skill_level == "AP":
-            conditions.append({"is_icp_only": False})
+            conditions.append({"visibility": {"$in": ["both", "ap"]}})
+        elif collection == "cmgs" and skill_level == "ICP":
+            conditions.append({"visibility": {"$in": ["both", "icp"]}})
 
         if not conditions:
             return None

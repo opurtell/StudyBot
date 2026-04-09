@@ -102,6 +102,72 @@ def test_guideline_summaries_are_cached(monkeypatch, tmp_path):
     assert calls["count"] == 1
 
 
+def test_list_guidelines_skill_level_ap_excludes_icp_only(monkeypatch, tmp_path):
+    def fake_load_all_raw() -> list[dict]:
+        return [
+            {
+                "id": "CMG_1_AP",
+                "cmg_number": "1",
+                "title": "AP Guideline",
+                "section": "Cardiac",
+                "_source_type": "cmg",
+                "is_icp_only": False,
+            },
+            {
+                "id": "CMG_2_ICP",
+                "cmg_number": "2",
+                "title": "ICP Guideline",
+                "section": "Cardiac",
+                "_source_type": "cmg",
+                "is_icp_only": True,
+            },
+        ]
+
+    guidelines_router.invalidate_guideline_cache()
+    monkeypatch.setattr(
+        guidelines_router, "_get_structured_dir", lambda: tmp_path
+    )
+    monkeypatch.setattr(guidelines_router, "_load_all_raw", fake_load_all_raw)
+
+    result = guidelines_router.list_guidelines(skill_level="AP")
+    ids = [g["id"] for g in result]
+    assert "CMG_1_AP" in ids
+    assert "CMG_2_ICP" not in ids
+
+
+def test_list_guidelines_skill_level_icp_returns_all(monkeypatch, tmp_path):
+    def fake_load_all_raw() -> list[dict]:
+        return [
+            {
+                "id": "CMG_1_AP",
+                "cmg_number": "1",
+                "title": "AP Guideline",
+                "section": "Cardiac",
+                "_source_type": "cmg",
+                "is_icp_only": False,
+            },
+            {
+                "id": "CMG_2_ICP",
+                "cmg_number": "2",
+                "title": "ICP Guideline",
+                "section": "Cardiac",
+                "_source_type": "cmg",
+                "is_icp_only": True,
+            },
+        ]
+
+    guidelines_router.invalidate_guideline_cache()
+    monkeypatch.setattr(
+        guidelines_router, "_get_structured_dir", lambda: tmp_path
+    )
+    monkeypatch.setattr(guidelines_router, "_load_all_raw", fake_load_all_raw)
+
+    result = guidelines_router.list_guidelines(skill_level="ICP")
+    ids = [g["id"] for g in result]
+    assert "CMG_1_AP" in ids
+    assert "CMG_2_ICP" in ids
+
+
 def test_normalise_markdown_syntax_breaks_joined_headings():
     content = "#### Cardiac arrest##### Adult\n- 1mg IV"
 

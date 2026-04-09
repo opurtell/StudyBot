@@ -14,6 +14,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from paths import CHROMA_DB_DIR
 
 from .models import CMGGuideline
+from guidelines.markdown import has_icp_content, strip_icp_content
 
 logger = logging.getLogger(__name__)
 
@@ -141,41 +142,146 @@ def chunk_and_ingest(
                 chunks = splitter.split_text(section)
 
                 for idx, chunk_text in enumerate(chunks):
-                    chunk_id = f"{cmg.id}_{chunk_type}_{idx}"
-                    metadata = {
-                        "source_type": "cmg",
-                        "source_file": os.path.basename(file_path),
-                        "cmg_number": cmg.cmg_number,
-                        "section": cmg.section,
-                        "is_icp_only": cmg.is_icp_only,
-                        "chunk_type": chunk_type,
-                        "last_modified": cmg.extraction_metadata.timestamp,
-                    }
+                    chunk_has_icp = has_icp_content(chunk_text)
 
-                    collection.add(
-                        ids=[chunk_id], documents=[chunk_text], metadatas=[metadata]
-                    )
-                    total_chunks += 1
+                    if cmg.is_icp_only:
+                        # Whole guideline is ICP-only — single chunk
+                        visibility = "icp"
+                        chunk_id = f"{cmg.id}_{chunk_type}_{idx}"
+                        metadata = {
+                            "source_type": "cmg",
+                            "source_file": os.path.basename(file_path),
+                            "cmg_number": cmg.cmg_number,
+                            "section": cmg.section,
+                            "is_icp_only": True,
+                            "visibility": visibility,
+                            "chunk_type": chunk_type,
+                            "last_modified": cmg.extraction_metadata.timestamp,
+                        }
+                        collection.add(
+                            ids=[chunk_id], documents=[chunk_text], metadatas=[metadata]
+                        )
+                        total_chunks += 1
+                    elif chunk_has_icp:
+                        # Mixed chunk — store two versions
+                        # ICP version (full content)
+                        icp_id = f"{cmg.id}_{chunk_type}_{idx}_icp"
+                        metadata_icp = {
+                            "source_type": "cmg",
+                            "source_file": os.path.basename(file_path),
+                            "cmg_number": cmg.cmg_number,
+                            "section": cmg.section,
+                            "is_icp_only": False,
+                            "visibility": "icp",
+                            "chunk_type": chunk_type,
+                            "last_modified": cmg.extraction_metadata.timestamp,
+                        }
+                        collection.add(
+                            ids=[icp_id], documents=[chunk_text], metadatas=[metadata_icp]
+                        )
+                        total_chunks += 1
+
+                        # AP version (stripped content)
+                        ap_id = f"{cmg.id}_{chunk_type}_{idx}_ap"
+                        stripped = strip_icp_content(chunk_text)
+                        metadata_ap = {
+                            "source_type": "cmg",
+                            "source_file": os.path.basename(file_path),
+                            "cmg_number": cmg.cmg_number,
+                            "section": cmg.section,
+                            "is_icp_only": False,
+                            "visibility": "ap",
+                            "chunk_type": chunk_type,
+                            "last_modified": cmg.extraction_metadata.timestamp,
+                        }
+                        collection.add(
+                            ids=[ap_id], documents=[stripped], metadatas=[metadata_ap]
+                        )
+                        total_chunks += 1
+                    else:
+                        # No ICP content — shared chunk
+                        chunk_id = f"{cmg.id}_{chunk_type}_{idx}"
+                        metadata = {
+                            "source_type": "cmg",
+                            "source_file": os.path.basename(file_path),
+                            "cmg_number": cmg.cmg_number,
+                            "section": cmg.section,
+                            "is_icp_only": False,
+                            "visibility": "both",
+                            "chunk_type": chunk_type,
+                            "last_modified": cmg.extraction_metadata.timestamp,
+                        }
+                        collection.add(
+                            ids=[chunk_id], documents=[chunk_text], metadatas=[metadata]
+                        )
+                        total_chunks += 1
 
             if cmg.dose_lookup:
                 dose_chunks = _dose_lookup_to_chunks(cmg.dose_lookup)
                 for dose_idx, dose_text in enumerate(dose_chunks):
-                    collection.add(
-                        ids=[f"{cmg.id}_dose_lookup_{dose_idx}"],
-                        documents=[dose_text],
-                        metadatas=[
-                            {
-                                "source_type": "cmg",
-                                "source_file": os.path.basename(file_path),
-                                "cmg_number": cmg.cmg_number,
-                                "section": cmg.section,
-                                "is_icp_only": cmg.is_icp_only,
-                                "chunk_type": "dosage",
-                                "last_modified": cmg.extraction_metadata.timestamp,
-                            }
-                        ],
-                    )
-                    total_chunks += 1
+                    dose_has_icp = has_icp_content(dose_text)
+
+                    if cmg.is_icp_only:
+                        visibility = "icp"
+                        chunk_id = f"{cmg.id}_dose_lookup_{dose_idx}"
+                    elif dose_has_icp:
+                        # ICP version
+                        icp_id = f"{cmg.id}_dose_lookup_{dose_idx}_icp"
+                        meta_icp = {
+                            "source_type": "cmg",
+                            "source_file": os.path.basename(file_path),
+                            "cmg_number": cmg.cmg_number,
+                            "section": cmg.section,
+                            "is_icp_only": False,
+                            "visibility": "icp",
+                            "chunk_type": "dosage",
+                            "last_modified": cmg.extraction_metadata.timestamp,
+                        }
+                        collection.add(
+                            ids=[icp_id], documents=[dose_text], metadatas=[meta_icp]
+                        )
+                        total_chunks += 1
+
+                        # AP version
+                        ap_id = f"{cmg.id}_dose_lookup_{dose_idx}_ap"
+                        stripped = strip_icp_content(dose_text)
+                        meta_ap = {
+                            "source_type": "cmg",
+                            "source_file": os.path.basename(file_path),
+                            "cmg_number": cmg.cmg_number,
+                            "section": cmg.section,
+                            "is_icp_only": False,
+                            "visibility": "ap",
+                            "chunk_type": "dosage",
+                            "last_modified": cmg.extraction_metadata.timestamp,
+                        }
+                        collection.add(
+                            ids=[ap_id], documents=[stripped], metadatas=[meta_ap]
+                        )
+                        total_chunks += 1
+                        continue
+                    else:
+                        visibility = "both"
+                        chunk_id = f"{cmg.id}_dose_lookup_{dose_idx}"
+
+                    if not dose_has_icp or cmg.is_icp_only:
+                        collection.add(
+                            ids=[chunk_id],
+                            documents=[dose_text],
+                            metadatas=[
+                                {
+                                    "source_type": "cmg",
+                                    "source_file": os.path.basename(file_path),
+                                    "cmg_number": cmg.cmg_number,
+                                    "section": cmg.section,
+                                    "is_icp_only": cmg.is_icp_only,
+                                    "visibility": visibility,
+                                    "chunk_type": "dosage",
+                                    "last_modified": cmg.extraction_metadata.timestamp,
+                                }
+                            ],
+                        )
+                        total_chunks += 1
 
         except Exception as e:
             logger.error(f"Failed to chunk and ingest {file_path}: {e}")

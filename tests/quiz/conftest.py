@@ -75,6 +75,7 @@ def seeded_chroma():
                 "chunk_type": "protocol",
                 "last_modified": "2024-01-01",
                 "is_icp_only": False,
+                "visibility": "both",
             },
             {
                 "source_type": "cmg",
@@ -84,6 +85,7 @@ def seeded_chroma():
                 "chunk_type": "protocol",
                 "last_modified": "2024-01-01",
                 "is_icp_only": False,
+                "visibility": "both",
             },
         ],
     )
@@ -102,6 +104,7 @@ def seeded_chroma():
                 "chunk_type": "dosage",
                 "last_modified": "2024-01-01",
                 "is_icp_only": False,
+                "visibility": "both",
             },
         ],
     )

@@ -8,7 +8,7 @@ from fastapi import APIRouter, HTTPException
 from paths import CMG_STRUCTURED_DIR
 from paths import resolve_cmg_structured_dir
 
-from .markdown import normalise_markdown_payload, normalise_markdown_syntax
+from .markdown import normalise_markdown_payload, normalise_markdown_syntax, strip_icp_content
 from .models import GuidelineDetail, GuidelineSummary
 
 router = APIRouter(prefix="/guidelines", tags=["guidelines"])
@@ -106,6 +106,7 @@ def _find_summary(guideline_id: str) -> dict | None:
 def list_guidelines(
     type: str | None = None,
     section: str | None = None,
+    skill_level: str | None = None,
 ) -> list[dict]:
     summaries: list[dict] = []
     for item in _load_guideline_summaries():
@@ -114,13 +115,16 @@ def list_guidelines(
             continue
         if section and item.get("section", "") != section:
             continue
+        if skill_level == "AP" and item.get("is_icp_only", False):
+            continue
         summaries.append(item)
     return summaries
 
 
 @router.get("/{guideline_id}")
-def get_guideline(guideline_id: str) -> dict:
-    cached = _guideline_detail_cache.get(guideline_id)
+def get_guideline(guideline_id: str, skill_level: str | None = None) -> dict:
+    cache_key = f"{guideline_id}:{skill_level or 'all'}"
+    cached = _guideline_detail_cache.get(cache_key)
     if cached is not None:
         return cached
 
@@ -139,16 +143,20 @@ def get_guideline(guideline_id: str) -> dict:
     except (json.JSONDecodeError, OSError):
         raise HTTPException(status_code=500, detail="Failed to read guideline")
 
+    content = normalise_markdown_syntax(data.get("content_markdown", ""))
+    if skill_level == "AP":
+        content = strip_icp_content(content)
+
     detail = GuidelineDetail(
         id=data["id"],
         cmg_number=data.get("cmg_number", ""),
         title=data.get("title", ""),
         section=data.get("section", "Other"),
         source_type=source_type,
-        content_markdown=normalise_markdown_syntax(data.get("content_markdown", "")),
+        content_markdown=content,
         is_icp_only=data.get("is_icp_only", False),
         dose_lookup=normalise_markdown_payload(data.get("dose_lookup")),
         flowchart=normalise_markdown_payload(data.get("flowchart")),
     ).model_dump()
-    _guideline_detail_cache[guideline_id] = detail
+    _guideline_detail_cache[cache_key] = detail
     return detail
