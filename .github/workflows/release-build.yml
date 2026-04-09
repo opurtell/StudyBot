@@ -31,6 +31,7 @@ jobs:
         with:
           name: mac-arm64
           path: release/**
+          retention-days: 1
 
   build-mac-x64:
     runs-on: macos-latest
@@ -49,6 +50,7 @@ jobs:
         with:
           name: mac-x64
           path: release/**
+          retention-days: 1
 
   build-win-x64:
     runs-on: windows-latest
@@ -67,6 +69,7 @@ jobs:
         with:
           name: win-x64
           path: release/**
+          retention-days: 1
 
   draft-release:
     needs: [build-mac-arm64, build-mac-x64, build-win-x64]

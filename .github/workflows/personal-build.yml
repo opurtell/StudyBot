@@ -34,11 +34,12 @@ jobs:
       - run: npm ci
       - run: bash scripts/package-backend.sh arm64
       - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --arm64
+      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --arm64 --publish never
       - uses: actions/upload-artifact@v4
         with:
           name: mac-arm64-personal
           path: release/**
+          retention-days: 1
 
   build-mac-x64:
     runs-on: macos-latest
@@ -61,11 +62,12 @@ jobs:
       - run: npm ci
       - run: bash scripts/package-backend.sh x64
       - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --x64
+      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --x64 --publish never
       - uses: actions/upload-artifact@v4
         with:
           name: mac-x64-personal
           path: release/**
+          retention-days: 1
 
   build-win-x64:
     runs-on: windows-latest
@@ -90,11 +92,12 @@ jobs:
       - run: npm ci
       - run: pwsh -File scripts/package-backend.ps1
       - run: pwsh -File scripts/verify-backend-payload.ps1
-      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --win --x64
+      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --win --x64 --publish never
       - uses: actions/upload-artifact@v4
         with:
           name: win-x64-personal
           path: release/**
+          retention-days: 1
 
   draft-release:
     needs: [build-mac-arm64, build-mac-x64, build-win-x64]
