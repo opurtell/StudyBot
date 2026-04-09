@@ -166,7 +166,7 @@ class TestRouteMapping:
 
 - [ ] **Step 2: Run tests to verify they fail**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/studyBotcode && python -m pytest tests/python/test_cmg_extraction.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/python/test_cmg_extraction.py -v`
 Expected: FAIL — `ImportError: cannot import name 'extract_navigation'`
 
 - [ ] **Step 3: Implement navigation extraction**

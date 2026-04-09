@@ -8,7 +8,7 @@
 
 ## Workspace Setup
 
-Create a git worktree at a sibling directory on branch `feature/standalone-packaging`. The worktree shares `.git` with the main repo but has its own working tree. All packaging work happens in the worktree. The current workspace at `studyBotcode/` is never modified.
+Create a git worktree at a sibling directory on branch `feature/standalone-packaging`. The worktree shares `.git` with the main repo but has its own working tree. All packaging work happens in the worktree. The current workspace at `StudyBot/` is never modified.
 
 When the work is complete, merge `feature/standalone-packaging` back to `main`.
 
@@ -22,11 +22,11 @@ Three separate `PROJECT_ROOT` computations exist:
 
 | File | Method | Value |
 |------|--------|-------|
-| `src/python/paths.py` | `Path(__file__).resolve().parents[2]` | `studyBotcode/` |
-| `src/python/settings/router.py` | `Path(__file__).resolve().parents[3]` | `studyBotcode/` |
-| `src/python/llm/factory.py` | `Path(__file__).resolve().parents[3]` | `studyBotcode/` |
-| `src/python/pipeline/run.py` | `Path(__file__).resolve().parents[3]` | `studyBotcode/` |
-| `src/python/pipeline/personal_docs/run.py` | `Path(__file__).resolve().parents[3]` | `studyBotcode/` |
+| `src/python/paths.py` | `Path(__file__).resolve().parents[2]` | `StudyBot/` |
+| `src/python/settings/router.py` | `Path(__file__).resolve().parents[3]` | `StudyBot/` |
+| `src/python/llm/factory.py` | `Path(__file__).resolve().parents[3]` | `StudyBot/` |
+| `src/python/pipeline/run.py` | `Path(__file__).resolve().parents[3]` | `StudyBot/` |
+| `src/python/pipeline/personal_docs/run.py` | `Path(__file__).resolve().parents[3]` | `StudyBot/` |
 
 All assume a repo-root directory layout that will not exist in a packaged app.
 
@@ -59,15 +59,15 @@ Else (dev mode):
 
 | Constant | Packaged mode | Dev mode |
 |----------|---------------|----------|
-| `APP_ROOT` | `$STUDYBOT_APP_ROOT` | `studyBotcode/` |
-| `USER_DATA_DIR` | `$STUDYBOT_USER_DATA` | `studyBotcode/` |
-| `DATA_DIR` | `USER_DATA_DIR / "data"` | `studyBotcode/data` |
-| `CONFIG_DIR` | `USER_DATA_DIR / "config"` | `studyBotcode/config` |
-| `SETTINGS_PATH` | `USER_DATA_DIR / "config/settings.json"` | `studyBotcode/config/settings.json` |
-| `EXAMPLE_SETTINGS_PATH` | `APP_ROOT / "config/settings.example.json"` | `studyBotcode/config/settings.example.json` |
-| `CHROMA_DB_DIR` | `USER_DATA_DIR / "data/chroma_db"` | `studyBotcode/data/chroma_db` |
-| `MASTERY_DB_PATH` | `USER_DATA_DIR / "data/mastery.db"` | `studyBotcode/data/mastery.db` |
-| `LOGS_DIR` | `USER_DATA_DIR / "logs"` | `studyBotcode/logs` |
+| `APP_ROOT` | `$STUDYBOT_APP_ROOT` | `StudyBot/` |
+| `USER_DATA_DIR` | `$STUDYBOT_USER_DATA` | `StudyBot/` |
+| `DATA_DIR` | `USER_DATA_DIR / "data"` | `StudyBot/data` |
+| `CONFIG_DIR` | `USER_DATA_DIR / "config"` | `StudyBot/config` |
+| `SETTINGS_PATH` | `USER_DATA_DIR / "config/settings.json"` | `StudyBot/config/settings.json` |
+| `EXAMPLE_SETTINGS_PATH` | `APP_ROOT / "config/settings.example.json"` | `StudyBot/config/settings.example.json` |
+| `CHROMA_DB_DIR` | `USER_DATA_DIR / "data/chroma_db"` | `StudyBot/data/chroma_db` |
+| `MASTERY_DB_PATH` | `USER_DATA_DIR / "data/mastery.db"` | `StudyBot/data/mastery.db` |
+| `LOGS_DIR` | `USER_DATA_DIR / "logs"` | `StudyBot/logs` |
 | `HOST` | `$STUDYBOT_HOST` or `127.0.0.1` | `127.0.0.1` |
 | `PORT` | `$STUDYBOT_PORT` or `7777` | `7777` |
 

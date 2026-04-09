@@ -20,15 +20,15 @@
 Run from the main repo directory:
 
 ```bash
-git worktree add ../studyBotcode-packaging -b feature/standalone-packaging
+git worktree add ../StudyBot-packaging -b feature/standalone-packaging
 ```
 
-Expected: New directory `../studyBotcode-packaging/` created on branch `feature/standalone-packaging`.
+Expected: New directory `../StudyBot-packaging/` created on branch `feature/standalone-packaging`.
 
 - [ ] **Step 2: Verify the worktree**
 
 ```bash
-cd ../studyBotcode-packaging && git branch --show-current
+cd ../StudyBot-packaging && git branch --show-current
 ```
 
 Expected: `feature/standalone-packaging`
@@ -508,7 +508,7 @@ In `src/python/pipeline/run.py`, remove:
 ```python
 from paths import CHROMA_DB_DIR
 
-# Resolve project root (studyBotcode/)
+# Resolve project root (StudyBot/)
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 DEFAULT_SOURCE_DIR = PROJECT_ROOT / "docs" / "notabilityNotes" / "noteDocs"

@@ -370,7 +370,7 @@ The personal build produces a desktop app that includes all data sources in the 
 
 ### How it works
 
-1. The pre-built ChromaDB from `../studyBotcode-archive/data/chroma_db/` is uploaded to a GitHub Release tagged `personal-data` via `scripts/upload-personal-data.sh`.
+1. The pre-built ChromaDB from `../StudyBot-archive/data/chroma_db/` is uploaded to a GitHub Release tagged `personal-data` via `scripts/upload-personal-data.sh`.
 2. The `.github/workflows/personal-build.yml` workflow (manual trigger only) downloads the tarball, extracts it, and bundles it with the app.
 3. The `PERSONAL_BUILD=1` env var tells `package-backend.sh`/`.ps1` to skip the CMG-only ChromaDB pre-build and use the pre-extracted index instead.
 

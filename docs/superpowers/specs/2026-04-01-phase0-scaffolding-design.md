@@ -30,7 +30,7 @@ Phase 0 establishes the foundational project skeleton: git repository, confirmed
 ## Directory Structure
 
 ```
-studyBotcode/
+StudyBot/
 ├── index.html                 # Vite entry point — mounts <div id="root">, loads src/renderer/main.tsx
 ├── src/
 │   ├── electron/
@@ -110,7 +110,7 @@ Standard Vite HTML entry point at project root:
 
 ### `vite.config.ts`
 ```ts
-// Project root is studyBotcode/; index.html is at root; output to dist/
+// Project root is StudyBot/; index.html is at root; output to dist/
 export default defineConfig({
   plugins: [react()],
   base: './',

@@ -9,7 +9,7 @@
 The `.note` source files live under the main project tree. **476 `.note` files** across 10 top-level semester/subject folders (including one duplicate — see gotchas).
 
 ```
-studyBotcode/
+StudyBot/
 ├── Guides/
 │   ├── NOTABILITY_FORMAT_GUIDE.md         ← authoritative .note parsing reference
 │   └── PIPELINE_AGENT_GUIDE.md            ← this file

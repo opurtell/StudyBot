@@ -38,12 +38,12 @@ Acceptance criteria:
 
 Target files:
 
-- [x] [src/renderer/hooks/useApi.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useApi.ts)
-- [x] [src/renderer/hooks/useSettings.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useSettings.ts)
-- [x] [src/renderer/hooks/useMastery.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useMastery.ts)
-- [x] [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useQuizSession.ts)
-- [x] [src/renderer/hooks/useBlacklist.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useBlacklist.ts)
-- [x] [src/renderer/components/SearchBar.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/components/SearchBar.tsx)
+- [x] [src/renderer/hooks/useApi.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useApi.ts)
+- [x] [src/renderer/hooks/useSettings.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useSettings.ts)
+- [x] [src/renderer/hooks/useMastery.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useMastery.ts)
+- [x] [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useQuizSession.ts)
+- [x] [src/renderer/hooks/useBlacklist.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useBlacklist.ts)
+- [x] [src/renderer/components/SearchBar.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/components/SearchBar.tsx)
 
 Acceptance criteria:
 
@@ -79,9 +79,9 @@ Acceptance criteria:
 
 Target files:
 
-- [x] [src/python/guidelines/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/guidelines/router.py)
-- [x] [src/python/medication/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/medication/router.py)
-- [x] [src/python/settings/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/settings/router.py)
+- [x] [src/python/guidelines/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/guidelines/router.py)
+- [x] [src/python/medication/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/medication/router.py)
+- [x] [src/python/settings/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/settings/router.py)
 
 Acceptance criteria:
 
@@ -113,9 +113,9 @@ Acceptance criteria:
 
 Target files:
 
-- [ ] [src/python/quiz/tracker.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/tracker.py)
-- [ ] [src/python/quiz/store.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/store.py)
-- [ ] [config/settings.json](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/config/settings.json)
+- [ ] [src/python/quiz/tracker.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/tracker.py)
+- [ ] [src/python/quiz/store.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/store.py)
+- [ ] [config/settings.json](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/config/settings.json)
 
 Acceptance criteria:
 
@@ -133,11 +133,11 @@ Acceptance criteria:
 
 Target pages:
 
-- [x] [src/renderer/pages/Dashboard.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Dashboard.tsx)
-- [x] [src/renderer/pages/Guidelines.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Guidelines.tsx)
-- [x] [src/renderer/pages/Medication.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Medication.tsx)
-- [x] [src/renderer/pages/Settings.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Settings.tsx)
-- [x] [src/renderer/components/AppShell.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/components/AppShell.tsx)
+- [x] [src/renderer/pages/Dashboard.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Dashboard.tsx)
+- [x] [src/renderer/pages/Guidelines.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Guidelines.tsx)
+- [x] [src/renderer/pages/Medication.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Medication.tsx)
+- [x] [src/renderer/pages/Settings.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Settings.tsx)
+- [x] [src/renderer/components/AppShell.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/components/AppShell.tsx)
 
 Acceptance criteria:
 
@@ -155,10 +155,10 @@ Acceptance criteria:
 
 Target files:
 
-- [x] [src/python/quiz/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/router.py)
-- [x] [src/python/search/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/search/router.py)
-- [x] [src/python/quiz/retriever.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/retriever.py)
-- [x] [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useQuizSession.ts)
+- [x] [src/python/quiz/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/router.py)
+- [x] [src/python/search/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/search/router.py)
+- [x] [src/python/quiz/retriever.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/retriever.py)
+- [x] [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useQuizSession.ts)
 
 Acceptance criteria:
 
@@ -202,9 +202,9 @@ Acceptance criteria:
 
 Target test areas:
 
-- [x] [tests/renderer](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/renderer)
-- [x] [tests/python](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/python)
-- [x] [tests/quiz](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/quiz)
+- [x] [tests/renderer](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/renderer)
+- [x] [tests/python](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/python)
+- [x] [tests/quiz](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/quiz)
 
 Acceptance criteria:
 

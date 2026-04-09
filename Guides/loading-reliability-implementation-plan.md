@@ -29,7 +29,7 @@ Make backend startup a first-class Electron responsibility so the renderer never
 
 ### Implementation steps
 
-1. Extend [src/electron/main.js](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/electron/main.js) with a backend status state machine.
+1. Extend [src/electron/main.js](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/electron/main.js) with a backend status state machine.
 2. Capture:
    - python spawn success/failure
    - health-check attempts
@@ -38,14 +38,14 @@ Make backend startup a first-class Electron responsibility so the renderer never
 3. Add IPC handlers or events in Electron main for:
    - get current backend status
    - subscribe to backend status updates
-4. Expose these handlers through [src/electron/preload.js](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/electron/preload.js).
+4. Expose these handlers through [src/electron/preload.js](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/electron/preload.js).
 5. Add a renderer bootstrap provider that blocks route-level data loading until backend readiness has been resolved.
 
 ### Files
 
-- [src/electron/main.js](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/electron/main.js)
-- [src/electron/preload.js](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/electron/preload.js)
-- [src/renderer/App.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/App.tsx)
+- [src/electron/main.js](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/electron/main.js)
+- [src/electron/preload.js](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/electron/preload.js)
+- [src/renderer/App.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/App.tsx)
 
 ### Risks
 
@@ -75,12 +75,12 @@ Remove inconsistent request behaviour and stop leaking raw `fetch` details into 
    - retry policy only for connection/startup failures
    - structured error objects
 3. Replace direct `fetch` usage in:
-   - [src/renderer/hooks/useApi.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useApi.ts)
-   - [src/renderer/hooks/useSettings.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useSettings.ts)
-   - [src/renderer/hooks/useMastery.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useMastery.ts)
-   - [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useQuizSession.ts)
-   - [src/renderer/hooks/useBlacklist.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useBlacklist.ts)
-   - [src/renderer/components/SearchBar.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/components/SearchBar.tsx)
+   - [src/renderer/hooks/useApi.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useApi.ts)
+   - [src/renderer/hooks/useSettings.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useSettings.ts)
+   - [src/renderer/hooks/useMastery.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useMastery.ts)
+   - [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useQuizSession.ts)
+   - [src/renderer/hooks/useBlacklist.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useBlacklist.ts)
+   - [src/renderer/components/SearchBar.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/components/SearchBar.tsx)
 4. Standardise displayable error categories:
    - backend starting
    - backend unavailable
@@ -126,11 +126,11 @@ Make route transitions fast and predictable by reusing data instead of discardin
 
 ### Candidate files
 
-- [src/renderer/App.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/App.tsx)
-- [src/renderer/pages/Dashboard.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Dashboard.tsx)
-- [src/renderer/pages/Guidelines.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Guidelines.tsx)
-- [src/renderer/pages/Medication.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Medication.tsx)
-- [src/renderer/pages/Settings.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Settings.tsx)
+- [src/renderer/App.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/App.tsx)
+- [src/renderer/pages/Dashboard.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Dashboard.tsx)
+- [src/renderer/pages/Guidelines.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Guidelines.tsx)
+- [src/renderer/pages/Medication.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Medication.tsx)
+- [src/renderer/pages/Settings.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Settings.tsx)
 
 ### Risks
 
@@ -152,11 +152,11 @@ Avoid repeated filesystem scans and markdown parsing for local data that changes
 
 ### Implementation steps
 
-1. In [src/python/guidelines/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/guidelines/router.py), build:
+1. In [src/python/guidelines/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/guidelines/router.py), build:
    - cached list of guideline summaries
    - `id -> detail` lookup index or `id -> path` index
-2. In [src/python/medication/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/medication/router.py), cache the medication payload after first build.
-3. In [src/python/settings/router.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/settings/router.py), consider lightweight caching of stable reads.
+2. In [src/python/medication/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/medication/router.py), cache the medication payload after first build.
+3. In [src/python/settings/router.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/settings/router.py), consider lightweight caching of stable reads.
 4. Add explicit cache invalidation hooks after:
    - CMG refresh completion
    - pipeline rerun
@@ -190,9 +190,9 @@ Shift repeated read/parse work into the pipeline so the app reads compact prebui
 
 ### Candidate files
 
-- [src/python/pipeline/cmg/orchestrator.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/orchestrator.py)
-- [src/python/pipeline/cmg/structurer.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/structurer.py)
-- [src/python/pipeline/cmg/refresh.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/refresh.py)
+- [src/python/pipeline/cmg/orchestrator.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/orchestrator.py)
+- [src/python/pipeline/cmg/structurer.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/structurer.py)
+- [src/python/pipeline/cmg/refresh.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/refresh.py)
 
 ### Risks
 
@@ -214,8 +214,8 @@ Use the right persistence layer for each category of data and make restart behav
 
 ### Implementation steps
 
-1. Keep [src/python/quiz/tracker.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/tracker.py) as the authoritative progress store.
-2. Review whether [src/python/quiz/store.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/store.py) should remain in-memory only.
+1. Keep [src/python/quiz/tracker.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/tracker.py) as the authoritative progress store.
+2. Review whether [src/python/quiz/store.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/store.py) should remain in-memory only.
 3. If resumable quiz sessions are required:
    - persist active session config
    - persist current question payload
@@ -252,7 +252,7 @@ Make loading states intentional instead of blank or fragile.
    - empty
    - backend unavailable
    - server error
-3. Add a subtle backend status indicator in [src/renderer/components/AppShell.tsx](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/components/AppShell.tsx).
+3. Add a subtle backend status indicator in [src/renderer/components/AppShell.tsx](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/components/AppShell.tsx).
 4. Ensure pages do not erase previous content just because a background refresh began.
 
 ### Risks
@@ -275,8 +275,8 @@ Improve consistency for the flows that genuinely need backend logic and may invo
 
 ### Implementation steps
 
-1. Warm [src/python/quiz/retriever.py](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/quiz/retriever.py) and tracker on backend-ready if needed.
-2. Add clearer loading and timeout handling in [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useQuizSession.ts).
+1. Warm [src/python/quiz/retriever.py](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/quiz/retriever.py) and tracker on backend-ready if needed.
+2. Add clearer loading and timeout handling in [src/renderer/hooks/useQuizSession.ts](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useQuizSession.ts).
 3. Distinguish:
    - generating question
    - evaluating answer
@@ -348,9 +348,9 @@ Make future regressions diagnosable and prevent this class of issue from returni
 
 ### Candidate test paths
 
-- [tests/renderer](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/renderer)
-- [tests/python](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/python)
-- [tests/quiz](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/quiz)
+- [tests/renderer](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/renderer)
+- [tests/python](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/python)
+- [tests/quiz](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/quiz)
 
 ### Acceptance criteria
 

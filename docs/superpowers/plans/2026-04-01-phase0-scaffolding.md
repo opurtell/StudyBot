@@ -56,11 +56,11 @@
 - [ ] **Step 1: Run git init**
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/studyBotcode
+cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
 git init
 ```
 
-Expected output: `Initialized empty Git repository in .../studyBotcode/.git/`
+Expected output: `Initialized empty Git repository in .../StudyBot/.git/`
 
 - [ ] **Step 2: Create .gitignore**
 

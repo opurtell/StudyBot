@@ -6,7 +6,7 @@ A desktop study tool for paramedics that quizzes you on clinical knowledge using
 
 ## Download and Install
 
-Pre-built installers are available from [GitHub Releases](https://github.com/opurtell/studyBotcode/releases). There are two types of release:
+Pre-built installers are available from [GitHub Releases](https://github.com/opurtell/StudyBot/releases). There are two types of release:
 
 ### Which release should I download?
 
@@ -83,7 +83,7 @@ Everything below is for contributors and developers who want to run from source 
 ```bash
 # 1. Clone the repo
 git clone https://github.com/opurtell/StudyBot.git
-cd studyBotcode
+cd StudyBot
 
 # 2. Install Node dependencies
 npm install
@@ -196,7 +196,7 @@ pytest
 ### Project Structure
 
 ```
-studyBotcode/
+StudyBot/
   src/
     electron/       Electron main process + preload
     python/         FastAPI backend (quiz, pipeline, search, settings)

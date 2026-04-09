@@ -27,7 +27,7 @@ The highest-signal findings are:
 Status: Confirmed disconnected UI
 
 Evidence:
-- [`src/renderer/pages/Library.tsx`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Library.tsx#L33) renders `New Documentation`.
+- [`src/renderer/pages/Library.tsx`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Library.tsx#L33) renders `New Documentation`.
 - The button has no `onClick`, no link, and no surrounding handler.
 
 Impact:
@@ -39,8 +39,8 @@ Impact:
 Status: Confirmed disconnected feature
 
 Evidence:
-- [`src/renderer/pages/Guidelines.tsx`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Guidelines.tsx#L100) sends `scope`, `guidelineId`, and `section` via router state.
-- [`src/renderer/hooks/useQuizSession.ts`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/hooks/useQuizSession.ts#L86) starts sessions only from the explicit `StartSessionRequest` passed by UI controls.
+- [`src/renderer/pages/Guidelines.tsx`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Guidelines.tsx#L100) sends `scope`, `guidelineId`, and `section` via router state.
+- [`src/renderer/hooks/useQuizSession.ts`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/hooks/useQuizSession.ts#L86) starts sessions only from the explicit `StartSessionRequest` passed by UI controls.
 - No code in Quiz startup reads router state from Guidelines.
 
 Impact:
@@ -52,8 +52,8 @@ Impact:
 Status: Confirmed dead data path
 
 Evidence:
-- [`src/python/guidelines/router.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/guidelines/router.py#L131) includes both `dose_lookup` and `flowchart` in guideline detail responses.
-- [`src/renderer/pages/Guidelines.tsx`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Guidelines.tsx#L299) renders only `detail.content_markdown`.
+- [`src/python/guidelines/router.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/guidelines/router.py#L131) includes both `dose_lookup` and `flowchart` in guideline detail responses.
+- [`src/renderer/pages/Guidelines.tsx`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Guidelines.tsx#L299) renders only `detail.content_markdown`.
 
 Impact:
 - Backend work exists that is not visible to users.
@@ -64,11 +64,11 @@ Impact:
 Status: Confirmed backend/frontend disconnect
 
 Evidence:
-- [`src/python/settings/router.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/settings/router.py#L148) exposes `GET /settings/cmg-refresh`.
-- [`src/python/settings/router.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/settings/router.py#L153) exposes `POST /settings/cmg-refresh/run`.
-- [`tests/python/test_settings_router.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/tests/python/test_settings_router.py#L13) covers those endpoints.
-- [`src/renderer/providers/SettingsProvider.tsx`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/providers/SettingsProvider.tsx#L14) only exposes `save`, `saveModels`, `rerunPipeline`, `clearVectorStore`, and `refetch`.
-- [`src/renderer/pages/Settings.tsx`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Settings.tsx#L398) only renders `Re-run Pipeline` and `Clear Vector Store`.
+- [`src/python/settings/router.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/settings/router.py#L148) exposes `GET /settings/cmg-refresh`.
+- [`src/python/settings/router.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/settings/router.py#L153) exposes `POST /settings/cmg-refresh/run`.
+- [`tests/python/test_settings_router.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/tests/python/test_settings_router.py#L13) covers those endpoints.
+- [`src/renderer/providers/SettingsProvider.tsx`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/providers/SettingsProvider.tsx#L14) only exposes `save`, `saveModels`, `rerunPipeline`, `clearVectorStore`, and `refetch`.
+- [`src/renderer/pages/Settings.tsx`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Settings.tsx#L398) only renders `Re-run Pipeline` and `Clear Vector Store`.
 
 Impact:
 - A supported backend capability is not reachable in the app.
@@ -79,7 +79,7 @@ Impact:
 Status: Confirmed placeholder-like action
 
 Evidence:
-- [`src/renderer/pages/Feedback.tsx`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/renderer/pages/Feedback.tsx#L86) labels the button `Request Peer Review`.
+- [`src/renderer/pages/Feedback.tsx`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer/pages/Feedback.tsx#L86) labels the button `Request Peer Review`.
 - The button action is only `navigate("/quiz")`.
 
 Impact:
@@ -91,9 +91,9 @@ Impact:
 Status: Confirmed unfinished pipeline
 
 Evidence:
-- [`src/python/pipeline/cmg/flowcharts.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/flowcharts.py#L13) describes `convert_to_mermaid` as mock conversion.
-- [`src/python/pipeline/cmg/flowcharts.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/flowcharts.py#L30) simulates a hardcoded `CMG_12`.
-- [`src/python/pipeline/cmg/flowcharts.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/flowcharts.py#L38) uses `svg_mock`.
+- [`src/python/pipeline/cmg/flowcharts.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/flowcharts.py#L13) describes `convert_to_mermaid` as mock conversion.
+- [`src/python/pipeline/cmg/flowcharts.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/flowcharts.py#L30) simulates a hardcoded `CMG_12`.
+- [`src/python/pipeline/cmg/flowcharts.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/flowcharts.py#L38) uses `svg_mock`.
 
 Impact:
 - The flowchart stage is not extracting real flowcharts from CMG assets.
@@ -104,18 +104,18 @@ Impact:
 Status: Confirmed orphan artefacts
 
 Files:
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/capture_assets.py`
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/test_ast.py`
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/test_crawl.py`
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/test_dom.py`
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/test_modals.py`
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/test_navigation.py`
-- `/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/modals_output.txt`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/capture_assets.py`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/test_ast.py`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/test_crawl.py`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/test_dom.py`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/test_modals.py`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/test_navigation.py`
+- `/Users/oscarpurtell/claudeCode/studyBot/StudyBot/modals_output.txt`
 
 Evidence:
 - They are outside `tests/` and outside packaged runtime paths.
 - Repository search did not find them wired into package scripts or the app runtime.
-- The live CMG capture path is the separate in-tree module [`src/python/pipeline/cmg/capture_assets.py`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/src/python/pipeline/cmg/capture_assets.py).
+- The live CMG capture path is the separate in-tree module [`src/python/pipeline/cmg/capture_assets.py`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python/pipeline/cmg/capture_assets.py).
 
 Impact:
 - Repository noise.
@@ -141,18 +141,18 @@ Residual note:
 
 These do appear to remain legitimately open:
 
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L68): extend the clinical dictionary as new terms are encountered.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L237): `Request Peer Review` remains partial and is still only a navigation action.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L245): `New Documentation` button remains visible but unwired.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L256): Settings data management still does not expose CMG refresh in the renderer.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L263): guideline scope picker UI exists but is not connected to quiz generation.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L264): guideline detail panel still does not render `dose_lookup` or `flowchart`.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L117): extract weight-band dose tables from the Critical Care Reference Cards chunk.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L121): use vision LLM for image-based flowcharts.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L122): validate reconstructed flowcharts against originals.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L120): SVG flowchart extraction is still only partial because the current module is stubbed.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L135): periodic CMG re-scraping plan.
-- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/studyBotcode/TODO.md#L286): full pipeline integration testing remains minimal.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L68): extend the clinical dictionary as new terms are encountered.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L237): `Request Peer Review` remains partial and is still only a navigation action.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L245): `New Documentation` button remains visible but unwired.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L256): Settings data management still does not expose CMG refresh in the renderer.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L263): guideline scope picker UI exists but is not connected to quiz generation.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L264): guideline detail panel still does not render `dose_lookup` or `flowchart`.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L117): extract weight-band dose tables from the Critical Care Reference Cards chunk.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L121): use vision LLM for image-based flowcharts.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L122): validate reconstructed flowcharts against originals.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L120): SVG flowchart extraction is still only partial because the current module is stubbed.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L135): periodic CMG re-scraping plan.
+- [`TODO.md`](/Users/oscarpurtell/claudeCode/studyBot/StudyBot/TODO.md#L286): full pipeline integration testing remains minimal.
 
 ## Recommended Cleanup Order
 

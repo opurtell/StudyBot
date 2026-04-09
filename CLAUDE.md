@@ -66,7 +66,7 @@ Maintain an `InfoERRORS.md` list of any errors flagged by the user.
 ## Directory Structure
 
 ```
-studyBotcode/
+StudyBot/
 ├── CLAUDE.md                          # This file
 ├── TODO.md                            # Development progress tracker
 ├── brief.md                           # Product vision and screen requirements
