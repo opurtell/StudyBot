@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useQuizSession } from "../hooks/useQuizSession";
 import { useQuizShortcuts } from "../hooks/useQuizShortcuts";
+import { useResourceCacheStore } from "../providers/ResourceCacheProvider";
 import ProgressBar from "../components/ProgressBar";
 import QuizQuestion from "../components/QuizQuestion";
 import AnswerInput from "../components/AnswerInput";
@@ -27,6 +28,7 @@ export default function Quiz() {
   const navigate = useNavigate();
   const location = useLocation();
   const session = useQuizSession();
+  const cacheStore = useResourceCacheStore();
   const [answer, setAnswer] = useState("");
   const [timerRunning, setTimerRunning] = useState(false);
   const [randomize, setRandomize] = useState(true);
@@ -64,6 +66,15 @@ export default function Quiz() {
       setTimerRunning(false);
     }
   }, [session.phase, session.questionCount]);
+
+  // Invalidate dashboard cache after each evaluation so the Observations
+  // tab shows fresh mastery and history data on the next visit.
+  useEffect(() => {
+    if (session.phase === "feedback") {
+      cacheStore.invalidate("/quiz/dashboard-mastery");
+      cacheStore.invalidate("/quiz/history?limit=3::3");
+    }
+  }, [session.phase, cacheStore]);
 
   const handleSubmit = () => {
     session.submitAnswer(answer || null);
