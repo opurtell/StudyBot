@@ -176,7 +176,7 @@ def test_correct_answer_updates_mastery_percent(tracker):
     tracker.record_answer("q2", "Cardiac", "recall", "incorrect", 30.0, "CMG 14")
     tracker.correct_answer("q1", "correct")
     mastery = tracker.get_mastery()
-    assert mastery[0].mastery_percent == pytest.approx(75.0)
+    assert mastery[0].mastery_percent == pytest.approx(50.0)
 
 
 def test_correct_answer_no_history_row(tracker):
