@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { FeedbackNavigationState } from "../types/api";
 import { useQuizShortcuts } from "../hooks/useQuizShortcuts";
@@ -7,10 +8,32 @@ import ResponseTimeMetrics from "../components/ResponseTimeMetrics";
 import Button from "../components/Button";
 import SourceFootnotes from "../components/SourceFootnotes";
 
+const API_BASE = import.meta.env.VITE_API_BASE ?? "http://127.0.0.1:7777";
+
+type Score = "correct" | "partial" | "incorrect";
+
+function getCorrectionOptions(modelScore: Score | null): Score[] {
+  if (modelScore === "correct") return ["incorrect"];
+  if (modelScore === "partial") return ["correct", "incorrect"];
+  if (modelScore === "incorrect") return ["correct"];
+  // null = reveal reference — user can pick any score
+  return ["correct", "partial", "incorrect"];
+}
+
+const SCORE_LABELS: Record<Score, string> = {
+  correct: "I was Correct",
+  partial: "I was Partially Correct",
+  incorrect: "I was Incorrect",
+};
+
 export default function Feedback() {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as FeedbackNavigationState | null;
+
+  const [correcting, setCorrecting] = useState(false);
+  const [correctedTo, setCorrectedTo] = useState<Score | null>(null);
+  const [correctionError, setCorrectionError] = useState<string | null>(null);
 
   useQuizShortcuts([
     {
@@ -50,6 +73,33 @@ export default function Feedback() {
     );
   }
 
+  const modelScore = state.evaluation.score as Score | null;
+  const correctionOptions = getCorrectionOptions(modelScore);
+
+  async function handleCorrect(newScore: Score) {
+    if (!state?.questionId) return;
+    setCorrecting(true);
+    setCorrectionError(null);
+    try {
+      const res = await fetch(`${API_BASE}/quiz/question/correct`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question_id: state.questionId,
+          corrected_score: newScore,
+        }),
+      });
+      if (!res.ok) {
+        throw new Error(`Correction failed (${res.status})`);
+      }
+      setCorrectedTo(newScore);
+    } catch (err) {
+      setCorrectionError(err instanceof Error ? err.message : "Correction failed");
+    } finally {
+      setCorrecting(false);
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <div className="px-8 py-12 max-w-7xl mx-auto">
@@ -81,6 +131,38 @@ export default function Feedback() {
           <p className="font-mono text-[10px] text-on-surface-variant/50 mt-3">
             Model: {state.evaluation.model_id}
           </p>
+        </div>
+
+        {/* User correction section */}
+        <div className="mt-6">
+          {correctedTo ? (
+            <p className="font-mono text-[10px] text-primary">
+              Score corrected to: {correctedTo}
+            </p>
+          ) : (
+            <>
+              <p className="font-mono text-[10px] text-on-surface-variant mb-2">
+                Model scored: {modelScore ?? "self-graded"}
+              </p>
+              <div className="flex items-center gap-3">
+                {correctionOptions.map((opt) => (
+                  <Button
+                    key={opt}
+                    onClick={() => handleCorrect(opt)}
+                    variant="tertiary"
+                    disabled={correcting}
+                  >
+                    {SCORE_LABELS[opt]}
+                  </Button>
+                ))}
+              </div>
+              {correctionError && (
+                <p className="font-mono text-[10px] text-error mt-2">
+                  {correctionError}
+                </p>
+              )}
+            </>
+          )}
         </div>
 
         <div className="mt-8 flex items-center gap-4">

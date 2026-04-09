@@ -8,6 +8,7 @@ import type { FeedbackNavigationState } from "../../src/renderer/types/api";
 
 const feedbackState: FeedbackNavigationState = {
   questionText: "Question text",
+  questionId: "test-question-456",
   userAnswer: "User answer",
   elapsedSeconds: 12,
   category: "Cardiac",
