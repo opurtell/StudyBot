@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
 import { ThemeProvider } from "./hooks/useTheme";
 import AppShell from "./components/AppShell";
 import Dashboard from "./pages/Dashboard";
@@ -60,11 +60,11 @@ export default function App() {
         <ResourceCacheProvider>
           <SettingsProvider>
             <BackgroundProcessProvider>
-            <BrowserRouter>
+            <HashRouter>
               <BackendBootGate>
                 <AppRoutes />
               </BackendBootGate>
-            </BrowserRouter>
+            </HashRouter>
             </BackgroundProcessProvider>
           </SettingsProvider>
         </ResourceCacheProvider>
