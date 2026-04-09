@@ -202,3 +202,30 @@ def test_correct_answer_updates_streak(tracker):
     tracker.record_answer("q2", "Cardiac", "recall", "correct", 10.0, "CMG 14")
     tracker.correct_answer("q1", "correct")
     assert tracker.get_streak() == 2
+
+
+def test_clear_mastery_data_removes_history_and_categories(tracker):
+    tracker.record_answer("q1", "Cardiac", "recall", "correct", 10.0, "CMG 14")
+    tracker.record_answer("q2", "Trauma", "recall", "incorrect", 30.0, "CMG 7")
+    assert len(tracker.get_mastery()) == 2
+    assert len(tracker.get_recent_history(limit=10)) == 2
+
+    deleted = tracker.clear_mastery_data()
+
+    assert deleted == 2
+    assert tracker.get_mastery() == []
+    assert tracker.get_recent_history(limit=10) == []
+    assert tracker.get_streak() == 0
+    assert tracker.get_accuracy() == 0.0
+
+
+def test_clear_mastery_data_preserves_blacklist(tracker):
+    tracker.add_to_blacklist("Paediatrics")
+    tracker.record_answer("q1", "Cardiac", "recall", "correct", 10.0, "CMG 14")
+    tracker.clear_mastery_data()
+    assert tracker.get_blacklist() == ["Paediatrics"]
+
+
+def test_clear_mastery_data_empty_db(tracker):
+    deleted = tracker.clear_mastery_data()
+    assert deleted == 0

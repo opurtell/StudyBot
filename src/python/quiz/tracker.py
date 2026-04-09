@@ -41,6 +41,14 @@ class Tracker:
             );
         """)
 
+    def clear_mastery_data(self) -> int:
+        with self._lock:
+            count = self._conn.execute("SELECT COUNT(*) FROM quiz_history").fetchone()[0]
+            self._conn.execute("DELETE FROM quiz_history")
+            self._conn.execute("DELETE FROM categories")
+            self._conn.commit()
+        return count
+
     def record_answer(
         self,
         question_id: str,
