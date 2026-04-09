@@ -88,6 +88,11 @@ class BlacklistRequest(BaseModel):
     category_name: str
 
 
+class CorrectScoreRequest(BaseModel):
+    question_id: str
+    corrected_score: str  # "correct" | "partial" | "incorrect"
+
+
 @router.post("/session/start")
 def start_session(req: StartSessionRequest) -> dict:
     session_id = str(uuid.uuid4())
@@ -186,6 +191,15 @@ def evaluate(req: EvaluateRequest) -> dict:
         "feedback_summary": evaluation.feedback_summary,
         "model_id": quiz_model,
     }
+
+
+@router.post("/question/correct")
+def correct_score(req: CorrectScoreRequest) -> dict:
+    if req.corrected_score not in ("correct", "partial", "incorrect"):
+        raise HTTPException(status_code=422, detail="corrected_score must be one of: correct, partial, incorrect")
+    tracker = _get_tracker()
+    tracker.correct_answer(req.question_id, req.corrected_score)
+    return {"status": "ok", "corrected_score": req.corrected_score}
 
 
 @router.get("/mastery")
