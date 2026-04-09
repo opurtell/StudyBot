@@ -55,32 +55,47 @@ def test_seed_cmg_index_ingests_from_bundled_dir(tmp_path, monkeypatch):
     assert any("cardiac" in d.lower() for d in docs)
 
 
-def test_seed_paramedic_notes_runs_notability_pipeline_when_empty(tmp_path, monkeypatch):
-    """Auto-seed should run notability notes ingestion when paramedic_notes is empty."""
+def test_seed_paramedic_notes_copies_from_bundled_when_available(tmp_path, monkeypatch):
+    """When paramedic_notes is missing from user DB but present in bundled DB, copy it."""
     import seed as seed_mod
 
-    in_memory = chromadb.Client()
-
     monkeypatch.setattr("seed.CHROMA_DB_DIR", tmp_path / "chroma_db")
-    monkeypatch.setattr("seed.CLEANED_NOTES_DIR", tmp_path / "notes_md" / "cleaned")
-    monkeypatch.setattr("seed.PERSONAL_STRUCTURED_DIR", tmp_path / "personal_docs" / "structured")
+    monkeypatch.setattr("seed.BUNDLED_CHROMA_DB_DIR", tmp_path / "bundled" / "chroma_db")
+
+    # Mock the collection-has-data check to return False (user DB is empty)
+    monkeypatch.setattr("seed._paramedic_notes_collection_has_data", lambda: False)
+
+    # Mock _copy_bundled_collection to succeed
+    monkeypatch.setattr("seed._copy_bundled_collection", lambda name: True)
 
     called = []
+    monkeypatch.setattr("seed._run_notability_notes_ingest", lambda db_path: called.append("notability"))
+    monkeypatch.setattr("seed._run_personal_docs_ingest", lambda db_path: called.append("personal_docs"))
 
-    def mock_run_ingest(db_path):
-        called.append("notability")
-        # Simulate adding chunks so count check passes
-        col = in_memory.get_or_create_collection("paramedic_notes")
-        col.add(ids=["test_note"], documents=["test content"], metadatas=[{"source_type": "notability_note"}])
+    seed_mod._start_paramedic_notes_seed_if_needed()
 
-    def mock_run_personal_docs(db_path):
-        called.append("personal_docs")
+    # Should NOT have fallen through to pipeline ingestion
+    assert called == []
 
-    monkeypatch.setattr("seed._run_notability_notes_ingest", mock_run_ingest)
-    monkeypatch.setattr("seed._run_personal_docs_ingest", mock_run_personal_docs)
 
-    with patch("seed.chromadb.PersistentClient", return_value=in_memory):
-        seed_mod._start_paramedic_notes_seed_if_needed()
+def test_seed_paramedic_notes_falls_through_when_no_bundled(tmp_path, monkeypatch):
+    """When no bundled DB exists, fall through to pipeline ingestion."""
+    import seed as seed_mod
+
+    monkeypatch.setattr("seed.CHROMA_DB_DIR", tmp_path / "chroma_db")
+    monkeypatch.setattr("seed.BUNDLED_CHROMA_DB_DIR", tmp_path / "nonexistent" / "chroma_db")
+
+    # Mock the collection-has-data check to return False (user DB is empty)
+    monkeypatch.setattr("seed._paramedic_notes_collection_has_data", lambda: False)
+
+    # Mock _copy_bundled_collection to fail (no bundled data)
+    monkeypatch.setattr("seed._copy_bundled_collection", lambda name: False)
+
+    called = []
+    monkeypatch.setattr("seed._run_notability_notes_ingest", lambda db_path: called.append("notability"))
+    monkeypatch.setattr("seed._run_personal_docs_ingest", lambda db_path: called.append("personal_docs"))
+
+    seed_mod._start_paramedic_notes_seed_if_needed()
 
     assert "notability" in called
     assert "personal_docs" in called
@@ -103,3 +118,68 @@ def test_seed_paramedic_notes_skips_when_collection_has_data(tmp_path, monkeypat
         seed_mod._start_paramedic_notes_seed_if_needed()
 
     assert called == []
+
+
+def test_copy_bundled_collection_copies_data_between_persistent_dbs(tmp_path, monkeypatch):
+    """_copy_bundled_collection should copy chunks from bundled to user ChromaDB."""
+    from seed import _copy_bundled_collection
+
+    # Create real PersistentClient databases in tmp directories
+    bundled_dir = tmp_path / "bundled" / "data" / "chroma_db"
+    user_dir = tmp_path / "user" / "data" / "chroma_db"
+    bundled_dir.mkdir(parents=True)
+    user_dir.mkdir(parents=True)
+
+    # Populate bundled DB with test data
+    bundled_client = chromadb.PersistentClient(path=str(bundled_dir))
+    src_col = bundled_client.get_or_create_collection("test_collection")
+    src_col.add(
+        ids=["c1", "c2"],
+        documents=["doc one", "doc two"],
+        metadatas=[{"source": "a"}, {"source": "b"}],
+    )
+
+    monkeypatch.setattr("seed.BUNDLED_CHROMA_DB_DIR", bundled_dir)
+    monkeypatch.setattr("seed.CHROMA_DB_DIR", user_dir)
+
+    result = _copy_bundled_collection("test_collection")
+
+    assert result is True
+    # Verify data was copied to user DB
+    user_client = chromadb.PersistentClient(path=str(user_dir))
+    dst_col = user_client.get_or_create_collection("test_collection")
+    assert dst_col.count() == 2
+    docs = dst_col.get()["documents"]
+    assert "doc one" in docs
+    assert "doc two" in docs
+
+
+def test_copy_bundled_collection_returns_false_when_empty(tmp_path, monkeypatch):
+    """_copy_bundled_collection should return False when bundled collection is empty."""
+    from seed import _copy_bundled_collection
+
+    bundled_dir = tmp_path / "bundled" / "data" / "chroma_db"
+    user_dir = tmp_path / "user" / "data" / "chroma_db"
+    bundled_dir.mkdir(parents=True)
+    user_dir.mkdir(parents=True)
+
+    # Create empty collection in bundled DB
+    bundled_client = chromadb.PersistentClient(path=str(bundled_dir))
+    bundled_client.get_or_create_collection("empty_col")
+
+    monkeypatch.setattr("seed.BUNDLED_CHROMA_DB_DIR", bundled_dir)
+    monkeypatch.setattr("seed.CHROMA_DB_DIR", user_dir)
+
+    result = _copy_bundled_collection("empty_col")
+    assert result is False
+
+
+def test_copy_bundled_collection_returns_false_when_no_bundled_dir(tmp_path, monkeypatch):
+    """_copy_bundled_collection should return False when bundled dir doesn't exist."""
+    from seed import _copy_bundled_collection
+
+    monkeypatch.setattr("seed.BUNDLED_CHROMA_DB_DIR", tmp_path / "nonexistent")
+    monkeypatch.setattr("seed.CHROMA_DB_DIR", tmp_path / "user" / "chroma_db")
+
+    result = _copy_bundled_collection("any_collection")
+    assert result is False

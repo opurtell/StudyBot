@@ -127,6 +127,11 @@ def _seed_cmg_index() -> None:
 def _start_paramedic_notes_seed_if_needed() -> None:
     if _paramedic_notes_collection_has_data():
         return
+
+    # Try copying paramedic_notes from bundled DB if available
+    if _copy_bundled_collection("paramedic_notes"):
+        return
+
     _run_notability_notes_ingest(CHROMA_DB_DIR)
     _run_personal_docs_ingest(CHROMA_DB_DIR)
 
@@ -137,6 +142,47 @@ def _paramedic_notes_collection_has_data() -> bool:
         collection = client.get_or_create_collection("paramedic_notes")
         return collection.count() > 0
     except Exception:
+        return False
+
+
+def _copy_bundled_collection(collection_name: str) -> bool:
+    """Copy a single collection from the bundled ChromaDB to the user ChromaDB."""
+    if not BUNDLED_CHROMA_DB_DIR.exists():
+        return False
+    try:
+        bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
+        src = bundled_client.get_or_create_collection(collection_name)
+        if src.count() == 0:
+            return False
+
+        dst_client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
+        dst = dst_client.get_or_create_collection(collection_name)
+
+        batch_size = 500
+        total = src.count()
+        offset = 0
+        while offset < total:
+            batch = src.get(
+                include=["documents", "metadatas", "embeddings"],
+                limit=batch_size,
+                offset=offset,
+            )
+            if not batch["ids"]:
+                break
+            dst.add(
+                ids=batch["ids"],
+                documents=batch["documents"],
+                metadatas=batch["metadatas"],
+                embeddings=batch["embeddings"],
+            )
+            offset += len(batch["ids"])
+
+        logger.info(
+            f"Copied {src.count()} chunks from bundled '{collection_name}' to user ChromaDB"
+        )
+        return True
+    except Exception:
+        logger.warning(f"Could not copy '{collection_name}' from bundled ChromaDB", exc_info=True)
         return False
 
 
