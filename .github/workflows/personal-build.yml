@@ -3,6 +3,15 @@ name: Personal Build
 on:
   workflow_dispatch:
     inputs:
+      arch:
+        description: "Target architecture"
+        type: choice
+        options:
+          - all
+          - mac-arm64
+          - mac-x64
+          - win-x64
+        default: all
       version:
         description: "Version tag (e.g. v0.2.0)"
         required: false
@@ -11,8 +20,39 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  build-mac-arm64:
-    runs-on: macos-latest
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - name: Compute build matrix
+        id: set
+        run: |
+          SELECTED="${{ inputs.arch }}"
+
+          ALL='[
+            {"arch":"mac-arm64","os":"macos-latest","backend_cmd":"bash scripts/package-backend.sh arm64","verify_cmd":"bash scripts/verify-backend-payload.sh","eb_args":"--config electron-builder.personal.yml --arm64 --publish never"},
+            {"arch":"mac-x64","os":"macos-latest","backend_cmd":"bash scripts/package-backend.sh x64","verify_cmd":"bash scripts/verify-backend-payload.sh","eb_args":"--config electron-builder.personal.yml --x64 --publish never"},
+            {"arch":"win-x64","os":"windows-latest","backend_cmd":"pwsh -File scripts/package-backend.ps1","verify_cmd":"pwsh -File scripts/verify-backend-payload.ps1","eb_args":"--config electron-builder.personal.yml --win --x64 --publish never"}
+          ]'
+
+          if [[ "$SELECTED" == "all" ]]; then
+            MATRIX="$ALL"
+          else
+            MATRIX=$(echo "$ALL" | jq -c --arg sel "$SELECTED" 'map(select(.arch == $sel))')
+          fi
+
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "Selected: $SELECTED"
+          echo "$MATRIX" | jq .
+
+  build:
+    needs: prepare
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.prepare.outputs.matrix) }}
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
     env:
       PERSONAL_BUILD: "1"
     steps:
@@ -25,82 +65,32 @@ jobs:
         with:
           version: "tags/personal-data"
           file: "chroma_db.tar.gz"
-      - name: Extract personal ChromaDB
+      - name: Extract personal ChromaDB (macOS/Linux)
+        if: runner.os != 'Windows'
         run: |
           mkdir -p build/resources/data
           tar -xzf chroma_db.tar.gz -C build/resources/data
           echo "ChromaDB contents:"
           ls -lh build/resources/data/chroma_db/
-      - run: npm ci
-      - run: bash scripts/package-backend.sh arm64
-      - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --arm64 --publish never
-      - uses: actions/upload-artifact@v4
-        with:
-          name: mac-arm64-personal
-          path: release/**
-          retention-days: 1
-
-  build-mac-x64:
-    runs-on: macos-latest
-    env:
-      PERSONAL_BUILD: "1"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Download personal ChromaDB
-        uses: dsaltares/fetch-gh-release-asset@1.1.2
-        with:
-          version: "tags/personal-data"
-          file: "chroma_db.tar.gz"
-      - name: Extract personal ChromaDB
-        run: |
-          mkdir -p build/resources/data
-          tar -xzf chroma_db.tar.gz -C build/resources/data
-      - run: npm ci
-      - run: bash scripts/package-backend.sh x64
-      - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --x64 --publish never
-      - uses: actions/upload-artifact@v4
-        with:
-          name: mac-x64-personal
-          path: release/**
-          retention-days: 1
-
-  build-win-x64:
-    runs-on: windows-latest
-    env:
-      PERSONAL_BUILD: "1"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Download personal ChromaDB
-        uses: dsaltares/fetch-gh-release-asset@1.1.2
-        with:
-          version: "tags/personal-data"
-          file: "chroma_db.tar.gz"
-      - name: Extract personal ChromaDB
+      - name: Extract personal ChromaDB (Windows)
+        if: runner.os == 'Windows'
         run: |
           New-Item -ItemType Directory -Force -Path build\resources\data | Out-Null
           tar -xzf chroma_db.tar.gz -C build\resources\data
           Write-Host "ChromaDB contents:"
           Get-ChildItem -Recurse build\resources\data\chroma_db | Format-Table Name, Length
       - run: npm ci
-      - run: pwsh -File scripts/package-backend.ps1
-      - run: pwsh -File scripts/verify-backend-payload.ps1
-      - run: npx vite build && npx electron-builder --config electron-builder.personal.yml --win --x64 --publish never
+      - run: ${{ matrix.backend_cmd }}
+      - run: ${{ matrix.verify_cmd }}
+      - run: npx vite build && npx electron-builder ${{ matrix.eb_args }}
       - uses: actions/upload-artifact@v4
         with:
-          name: win-x64-personal
+          name: ${{ matrix.arch }}-personal
           path: release/**
           retention-days: 1
 
   draft-release:
-    needs: [build-mac-arm64, build-mac-x64, build-win-x64]
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
