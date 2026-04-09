@@ -6,6 +6,7 @@ import BlacklistManager from "../components/BlacklistManager";
 import ModelSelector from "../components/ModelSelector";
 import ApiKeyInput from "../components/ApiKeyInput";
 import Button from "../components/Button";
+import Modal from "../components/Modal";
 import type { ProviderKey, ModelRegistry } from "../types/api";
 import PageStateNotice from "../components/PageStateNotice";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
@@ -74,6 +75,7 @@ export default function Settings() {
     rerunPipeline,
     clearVectorStore,
     clearSourceType,
+    clearMastery,
     vectorStoreStatus,
     refetchVectorStoreStatus,
     cmgRefreshStatus,
@@ -101,6 +103,7 @@ export default function Settings() {
   const [registryDirty, setRegistryDirty] = useState(false);
   const [registryUnavailable, setRegistryUnavailable] = useState(false);
   const [saveMessage, setSaveMessage] = useState<string | null>(null);
+  const [showClearMastery, setShowClearMastery] = useState(false);
 
   useEffect(() => {
     if (!config) return;
@@ -506,6 +509,19 @@ export default function Settings() {
               </Button>
             </div>
           </div>
+
+          {/* Mastery data row */}
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-label text-label-sm text-on-surface">Mastery &amp; Quiz History</span>
+              <span className="font-mono text-[10px] text-on-surface-variant ml-2">
+                Quiz scores and progress tracking
+              </span>
+            </div>
+            <Button variant="tertiary" onClick={() => setShowClearMastery(true)}>
+              Clear
+            </Button>
+          </div>
         </div>
 
         {/* Nuclear clear */}
@@ -524,6 +540,31 @@ export default function Settings() {
           {saving ? "Saving..." : "Save Configuration"}
         </Button>
       </div>
+
+      <Modal isOpen={showClearMastery} onClose={() => setShowClearMastery(false)}>
+        <div className="space-y-4">
+          <h3 className="font-headline text-title-lg text-primary">
+            Clear Mastery &amp; Quiz History
+          </h3>
+          <p className="font-body text-body-sm text-on-surface-variant">
+            This will permanently delete all quiz history and reset mastery scores to zero. This cannot be undone.
+          </p>
+          <div className="flex gap-3 justify-end">
+            <Button variant="secondary" onClick={() => setShowClearMastery(false)}>
+              Cancel
+            </Button>
+            <Button
+              variant="primary"
+              onClick={async () => {
+                await clearMastery();
+                setShowClearMastery(false);
+              }}
+            >
+              Clear Mastery
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }
