@@ -6,6 +6,15 @@ on:
       - "v*"
   workflow_dispatch:
     inputs:
+      arch:
+        description: "Target architecture"
+        type: choice
+        options:
+          - all
+          - mac-arm64
+          - mac-x64
+          - win-x64
+        default: all
       version:
         description: "Version tag (e.g. v0.1.0)"
         required: false
@@ -14,65 +23,63 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  build-mac-arm64:
-    runs-on: macos-latest
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: npm ci
-      - run: bash scripts/package-backend.sh arm64
-      - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --arm64
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v4
-        with:
-          name: mac-arm64
-          path: release/**
-          retention-days: 1
+      - name: Compute build matrix
+        id: set
+        run: |
+          # Tag-triggered builds always build all
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            SELECTED="all"
+          else
+            SELECTED="${{ inputs.arch }}"
+          fi
 
-  build-mac-x64:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: npm ci
-      - run: bash scripts/package-backend.sh x64
-      - run: bash scripts/verify-backend-payload.sh
-      - run: npx vite build && npx electron-builder --x64
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v4
-        with:
-          name: mac-x64
-          path: release/**
-          retention-days: 1
+          ALL='[
+            {"arch":"mac-arm64","os":"macos-latest","backend_cmd":"bash scripts/package-backend.sh arm64","verify_cmd":"bash scripts/verify-backend-payload.sh","eb_args":"--arm64"},
+            {"arch":"mac-x64","os":"macos-latest","backend_cmd":"bash scripts/package-backend.sh x64","verify_cmd":"bash scripts/verify-backend-payload.sh","eb_args":"--x64"},
+            {"arch":"win-x64","os":"windows-latest","backend_cmd":"pwsh -File scripts/package-backend.ps1","verify_cmd":"pwsh -File scripts/verify-backend-payload.ps1","eb_args":"--win --x64"}
+          ]'
 
-  build-win-x64:
-    runs-on: windows-latest
+          if [[ "$SELECTED" == "all" ]]; then
+            MATRIX="$ALL"
+          else
+            MATRIX=$(echo "$ALL" | jq -c --arg sel "$SELECTED" 'map(select(.arch == $sel))')
+          fi
+
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "Selected: $SELECTED"
+          echo "$MATRIX" | jq .
+
+  build:
+    needs: prepare
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.prepare.outputs.matrix) }}
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - run: npm ci
-      - run: pwsh -File scripts/package-backend.ps1
-      - run: pwsh -File scripts/verify-backend-payload.ps1
-      - run: npx vite build && npx electron-builder --win --x64
+      - run: ${{ matrix.backend_cmd }}
+      - run: ${{ matrix.verify_cmd }}
+      - run: npx vite build && npx electron-builder ${{ matrix.eb_args }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
-          name: win-x64
+          name: ${{ matrix.arch }}
           path: release/**
           retention-days: 1
 
   draft-release:
-    needs: [build-mac-arm64, build-mac-x64, build-win-x64]
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -92,7 +99,6 @@ jobs:
         run: |
           VERSION="${{ inputs.version }}"
           if [[ -z "$VERSION" ]]; then
-            # For tag-triggered runs, extract from GITHUB_REF
             if [[ "$GITHUB_REF" == refs/tags/* ]]; then
               VERSION="${GITHUB_REF#refs/tags/}"
             else
