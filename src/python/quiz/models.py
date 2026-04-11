@@ -57,6 +57,7 @@ class QuizAttempt(BaseModel):
 class SessionConfig(BaseModel):
     mode: str
     topic: str | None = None
+    guideline_id: str | None = None
     difficulty: str = "medium"
     blacklist: list[str] = []
     randomize: bool = True

@@ -22,6 +22,7 @@ export interface QuizAttempt {
 export interface StartSessionRequest {
   mode: "topic" | "gap_driven" | "random" | "clinical_guidelines";
   topic?: string;
+  guideline_id?: string;
   difficulty?: "easy" | "medium" | "hard";
   randomize?: boolean;
 }

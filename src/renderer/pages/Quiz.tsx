@@ -72,6 +72,8 @@ export default function Quiz() {
 
     if (state.scope === "all") {
       session.startSession({ mode: "clinical_guidelines", randomize, difficulty });
+    } else if (state.scope === "guideline" && state.guidelineId) {
+      session.startSession({ mode: "topic", topic: state.section ?? "Clinical Guidelines", guideline_id: state.guidelineId, randomize, difficulty });
     } else if (state.section) {
       session.startSession({ mode: "topic", topic: state.section, randomize, difficulty });
     }

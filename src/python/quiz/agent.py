@@ -72,6 +72,7 @@ def generate_question(
     retriever: Retriever,
     tracker: Tracker,
     topic: str | None = None,
+    guideline_id: str | None = None,
     blacklist: list[str] | None = None,
     difficulty: str = "medium",
     skill_level: str = "AP",
@@ -80,6 +81,12 @@ def generate_question(
     used_chunk_contents: list[str] | None = None,
 ) -> Question:
     query, filters = _resolve_mode(mode, topic, tracker)
+
+    # Restrict to a specific guideline's chunks when requested
+    if guideline_id:
+        if filters is None:
+            filters = {}
+        filters["source_file"] = f"{guideline_id}.json"
 
     # Get recently-used chunks from tracker (persists across sessions/restarts)
     exclude_keys = tracker.get_recent_chunk_keys()

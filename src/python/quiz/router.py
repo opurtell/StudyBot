@@ -70,6 +70,7 @@ def warm_quiz_dependencies() -> None:
 class StartSessionRequest(BaseModel):
     mode: str
     topic: Optional[str] = None
+    guideline_id: Optional[str] = None
     difficulty: str = "medium"
     randomize: bool = True
 
@@ -101,6 +102,7 @@ def start_session(req: StartSessionRequest) -> dict:
     config = SessionConfig(
         mode=req.mode,
         topic=req.topic,
+        guideline_id=req.guideline_id,
         difficulty=req.difficulty,
         blacklist=blacklist,
         randomize=req.randomize,
@@ -133,6 +135,7 @@ def generate(req: GenerateQuestionRequest) -> dict:
     question = generate_question(
         mode=session.mode,
         topic=session.topic,
+        guideline_id=session.guideline_id,
         blacklist=session.blacklist,
         difficulty=session.difficulty,
         llm=_get_llm(quiz_model),
