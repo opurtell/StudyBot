@@ -12,12 +12,20 @@ _GLUED_LIST_ITEM_PATTERN = re.compile(r"(?<=[A-Za-z0-9%)])(?=-\s+\*\*)")
 _GLUED_BOLD_PATTERN = re.compile(r"(?<=[A-Za-z0-9])(?=\*\*[^*\n]+:\*\*)")
 _GLUED_SENTENCE_PATTERN = re.compile(r"([.!?])([A-Z][a-z])")
 
-_ICP_DETECT = re.compile(r"\*\*ICP[^*]*\*\*")
+_ICP_DETECT = re.compile(r"\*\*(?:-\s*)?ICP[^*]*\*\*")
 _ICP_FULL_LINE = re.compile(
-    r"(?m)^[ \t]*-\s*\*\*ICP[^*]*\*\*[^\n]*\n?"
+    r"(?m)^[ \t]*-\s*\*\*(?:-\s*)?ICP[^*]*\*\*[^\n]*\n?"
     r"(?:[ \t]+[^\n]*\n?)*"
 )
-_ICP_INLINE = re.compile(r"-\s*\*\*ICP[^*]*\*\*[^\n]*")
+_ICP_INLINE = re.compile(r"-\s*\*\*(?:-\s*)?ICP[^*]*\*\*[^\n]*")
+# Lines where **- ICP only** appears mid-line (e.g. "...atropine **- ICP only**")
+_ICP_SUFFIX_LINE = re.compile(
+    r"(?m)^[ \t]*-.*\*\*(?:-\s*)?ICP[^*]*\*\*[^\n]*\n?"
+    r"(?:[ \t]+[^\n]*\n?)*"
+)
+# Bare ICP scope designations: "ICP." at end of dose text (e.g. "90mmHg ICP.")
+# Only matches period, not paren — "(ICP)" is ambiguous with intracranial pressure.
+_ICP_SCOPE_BARE = re.compile(r"\bICP\.")
 
 
 def _normalise_bold_label(match: re.Match[str]) -> str:
@@ -44,12 +52,18 @@ def normalise_markdown_syntax(content: str) -> str:
 
 
 def has_icp_content(text: str) -> bool:
-    return bool(_ICP_DETECT.search(text))
+    return bool(_ICP_DETECT.search(text)) or bool(_ICP_SCOPE_BARE.search(text))
+
+
+# Strip lines where ICP appears as a bare scope designation (e.g. dose text ending in "ICP.")
+_ICP_BARE_LINE = re.compile(r"(?m)^[ \t]*-.*\bICP\. *\n?")
 
 
 def strip_icp_content(text: str) -> str:
     result = _ICP_FULL_LINE.sub("", text)
     result = _ICP_INLINE.sub("", result)
+    result = _ICP_SUFFIX_LINE.sub("", result)
+    result = _ICP_BARE_LINE.sub("", result)
     result = re.sub(r"\n{3,}", "\n\n", result)
     return result.strip()
 
