@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useQuizSession } from "../hooks/useQuizSession";
 import { useQuizShortcuts } from "../hooks/useQuizShortcuts";
 import { useResourceCacheStore } from "../providers/ResourceCacheProvider";
+import { apiPost, getApiErrorMessage } from "../lib/apiClient";
 import QuizQuestion from "../components/QuizQuestion";
 import AnswerInput from "../components/AnswerInput";
 import QuizTimer from "../components/QuizTimer";
@@ -10,6 +11,21 @@ import Button from "../components/Button";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import LoadingIndicator from "../components/LoadingIndicator";
 import { QUIZ_CATEGORIES } from "../data/quizCategories";
+
+type Score = "correct" | "partial" | "incorrect";
+
+function getCorrectionOptions(modelScore: Score | null): Score[] {
+  if (modelScore === "correct") return ["incorrect"];
+  if (modelScore === "partial") return ["correct", "incorrect"];
+  if (modelScore === "incorrect") return ["correct"];
+  return ["correct", "partial", "incorrect"];
+}
+
+const SCORE_LABELS: Record<Score, string> = {
+  correct: "I was Correct",
+  partial: "I was Partially Correct",
+  incorrect: "I was Incorrect",
+};
 
 interface GuidelineRevisionState {
   scope: "guideline" | "section" | "all";
@@ -32,6 +48,9 @@ export default function Quiz() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [randomize, setRandomize] = useState(true);
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
+  const [correcting, setCorrecting] = useState(false);
+  const [correctedTo, setCorrectedTo] = useState<Score | null>(null);
+  const [correctionError, setCorrectionError] = useState<string | null>(null);
   const revisionLaunched = useRef(false);
   const resumeLaunched = useRef(false);
 
@@ -62,6 +81,8 @@ export default function Quiz() {
     if (session.phase === "question") {
       setAnswer("");
       setTimerRunning(true);
+      setCorrectedTo(null);
+      setCorrectionError(null);
     } else {
       setTimerRunning(false);
     }
@@ -83,6 +104,23 @@ export default function Quiz() {
   const handleReveal = () => {
     session.submitAnswer(null);
   };
+
+  async function handleCorrect(newScore: Score) {
+    if (!session.question) return;
+    setCorrecting(true);
+    setCorrectionError(null);
+    try {
+      await apiPost("/quiz/question/correct", {
+        question_id: session.question.question_id,
+        corrected_score: newScore,
+      });
+      setCorrectedTo(newScore);
+    } catch (err) {
+      setCorrectionError(getApiErrorMessage(err, "Correction failed"));
+    } finally {
+      setCorrecting(false);
+    }
+  }
 
   const handleViewFullAnalysis = () => {
     if (!session.evaluation || !session.question) {
@@ -517,6 +555,38 @@ export default function Quiz() {
             {eval_.feedback_summary && (
               <MarkdownRenderer content={eval_.feedback_summary} className="opacity-80" />
             )}
+
+            {/* Self-correction section */}
+            <div className="mt-6">
+              {correctedTo ? (
+                <p className="font-mono text-[10px] text-primary">
+                  Score corrected to: {correctedTo}
+                </p>
+              ) : (
+                <>
+                  <p className="font-mono text-[10px] text-on-surface-variant mb-2">
+                    Model scored: {eval_.score ?? "self-graded"}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    {getCorrectionOptions(eval_.score as Score | null).map((opt) => (
+                      <Button
+                        key={opt}
+                        onClick={() => handleCorrect(opt)}
+                        variant="tertiary"
+                        disabled={correcting}
+                      >
+                        {SCORE_LABELS[opt]}
+                      </Button>
+                    ))}
+                  </div>
+                  {correctionError && (
+                    <p className="font-mono text-[10px] text-error mt-2">
+                      {correctionError}
+                    </p>
+                  )}
+                </>
+              )}
+            </div>
           </div>
 
           <div className="flex items-center gap-4 mt-12">
