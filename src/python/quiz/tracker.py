@@ -18,6 +18,8 @@ class Tracker:
         self._lock = threading.Lock()
         self._init_schema()
 
+    MAX_USED_CHUNKS = 300
+
     def _init_schema(self) -> None:
         self._conn.executescript("""
             CREATE TABLE IF NOT EXISTS categories (
@@ -39,6 +41,11 @@ class Tracker:
                 id INTEGER PRIMARY KEY,
                 category_name TEXT UNIQUE NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS used_chunks (
+                id INTEGER PRIMARY KEY,
+                content_key TEXT NOT NULL UNIQUE,
+                created_at TEXT DEFAULT (datetime('now'))
+            );
         """)
 
     def clear_mastery_data(self) -> int:
@@ -46,8 +53,40 @@ class Tracker:
             count = self._conn.execute("SELECT COUNT(*) FROM quiz_history").fetchone()[0]
             self._conn.execute("DELETE FROM quiz_history")
             self._conn.execute("DELETE FROM categories")
+            self._conn.execute("DELETE FROM used_chunks")
             self._conn.commit()
         return count
+
+    def record_used_chunks(self, content_keys: list[str]) -> None:
+        """Record chunk content keys (first 200 chars) as recently used."""
+        if not content_keys:
+            return
+        with self._lock:
+            for key in content_keys:
+                self._conn.execute(
+                    "INSERT OR IGNORE INTO used_chunks (content_key) VALUES (?)",
+                    (key,),
+                )
+            # Prune to keep only the most recent entries
+            row = self._conn.execute("SELECT COUNT(*) FROM used_chunks").fetchone()
+            if row[0] > self.MAX_USED_CHUNKS:
+                self._conn.execute(
+                    """DELETE FROM used_chunks WHERE id NOT IN (
+                        SELECT id FROM used_chunks ORDER BY id DESC LIMIT ?
+                    )""",
+                    (self.MAX_USED_CHUNKS,),
+                )
+            self._conn.commit()
+
+    def get_recent_chunk_keys(self, limit: int | None = None) -> set[str]:
+        """Return content keys of recently used chunks (most recent first)."""
+        effective_limit = limit or self.MAX_USED_CHUNKS
+        with self._lock:
+            rows = self._conn.execute(
+                "SELECT content_key FROM used_chunks ORDER BY id DESC LIMIT ?",
+                (effective_limit,),
+            ).fetchall()
+        return {row["content_key"] for row in rows}
 
     def record_answer(
         self,

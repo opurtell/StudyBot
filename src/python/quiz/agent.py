@@ -81,6 +81,13 @@ def generate_question(
 ) -> Question:
     query, filters = _resolve_mode(mode, topic, tracker)
 
+    # Get recently-used chunks from tracker (persists across sessions/restarts)
+    exclude_keys = tracker.get_recent_chunk_keys()
+
+    # Also exclude chunks from the current session
+    if used_chunk_contents:
+        exclude_keys.update(used_chunk_contents)
+
     n_to_fetch = 15 if randomize else 5
     chunks = retriever.retrieve(
         query=query,
@@ -88,14 +95,11 @@ def generate_question(
         filters=filters,
         exclude_categories=blacklist,
         skill_level=skill_level,
+        exclude_content_keys=exclude_keys or None,
     )
 
     if not chunks:
-        raise ValueError("No relevant chunks found for question generation")
-
-    if used_chunk_contents:
-        chunks = [c for c in chunks if c.content[:200] not in used_chunk_contents]
-    if not chunks:
+        # Fallback: try without chunk exclusions to avoid dead end
         chunks = retriever.retrieve(
             query=query,
             n=n_to_fetch,
@@ -103,6 +107,9 @@ def generate_question(
             exclude_categories=blacklist,
             skill_level=skill_level,
         )
+
+    if not chunks:
+        raise ValueError("No relevant chunks found for question generation")
 
     if randomize and len(chunks) > 5:
         chunks = random.sample(chunks, 5)
@@ -284,6 +291,6 @@ def _resolve_mode(
             ]
         )
         query = random.choice(clinical_sections)
-        return query, {"section": {"$in": clinical_sections}}
+        return query, {"section": query}
     else:
         raise ValueError(f"Unknown mode: {mode}")

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import random
 import threading
 from pathlib import Path
 
@@ -52,6 +53,7 @@ class Retriever:
         filters: dict | None = None,
         exclude_categories: list[str] | None = None,
         skill_level: str = "AP",
+        exclude_content_keys: set[str] | None = None,
     ) -> list[RetrievedChunk]:
         all_chunks: list[RetrievedChunk] = []
 
@@ -62,10 +64,11 @@ class Retriever:
             filters, exclude_categories, collection="cmgs", skill_level=skill_level
         )
 
-        notes_results = self._safe_query(self._notes, query, n * 2, notes_where)
+        # Oversample 4x to give room for exclusions and randomisation
+        notes_results = self._safe_query(self._notes, query, n * 4, notes_where)
         all_chunks.extend(self._parse_results(notes_results, "notes"))
 
-        cmgs_results = self._safe_query(self._cmgs, query, n, cmgs_where)
+        cmgs_results = self._safe_query(self._cmgs, query, n * 4, cmgs_where)
         all_chunks.extend(self._parse_results(cmgs_results, "cmgs"))
 
         if exclude_categories:
@@ -75,7 +78,14 @@ class Retriever:
                 if not _matches_excluded_category(c, exclude_categories)
             ]
 
-        all_chunks.sort(key=lambda c: (c.source_rank, -c.relevance_score))
+        # Filter out recently-used chunks (cross-session dedup)
+        if exclude_content_keys:
+            all_chunks = [
+                c for c in all_chunks if c.content[:200] not in exclude_content_keys
+            ]
+
+        # Shuffle to break deterministic ordering from embedding similarity
+        random.shuffle(all_chunks)
         return all_chunks[:n]
 
     def _build_where(

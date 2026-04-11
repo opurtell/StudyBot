@@ -39,7 +39,7 @@ class TestResolveMode:
         assert len(query) > 0
         assert filters is None
 
-    def test_clinical_guidelines_returns_query_and_in_filter(self, tracker):
+    def test_clinical_guidelines_returns_query_and_section_filter(self, tracker):
         expected_sections = {
             "Cardiac",
             "Trauma",
@@ -59,8 +59,7 @@ class TestResolveMode:
         }
         query, filters = _resolve_mode("clinical_guidelines", None, tracker)
         assert query in expected_sections
-        assert filters is not None
-        assert filters == {"section": {"$in": sorted(expected_sections)}}
+        assert filters == {"section": query}
 
     def test_unknown_mode_raises(self, tracker):
         with pytest.raises(ValueError, match="Unknown mode"):

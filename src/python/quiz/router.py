@@ -148,6 +148,10 @@ def generate(req: GenerateQuestionRequest) -> dict:
     store_question(question)
     record_asked(req.session_id, question)
 
+    # Record chunk contents in tracker for cross-session dedup
+    chunk_keys = [c.content[:200] for c in question.source_chunks]
+    _get_tracker().record_used_chunks(chunk_keys)
+
     return {
         "question_id": question.id,
         "question_text": question.question_text,

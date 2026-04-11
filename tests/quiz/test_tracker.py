@@ -229,3 +229,32 @@ def test_clear_mastery_data_preserves_blacklist(tracker):
 def test_clear_mastery_data_empty_db(tracker):
     deleted = tracker.clear_mastery_data()
     assert deleted == 0
+
+
+def test_record_used_chunks(tracker):
+    tracker.record_used_chunks(["chunk_a_200chars...", "chunk_b_200chars..."])
+    keys = tracker.get_recent_chunk_keys()
+    assert "chunk_a_200chars..." in keys
+    assert "chunk_b_200chars..." in keys
+
+
+def test_record_used_chunks_dedup(tracker):
+    tracker.record_used_chunks(["chunk_a"])
+    tracker.record_used_chunks(["chunk_a"])
+    keys = tracker.get_recent_chunk_keys()
+    assert len(keys) == 1
+
+
+def test_clear_mastery_data_clears_used_chunks(tracker):
+    tracker.record_used_chunks(["chunk_a", "chunk_b"])
+    assert len(tracker.get_recent_chunk_keys()) == 2
+    tracker.clear_mastery_data()
+    assert len(tracker.get_recent_chunk_keys()) == 0
+
+
+def test_used_chunks_prune_to_max(tracker):
+    # Insert more than MAX_USED_CHUNKS entries
+    for i in range(tracker.MAX_USED_CHUNKS + 50):
+        tracker.record_used_chunks([f"chunk_{i}"])
+    keys = tracker.get_recent_chunk_keys()
+    assert len(keys) <= tracker.MAX_USED_CHUNKS
