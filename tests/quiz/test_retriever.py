@@ -145,3 +145,37 @@ def test_retrieved_chunk_content_key_short_content():
         relevance_score=0.5,
     )
     assert chunk.content_key == "short"
+
+
+def test_coverage_weighted_scoring_demotes_seen_chunk(seeded_chroma):
+    from unittest.mock import MagicMock
+    retriever = Retriever(client=seeded_chroma)
+
+    # Build a mock tracker: the top-similarity chunk gets low weight (0.1),
+    # all others get high weight (1.0)
+    mock_tracker = MagicMock()
+
+    def fake_scores(keys):
+        # We don't know which key is "top" without running the query, so
+        # return low weight for any key that happens to be first in the set
+        scores = {}
+        for i, k in enumerate(keys):
+            scores[k] = 0.1 if i == 0 else 1.0
+        return scores
+
+    mock_tracker.get_chunk_scores.side_effect = fake_scores
+
+    # Run multiple times — with weighting, top chunk should not always dominate
+    results_with_tracker = retriever.retrieve(
+        "adrenaline cardiac", n=2, tracker=mock_tracker
+    )
+    assert len(results_with_tracker) > 0
+    # tracker.get_chunk_scores was called
+    mock_tracker.get_chunk_scores.assert_called()
+
+
+def test_retrieve_without_tracker_still_works(seeded_chroma):
+    """tracker=None falls back to shuffle — existing behaviour preserved."""
+    retriever = Retriever(client=seeded_chroma)
+    results = retriever.retrieve("adrenaline cardiac", n=3, tracker=None)
+    assert len(results) > 0

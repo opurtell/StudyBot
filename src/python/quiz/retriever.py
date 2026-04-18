@@ -55,6 +55,7 @@ class Retriever:
         skill_level: str = "AP",
         exclude_content_keys: set[str] | None = None,
         source_restriction: str | None = None,
+        tracker=None,
     ) -> list[RetrievedChunk]:
         all_chunks: list[RetrievedChunk] = []
 
@@ -87,8 +88,21 @@ class Retriever:
                 c for c in all_chunks if c.content_key not in exclude_content_keys
             ]
 
-        # Shuffle to break deterministic ordering from embedding similarity
-        random.shuffle(all_chunks)
+        if tracker is not None:
+            candidate_keys = {c.content_key for c in all_chunks}
+            scores = tracker.get_chunk_scores(candidate_keys)
+            scored = [
+                (
+                    c.relevance_score
+                    + random.uniform(0, 0.05) * scores.get(c.content_key, 1.0),
+                    c,
+                )
+                for c in all_chunks
+            ]
+            scored.sort(key=lambda t: t[0], reverse=True)
+            all_chunks = [c for _, c in scored]
+        else:
+            random.shuffle(all_chunks)
         return all_chunks[:n]
 
     def _build_where(
