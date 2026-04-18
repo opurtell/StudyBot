@@ -9,6 +9,16 @@ from .models import Question, Evaluation
 from .retriever import Retriever
 from .tracker import Tracker
 
+# Sections that exist exclusively in the cmg_guidelines ChromaDB collection.
+# When a quiz targets one of these sections, the retriever skips the
+# paramedic_notes collection so questions are drawn from CMG content only.
+CMG_ONLY_SECTIONS = frozenset({
+    "Cardiac", "Trauma", "Medical", "Respiratory", "Airway Management",
+    "Obstetric", "Neurology", "Behavioural", "Toxicology",
+    "Environmental", "Pain Management", "Palliative Care", "HAZMAT",
+    "General Care", "Medicine", "Clinical Skill",
+})
+
 
 def build_generation_prompt(skill_level: str = "AP") -> str:
     base = """You are a clinical quiz generator for ACT Ambulance Service paramedics.
@@ -80,7 +90,7 @@ def generate_question(
     previous_questions: list[str] | None = None,
     used_chunk_contents: list[str] | None = None,
 ) -> Question:
-    query, filters = _resolve_mode(mode, topic, tracker)
+    query, filters, source_restriction = _resolve_mode(mode, topic, tracker)
 
     # Restrict to a specific guideline's chunks when requested
     if guideline_id:
@@ -103,6 +113,7 @@ def generate_question(
         exclude_categories=blacklist,
         skill_level=skill_level,
         exclude_content_keys=exclude_keys or None,
+        source_restriction=source_restriction,
     )
 
     if not chunks:
@@ -113,6 +124,7 @@ def generate_question(
             filters=filters,
             exclude_categories=blacklist,
             skill_level=skill_level,
+            source_restriction=source_restriction,
         )
 
     if not chunks:
@@ -247,36 +259,46 @@ def _parse_json(text: str) -> dict:
 
 def _resolve_mode(
     mode: str, topic: str | None, tracker: Tracker
-) -> tuple[str, dict | None]:
+) -> tuple[str, dict | None, str | None]:
+    """Resolve quiz mode into a retrieval query, ChromaDB filters, and source restriction.
+
+    Returns:
+        (query, filters, source_restriction)
+        source_restriction: None = all sources, "cmg" = CMG collection only.
+    """
     if mode == "topic":
         if not topic:
             raise ValueError("Topic mode requires a topic")
-        return topic, {"section": topic}
+        restriction = "cmg" if topic in CMG_ONLY_SECTIONS else None
+        return topic, {"section": topic}, restriction
     elif mode == "gap_driven":
         weak = tracker.get_weak_categories(n=1)
         query = weak[0] if weak else random.choice(["Cardiac", "Trauma", "Respiratory"])
-        return query, None
+        restriction = "cmg" if query in CMG_ONLY_SECTIONS else None
+        return query, None, restriction
     elif mode == "random":
-        query = random.choice(
-            [
-                "Cardiac",
-                "Trauma",
-                "Respiratory",
-                "Paediatrics",
-                "Pharmacology",
-                "Obstetrics",
-                "Mental Health",
-                "Infectious Disease",
-                "Pathophysiology",
-                "Clinical Skills",
-                "Clinical Guidelines",
-                "General Paramedicine",
-                "Operational Guidelines",
-                "Medication Guidelines",
-                "ECGs",
-            ]
-        )
-        return query, None
+        # (query_string, section_or_None) — section drives both the
+        # ChromaDB filter and the source-restriction decision.
+        _random_options = [
+            ("Cardiac", "Cardiac"),
+            ("Trauma", "Trauma"),
+            ("Respiratory", "Respiratory"),
+            ("Paediatrics", "Paediatric"),
+            ("Pharmacology", None),
+            ("Obstetrics", "Obstetric"),
+            ("Mental Health", None),
+            ("Infectious Disease", None),
+            ("Pathophysiology", None),
+            ("Clinical Skills", "Clinical Skill"),
+            ("General Paramedicine", None),
+            ("Operational Guidelines", None),
+            ("Medication Guidelines", "Medicine"),
+            ("ECGs", None),
+        ]
+        query, section = random.choice(_random_options)
+        filters: dict | None = {"section": section} if section else None
+        restriction = "cmg" if section and section in CMG_ONLY_SECTIONS else None
+        return query, filters, restriction
     elif mode == "clinical_guidelines":
         clinical_sections = sorted(
             [
@@ -285,7 +307,6 @@ def _resolve_mode(
                 "Medical",
                 "Respiratory",
                 "Airway Management",
-                "Paediatric",
                 "Obstetric",
                 "Neurology",
                 "Behavioural",
@@ -298,6 +319,6 @@ def _resolve_mode(
             ]
         )
         query = random.choice(clinical_sections)
-        return query, {"section": query}
+        return query, {"section": query}, "cmg"
     else:
         raise ValueError(f"Unknown mode: {mode}")
