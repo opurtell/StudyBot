@@ -54,22 +54,25 @@ class Retriever:
         exclude_categories: list[str] | None = None,
         skill_level: str = "AP",
         exclude_content_keys: set[str] | None = None,
+        source_restriction: str | None = None,
     ) -> list[RetrievedChunk]:
         all_chunks: list[RetrievedChunk] = []
 
-        notes_where = self._build_where(
-            filters, exclude_categories, collection="notes", skill_level=skill_level
-        )
-        cmgs_where = self._build_where(
-            filters, exclude_categories, collection="cmgs", skill_level=skill_level
-        )
+        # Only query notes collection when NOT restricted to CMGs
+        if source_restriction != "cmg":
+            notes_where = self._build_where(
+                filters, exclude_categories, collection="notes", skill_level=skill_level
+            )
+            notes_results = self._safe_query(self._notes, query, n * 4, notes_where)
+            all_chunks.extend(self._parse_results(notes_results, "notes"))
 
-        # Oversample 4x to give room for exclusions and randomisation
-        notes_results = self._safe_query(self._notes, query, n * 4, notes_where)
-        all_chunks.extend(self._parse_results(notes_results, "notes"))
-
-        cmgs_results = self._safe_query(self._cmgs, query, n * 4, cmgs_where)
-        all_chunks.extend(self._parse_results(cmgs_results, "cmgs"))
+        # Always query CMGs collection unless restricted to notes only
+        if source_restriction is None or source_restriction == "cmg":
+            cmgs_where = self._build_where(
+                filters, exclude_categories, collection="cmgs", skill_level=skill_level
+            )
+            cmgs_results = self._safe_query(self._cmgs, query, n * 4, cmgs_where)
+            all_chunks.extend(self._parse_results(cmgs_results, "cmgs"))
 
         if exclude_categories:
             all_chunks = [
@@ -81,7 +84,7 @@ class Retriever:
         # Filter out recently-used chunks (cross-session dedup)
         if exclude_content_keys:
             all_chunks = [
-                c for c in all_chunks if c.content[:200] not in exclude_content_keys
+                c for c in all_chunks if c.content_key not in exclude_content_keys
             ]
 
         # Shuffle to break deterministic ordering from embedding similarity

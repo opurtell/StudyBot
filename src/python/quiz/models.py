@@ -11,6 +11,10 @@ class RetrievedChunk(BaseModel):
     chunk_type: str | None = None
     relevance_score: float
 
+    @property
+    def content_key(self) -> str:
+        return self.content[:200]
+
 
 class Question(BaseModel):
     id: str

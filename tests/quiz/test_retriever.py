@@ -122,3 +122,26 @@ def test_matches_excluded_category_empty():
         relevance_score=0.5,
     )
     assert _matches_excluded_category(chunk, ["Cardiac"]) is False
+
+
+def test_retrieved_chunk_content_key_is_first_200_chars():
+    long_content = "x" * 300
+    chunk = RetrievedChunk(
+        content=long_content,
+        source_type="cmg",
+        source_file="f.json",
+        source_rank=0,
+        relevance_score=0.5,
+    )
+    assert chunk.content_key == "x" * 200
+
+
+def test_retrieved_chunk_content_key_short_content():
+    chunk = RetrievedChunk(
+        content="short",
+        source_type="cmg",
+        source_file="f.json",
+        source_rank=0,
+        relevance_score=0.5,
+    )
+    assert chunk.content_key == "short"
