@@ -179,3 +179,37 @@ def test_retrieve_without_tracker_still_works(seeded_chroma):
     retriever = Retriever(client=seeded_chroma)
     results = retriever.retrieve("adrenaline cardiac", n=3, tracker=None)
     assert len(results) > 0
+
+
+def test_get_random_chunk_returns_chunk(seeded_chroma):
+    retriever = Retriever(client=seeded_chroma)
+    chunk = retriever.get_random_chunk()
+    assert chunk is not None
+    assert isinstance(chunk, RetrievedChunk)
+    assert chunk.content
+
+
+def test_get_random_chunk_empty_corpus():
+    import chromadb
+    client = chromadb.Client()
+    for name in ["paramedic_notes", "cmg_guidelines"]:
+        try:
+            client.delete_collection(name)
+        except Exception:
+            pass
+    client.create_collection("paramedic_notes", metadata={"hnsw:space": "cosine"})
+    client.create_collection("cmg_guidelines")
+    retriever = Retriever(client=client)
+    result = retriever.get_random_chunk()
+    assert result is None
+
+
+def test_get_random_chunk_skips_excluded_key(seeded_chroma):
+    retriever = Retriever(client=seeded_chroma)
+    # Get a chunk, then exclude its key — subsequent call should either return
+    # a different chunk or None (not raise)
+    first = retriever.get_random_chunk()
+    assert first is not None
+    result = retriever.get_random_chunk(exclude_content_keys={first.content_key})
+    # result may be None (all excluded) or a different chunk — must not raise
+    assert result is None or result.content_key != first.content_key

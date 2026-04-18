@@ -146,6 +146,39 @@ class Retriever:
         except Exception:
             return {"documents": [[]], "metadatas": [[]], "distances": [[]]}
 
+    def get_random_chunk(
+        self,
+        exclude_content_keys: set[str] | None = None,
+        skill_level: str = "AP",
+    ) -> "RetrievedChunk | None":
+        """Return a single uniformly random chunk from the combined corpus."""
+        collections = [self._notes, self._cmgs]
+        random.shuffle(collections)
+        for col in collections:
+            try:
+                all_ids = col.get(include=[])["ids"]
+                if not all_ids:
+                    continue
+                chosen_id = random.choice(all_ids)
+                result = col.get(ids=[chosen_id], include=["documents", "metadatas"])
+                chunks = self._parse_results(
+                    {
+                        "documents": [result["documents"]],
+                        "metadatas": [result["metadatas"]],
+                        "distances": [[0.0]],
+                    },
+                    col.name,
+                )
+                if not chunks:
+                    continue
+                chunk = chunks[0]
+                if exclude_content_keys and chunk.content_key in exclude_content_keys:
+                    continue
+                return chunk
+            except Exception:
+                continue
+        return None
+
     def _parse_results(self, raw: dict, collection: str) -> list[RetrievedChunk]:
         if not raw.get("documents") or not raw["documents"][0]:
             return []
