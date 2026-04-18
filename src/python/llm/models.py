@@ -27,6 +27,11 @@ _DEFAULTS: dict[str, dict[str, str]] = {
         "medium": "gemini-3-flash-preview",
         "high": "gemini-2.5-pro",
     },
+    "openai": {
+        "low": "gpt-5.4-nano",
+        "medium": "gpt-5.4-mini",
+        "high": "gpt-5.4",
+    },
 }
 
 _ENV_KEYS: dict[str, dict[str, str]] = {
@@ -45,12 +50,18 @@ _ENV_KEYS: dict[str, dict[str, str]] = {
         "medium": "GOOGLE_MODEL_MEDIUM",
         "high": "GOOGLE_MODEL_HIGH",
     },
+    "openai": {
+        "low": "OPENAI_MODEL_LOW",
+        "medium": "OPENAI_MODEL_MEDIUM",
+        "high": "OPENAI_MODEL_HIGH",
+    },
 }
 
 PROVIDER_LABELS: dict[str, str] = {
     "anthropic": "Anthropic",
     "google": "Google",
     "zai": "Z.ai",
+    "openai": "OpenAI",
 }
 
 TIER_LABELS: dict[str, str] = {
@@ -100,7 +111,7 @@ def save_model_registry(registry: dict[str, dict[str, str]]) -> None:
     lines: list[str] = [line for line in preserved_lines if line.strip()]
     if lines:
         lines.append("")
-    for provider in ("zai", "anthropic", "google"):
+    for provider in ("zai", "anthropic", "google", "openai"):
         label = PROVIDER_LABELS.get(provider, provider)
         lines.append(f"# {label} models")
         for tier in ("low", "medium", "high"):
