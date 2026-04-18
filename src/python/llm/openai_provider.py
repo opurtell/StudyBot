@@ -17,7 +17,8 @@ class OpenAIProvider:
                 max_tokens=1024,
                 messages=messages,
             )
-            return response.choices[0].message.content
+            content = response.choices[0].message.content
+            return content if content else ""
         except openai.RateLimitError as e:
             raise LLMError(str(e), ErrorCategory.RATE_LIMIT) from e
         except openai.AuthenticationError as e:
