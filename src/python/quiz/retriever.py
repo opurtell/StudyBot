@@ -152,11 +152,17 @@ class Retriever:
         skill_level: str = "AP",
     ) -> "RetrievedChunk | None":
         """Return a single uniformly random chunk from the combined corpus."""
+        where_vis: dict | None = None
+        if skill_level == "AP":
+            where_vis = {"visibility": {"$in": ["both", "ap"]}}
+        elif skill_level == "ICP":
+            where_vis = {"visibility": {"$in": ["both", "icp"]}}
+
         collections = [self._notes, self._cmgs]
         random.shuffle(collections)
         for col in collections:
             try:
-                all_ids = col.get(include=[])["ids"]
+                all_ids = col.get(where=where_vis, include=[])["ids"]
                 if not all_ids:
                     continue
                 chosen_id = random.choice(all_ids)
