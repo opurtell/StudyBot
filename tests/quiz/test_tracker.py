@@ -1,5 +1,5 @@
 import pytest
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from quiz.tracker import Tracker
 
@@ -293,7 +293,7 @@ def test_get_chunk_scores_used_three_times_today(tracker):
 
 def test_get_chunk_scores_aged_out_returns_1(tracker):
     # Manually insert a row with a last_used date 8 days ago
-    old_date = (datetime.utcnow() - timedelta(days=8)).isoformat()
+    old_date = (datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=8)).isoformat()
     tracker._conn.execute(
         "INSERT INTO chunk_coverage (content_key, use_count, last_used) VALUES (?, ?, ?)",
         ("old_key", 5, old_date),

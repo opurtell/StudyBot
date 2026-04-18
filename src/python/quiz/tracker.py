@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sqlite3
 import threading
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from paths import MASTERY_DB_PATH
@@ -75,7 +75,7 @@ class Tracker:
         """Record chunk content keys as recently used, incrementing use count."""
         if not content_keys:
             return
-        now = datetime.utcnow().isoformat()
+        now = datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
         with self._lock:
             for key in content_keys:
                 self._conn.execute(
@@ -90,7 +90,7 @@ class Tracker:
 
     def get_recent_chunk_keys(self, limit: int | None = None) -> set[str]:
         """Return content keys used within the last 7 days."""
-        cutoff = (datetime.utcnow() - timedelta(days=7)).isoformat()
+        cutoff = (datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=7)).isoformat()
         with self._lock:
             query = "SELECT content_key FROM chunk_coverage WHERE last_used >= ?"
             params: list = [cutoff]
@@ -104,7 +104,7 @@ class Tracker:
         """Return coverage weight (0–1) for each key. Unseen keys get 1.0."""
         if not keys:
             return {}
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
         placeholders = ",".join("?" * len(keys))
         with self._lock:
             rows = self._conn.execute(
