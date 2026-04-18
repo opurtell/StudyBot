@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import sqlite3
 import threading
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from paths import MASTERY_DB_PATH
@@ -17,8 +18,6 @@ class Tracker:
         self._conn.row_factory = sqlite3.Row
         self._lock = threading.Lock()
         self._init_schema()
-
-    MAX_USED_CHUNKS = 300
 
     def _init_schema(self) -> None:
         self._conn.executescript("""
@@ -41,11 +40,26 @@ class Tracker:
                 id INTEGER PRIMARY KEY,
                 category_name TEXT UNIQUE NOT NULL
             );
-            CREATE TABLE IF NOT EXISTS used_chunks (
-                id INTEGER PRIMARY KEY,
-                content_key TEXT NOT NULL UNIQUE,
-                created_at TEXT DEFAULT (datetime('now'))
+            CREATE TABLE IF NOT EXISTS chunk_coverage (
+                content_key TEXT PRIMARY KEY,
+                use_count   INTEGER NOT NULL DEFAULT 1,
+                last_used   TEXT NOT NULL
             );
+            CREATE INDEX IF NOT EXISTS idx_coverage_last_used ON chunk_coverage(last_used);
+        """)
+        self._migrate_used_chunks()
+
+    def _migrate_used_chunks(self) -> None:
+        """One-shot migration: copy used_chunks → chunk_coverage then drop."""
+        exists = self._conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='used_chunks'"
+        ).fetchone()
+        if not exists:
+            return
+        self._conn.executescript("""
+            INSERT OR IGNORE INTO chunk_coverage (content_key, use_count, last_used)
+            SELECT content_key, 1, datetime('now') FROM used_chunks;
+            DROP TABLE used_chunks;
         """)
 
     def clear_mastery_data(self) -> int:
@@ -53,40 +67,58 @@ class Tracker:
             count = self._conn.execute("SELECT COUNT(*) FROM quiz_history").fetchone()[0]
             self._conn.execute("DELETE FROM quiz_history")
             self._conn.execute("DELETE FROM categories")
-            self._conn.execute("DELETE FROM used_chunks")
+            self._conn.execute("DELETE FROM chunk_coverage")
             self._conn.commit()
         return count
 
     def record_used_chunks(self, content_keys: list[str]) -> None:
-        """Record chunk content keys (first 200 chars) as recently used."""
+        """Record chunk content keys as recently used, incrementing use count."""
         if not content_keys:
             return
+        now = datetime.utcnow().isoformat()
         with self._lock:
             for key in content_keys:
                 self._conn.execute(
-                    "INSERT OR IGNORE INTO used_chunks (content_key) VALUES (?)",
-                    (key,),
-                )
-            # Prune to keep only the most recent entries
-            row = self._conn.execute("SELECT COUNT(*) FROM used_chunks").fetchone()
-            if row[0] > self.MAX_USED_CHUNKS:
-                self._conn.execute(
-                    """DELETE FROM used_chunks WHERE id NOT IN (
-                        SELECT id FROM used_chunks ORDER BY id DESC LIMIT ?
-                    )""",
-                    (self.MAX_USED_CHUNKS,),
+                    """INSERT INTO chunk_coverage (content_key, use_count, last_used)
+                       VALUES (?, 1, ?)
+                       ON CONFLICT(content_key) DO UPDATE SET
+                           use_count = use_count + 1,
+                           last_used = excluded.last_used""",
+                    (key, now),
                 )
             self._conn.commit()
 
     def get_recent_chunk_keys(self, limit: int | None = None) -> set[str]:
-        """Return content keys of recently used chunks (most recent first)."""
-        effective_limit = limit or self.MAX_USED_CHUNKS
+        """Return content keys used within the last 7 days."""
+        cutoff = (datetime.utcnow() - timedelta(days=7)).isoformat()
+        with self._lock:
+            query = "SELECT content_key FROM chunk_coverage WHERE last_used >= ?"
+            params: list = [cutoff]
+            if limit:
+                query += " ORDER BY last_used DESC LIMIT ?"
+                params.append(limit)
+            rows = self._conn.execute(query, params).fetchall()
+        return {row["content_key"] for row in rows}
+
+    def get_chunk_scores(self, keys: set[str]) -> dict[str, float]:
+        """Return coverage weight (0–1) for each key. Unseen keys get 1.0."""
+        if not keys:
+            return {}
+        now = datetime.utcnow()
+        placeholders = ",".join("?" * len(keys))
         with self._lock:
             rows = self._conn.execute(
-                "SELECT content_key FROM used_chunks ORDER BY id DESC LIMIT ?",
-                (effective_limit,),
+                f"SELECT content_key, use_count, last_used FROM chunk_coverage WHERE content_key IN ({placeholders})",
+                list(keys),
             ).fetchall()
-        return {row["content_key"] for row in rows}
+        seen = {}
+        for row in rows:
+            days_since = (now - datetime.fromisoformat(row["last_used"])).days
+            recency_factor = min(1.0, days_since / 7.0)
+            base = 1.0 / (row["use_count"] + 1)
+            weight = base + recency_factor * (1.0 - base)
+            seen[row["content_key"]] = weight
+        return {k: seen.get(k, 1.0) for k in keys}
 
     def record_answer(
         self,
