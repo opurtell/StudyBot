@@ -12,6 +12,8 @@ from .tracker import Tracker
 # Sections that exist exclusively in the cmg_guidelines ChromaDB collection.
 # When a quiz targets one of these sections, the retriever skips the
 # paramedic_notes collection so questions are drawn from CMG content only.
+RANDOM_INJECTION_PROBABILITY = 0.25
+
 CMG_ONLY_SECTIONS = frozenset({
     "Cardiac", "Trauma", "Medical", "Respiratory", "Airway Management",
     "Obstetric", "Neurology", "Behavioural", "Toxicology",
@@ -106,34 +108,59 @@ def generate_question(
         exclude_keys.update(used_chunk_contents)
 
     n_to_fetch = 15 if randomize else 5
-    chunks = retriever.retrieve(
-        query=query,
-        n=n_to_fetch,
-        filters=filters,
-        exclude_categories=blacklist,
-        skill_level=skill_level,
-        exclude_content_keys=exclude_keys or None,
-        source_restriction=source_restriction,
-    )
 
-    if not chunks:
-        # Fallback: try without chunk exclusions to avoid dead end
+    # Random injection: only in random mode, 25% of questions pull one corpus-random chunk
+    injected_chunk = None
+    if mode == "random" and random.random() < RANDOM_INJECTION_PROBABILITY:
+        injected_chunk = retriever.get_random_chunk(
+            exclude_content_keys=exclude_keys or None,
+            skill_level=skill_level,
+        )
+
+    if injected_chunk is not None:
+        # Pair the injected chunk with 4 semantically-retrieved chunks
+        semantic_chunks = retriever.retrieve(
+            query=query,
+            n=4,
+            filters=filters,
+            exclude_categories=blacklist,
+            skill_level=skill_level,
+            exclude_content_keys=exclude_keys or None,
+            source_restriction=source_restriction,
+            tracker=tracker,
+        )
+        chunks = [injected_chunk] + semantic_chunks
+    else:
         chunks = retriever.retrieve(
             query=query,
             n=n_to_fetch,
             filters=filters,
             exclude_categories=blacklist,
             skill_level=skill_level,
+            exclude_content_keys=exclude_keys or None,
             source_restriction=source_restriction,
+            tracker=tracker,
         )
 
-    if not chunks:
-        raise ValueError("No relevant chunks found for question generation")
+        if not chunks:
+            # Fallback: try without chunk exclusions to avoid dead end
+            chunks = retriever.retrieve(
+                query=query,
+                n=n_to_fetch,
+                filters=filters,
+                exclude_categories=blacklist,
+                skill_level=skill_level,
+                source_restriction=source_restriction,
+                tracker=tracker,
+            )
 
-    if randomize and len(chunks) > 5:
-        chunks = random.sample(chunks, 5)
-    else:
-        chunks = chunks[:5]
+        if not chunks:
+            raise ValueError("No relevant chunks found for question generation")
+
+        if randomize and len(chunks) > 5:
+            chunks = random.sample(chunks, 5)
+        else:
+            chunks = chunks[:5]
 
     source_text = "\n\n".join(
         f"[Source {i + 1}: {c.source_type}]\n{c.content}" for i, c in enumerate(chunks)

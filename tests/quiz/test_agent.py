@@ -147,6 +147,7 @@ class TestGenerateQuestion:
         mock_tracker = MagicMock()
 
         mock_retriever.retrieve.return_value = _make_chunks()
+        mock_retriever.get_random_chunk.return_value = None
         mock_llm.complete.return_value = json.dumps(
             {
                 "question_text": "Test?",
@@ -450,10 +451,13 @@ class TestCitationAccuracy:
             }
         )
 
+        mock_retriever_citation = MagicMock()
+        mock_retriever_citation.retrieve.return_value = chunks
+        mock_retriever_citation.get_random_chunk.return_value = None
         question = generate_question(
             mode="random",
             llm=mock_llm,
-            retriever=MagicMock(),
+            retriever=mock_retriever_citation,
             tracker=MagicMock(),
         )
 
@@ -504,3 +508,93 @@ class TestCitationAccuracy:
         assert evaluation.source_quote
         assert "200J" in evaluation.source_quote
         assert evaluation.source_citation == "ACTAS CMG 14.1"
+
+
+def test_random_injection_suppressed_in_topic_mode():
+    """Random injection must never fire in topic mode."""
+    mock_llm = MagicMock()
+    mock_retriever = MagicMock()
+    mock_tracker = MagicMock()
+    mock_tracker.get_recent_chunk_keys.return_value = set()
+    mock_tracker.get_chunk_scores.return_value = {}
+    mock_retriever.retrieve.return_value = _make_chunks()
+    mock_llm.complete.return_value = json.dumps({
+        "question_text": "Q?",
+        "question_type": "recall",
+        "source_citation": "CMG 14",
+        "category": "Cardiac",
+        "source_index": 1,
+    })
+
+    for _ in range(50):
+        generate_question(
+            mode="topic",
+            topic="Cardiac",
+            llm=mock_llm,
+            retriever=mock_retriever,
+            tracker=mock_tracker,
+        )
+
+    # get_random_chunk must never have been called
+    mock_retriever.get_random_chunk.assert_not_called()
+
+
+def test_random_injection_fires_in_random_mode():
+    """In random mode, get_random_chunk should be called at least once across 200 calls."""
+    mock_llm = MagicMock()
+    mock_retriever = MagicMock()
+    mock_tracker = MagicMock()
+    mock_tracker.get_recent_chunk_keys.return_value = set()
+    mock_tracker.get_chunk_scores.return_value = {}
+    mock_retriever.retrieve.return_value = _make_chunks()
+    mock_retriever.get_random_chunk.return_value = None  # fallback to normal path
+    mock_llm.complete.return_value = json.dumps({
+        "question_text": "Q?",
+        "question_type": "recall",
+        "source_citation": "CMG 14",
+        "category": "Cardiac",
+        "source_index": 1,
+    })
+
+    for _ in range(200):
+        generate_question(
+            mode="random",
+            llm=mock_llm,
+            retriever=mock_retriever,
+            tracker=mock_tracker,
+        )
+
+    call_count = mock_retriever.get_random_chunk.call_count
+    # Expect roughly 50 calls (25%) — accept 15–85 as the valid range
+    assert 15 <= call_count <= 85, f"Expected ~50 injection calls, got {call_count}"
+
+
+def test_tracker_passed_to_retrieve_in_topic_mode():
+    """tracker must be forwarded to retrieve() in all modes."""
+    mock_llm = MagicMock()
+    mock_retriever = MagicMock()
+    mock_tracker = MagicMock()
+    mock_tracker.get_recent_chunk_keys.return_value = set()
+    mock_tracker.get_chunk_scores.return_value = {}
+    mock_retriever.retrieve.return_value = _make_chunks()
+    mock_llm.complete.return_value = json.dumps({
+        "question_text": "Q?",
+        "question_type": "recall",
+        "source_citation": "CMG 14",
+        "category": "Cardiac",
+        "source_index": 1,
+    })
+
+    generate_question(
+        mode="topic",
+        topic="Cardiac",
+        llm=mock_llm,
+        retriever=mock_retriever,
+        tracker=mock_tracker,
+    )
+
+    # Every retrieve() call must have received tracker=mock_tracker
+    for call in mock_retriever.retrieve.call_args_list:
+        assert call.kwargs.get("tracker") is mock_tracker or (
+            len(call.args) >= 9 and call.args[8] is mock_tracker
+        ), f"retrieve() called without tracker: {call}"
