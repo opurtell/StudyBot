@@ -96,10 +96,10 @@ export default function Settings() {
   const [cleanModel, setCleanModel] = useState(config?.clean_model ?? "claude-opus-4.6");
   const [skillLevel, setSkillLevel] = useState(config?.skill_level ?? "AP");
   const [apiKeys, setApiKeys] = useState<Record<ProviderKey, string>>({
-    anthropic: config?.providers.anthropic.api_key ?? "",
-    google: config?.providers.google.api_key ?? "",
-    zai: config?.providers.zai.api_key ?? "",
-    openai: config?.providers.openai.api_key ?? "",
+    anthropic: config?.providers?.anthropic?.api_key ?? "",
+    google: config?.providers?.google?.api_key ?? "",
+    zai: config?.providers?.zai?.api_key ?? "",
+    openai: config?.providers?.openai?.api_key ?? "",
   });
   const [activeProvider] = useState<ProviderKey>(
     (config?.active_provider as ProviderKey) ?? "anthropic"
@@ -117,10 +117,10 @@ export default function Settings() {
     setQuizModel(config.quiz_model);
     setCleanModel(config.clean_model);
     setApiKeys({
-      anthropic: config.providers.anthropic.api_key,
-      google: config.providers.google.api_key,
-      zai: config.providers.zai.api_key,
-      openai: config.providers.openai.api_key,
+      anthropic: config.providers?.anthropic?.api_key ?? "",
+      google: config.providers?.google?.api_key ?? "",
+      zai: config.providers?.zai?.api_key ?? "",
+      openai: config.providers?.openai?.api_key ?? "",
     });
     setSkillLevel(config.skill_level || "AP");
   }, [config]);
@@ -167,19 +167,19 @@ export default function Settings() {
     const nextProviders = {
       anthropic: {
         api_key: apiKeys.anthropic,
-        default_model: config.providers.anthropic.default_model,
+        default_model: config.providers?.anthropic?.default_model ?? "",
       },
       google: {
         api_key: apiKeys.google,
-        default_model: config.providers.google.default_model,
+        default_model: config.providers?.google?.default_model ?? "",
       },
       zai: {
         api_key: apiKeys.zai,
-        default_model: config.providers.zai.default_model,
+        default_model: config.providers?.zai?.default_model ?? "",
       },
       openai: {
         api_key: apiKeys.openai,
-        default_model: config.providers.openai.default_model,
+        default_model: config.providers?.openai?.default_model ?? "",
       },
     };
     const quizProvider = getProviderForModel(activeRegistry, quizModel);

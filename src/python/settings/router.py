@@ -87,6 +87,7 @@ class SaveModelsRequest(BaseModel):
     anthropic: ModelTier
     google: ModelTier
     zai: ModelTier
+    openai: ModelTier
 
 
 @router.get("")

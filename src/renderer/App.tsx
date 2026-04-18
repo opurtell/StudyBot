@@ -9,6 +9,7 @@ import Medication from "./pages/Medication";
 import Settings from "./pages/Settings";
 import Guidelines from "./pages/Guidelines";
 import BackendBootGate from "./components/BackendBootGate";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { BackendStatusProvider } from "./hooks/useBackendStatus";
 import { ResourceCacheProvider } from "./providers/ResourceCacheProvider";
 import { SettingsProvider } from "./providers/SettingsProvider";
@@ -62,7 +63,9 @@ export default function App() {
             <BackgroundProcessProvider>
             <HashRouter>
               <BackendBootGate>
-                <AppRoutes />
+                <ErrorBoundary>
+                  <AppRoutes />
+                </ErrorBoundary>
               </BackendBootGate>
             </HashRouter>
             </BackgroundProcessProvider>

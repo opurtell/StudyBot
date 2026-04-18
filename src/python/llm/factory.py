@@ -44,9 +44,24 @@ def create_client_for_model(config: dict, model_id: str):
     )
 
 
+_DEFAULT_PROVIDERS = {
+    "anthropic": {"api_key": "", "default_model": "claude-haiku-4-5-20251001"},
+    "google": {"api_key": "", "default_model": "gemini-3.1-flash-lite-preview"},
+    "zai": {"api_key": "", "default_model": "glm-4.7-flash"},
+    "openai": {"api_key": "", "default_model": "gpt-5.4-nano"},
+}
+
+
 def load_config(path: str | Path = _DEFAULT_CONFIG_PATH) -> dict:
     config_path = Path(path)
     if not config_path.exists():
         config_path = _EXAMPLE_CONFIG_PATH
     with open(config_path) as f:
-        return json.load(f)
+        config = json.load(f)
+    # Ensure all providers exist (handles old configs missing new providers)
+    providers = config.setdefault("providers", {})
+    for key, defaults in _DEFAULT_PROVIDERS.items():
+        if key not in providers:
+            providers[key] = dict(defaults)
+    config.setdefault("skill_level", "AP")
+    return config
