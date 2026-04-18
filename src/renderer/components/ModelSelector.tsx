@@ -12,6 +12,7 @@ const PROVIDER_LABELS: Record<ProviderKey, string> = {
   anthropic: "Anthropic",
   google: "Google",
   zai: "Z.ai",
+  openai: "OpenAI",
 };
 
 const TIER_LABELS: Record<"low" | "medium" | "high", string> = {
@@ -20,7 +21,7 @@ const TIER_LABELS: Record<"low" | "medium" | "high", string> = {
   high: "High",
 };
 
-const PROVIDER_ORDER: ProviderKey[] = ["anthropic", "google", "zai"];
+const PROVIDER_ORDER: ProviderKey[] = ["anthropic", "google", "zai", "openai"];
 const TIER_ORDER: Array<"low" | "medium" | "high"> = ["low", "medium", "high"];
 
 export default function ModelSelector({ label, value, registry, onChange }: ModelSelectorProps) {

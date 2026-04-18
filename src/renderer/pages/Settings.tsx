@@ -12,12 +12,13 @@ import PageStateNotice from "../components/PageStateNotice";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
 
-const PROVIDER_KEYS: ProviderKey[] = ["anthropic", "google", "zai"];
+const PROVIDER_KEYS: ProviderKey[] = ["anthropic", "google", "zai", "openai"];
 
 const PROVIDER_LABELS: Record<ProviderKey, string> = {
   anthropic: "Anthropic",
   google: "Google",
   zai: "Z.ai",
+  openai: "OpenAI",
 };
 
 const TIER_ORDER: Array<"low" | "medium" | "high"> = ["low", "medium", "high"];
@@ -42,6 +43,11 @@ const FALLBACK_REGISTRY: ModelRegistry = {
     low: "glm-4.7-flash",
     medium: "glm-4.7",
     high: "glm-5",
+  },
+  openai: {
+    low: "gpt-5.4-nano",
+    medium: "gpt-5.4-mini",
+    high: "gpt-5.4",
   },
 };
 
@@ -93,6 +99,7 @@ export default function Settings() {
     anthropic: config?.providers.anthropic.api_key ?? "",
     google: config?.providers.google.api_key ?? "",
     zai: config?.providers.zai.api_key ?? "",
+    openai: config?.providers.openai.api_key ?? "",
   });
   const [activeProvider] = useState<ProviderKey>(
     (config?.active_provider as ProviderKey) ?? "anthropic"
@@ -113,6 +120,7 @@ export default function Settings() {
       anthropic: config.providers.anthropic.api_key,
       google: config.providers.google.api_key,
       zai: config.providers.zai.api_key,
+      openai: config.providers.openai.api_key,
     });
     setSkillLevel(config.skill_level || "AP");
   }, [config]);
@@ -169,6 +177,10 @@ export default function Settings() {
         api_key: apiKeys.zai,
         default_model: config.providers.zai.default_model,
       },
+      openai: {
+        api_key: apiKeys.openai,
+        default_model: config.providers.openai.default_model,
+      },
     };
     const quizProvider = getProviderForModel(activeRegistry, quizModel);
     if (quizProvider) {
@@ -184,6 +196,7 @@ export default function Settings() {
         anthropic: nextProviders.anthropic,
         google: nextProviders.google,
         zai: nextProviders.zai,
+        openai: nextProviders.openai,
       },
       active_provider: activeProvider,
       quiz_model: quizModel,

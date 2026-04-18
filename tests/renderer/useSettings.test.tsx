@@ -30,6 +30,10 @@ const config: SettingsConfig = {
       api_key: "zai-key",
       default_model: "glm-4.7",
     },
+    openai: {
+      api_key: "openai-key",
+      default_model: "gpt-5.4-nano",
+    },
   },
   active_provider: "anthropic",
   quiz_model: "claude-haiku-4-5-20251001",
@@ -52,6 +56,11 @@ const registry: ModelRegistry = {
     low: "glm-4.7-flash",
     medium: "glm-4.7",
     high: "glm-5",
+  },
+  openai: {
+    low: "gpt-5.4-nano",
+    medium: "gpt-5.4-mini",
+    high: "gpt-5.4",
   },
 };
 

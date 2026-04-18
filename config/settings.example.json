@@ -2,7 +2,8 @@
   "providers": {
     "anthropic": { "api_key": "", "default_model": "claude-haiku-4-5-20251001" },
     "google": { "api_key": "", "default_model": "gemini-3.1-flash-lite-preview" },
-    "zai": { "api_key": "", "default_model": "glm-4.7-flash" }
+    "zai": { "api_key": "", "default_model": "glm-4.7-flash" },
+    "openai": { "api_key": "", "default_model": "gpt-5.4-nano" }
   },
   "active_provider": "anthropic",
   "quiz_model": "gemini-3.1-flash-lite-preview",

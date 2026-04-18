@@ -93,6 +93,7 @@ export interface SettingsConfig {
     anthropic: { api_key: string; default_model: string };
     google: { api_key: string; default_model: string };
     zai: { api_key: string; default_model: string };
+    openai: { api_key: string; default_model: string };
   };
   active_provider: string;
   quiz_model: string;
@@ -100,7 +101,7 @@ export interface SettingsConfig {
   skill_level: string;
 }
 
-export type ProviderKey = "anthropic" | "google" | "zai";
+export type ProviderKey = "anthropic" | "google" | "zai" | "openai";
 
 export interface ModelTier {
   low: string;
@@ -112,6 +113,7 @@ export interface ModelRegistry {
   anthropic: ModelTier;
   google: ModelTier;
   zai: ModelTier;
+  openai: ModelTier;
 }
 
 export interface MedicationDose {
