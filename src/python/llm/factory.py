@@ -9,11 +9,13 @@ from paths import SETTINGS_PATH as _DEFAULT_CONFIG_PATH
 from .anthropic_provider import AnthropicProvider
 from .google_provider import GoogleProvider
 from .models import load_model_registry, resolve_provider_for_model
+from .openai_provider import OpenAIProvider
 from .zai_provider import ZaiProvider
 
 _PROVIDERS = {
     "anthropic": AnthropicProvider,
     "google": GoogleProvider,
+    "openai": OpenAIProvider,
     "zai": ZaiProvider,
 }
 
