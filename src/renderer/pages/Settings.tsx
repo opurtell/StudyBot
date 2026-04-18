@@ -105,7 +105,8 @@ export default function Settings() {
     (config?.active_provider as ProviderKey) ?? "anthropic"
   );
 
-  const activeRegistry = modelRegistry ?? FALLBACK_REGISTRY;
+  // Merge with fallback to ensure all providers exist (handles stale localStorage cache)
+  const activeRegistry: ModelRegistry = { ...FALLBACK_REGISTRY, ...modelRegistry };
   const [editedRegistry, setEditedRegistry] = useState<ModelRegistry>(activeRegistry);
   const [registryDirty, setRegistryDirty] = useState(false);
   const [registryUnavailable, setRegistryUnavailable] = useState(false);
@@ -127,7 +128,9 @@ export default function Settings() {
 
   useEffect(() => {
     if (modelRegistry) {
-      setEditedRegistry(JSON.parse(JSON.stringify(modelRegistry)));
+      // Merge with fallback to ensure all providers exist (handles stale cache)
+      const merged: ModelRegistry = { ...FALLBACK_REGISTRY, ...modelRegistry };
+      setEditedRegistry(JSON.parse(JSON.stringify(merged)));
       setRegistryDirty(false);
       setRegistryUnavailable(false);
     } else if (!loading) {
@@ -332,7 +335,7 @@ export default function Settings() {
                     </label>
                     <input
                       type="text"
-                      value={editedRegistry[providerKey][tier]}
+                      value={editedRegistry[providerKey]?.[tier] ?? ""}
                       onChange={(e) =>
                         handleRegistryFieldChange(providerKey, tier, e.target.value)
                       }
