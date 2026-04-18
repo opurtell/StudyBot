@@ -16,6 +16,7 @@ dependencies = [
   "anthropic",
   "google-genai",
   "zhipuai",
+  "openai",
   "python-dotenv",
   "python-multipart",
 ]
