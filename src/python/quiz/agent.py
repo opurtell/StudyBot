@@ -9,11 +9,11 @@ from .models import Question, Evaluation
 from .retriever import Retriever
 from .tracker import Tracker
 
+RANDOM_INJECTION_PROBABILITY = 0.25  # fraction of random-mode questions using corpus injection
+
 # Sections that exist exclusively in the cmg_guidelines ChromaDB collection.
 # When a quiz targets one of these sections, the retriever skips the
 # paramedic_notes collection so questions are drawn from CMG content only.
-RANDOM_INJECTION_PROBABILITY = 0.25
-
 CMG_ONLY_SECTIONS = frozenset({
     "Cardiac", "Trauma", "Medical", "Respiratory", "Airway Management",
     "Obstetric", "Neurology", "Behavioural", "Toxicology",
@@ -130,6 +130,8 @@ def generate_question(
             tracker=tracker,
         )
         chunks = [injected_chunk] + semantic_chunks
+        if not chunks:
+            raise ValueError("No relevant chunks found for question generation")
     else:
         chunks = retriever.retrieve(
             query=query,
