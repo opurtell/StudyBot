@@ -1,0 +1,77 @@
+{
+  "medication": "Adenosine",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_8",
+      "cmg_number": "8",
+      "source_title": "Tachyarrhythmias",
+      "text": "Record a 12 lead ECG prior to use of adenosine.",
+      "dose_values": [],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_8",
+      "cmg_number": "8",
+      "source_title": "Tachyarrhythmias",
+      "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_8",
+      "cmg_number": "8",
+      "source_title": "Tachyarrhythmias",
+      "text": "##### Type\nEndogenous purine nucleoside, found in all body cells [S4]\n\n##### Presentations\n6mg in 2ml – vial\n\n##### Actions\n- Causes transient inhibition of conduction in the heart, especially in the AV node.\n- Onset: 5-10 seconds\n- Duration: approximately 10 seconds\n\n#### Uses\n\n- Treatment of supraventricular tachycardia.\n\n- Not for the treatment of atrial flutter or fibrillation; however, if mistakenly administered to patients in these arrhythmias, the decrease in AV conduction may unmask atrial activity. \n\n#### Adverse Effects\nCommon, although transient and generally minor:\n\n- Arrhythmias at the time of conversion are common (up to 55% patients) – including PVCs, PACs, sinus bradycardia, AV blocks\n\n- Transient flushing of the skin\n\n- Mild dyspnoea\n\n- Chest tightness\n\n- Nausea\n\n- Headache\n\n- Feelings of apprehension and fear\n\n#### Contraindications\n\n- 2\\xb0 or 3\\xb0 heart block\n\n- Known hypersensitivity\n\n#### Precautions\n\n- Asthma – may exacerbate bronchospasm\n\n- Antagonised by: theophylline (Nuelin)\n\n- Potentiated by: \n- dipyridamole (Persantin, Asasantin)\n- carbamazepine (Tegretol, Teril)\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult (symptomatic adults only)\n- **ICP: **6mg IV - rapid bolus (over 1 - 2 seconds) \n- Give into a fast flowing pump set.\n\n- **ICP: **If first is unsuccessful: \n- Give second dose (2 minutes between doses)\n- 12mg IV - rapid bolus (over 1 - 2 seconds).##### Paediatric\n- **ICP:** First dose: 0.05mg/kg – given as above \n- **ICP:** Second dose: 0.1mg/kg\n#### Special Notes\n- Use only after Valsalva manoeuvre x 2.\n- Record a 12 lead ECG prior to use of adenosine.\n- Rapid injection with a pump set increases likelihood of success.\n- Elevate limb if possible.\n- Even if the arrhythmia is successfully converted, the patient should still be transported to hospital as the incidence of recurrent arrhythmias is quite high (10 – 15%).\n- If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "12",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.1",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 3,
+  "sources": [
+    "CMG_8"
+  ]
+}

@@ -1,0 +1,3197 @@
+{
+  "medication": "Sodium Bicarbonate",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 5mMol Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 7mMol Volume: 7ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 11mMol Volume: 11ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 13mMol Volume: 13ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 15mMol Volume: 15ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 17mMol Volume: 17ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 19mMol Volume: 19ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 21mMol Volume: 21ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 23mMol Volume: 23ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 25mMol Volume: 25ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 27mMol Volume: 27ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 30 mMol Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 33mMol Volume: 33ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 35mMol Volume: 35ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 40mMol Volume: 40ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 45mMol Volume: 45ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 50mMol Volume: 50ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 60mMol Volume: 60ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 70mMol Volume: 70ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 80mMol Volume: 80ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 90mMol Volume: 90ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 100mMol Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 110mMol Volume: 110ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 120mMol Volume: 120ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "Hypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "50ml sodium bicarbonate solution – glass vial",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "100mg in 2ml – plastic ampoule",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_title": "Hyperkalaemia",
+      "text": "##### Type\nHypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n50ml sodium bicarbonate solution – glass vial\n\n##### Actions\n\n- Neutralises metabolic acidosis as a result of cardiac arrest or poor perfusion \n\n- Causes movement of K+ into cells – swaps with H+ ions\n\nOnset IV: 30 – 60 seconds.\n\n#### Uses\n\n- Cardiac arrest secondary to cardioactive drug overdose or hyperkalaemia \n\n- Prolonged cardiac arrest (>15 minutes) \n\n- For emergency treatment of hyperkalaemia \n\n- For treatment of arrhythmias, seizures or coma in overdose of cardioactive medications (e.g., tricyclics antidepressant, \\u03b2 blocker, digoxin) \n\n- To combat acidosis and hyperkalaemia in crush syndrome \n\n#### Adverse Effects\n\n- Metabolic alkalosis\n\n- High sodium content may lead to fluid overload and cardiac failure \n\n- Interacts with some other drugs (especially calcium and adrenaline): \n- always flush well through the line before and after administration\n- consider a second line\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### In cardiac arrest\n**Secondary to hyperkalaemia or cardioactive drug overdose; prolonged arrest >15 minutes**\n##### Adult and Paediatric\n- **ICP: **1mMol/kg IV or IO \n- Fast push\n- No repeat.\n\n#### Hyperkalaemia with cardiac output ##### Adult and Paediatric\n- **ICP: **0.5mMol/kg IV or IO \n- Over 2 to 5 minutes\n- May repeat once, if required.\n\n#### Cardio-active medication overdose##### Adult and Paediatric (12 lead with wide QRS complex)\n- **ICP: **1mMol/kg IV or IO \n- Over 30 to 60 seconds\n- May repeat once, if required. \n\n#### Special Notes\n- Always administer sodium bicarbonate to cardioactive medication overdose patients when in cardiac arrest.",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 5mMol Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 7mMol Volume: 7ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 11mMol Volume: 11ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 13mMol Volume: 13ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 15mMol Volume: 15ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 17mMol Volume: 17ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 19mMol Volume: 19ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 21mMol Volume: 21ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 23mMol Volume: 23ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 25mMol Volume: 25ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 27mMol Volume: 27ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 30 mMol Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 33mMol Volume: 33ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 35mMol Volume: 35ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 40mMol Volume: 40ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 45mMol Volume: 45ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 50mMol Volume: 50ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 60mMol Volume: 60ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 70mMol Volume: 70ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 80mMol Volume: 80ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 90mMol Volume: 90ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 100mMol Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 110mMol Volume: 110ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 120mMol Volume: 120ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "Hypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "50ml sodium bicarbonate solution – glass vial",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "100mg in 2ml – plastic ampoule",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_title": "Poisoning and Overdose",
+      "text": "##### Type\nHypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n50ml sodium bicarbonate solution – glass vial\n\n##### Actions\n\n- Neutralises metabolic acidosis as a result of cardiac arrest or poor perfusion \n\n- Causes movement of K+ into cells – swaps with H+ ions\n\nOnset IV: 30 – 60 seconds.\n\n#### Uses\n\n- Cardiac arrest secondary to cardioactive drug overdose or hyperkalaemia \n\n- Prolonged cardiac arrest (>15 minutes) \n\n- For emergency treatment of hyperkalaemia \n\n- For treatment of arrhythmias, seizures or coma in overdose of cardioactive medications (e.g., tricyclics antidepressant, \\u03b2 blocker, digoxin) \n\n- To combat acidosis and hyperkalaemia in crush syndrome \n\n#### Adverse Effects\n\n- Metabolic alkalosis\n\n- High sodium content may lead to fluid overload and cardiac failure \n\n- Interacts with some other drugs (especially calcium and adrenaline): \n- always flush well through the line before and after administration\n- consider a second line\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### In cardiac arrest\n**Secondary to hyperkalaemia or cardioactive drug overdose; prolonged arrest >15 minutes**\n##### Adult and Paediatric\n- **ICP: **1mMol/kg IV or IO \n- Fast push\n- No repeat.\n\n#### Hyperkalaemia with cardiac output ##### Adult and Paediatric\n- **ICP: **0.5mMol/kg IV or IO \n- Over 2 to 5 minutes\n- May repeat once, if required.\n\n#### Cardio-active medication overdose##### Adult and Paediatric (12 lead with wide QRS complex)\n- **ICP: **1mMol/kg IV or IO \n- Over 30 to 60 seconds\n- May repeat once, if required. \n\n#### Special Notes\n- Always administer sodium bicarbonate to cardioactive medication overdose patients when in cardiac arrest.",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 5mMol Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 7mMol Volume: 7ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 11mMol Volume: 11ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 13mMol Volume: 13ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 15mMol Volume: 15ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 17mMol Volume: 17ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 19mMol Volume: 19ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 21mMol Volume: 21ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 23mMol Volume: 23ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 25mMol Volume: 25ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 27mMol Volume: 27ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 30 mMol Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 33mMol Volume: 33ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 35mMol Volume: 35ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 40mMol Volume: 40ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 45mMol Volume: 45ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 50mMol Volume: 50ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 60mMol Volume: 60ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 70mMol Volume: 70ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 80mMol Volume: 80ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 90mMol Volume: 90ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 100mMol Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 110mMol Volume: 110ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 120mMol Volume: 120ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "Hypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "50ml sodium bicarbonate solution – glass vial",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "100mg in 2ml – plastic ampoule",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_4",
+      "cmg_number": "4",
+      "source_title": "Cardiac Arrest: Adult",
+      "text": "##### Type\nHypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n50ml sodium bicarbonate solution – glass vial\n\n##### Actions\n\n- Neutralises metabolic acidosis as a result of cardiac arrest or poor perfusion \n\n- Causes movement of K+ into cells – swaps with H+ ions\n\nOnset IV: 30 – 60 seconds.\n\n#### Uses\n\n- Cardiac arrest secondary to cardioactive drug overdose or hyperkalaemia \n\n- Prolonged cardiac arrest (>15 minutes) \n\n- For emergency treatment of hyperkalaemia \n\n- For treatment of arrhythmias, seizures or coma in overdose of cardioactive medications (e.g., tricyclics antidepressant, \\u03b2 blocker, digoxin) \n\n- To combat acidosis and hyperkalaemia in crush syndrome \n\n#### Adverse Effects\n\n- Metabolic alkalosis\n\n- High sodium content may lead to fluid overload and cardiac failure \n\n- Interacts with some other drugs (especially calcium and adrenaline): \n- always flush well through the line before and after administration\n- consider a second line\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### In cardiac arrest\n**Secondary to hyperkalaemia or cardioactive drug overdose; prolonged arrest >15 minutes**\n##### Adult and Paediatric\n- **ICP: **1mMol/kg IV or IO \n- Fast push\n- No repeat.\n\n#### Hyperkalaemia with cardiac output ##### Adult and Paediatric\n- **ICP: **0.5mMol/kg IV or IO \n- Over 2 to 5 minutes\n- May repeat once, if required.\n\n#### Cardio-active medication overdose##### Adult and Paediatric (12 lead with wide QRS complex)\n- **ICP: **1mMol/kg IV or IO \n- Over 30 to 60 seconds\n- May repeat once, if required. \n\n#### Special Notes\n- Always administer sodium bicarbonate to cardioactive medication overdose patients when in cardiac arrest.",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 5mMol Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 7mMol Volume: 7ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "mMol"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 11mMol Volume: 11ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "mMol"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 13mMol Volume: 13ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "mMol"
+        },
+        {
+          "amount": "13",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 15mMol Volume: 15ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "mMol"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 17mMol Volume: 17ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "mMol"
+        },
+        {
+          "amount": "17",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 19mMol Volume: 19ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "mMol"
+        },
+        {
+          "amount": "19",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 21mMol Volume: 21ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "mMol"
+        },
+        {
+          "amount": "21",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 23mMol Volume: 23ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "mMol"
+        },
+        {
+          "amount": "23",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 25mMol Volume: 25ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "mMol"
+        },
+        {
+          "amount": "25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 27mMol Volume: 27ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "mMol"
+        },
+        {
+          "amount": "27",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 30 mMol Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "mMol"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 33mMol Volume: 33ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "mMol"
+        },
+        {
+          "amount": "33",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 35mMol Volume: 35ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "mMol"
+        },
+        {
+          "amount": "35",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 40mMol Volume: 40ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "mMol"
+        },
+        {
+          "amount": "40",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 45mMol Volume: 45ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "mMol"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 50mMol Volume: 50ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 60mMol Volume: 60ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "mMol"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 70mMol Volume: 70ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "mMol"
+        },
+        {
+          "amount": "70",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 80mMol Volume: 80ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "mMol"
+        },
+        {
+          "amount": "80",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 90mMol Volume: 90ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "mMol"
+        },
+        {
+          "amount": "90",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 100mMol Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 110mMol Volume: 110ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "mMol"
+        },
+        {
+          "amount": "110",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 120mMol Volume: 120ml",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "100",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "mMol"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " Sodium bicarbonate 1mMol/kg",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Hypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "50ml sodium bicarbonate solution – glass vial",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "100mg in 2ml – plastic ampoule",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "##### Type\nHypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n50ml sodium bicarbonate solution – glass vial\n\n##### Actions\n\n- Neutralises metabolic acidosis as a result of cardiac arrest or poor perfusion \n\n- Causes movement of K+ into cells – swaps with H+ ions\n\nOnset IV: 30 – 60 seconds.\n\n#### Uses\n\n- Cardiac arrest secondary to cardioactive drug overdose or hyperkalaemia \n\n- Prolonged cardiac arrest (>15 minutes) \n\n- For emergency treatment of hyperkalaemia \n\n- For treatment of arrhythmias, seizures or coma in overdose of cardioactive medications (e.g., tricyclics antidepressant, \\u03b2 blocker, digoxin) \n\n- To combat acidosis and hyperkalaemia in crush syndrome \n\n#### Adverse Effects\n\n- Metabolic alkalosis\n\n- High sodium content may lead to fluid overload and cardiac failure \n\n- Interacts with some other drugs (especially calcium and adrenaline): \n- always flush well through the line before and after administration\n- consider a second line\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### In cardiac arrest\n**Secondary to hyperkalaemia or cardioactive drug overdose; prolonged arrest >15 minutes**\n##### Adult and Paediatric\n- **ICP: **1mMol/kg IV or IO \n- Fast push\n- No repeat.\n\n#### Hyperkalaemia with cardiac output ##### Adult and Paediatric\n- **ICP: **0.5mMol/kg IV or IO \n- Over 2 to 5 minutes\n- May repeat once, if required.\n\n#### Cardio-active medication overdose##### Adult and Paediatric (12 lead with wide QRS complex)\n- **ICP: **1mMol/kg IV or IO \n- Over 30 to 60 seconds\n- May repeat once, if required. \n\n#### Special Notes\n- Always administer sodium bicarbonate to cardioactive medication overdose patients when in cardiac arrest.",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "50",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1",
+          "unit": "mMol"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 120,
+  "sources": [
+    "CMG_27",
+    "CMG_35",
+    "CMG_4",
+    "CMG_5"
+  ]
+}

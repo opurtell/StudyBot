@@ -1,0 +1,2777 @@
+{
+  "medication": "Normal Saline",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 10ml/kg Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 140ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "140",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 220ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "220",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 260ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "260",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 300ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "300",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 340ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "340",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 380ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "380",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 420ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "420",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 460ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "460",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 500ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 540ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "540",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Dose: 20ml/kg Volume: 600ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Volume: 660ml",
+      "dose_values": [
+        {
+          "amount": "660",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": " up to 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Normal saline 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "10ml/kg normal saline unless in pulmonary oedema.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+      "dose_values": [
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "mg"
+        },
+        {
+          "amount": "80",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+      "dose_values": [
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+      "dose_values": [
+        {
+          "amount": "18",
+          "unit": "G"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_28",
+      "cmg_number": "28",
+      "source_title": "Home Dialysis Emergencies",
+      "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+      "dose_values": [
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1000",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "mL"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 10ml/kg Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 140ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "140",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 220ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "220",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 260ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "260",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 300ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "300",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 340ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "340",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 380ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "380",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 420ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "420",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 460ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "460",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 500ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 540ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "540",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Dose: 20ml/kg Volume: 600ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Volume: 660ml",
+      "dose_values": [
+        {
+          "amount": "660",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": " up to 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Normal saline 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "10ml/kg normal saline unless in pulmonary oedema.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+      "dose_values": [
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "mg"
+        },
+        {
+          "amount": "80",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+      "dose_values": [
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+      "dose_values": [
+        {
+          "amount": "18",
+          "unit": "G"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_39",
+      "cmg_number": "39",
+      "source_title": "Major Trauma",
+      "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+      "dose_values": [
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1000",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "mL"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 10ml/kg Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 140ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "140",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 220ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "220",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 260ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "260",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 300ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "300",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 340ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "340",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 380ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "380",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 420ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "420",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 460ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "460",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 500ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 540ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "540",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Dose: 20ml/kg Volume: 600ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Volume: 660ml",
+      "dose_values": [
+        {
+          "amount": "660",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " up to 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Normal saline 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "10ml/kg normal saline unless in pulmonary oedema.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+      "dose_values": [
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "mg"
+        },
+        {
+          "amount": "80",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+      "dose_values": [
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+      "dose_values": [
+        {
+          "amount": "18",
+          "unit": "G"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+      "dose_values": [
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1000",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "mL"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 10ml/kg Volume: 30ml",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 100ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 140ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "140",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 220ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "220",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 260ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "260",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 300ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "300",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 340ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "340",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 380ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "380",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 420ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "420",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 460ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "460",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 500ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 540ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "540",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Dose: 20ml/kg Volume: 600ml",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Volume: 660ml",
+      "dose_values": [
+        {
+          "amount": "660",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " up to 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Normal saline 20ml/kg.",
+      "dose_values": [
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "10ml/kg normal saline unless in pulmonary oedema.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
+      "dose_values": [
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "mg"
+        },
+        {
+          "amount": "80",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
+      "dose_values": [
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "40",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "2.5",
+          "unit": "g"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+      "dose_values": [
+        {
+          "amount": "18",
+          "unit": "G"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "Flush the line after each dose with 10ml of normal saline.",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_5",
+      "cmg_number": "5",
+      "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+      "dose_values": [
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "151",
+          "unit": "mMol"
+        },
+        {
+          "amount": "1000",
+          "unit": "ml"
+        },
+        {
+          "amount": "500",
+          "unit": "mL"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 132,
+  "sources": [
+    "CMG_28",
+    "CMG_3",
+    "CMG_39",
+    "CMG_5"
+  ]
+}

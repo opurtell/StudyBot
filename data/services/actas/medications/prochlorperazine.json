@@ -1,0 +1,57 @@
+{
+  "medication": "Prochlorperazine",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_41",
+      "cmg_number": "41",
+      "source_title": "Nausea and Vomiting",
+      "text": "Previous oral prochlorperazine within last 8 hours",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_41",
+      "cmg_number": "41",
+      "source_title": "Nausea and Vomiting",
+      "text": "Pressurised metered dose inhaler (pMDI) – 100mcg per activation",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_41",
+      "cmg_number": "41",
+      "source_title": "Nausea and Vomiting",
+      "text": "##### Type\nPhenothiazine antiemetic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n12.5mg in 1ml – ampoule\n\n##### Actions\nActs on several neurotransmitter systems:\n\n- Antidopamine action\n\n- Alpha-adrenergic antagonism\n\n- Potentiates noradrenaline\n\n- Weak anticholinergic and antihistamine effects\n\n- Weak serotonin antagonism\n\nOnset IM: limited data. \n Duration IM: unknown – likely to be prolonged \n\n#### Uses\nFor the treatment (only) of nausea and vomiting from a variety of vestibular causes, including: \n\n- Motion sickness \n- Migraine\n- Vertigo- Labyrinthitis\n#### Adverse Effects\n\n- Gastrointestinal: constipation, dry mouth\n\n- Nervous system: drowsiness, extrapyramidal symptoms\n\n- Cardiovascular: hypotension, ECG changes (especially QT prolongation) \n\n- Respiratory: respiratory depression\n\n#### Contraindications\n\n- Known hypersensitivity to phenothiazines\n\n- CNS depression\n\n- Shock from any cause, or other circulatory compromise\n\n- Paediatric patients (",
+      "dose_values": [
+        {
+          "amount": "12.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 3,
+  "sources": [
+    "CMG_41"
+  ]
+}
