@@ -7,13 +7,14 @@ from pydantic import BaseModel
 
 from paths import (
     CLEANED_NOTES_DIR,
-    CMG_STRUCTURED_DIR,
     CPDDOCS_DIR,
     NOTABILITY_NOTE_DOCS_DIR,
     PERSONAL_STRUCTURED_DIR,
     RAW_NOTES_DIR,
     REFDOCS_DIR,
+    resolve_service_structured_dir,
 )
+from services.active import active_service
 from pipeline.actas.refresh import load_refresh_status
 
 router = APIRouter(prefix="/sources", tags=["sources"])
@@ -90,7 +91,8 @@ def _notability_status(
 
 
 def _build_sources() -> list[LibrarySource]:
-    cmg_count = _count_files(CMG_STRUCTURED_DIR, "*.json")
+    svc_structured_dir = resolve_service_structured_dir(active_service().id)
+    cmg_count = _count_files(svc_structured_dir, "*.json")
     ref_count = _count_files(REFDOCS_DIR, "*.md")
     ref_structured_count = _count_files(PERSONAL_STRUCTURED_DIR / "REFdocs", "*.md")
     cpd_count = _count_files(CPDDOCS_DIR, "*.md")
@@ -146,7 +148,8 @@ def _build_sources() -> list[LibrarySource]:
 
 
 def _build_cleaning_feed() -> list[CleaningFeedItem]:
-    cmg_count = _count_files(CMG_STRUCTURED_DIR, "*.json")
+    svc_structured_dir = resolve_service_structured_dir(active_service().id)
+    cmg_count = _count_files(svc_structured_dir, "*.json")
     ref_count = _count_files(REFDOCS_DIR, "*.md")
     cpd_count = _count_files(CPDDOCS_DIR, "*.md")
     personal_structured_count = _count_files(
