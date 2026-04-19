@@ -192,14 +192,14 @@ def test_get_random_chunk_returns_chunk(seeded_chroma):
 def test_get_random_chunk_empty_corpus():
     import chromadb
     client = chromadb.Client()
-    for name in ["paramedic_notes", "cmg_guidelines"]:
+    for name in ["personal_actas", "guidelines_actas"]:
         try:
             client.delete_collection(name)
         except Exception:
             pass
-    client.create_collection("paramedic_notes", metadata={"hnsw:space": "cosine"})
-    client.create_collection("cmg_guidelines")
-    retriever = Retriever(client=client)
+    client.create_collection("personal_actas", metadata={"hnsw:space": "cosine"})
+    client.create_collection("guidelines_actas")
+    retriever = Retriever(client=client, service_id="actas")
     result = retriever.get_random_chunk()
     assert result is None
 

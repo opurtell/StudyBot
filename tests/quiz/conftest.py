@@ -6,14 +6,15 @@ import pytest
 def seeded_chroma():
     client = chromadb.Client()
 
-    for name in ["paramedic_notes", "cmg_guidelines"]:
+    # Per-service collection names (matching the new retriever)
+    for name in ["personal_actas", "guidelines_actas"]:
         try:
             client.delete_collection(name)
         except Exception:
             pass
 
     notes = client.create_collection(
-        "paramedic_notes", metadata={"hnsw:space": "cosine"}
+        "personal_actas", metadata={"hnsw:space": "cosine"}
     )
     notes.add(
         ids=["note_1", "note_2", "note_3", "note_4"],
@@ -31,6 +32,7 @@ def seeded_chroma():
                 "chunk_index": 0,
                 "last_modified": "2024-01-01",
                 "has_review_flag": False,
+                "visibility": "both",
             },
             {
                 "source_type": "notability_note",
@@ -39,6 +41,7 @@ def seeded_chroma():
                 "chunk_index": 0,
                 "last_modified": "2024-01-01",
                 "has_review_flag": False,
+                "visibility": "both",
             },
             {
                 "source_type": "notability_note",
@@ -47,6 +50,7 @@ def seeded_chroma():
                 "chunk_index": 0,
                 "last_modified": "2024-01-01",
                 "has_review_flag": False,
+                "visibility": "both",
             },
             {
                 "source_type": "notability_note",
@@ -55,11 +59,12 @@ def seeded_chroma():
                 "chunk_index": 0,
                 "last_modified": "2024-01-01",
                 "has_review_flag": False,
+                "visibility": "both",
             },
         ],
     )
 
-    cmgs = client.create_collection("cmg_guidelines")
+    cmgs = client.create_collection("guidelines_actas")
     cmgs.add(
         ids=["cmg_1", "cmg_2"],
         documents=[
