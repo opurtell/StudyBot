@@ -1217,3 +1217,47 @@ At Plan A completion the app must:
 - Pass the frontend and Python test suites at the same pass/fail profile as `KNOWN_TEST_FAILURES.md` declares (no new regressions).
 
 Tas content ingestion (Phases 1–4) is out of scope for Plan A and will be specified in **Plan B** once the Phase 0 findings doc is in hand.
+
+---
+
+## Plan review corrections
+
+Addresses plan-review feedback. Authoritative where it conflicts with earlier task descriptions.
+
+### Task ordering fixes
+
+- **Run Task 10 migration against real data** as a dedicated numbered commit between Task 10 Step 5 and Task 11 Step 1. The original Task 10 Step 5 is amended: "commit the script, then immediately run it against real repo data (`python scripts/migrate_to_multi_service.py`), commit the resulting `data/services/actas/structured/*.json` tree and the old directory cleanup as a separate commit." Task 11 depends on this having happened.
+- **Task 14 must re-ingest into Chroma after Task 11's backfill** so chunks in `guidelines_actas` carry `qualifications_required`. Task 14 Step 3 is extended: after splitting `cmg_guidelines` → `guidelines_actas`, re-run the ACTAS chunker against the post-backfill structured JSON so new chunks include the `qualifications_required` metadata. Verify with a test that a query for effective `{AP}` returns zero chunks whose metadata has `"ICP" in qualifications_required`.
+- **Task 9 depends on `personal_<service>` collection existing.** Add a line: "the upload router's ingest path must lazily create the per-service personal collection if absent; Task 9 tests stub Chroma with `get_or_create_collection`." This works before Task 14 because `get_or_create_collection` is idempotent.
+- **Task 13 router changes land before Task 14's collection split is acceptable** because Task 13 routers do not hit Chroma — they read structured JSON and the medication index. Explicit note added.
+
+### Missing-task additions
+
+**Task 8b — Migrate `src/python/settings/router.py` paths**. Between Task 8 and Task 9. The settings router imports `CMG_STRUCTURED_DIR` and the "Re-run Pipeline" handler calls the legacy chunker. Rewrite to read active service via `active_service()` and trigger that service's adapter's `run_pipeline()`. Tests: hitting `POST /settings/re-run-pipeline` with `active_service: "actas"` kicks the ACTAS adapter; with a service that has no adapter implemented yet (AT pre-Plan-B) returns HTTP 409 `{"error": "adapter not ready"}`.
+
+**Task 13b — Migrate `src/python/pipeline/personal_docs/`**. Between Task 13 and Task 14. The personal docs ingester currently writes into `paramedic_notes`. Rewrite to read `service` + `scope` front-matter from each file and ingest into `personal_<service>`. Tests: ingest a fixture file with `service: actas, scope: general` lands chunks in `personal_actas` with `scope=general`; ingest with `service: at` lands chunks in `personal_at`.
+
+**Task 14b — Migrate `paramedic_notes` → `personal_<service>` explicitly**. Make this an explicit step inside Task 14 (currently implied by a test). Iterate every chunk in `paramedic_notes`, write into `personal_<service>` using the `service` front-matter of the source doc (or `personal_actas` if absent), preserving the `scope` field. Commit the resulting Chroma state change as a data commit.
+
+**Task 15b — Migrate existing `settings.json` `skill_level` key**. Part of migration script Task 10 is amended to detect a legacy `skill_level` value and rewrite it to `base_qualification` + empty `endorsements` as per spec §15.4. Test covers both `AP` and `ICP` legacy values. This is added to Task 10's test list.
+
+**Task 16b — Ranking math + source-hierarchy wiring**. Split from Task 16 for clarity. Implements percentile normalisation across `guidelines_<id>` and `personal_<id>` query results and applies the active service's `source_hierarchy` weights before sorting. Tests:
+- Two collections return results with different raw distance scales; after normalisation the top result is from the collection whose top hit is the strongest relative to its own distribution.
+- A `ref_doc` chunk with equal normalised rank to an `upload` chunk ranks above the `upload` chunk.
+
+**Task 19b — `types/api.ts` and frontend `cmg_number` fallback**. Standalone task under Phase 3. Updates `src/renderer/types/api.ts` to add `guideline_id: string; cmg_number?: string` on relevant types. Updates every consumer (Guidelines, Quiz, Feedback, Medication pages) to read `g.guideline_id ?? g.cmg_number`. Tests: a fixture response carrying only `guideline_id` renders correctly; a fixture carrying only `cmg_number` still renders (deprecation window coverage).
+
+**Task 20b — "Clean up legacy data" Settings action**. Part of Task 20. Add a `POST /settings/cleanup-legacy-data` endpoint that deletes the old `cmg_guidelines` + `paramedic_notes` Chroma collections and the `data/cmgs/structured/` tree. Frontend: a destructive-styled button under Settings → Indexed data management, gated behind a confirmation dialog. Not automatic — user must click.
+
+### Task clarifications
+
+- **Task 4 test — `/services` response shape**. The endpoint strips `adapter`, `scope_source_doc`, `category_mapping_doc`, and `source_hierarchy` from the response (those are backend-only). Public fields are `id`, `display_name`, `region`, `accent_colour`, `source_url`, `qualifications`. Update Task 4 test to assert exactly this set and that no other fields leak.
+- **Task 9 conftest**. Upload router tests require a fixture that: (a) monkeypatches `USER_DATA_ROOT` to a tmp_path; (b) initialises an in-memory Chroma client bound to that tmp path; (c) ensures `active_service` in the tmp `settings.json` is `actas`. Add to `tests/python/upload/conftest.py` as part of Task 9.
+- **Task 11 ICP marker source**. The current ICP markers live in `src/python/quiz/agent.py` inside the prompt builder; additionally, ICP-restricted medicines are inferable from ACTAS CMG sections tagged with "ICP" in the `profiles` or `scope` field of the structured JSON. Task 11 Step 3 must cite these two sources explicitly in its implementation.
+- **Task 12 decision — pick one file**. Create `src/python/pipeline/actas/medications_index.py` as a new module (not inside `chunker.py`). `chunker.py` stays focused on chunking; the index builder calls are added to `orchestrator.py` after chunking completes.
+- **Task 20 `doc_id` scheme**. `doc_id` is the structured-file path relative to `data/personal_docs/structured/` with the extension stripped (e.g., `ECGs` for `ECGs.md`). Uploaded files use their generated filename minus extension. The frontend Settings page lists every structured file under its doc_id.
+- **Task 22 intranet URL**. The intranet URL in Task 6 for the AT scope-of-practice matrix is a placeholder. The public alternative is the Ambulance Tasmania CPG site's "About / Scope of Practice" page (confirmed during Phase 0 probe). Task 22's findings doc must capture the correct public URL before Task 6 is finalised. Task 6 and Task 22 therefore interlock: Task 6 drafts with a TBD citation; Task 22 fills in the authoritative URL; both are committed after Phase 0.
+
+### Vision settings row — explicit deferral
+
+The spec §15.13 "Vision model" Settings row is deferred to Plan B, where `llm/vision.py` moves from stub to real implementation. Plan A ships the stub module only so imports don't break. This deferral is explicit; it is not an oversight.
