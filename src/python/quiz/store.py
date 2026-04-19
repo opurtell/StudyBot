@@ -23,41 +23,97 @@ class QuizStore:
     def _init_schema(self) -> None:
         self._conn.executescript("""
             CREATE TABLE IF NOT EXISTS quiz_questions (
-                id TEXT PRIMARY KEY,
+                id TEXT NOT NULL,
                 question_text TEXT NOT NULL,
                 question_type TEXT NOT NULL,
                 source_chunks_json TEXT NOT NULL,
                 source_citation TEXT NOT NULL,
                 difficulty TEXT NOT NULL,
                 category TEXT NOT NULL,
-                primary_chunk_index INTEGER DEFAULT 0
+                primary_chunk_index INTEGER DEFAULT 0,
+                service TEXT NOT NULL DEFAULT 'actas',
+                PRIMARY KEY (id, service)
             );
             CREATE TABLE IF NOT EXISTS quiz_sessions (
-                id TEXT PRIMARY KEY,
+                id TEXT NOT NULL,
                 mode TEXT NOT NULL,
                 topic TEXT,
                 difficulty TEXT DEFAULT 'medium',
                 blacklist_json TEXT DEFAULT '[]',
                 randomize INTEGER DEFAULT 1,
                 asked_question_ids_json TEXT DEFAULT '[]',
-                asked_chunk_contents_json TEXT DEFAULT '[]'
+                asked_chunk_contents_json TEXT DEFAULT '[]',
+                service TEXT NOT NULL DEFAULT 'actas',
+                PRIMARY KEY (id, service)
             );
         """)
+        # Migration: if table exists with old schema (id-only PK, no service column),
+        # recreate with composite PK. Data is wiped on startup anyway.
+        self._migrate_add_service_column("quiz_questions")
+        self._migrate_add_service_column("quiz_sessions")
+        self._conn.commit()
 
-    def _clear_stale(self) -> None:
+    def _migrate_add_service_column(self, table: str) -> None:
+        """Migrate a table from old schema (no service column) to new schema.
+
+        If the table lacks the 'service' column, it was created by an older
+        version with 'id' as sole primary key.  Since _clear_stale wipes all
+        data on startup, we can safely recreate the table.
+        """
+        cols = [row[1] for row in self._conn.execute(f"PRAGMA table_info({table})").fetchall()]
+        if "service" not in cols:
+            self._conn.executescript(
+                f"DROP TABLE IF EXISTS {table};"
+            )
+            if table == "quiz_questions":
+                self._conn.execute("""
+                    CREATE TABLE quiz_questions (
+                        id TEXT NOT NULL,
+                        question_text TEXT NOT NULL,
+                        question_type TEXT NOT NULL,
+                        source_chunks_json TEXT NOT NULL,
+                        source_citation TEXT NOT NULL,
+                        difficulty TEXT NOT NULL,
+                        category TEXT NOT NULL,
+                        primary_chunk_index INTEGER DEFAULT 0,
+                        service TEXT NOT NULL DEFAULT 'actas',
+                        PRIMARY KEY (id, service)
+                    );
+                """)
+            elif table == "quiz_sessions":
+                self._conn.execute("""
+                    CREATE TABLE quiz_sessions (
+                        id TEXT NOT NULL,
+                        mode TEXT NOT NULL,
+                        topic TEXT,
+                        difficulty TEXT DEFAULT 'medium',
+                        blacklist_json TEXT DEFAULT '[]',
+                        randomize INTEGER DEFAULT 1,
+                        asked_question_ids_json TEXT DEFAULT '[]',
+                        asked_chunk_contents_json TEXT DEFAULT '[]',
+                        service TEXT NOT NULL DEFAULT 'actas',
+                        PRIMARY KEY (id, service)
+                    );
+                """)
+
+    def _clear_stale(self, service: str | None = None) -> None:
         with self._lock:
-            self._conn.execute("DELETE FROM quiz_questions")
-            self._conn.execute("DELETE FROM quiz_sessions")
+            if service:
+                self._conn.execute("DELETE FROM quiz_questions WHERE service = ?", (service,))
+                self._conn.execute("DELETE FROM quiz_sessions WHERE service = ?", (service,))
+            else:
+                self._conn.execute("DELETE FROM quiz_questions")
+                self._conn.execute("DELETE FROM quiz_sessions")
             self._conn.commit()
 
-    def store_question(self, question: Question) -> None:
+    def store_question(self, question: Question, service: str = "actas") -> None:
         chunks_json = json.dumps([c.model_dump() for c in question.source_chunks])
         with self._lock:
             self._conn.execute(
                 """INSERT OR REPLACE INTO quiz_questions
                    (id, question_text, question_type, source_chunks_json,
-                    source_citation, difficulty, category, primary_chunk_index)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                    source_citation, difficulty, category, primary_chunk_index, service)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     question.id,
                     question.question_text,
@@ -67,14 +123,16 @@ class QuizStore:
                     question.difficulty,
                     question.category,
                     question.primary_chunk_index,
+                    service,
                 ),
             )
             self._conn.commit()
 
-    def get_question(self, question_id: str) -> Question | None:
+    def get_question(self, question_id: str, service: str = "actas") -> Question | None:
         with self._lock:
             row = self._conn.execute(
-                "SELECT * FROM quiz_questions WHERE id = ?", (question_id,)
+                "SELECT * FROM quiz_questions WHERE id = ? AND service = ?",
+                (question_id, service),
             ).fetchone()
         if row is None:
             return None
@@ -94,13 +152,13 @@ class QuizStore:
             primary_chunk_index=row["primary_chunk_index"],
         )
 
-    def store_session(self, session_id: str, config: SessionConfig) -> None:
+    def store_session(self, session_id: str, config: SessionConfig, service: str = "actas") -> None:
         with self._lock:
             self._conn.execute(
                 """INSERT OR REPLACE INTO quiz_sessions
                    (id, mode, topic, difficulty, blacklist_json, randomize,
-                    asked_question_ids_json, asked_chunk_contents_json)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                    asked_question_ids_json, asked_chunk_contents_json, service)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     session_id,
                     config.mode,
@@ -110,14 +168,16 @@ class QuizStore:
                     int(config.randomize),
                     json.dumps(config.asked_question_ids),
                     json.dumps(config.asked_chunk_contents),
+                    service,
                 ),
             )
             self._conn.commit()
 
-    def get_session(self, session_id: str) -> SessionConfig | None:
+    def get_session(self, session_id: str, service: str = "actas") -> SessionConfig | None:
         with self._lock:
             row = self._conn.execute(
-                "SELECT * FROM quiz_sessions WHERE id = ?", (session_id,)
+                "SELECT * FROM quiz_sessions WHERE id = ? AND service = ?",
+                (session_id, service),
             ).fetchone()
         if row is None:
             return None
@@ -134,10 +194,11 @@ class QuizStore:
             asked_chunk_contents=json.loads(row["asked_chunk_contents_json"]),
         )
 
-    def record_asked(self, session_id: str, question: Question) -> None:
+    def record_asked(self, session_id: str, question: Question, service: str = "actas") -> None:
         with self._lock:
             row = self._conn.execute(
-                "SELECT * FROM quiz_sessions WHERE id = ?", (session_id,)
+                "SELECT * FROM quiz_sessions WHERE id = ? AND service = ?",
+                (session_id, service),
             ).fetchone()
             if row is None:
                 return
@@ -150,11 +211,12 @@ class QuizStore:
             self._conn.execute(
                 """UPDATE quiz_sessions
                    SET asked_question_ids_json = ?, asked_chunk_contents_json = ?
-                   WHERE id = ?""",
+                   WHERE id = ? AND service = ?""",
                 (
                     json.dumps(session.asked_question_ids),
                     json.dumps(session.asked_chunk_contents),
                     session_id,
+                    service,
                 ),
             )
             self._conn.commit()
@@ -178,24 +240,24 @@ def _get_store() -> QuizStore:
     return _store
 
 
-def store_question(question: Question) -> None:
-    _get_store().store_question(question)
+def store_question(question: Question, service: str = "actas") -> None:
+    _get_store().store_question(question, service=service)
 
 
-def get_question(question_id: str) -> Question | None:
-    return _get_store().get_question(question_id)
+def get_question(question_id: str, service: str = "actas") -> Question | None:
+    return _get_store().get_question(question_id, service=service)
 
 
-def store_session(session_id: str, config: SessionConfig) -> None:
-    _get_store().store_session(session_id, config)
+def store_session(session_id: str, config: SessionConfig, service: str = "actas") -> None:
+    _get_store().store_session(session_id, config, service=service)
 
 
-def get_session(session_id: str) -> SessionConfig | None:
-    return _get_store().get_session(session_id)
+def get_session(session_id: str, service: str = "actas") -> SessionConfig | None:
+    return _get_store().get_session(session_id, service=service)
 
 
-def record_asked(session_id: str, question: Question) -> None:
-    _get_store().record_asked(session_id, question)
+def record_asked(session_id: str, question: Question, service: str = "actas") -> None:
+    _get_store().record_asked(session_id, question, service=service)
 
 
 def clear_all() -> None:
