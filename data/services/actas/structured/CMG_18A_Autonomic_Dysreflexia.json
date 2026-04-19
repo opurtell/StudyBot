@@ -23,6 +23,9 @@
             "amount": "150",
             "unit": "mcg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -41,21 +44,33 @@
             "unit": "mcg"
           }
         ],
-        "source": "app-glyceryl-trinitrate-anginine-or-nitrolingual-pumpspray"
+        "source": "app-glyceryl-trinitrate-anginine-or-nitrolingual-pumpspray",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Gtn": [
       {
         "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Respiratory rate: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -71,5 +86,8 @@
   "guideline_id": "CMG_18",
   "extra": {
     "cmg_number": "18A"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

@@ -27,6 +27,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -48,6 +51,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -69,6 +75,9 @@
             "amount": "11",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -90,6 +99,9 @@
             "amount": "13",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -111,6 +123,9 @@
             "amount": "15",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -132,6 +147,9 @@
             "amount": "17",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -153,6 +171,9 @@
             "amount": "19",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -174,6 +195,9 @@
             "amount": "21",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -195,6 +219,9 @@
             "amount": "23",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -216,6 +243,9 @@
             "amount": "25",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -237,6 +267,9 @@
             "amount": "27",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -258,6 +291,9 @@
             "amount": "30",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -279,6 +315,9 @@
             "amount": "33",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -300,6 +339,9 @@
             "amount": "35",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -321,6 +363,9 @@
             "amount": "40",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -342,6 +387,9 @@
             "amount": "45",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -363,6 +411,9 @@
             "amount": "50",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -384,6 +435,9 @@
             "amount": "60",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -405,6 +459,9 @@
             "amount": "70",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -426,6 +483,9 @@
             "amount": "80",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -447,6 +507,9 @@
             "amount": "90",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -468,6 +531,9 @@
             "amount": "100",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -489,6 +555,9 @@
             "amount": "110",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -510,6 +579,9 @@
             "amount": "120",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -519,6 +591,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -528,6 +603,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -541,6 +619,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -550,6 +631,9 @@
             "amount": "50",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -563,6 +647,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -593,7 +680,10 @@
             "unit": "mMol"
           }
         ],
-        "source": "app-sodium-bicarbonate"
+        "source": "app-sodium-bicarbonate",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Calcium Chloride": [
@@ -625,7 +715,10 @@
             "unit": "g"
           }
         ],
-        "source": "app-calcium-chloride"
+        "source": "app-calcium-chloride",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Salbutamol": [
@@ -637,7 +730,10 @@
             "unit": "mcg"
           }
         ],
-        "source": "app-salbutamol-ventolin"
+        "source": "app-salbutamol-ventolin",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -653,5 +749,8 @@
   "guideline_id": "CMG_27",
   "extra": {
     "cmg_number": "27"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

@@ -15,6 +15,9 @@
             "amount": "20",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -28,6 +31,9 @@
             "amount": "30",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -41,6 +47,9 @@
             "amount": "100",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -54,6 +63,9 @@
             "amount": "140",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -67,6 +79,9 @@
             "amount": "220",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -80,6 +95,9 @@
             "amount": "260",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -93,6 +111,9 @@
             "amount": "300",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -106,6 +127,9 @@
             "amount": "340",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -119,6 +143,9 @@
             "amount": "380",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -132,6 +159,9 @@
             "amount": "420",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -145,6 +175,9 @@
             "amount": "460",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -158,6 +191,9 @@
             "amount": "500",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -171,6 +207,9 @@
             "amount": "540",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -184,6 +223,9 @@
             "amount": "600",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -193,6 +235,9 @@
             "amount": "660",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -202,6 +247,9 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -211,6 +259,9 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -220,6 +271,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -237,6 +291,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -258,6 +315,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -275,6 +335,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -292,6 +355,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -313,6 +379,9 @@
             "amount": "80",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -330,6 +399,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -343,6 +415,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -360,6 +435,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -381,6 +459,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -390,6 +471,9 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -399,11 +483,17 @@
             "amount": "18",
             "unit": "G"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
@@ -416,6 +506,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -425,6 +518,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -467,7 +563,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-normal-saline"
+        "source": "app-normal-saline",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Adrenaline": [
@@ -506,6 +605,9 @@
             "amount": "0.6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -527,6 +629,9 @@
             "amount": "0.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -548,6 +653,9 @@
             "amount": "0.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -561,6 +669,9 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -582,6 +693,9 @@
             "amount": "1.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -599,6 +713,9 @@
             "amount": "0.15",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -620,6 +737,9 @@
             "amount": "1.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -641,6 +761,9 @@
             "amount": "1.9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -662,6 +785,9 @@
             "amount": "2.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -683,6 +809,9 @@
             "amount": "2.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -704,6 +833,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -725,6 +857,9 @@
             "amount": "2.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -746,6 +881,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -767,6 +905,9 @@
             "amount": "3.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -788,6 +929,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -809,6 +953,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -830,6 +977,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -851,6 +1001,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -872,6 +1025,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -889,6 +1045,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -910,6 +1069,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -931,6 +1093,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -952,6 +1117,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -973,6 +1141,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -994,6 +1165,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1003,6 +1177,9 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1012,6 +1189,9 @@
             "amount": "0.01",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1021,6 +1201,9 @@
             "amount": "0.5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1038,6 +1221,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1055,11 +1241,17 @@
             "amount": "500",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Adult (≥40kg) Adrenaline infusion (infusion pump)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (3mg) 1:1000 adrenaline to make 3mg/50mL",
@@ -1088,6 +1280,9 @@
             "amount": "50",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1125,6 +1320,9 @@
             "amount": "0.8",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1154,6 +1352,9 @@
             "amount": "50",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1191,6 +1392,9 @@
             "amount": "0.8",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1220,6 +1424,9 @@
             "amount": "50",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1229,6 +1436,9 @@
             "amount": "0.01",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1238,6 +1448,9 @@
             "amount": "0.01",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1247,6 +1460,9 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1256,11 +1472,17 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "No more than 3 doses of adrenaline.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 0.01mg/kg",
@@ -1269,6 +1491,9 @@
             "amount": "0.01",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1278,6 +1503,9 @@
             "amount": "0.02",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1287,6 +1515,9 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1296,19 +1527,31 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": " Adrenaline infusion to maintain sBP of ≥ 90mmHg ICP.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " Consider adrenaline infusion if sBP < 90mmHg with clinical signs of shock, refractory to fluids.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " Adrenaline infusion if sBP < 90mmHg with clinical signs of shock. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "200mg tablet  100mg/5ml liquid ",
@@ -1325,6 +1568,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1334,6 +1580,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1347,6 +1596,9 @@
             "amount": "500",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1360,6 +1612,9 @@
             "amount": "27.8",
             "unit": "mmol"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1414,7 +1669,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-adrenaline"
+        "source": "app-adrenaline",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "#### Indications\n- Patients requiring an adrenaline infusion.\n\n#### Procedure\n\n- Medication checks are to be done by two officers prior to administration.\n\n- Adhere to all aseptic techniques.\n\n- Inject **1mg of adrenaline into a 500ml** bag of saline via the access port.\n\n- Fill out and attach an additive label to the fluid bag.\n\n- Connect a giving set or a burette to the fluid bag. \n- **If you are using a giving set:** ensure the gate clamps are turned off prior to inserting into the fluid bag.\n- **If you are using a burette:** connect a giving set to the bottom of the burette and ensure all gate clamps are turned off prior to inserting into the fluid bag. Now open the ventilation port then the gate clamp and fill the burette to the 100ml mark. Open the gate clamp and prime the line and then refill the burette to the 100ml mark.\n\n- Connect the giving set to the patient and commence infusion. \n- 20 drops/minute = 1ml per minute or 2 mcg/minute\n- Titrate for a response.\n\n- Reassess respiratory and perfusion status.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Specific Notes\n- Ensure that all of the delivery lines are primed with adrenaline. Failure to do this will result in a in a significant delay in the patient receiving adrenaline.\n- If the adrenaline infusion is running through an IO line, you may require a pump set rather than a giving set to overcome increased intra medullar pressure.",
@@ -1444,7 +1702,10 @@
             "unit": "mcg"
           }
         ],
-        "source": "app-adrenaline-infusion"
+        "source": "app-adrenaline-infusion",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Amiodarone": [
@@ -1467,6 +1728,9 @@
             "amount": "0.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1488,6 +1752,9 @@
             "amount": "0.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1509,6 +1776,9 @@
             "amount": "1.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1530,6 +1800,9 @@
             "amount": "1.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1551,6 +1824,9 @@
             "amount": "1.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1572,6 +1848,9 @@
             "amount": "1.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1593,6 +1872,9 @@
             "amount": "1.9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1614,6 +1896,9 @@
             "amount": "2.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1635,6 +1920,9 @@
             "amount": "2.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1656,6 +1944,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1677,6 +1968,9 @@
             "amount": "2.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1698,6 +1992,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1719,6 +2016,9 @@
             "amount": "3.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1740,6 +2040,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1761,6 +2064,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1802,6 +2108,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1823,6 +2132,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1844,6 +2156,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1865,6 +2180,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1886,6 +2204,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1907,6 +2228,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1928,6 +2252,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1945,6 +2272,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1966,6 +2296,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1979,6 +2312,9 @@
             "amount": "150",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1988,6 +2324,9 @@
             "amount": "300",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2001,6 +2340,9 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2055,7 +2397,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-amiodarone-cordarone"
+        "source": "app-amiodarone-cordarone",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Magnesium": [
@@ -2078,6 +2423,9 @@
             "amount": "0.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2103,6 +2451,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2124,6 +2475,9 @@
             "amount": "1.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2145,6 +2499,9 @@
             "amount": "1.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2166,6 +2523,9 @@
             "amount": "1.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2187,6 +2547,9 @@
             "amount": "1.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2208,6 +2571,9 @@
             "amount": "1.9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2229,6 +2595,9 @@
             "amount": "2.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2250,6 +2619,9 @@
             "amount": "2.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2271,6 +2643,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2292,6 +2667,9 @@
             "amount": "2.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2313,6 +2691,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2334,6 +2715,9 @@
             "amount": "3.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2355,6 +2739,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2376,6 +2763,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2397,6 +2787,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2418,6 +2811,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2439,6 +2835,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2460,6 +2859,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2481,6 +2883,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2502,6 +2907,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2523,6 +2931,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2544,6 +2955,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2553,6 +2967,9 @@
             "amount": "50",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2566,6 +2983,9 @@
             "amount": "000",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2579,11 +2999,17 @@
             "amount": "1",
             "unit": "g"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
@@ -2596,6 +3022,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2605,6 +3034,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2614,6 +3046,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2688,7 +3123,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-magnesium-sulphate"
+        "source": "app-magnesium-sulphate",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Sodium Bicarbonate": [
@@ -2711,6 +3149,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2732,6 +3173,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2753,6 +3197,9 @@
             "amount": "11",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2774,6 +3221,9 @@
             "amount": "13",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2795,6 +3245,9 @@
             "amount": "15",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2816,6 +3269,9 @@
             "amount": "17",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2837,6 +3293,9 @@
             "amount": "19",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2858,6 +3317,9 @@
             "amount": "21",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2879,6 +3341,9 @@
             "amount": "23",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2900,6 +3365,9 @@
             "amount": "25",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2921,6 +3389,9 @@
             "amount": "27",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2942,6 +3413,9 @@
             "amount": "30",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2963,6 +3437,9 @@
             "amount": "33",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2984,6 +3461,9 @@
             "amount": "35",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3005,6 +3485,9 @@
             "amount": "40",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3026,6 +3509,9 @@
             "amount": "45",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3047,6 +3533,9 @@
             "amount": "50",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3068,6 +3557,9 @@
             "amount": "60",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3089,6 +3581,9 @@
             "amount": "70",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3110,6 +3605,9 @@
             "amount": "80",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3131,6 +3629,9 @@
             "amount": "90",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3152,6 +3653,9 @@
             "amount": "100",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3173,6 +3677,9 @@
             "amount": "110",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3194,6 +3701,9 @@
             "amount": "120",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3203,6 +3713,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3212,6 +3725,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3225,6 +3741,9 @@
             "amount": "1",
             "unit": "mMol"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3234,6 +3753,9 @@
             "amount": "50",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3247,6 +3769,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -3277,21 +3802,33 @@
             "unit": "mMol"
           }
         ],
-        "source": "app-sodium-bicarbonate"
+        "source": "app-sodium-bicarbonate",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Oxygen": [
       {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "1ml Luer lock syringe",
@@ -3300,19 +3837,31 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Pre-oxygenation for at least 3 mins",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
@@ -3325,51 +3874,87 @@
             "amount": "250",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": " High flow oxygen (aim for >94% SpO",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 100% oxygen with PEEP.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " consider oxygen (aim for >94% SpO",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Add 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Notify hospital and urgent transport (100% oxygen).",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Give 100% oxygen and attempt IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "200mg tablet  100mg/5ml liquid ",
@@ -3386,39 +3971,66 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
@@ -3447,6 +4059,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -3456,15 +4071,24 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "< 5ml",
@@ -3473,51 +4097,87 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Select oxygen flow rate of 8 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Select oxygen flow rate of >10 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "High flow, high concentration mask; consider 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen; IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 seconds (see ",
@@ -3530,21 +4190,33 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Treat with 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
         "dose_values": [],
-        "source": "app-oxygen"
+        "source": "app-oxygen",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
         "dose_values": [],
-        "source": "app-oxygen-administration"
+        "source": "app-oxygen-administration",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -3560,5 +4232,8 @@
   "guideline_id": "CMG_5",
   "extra": {
     "cmg_number": "5"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

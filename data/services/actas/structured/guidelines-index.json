@@ -1523,5 +1523,8 @@
     }
   ],
   "service": "actas",
-  "guideline_id": "guidelines-index"
+  "guideline_id": "guidelines-index",
+  "qualifications_required": [
+    "AP"
+  ]
 }

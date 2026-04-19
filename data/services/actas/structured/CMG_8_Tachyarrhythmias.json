@@ -27,6 +27,9 @@
             "amount": "0.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -48,6 +51,9 @@
             "amount": "0.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -69,6 +75,9 @@
             "amount": "1.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -90,6 +99,9 @@
             "amount": "1.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -111,6 +123,9 @@
             "amount": "1.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -132,6 +147,9 @@
             "amount": "1.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -153,6 +171,9 @@
             "amount": "1.9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -174,6 +195,9 @@
             "amount": "2.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -195,6 +219,9 @@
             "amount": "2.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -216,6 +243,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -237,6 +267,9 @@
             "amount": "2.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -258,6 +291,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -279,6 +315,9 @@
             "amount": "3.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -300,6 +339,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -321,6 +363,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -362,6 +407,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -383,6 +431,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -404,6 +455,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -425,6 +479,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -446,6 +503,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -467,6 +527,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -488,6 +551,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -505,6 +571,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -526,6 +595,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -539,6 +611,9 @@
             "amount": "150",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -548,6 +623,9 @@
             "amount": "300",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -561,6 +639,9 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -615,7 +696,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-amiodarone-cordarone"
+        "source": "app-amiodarone-cordarone",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Magnesium": [
@@ -638,6 +722,9 @@
             "amount": "0.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -663,6 +750,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -684,6 +774,9 @@
             "amount": "1.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -705,6 +798,9 @@
             "amount": "1.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -726,6 +822,9 @@
             "amount": "1.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -747,6 +846,9 @@
             "amount": "1.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -768,6 +870,9 @@
             "amount": "1.9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -789,6 +894,9 @@
             "amount": "2.1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -810,6 +918,9 @@
             "amount": "2.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -831,6 +942,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -852,6 +966,9 @@
             "amount": "2.7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -873,6 +990,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -894,6 +1014,9 @@
             "amount": "3.3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -915,6 +1038,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -936,6 +1062,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -957,6 +1086,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -978,6 +1110,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -999,6 +1134,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1020,6 +1158,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1041,6 +1182,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1062,6 +1206,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1083,6 +1230,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1104,6 +1254,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1113,6 +1266,9 @@
             "amount": "50",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1126,6 +1282,9 @@
             "amount": "000",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1139,11 +1298,17 @@
             "amount": "1",
             "unit": "g"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
@@ -1156,6 +1321,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1165,6 +1333,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1174,6 +1345,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1248,13 +1422,19 @@
             "unit": "mg"
           }
         ],
-        "source": "app-magnesium-sulphate"
+        "source": "app-magnesium-sulphate",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Adenosine": [
       {
         "text": "Record a 12 lead ECG prior to use of adenosine.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "ICP"
+        ]
       },
       {
         "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
@@ -1263,6 +1443,9 @@
             "amount": "1.5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1297,7 +1480,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-adenosine-adenocor"
+        "source": "app-adenosine-adenocor",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Lignocaine": [
@@ -1312,6 +1498,9 @@
             "amount": "3.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1333,6 +1522,9 @@
             "amount": "80",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1350,6 +1542,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -1363,11 +1558,17 @@
             "amount": "40",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
         "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "ICP"
+        ]
       },
       {
         "text": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Local anaesthesia##### Adult and Paediatric\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output##### Adult and Paediatric\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient##### Adult\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine##### Paediatric\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n#### Solvent for IM Ceftriaxone\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
@@ -1417,7 +1618,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-lignocaine"
+        "source": "app-lignocaine",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ]
   },
@@ -1433,5 +1637,8 @@
   "guideline_id": "CMG_8",
   "extra": {
     "cmg_number": "8"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

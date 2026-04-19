@@ -19,6 +19,9 @@
             "amount": "5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -40,6 +43,9 @@
             "amount": "60",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -81,6 +87,9 @@
             "amount": "1.75",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -118,6 +127,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -159,6 +171,9 @@
             "amount": "2.25",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -200,6 +215,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -241,6 +259,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -282,6 +303,9 @@
             "amount": "3.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -323,6 +347,9 @@
             "amount": "4",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -364,6 +391,9 @@
             "amount": "4.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -405,6 +435,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -446,6 +479,9 @@
             "amount": "5.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -487,6 +523,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -528,6 +567,9 @@
             "amount": "30",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -537,6 +579,9 @@
             "amount": "4",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -546,11 +591,17 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
@@ -559,6 +610,9 @@
             "amount": "1.5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -572,6 +626,9 @@
             "amount": "10",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -613,6 +670,9 @@
             "amount": "30",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -735,7 +795,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-midazolam"
+        "source": "app-midazolam",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Ketamine": [
@@ -762,6 +825,9 @@
             "amount": "3.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -787,6 +853,9 @@
             "amount": "4",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -812,6 +881,9 @@
             "amount": "4.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -837,6 +909,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -862,6 +937,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -887,6 +965,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -912,6 +993,9 @@
             "amount": "8",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -937,6 +1021,9 @@
             "amount": "9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -962,6 +1049,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -987,6 +1077,9 @@
             "amount": "11",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1012,6 +1105,9 @@
             "amount": "12",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1041,11 +1137,17 @@
             "amount": "40",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
@@ -1066,6 +1168,9 @@
             "amount": "10",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1075,6 +1180,9 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1084,6 +1192,9 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1093,6 +1204,9 @@
             "amount": "2",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1102,6 +1216,9 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1236,21 +1353,33 @@
             "unit": "mg"
           }
         ],
-        "source": "app-ketamine-hydrochloride-ketalar"
+        "source": "app-ketamine-hydrochloride-ketalar",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Oxygen": [
       {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "1ml Luer lock syringe",
@@ -1259,19 +1388,31 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Pre-oxygenation for at least 3 mins",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
@@ -1284,51 +1425,87 @@
             "amount": "250",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": " High flow oxygen (aim for >94% SpO",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 100% oxygen with PEEP.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " consider oxygen (aim for >94% SpO",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Add 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Notify hospital and urgent transport (100% oxygen).",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Give 100% oxygen and attempt IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "200mg tablet  100mg/5ml liquid ",
@@ -1345,39 +1522,66 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
@@ -1406,6 +1610,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1415,15 +1622,24 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "< 5ml",
@@ -1432,51 +1648,87 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Select oxygen flow rate of 8 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Select oxygen flow rate of >10 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "High flow, high concentration mask; consider 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen; IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 seconds (see ",
@@ -1489,21 +1741,33 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Treat with 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
         "dose_values": [],
-        "source": "app-oxygen"
+        "source": "app-oxygen",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
         "dose_values": [],
-        "source": "app-oxygen-administration"
+        "source": "app-oxygen-administration",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -1519,5 +1783,8 @@
   "guideline_id": "CMG_37",
   "extra": {
     "cmg_number": "37"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

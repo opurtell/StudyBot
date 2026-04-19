@@ -15,6 +15,9 @@
             "amount": "20",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -28,6 +31,9 @@
             "amount": "30",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -41,6 +47,9 @@
             "amount": "100",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -54,6 +63,9 @@
             "amount": "140",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -67,6 +79,9 @@
             "amount": "220",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -80,6 +95,9 @@
             "amount": "260",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -93,6 +111,9 @@
             "amount": "300",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -106,6 +127,9 @@
             "amount": "340",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -119,6 +143,9 @@
             "amount": "380",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -132,6 +159,9 @@
             "amount": "420",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -145,6 +175,9 @@
             "amount": "460",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -158,6 +191,9 @@
             "amount": "500",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -171,6 +207,9 @@
             "amount": "540",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -184,6 +223,9 @@
             "amount": "600",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -193,6 +235,9 @@
             "amount": "660",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -202,6 +247,9 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -211,6 +259,9 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -220,6 +271,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -237,6 +291,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -258,6 +315,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -275,6 +335,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -292,6 +355,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -313,6 +379,9 @@
             "amount": "80",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -330,6 +399,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -343,6 +415,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -360,6 +435,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -381,6 +459,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -390,6 +471,9 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -399,11 +483,17 @@
             "amount": "18",
             "unit": "G"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
@@ -416,6 +506,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -425,6 +518,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -467,7 +563,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-normal-saline"
+        "source": "app-normal-saline",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Morphine": [
@@ -482,6 +581,9 @@
             "amount": "5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -503,6 +605,9 @@
             "amount": "60",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -516,6 +621,9 @@
             "amount": "10",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -525,6 +633,9 @@
             "amount": "20",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -534,6 +645,9 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -543,6 +657,9 @@
             "amount": "0.025",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -584,11 +701,17 @@
             "amount": "30",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Morphine: IM (Max 2 Doses)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Morphine: IV (To a total of 20mg)",
@@ -597,6 +720,9 @@
             "amount": "20",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -606,6 +732,9 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -647,6 +776,9 @@
             "amount": "30",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -656,6 +788,9 @@
             "amount": "60",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -665,6 +800,9 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -783,7 +921,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-morphine-sulphate"
+        "source": "app-morphine-sulphate",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Midazolam": [
@@ -798,6 +939,9 @@
             "amount": "5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -819,6 +963,9 @@
             "amount": "60",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -860,6 +1007,9 @@
             "amount": "1.75",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -897,6 +1047,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -938,6 +1091,9 @@
             "amount": "2.25",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -979,6 +1135,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1020,6 +1179,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1061,6 +1223,9 @@
             "amount": "3.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1102,6 +1267,9 @@
             "amount": "4",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1143,6 +1311,9 @@
             "amount": "4.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1184,6 +1355,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1225,6 +1399,9 @@
             "amount": "5.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1266,6 +1443,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1307,6 +1487,9 @@
             "amount": "30",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1316,6 +1499,9 @@
             "amount": "4",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1325,11 +1511,17 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
@@ -1338,6 +1530,9 @@
             "amount": "1.5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1351,6 +1546,9 @@
             "amount": "10",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1392,6 +1590,9 @@
             "amount": "30",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1514,7 +1715,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-midazolam"
+        "source": "app-midazolam",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Ketamine": [
@@ -1541,6 +1745,9 @@
             "amount": "3.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1566,6 +1773,9 @@
             "amount": "4",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1591,6 +1801,9 @@
             "amount": "4.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1616,6 +1829,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1641,6 +1857,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1666,6 +1885,9 @@
             "amount": "7",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1691,6 +1913,9 @@
             "amount": "8",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1716,6 +1941,9 @@
             "amount": "9",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1741,6 +1969,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1766,6 +1997,9 @@
             "amount": "11",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1791,6 +2025,9 @@
             "amount": "12",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1820,11 +2057,17 @@
             "amount": "40",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
@@ -1845,6 +2088,9 @@
             "amount": "10",
             "unit": "mL"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1854,6 +2100,9 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1863,6 +2112,9 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1872,6 +2124,9 @@
             "amount": "2",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -1881,6 +2136,9 @@
             "amount": "0.05",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2015,7 +2273,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-ketamine-hydrochloride-ketalar"
+        "source": "app-ketamine-hydrochloride-ketalar",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Suxamethonium": [
@@ -2058,6 +2319,9 @@
             "amount": "1.75",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2095,6 +2359,9 @@
             "amount": "2",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2136,6 +2403,9 @@
             "amount": "2.25",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2177,6 +2447,9 @@
             "amount": "2.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2218,6 +2491,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2259,6 +2535,9 @@
             "amount": "3.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2300,6 +2579,9 @@
             "amount": "4",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2341,6 +2623,9 @@
             "amount": "4.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2382,6 +2667,9 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2423,6 +2711,9 @@
             "amount": "5.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2464,6 +2755,9 @@
             "amount": "6",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2473,6 +2767,9 @@
             "amount": "1",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2482,6 +2779,9 @@
             "amount": "2",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2491,6 +2791,9 @@
             "amount": "1.5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2500,6 +2803,9 @@
             "amount": "1.5",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
@@ -2581,11 +2887,17 @@
             "amount": "150",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "ICP"
         ]
       },
       {
         "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "ICP"
+        ]
       },
       {
         "text": "##### Type\nDepolarising muscle relaxant [S4]\n\n- **High-risk medication**\n\n##### Presentations\n100mg in 2ml – plastic ampoule\n\n##### Actions\nActs like the neurotransmitter acetylcholine at the neuromuscular junction. Persists for a period long enough to exhaust the motor endplate by prolonged depolarisation.\n\nOnset IV: approx 45 seconds \n Duration IV: 5 – 7 minutes \n\n#### Uses\nTo facilitate airway management in selected patients \n\n#### Adverse Effects\n\n- Bradycardia\n\n- Potassium release\n\n- Increased intraocular and intragastric pressure\n\n- Occasionally, prolonged paralysis\n\n- Has been associated with malignant hyperthermia\n\n#### Contraindications\n\n- Previous reaction to suxamethonium\n\n- Suspected hyperkalaemia\n\n- Use in children\n\n#### Precautions\n\n- Elderly patient\n\n- Neuromuscular disease\n\n- Hypothermic patient\n\n- Fitting patient\n\n- Patient with reversible pathology\n\nSelect patients carefully – always have a fallback position!\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **ICP: **1.5mg/kg IV \n- Over 30 – 60 seconds\n- To a maximum of 150mg.\n\n##### Paediatric\nNot used.\n\n#### Suxamethonium 100mg in 2ml\n- Suxamethonium (applies to 100mg in 2ml): \n- 40kg = 60 mg (1.2 ml)\n- 50kg = 75 mg (1.5 ml)\n- 60kg = 90 mg (1.8 ml)\n- 70kg = 105 mg (2.1 ml)- 80kg = 120 mg (2.4 ml)- 90kg = 135 mg (2.7 ml)- 100kg = 150 mg (3 ml)- **Maximum dose 150 mg**\n#### Special Notes\n- To be used only following completion of the ACTAS designated training programme.\n- If heart rate less than 50/minute, consider atropine prior to suxamethonium.\n- Suxamethonium may cause bradycardia. If patient is bradycardic once ETT is tied in, consider a dose of atropine.\n- **Note:** bradycardia may be a result of a head injury and raised ICP – thus, BP will be elevated. In this case there is no requirement for atropine regardless of the degree of bradycardia.\n- Suxamethonium must be drawn up into a red barrelled syringe.",
@@ -2683,21 +2995,33 @@
             "unit": "mg"
           }
         ],
-        "source": "app-suxamethonium"
+        "source": "app-suxamethonium",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Oxygen": [
       {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "1ml Luer lock syringe",
@@ -2706,19 +3030,31 @@
             "amount": "1",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Pre-oxygenation for at least 3 mins",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
@@ -2731,51 +3067,87 @@
             "amount": "250",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": " High flow oxygen (aim for >94% SpO",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 100% oxygen with PEEP.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " consider oxygen (aim for >94% SpO",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Add 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Notify hospital and urgent transport (100% oxygen).",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Give 100% oxygen and attempt IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "200mg tablet  100mg/5ml liquid ",
@@ -2792,39 +3164,66 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
@@ -2853,6 +3252,9 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -2862,15 +3264,24 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "< 5ml",
@@ -2879,51 +3290,87 @@
             "amount": "5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Select oxygen flow rate of 8 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Select oxygen flow rate of >10 Lpm.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "High flow, high concentration mask; consider 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "100% oxygen; IPPV.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 seconds (see ",
@@ -2936,31 +3383,49 @@
             "amount": "10",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Treat with 100% oxygen.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
         "dose_values": [],
-        "source": "app-oxygen"
+        "source": "app-oxygen",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
         "dose_values": [],
-        "source": "app-oxygen-administration"
+        "source": "app-oxygen-administration",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Atropine": [
       {
         "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
@@ -3038,7 +3503,10 @@
             "unit": "mcg"
           }
         ],
-        "source": "app-atropine-sulphate"
+        "source": "app-atropine-sulphate",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -3054,5 +3522,8 @@
   "guideline_id": "CMG_3",
   "extra": {
     "cmg_number": "3A"
-  }
+  },
+  "qualifications_required": [
+    "ICP"
+  ]
 }

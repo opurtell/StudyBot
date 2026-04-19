@@ -10,7 +10,10 @@
     "Ibuprofen": [
       {
         "text": "Previous ibuprofen administration within 4 hours",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Tablets: 20-40kg: 200mg PO (liquid): Ibuprofen 100mg/5ml  3-6 months (6-8 kg): 3 - 4ml 6-12 months (8-10 kg): 4 - 5ml 1-3 years (10-14 kg): 5 - 7ml 3-5 years (14-18 kg): 7 - 9ml 5-7 years (18-22 kg): 9 - 11ml 7-9 years (22-28 kg): 11 - 14ml 9-12 years (28-40 kg): 14 - 20ml",
@@ -55,6 +58,9 @@
             "amount": "20",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -68,6 +74,9 @@
             "amount": "15",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -134,13 +143,19 @@
             "unit": "ml"
           }
         ],
-        "source": "app-ibuprofen"
+        "source": "app-ibuprofen",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ],
     "Paracetamol": [
       {
         "text": "Previous paracetamol dose in last 4 hours (oral doses only) Previous paracetamol dose in last 6 hours (IV doses only)",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Do not exceed 60mg/kg/24hours. Children aged 10-12 may take a 500mg tablet if preferred.",
@@ -153,6 +168,9 @@
             "amount": "500",
             "unit": "mg"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -175,7 +193,10 @@
             "unit": "mg"
           }
         ],
-        "source": "app-paracetamol"
+        "source": "app-paracetamol",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -191,5 +212,8 @@
   "guideline_id": "CMG_44",
   "extra": {
     "cmg_number": "44"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

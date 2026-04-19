@@ -19,5 +19,8 @@
   "guideline_id": "CMG_42",
   "extra": {
     "cmg_number": "42"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

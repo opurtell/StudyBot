@@ -15,6 +15,9 @@
             "amount": "3",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -37,7 +40,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-methoxyflurane"
+        "source": "app-methoxyflurane",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "#### Indications\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
@@ -47,7 +53,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-methoxyflurane-administration"
+        "source": "app-methoxyflurane-administration",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -63,5 +72,8 @@
   "guideline_id": "CMG_26",
   "extra": {
     "cmg_number": "26A"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

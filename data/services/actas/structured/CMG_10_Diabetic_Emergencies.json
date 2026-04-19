@@ -31,11 +31,17 @@
             "amount": "7.5",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Glucose 10%",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "BGL < 4 mmol/L",
@@ -44,11 +50,17 @@
             "amount": "4",
             "unit": "mmol"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Glucose 10% IV (repeat once if required).",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
@@ -57,6 +69,9 @@
             "amount": "4",
             "unit": "mmol"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -66,6 +81,9 @@
             "amount": "0.1",
             "unit": "g"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -75,6 +93,9 @@
             "amount": "250",
             "unit": "ml"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -84,11 +105,17 @@
             "amount": "4",
             "unit": "mmol"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
         "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
-        "dose_values": []
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "37.5g tube containing 15g glucose",
@@ -101,6 +128,9 @@
             "amount": "15",
             "unit": "g"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -110,6 +140,9 @@
             "amount": "4",
             "unit": "mmol"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -127,6 +160,9 @@
             "amount": "30",
             "unit": "g"
           }
+        ],
+        "qualifications_required": [
+          "AP"
         ]
       },
       {
@@ -141,7 +177,10 @@
             "unit": "ml"
           }
         ],
-        "source": "app-glucose-ten-pct"
+        "source": "app-glucose-ten-pct",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
@@ -155,7 +194,10 @@
             "unit": "g"
           }
         ],
-        "source": "app-oral-glucose-gel"
+        "source": "app-oral-glucose-gel",
+        "qualifications_required": [
+          "AP"
+        ]
       },
       {
         "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
@@ -165,7 +207,10 @@
             "unit": "mmol"
           }
         ],
-        "source": "app-blood-glucose-measurement"
+        "source": "app-blood-glucose-measurement",
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
@@ -181,5 +226,8 @@
   "guideline_id": "CMG_10",
   "extra": {
     "cmg_number": "10"
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

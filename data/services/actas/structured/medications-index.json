@@ -353,5 +353,8 @@
     }
   ],
   "service": "actas",
-  "guideline_id": "medications-index"
+  "guideline_id": "medications-index",
+  "qualifications_required": [
+    "AP"
+  ]
 }
