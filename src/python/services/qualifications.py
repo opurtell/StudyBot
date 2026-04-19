@@ -9,6 +9,10 @@ def _closure(base_id: str, service: Service) -> frozenset[str]:
     while stack:
         cur = stack.pop()
         for implied in bases_by_id[cur].implies:
+            if implied not in bases_by_id:
+                raise ValueError(
+                    f"Base {cur!r} implies unknown qualification {implied!r} in service {service.id}"
+                )
             if implied not in seen:
                 seen.add(implied)
                 stack.append(implied)
