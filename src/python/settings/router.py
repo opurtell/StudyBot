@@ -14,7 +14,7 @@ from llm.factory import load_config
 from llm.models import load_model_registry, save_model_registry
 from guidelines.router import invalidate_guideline_cache
 from medication.router import invalidate_medication_cache
-from pipeline.cmg.refresh import load_refresh_status, start_refresh_in_background
+from pipeline.actas.refresh import load_refresh_status, start_refresh_in_background
 from paths import CHROMA_DB_DIR, SETTINGS_PATH as _SETTINGS_PATH
 from paths import resolve_cmg_structured_dir
 from seed import get_seed_status as _get_seed_status
@@ -180,7 +180,7 @@ def get_cmg_manifest() -> dict:
 def _run_cmg_rebuild_in_background() -> None:
     global _rebuild_status
     try:
-        from pipeline.cmg.chunker import chunk_and_ingest
+        from pipeline.actas.chunker import chunk_and_ingest
         chunk_and_ingest(structured_dir=str(resolve_cmg_structured_dir()))
         with _rebuild_lock:
             _rebuild_status = {

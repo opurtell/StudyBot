@@ -5,7 +5,7 @@ from unittest.mock import patch, MagicMock
 
 
 def test_discover_metadata_extracts_titles_and_versions(tmp_path):
-    from pipeline.cmg.discover_metadata import discover_metadata
+    from pipeline.actas.discover_metadata import discover_metadata
 
     mock_item_0 = MagicMock()
     mock_item_0.inner_text.return_value = "Pain Management\n22/03/2024 Version 1.0.2.1"
@@ -29,8 +29,8 @@ def test_discover_metadata_extracts_titles_and_versions(tmp_path):
     mock_playwright = MagicMock()
     mock_playwright.return_value.__enter__.return_value = mock_pw_instance
 
-    with patch("pipeline.cmg.discover_metadata.sync_playwright", mock_playwright):
-        with patch("pipeline.cmg.discover_metadata._dismiss_modals"):
+    with patch("pipeline.actas.discover_metadata.sync_playwright", mock_playwright):
+        with patch("pipeline.actas.discover_metadata._dismiss_modals"):
             result = discover_metadata(output_dir=str(tmp_path))
 
     assert "guidelines" in result
@@ -40,7 +40,7 @@ def test_discover_metadata_extracts_titles_and_versions(tmp_path):
 
 
 def test_discover_metadata_compares_against_existing(tmp_path):
-    from pipeline.cmg.discover_metadata import discover_metadata
+    from pipeline.actas.discover_metadata import discover_metadata
 
     structured_dir = tmp_path / "structured"
     structured_dir.mkdir()
@@ -72,8 +72,8 @@ def test_discover_metadata_compares_against_existing(tmp_path):
     mock_playwright = MagicMock()
     mock_playwright.return_value.__enter__.return_value = mock_pw_instance
 
-    with patch("pipeline.cmg.discover_metadata.sync_playwright", mock_playwright):
-        with patch("pipeline.cmg.discover_metadata._dismiss_modals"):
+    with patch("pipeline.actas.discover_metadata.sync_playwright", mock_playwright):
+        with patch("pipeline.actas.discover_metadata._dismiss_modals"):
             result = discover_metadata(
                 output_dir=str(tmp_path),
                 structured_dir=str(structured_dir),

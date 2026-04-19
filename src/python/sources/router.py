@@ -14,7 +14,7 @@ from paths import (
     RAW_NOTES_DIR,
     REFDOCS_DIR,
 )
-from pipeline.cmg.refresh import load_refresh_status
+from pipeline.actas.refresh import load_refresh_status
 
 router = APIRouter(prefix="/sources", tags=["sources"])
 

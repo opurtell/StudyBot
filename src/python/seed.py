@@ -116,7 +116,7 @@ def _cmg_collection_has_data() -> bool:
 
 
 def _seed_cmg_index() -> None:
-    from pipeline.cmg.chunker import chunk_and_ingest
+    from pipeline.actas.chunker import chunk_and_ingest
 
     structured_dir = str(resolve_cmg_structured_dir())
     logger.info(f"Auto-seeding CMG index from {structured_dir}")

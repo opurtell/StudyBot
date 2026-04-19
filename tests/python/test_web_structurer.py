@@ -4,7 +4,7 @@ import json
 
 
 def test_structure_crawled_guideline_parses_html(tmp_path):
-    from pipeline.cmg.web_structurer import structure_crawled_guideline
+    from pipeline.actas.web_structurer import structure_crawled_guideline
 
     crawled = {
         "cmg_title": "Pain Management",
@@ -33,7 +33,7 @@ def test_structure_crawled_guideline_parses_html(tmp_path):
 
 
 def test_structure_crawled_guideline_skips_on_missing_file(tmp_path):
-    from pipeline.cmg.web_structurer import structure_crawled_guideline
+    from pipeline.actas.web_structurer import structure_crawled_guideline
 
     result = structure_crawled_guideline(
         crawled_path=str(tmp_path / "nonexistent.json"),
