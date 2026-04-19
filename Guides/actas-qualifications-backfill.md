@@ -9,6 +9,17 @@ during the backfill. Please review and flag any errors in the **Status** column.
 
 ---
 
+## Sources Consulted
+
+Two sources were checked for ICP markers per the plan requirements:
+
+| Source | Location | Result |
+|--------|----------|--------|
+| Quiz agent ICP prompt markers | `src/python/quiz/agent.py` (line 39 — skill_level detection logic) | Used to derive the authoritative ICP-only drug list. The agent's `skill_level` prompt text explicitly separates AP/ICP scope, confirming the 8-drug list below. |
+| Structured JSON `profiles` / `scope` fields | `data/services/actas/structured/*.json` | Checked all 58 files. No file contains a `profiles` or `scope` field. ICP detection relies solely on `is_icp_only` (document level) and the drug list (medicine level). |
+
+---
+
 ## How the Backfill Works
 
 Two tagging rules are applied to every structured JSON in `data/services/actas/structured/`:
@@ -21,6 +32,8 @@ Two tagging rules are applied to every structured JSON in `data/services/actas/s
 | Medicine level | Medicine name is NOT in ICP drug list | `qualifications_required: ["AP"]` on every dose entry |
 
 The script is idempotent — re-running it produces no change once the data is already tagged.
+
+> **Note: `content_sections`-level tagging is deferred.** The `GuidelineDocument` schema (Task 3) supports per-section `qualifications_required`, but the current structured JSON files use a flat `content_markdown` string rather than structured `content_sections`. When content is later split into `ContentSection` objects, those sections will need their own `qualifications_required` backfill.
 
 ---
 
