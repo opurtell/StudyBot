@@ -139,7 +139,7 @@ def save_models(req: SaveModelsRequest) -> dict:
     return {"status": "ok"}
 
 
-@router.post("/pipeline/rerun")
+@router.post("/pipeline/rerun", response_model=None)
 def rerun_pipeline() -> dict | JSONResponse:
     service = active_service()
     try:
