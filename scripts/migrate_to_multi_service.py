@@ -91,6 +91,9 @@ def _migrate_cmg_files(repo_root: Path) -> None:
             doc = json.loads(dest_file.read_text(encoding="utf-8"))
             if doc.get("service") == _SERVICE:
                 log.debug("Skipping already-migrated %s.", json_file.name)
+                # Clean up orphaned source file from an interrupted previous run.
+                if json_file.exists():
+                    json_file.unlink()
                 continue
 
         doc = json.loads(json_file.read_text(encoding="utf-8"))

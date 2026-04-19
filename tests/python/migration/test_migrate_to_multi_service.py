@@ -242,7 +242,5 @@ def test_migration_no_skill_level_leaves_settings_unchanged(tmp_repo: Path) -> N
     run_migration(repo_root=tmp_repo)
 
     after = json.loads(settings_path.read_text(encoding="utf-8"))
-    assert "base_qualification" not in after or "skill_level" not in before
-    # base_qualification must NOT appear if it was not derived from skill_level
-    # (active_service is the only new key that must appear)
+    assert "base_qualification" not in after
     assert "skill_level" not in after
