@@ -587,6 +587,7 @@ Every module importing `CMG_STRUCTURED_DIR`, `USER_CMG_STRUCTURED_DIR`, or `reso
 - `src/python/medication/router.py`
 - `src/python/seed.py`
 - `src/python/settings/router.py` (including the "Re-run Pipeline" handler)
+- `src/python/sources/router.py`
 - `src/python/pipeline/cmg/chunker.py` (→ `pipeline/actas/chunker.py` after rename)
 - `src/python/pipeline/cmg/orchestrator.py`
 - `src/python/pipeline/cmg/web_structurer.py`
