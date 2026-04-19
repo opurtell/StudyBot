@@ -6,6 +6,7 @@ import { useSettings } from "../hooks/useSettings";
 import Card from "../components/Card";
 import AdaptiveText from "../components/AdaptiveText";
 import PageStateNotice from "../components/PageStateNotice";
+import { ServiceChip } from "../components/ServiceChip";
 import type { GuidelineSummary, GuidelineDetail } from "../types/api";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
@@ -128,6 +129,9 @@ export default function Guidelines() {
   return (
     <div>
       <div className="mb-8">
+        <div className="mb-2">
+          <ServiceChip />
+        </div>
         <span className="font-label text-label-sm text-on-surface-variant">
           Clinical Reference
         </span>

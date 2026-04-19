@@ -4,6 +4,7 @@ import CleaningFeed from "../components/CleaningFeed";
 import RepositoryFilter from "../components/RepositoryFilter";
 import Button from "../components/Button";
 import UploadDialog from "../components/UploadDialog";
+import { ServiceChip } from "../components/ServiceChip";
 import { useApi } from "../hooks/useApi";
 import type { LibraryStatusResponse } from "../types/api";
 
@@ -25,6 +26,9 @@ export default function Library() {
     <div>
       <div className="flex items-end justify-between mb-8">
         <div>
+          <div className="mb-2">
+            <ServiceChip />
+          </div>
           <span className="font-label text-label-sm text-on-surface-variant">
             Library
           </span>

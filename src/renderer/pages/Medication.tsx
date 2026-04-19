@@ -5,6 +5,7 @@ import type { MedicationDose } from "../types/api";
 import PageStateNotice from "../components/PageStateNotice";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
+import { ServiceChip } from "../components/ServiceChip";
 
 function Section({ label, text }: { label: string; text: string }) {
   return (
@@ -35,6 +36,9 @@ export default function Medication() {
   return (
     <div>
       <div className="mb-8">
+        <div className="mb-2">
+          <ServiceChip />
+        </div>
         <span className="font-label text-label-sm text-on-surface-variant">
           Pharmacological Reference
         </span>

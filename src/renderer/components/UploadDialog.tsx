@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import Modal from "./Modal";
 import Button from "./Button";
 import { useApi } from "../hooks/useApi";
+import { useService } from "../hooks/useService";
 import type { AcceptedFormatsResponse } from "../types/api";
 
 interface UploadDialogProps {
@@ -15,8 +16,19 @@ export default function UploadDialog({ isOpen, onClose, onUploaded }: UploadDial
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [dragOver, setDragOver] = useState(false);
+  const [scope, setScope] = useState<"service-specific" | "general">("service-specific");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { data: formats } = useApi<AcceptedFormatsResponse>("/upload/formats", 1);
+  const { services, activeService } = useService();
+  const [selectedServiceId, setSelectedServiceId] = useState<string>("");
+  const safeServices = Array.isArray(services) ? services : [];
+
+  // Pre-select active service when it becomes available
+  const initialisedRef = useRef(false);
+  if (!initialisedRef.current && activeService?.id) {
+    setSelectedServiceId(activeService.id);
+    initialisedRef.current = true;
+  }
 
   const acceptedExtensions = formats?.extensions ?? [".md", ".pdf", ".txt"];
   const acceptString = acceptedExtensions.join(",");
@@ -64,6 +76,10 @@ export default function UploadDialog({ isOpen, onClose, onUploaded }: UploadDial
     try {
       const formData = new FormData();
       formData.append("file", selectedFile);
+      if (selectedServiceId) {
+        formData.append("service_id", selectedServiceId);
+      }
+      formData.append("scope", scope);
 
       const response = await fetch("http://127.0.0.1:7777/upload", {
         method: "POST",
@@ -134,6 +150,39 @@ export default function UploadDialog({ isOpen, onClose, onUploaded }: UploadDial
             if (file) handleFileSelect(file);
           }}
         />
+      </div>
+
+      {/* Service and scope selectors */}
+      <div className="flex gap-4 mt-4">
+        <div className="flex-1">
+          <label className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest block mb-1">
+            Service
+          </label>
+          <select
+            value={selectedServiceId}
+            onChange={(e) => setSelectedServiceId(e.target.value)}
+            className="w-full bg-surface-container-lowest text-on-surface font-mono text-[11px] px-3 py-2"
+          >
+            {safeServices.map((svc) => (
+              <option key={svc.id} value={svc.id}>
+                {svc.display_name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="flex-1">
+          <label className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest block mb-1">
+            Scope
+          </label>
+          <select
+            value={scope}
+            onChange={(e) => setScope(e.target.value as "service-specific" | "general")}
+            className="w-full bg-surface-container-lowest text-on-surface font-mono text-[11px] px-3 py-2"
+          >
+            <option value="service-specific">Service-specific</option>
+            <option value="general">General</option>
+          </select>
+        </div>
       </div>
 
       {error && (

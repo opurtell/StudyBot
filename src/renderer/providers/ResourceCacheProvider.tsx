@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { recordCacheDiagnostic } from "../lib/devDiagnostics";
+import { useService } from "../hooks/useService";
 
 export interface ResourceSnapshot<T> {
   data: T | null;
@@ -150,7 +151,8 @@ function writePersistedEntries(entries: Map<string, ResourceSnapshot<unknown>>) 
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(persisted));
 }
 
-export function ResourceCacheProvider({ children }: { children: ReactNode }) {
+/** Inner cache store that manages raw entries without service namespacing. */
+export function ResourceCacheProviderInner({ children }: { children: ReactNode }) {
   const [, setVersion] = useState(0);
   const entriesRef = useRef(readPersistedEntries());
   const listenersRef = useRef(new Map<string, Set<() => void>>());
@@ -409,6 +411,62 @@ export function ResourceCacheProvider({ children }: { children: ReactNode }) {
   );
 
   return <ResourceCacheContext.Provider value={store}>{children}</ResourceCacheContext.Provider>;
+}
+
+/**
+ * Wrapper that reads the active service and provides a CacheStore that
+ * namespaces all keys with the service ID (`serviceId:originalKey`).
+ * When the active service changes, all keys change, naturally invalidating
+ * cached data from the previous service.
+ *
+ * Must be rendered inside both ResourceCacheProviderInner and ServiceProvider.
+ */
+export function ServiceNamespacedCache({ children }: { children: ReactNode }) {
+  const innerStore = useContext(ResourceCacheContext);
+  const { activeService } = useService();
+  const serviceId = activeService?.id ?? "__no_service__";
+
+  const namespacedStore = useMemo<CacheStore>(() => {
+    if (!innerStore) {
+      throw new Error("ServiceNamespacedCache must be used within ResourceCacheProviderInner");
+    }
+
+    const prefixKey = (key: string) => `${serviceId}:${key}`;
+
+    return {
+      getSnapshot: <T,>(key: string) => innerStore.getSnapshot<T>(prefixKey(key)),
+      getEntries: () =>
+        innerStore.getEntries().filter((e) => e.key.startsWith(`${serviceId}:`)),
+      subscribe: (key: string, listener: () => void) =>
+        innerStore.subscribe(prefixKey(key), listener),
+      subscribeAll: (listener: () => void) => innerStore.subscribeAll(listener),
+      fetchResource: <T,>(
+        key: string,
+        fetcher: (signal: AbortSignal) => Promise<T | null>,
+        options?: { force?: boolean }
+      ) => innerStore.fetchResource<T>(prefixKey(key), fetcher, options),
+      setData: <T,>(key: string, data: T | null) =>
+        innerStore.setData<T>(prefixKey(key), data),
+      setError: (key: string, error: string | null) =>
+        innerStore.setError(prefixKey(key), error),
+      invalidate: (key: string) => innerStore.invalidate(prefixKey(key)),
+    };
+  }, [innerStore, serviceId]);
+
+  return (
+    <ResourceCacheContext.Provider value={namespacedStore}>
+      {children}
+    </ResourceCacheContext.Provider>
+  );
+}
+
+/**
+ * Public cache provider. Renders the inner store which holds the raw cache
+ * data. The ServiceNamespacedCache wrapper (placed inside ServiceProvider in
+ * the app tree) handles key prefixing.
+ */
+export function ResourceCacheProvider({ children }: { children: ReactNode }) {
+  return <ResourceCacheProviderInner>{children}</ResourceCacheProviderInner>;
 }
 
 export function useResourceCacheStore() {

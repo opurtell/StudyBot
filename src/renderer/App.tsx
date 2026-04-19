@@ -11,7 +11,7 @@ import Guidelines from "./pages/Guidelines";
 import BackendBootGate from "./components/BackendBootGate";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { BackendStatusProvider } from "./hooks/useBackendStatus";
-import { ResourceCacheProvider } from "./providers/ResourceCacheProvider";
+import { ResourceCacheProvider, ServiceNamespacedCache } from "./providers/ResourceCacheProvider";
 import { SettingsProvider } from "./providers/SettingsProvider";
 import { ServiceProvider } from "./providers/ServiceProvider";
 import { BackgroundProcessProvider } from "./providers/BackgroundProcessProvider";
@@ -76,6 +76,7 @@ export default function App() {
         <ResourceCacheProvider>
           <SettingsProvider>
             <ServiceProvider>
+            <ServiceNamespacedCache>
             <BackgroundProcessProvider>
             <ServiceSetupGate>
             <HashRouter>
@@ -87,6 +88,7 @@ export default function App() {
             </HashRouter>
             </ServiceSetupGate>
             </BackgroundProcessProvider>
+            </ServiceNamespacedCache>
             </ServiceProvider>
           </SettingsProvider>
         </ResourceCacheProvider>
