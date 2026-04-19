@@ -1,6 +1,4 @@
 import json
-import tempfile
-import pathlib
 import pytest
 
 from src.python.services.active import active_service_from_path

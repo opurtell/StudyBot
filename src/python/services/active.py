@@ -20,7 +20,7 @@ def active_service_from_path(path: Path) -> Service:
     Raises:
         KeyError: If active_service ID is unknown
     """
-    data = json.loads(path.read_text()) if path.exists() else {}
+    data = json.loads(path.read_text()) if path.is_file() else {}
     svc_id = data.get("active_service")
     if not svc_id:
         return REGISTRY[0]
@@ -33,5 +33,7 @@ def active_service() -> Service:
     Returns:
         Service instance for the active service
     """
-    from src.python.paths import SETTINGS_PATH
-    return active_service_from_path(SETTINGS_PATH)
+    from src.python.paths import SETTINGS_PATH, EXAMPLE_SETTINGS_PATH
+    if SETTINGS_PATH.is_file():
+        return active_service_from_path(SETTINGS_PATH)
+    return active_service_from_path(EXAMPLE_SETTINGS_PATH)
