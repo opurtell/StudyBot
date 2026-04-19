@@ -48,7 +48,7 @@ def _sanitise_id(source_file: str) -> str:
     return source_file.replace("/", "__").replace(" ", "_")
 
 
-def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
+def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLECTION_NAME) -> dict:
     content = md_path.read_text(encoding="utf-8")
     meta, body = _parse_front_matter(content)
 
@@ -83,7 +83,7 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
 
     client = chromadb.PersistentClient(path=str(db_path))
     collection = client.get_or_create_collection(
-        name=COLLECTION_NAME,
+        name=collection_name,
         metadata={"hnsw:space": "cosine"},
     )
 
