@@ -423,3 +423,152 @@ Pre-existing test failures documented in `KNOWN_TEST_FAILURES.md` stay out of sc
 1. Category mapping for AT (`Guides/categories-at.md`) — will be drafted during Phase 1 and submitted for review before ingestion.
 2. Whether the Tas `VAO` qualification should be quiz-eligible at all — some VAO content is general-public-facing first aid; we may want to filter some of it out rather than include it. To be resolved based on Phase 1 findings.
 3. Default ACTAS qualification after migration — the spec defaults to `AP` with no endorsements. User should confirm the first-run modal prompts clearly on next launch after migration rather than silently assuming `AP`.
+
+---
+
+## 15. Revisions addressing spec review
+
+This section clarifies and corrects items flagged in the spec review. It is authoritative where it conflicts with earlier sections.
+
+### 15.1 Current state of collections and code
+
+The current ChromaDB has two collections: `cmg_guidelines` (official ACTAS CMGs) and `paramedic_notes` (all personal material — REF docs, CPD docs, Notability notes, and uploads). The migration therefore is a split, not just a rename:
+
+- `cmg_guidelines` → `guidelines_actas`.
+- `paramedic_notes` → `personal_actas`. All existing chunks tagged `service: "actas"`, `scope: "service-specific"`. A user-triggered retag pass (Settings UI) allows flipping individual documents to `scope: "general"` after migration.
+
+No chunks are lost; old collections are left in place until the user clicks "Clean up legacy data".
+
+### 15.2 `paths.py` callers — full enumeration
+
+All callers of the removed `CMG_STRUCTURED_DIR` / `USER_CMG_STRUCTURED_DIR` / `resolve_cmg_structured_dir()`:
+
+- `src/python/guidelines/router.py`
+- `src/python/medication/router.py`
+- `src/python/seed.py`
+- `src/python/pipeline/cmg/chunker.py`
+- `src/python/pipeline/cmg/orchestrator.py`
+- plus any tests that import them.
+
+All are migrated in the same commit that adds the new `resolve_service_structured_dir(service_id)` helper. A repo-wide grep for `CMG_STRUCTURED_DIR` is the completeness check.
+
+### 15.3 ACTAS adapter directory
+
+`src/python/pipeline/cmg/` is renamed to `src/python/pipeline/actas/` (git mv) as part of step 1 of the rollout. The registry entry `adapter: "src.python.pipeline.actas"` matches the new path. This keeps the adapter path as a real module path, not a façade. CMG is ACTAS's term for guideline; the module is now named for the service, not the artefact.
+
+### 15.4 `skill_level` setting migration
+
+The current `skill_level` setting in `quiz/router.py` and `quiz/agent.py` hard-codes an ACTAS AP/ICP scope filter in the generation prompt. Migration:
+
+- `skill_level: "AP"` → `base_qualification: "AP"`, `endorsements: []`.
+- `skill_level: "ICP"` → `base_qualification: "ICP"`, `endorsements: []`.
+- The hard-coded AP/ICP text in `agent.py` is removed; scope filtering moves to chunk-metadata-driven retrieval using `qualifications_required` per §3.2.
+- The generation prompt is rewritten to be service-neutral and to take the active service's display name + qualifications set as inputs. It no longer references "ACTAS" or specific qualification names in its literal text.
+
+Test added: migration test covering both `AP` and `ICP` legacy values.
+
+### 15.5 `cmg_number` field rename
+
+Renaming `cmg_number` → `guideline_id` is wider than "light refactor":
+
+- `src/python/medication/router.py` and `src/python/guidelines/router.py` read `cmg_number` from JSON and emit it in API responses.
+- The frontend `api.ts` consumes the field.
+
+Resolution: the `GuidelineDocument` schema uses `guideline_id` as the canonical field, and for ACTAS the migration writes `guideline_id = "CMG_<n>"` and keeps the legacy `cmg_number` field populated in the `extra` blob for the duration of a deprecation window. Routers emit both field names; frontend is updated in the same release to prefer `guideline_id` and fall back to `cmg_number`. After one release, `cmg_number` is removed from both backend and frontend.
+
+### 15.6 Seeding multiple services
+
+`seed.py` is rewritten to iterate the service registry:
+
+- On startup, for each registered service, check whether its `guidelines_<id>` collection exists in the user's ChromaDB. If not and a bundled copy exists at `APP_ROOT/data/services/<id>/structured/` + prebuilt ChromaDB segment, copy it in. Otherwise run that service's adapter's `run_pipeline()` as a dev-mode fallback.
+- Personal collections (`personal_<id>`) are never auto-seeded; user imports/uploads populate them.
+
+### 15.7 ACTAS `qualifications_required` backfill
+
+Existing ACTAS CMG structured JSONs do not carry `qualifications_required`. Backfill approach:
+
+- Default: every CMG section gets `qualifications_required: ["AP"]` (safe lower bound — visible to all paramedics).
+- ICP-specific sections are identified via two signals combined: (a) the existing hard-coded ICP markers used by `agent.py`'s current filter, and (b) a one-time pass over the source data looking for ICP-tagged medicines, CSMs, and sections. Matches are written as `qualifications_required: ["ICP"]`.
+- The backfill result is committed as a reviewable artefact (`Guides/actas-qualifications-backfill.md`) so the user can spot-check before production use. Follow-up corrections go through the same Settings retag UI as personal docs.
+
+### 15.8 Upload pipeline changes
+
+`src/python/upload/router.py` currently hard-codes `source_type = "cpd_doc"` and writes to `paramedic_notes`. Changes:
+
+- Upload dialog (`UploadDialog.tsx`) gains a service dropdown (defaulting to active service) and a scope dropdown (defaulting to `service-specific`).
+- `POST /upload` accepts `service` and `scope` params; stores the file into `data/services/<service>/uploads/` and ingests into `personal_<service>` with metadata.
+- `source_type` stays as `upload` (existing value); service and scope are independent metadata fields.
+
+### 15.9 Release and upload scripts
+
+- `scripts/upload-personal-data.sh` is updated to enumerate `personal_<id>` collections and upload each as a separate asset per release. Naming convention: `personal_<service_id>.tar.gz`.
+- `electron-builder.yml` bundling rule changes from a single `build/resources/data/chroma_db/` tree to per-service subtrees under `build/resources/data/services/<id>/`. Packaging scripts (`scripts/package-backend.sh`, `package-backend.ps1`) updated accordingly.
+
+### 15.10 Frontend cache invalidation
+
+`ResourceCacheProvider` must invalidate all cached data (medication, guidelines, mastery, history, search, uploads list) when `active_service` changes. Implementation: cache keys are namespaced by service id; changing service effectively swaps the key namespace, so in-memory entries for the prior service remain (for fast switch-back) but new-service entries are fetched fresh.
+
+### 15.11 Cross-collection result ranking
+
+Retrieval merges results from `guidelines_<service>` and `personal_<service>` collections. Raw ChromaDB distances across separate collections are not directly comparable because each collection has its own embedding distribution. Implementation:
+
+- Normalise per-collection: for each collection's results, convert distance to a percentile rank within that collection's top-K.
+- Merge on percentile rank, then apply the source-hierarchy boost (guidelines outrank personal, REF outranks CPD outranks notability, per §15.12).
+
+This is the retriever's job; adapter code does not see it.
+
+### 15.12 Per-service source hierarchy
+
+The `Service` registry entry gains a `source_hierarchy` field listing the service's own ordered list of source types with relative weights:
+
+```python
+source_hierarchy=[
+    ("guideline", 1.00),
+    ("ref_doc",   0.80),
+    ("cpd_doc",   0.60),
+    ("notability",0.40),
+    ("upload",    0.30),
+]
+```
+
+`GuidelineDocument` / personal chunk metadata continues to carry `source_type`. The retriever multiplies the normalised rank (§15.11) by the service's source-type weight before sorting. CLAUDE.md's strict tier order is preserved via the default weights; a service may override order if a stronger local rule applies.
+
+### 15.13 Vision provider capability matrix
+
+`src/python/llm/vision.py` depends on provider support for image inputs. Confirmed at spec time:
+
+- Anthropic Claude: supported.
+- Google Gemini: supported.
+- Z.ai GLM: vision support varies by model; implementation raises `VisionNotSupportedError` and the adapter falls back to Anthropic or Gemini per user preference.
+
+Settings gets a "Vision model" row distinct from "Cleaning model" so the user can pin a specific vision-capable model without affecting other LLM calls.
+
+### 15.14 Authoring prerequisites
+
+Step 1 of the rollout (ACTAS adapter refactor) is expanded to include authoring:
+
+- `Guides/scope-of-practice-actas.md`
+- `Guides/categories-actas.md`
+- `Guides/scope-of-practice-at.md` (before Phase 1 of the Tas scrape)
+- `Guides/categories-at.md` (drafted during Phase 1, reviewed before ingestion)
+- `Guides/adding-a-service.md`
+- `Guides/actas-qualifications-backfill.md`
+- `Guides/at-cpg-extraction-findings.md` (Phase 0 deliverable)
+
+None of these exist today. All are gated prerequisites for their respective rollout steps.
+
+### 15.15 Dashboard empty-state on service switch
+
+When the user switches to a service they have not yet quizzed on:
+
+- Knowledge heatmap shows an empty state with copy like "No mastery data yet for <service>. Start a quiz to begin tracking."
+- Metrics tiles show dashes, not zeros, to distinguish "no data" from "poor performance".
+- Recent entries list shows an empty state pointing to the Quiz page.
+
+### 15.16 Test fixture sources
+
+The isolation and adapter-contract tests need two services' worth of fixtures:
+
+- ACTAS fixtures: seeded from three existing `data/cmgs/structured/` files, trimmed to minimal content, committed under `tests/python/fixtures/services/actas/`.
+- AT fixtures: authored from Phase 0 findings against three sample CPGs, committed under `tests/python/fixtures/services/at/` in the same commit as Phase 1 lands. Until Phase 1, AT-specific tests are skipped conditionally.
+
