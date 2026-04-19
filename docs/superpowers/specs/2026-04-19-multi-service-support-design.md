@@ -565,10 +565,111 @@ When the user switches to a service they have not yet quizzed on:
 - Metrics tiles show dashes, not zeros, to distinguish "no data" from "poor performance".
 - Recent entries list shows an empty state pointing to the Quiz page.
 
-### 15.16 Test fixture sources
+### 15.16 Test fixture sources (see §16.11 for updates)
 
 The isolation and adapter-contract tests need two services' worth of fixtures:
 
 - ACTAS fixtures: seeded from three existing `data/cmgs/structured/` files, trimmed to minimal content, committed under `tests/python/fixtures/services/actas/`.
 - AT fixtures: authored from Phase 0 findings against three sample CPGs, committed under `tests/python/fixtures/services/at/` in the same commit as Phase 1 lands. Until Phase 1, AT-specific tests are skipped conditionally.
 
+
+---
+
+## 16. Second-review corrections
+
+Addresses issues surfaced by the follow-up review of §15. Authoritative where it conflicts with earlier sections.
+
+### 16.1 Complete caller list (supersedes §15.2)
+
+Every module importing `CMG_STRUCTURED_DIR`, `USER_CMG_STRUCTURED_DIR`, or `resolve_cmg_structured_dir` must be migrated. Authoritative list based on repo grep:
+
+- `src/python/guidelines/router.py`
+- `src/python/medication/router.py`
+- `src/python/seed.py`
+- `src/python/settings/router.py` (including the "Re-run Pipeline" handler)
+- `src/python/pipeline/cmg/chunker.py` (→ `pipeline/actas/chunker.py` after rename)
+- `src/python/pipeline/cmg/orchestrator.py`
+- `src/python/pipeline/cmg/web_structurer.py`
+- `src/python/pipeline/cmg/refresh.py`
+- any tests importing these names
+
+Not a `paths.py` caller but shares the migration concern: `src/python/quiz/retriever.py` hard-codes the collection names `cmg_guidelines` and `paramedic_notes`. Migrate it in the same step.
+
+The completeness check is `rg "CMG_STRUCTURED_DIR|USER_CMG_STRUCTURED_DIR|resolve_cmg_structured_dir|cmg_guidelines|paramedic_notes"` returning zero hits outside the registry and migration script.
+
+### 16.2 Skill-level migration — additional files (supersedes §15.4)
+
+Beyond `quiz/router.py` and `quiz/agent.py`, the `skill_level` concept lives in:
+
+- `src/python/llm/factory.py` — defaults `skill_level: "AP"`.
+- `src/python/quiz/retriever.py` — uses `skill_level` to filter chunks at retrieval time (this is the actual enforcement site; the prompt-level text is secondary).
+- `src/python/quiz/models.py` — likely carries the field on request/response models.
+
+All four files migrate together. The retriever's filter switches from `skill_level` equality/inclusion to the qualification-set membership rule in §3.2, backed by the `qualifications_required` chunk metadata populated by the §15.7 backfill.
+
+### 16.3 `cmg_number` field touch points (supersedes §15.5)
+
+Rename affects, at minimum:
+
+- `src/python/guidelines/router.py` (API responses)
+- `src/python/medication/router.py` (API responses)
+- `src/python/quiz/models.py` (carries the field on question objects)
+- `src/python/quiz/retriever.py` (populates the field in retrieval results)
+- `src/renderer/types/api.ts` and every consuming component (Guidelines, Quiz, Feedback, Medication pages)
+- Structured JSON files under `data/cmgs/structured/`
+
+The deprecation window still applies: backend emits both `guideline_id` and legacy `cmg_number`; frontend prefers `guideline_id`, falls back to `cmg_number`. Legacy field removed in the release after the one that ships this project.
+
+### 16.4 Section 7.1 correction
+
+§7.1 should be read as "mirrors `src/python/pipeline/actas/`" (the post-rename path from §15.3), not `pipeline/cmg/`.
+
+### 16.5 Upload on-disk layout (supersedes §5.2)
+
+The §5.2 layout showing `data/uploads/structured/` is superseded. Uploads live at `data/services/<service_id>/uploads/<filename>` with structured output at `data/services/<service_id>/uploads/structured/<filename>.json`. Existing `data/uploads/` content is migrated to `data/services/actas/uploads/` during migration (§9). The upload router writes to the active service's directory by default; user may override both service and scope at upload time (§15.8).
+
+### 16.6 Bundled ChromaDB per service (supersedes §5.2, §15.9)
+
+`build/resources/data/chroma_db/` (a single Chroma tree) is replaced by per-service bundled Chroma trees at `build/resources/data/services/<service_id>/chroma/`. Because Chroma does not export a single collection cleanly, the build-time script produces each service's tree by running a fresh Chroma instance that ingests only that service's structured data. This happens at packaging time, not at first launch.
+
+`seed.py` first-launch behaviour: for each registered service, copy `build/resources/data/services/<service_id>/chroma/` into the user ChromaDB path if the corresponding `guidelines_<service_id>` collection is absent. If no bundled tree exists for a service (dev builds), fall back to running that service's adapter to populate the collection.
+
+### 16.7 Medication router rewiring
+
+The medication router currently reads flat per-medication JSON files under `data/cmgs/structured/`. The spec's `GuidelineDocument.medications: list[MedicationDose]` field does not by itself replace that data source; the medication browser needs an index across all guidelines.
+
+Resolution: the ACTAS adapter writes both per-guideline `GuidelineDocument` JSON files and a denormalised `data/services/<service_id>/medications/<med_id>.json` index file for each medication extracted across that service's guidelines. The medication router is parameterised by active service and reads from `data/services/<active>/medications/`. The AT adapter produces the same index in the same format. Schema for these index files is documented in §4 (`MedicationDose`) plus `service`, `guideline_id`, `source_file`.
+
+### 16.8 Personal doc front-matter vs chunk metadata
+
+`data/personal_docs/structured/` gains front-matter fields `service` and `scope` on every file. For the 11 existing files, migration adds `service: "actas"`, `scope: "service-specific"`. During retagging, front-matter is the authoritative source; chunk metadata is derived from the front-matter on re-ingest. The Settings retag UI rewrites the front-matter and triggers a re-ingest for that file only.
+
+### 16.9 Qualifications backfill is a prerequisite of retrieval migration
+
+The §15.7 backfill for ACTAS `qualifications_required` is a prerequisite of migrating `quiz/retriever.py` to the new qualification-set filter. The rollout order is refined:
+
+- Step 2a — collection split + SQLite service column + `paths.py` refactor.
+- Step 2b — ACTAS `qualifications_required` backfill committed as structured-data change + `Guides/actas-qualifications-backfill.md` for review.
+- Step 2c — retriever, router, factory, models switched to qualification-set filter; legacy `skill_level` removed.
+- Step 2a and 2b are landable independently; 2c cannot land until 2b is merged.
+
+### 16.10 CMG module rename vs Tas adapter — single source of truth
+
+Directory layout post-rollout:
+
+```
+src/python/pipeline/
+├── actas/          # renamed from cmg/
+│   └── ... (existing ACTAS pipeline modules)
+├── at/             # new Tas adapter
+│   └── ...
+└── personal_docs/  # unchanged
+```
+
+§7.1's "mirrors the ACTAS pipeline" wording refers to `pipeline/actas/` (the renamed module), not `pipeline/cmg/`.
+
+### 16.11 Test fixtures — restated
+
+- ACTAS fixtures: trimmed copies of three representative `data/services/actas/structured/` files committed under `tests/python/fixtures/services/actas/`. These include `qualifications_required` values matching what the §15.7 backfill produces.
+- AT fixtures: authored during Phase 1 from real AT CPGs, committed under `tests/python/fixtures/services/at/` in the same commit that lands Phase 1.
+- Isolation and adapter-contract tests use both sets; AT tests are conditionally skipped until Phase 1 lands via a pytest marker.
