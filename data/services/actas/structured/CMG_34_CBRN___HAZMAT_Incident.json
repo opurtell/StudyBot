@@ -1,0 +1,23 @@
+{
+  "id": "CMG_34_CBRN___HAZMAT_Incident",
+  "cmg_number": "34",
+  "title": "CBRN / HAZMAT Incident",
+  "version_date": null,
+  "section": "HAZMAT",
+  "content_markdown": "#### Indicators##### STEP 123\n**STEP 123** is a **S**afety **T**rigger for **E**mergency **P**ersonnel: \n\n**1**\n\n**ONE** casualty – approach using normal procedures. \n\n**2**\n\n**TWO** casualties – **approach with caution**, consider all possibilities, be mindful of safety, provide a report. \n\n**3**\n\n**THREE** casualties – **do not approach**. Withdraw from the immediate area, seek help immediately, contain / isolate the casualties, isolate yourself. \n\n##### Possible Signs\nA CBRN / HAZMAT incident may be indicated by:\n\n- Physical indicators (e.g. unusual pools of liquid, clouds or fogs, unusual colours, strange devices or recent explosion).\n- Medical signs and symptoms, or unusual behaviour being displayed by a number of people. \n- Dead birds, animals, people or plants in the area.\n\n#### Initial Actions\n**Protect yourself. Do not approach or enter the contaminated area if this can be determined!**\n\nIf a CBRN / HAZMAT incident is suspected:\n\n- **Retreat immediately** to a safe location (unless you have had contact with the contaminant or affected patients). Park uphill and upwind, close all vehicle windows and vents. \n- Wear all appropriate PPE.\n- Take shallow frequent breaths (to avoid breathing the contaminant).\n- Cover your nose and mouth with a damp cloth (if available).\n- Do not **TEST** (**T**aste, **E**at, **S**mell or **T**ouch) **anything** in the area. - Seek shielding (and distance) if radioactivity is suspected.\n- Be aware of the possibility of secondary devices.\nRemain clear of the contaminated area unless specifically authorised to enter by the Incident Commander of the lead agency (e.g. ACTF&R).\n\nYou must be equipped with appropriate personal protective equipment (PPE) and have suitable training in its use. \n\nOnly authorised and trained personnel will operate in the hot and warm zones.\n\n#### Contamination / Decontamination\n**If you come into contact** with the contaminant or contaminated / affected patients, **consider yourself contaminated**, and therefore, a patient: \n\n- Remain at the scene.\n- Commence emergency self‐decontamination as soon as possible.\n- Isolate yourself until given further instruction by the lead agency (Fire & Rescue).##### Emergency Self‐Decontamination (while awaiting Fire & Rescue)\n- Remove clothing (and discard into a special HAZMAT container when available). \n- Skin must be cleaned by thorough washing or preferably showering (do not scrub). - Pay special attention to hair and parts of the body with opposing skin surfaces (e.g. the buttocks, axillae, etc).\n- Remember to blow your nose.\n- Carefully wash / wipe over face, eyelids, ears, etc.\n#### METHANE\n\n**M**\n\nMajor incident declared. \n\n**E**\n\nExact location. \n\n**T**\n\nType of incident. \n\n**H**\n\nHazards. \n\n**A**\n\nAccess. \n\n**N**\n\nNumber and type of casualties. \n\n**E**\n\nEmergency services present and required. \n\n#### Management\n- Patients and personnel should be decontaminated PRIOR to treatment by a Fire & Rescue HAZMAT team. Initial antidote can be administered prior to decontamination by suitably protected personnel. \n- Manage symptomatically, as per appropriate CMG remembering that in the event of a MCI (Mass Casualty Incident), some patients will be triaged out, or later, for treatment \n- CMG 9 Respiratory Distress\n- CMG 15 Decreased Level of Consciousness\n- CMG 21 Burns- CMG 22 Seizures- CMG 35A Poisoning and Overdose.\n- Ensure hospital is notified of possible contaminated patients.\n- Specific antidotes may be issued with appropriate instructions in some situations.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "d9f1a01ca16c3d363bdf42effd9ccc5e72ab7b6ea192a765580722f70f1279ec",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.745292+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_34",
+  "extra": {
+    "cmg_number": "34"
+  }
+}

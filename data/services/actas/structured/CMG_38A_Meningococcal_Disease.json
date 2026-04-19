@@ -1,0 +1,1081 @@
+{
+  "id": "CMG_38A_Meningococcal_Disease",
+  "cmg_number": "38A",
+  "title": "Meningococcal Disease",
+  "version_date": null,
+  "section": "Medical",
+  "content_markdown": "#### Assessment\nPrompt identification of meningococcal disease and commencement of pre‐hospital treatment can be life‐saving. A high index of suspicion is advisable in critically ill patients.\n\nConsider meningococcal disease in the following circumstances:\n\n- Febrile illness with sudden onset **and** altered level of consciousness \n\n- +/- haemorrhagic, purpuric, or petechial rash\n\n- +/- tachycardia, hypotension, or peripheral shut down\n\nOther signs and symptoms are often non‐specific, especially in young children. They can include:\n\n- Headache.\n- Photophobia.\n- Neck stiffness / pain.\n- Nausea / vomiting.\n- Painful or swollen joints.\n- Focal signs.\n- Seizures.\n**Deterioration can be rapid.**\n\n#### Management\n- Ensure personal protection \n- Standard, contact and droplet precautions (as per **ACTAS Infection Prevention & Control Manual**). \n\n- IV fluid as per CMG 14 Shock and Hypoperfusion\n- These patients may require large volumes of fluid to maintain BP / perfusion.\n- Ceftriaxone.\n- Treat associated conditions (e.g. seizures, hypoglycaemia, etc) concurrently, as per appropriate CMG. - Urgent transport.#### Deterioration\nDeterioration is possible following antibiotic administration. This would be unusual during average ambulance contact. It will most likely be a decrease in LOC and/or BP.\n\n- Be prepared: Manage with IV fluid.\n- **ICP:** If deterioration continues: \n- Consider adrenaline infusion.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Adrenaline": [
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.03mg Volume: 0.3ml Adrenaline (1:10,000) ETT: Formula: 0.02mg/kg Preparation: 1mg in 10mls Dose: 0.06mg Volume: 0.6ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.03",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.3",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.02",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.06",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.6",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000) IV/ IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.05mg Volume: 0.5ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.07mg Volume: 0.7ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.07",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.11 Volume: 1.1mls",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.13mg Volume: 1.3ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.13",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.15mg Volume: 1.5mls",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.15",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.17mg Volume: 1.7ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.17",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.19mg Volume: 1.9ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.19",
+            "unit": "mg"
+          },
+          {
+            "amount": "1.9",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.21mg Volume: 2.1ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.21",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.23mg Volume: 2.3ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.23",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.25mg  Volume: 2.5ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.25",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.27mg Volume: 2.7ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.27",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.7",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.3mg Volume: 3ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.3",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.33mg Volume: 3.3ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.33",
+            "unit": "mg"
+          },
+          {
+            "amount": "3.3",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Adrenaline (1:10,000): Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "1mg IV or IO – fast push ",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "IM: 0.01mg/kg (up to 50kg) ",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.5mg ",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Weight >10kg: nebulise 5ml adrenaline 1:1,000 Weight <10kg: nebulise 0.5ml/kg adrenaline 1:1,000  Make volume up to 5ml with saline, as required",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Add 1mL (1mg) 1:1000 adrenaline to 500mL NaCl.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mL"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "500",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Adult (≥40kg) Adrenaline infusion (infusion pump)",
+        "dose_values": []
+      },
+      {
+        "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (3mg) 1:1000 adrenaline to make 3mg/50mL",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Default bolus: 12mcg (0.2mL)  Lower soft bolus limit: 1.2mcg (0.02mL) Upper soft bolus limit: 24mcg (0.4mL) Upper hard bolus limit: 48mcg (0.8mL) Large Paediatric (21-39kg) Adrenaline infusion (infusion pump)",
+        "dose_values": [
+          {
+            "amount": "12",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.2",
+            "unit": "mL"
+          },
+          {
+            "amount": "1.2",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.02",
+            "unit": "mL"
+          },
+          {
+            "amount": "24",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.4",
+            "unit": "mL"
+          },
+          {
+            "amount": "48",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.8",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (3mg) 1:1000 adrenaline to make 3mg/50mL",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Default bolus: 6mcg (0.1mL)  Lower soft bolus limit: 0.6mcg (0.01mL) Upper soft bolus limit: 12mcg (0.2mL) Upper hard bolus limit: 48mcg (0.8mL) Small Paediatric (≤20kg) Adrenaline infusion (infusion pump)",
+        "dose_values": [
+          {
+            "amount": "6",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.1",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.6",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mL"
+          },
+          {
+            "amount": "12",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.2",
+            "unit": "mL"
+          },
+          {
+            "amount": "48",
+            "unit": "mcg"
+          },
+          {
+            "amount": "0.8",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (300mcg) 1:10,000 adrenaline to make 300mcg/50mL",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline 0.01mg/kg ",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Adrenaline 0.01mg/kg",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 1mg after 2",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 1mg immediately (then in every second loop)",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "No more than 3 doses of adrenaline.",
+        "dose_values": []
+      },
+      {
+        "text": " 0.01mg/kg",
+        "dose_values": [
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": " 0.02mg/kg Repeat adrenaline every 3 minutes while heart rate remains < 60/minute despite effective ventilations and chest compressions.",
+        "dose_values": [
+          {
+            "amount": "0.02",
+            "unit": "mg"
+          }
+        ]
+      },
+      {
+        "text": "Aggressive fluid therapy up to sBP of 90mmHg, maintenance fluid thereafter (max 20ml/kg). ",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Adrenaline infusion if critically unwell or refractory shock post 20ml/kg fluid. ",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Adrenaline infusion to maintain sBP of ≥ 90mmHg ICP.",
+        "dose_values": []
+      },
+      {
+        "text": " Consider adrenaline infusion if sBP < 90mmHg with clinical signs of shock, refractory to fluids.",
+        "dose_values": []
+      },
+      {
+        "text": " Adrenaline infusion if sBP < 90mmHg with clinical signs of shock. ",
+        "dose_values": []
+      },
+      {
+        "text": "200mg tablet  100mg/5ml liquid ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "1mMol/kg IV or IO ",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mMol"
+          }
+        ]
+      },
+      {
+        "text": "1mg of adrenaline into a 500ml",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.",
+        "dose_values": [
+          {
+            "amount": "1.1",
+            "unit": "mmol"
+          },
+          {
+            "amount": "27.8",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nA naturally occurring catecholamine [S3]\n\n##### Presentations\n1:10,000 – 1mg in 10ml – glass ampoule \n 1:1,000 – 1mg in 1ml – glass ampoule \n\n##### Actions\n\n- \\u03b1 effect: peripheral vasoconstriction\n\n- \\u03b21 effects: \n\n- increased rate of sinus node\n\n- increased myocardial contractility\n\n- increased AV conduction\n\n- increased myocardial irritability\n\n- \\u03b22 effects: \n\n- bronchodilation\n\n- vasodilation of skeletal muscle\n\nOnset: IV = 30 seconds; IM = 30 – 90 seconds \n Max effect: IV = 3 – 5 min; IM = 4 – 10 mins \n\nEndotracheal use: slightly longer times\n\n#### Uses\n\n- Cardiac arrest\n\n- Anaphylaxis\n\n- Severe life-threatening asthma\n\n- Bradyarrhythmias resistant to atropine **- ICP only**\n\n- Severe upper airway swelling\n\n- Shock unresponsive to fluid boluses **- ICP only**\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Tachyarrhythmias\n\n- Hypertension\n\n#### Contraindications\n\n- Hypovolaemic shock without adequate fluid replacement\n\n#### Precautions\nThese apply to patients with cardiac output only:\n\n- Care with patients with history of hypertension\n\n- Care with patients with history of ischaemic heart disease\n\n- Give extremely slowly to patients on MAO Inhibitor antidepressants (e.g. Nardil, Parnate) as adrenaline may provoke a greatly exaggerated response. Generally, patients on MAOIs with cardiac output should receive no more than \\xbc of the normal dose of adrenaline, titrated to response \n\n- Hypothermia\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias resistant to atropine##### Adult and Paediatric\n- **ICP:** IV/IO adrenaline by infusion – titrated to response\n\n#### Cardiac arrest##### Adult\n- 1mg IV or IO – fast push \n- No limit on number of doses in cardiac arrest.\n\n##### Paediatric\n- IV: 0.01mg/kg – fast push \n- No limit on number of doses in cardiac arrest.\n\n- **ICP:** IO: 0.01mg/kg – fast push \n- No limit on number of doses in cardiac arrest.\n- **ICP:** ETT: NEWBORN ONLY \n- If no IV or IO access – 0.02mg/kg.\n\n#### Anaphylaxis / asthma (severe life threatening)##### Adult\n- IM: 0.5mg \n- Repeat 5 minutely (max three doses).\n\n- **ICP:** If required – **IV/IO** adrenaline by infusion \n- Titrated to response.\n##### Paediatric\n- IM: 0.01mg/kg (up to 50kg) \n- Repeat 5 minutely (max three doses).\n\n- **ICP:** If required – **IV/IO** adrenaline by infusion \n- Titrated to response.\n\n#### Severe upper airway swelling##### Adult\n- **IM:** 0.5mg \n- Repeat 5 minutely (max three doses).\n\n##### Paediatric\n- Weight >10kg: nebulise 5ml adrenaline 1:1,000\n- Weight",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.02",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-adrenaline"
+      },
+      {
+        "text": "#### Indications\n- Patients requiring an adrenaline infusion.\n\n#### Procedure\n\n- Medication checks are to be done by two officers prior to administration.\n\n- Adhere to all aseptic techniques.\n\n- Inject **1mg of adrenaline into a 500ml** bag of saline via the access port.\n\n- Fill out and attach an additive label to the fluid bag.\n\n- Connect a giving set or a burette to the fluid bag. \n- **If you are using a giving set:** ensure the gate clamps are turned off prior to inserting into the fluid bag.\n- **If you are using a burette:** connect a giving set to the bottom of the burette and ensure all gate clamps are turned off prior to inserting into the fluid bag. Now open the ventilation port then the gate clamp and fill the burette to the 100ml mark. Open the gate clamp and prime the line and then refill the burette to the 100ml mark.\n\n- Connect the giving set to the patient and commence infusion. \n- 20 drops/minute = 1ml per minute or 2 mcg/minute\n- Titrate for a response.\n\n- Reassess respiratory and perfusion status.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Specific Notes\n- Ensure that all of the delivery lines are primed with adrenaline. Failure to do this will result in a in a significant delay in the patient receiving adrenaline.\n- If the adrenaline infusion is running through an IO line, you may require a pump set rather than a giving set to overcome increased intra medullar pressure.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "mcg"
+          }
+        ],
+        "source": "app-adrenaline-infusion"
+      }
+    ],
+    "Ceftriaxone": [
+      {
+        "text": "1g ceftriaxone powder for reconstitution – vial",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "It is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone",
+        "dose_values": []
+      },
+      {
+        "text": "10mg in 2ml – vial ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " Up to 5ml subcutaneously ",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "2.5g in 5 ml (50% solution) – glass ampoule",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\n3rd generation cephalosporin antibiotic [S4]\n\n##### Presentations\n1g ceftriaxone powder for reconstitution – vial\n\n##### Actions\n\n- Broad spectrum antibiotic – especially effective against gram-negative bacteria (e.g., meningococcus)\n\n- Effective crossing of blood-brain barrier\n\n#### Uses\nSuspected meningococcal disease, in acutely ill patients\n\n#### Adverse Effects\n\n- Hypersensitivity reactions (not common)\n\n- Diarrhoea\n\n- Skin rash\n\n#### Contraindications\nKnown sensitivity to cephalosporins\n\n#### Precautions\nIt is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\n- 50mg/kg, to a total of 2g – IV preferred \n- Make up to 10ml with normal saline\n- Give slowly over 2 - 4 minutes\n- May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer into two separate injection sites.\n- **ICP:** May also be given IO if no IV available. \n#### Special Notes\n- An incident report should be submitted to CGU if ceftriaxone is administered.",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "3.5",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-ceftriaxone-rocephin"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "d72f7ed13902cbc503c9c49da9be08d8f4f0354e747d8ac0ca52348a34a12b76",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.724486+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_38",
+  "extra": {
+    "cmg_number": "38A"
+  }
+}

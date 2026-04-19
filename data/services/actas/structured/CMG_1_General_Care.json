@@ -1,0 +1,452 @@
+{
+  "id": "CMG_1_General_Care",
+  "cmg_number": "1",
+  "title": "General Care",
+  "version_date": null,
+  "section": "General Care",
+  "content_markdown": "#### Patient Centred Care\nAim to provide safe, effective and compassionate patient‐centred care in all interactions, by: \n\n- Treating patients, carers and families with dignity and respect.\n- Encouraging and supporting shared decision making by patients, their families and carers. \n- Communicating and sharing information with patients, their families and carers, and other. \n- Members of their healthcare team.\n- Obtaining consent and considering patient wishes and values in all decisions. \n\n**Considerations for safe and effective patient care:**\n\n- Ensuring safe and effective care is the responsibility of all ACTAS members who attend a patient. \n- All members of the treating team, regardless of training or clinical level, have the responsibility to raise any concerns about patient care in a timely fashion.\n- Provide care within your scope of practice (as per Authority for and Scope of Clinical Practice – Ambulance Service Policy AS131).\n- All medication must be verbally and visually cross‐checked prior to administration, wherever possible. - Be aware of, and respectfully manage expectations through effective communication.\n#### Initial Actions\n- Primary survey.\n- Haemorrhage control.\n- Posture.\n- Oxygen therapy.\n#### Monitoring and Assessment\n**Monitor and assess as required / appropriate: **\n\n- Vital signs \n- At least 2 sets, 5 minutes apart\n- Heart rate, GCS, respiratory rate, BP, skin condition, SpO2.\n\n- Cardiac monitor \\xb1 12/15 lead ECG.\n- Blood glucose.\n- Temperature.\n- Chest auscultation.\n- Pain assessment.\n- Mental competence assessment.\n- EtCO2.\n- Hydration assessment.\n- Blood lactate.\n- Mobilisation assessment.\n- Specific observations and assessments as per patient condition.\n#### Subsequent Actions\n- **Treatment** as required (as per appropriate CMG(s)).\n- Remember to verbally and visually **cross-check all medications** prior to administration, wherever possible.\n- Identify and manage **time critical** presentations \n- Refer to Time Critical Patient Guideline\n- **Note: time critical does not just mean rapid transport!** Minimum scene time, treatment en route (where possible) and prompt transport are all required for time critical patients.\n- Facilitate or provide **transport** as required (notify hospital as appropriate) \n- Remember: **Transport is treatment!**\n- **Communicate** patient and situational details to receiving facility, as appropriate \n- e.g. IMISTER‐AMBO handover protocol.\n- Complete accurate and comprehensive **documentation.**",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Glucose": [
+      {
+        "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.75",
+            "unit": "ml"
+          },
+          {
+            "amount": "7.5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Glucose 10%",
+        "dose_values": []
+      },
+      {
+        "text": "BGL < 4 mmol/L",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Glucose 10% IV (repeat once if required).",
+        "dose_values": []
+      },
+      {
+        "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Hypertonic glucose solution – containing 0.1g dextrose per ml",
+        "dose_values": [
+          {
+            "amount": "0.1",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "10% glucose – in 250ml in collapsible plastic flask",
+        "dose_values": [
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Treat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
+        "dose_values": []
+      },
+      {
+        "text": "37.5g tube containing 15g glucose",
+        "dose_values": [
+          {
+            "amount": "37.5",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mmol"
+          }
+        ]
+      },
+      {
+        "text": "1 x tube of 15g glucose orally  May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered Total maximum dose 30g glucose",
+        "dose_values": [
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
+        "dose_values": [
+          {
+            "amount": "0.1",
+            "unit": "g"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-glucose-ten-pct"
+      },
+      {
+        "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
+        "dose_values": [
+          {
+            "amount": "37.5",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "source": "app-oral-glucose-gel"
+      },
+      {
+        "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+        "dose_values": [
+          {
+            "amount": "27.8",
+            "unit": "mmol"
+          }
+        ],
+        "source": "app-blood-glucose-measurement"
+      }
+    ],
+    "Oxygen": [
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": []
+      },
+      {
+        "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
+        "dose_values": []
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "1ml Luer lock syringe",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Pre-oxygenation for at least 3 mins",
+        "dose_values": []
+      },
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": []
+      },
+      {
+        "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
+        "dose_values": []
+      },
+      {
+        "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
+        "dose_values": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": " High flow oxygen (aim for >94% SpO",
+        "dose_values": []
+      },
+      {
+        "text": " 100% oxygen with PEEP.",
+        "dose_values": []
+      },
+      {
+        "text": " consider oxygen (aim for >94% SpO",
+        "dose_values": []
+      },
+      {
+        "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
+        "dose_values": []
+      },
+      {
+        "text": "Add 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen",
+        "dose_values": []
+      },
+      {
+        "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
+        "dose_values": []
+      },
+      {
+        "text": "Notify hospital and urgent transport (100% oxygen).",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "Give 100% oxygen and attempt IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "200mg tablet  100mg/5ml liquid ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
+        "dose_values": []
+      },
+      {
+        "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
+        "dose_values": []
+      },
+      {
+        "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
+        "dose_values": []
+      },
+      {
+        "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
+        "dose_values": []
+      },
+      {
+        "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Ensure all drugs are administered in a minimum volume of 5 ml (for adults).",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
+        "dose_values": []
+      },
+      {
+        "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
+        "dose_values": []
+      },
+      {
+        "text": "< 5ml",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "Select oxygen flow rate of 8 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: ",
+        "dose_values": []
+      },
+      {
+        "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
+        "dose_values": []
+      },
+      {
+        "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
+        "dose_values": []
+      },
+      {
+        "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
+        "dose_values": []
+      },
+      {
+        "text": "Select oxygen flow rate of >10 Lpm.",
+        "dose_values": []
+      },
+      {
+        "text": "High flow, high concentration mask; consider 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "100% oxygen; IPPV.",
+        "dose_values": []
+      },
+      {
+        "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
+        "dose_values": []
+      },
+      {
+        "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 seconds (see ",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "Treat with 100% oxygen.",
+        "dose_values": []
+      },
+      {
+        "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "dose_values": [],
+        "source": "app-oxygen"
+      },
+      {
+        "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
+        "dose_values": [],
+        "source": "app-oxygen-administration"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "1629907998c9f47316b73e690a4a9be2b4dc2f1d4499ec96321b0a05e9791619",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.673531+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_1",
+  "extra": {
+    "cmg_number": "1"
+  }
+}

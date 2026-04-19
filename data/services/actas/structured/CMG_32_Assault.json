@@ -1,0 +1,23 @@
+{
+  "id": "CMG_32_Assault",
+  "cmg_number": "32",
+  "title": "Assault",
+  "version_date": null,
+  "section": "Behavioural",
+  "content_markdown": "#### Management\n- Be aware of risks to yourself and others \n- Consider police assistance\n- Ensure scene control and safety.\n\n- As much as is practical, be wary of evidence preservation at the scene \n- Wear gloves, watch where you walk, etc.\n- Treat injuries as per appropriate CMG- Attention to detail (such as full name, location, times, others present) is very important. - Be sure to document, in detail, any injuries/markings found during examination.\n- Report any suspicion, belief or concern about child abuse or neglect as soon as possible.\n#### Specifically for Sexual Assault\n- Be aware that some patients may resent physical contact from carers.\n- Avoid judgemental comments \n- Do not allow personal beliefs to interfere with any communication.\n\n- Ensure that every assessment or treatment procedure is explained fully and consent is gained before it is conducted. \n- Exceptions to this include patients with a decreased LOC, or with life threatening injuries. \n- Articles of evidence, such as clothing, must be taken with the patient (use a paper bag).\n- Discourage the patient from showering or washing.\n- Consider offering to bring a support person with the patient, if appropriate. - Do not give details of the assault over the radio.\\u2003",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "0adc0c6f66c41128ec6a7b5481aa5555eb7790e1836dabd9e5e5dd6ad37ef76a",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.732716+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_32",
+  "extra": {
+    "cmg_number": "32"
+  }
+}

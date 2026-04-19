@@ -1,0 +1,1527 @@
+{
+  "generated_at": "2026-04-05T12:20:27.925823+00:00",
+  "items": [
+    {
+      "id": "CMG_1_General_Care",
+      "cmg_number": "1",
+      "title": "General Care",
+      "section": "General Care",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_2_Pain_Management",
+      "cmg_number": "2",
+      "title": "Pain Management",
+      "section": "Pain Management",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_4_Cardiac_Arrest__Adult",
+      "cmg_number": "4",
+      "title": "Cardiac Arrest: Adult",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_4A_ROSC__Adult__Return_of_Spontaneous_Circulation_",
+      "cmg_number": "4A",
+      "title": "ROSC: Adult (Return of Spontaneous Circulation)",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_",
+      "cmg_number": "5",
+      "title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_5A_ROSC__Paediatric__Return_of_Spontaneous_Circulation_",
+      "cmg_number": "5A",
+      "title": "ROSC: Paediatric (Return of Spontaneous Circulation)",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_5B_Neonate_Resuscitation",
+      "cmg_number": "5B",
+      "title": "Neonate Resuscitation",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_3_Airway_Management",
+      "cmg_number": "3",
+      "title": "Airway Management",
+      "section": "Airway Management",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+      "cmg_number": "3A",
+      "title": "RSI (Rapid Sequence Intubation)",
+      "section": "Airway Management",
+      "source_type": "cmg",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_3B_Intubation_Algorithm",
+      "cmg_number": "3B",
+      "title": "Intubation Algorithm",
+      "section": "Airway Management",
+      "source_type": "cmg",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_12_Upper_Airway_Obstruction",
+      "cmg_number": "12",
+      "title": "Upper Airway Obstruction",
+      "section": "Airway Management",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_3C_Preexisting_Tracheostomy_Management",
+      "cmg_number": "3C",
+      "title": "Preexisting Tracheostomy Management",
+      "section": "Airway Management",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_9_Respiratory_Distress",
+      "cmg_number": "9",
+      "title": "Respiratory Distress",
+      "section": "Respiratory",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_14_Shock_and_Hypoperfusion",
+      "cmg_number": "14",
+      "title": "Shock and Hypoperfusion",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_6_Cardiac_Arrhythmias",
+      "cmg_number": "6",
+      "title": "Cardiac Arrhythmias",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_7_Bradyarrhythmias",
+      "cmg_number": "7",
+      "title": "Bradyarrhythmias",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_8_Tachyarrhythmias",
+      "cmg_number": "8",
+      "title": "Tachyarrhythmias",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_16_Suspected_ACS__Acute_Coronary_Syndrome_",
+      "cmg_number": "16",
+      "title": "Suspected ACS (Acute Coronary Syndrome)",
+      "section": "Cardiac",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_13_Abdominal_Emergencies",
+      "cmg_number": "13",
+      "title": "Abdominal Emergencies",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_15_Altered_Level_of_Consciousness",
+      "cmg_number": "15",
+      "title": "Altered Level of Consciousness",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_43_Adrenal_Crisis",
+      "cmg_number": "43",
+      "title": "Adrenal Crisis",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_29_Allergic_and_Anaphylactic_Reactions",
+      "cmg_number": "29",
+      "title": "Allergic and Anaphylactic Reactions",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_18A_Autonomic_Dysreflexia",
+      "cmg_number": "18A",
+      "title": "Autonomic Dysreflexia",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_10_Diabetic_Emergencies",
+      "cmg_number": "10",
+      "title": "Diabetic Emergencies",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_25_Diving_Emergencies",
+      "cmg_number": "25",
+      "title": "Diving Emergencies",
+      "section": "Environmental",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_44_Febrile_Paediatric___12yo_",
+      "cmg_number": "44",
+      "title": "Febrile Paediatric (<12yo)",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_28_Home_Dialysis_Emergencies",
+      "cmg_number": "28",
+      "title": "Home Dialysis Emergencies",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_38A_Meningococcal_Disease",
+      "cmg_number": "38A",
+      "title": "Meningococcal Disease",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_41_Nausea_and_Vomiting",
+      "cmg_number": "41",
+      "title": "Nausea and Vomiting",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_45_Palliative_Care_and_VAD",
+      "cmg_number": "45",
+      "title": "Palliative Care and VAD",
+      "section": "Palliative Care",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_22a_Psychogenic_Non_Epileptic_Seizures__PNES_",
+      "cmg_number": "22a",
+      "title": "Psychogenic Non-Epileptic Seizures (PNES)",
+      "section": "Neurology",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_22_Seizures",
+      "cmg_number": "22",
+      "title": "Seizures",
+      "section": "Neurology",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_38_Sepsis",
+      "cmg_number": "38",
+      "title": "Sepsis",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_23_Stroke",
+      "cmg_number": "23",
+      "title": "Stroke",
+      "section": "Neurology",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_32_Assault",
+      "cmg_number": "32",
+      "title": "Assault",
+      "section": "Behavioural",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_21_Burns",
+      "cmg_number": "21",
+      "title": "Burns",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_17_Chest_Injuries",
+      "cmg_number": "17",
+      "title": "Chest Injuries",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_30_Crush_Syndrome",
+      "cmg_number": "30",
+      "title": "Crush Syndrome",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_31_Electric_Shock",
+      "cmg_number": "31",
+      "title": "Electric Shock",
+      "section": "Environmental",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_20_Eye_Emergencies",
+      "cmg_number": "20",
+      "title": "Eye Emergencies",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_42_Falls",
+      "cmg_number": "42",
+      "title": "Falls",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_19_Limb_Injuries",
+      "cmg_number": "19",
+      "title": "Limb Injuries",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_39_Major_Trauma",
+      "cmg_number": "39",
+      "title": "Major Trauma",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_18_Spinal_Injuries",
+      "cmg_number": "18",
+      "title": "Spinal Injuries",
+      "section": "Trauma",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_33_Behavioural_and_Mental_Health_Emergencies",
+      "cmg_number": "33",
+      "title": "Behavioural and Mental Health Emergencies",
+      "section": "Behavioural",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_37_Combative_and_Agitated_Patients",
+      "cmg_number": "37",
+      "title": "Combative and Agitated Patients",
+      "section": "Behavioural",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_35B_Bites_and_Stings",
+      "cmg_number": "35B",
+      "title": "Bites and Stings",
+      "section": "Toxicology",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_34_CBRN___HAZMAT_Incident",
+      "cmg_number": "34",
+      "title": "CBRN / HAZMAT Incident",
+      "section": "HAZMAT",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_35A_Poisoning_and_Overdose",
+      "cmg_number": "35A",
+      "title": "Poisoning and Overdose",
+      "section": "Toxicology",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_27_Hyperkalaemia",
+      "cmg_number": "27",
+      "title": "Hyperkalaemia",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_24_Drowning",
+      "cmg_number": "24",
+      "title": "Drowning",
+      "section": "Environmental",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_11A_Heat_Abnormalities",
+      "cmg_number": "11A",
+      "title": "Heat Abnormalities",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_11B_Hypothermia",
+      "cmg_number": "11B",
+      "title": "Hypothermia",
+      "section": "Medical",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_26A_Unscheduled_Normal_Field_Birth",
+      "cmg_number": "26A",
+      "title": "Unscheduled Normal Field Birth",
+      "section": "Obstetric",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_26B_Complicated_Birth",
+      "cmg_number": "26B",
+      "title": "Complicated Birth",
+      "section": "Obstetric",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies",
+      "cmg_number": "26C",
+      "title": "Other Obstetric and Gynaecological Emergencies",
+      "section": "Obstetric",
+      "source_type": "cmg",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_01_Acetylsalicylic_Acid__Aspirin_",
+      "cmg_number": "01",
+      "title": "Acetylsalicylic Acid (Aspirin)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_02_Adenosine__Adenocor_",
+      "cmg_number": "02",
+      "title": "Adenosine (Adenocor)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_03_Adrenaline",
+      "cmg_number": "03",
+      "title": "Adrenaline",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_04_Amiodarone__Cordarone_",
+      "cmg_number": "04",
+      "title": "Amiodarone (Cordarone)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_05_Atropine_Sulphate",
+      "cmg_number": "05",
+      "title": "Atropine Sulphate",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_06_Calcium_Chloride",
+      "cmg_number": "06",
+      "title": "Calcium Chloride",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_07_Ceftriaxone__Rocephin_",
+      "cmg_number": "07",
+      "title": "Ceftriaxone (Rocephin)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_08_Droperidol__Dorm_",
+      "cmg_number": "08",
+      "title": "Droperidol (Dorm)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_09_Fentanyl__Intra_nasal_",
+      "cmg_number": "09",
+      "title": "Fentanyl (Intra-nasal)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_10_Glucagon",
+      "cmg_number": "10",
+      "title": "Glucagon",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_11_Glucose_10_",
+      "cmg_number": "11",
+      "title": "Glucose 10%",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_12_Oral_Glucose_Gel",
+      "cmg_number": "12",
+      "title": "Oral Glucose Gel",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_13_Glyceryl_Trinitrate__Anginine_or_Nitrolingual_Pumpspray_",
+      "cmg_number": "13",
+      "title": "Glyceryl Trinitrate (Anginine or Nitrolingual Pumpspray)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_14_Heparin",
+      "cmg_number": "14",
+      "title": "Heparin",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_15_Hydrocortisone",
+      "cmg_number": "15",
+      "title": "Hydrocortisone",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_16_Ibuprofen",
+      "cmg_number": "16",
+      "title": "Ibuprofen",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_17_Ipratropium_Bromide__Atrovent_",
+      "cmg_number": "17",
+      "title": "Ipratropium Bromide (Atrovent)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_18_Ketamine_Hydrochloride__Ketalar_",
+      "cmg_number": "18",
+      "title": "Ketamine Hydrochloride (Ketalar)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_35_Levetiracetam",
+      "cmg_number": "35",
+      "title": "Levetiracetam",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_19_Lignocaine",
+      "cmg_number": "19",
+      "title": "Lignocaine",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_20_Magnesium_Sulphate",
+      "cmg_number": "20",
+      "title": "Magnesium Sulphate",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_21_Methoxyflurane",
+      "cmg_number": "21",
+      "title": "Methoxyflurane",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_22_Midazolam",
+      "cmg_number": "22",
+      "title": "Midazolam",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_23_Morphine",
+      "cmg_number": "23",
+      "title": "Morphine",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_24_Naloxone__Narcan_",
+      "cmg_number": "24",
+      "title": "Naloxone (Narcan)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_34_Normal_Saline",
+      "cmg_number": "34",
+      "title": "Normal Saline",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_25_Olanzapine",
+      "cmg_number": "25",
+      "title": "Olanzapine",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_26_Ondansetron__Zofran_",
+      "cmg_number": "26",
+      "title": "Ondansetron (Zofran)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_33_Oxygen",
+      "cmg_number": "33",
+      "title": "Oxygen",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_27_Paracetamol",
+      "cmg_number": "27",
+      "title": "Paracetamol",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_28_Prochlorperazine__Stemetil_",
+      "cmg_number": "28",
+      "title": "Prochlorperazine (Stemetil)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_29_Salbutamol__Ventolin_",
+      "cmg_number": "29",
+      "title": "Salbutamol (Ventolin)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_30_Sodium_Bicarbonate",
+      "cmg_number": "30",
+      "title": "Sodium Bicarbonate",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_31_Suxamethonium",
+      "cmg_number": "31",
+      "title": "Suxamethonium",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_32_Topical_Anaesthetic_Cream__LMX4_",
+      "cmg_number": "32",
+      "title": "Topical Anaesthetic Cream (LMX4)",
+      "section": "Medicine",
+      "source_type": "med",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A01_Manual_Clearance__Airway_Management_",
+      "cmg_number": "CSM.A01",
+      "title": "Manual Clearance (Airway Management)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A02_Triple_Airway_Manoeuvre__Airway_Management_",
+      "cmg_number": "CSM.A02",
+      "title": "Triple Airway Manoeuvre (Airway Management)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A03_Suction__Airway_Management_",
+      "cmg_number": "CSM.A03",
+      "title": "Suction (Airway Management)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A04_Modified_Chest_Thrusts__Airway_Obstruction_",
+      "cmg_number": "CSM.A04",
+      "title": "Modified Chest Thrusts (Airway Obstruction)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A05_Back_Blows__Airway_Obstruction_",
+      "cmg_number": "CSM.A05",
+      "title": "Back Blows (Airway Obstruction)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A06_Magill_Forceps__Airway_Obstruction_",
+      "cmg_number": "CSM.A06",
+      "title": "Magill Forceps (Airway Obstruction)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A07_Oropharyngeal_Airway__OPA_",
+      "cmg_number": "CSM.A07",
+      "title": "Oropharyngeal Airway (OPA)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A08_Nasopharyngeal_Airway__NPA_",
+      "cmg_number": "CSM.A08",
+      "title": "Nasopharyngeal Airway (NPA)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A09_Laryngeal_Mask_Airway__LMA_Supreme_",
+      "cmg_number": "CSM.A09",
+      "title": "Laryngeal Mask Airway (LMA Supreme)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A10_AirTraq__Endotracheal_Intubation_",
+      "cmg_number": "CSM.A10",
+      "title": "AirTraq (Endotracheal Intubation)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.A11_AirTraq_Camera",
+      "cmg_number": "CSM.A11",
+      "title": "AirTraq Camera",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A12_Laryngoscope_and_Bougie__Endotracheal_Intubation_",
+      "cmg_number": "CSM.A12",
+      "title": "Laryngoscope and Bougie (Endotracheal Intubation)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.A13_Laryngoscope_and_Bougie_Railroad_Technique__Endotracheal_Intubation_",
+      "cmg_number": "CSM.A13",
+      "title": "Laryngoscope and Bougie Railroad Technique (Endotracheal Intubation)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.A14_BURP_Manoeuvre",
+      "cmg_number": "CSM.A14",
+      "title": "BURP Manoeuvre",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A15_Extubation",
+      "cmg_number": "CSM.A15",
+      "title": "Extubation",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.A16_Cricothyroid_Pressure",
+      "cmg_number": "CSM.A16",
+      "title": "Cricothyroid Pressure",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A17_Cardiac_Monitor__End_Tidal_CO₂_",
+      "cmg_number": "CSM.A17",
+      "title": "Cardiac Monitor (End Tidal CO₂)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A18_EMMA_Capnograph",
+      "cmg_number": "CSM.A18",
+      "title": "EMMA Capnograph",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A19_Intragastric_Tube__IGT__Insertion",
+      "cmg_number": "CSM.A19",
+      "title": "Intragastric Tube (IGT) Insertion",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.A20_Front_of_Neck__Surgical_Airway_",
+      "cmg_number": "CSM.A20",
+      "title": "Front of Neck (Surgical Airway)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.A21_Needle_Cricothyroidotomy",
+      "cmg_number": "CSM.A21",
+      "title": "Needle Cricothyroidotomy",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.B01_Oxygen_Administration",
+      "cmg_number": "CSM.B01",
+      "title": "Oxygen Administration",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B02_Intermittent_Positive_Pressure_Ventilation__IPPV_",
+      "cmg_number": "CSM.B02",
+      "title": "Intermittent Positive Pressure Ventilation (IPPV)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B03_Positive_End_Expiratory_Pressure__PEEP_",
+      "cmg_number": "CSM.B03",
+      "title": "Positive End Expiratory Pressure (PEEP)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B04_Continuous_Positive_Airway_Pressure__CPAP_",
+      "cmg_number": "CSM.B04",
+      "title": "Continuous Positive Airway Pressure (CPAP)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B05_Nebulising_Mask__Nebulised_Medication_",
+      "cmg_number": "CSM.B05",
+      "title": "Nebulising Mask (Nebulised Medication)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B06_MDI_Spacer__Nebulised_Medication_",
+      "cmg_number": "CSM.B06",
+      "title": "MDI Spacer (Nebulised Medication)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B07_Metered_Dose_Inhaler__MDI_with_Spacer_",
+      "cmg_number": "CSM.B07",
+      "title": "Metered Dose Inhaler (MDI with Spacer)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B08_Expiratory_Assistance__Lateral_Chest_Squeeze_",
+      "cmg_number": "CSM.B08",
+      "title": "Expiratory Assistance (Lateral Chest Squeeze)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B09_Expired_Air_Resuscitation__EAR_",
+      "cmg_number": "CSM.B09",
+      "title": "Expired Air Resuscitation (EAR)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.B10_Tension_Pneumothorax_Needle_Decompression",
+      "cmg_number": "CSM.B10",
+      "title": "Tension Pneumothorax Needle Decompression",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.B11_Chest_Seal__Hyfin_Vent_",
+      "cmg_number": "CSM.B11",
+      "title": "Chest Seal (Hyfin Vent)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.C01_Cardiopulmonary_Resuscitation__CPR_",
+      "cmg_number": "CSM.C01",
+      "title": "Cardiopulmonary Resuscitation (CPR)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.C02_Defibrillation_Manual_Mode__Zoll_X_Series_",
+      "cmg_number": "CSM.C02",
+      "title": "Defibrillation Manual Mode (Zoll X Series)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.C03_Defibrillation_AED_Mode__Zoll_X_Series_",
+      "cmg_number": "CSM.C03",
+      "title": "Defibrillation AED Mode (Zoll X Series)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.C04_Defibrillation_Using_an_AED",
+      "cmg_number": "CSM.C04",
+      "title": "Defibrillation Using an AED",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.C05_External_Cardiac_Pacing__Zoll_X_Series_",
+      "cmg_number": "CSM.C05",
+      "title": "External Cardiac Pacing (Zoll X Series)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.C06_Valsalva_Manoeuvre",
+      "cmg_number": "CSM.C06",
+      "title": "Valsalva Manoeuvre",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.C08_Precordial_Thump",
+      "cmg_number": "CSM.C08",
+      "title": "Precordial Thump",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA01_Pulse_Palpation",
+      "cmg_number": "CSM.PA01",
+      "title": "Pulse Palpation",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA02_Pulse_Oximetry",
+      "cmg_number": "CSM.PA02",
+      "title": "Pulse Oximetry",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA03_Chest_Auscultation",
+      "cmg_number": "CSM.PA03",
+      "title": "Chest Auscultation",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA04_Blood_Pressure_Measurement__Auscultate_",
+      "cmg_number": "CSM.PA04",
+      "title": "Blood Pressure Measurement (Auscultate)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA05_Blood_Pressure_Measurement__Palpate_",
+      "cmg_number": "CSM.PA05",
+      "title": "Blood Pressure Measurement (Palpate)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA06_ECG_Monitoring",
+      "cmg_number": "CSM.PA06",
+      "title": "ECG Monitoring",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA07_12_Lead_ECG_Monitoring",
+      "cmg_number": "CSM.PA07",
+      "title": "12 Lead ECG Monitoring",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA08_15_Lead_ECG_Monitoring",
+      "cmg_number": "CSM.PA08",
+      "title": "15 Lead ECG Monitoring",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA09_Tympanic_Temperature_Measurement",
+      "cmg_number": "CSM.PA09",
+      "title": "Tympanic Temperature Measurement",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA10_Blood_Glucose_Measurement",
+      "cmg_number": "CSM.PA10",
+      "title": "Blood Glucose Measurement",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.PA11_Blood_Lactate_Measurement",
+      "cmg_number": "CSM.PA11",
+      "title": "Blood Lactate Measurement",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P01_Log_Roll",
+      "cmg_number": "CSM.P01",
+      "title": "Log Roll",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P02_Lateral_Posture",
+      "cmg_number": "CSM.P02",
+      "title": "Lateral Posture",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P03_Left_Lateral_with_Buttocks_Raised",
+      "cmg_number": "CSM.P03",
+      "title": "Left Lateral with Buttocks Raised",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P04_Supine",
+      "cmg_number": "CSM.P04",
+      "title": "Supine",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P06_Supine_with_Legs_Elevated_or_Flexed",
+      "cmg_number": "CSM.P06",
+      "title": "Supine with Legs Elevated or Flexed",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P07_Semi_Sitting",
+      "cmg_number": "CSM.P07",
+      "title": "Semi-Sitting",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P08_Sitting",
+      "cmg_number": "CSM.P08",
+      "title": "Sitting",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF01_Drawing_Up_Drugs",
+      "cmg_number": "CSM.DF01",
+      "title": "Drawing Up Drugs",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF02_Pre_Administration_Drug_Check",
+      "cmg_number": "CSM.DF02",
+      "title": "Pre-Administration Drug Check",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF03_Subcutaneous_Injection",
+      "cmg_number": "CSM.DF03",
+      "title": "Subcutaneous Injection",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF04_Intramuscular_Injection",
+      "cmg_number": "CSM.DF04",
+      "title": "Intramuscular Injection",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF05_BD_Eclipse_Needle__IMI_and_SC_",
+      "cmg_number": "CSM.DF05",
+      "title": "BD Eclipse Needle (IMI and SC)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF06_Intravenous_Cannulation",
+      "cmg_number": "CSM.DF06",
+      "title": "Intravenous Cannulation",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF07_External_Jugular_Cannulation",
+      "cmg_number": "CSM.DF07",
+      "title": "External Jugular Cannulation",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.DF08_Intraosseous_Insertion__EZ_IO_",
+      "cmg_number": "CSM.DF08",
+      "title": "Intraosseous Insertion (EZ-IO)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF09_Giving_Set__Fluid_Administration_",
+      "cmg_number": "CSM.DF09",
+      "title": "Giving Set (Fluid Administration)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF10_Pump_Set__Fluid_Administration_",
+      "cmg_number": "CSM.DF10",
+      "title": "Pump Set (Fluid Administration)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF11_Burette__Fluid_Administration_",
+      "cmg_number": "CSM.DF11",
+      "title": "Burette (Fluid Administration)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF12_Springfuser_and_Flow_Control_Tubing",
+      "cmg_number": "CSM.DF12",
+      "title": "Springfuser and Flow Control Tubing",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF13_Methoxyflurane_Administration",
+      "cmg_number": "CSM.DF13",
+      "title": "Methoxyflurane Administration",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF14_Mucosal_Atomising_Device__MAD_",
+      "cmg_number": "CSM.DF14",
+      "title": "Mucosal Atomising Device (MAD)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF15_Oral___Sublingual_Drug_Administration",
+      "cmg_number": "CSM.DF15",
+      "title": "Oral / Sublingual Drug Administration",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.DF16_Adrenaline_Infusion",
+      "cmg_number": "CSM.DF16",
+      "title": "Adrenaline Infusion",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": true
+    },
+    {
+      "id": "CMG_CSM.DF17_Applying_Topical_Anaesthetic_Cream",
+      "cmg_number": "CSM.DF17",
+      "title": "Applying Topical Anaesthetic Cream",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH01_Pad_and_Spiral_Bandage",
+      "cmg_number": "CSM.IDH01",
+      "title": "Pad and Spiral Bandage",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH02_Arm_Sling",
+      "cmg_number": "CSM.IDH02",
+      "title": "Arm Sling",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH03_Elevation_Sling",
+      "cmg_number": "CSM.IDH03",
+      "title": "Elevation Sling",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH04_Collar_and_Cuff_Sling",
+      "cmg_number": "CSM.IDH04",
+      "title": "Collar and Cuff Sling",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH05_Ring_Bandage",
+      "cmg_number": "CSM.IDH05",
+      "title": "Ring Bandage",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH06_Splinting__Basic_Limb_",
+      "cmg_number": "CSM.IDH06",
+      "title": "Splinting (Basic Limb)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH07_Traction_Splint",
+      "cmg_number": "CSM.IDH07",
+      "title": "Traction Splint",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH08_Cervical_Collar",
+      "cmg_number": "CSM.IDH08",
+      "title": "Cervical Collar",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH09_Pelvic_Splint",
+      "cmg_number": "CSM.IDH09",
+      "title": "Pelvic Splint",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH10_Pelvic_Fracture_Management_in_the_Absence_of_Commercial_Pelvic_Splint",
+      "cmg_number": "CSM.IDH10",
+      "title": "Pelvic Fracture Management in the Absence of Commercial Pelvic Splint",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH12_Compression_Bandage",
+      "cmg_number": "CSM.IDH12",
+      "title": "Compression Bandage",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH13_External_Haemorrhage_Control",
+      "cmg_number": "CSM.IDH13",
+      "title": "External Haemorrhage Control",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH14_Arterial_Tourniquet",
+      "cmg_number": "CSM.IDH14",
+      "title": "Arterial Tourniquet",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH15_Combat_Application_Tourniquet__CAT_",
+      "cmg_number": "CSM.IDH15",
+      "title": "Combat Application Tourniquet (CAT)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH16_Wound_Packing",
+      "cmg_number": "CSM.IDH16",
+      "title": "Wound Packing",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH17_Fistula_Haemorrhage_Control",
+      "cmg_number": "CSM.IDH17",
+      "title": "Fistula Haemorrhage Control",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH18_Burns_Dressing",
+      "cmg_number": "CSM.IDH18",
+      "title": "Burns Dressing",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M01_Pre_Shift_Check__Zoll_X_Series_",
+      "cmg_number": "CSM.M01",
+      "title": "Pre-Shift Check (Zoll X Series)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M02_Case_Transfer__Zoll_X_Series_",
+      "cmg_number": "CSM.M02",
+      "title": "Case Transfer (Zoll X Series)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M03_STEMI_Transmission__Zoll_X_Series_",
+      "cmg_number": "CSM.M03",
+      "title": "STEMI Transmission (Zoll X Series)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M04_Patient_Restraints",
+      "cmg_number": "CSM.M04",
+      "title": "Patient Restraints",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M05_Speed_Clip_Strapping",
+      "cmg_number": "CSM.M05",
+      "title": "Speed Clip Strapping",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M06_Oleoresin_Capsicum_Spray__OC_Decontamination_",
+      "cmg_number": "CSM.M06",
+      "title": "Oleoresin Capsicum Spray (OC Decontamination)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M07_Skills_Matrix",
+      "cmg_number": "CSM.M07",
+      "title": "Skills Matrix",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M08_Post_Partum_Haemorrhage__Fundal_Massage",
+      "cmg_number": "CSM.M08",
+      "title": "Post Partum Haemorrhage: Fundal Massage",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    }
+  ],
+  "service": "actas",
+  "guideline_id": "guidelines-index"
+}

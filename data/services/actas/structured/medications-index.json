@@ -1,0 +1,357 @@
+{
+  "generated_at": "2026-04-05T12:20:27.928663+00:00",
+  "items": [
+    {
+      "name": "Acetylsalicylic Acid (Aspirin)",
+      "indication": "Suspected myocardial ischaemia",
+      "contraindications": "- Known or suspected allergy to salicylates; - Known or suspected active bleeding; - Known bleeding tendency; - Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage)",
+      "adverse_effects": "- Allergic reactions; - Aggravation of bleeding tendencies; - Gastric irritation (unlikely after single dose)",
+      "precautions": "- Peptic ulcer; - Patients on anticoagulants",
+      "dose": "##### Adult\n- 1 tablet (300mg)\n- Chewed and swallowed, or dissolved in a small amount of water.\n- \\xbd tablet (150mg) if on warfarin.",
+      "cmg_reference": "CMG 01",
+      "is_icp_only": false
+    },
+    {
+      "name": "Adenosine (Adenocor)",
+      "indication": "- Treatment of supraventricular tachycardia.; - Not for the treatment of atrial flutter or fibrillation; however, if mistakenly administered to patients in these arrhythmias, the decrease in AV conduction may unmask atrial activity.",
+      "contraindications": "- 2\\xb0 or 3\\xb0 heart block; - Known hypersensitivity",
+      "adverse_effects": "Common, although transient and generally minor:; - Arrhythmias at the time of conversion are common (up to 55% patients) – including PVCs, PACs, sinus bradycardia, AV blocks; - Transient flushing of the skin; - Mild dyspnoea; - Chest tightness; - Nausea; - Headache; - Feelings of apprehension and fear",
+      "precautions": "- Asthma – may exacerbate bronchospasm; - Antagonised by: theophylline (Nuelin); - Potentiated by:; - dipyridamole (Persantin, Asasantin); - carbamazepine (Tegretol, Teril)",
+      "dose": "##### Adult (symptomatic adults only)\n- **ICP: **6mg IV - rapid bolus (over 1 - 2 seconds)\n- Give into a fast flowing pump set.\n- **ICP: **If first is unsuccessful:\n- Give second dose (2 minutes between doses)\n- 12mg IV - rapid bolus (over 1 - 2 seconds).##### Paediatric\n- **ICP:** First dose: 0.05mg/kg – given as above\n- **ICP:** Second dose: 0.1mg/kg",
+      "cmg_reference": "CMG 02",
+      "is_icp_only": false
+    },
+    {
+      "name": "Adrenaline",
+      "indication": "- Cardiac arrest; - Anaphylaxis; - Severe life-threatening asthma; - Bradyarrhythmias resistant to atropine **- ICP only**; - Severe upper airway swelling; - Shock unresponsive to fluid boluses **- ICP only**",
+      "contraindications": "- Hypovolaemic shock without adequate fluid replacement",
+      "adverse_effects": "- Tachycardia; - Tachyarrhythmias; - Hypertension",
+      "precautions": "These apply to patients with cardiac output only:; - Care with patients with history of hypertension; - Care with patients with history of ischaemic heart disease; - Give extremely slowly to patients on MAO Inhibitor antidepressants (e.g. Nardil, Parnate) as adrenaline may provoke a greatly exaggerated response. Generally, patients on MAOIs with cardiac output should receive no more than \\xbc of the normal dose of adrenaline, titrated to response; - Hypothermia",
+      "dose": "#### Bradyarrhythmias resistant to atropine##### Adult and Paediatric\n- **ICP:** IV/IO adrenaline by infusion – titrated to response\n#### Cardiac arrest##### Adult\n- 1mg IV or IO – fast push\n- No limit on number of doses in cardiac arrest.\n##### Paediatric\n- IV: 0.01mg/kg – fast push\n- No limit on number of doses in cardiac arrest.\n- **ICP:** IO: 0.01mg/kg – fast push\n- No limit on number of doses in cardiac arrest.\n- **ICP:** ETT: NEWBORN ONLY\n- If no IV or IO access – 0.02mg/kg.\n#### Anaphylaxis / asthma (severe life threatening)##### Adult\n- IM: 0.5mg\n- Repeat 5 minutely (max three doses).\n- **ICP:** If required – **IV/IO** adrenaline by infusion\n- Titrated to response.\n##### Paediatric\n- IM: 0.01mg/kg (up to 50kg)\n- Repeat 5 minutely (max three doses).\n- **ICP:** If required – **IV/IO** adrenaline by infusion\n- Titrated to response.\n#### Severe upper airway swelling##### Adult\n- **IM:** 0.5mg\n- Repeat 5 minutely (max three doses).\n##### Paediatric\n- Weight >10kg: nebulise 5ml adrenaline 1:1,000\n- Weight",
+      "cmg_reference": "CMG 03",
+      "is_icp_only": true
+    },
+    {
+      "name": "Amiodarone (Cordarone)",
+      "indication": "Effective for both supraventricular and ventricular arrhythmias. ACTAS uses:; - To slow the ventricular rate in atrial fibrillation and flutter; - To treat VF and VT",
+      "contraindications": "- Known hypersensitivity; - Cross sensitivity to iodine",
+      "adverse_effects": "When given IV, can cause vasodilation, negative inotropic effects and hypotension (dose and rate dependent).; Occasionally may cause:; - Bradycardia (especially in older patients); - Phlebitis; - Hot flushes / sweating",
+      "precautions": "See clinical management guideline",
+      "dose": "#### VF/VT cardiac arrest##### Adult\n- **ICP:** 300mg IV/IO\n- Over 30-60 seconds.\n##### Paediatric\n- **ICP:** 5mg/kg IV/IO (to maximum 300mg)\n- Over 30-60 seconds.\n#### VT, AF and A.flutter - with cardiac output##### Adult\n- **ICP:** 150mg IV via Springfusor\n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n##### Paediatric\n- **ICP:** 5mg/kg IV (to maximum 150mg) via Springfusor\n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.",
+      "cmg_reference": "CMG 04",
+      "is_icp_only": true
+    },
+    {
+      "name": "Atropine Sulphate",
+      "indication": "- Bradyarrhythmias with poor perfusion **- ICP only**; - Organophosphate/ nerve agent poisoning; - Big black spider bite with cholinergic symptoms",
+      "contraindications": "Known hypersensitivity.",
+      "adverse_effects": "- Tachycardia; - Palpitations; - Blurred vision; - Dry mouth; - Confusion; - Urinary retention; - Increased body temperature (by decreasing perspiration)",
+      "precautions": "- Care needed in patients with glaucoma; - Aim not to increase heart rate above 100bpm",
+      "dose": "#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push\n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push\n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections.\n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used.\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+      "cmg_reference": "CMG 05",
+      "is_icp_only": true
+    },
+    {
+      "name": "Calcium Chloride",
+      "indication": "- Emergency treatment of hyperkalaemia; - Cardiac arrest secondary to hyperkalaemia (i.e., hyperkalaemia is thought to be the cause of the cardiac arrest); - Prolonged hypotension post-magnesium administration, if unresponsive to fluid",
+      "contraindications": "- Known hypersensitivity; - Digoxin overdose",
+      "adverse_effects": "- Tissue necrosis if extravasation; - Precipitates out in contact with bicarbonate; - If fast pushed:; - Bradycardia; - Peripheral vasodilation; - Hypotension",
+      "precautions": "See clinical management guideline",
+      "dose": "##### Adult and Paediatric\n- **ICP:**** With cardiac output:** 10mg/kg (up to 1g) IV/IO\n- Over 2 minutes\n- Repeat once, if required.\n- **ICP:**** No cardiac output:** 10mg/kg (up to 1g) IV/IO\n- Over 30 – 60 seconds\n- Repeat once, if required.",
+      "cmg_reference": "CMG 06",
+      "is_icp_only": true
+    },
+    {
+      "name": "Ceftriaxone (Rocephin)",
+      "indication": "Suspected meningococcal disease, in acutely ill patients",
+      "contraindications": "Known sensitivity to cephalosporins",
+      "adverse_effects": "- Hypersensitivity reactions (not common); - Diarrhoea; - Skin rash",
+      "precautions": "It is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone",
+      "dose": "##### Adult and Paediatric\n- 50mg/kg, to a total of 2g – IV preferred\n- Make up to 10ml with normal saline\n- Give slowly over 2 - 4 minutes\n- May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer into two separate injection sites.\n- **ICP:** May also be given IO if no IV available.",
+      "cmg_reference": "CMG 07",
+      "is_icp_only": false
+    },
+    {
+      "name": "Droperidol (Dorm)",
+      "indication": "Pharmacological intervention for combative / agitated patients.",
+      "contraindications": "- Known hypersensitivity; - Parkinson’s disease; - Post ictal",
+      "adverse_effects": "- Arrhythmias, including prolonged QT interval or torsades de pointes (all patients receiving droperidol must have ECG monitoring); - Extrapyramidal effects (rare); - Neuroleptic malignant syndrome (rare); - May lower seizure threshold",
+      "precautions": "Patients in severe pain; analgesia should also be provided",
+      "dose": "##### Adult (>14 years of age)\n- 10mg via IM injection only (no IV/IO use)\n- Repeat once, after 10-15 minutes, if required.\n##### Frail / elderly (>65 years)\n- 5mg via IM injection only (no IV/IO use)\n- Repeat once, after 10-15 minutes, if required.\n##### Paediatric (",
+      "cmg_reference": "CMG 08",
+      "is_icp_only": false
+    },
+    {
+      "name": "Fentanyl (Intra-nasal)",
+      "indication": "- Analgesic for moderate to severe pain.; - Safe alternative analgesic in patients with known morphine allergy.",
+      "contraindications": "- Known allergy or hypersensitivity; - Bilateral bleeding or occluded nostrils; - Age Increased risk of adverse effects. Consider reducing dose.; - Frail or elderly; Increased risk of adverse effects. Consider reducing dose.; - Reduced level of consciousness; Potential difficulty correctly administering via IN route.",
+      "adverse_effects": "- Reduced conscious state; - Respiratory depression; - Nausea/vomiting; - Bradycardia (rare); - Rigidity of the diaphragm, intercostals and jaw (rare)",
+      "precautions": "See clinical management guideline",
+      "dose": "#### Analgesia – Intranasal##### Adult and Paediatric\n- 1.5mcg/kg IN, up to 100mcg.\n- Repeat @5/60 intervals as required.",
+      "cmg_reference": "CMG 09",
+      "is_icp_only": false
+    },
+    {
+      "name": "Glucagon",
+      "indication": "Treatment of hypoglycaemia (BGL 20kg: 1 IU – IM; - Single dose only.",
+      "contraindications": "See clinical management guideline",
+      "adverse_effects": "See clinical management guideline",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 10",
+      "is_icp_only": false
+    },
+    {
+      "name": "Glucose 10%",
+      "indication": "Treat hypoglycaemia (BGL",
+      "contraindications": "See clinical management guideline",
+      "adverse_effects": "See clinical management guideline",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 11",
+      "is_icp_only": false
+    },
+    {
+      "name": "Oral Glucose Gel",
+      "indication": "Treatment of hypoglycaemia (BGL",
+      "contraindications": "See clinical management guideline",
+      "adverse_effects": "See clinical management guideline",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 12",
+      "is_icp_only": false
+    },
+    {
+      "name": "Glyceryl Trinitrate (Anginine or Nitrolingual Pumpspray)",
+      "indication": "- Relieve cardiac pain of ischaemic origin; - Relieve acute pulmonary oedema; - Management of autonomic dysreflexia",
+      "contraindications": "- Do not administer if systolic BP is",
+      "adverse_effects": "- Hypotension; - Headache; - Flushing of skin; - Occasionally – bradycardia",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 13",
+      "is_icp_only": false
+    },
+    {
+      "name": "Heparin",
+      "indication": "Patients with an acute ST elevation myocardial infarction who meet the requirements for early percutaneous coronary intervention (PCI) procedure",
+      "contraindications": "Refer to heparin checklist",
+      "adverse_effects": "- Bleeding; - Thrombocytopenia; - Anaphylactoid reactions (rare)",
+      "precautions": "Use with care in patients with extensive history of allergies",
+      "dose": "##### Adult\n- 5000u IV – over 30-60 seconds\n##### Paediatric\nNot used.",
+      "cmg_reference": "CMG 14",
+      "is_icp_only": true
+    },
+    {
+      "name": "Hydrocortisone",
+      "indication": "- Moderate to severe respiratory distress due to asthma or exacerbation of COPD; - Patients with a diagnosed adrenal insufficiency who experience a stress response and exhibit altered conscious state and/or refractory hypotension",
+      "contraindications": "Known previous reaction to corticosteroids",
+      "adverse_effects": "Nil significant with single use",
+      "precautions": "See clinical management guideline",
+      "dose": "#### Asthma and COPD##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes\n##### Paediatric\n- **ICP:** 4mg/kg IV (to a maximum of 100mg) – slowly over 2 minutes\n#### Adrenal crisis##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes\n- May be administered IM.\n##### Paediatric\n- **ICP:** IV (slowly over 2 minutes):\n- 12 years = 100mg IV.\n- **ICP:** May be administered IM.",
+      "cmg_reference": "CMG 15",
+      "is_icp_only": true
+    },
+    {
+      "name": "Ibuprofen",
+      "indication": "Analgesia for mild-moderate pain due to inflammation",
+      "contraindications": "- Known hypersensitivity to NSAIDs; - Acute asthma; - Dehydration; - Current peptic ulcers; - Known or suspected active bleeding; - Inability to swallow/impaired gag reflex; - End stage renal or hepatic failure; - Acute heart failure; - Previous ibuprofen administration within 4 hours",
+      "adverse_effects": "- Nausea; - Dyspepsia; - GI ulceration or bleeding; - Diarrhoea; - Headache; - Dizziness",
+      "precautions": "- History of peptic ulcers or GI bleeding; - Hepatic impairment; - Asthma; - Cardiovascular disease",
+      "dose": "##### Adult\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n##### Paediatric\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml\n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+      "cmg_reference": "CMG 16",
+      "is_icp_only": false
+    },
+    {
+      "name": "Ipratropium Bromide (Atrovent)",
+      "indication": "- Severe respiratory distress due to asthma or COPD",
+      "contraindications": "Known hypersensitivity",
+      "adverse_effects": "Rare with single use. Occasionally, urine retention.",
+      "precautions": "Care needed with use in patients with glaucoma",
+      "dose": "#### Severe to life threatening respiratory distress\n**pMDI via spacer**\n##### Adult ≥6yrs\n- 8 actuations\n- Repeat once after 20 minutes\n- 1 actuation to 4 breaths.\n##### Paediatric",
+      "cmg_reference": "CMG 17",
+      "is_icp_only": false
+    },
+    {
+      "name": "Ketamine Hydrochloride (Ketalar)",
+      "indication": "- Sedation of combative/agitated patients, who are an immediate danger to themselves or others; - Induction agent for intubation **- ICP only**; - Maintenance of sedation **- ICP only**; - Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**; - Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**; - Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose; - Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids",
+      "contraindications": "- Known sensitivity; - Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT); - Children 65 years, or with general debility.; - Repeat 1mg/kg IM injection after 5 minutes (if required).",
+      "adverse_effects": "- Laryngospasm; - Hypersalivation; - Dysphoria/emergence reactions; - Muscle twitching and purposeless movements; - Respiratory depression → apnoea (seen in extreme doses or fast administration); - Hypotension (generally seen in hypovolaemic/cardiac depressed patients)",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 18",
+      "is_icp_only": true
+    },
+    {
+      "name": "Levetiracetam",
+      "indication": "Status epilepticus:; - Refractory seizure activity 5/60 after second benzodiazepine dose.; - >20/60 seizure duration.",
+      "contraindications": "- Known allergy.",
+      "adverse_effects": "- Behavioural effects; - Drowsiness; - Weakness; - Dizziness and vertigo; - Headache; - Insomnia; - Amnesia; - Ataxia; - Diplopia; - Anorexia",
+      "precautions": "See clinical management guideline",
+      "dose": "- **ICP:** 40mg/kg (max. 3000mg) IV/IO, infused over 5/60 via infusion pump, no repeat.\n**Note:** If infusion pump unavailable, dose can be administered via slow IV/IO push over 5/60.",
+      "cmg_reference": "CMG 35",
+      "is_icp_only": true
+    },
+    {
+      "name": "Lignocaine",
+      "indication": "- Local anaesthesia prior to invasive procedures; - VT with cardiac output, in patients who cannot have amiodarone; - Flushing of a painful IO in an aware patient; - Solvent for IM ceftriaxone administration",
+      "contraindications": "Known hypersensitivity",
+      "adverse_effects": "These effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.; - CNS effects:; stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma; - Cardiac effects:; hypotension, bradycardia, heart block, asystole",
+      "precautions": "See clinical management guideline",
+      "dose": "#### Local anaesthesia##### Adult and Paediatric\n- **ICP:** Up to 5ml subcutaneously\n#### VT with cardiac output##### Adult and Paediatric\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes\n#### IO in an aware patient##### Adult\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes\n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine##### Paediatric\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes\n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n#### Solvent for IM Ceftriaxone\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
+      "cmg_reference": "CMG 19",
+      "is_icp_only": false
+    },
+    {
+      "name": "Magnesium Sulphate",
+      "indication": "- Torsades de pointes / polymorphic VT **- ICP only**; - Refractory VF (3rd drug) **- ICP only**; - Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation; - Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**",
+      "contraindications": "- AV block; - Renal failure; - Hepatic failure",
+      "adverse_effects": "Rare – more common if serum magnesium is normal:; - Respiratory depression; - Nausea and vomiting; - Hypotension; - Confusion; - Bradycardia",
+      "precautions": "Myasthenia gravis",
+      "dose": "##### Adult\n- **ICP: ****With cardiac output: **2.5g IV/IO\n- Diluted up to 10ml with normal saline\n- Given over 5 minutes.\n- **ICP: ****Refractory VF: **2.5g IV/IO\n- Over 30-60 seconds\n- **ICP: ****Torsades de pointes: **2.5g IV/IO\n- Over 30-60 seconds\n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor\n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).##### Paediatric\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.",
+      "cmg_reference": "CMG 20",
+      "is_icp_only": true
+    },
+    {
+      "name": "Methoxyflurane",
+      "indication": "For relief of pain of all origins",
+      "contraindications": "- Depressed level of consciousness; - Known hypersensitivity; - Malignant hyperthermia; - Concurrent doxycycline use (e.g. Doryx, Doxsig, Doxylin, Frakas, etc.)",
+      "adverse_effects": "- Altered consciousness; - Renal dysfunction (rare with once only ambulance use); - Jaundice (rare with once only ambulance use); - Uterine atonia",
+      "precautions": "- Renal disease; - Diabetes; - Caution if patient unable to self-administer",
+      "dose": "##### Adult and Paediatric\n- Up to 3ml – self administered via Penthrox inhaler\n- Repeat once if required\n- Dose should not exceed 6ml/day or 15ml/week\n- If used during labour, discontinue use post-delivery, and if PPH is suspected.",
+      "cmg_reference": "CMG 21",
+      "is_icp_only": false
+    },
+    {
+      "name": "Midazolam",
+      "indication": "- Status epilepticus; - Post intubation analgosedation in conjunction with morphine; - Relieve distress or restlessness in the palliative care patient; - Relieve suffering due to terminal palliative care emergencies (no active treatment)",
+      "contraindications": "- Previous allergic reaction to Midazolam",
+      "adverse_effects": "- Hypotension; More common when administer via fast IV push; - Respiratory depression and loss of airway; More common at high doses or when synergising with other CNS depressant substances",
+      "precautions": "- Hepatic failure; - Frail or elderly; - Known or suspected concurrent CNS depressant use; - Known or suspected haemodynamic compromise",
+      "dose": "#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg)\n- Repeat @5/60 if required. (max. 2 doses)\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg)\n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec.\n- Repeat @5/60 as required.\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n- **ICP:** Initial infusion rate: 5mg/hr\n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL)\n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+      "cmg_reference": "CMG 22",
+      "is_icp_only": false
+    },
+    {
+      "name": "Morphine",
+      "indication": "- Analgesia for moderate to severe pain; - Maintain analgosedation in intubated patients in conjunction with midazolam.; - Reduce dyspnoea in palliative care patients.; - Relieve suffering due to terminal palliative care emergencies (no active treatment).",
+      "contraindications": "- Respiratory depression; - Systolic blood pressure Disregard contraindications when managing palliative care emergencies (no active treatment) patients.",
+      "adverse_effects": "- Nausea and vomiting; - Altered level of consciousness; - Respiratory depression; - Hypotension; - Bradycardia",
+      "precautions": "- GCS ≤13; - Known hypersensitivity; - Frail patients; - COPD patients; - Hypovolaemic patients; - Systolic BP 70 – 90mmHg (see below); - Children **AP:** max. total dose 20mg; - **ICP:** no max. total dose; - Consider IM:; - IV/IO unobtainable; - Little risk of hypotension- Patient contact estimated >20/60- No ischaemic chest pain- 0.1mg/kg IM; - Repeat once @30/60 if required; - **AP:** max. total dose 20mg##### Adults only; IV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg); - 0.025mg/kg IV/IO over 60 seconds.; - Repeat @10/60 as required.; - Do not repeat if sBP drops ≥10mmHg, even if it remains above 70mmHg.; - **AP:** max. total dose 20mg- **ICP:** no max. total dose#### Post-intubation analgosedation (as adjunct to midazolam)##### Adult (infusion pump); **Note:** Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL; - **ICP: **Initial infusion rate: 5mg/hr; - Lower soft infusion limit: 1mg/hr; - Upper soft infusion limit: 30mg/hr; - Upper hard infusion limit: 50mg/hr- **ICP: **Default bolus: 2mg (2mL); - Lower hard bolus limit: 0.5mg (0.5mL); - Upper hard bolus limit: 5mg (5mL)#### Palliative care; **Note:** Always refer to and follow patient specific treatment plan when available.",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 23",
+      "is_icp_only": false
+    },
+    {
+      "name": "Naloxone (Narcan)",
+      "indication": "- Coma; - Drug overdose and poisoning; - Use in situations where there is significant decrease in level of consciousness; where there is hypoventilation and/or loss of protective reflexes; and where overdose of narcotics cannot be positively excluded",
+      "contraindications": "Known hypersensitivity",
+      "adverse_effects": "- May precipitate acute withdrawal syndrome in narcotic addicts; - Occasional aggressive behaviour following reversal; - Nausea and vomiting",
+      "precautions": "See clinical management guideline",
+      "dose": "##### Adult\n- 1st dose: 0.8mg IM\n- Repeat at 5 minutes if required.\n- 2nd dose: 0.8mg IM\n**OR**- **ICP:** 2nd and subsequent doses:\n- 0.4mg IV increments, fast push\n- May repeat IV dose up to 3 times (to maximum of 2mg)- All doses may be administered IM or IV as the situation demands.##### Paediatric\n- IM: 0.01mg/kg\n- Repeat after 2 – 5 minutes if no effect\n- Maximum paediatric dose: 3 x calculated doses.\n- **ICP:** IV: 0.01mg/kg – fast push\n- Maximum paediatric dose: 3 x calculated doses\n- All doses may be administered IM or IV as the situation demands.",
+      "cmg_reference": "CMG 24",
+      "is_icp_only": false
+    },
+    {
+      "name": "Normal Saline",
+      "indication": "- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes); - Maintenance of hydration during prolonged patient contact time; - To keep vein open, as IV route for drugs",
+      "contraindications": "See clinical management guideline",
+      "adverse_effects": "Fluid overload",
+      "precautions": "See clinical management guideline",
+      "dose": "##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids.\n- Max. dose: 20ml/kg\n- **Traumatic brain injury: **aim for sBP ≥100mmHg\n- No limit on amount - dependent on condition of patient.\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids\n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+      "cmg_reference": "CMG 34",
+      "is_icp_only": false
+    },
+    {
+      "name": "Olanzapine",
+      "indication": "Pharmacological intervention for mild to moderately agitated patients.",
+      "contraindications": "- Known hypersensitivity; - Parkinson’s disease; - Post ictal",
+      "adverse_effects": "- Prolonged QT interval (particularly in the elderly); - Extrapyramidal effects (rare); - Neuroleptic malignant syndrome (rare); - May lower seizure threshold",
+      "precautions": "Increased effects in patients who have consumed alcohol, recreational drugs and with other sedative agents.",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 25",
+      "is_icp_only": false
+    },
+    {
+      "name": "Ondansetron (Zofran)",
+      "indication": "For the prevention or treatment of nausea and vomiting",
+      "contraindications": "Known hypersensitivity",
+      "adverse_effects": "- Headache; - Flushing of skin; - Occasional reaction at the site of IV injection; - Drowsiness; - Anxiety and agitation; - Transient visual disturbances",
+      "precautions": "See clinical management guideline",
+      "dose": "##### Adult\n- IV: 8mg slowly over 2 minutes\n- May be administered IM if necessary\n- Single dose only.\n- ODT: 8mg sublingually\n- Single dose only.\n##### Paediatric\n- IV: 0.1mg/kg (max. 4mg)\n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT:\n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
+      "cmg_reference": "CMG 26",
+      "is_icp_only": false
+    },
+    {
+      "name": "Oxygen",
+      "indication": "A wide range of situations, for the treatment or prevention of hypoxaemia",
+      "contraindications": "- Known paraquat poisoning with SpO2 ≥88%; - History of bleomycin therapy with SpO2 ≥88%",
+      "adverse_effects": "- Increased risk of fire / explosion – oxygen strongly supports combustion; - Mucosal dryness and irritation; - Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)",
+      "precautions": "Neonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.",
+      "dose": "##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%).\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM)\n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible\n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+      "cmg_reference": "CMG 33",
+      "is_icp_only": false
+    },
+    {
+      "name": "Paracetamol",
+      "indication": "- Pyrexia in children who have had or may have a febrile convulsion (for ACTAS treatment, pyrexia is generally >38\\xb0C); - Mild to moderate pain (oral); - Moderate to severe pain (IV)",
+      "contraindications": "- Known or suspected allergy to paracetamol; - Previous paracetamol dose in last 4 hours (oral doses only); - Previous paracetamol dose in last 6 hours (IV doses only); - Children who do not have a sufficient gag reflex to swallow the measured dose; - Not to be given to children",
+      "adverse_effects": "Rare – none of these side effects have been confirmed or refuted as being linked to the casual use of paracetamol:; - Dyspepsia; - Nausea; - Allergic reactions; - Haematological reactions; - Dizziness; - Pain at injection site",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 27",
+      "is_icp_only": false
+    },
+    {
+      "name": "Prochlorperazine (Stemetil)",
+      "indication": "For the treatment (only) of nausea and vomiting from a variety of vestibular causes, including:; - Motion sickness; - Migraine; - Vertigo- Labyrinthitis",
+      "contraindications": "- Known hypersensitivity to phenothiazines; - CNS depression; - Shock from any cause, or other circulatory compromise; - Paediatric patients (",
+      "adverse_effects": "- Gastrointestinal: constipation, dry mouth; - Nervous system: drowsiness, extrapyramidal symptoms; - Cardiovascular: hypotension, ECG changes (especially QT prolongation); - Respiratory: respiratory depression",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 28",
+      "is_icp_only": false
+    },
+    {
+      "name": "Salbutamol (Ventolin)",
+      "indication": "- Respiratory distress due to asthma or COPD; - Emergency treatment of suspected hyperkalaemia",
+      "contraindications": "Known hypersensitivity",
+      "adverse_effects": "- Tachycardia; - Tremors; - Hypotension",
+      "precautions": "See clinical management guideline",
+      "dose": "#### Mild to moderate respiratory distress\n**pMDI via spacer**\n##### Adult ≥6 years\n- 4-12 actuations\n- Repeat every 20-30 minutes\n- 1 actuation to 4 breaths.\n##### Paediatric",
+      "cmg_reference": "CMG 29",
+      "is_icp_only": false
+    },
+    {
+      "name": "Sodium Bicarbonate",
+      "indication": "- Cardiac arrest secondary to cardioactive drug overdose or hyperkalaemia; - Prolonged cardiac arrest (>15 minutes); - For emergency treatment of hyperkalaemia; - For treatment of arrhythmias, seizures or coma in overdose of cardioactive medications (e.g., tricyclics antidepressant, \\u03b2 blocker, digoxin); - To combat acidosis and hyperkalaemia in crush syndrome",
+      "contraindications": "Known hypersensitivity",
+      "adverse_effects": "- Metabolic alkalosis; - High sodium content may lead to fluid overload and cardiac failure; - Interacts with some other drugs (especially calcium and adrenaline):; - always flush well through the line before and after administration; - consider a second line",
+      "precautions": "See clinical management guideline",
+      "dose": "#### In cardiac arrest\n**Secondary to hyperkalaemia or cardioactive drug overdose; prolonged arrest >15 minutes**\n##### Adult and Paediatric\n- **ICP: **1mMol/kg IV or IO\n- Fast push\n- No repeat.\n#### Hyperkalaemia with cardiac output ##### Adult and Paediatric\n- **ICP: **0.5mMol/kg IV or IO\n- Over 2 to 5 minutes\n- May repeat once, if required.\n#### Cardio-active medication overdose##### Adult and Paediatric (12 lead with wide QRS complex)\n- **ICP: **1mMol/kg IV or IO\n- Over 30 to 60 seconds\n- May repeat once, if required.",
+      "cmg_reference": "CMG 30",
+      "is_icp_only": true
+    },
+    {
+      "name": "Suxamethonium",
+      "indication": "To facilitate airway management in selected patients",
+      "contraindications": "- Previous reaction to suxamethonium; - Suspected hyperkalaemia; - Use in children",
+      "adverse_effects": "- Bradycardia; - Potassium release; - Increased intraocular and intragastric pressure; - Occasionally, prolonged paralysis; - Has been associated with malignant hyperthermia",
+      "precautions": "- Elderly patient; - Neuromuscular disease; - Hypothermic patient; - Fitting patient; - Patient with reversible pathology; Select patients carefully – always have a fallback position!",
+      "dose": "##### Adult\n- **ICP: **1.5mg/kg IV\n- Over 30 – 60 seconds\n- To a maximum of 150mg.\n##### Paediatric\nNot used.\n#### Suxamethonium 100mg in 2ml\n- Suxamethonium (applies to 100mg in 2ml):\n- 40kg = 60 mg (1.2 ml)\n- 50kg = 75 mg (1.5 ml)\n- 60kg = 90 mg (1.8 ml)\n- 70kg = 105 mg (2.1 ml)- 80kg = 120 mg (2.4 ml)- 90kg = 135 mg (2.7 ml)- 100kg = 150 mg (3 ml)- **Maximum dose 150 mg**",
+      "cmg_reference": "CMG 31",
+      "is_icp_only": true
+    },
+    {
+      "name": "Topical Anaesthetic Cream (LMX4)",
+      "indication": "Topical anaesthesia prior to anticipated IV cannulation in paediatric patients.",
+      "contraindications": "- Amide local anaesthetic hypersensitivity; - Broken skin (atopic dermatitis, wounds, mucous membranes); - Infants",
+      "adverse_effects": "- Irritation; - Redness; - Itching; - Rash; - Anaphylaxis (rare); - Corneal irritation (accidental eye exposure)",
+      "precautions": "See clinical management guideline",
+      "dose": "See CMG for dose details",
+      "cmg_reference": "CMG 32",
+      "is_icp_only": false
+    }
+  ],
+  "service": "actas",
+  "guideline_id": "medications-index"
+}

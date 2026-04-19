@@ -1,0 +1,81 @@
+{
+  "id": "CMG_43_Adrenal_Crisis",
+  "cmg_number": "43",
+  "title": "Adrenal Crisis",
+  "version_date": null,
+  "section": "Medical",
+  "content_markdown": "#### Assessment\nAdrenal crisis occurs in susceptible patients whose ability to synthesise cortisol is impaired.\n\nSigns and symptoms include:\n\n- Nausea, vomiting and diarrhoea.\n- Abdominal pain.\n- Fever.\n- Loss of appetite/anorexia.\n- Mottled appearance, peripherally shut down.\n- Lethargy, fatigue and weakness.\n- Tachycardia.\n- Light headedness/dizziness.\n- Hypoglycaemia.\n- Hyperkalaemia.\n- Hypotension, exacerbated by standing.\nConsider adrenal crisis only in patients presenting with at least one of each of:\n\n- A diagnosed adrenal insufficiency condition: \n- Addison’s disease\n- Congenital adrenal hyperplasia\n- Suprasellar tumours or brain injuries. \n**and**\n\n- The patient is currently experiencing: \n- Infection\n- Trauma\n- Stress response (e.g. dehydration, AMI, intense physical exertion). \n**and**\n- The patient is: \n- Hypoperfused and/or\n- Decreased LOC.\n\n#### Management\n- IV/IO fluids for hypoperfusion as per CMG 14 Shock and Hypoperfusion: Distributive Shock.\n- **ICP:** Hydrocortisone.\n- Treat hyperkalaemia as per CMG 27 Hyperkalaemia.\n- Treat hypoglycaemia as per CMG 10 Diabetic Emergencies.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Hydrocortisone": [
+      {
+        "text": "200mg tablet  100mg/5ml liquid ",
+        "dose_values": [
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "text": "##### Type\nAdrenocorticosteroid [S4]\n\n##### Presentations\n100mg powder in 2ml vial (reconstitute with 2ml normal saline)\n\n##### Actions\nNumerous and widespread. ACTAS administration for:\n\n- Anti-inflammatory effects on the airways\n\n- Stimulates the normal increase in cortisol secretion in response to stress \n\n#### Uses\n\n- Moderate to severe respiratory distress due to asthma or exacerbation of COPD \n\n- Patients with a diagnosed adrenal insufficiency who experience a stress response and exhibit altered conscious state and/or refractory hypotension \n\n#### Adverse Effects\nNil significant with single use\n\n#### Contraindications\nKnown previous reaction to corticosteroids\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, advise against breastfeeding for 4 hours post administration \n\n#### Doses#### Asthma and COPD##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n\n##### Paediatric\n- **ICP:** 4mg/kg IV (to a maximum of 100mg) – slowly over 2 minutes \n\n#### Adrenal crisis##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n- May be administered IM.\n\n##### Paediatric\n- **ICP:** IV (slowly over 2 minutes): \n- 12 years = 100mg IV.\n- **ICP:** May be administered IM.\n#### Special Notes\n- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.",
+        "dose_values": [
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-hydrocortisone"
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "46b0d40e08cc2939c976d6a2ce741ca9793358bc1748d15a897125f5d2d6e1fa",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.704750+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_43",
+  "extra": {
+    "cmg_number": "43"
+  }
+}

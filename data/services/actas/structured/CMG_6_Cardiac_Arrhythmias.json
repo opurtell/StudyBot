@@ -1,0 +1,23 @@
+{
+  "id": "CMG_6_Cardiac_Arrhythmias",
+  "cmg_number": "6",
+  "title": "Cardiac Arrhythmias",
+  "version_date": null,
+  "section": "Cardiac",
+  "content_markdown": "# Cardiac Arrhythmias\n\n- **Any rhythm, patient unconscious, no pulse** – treat as per: \n- **Adults: CMG 4 Cardiac Arrest**\n- **Paediatrics: CMG 5 Paediatric Cardiac Arrest.**\n\n- Rate and perfusion determines the type of treatment.\n- Treat symptomatically, as per patient condition.\n- If unable to decide which specific therapy is required: \n- General care\n- Observation- Prompt transport.\n- **APs:** consider ICP assistance.\n\nWhat is the rhythm rate?\n\n- Rapid = >100/min in adults\n- Slow = - **If symptomatic/ compromised:** treat as per CMG 7 Bradyarrhythmias\n\nNarrow or wide?\n\n Narrow QRS - **If symptomatic/ compromised:** treat as per CMG 8 Tachyarrhythmias\n\n- Consider: \n- Atrial fibrillation\n- Atrial flutter with variable conduction\n- Sinus tachycardia with premature atrial contractions\n- Multifocal atrial tachycardia- **If symptomatic/ compromised:** treat as per CMG 8 Tachyarrhythmias\n\nRhythm?\n\n Regular  Irregular \n\n- Consider: \n- Ventricular tachycardia\n- Supraventricular tachycardia with aberrancy\n- Atrial flutter with aberrancy\n- Sinus tachycardia with aberrancy- **If symptomatic/ compromised:** treat as per CMG 8 Tachyarrhythmias\n\n- Consider: \n- Ventricular fibrillation\n- Atrial fibrillation with aberrancy or WPW\n- Atrial flutter with variable conduction and aberrancy\n- Multifocal atrial tachycardia with aberrancy- **If symptomatic/ compromised:** treat as per CMG 8 Tachyarrhythmias",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "85bfb3ebc6c1416b3374cab0f079d8ad58d4fceae9e0321b1f05723cb87208ae",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.693129+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_6",
+  "extra": {
+    "cmg_number": "6"
+  }
+}
