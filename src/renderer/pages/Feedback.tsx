@@ -41,8 +41,8 @@ export default function Feedback() {
       allowInEditable: true,
     },
     {
-      key: "ArrowRight",
-      meta: true,
+      key: "Enter",
+      allowInEditable: true,
       action: () => {
         if (state?.sessionId) {
           navigate("/quiz", { state: { action: "continue" as const, sessionId: state.sessionId, questionCount: state.questionCount } });
@@ -173,11 +173,11 @@ export default function Feedback() {
                   state: { action: "continue" as const, sessionId: state.sessionId, questionCount: state.questionCount },
                 })
               }
-              aria-keyshortcuts="Meta+ArrowRight Control+ArrowRight"
+              aria-keyshortcuts="Enter"
             >
               Continue Quiz
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">⌘/Ctrl+→</span>
+              <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">Enter</span>
             </Button>
           )}
         </div>

@@ -43,7 +43,7 @@ export default function AnswerInput({
       value={value}
       onChange={(e) => onChange(e.target.value)}
       onKeyDown={handleKeyDown}
-      aria-keyshortcuts="Enter Meta+Enter Control+Enter Shift+Enter"
+      aria-keyshortcuts="Enter"
       disabled={disabled}
       placeholder={placeholder}
       className="w-full h-64 bg-transparent ruled-paper text-on-surface font-body text-body-md pt-8 pb-4 px-0 resize-none focus:outline-none placeholder:text-on-surface-variant/40 disabled:opacity-40"

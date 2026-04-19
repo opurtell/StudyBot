@@ -219,12 +219,11 @@ export default function Quiz() {
       action: handleExit,
     },
     {
-      key: "Enter",
+      key: "ArrowRight",
       meta: true,
       enabled: session.phase === "question",
-      allowInEditable: true,
       action: () => {
-        void handleSubmit();
+        void session.nextQuestion();
       },
     },
     {
@@ -244,9 +243,9 @@ export default function Quiz() {
       action: handleViewFullAnalysis,
     },
     {
-      key: "ArrowRight",
-      meta: true,
+      key: "Enter",
       enabled: session.phase === "feedback",
+      allowInEditable: true,
       action: () => {
         void session.nextQuestion();
       },
@@ -602,11 +601,11 @@ export default function Quiz() {
             </Button>
             <Button
               onClick={() => session.nextQuestion()}
-              aria-keyshortcuts="Meta+ArrowRight Control+ArrowRight"
+              aria-keyshortcuts="Enter"
             >
               Next Question
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">⌘/Ctrl+→</span>
+              <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">Enter</span>
             </Button>
             <Button onClick={handleExit} variant="tertiary" aria-keyshortcuts="Escape">
               End Session
@@ -671,17 +670,22 @@ export default function Quiz() {
                   End Session
                   <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">Esc</span>
                 </Button>
-                <Button onClick={() => { void session.nextQuestion(); }} variant="tertiary">
+                <Button
+                  onClick={() => { void session.nextQuestion(); }}
+                  variant="tertiary"
+                  aria-keyshortcuts="Meta+ArrowRight Control+ArrowRight"
+                >
                   Skip
+                  <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">⌘/Ctrl+→</span>
                 </Button>
                 <Button
                   onClick={handleSubmit}
                   disabled={false}
-                  aria-keyshortcuts="Enter Meta+Enter Control+Enter"
+                  aria-keyshortcuts="Enter"
                 >
                   Submit Answer
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                  <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">Enter / ⌘/Ctrl+Enter</span>
+                  <span className="font-mono text-[10px] normal-case tracking-normal opacity-80">Enter</span>
                 </Button>
               </div>
             </div>
