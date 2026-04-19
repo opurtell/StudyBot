@@ -102,14 +102,14 @@
 
 ## Implementation order & task index
 
-The plan has **24 tasks** grouped into five phases. Each task leaves `main` in a working, tested state. Tasks within a phase can be done in order; phases must be completed sequentially because later phases depend on earlier invariants.
+The plan has **25 tasks** grouped into five phases. Each task leaves `main` in a working, tested state. Tasks within a phase can be done in order; phases must be completed sequentially because later phases depend on earlier invariants.
 
 - **Phase 1 — Foundation without behaviour change** (Tasks 1–6): service registry, schema, qualifications math, routers/exposure; no data moved yet.
 - **Phase 2a — Module rename + data layout** (Tasks 7–9): `pipeline/cmg/` → `pipeline/actas/`, `paths.py` helpers, upload router service-awareness.
 - **Phase 2b — ACTAS data migration + qualifications backfill** (Tasks 10–13): structured-file migration, qualifications backfill script, medication denormalisation, front-matter tagging.
 - **Phase 2c — ChromaDB split + retriever rewrite** (Tasks 14–17): collection-per-service, SQLite service column, retriever + factory + quiz prompt migration, isolation test.
 - **Phase 3 — Frontend UX** (Tasks 18–21): ServiceProvider, setup modal, settings page changes, service chip + empty state.
-- **Phase 4 — Tas Phase 0 & packaging updates** (Tasks 22–24): Playwright discovery + findings doc, per-service bundled Chroma build, adding-a-service guide.
+- **Phase 4 — Tas Phase 0 & packaging updates** (Tasks 22–25): Playwright discovery + findings doc, per-service bundled Chroma build, adding-a-service guide, and authoring Plan B for Tas content ingestion.
 
 ---
 
@@ -1200,6 +1200,27 @@ Documents the repeatable process per spec §8:
 ```bash
 git add Guides/adding-a-service.md
 git commit -m "docs: Guide for adding a new ambulance service"
+```
+
+---
+
+### Task 25: Author Plan B for Tas Phases 1–4
+
+**Files:**
+- Create: `docs/superpowers/plans/YYYY-MM-DD-ambulance-tasmania-ingestion.md`
+
+Plan B cannot be written before Task 22's findings doc exists, because flowchart format, content-API shape, and auth model are all unknowns until Phase 0 runs. This task forces Plan B authoring to happen as a deliberate step, not a loose end.
+
+- [ ] **Step 1:** Re-read `Guides/at-cpg-extraction-findings.md`.
+- [ ] **Step 2:** Invoke the `superpowers:writing-plans` skill against spec §7.3–§7.6 (Tas Phases 1–4) using the findings as the technical baseline.
+- [ ] **Step 3:** Plan B must cover: content scraping per findings, dose-table extraction, the flowchart decision tree per §7.5, `llm/vision.py` real implementation + Settings "Vision model" row per §15.13, AT qualifications backfill, Tas CPG chunker + Chroma ingestion into `guidelines_at` and `personal_at`, versioning + refresh button, Tas fixtures under `tests/python/fixtures/services/at/`, AT bundled Chroma tree via `build_bundled_chroma.py`, and an AT sign-off checklist per `Guides/adding-a-service.md`.
+- [ ] **Step 4:** Run Plan B through the plan-reviewer subagent loop to approval.
+- [ ] **Step 5:** Get user sign-off on Plan B before execution.
+- [ ] **Step 6:** Commit
+
+```bash
+git add docs/superpowers/plans/<plan-b-filename>.md
+git commit -m "docs: add Plan B - Ambulance Tasmania ingestion plan"
 ```
 
 ---
