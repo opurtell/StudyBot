@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import { useBackgroundProcesses } from "../providers/BackgroundProcessProvider";
+import { ServiceChip } from "./ServiceChip";
 
 interface NavItem {
   icon: string;
@@ -34,6 +35,9 @@ export default function Sidebar() {
         <p className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mt-1">
           Clinical Recall
         </p>
+        <div className="mt-3">
+          <ServiceChip />
+        </div>
       </div>
 
       {/* Primary navigation */}

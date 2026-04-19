@@ -227,3 +227,15 @@ export interface AcceptedFormatsResponse {
   extensions: string[];
   max_size_mb: number;
 }
+
+export interface Service {
+  id: string;
+  display_name: string;
+  region: string;
+  accent_colour: string;
+  source_url: string;
+  qualifications: {
+    bases: { id: string; display: string; implies: string[] }[];
+    endorsements: { id: string; display: string; requires_base: string[] }[];
+  };
+}

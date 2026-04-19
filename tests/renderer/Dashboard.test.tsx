@@ -6,6 +6,7 @@ import AppShell from "../../src/renderer/components/AppShell";
 import Dashboard from "../../src/renderer/pages/Dashboard";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
+import { ServiceProvider } from "../../src/renderer/providers/ServiceProvider";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
 import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { stubWindowBackendApi } from "./testUtils";
@@ -40,9 +41,11 @@ function wrapDashboard(children: React.ReactNode, initialEntries?: string[]) {
         <BackgroundProcessProvider>
           <ResourceCacheProvider>
             <SettingsProvider>
-              <MemoryRouter initialEntries={initialEntries}>
-                {children}
-              </MemoryRouter>
+              <ServiceProvider>
+                <MemoryRouter initialEntries={initialEntries}>
+                  {children}
+                </MemoryRouter>
+              </ServiceProvider>
             </SettingsProvider>
           </ResourceCacheProvider>
         </BackgroundProcessProvider>

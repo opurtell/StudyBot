@@ -6,6 +6,8 @@ import AppShell from "../../src/renderer/components/AppShell";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
 import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
+import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
+import { ServiceProvider } from "../../src/renderer/providers/ServiceProvider";
 import { stubWindowBackendApi } from "./testUtils";
 
 beforeEach(() => {
@@ -18,11 +20,15 @@ async function renderWithRouter(route = "/") {
       <BackendStatusProvider>
         <BackgroundProcessProvider>
           <ResourceCacheProvider>
-            <MemoryRouter initialEntries={[route]}>
-              <AppShell>
-                <div data-testid="child-content">Child Content</div>
-              </AppShell>
-            </MemoryRouter>
+            <SettingsProvider>
+              <ServiceProvider>
+                <MemoryRouter initialEntries={[route]}>
+                  <AppShell>
+                    <div data-testid="child-content">Child Content</div>
+                  </AppShell>
+                </MemoryRouter>
+              </ServiceProvider>
+            </SettingsProvider>
           </ResourceCacheProvider>
         </BackgroundProcessProvider>
       </BackendStatusProvider>

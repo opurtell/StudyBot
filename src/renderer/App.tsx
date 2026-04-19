@@ -13,6 +13,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { BackendStatusProvider } from "./hooks/useBackendStatus";
 import { ResourceCacheProvider } from "./providers/ResourceCacheProvider";
 import { SettingsProvider } from "./providers/SettingsProvider";
+import { ServiceProvider } from "./providers/ServiceProvider";
 import { BackgroundProcessProvider } from "./providers/BackgroundProcessProvider";
 
 function StandardLayout() {
@@ -60,6 +61,7 @@ export default function App() {
       <BackendStatusProvider>
         <ResourceCacheProvider>
           <SettingsProvider>
+            <ServiceProvider>
             <BackgroundProcessProvider>
             <HashRouter>
               <BackendBootGate>
@@ -69,6 +71,7 @@ export default function App() {
               </BackendBootGate>
             </HashRouter>
             </BackgroundProcessProvider>
+            </ServiceProvider>
           </SettingsProvider>
         </ResourceCacheProvider>
       </BackendStatusProvider>
