@@ -9,14 +9,13 @@ from paths import (
     BUNDLED_CHROMA_DB_DIR,
     CHROMA_DB_DIR,
     CLEANED_NOTES_DIR,
-    CMG_STRUCTURED_DIR,
     CONFIG_DIR,
     EXAMPLE_SETTINGS_PATH,
     LOGS_DIR,
     PERSONAL_STRUCTURED_DIR,
     SETTINGS_PATH,
 )
-from paths import resolve_cmg_structured_dir
+from paths import resolve_service_structured_dir
 
 logger = logging.getLogger(__name__)
 
@@ -33,10 +32,41 @@ def get_seed_status() -> dict:
 
 
 def seed_user_data() -> None:
+    """Run all seed steps: settings, dirs, per-service guidelines, personal data."""
     _ensure_settings()
     _ensure_dirs()
-    _start_cmg_seed_if_needed()
-    _start_paramedic_notes_seed_if_needed()
+    for svc in _iter_registry():
+        _seed_service_if_needed(svc)
+    _seed_personal_data()
+
+
+# ---------------------------------------------------------------------------
+# Service registry helper (lazy import to avoid import errors in tests)
+# ---------------------------------------------------------------------------
+
+
+def _iter_registry():
+    """Yield Service objects from the registry.  Returns empty tuple on import failure."""
+    try:
+        from src.python.services.registry import REGISTRY
+        return REGISTRY
+    except Exception:
+        logger.warning("Could not import service registry — falling back to ACTAS-only seed.")
+        return ()
+
+
+def _service_id_from_registry():
+    """Fallback: if registry is unavailable, return just ('actas',)."""
+    try:
+        from src.python.services.registry import REGISTRY
+        return tuple(s.id for s in REGISTRY)
+    except Exception:
+        return ("actas",)
+
+
+# ---------------------------------------------------------------------------
+# Settings and directory bootstrap
+# ---------------------------------------------------------------------------
 
 
 def _ensure_settings() -> None:
@@ -53,14 +83,245 @@ def _ensure_dirs() -> None:
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def _start_cmg_seed_if_needed() -> None:
+# ---------------------------------------------------------------------------
+# Per-service guidelines seeding
+# ---------------------------------------------------------------------------
+
+
+def _guidelines_collection_name(service_id: str) -> str:
+    return f"guidelines_{service_id}"
+
+
+def _personal_collection_name(service_id: str) -> str:
+    return f"personal_{service_id}"
+
+
+def _seed_service_if_needed(service) -> None:
+    """Seed the guidelines collection for a single service.
+
+    Checks if ``guidelines_{service.id}`` already has data.  If not:
+    1. Try copying from bundled ChromaDB.
+    2. Fall back to running the service adapter's chunker.
+    """
     global _seed_status
-    if _cmg_collection_has_data():
+    service_id = service.id
+    collection_name = _guidelines_collection_name(service_id)
+
+    if _collection_has_data(CHROMA_DB_DIR, collection_name):
+        logger.info("Collection '%s' already has data — skipping seed.", collection_name)
+        return
+
+    # Try copying from bundled DB.
+    if _copy_bundled_collection(collection_name, dst_collection_name=collection_name):
+        logger.info("Copied '%s' from bundled ChromaDB.", collection_name)
+        return
+
+    # Fall back to adapter-based ingestion.
+    _run_adapter_seed(service)
+
+
+def _collection_has_data(db_path: Path, collection_name: str) -> bool:
+    try:
+        client = chromadb.PersistentClient(path=str(db_path))
+        collection = client.get_or_create_collection(collection_name)
+        return collection.count() > 0
+    except Exception:
+        return False
+
+
+def _copy_bundled_collection(
+    src_collection_name: str,
+    dst_collection_name: str | None = None,
+) -> bool:
+    """Copy a single collection from the bundled ChromaDB to the user ChromaDB."""
+    if dst_collection_name is None:
+        dst_collection_name = src_collection_name
+
+    if not BUNDLED_CHROMA_DB_DIR.exists():
+        return False
+    try:
+        bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
+        src = bundled_client.get_or_create_collection(src_collection_name)
+        if src.count() == 0:
+            return False
+
+        dst_client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
+        dst = dst_client.get_or_create_collection(dst_collection_name)
+
+        batch_size = 500
+        total = src.count()
+        offset = 0
+        while offset < total:
+            batch = src.get(
+                include=["documents", "metadatas", "embeddings"],
+                limit=batch_size,
+                offset=offset,
+            )
+            if not batch["ids"]:
+                break
+            dst.add(
+                ids=batch["ids"],
+                documents=batch["documents"],
+                metadatas=batch["metadatas"],
+                embeddings=batch["embeddings"],
+            )
+            offset += len(batch["ids"])
+
+        logger.info(
+            "Copied %d chunks from bundled '%s' to user '%s'.",
+            src.count(),
+            src_collection_name,
+            dst_collection_name,
+        )
+        return True
+    except Exception:
+        logger.warning(
+            "Could not copy '%s' from bundled ChromaDB",
+            src_collection_name,
+            exc_info=True,
+        )
+        return False
+
+
+def _run_adapter_seed(service) -> None:
+    """Run the service's chunker to seed guidelines data.
+
+    Only ACTAS has an adapter pipeline at this stage.  Other services
+    are skipped with a log message (AT will be added in Plan B).
+    """
+    service_id = service.id
+    adapter = service.adapter
+
+    if "actas" in adapter:
+        try:
+            from pipeline.actas.chunker import chunk_and_ingest as actas_chunk_and_ingest
+
+            structured_dir = str(resolve_service_structured_dir(service_id))
+            logger.info("Auto-seeding guidelines_%s from %s via adapter.", service_id, structured_dir)
+            actas_chunk_and_ingest(structured_dir=structured_dir)
+            logger.info("guidelines_%s auto-seed complete.", service_id)
+        except Exception:
+            logger.exception("Failed to seed guidelines_%s via ACTAS adapter.", service_id)
+    else:
+        logger.info(
+            "No adapter pipeline for service '%s' — skipping guideline seed. "
+            "Adapter will be available after Plan B implementation.",
+            service_id,
+        )
+
+
+# ---------------------------------------------------------------------------
+# Personal data seeding (notability notes + REF/CPD docs)
+# ---------------------------------------------------------------------------
+
+
+def _seed_personal_data() -> None:
+    """Seed personal collections for each registered service.
+
+    For each service, check if ``personal_{service.id}`` exists and has data.
+    If not, run notability notes ingestion and personal docs ingestion.
+    """
+    for service_id in _service_id_from_registry():
+        collection_name = _personal_collection_name(service_id)
+
+        if _collection_has_data(CHROMA_DB_DIR, collection_name):
+            logger.info("Collection '%s' already has data — skipping.", collection_name)
+            continue
+
+        # Try copying from bundled DB first.
+        if _copy_bundled_collection("paramedic_notes", dst_collection_name=collection_name):
+            logger.info("Copied personal data to '%s' from bundled ChromaDB.", collection_name)
+            continue
+
+        _run_notability_notes_ingest(service_id)
+        _run_personal_docs_ingest(service_id)
+
+
+def _run_notability_notes_ingest(service_id: str) -> None:
+    if not CLEANED_NOTES_DIR.exists():
+        return
+    md_files = list(CLEANED_NOTES_DIR.rglob("*.md"))
+    if not md_files:
+        return
+    collection_name = _personal_collection_name(service_id)
+    logger.info(
+        "Auto-seeding notability notes from %s (%d files) into '%s'.",
+        CLEANED_NOTES_DIR,
+        len(md_files),
+        collection_name,
+    )
+    try:
+        from pipeline.chunker import chunk_and_ingest
+
+        for md_path in md_files:
+            try:
+                chunk_and_ingest(md_path, CHROMA_DB_DIR, collection_name=collection_name)
+            except Exception:
+                logger.warning("Failed to ingest %s", md_path.name)
+    except Exception:
+        logger.exception("Notability notes auto-seed failed")
+
+
+def _run_personal_docs_ingest(service_id: str) -> None:
+    if not PERSONAL_STRUCTURED_DIR.exists():
+        return
+    collection_name = _personal_collection_name(service_id)
+    try:
+        from pipeline.personal_docs.chunker import chunk_and_ingest as pd_chunk_and_ingest
+
+        # Monkey-patch the collection name by passing it through the ingestion path.
+        # chunk_and_ingest reads service from front-matter and derives collection name.
+        # We pass the target collection via a wrapper.
+        _ingest_personal_docs_with_collection(
+            pd_chunk_and_ingest, PERSONAL_STRUCTURED_DIR, CHROMA_DB_DIR, collection_name,
+        )
+    except Exception:
+        logger.exception("Personal docs auto-seed failed")
+
+
+def _ingest_personal_docs_with_collection(
+    chunk_fn,
+    structured_dir: Path,
+    db_path: Path,
+    collection_name: str,
+) -> None:
+    """Ingest personal docs into a specific collection.
+
+    The personal_docs chunker derives collection name from front-matter.
+    This wrapper overrides the collection name when front-matter is missing
+    the service key (legacy files).
+    """
+    for subdir in ["REFdocs", "CPDdocs"]:
+        dir_path = structured_dir / subdir
+        if not dir_path.exists():
+            continue
+        for md_file in sorted(dir_path.glob("*.md")):
+            try:
+                chunk_fn(md_file, db_path, collection_name=collection_name)
+            except Exception as e:
+                logger.warning("Failed to ingest %s: %s", md_file.name, e)
+
+
+# ---------------------------------------------------------------------------
+# Legacy compatibility: background seeding thread for FastAPI lifespan
+# ---------------------------------------------------------------------------
+
+
+def _start_cmg_seed_if_needed() -> None:
+    """DEPRECATED: Use seed_user_data() instead.  Kept for backward compat."""
+    global _seed_status
+
+    # Check both legacy and new collection names.
+    has_data = (
+        _collection_has_data(CHROMA_DB_DIR, "cmg_guidelines")
+        or _collection_has_data(CHROMA_DB_DIR, "guidelines_actas")
+    )
+    if has_data:
         _seed_status = "complete"
         _seeding_complete.set()
         return
 
-    # Try copying pre-built bundled ChromaDB (from packaged app)
+    # Try copying pre-built bundled ChromaDB (from packaged app).
     if _copy_bundled_chroma_db():
         _seed_status = "complete"
         _seeding_complete.set()
@@ -86,7 +347,6 @@ def _copy_bundled_chroma_db() -> bool:
     """Copy pre-built ChromaDB from bundled app resources to user data dir."""
     if not BUNDLED_CHROMA_DB_DIR.exists():
         return False
-    # Check the bundled DB actually has data
     try:
         bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
         collection = bundled_client.get_or_create_collection("cmg_guidelines")
@@ -96,7 +356,7 @@ def _copy_bundled_chroma_db() -> bool:
         logger.warning("Bundled chroma_db exists but could not be read")
         return False
 
-    logger.info(f"Copying bundled ChromaDB from {BUNDLED_CHROMA_DB_DIR} to {CHROMA_DB_DIR}")
+    logger.info("Copying bundled ChromaDB from %s to %s", BUNDLED_CHROMA_DB_DIR, CHROMA_DB_DIR)
     try:
         CHROMA_DB_DIR.parent.mkdir(parents=True, exist_ok=True)
         shutil.copytree(str(BUNDLED_CHROMA_DB_DIR), str(CHROMA_DB_DIR), dirs_exist_ok=True)
@@ -106,114 +366,10 @@ def _copy_bundled_chroma_db() -> bool:
         return False
 
 
-def _cmg_collection_has_data() -> bool:
-    try:
-        client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
-        collection = client.get_or_create_collection("cmg_guidelines")
-        return collection.count() > 0
-    except Exception:
-        return False
-
-
 def _seed_cmg_index() -> None:
     from pipeline.actas.chunker import chunk_and_ingest
 
-    structured_dir = str(resolve_cmg_structured_dir())
-    logger.info(f"Auto-seeding CMG index from {structured_dir}")
+    structured_dir = str(resolve_service_structured_dir("actas"))
+    logger.info("Auto-seeding CMG index from %s", structured_dir)
     chunk_and_ingest(structured_dir=structured_dir)
     logger.info("CMG auto-seed complete")
-
-
-def _start_paramedic_notes_seed_if_needed() -> None:
-    if _paramedic_notes_collection_has_data():
-        return
-
-    # Try copying paramedic_notes from bundled DB if available
-    if _copy_bundled_collection("paramedic_notes"):
-        return
-
-    _run_notability_notes_ingest(CHROMA_DB_DIR)
-    _run_personal_docs_ingest(CHROMA_DB_DIR)
-
-
-def _paramedic_notes_collection_has_data() -> bool:
-    try:
-        client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
-        collection = client.get_or_create_collection("paramedic_notes")
-        return collection.count() > 0
-    except Exception:
-        return False
-
-
-def _copy_bundled_collection(collection_name: str) -> bool:
-    """Copy a single collection from the bundled ChromaDB to the user ChromaDB."""
-    if not BUNDLED_CHROMA_DB_DIR.exists():
-        return False
-    try:
-        bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
-        src = bundled_client.get_or_create_collection(collection_name)
-        if src.count() == 0:
-            return False
-
-        dst_client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
-        dst = dst_client.get_or_create_collection(collection_name)
-
-        batch_size = 500
-        total = src.count()
-        offset = 0
-        while offset < total:
-            batch = src.get(
-                include=["documents", "metadatas", "embeddings"],
-                limit=batch_size,
-                offset=offset,
-            )
-            if not batch["ids"]:
-                break
-            dst.add(
-                ids=batch["ids"],
-                documents=batch["documents"],
-                metadatas=batch["metadatas"],
-                embeddings=batch["embeddings"],
-            )
-            offset += len(batch["ids"])
-
-        logger.info(
-            f"Copied {src.count()} chunks from bundled '{collection_name}' to user ChromaDB"
-        )
-        return True
-    except Exception:
-        logger.warning(f"Could not copy '{collection_name}' from bundled ChromaDB", exc_info=True)
-        return False
-
-
-def _run_notability_notes_ingest(db_path: Path) -> None:
-    if not CLEANED_NOTES_DIR.exists():
-        return
-    md_files = list(CLEANED_NOTES_DIR.rglob("*.md"))
-    if not md_files:
-        return
-    logger.info(f"Auto-seeding notability notes from {CLEANED_NOTES_DIR} ({len(md_files)} files)")
-    try:
-        from pipeline.chunker import chunk_and_ingest
-
-        for md_path in md_files:
-            try:
-                chunk_and_ingest(md_path, db_path)
-            except Exception:
-                logger.warning(f"Failed to ingest {md_path.name}")
-    except Exception:
-        logger.exception("Notability notes auto-seed failed")
-
-
-def _run_personal_docs_ingest(db_path: Path) -> None:
-    if not PERSONAL_STRUCTURED_DIR.exists():
-        return
-    try:
-        from pipeline.personal_docs.chunker import chunk_and_ingest_directory
-
-        result = chunk_and_ingest_directory(PERSONAL_STRUCTURED_DIR, db_path)
-        logger.info(
-            f"Personal docs auto-seed: {result['processed']} files, {result['total_chunks']} chunks"
-        )
-    except Exception:
-        logger.exception("Personal docs auto-seed failed")

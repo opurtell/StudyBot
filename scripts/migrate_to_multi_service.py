@@ -45,11 +45,13 @@ def run_migration(repo_root: Path) -> None:
        ``data/personal_docs/structured/``.
     4. Write ``active_service: "actas"`` to ``config/settings.json`` if unset.
     5. Rewrite legacy ``skill_level`` to ``base_qualification`` + ``endorsements``.
+    6. Migrate ChromaDB collections from legacy names to per-service names.
     """
     _migrate_cmg_files(repo_root)
     _migrate_uploads(repo_root)
     _inject_personal_doc_front_matter(repo_root)
     _update_settings(repo_root)
+    _migrate_chroma(repo_root)
 
 
 # ---------------------------------------------------------------------------
@@ -279,6 +281,109 @@ def _update_settings(repo_root: Path) -> None:
 
     if changed:
         settings_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Step 6: ChromaDB collection migration
+# ---------------------------------------------------------------------------
+
+
+def _migrate_chroma(repo_root: Path) -> None:
+    """Migrate legacy ChromaDB collections to per-service collections.
+
+    Copies all chunks from:
+      - ``cmg_guidelines`` -> ``guidelines_actas``
+      - ``paramedic_notes`` -> ``personal_actas``
+
+    Each migrated chunk gains ``service: "actas"`` metadata (if not already
+    present).  Legacy collections are NOT deleted -- that is a separate manual
+    step (Task 20b).
+    """
+    import chromadb
+
+    chroma_dir = repo_root / "data" / "chroma_db"
+    if not chroma_dir.exists():
+        log.info("ChromaDB dir %s does not exist — skipping Chroma migration.", chroma_dir)
+        return
+
+    client = chromadb.PersistentClient(path=str(chroma_dir))
+
+    # 1. cmg_guidelines -> guidelines_actas
+    _migrate_collection(
+        client,
+        src_name="cmg_guidelines",
+        dst_name="guidelines_actas",
+    )
+
+    # 2. paramedic_notes -> personal_actas
+    _migrate_collection(
+        client,
+        src_name="paramedic_notes",
+        dst_name="personal_actas",
+    )
+
+
+def _migrate_collection(
+    client,
+    src_name: str,
+    dst_name: str,
+) -> None:
+    """Copy all chunks from *src_name* collection to *dst_name*, adding service metadata.
+
+    Idempotent: if the destination collection already contains data, the step
+    is skipped.
+    """
+    try:
+        src = client.get_collection(src_name)
+    except Exception:
+        log.debug("Source collection '%s' does not exist — skipping.", src_name)
+        return
+
+    total = src.count()
+    if total == 0:
+        log.info("Source collection '%s' is empty — nothing to migrate.", src_name)
+        return
+
+    dst = client.get_or_create_collection(dst_name, metadata={"hnsw:space": "cosine"})
+
+    # Idempotency guard: skip if destination already populated.
+    if dst.count() > 0:
+        log.info(
+            "Destination collection '%s' already has %d chunks — skipping.",
+            dst_name,
+            dst.count(),
+        )
+        return
+
+    batch_size = 500
+    offset = 0
+    migrated = 0
+    while offset < total:
+        batch = src.get(
+            include=["documents", "metadatas", "embeddings"],
+            limit=batch_size,
+            offset=offset,
+        )
+        if not batch["ids"]:
+            break
+        # Add service metadata to each chunk.
+        for meta in batch["metadatas"]:
+            meta.setdefault("service", _SERVICE)
+        dst.add(
+            ids=batch["ids"],
+            documents=batch["documents"],
+            metadatas=batch["metadatas"],
+            embeddings=batch["embeddings"],
+        )
+        migrated += len(batch["ids"])
+        offset += len(batch["ids"])
+
+    log.info(
+        "Migrated %d chunks from '%s' to '%s'.",
+        migrated,
+        src_name,
+        dst_name,
+    )
 
 
 # ---------------------------------------------------------------------------
