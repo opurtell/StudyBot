@@ -119,32 +119,29 @@ print('backend code: OK')
 echo "--- Cleaning temp artifacts ---"
 rm -rf "$EXTRACT_DIR"
 
-CHROMA_OUTPUT="$REPO_ROOT/build/resources/data/chroma_db"
-
 if [[ "${PERSONAL_BUILD:-}" != "1" ]]; then
-  echo "--- Pre-building ChromaDB index from bundled CMGs ---"
-  rm -rf "$CHROMA_OUTPUT"
-  mkdir -p "$CHROMA_OUTPUT"
-  PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
-from pipeline.cmg.chunker import chunk_and_ingest
-chunk_and_ingest(structured_dir='$REPO_ROOT/data/cmgs/structured', db_path='$CHROMA_OUTPUT')
-import chromadb
-client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
-col = client.get_or_create_collection('cmg_guidelines')
-print(f'Pre-built index: {col.count()} chunks')
-"
+  echo "--- Pre-building per-service ChromaDB trees ---"
+  PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" "$REPO_ROOT/scripts/build_bundled_chroma.py" --repo-root "$REPO_ROOT"
 else
-  echo "--- Personal build: using pre-built ChromaDB ---"
-  if [[ ! -d "$CHROMA_OUTPUT" ]]; then
-    echo "ERROR: PERSONAL_BUILD=1 but no pre-built ChromaDB at $CHROMA_OUTPUT"
+  echo "--- Personal build: verifying pre-built per-service ChromaDB ---"
+  SERVICES_DIR="$REPO_ROOT/build/resources/data/services"
+  if [[ ! -d "$SERVICES_DIR" ]]; then
+    echo "ERROR: PERSONAL_BUILD=1 but no per-service ChromaDB at $SERVICES_DIR"
     exit 1
   fi
-  echo "    Found pre-built ChromaDB at $CHROMA_OUTPUT"
+  echo "    Found per-service ChromaDB at $SERVICES_DIR"
   PYTHONPATH="$OUTPUT_DIR/lib:$OUTPUT_DIR/app/src/python" "$STAGED_PYTHON" -c "
 import chromadb
-client = chromadb.PersistentClient(path='$CHROMA_OUTPUT')
-for col in client.list_collections():
-    print(f'  {col.name}: {col.count()} chunks')
+from pathlib import Path
+services_dir = Path('$SERVICES_DIR')
+for svc_dir in sorted(services_dir.iterdir()):
+    chroma_path = svc_dir / 'chroma'
+    if chroma_path.exists():
+        client = chromadb.PersistentClient(path=str(chroma_path))
+        for col in client.list_collections():
+            print(f'  {svc_dir.name}: {col.name} ({col.count()} chunks)')
+    else:
+        print(f'  {svc_dir.name}: no chroma tree')
 "
 fi
 
