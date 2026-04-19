@@ -58,7 +58,7 @@ class TestMedicationDoses:
             return TEST_MEDICATIONS
 
         medication_router.invalidate_medication_cache()
-        monkeypatch.setattr(medication_router, "MEDICATION_INDEX_PATH", tmp_path / "missing.json")
+        monkeypatch.setattr(medication_router, "_resolve_medication_index_path", lambda: tmp_path / "missing.json")
         monkeypatch.setattr(medication_router, "load_medications", fake_load)
 
         first = client.get("/medication/doses")
