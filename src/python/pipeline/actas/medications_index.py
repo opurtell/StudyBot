@@ -85,6 +85,7 @@ def build_medication_index(
                 index[med_name].append({
                     "guideline_id": guideline_id,
                     "cmg_number": cmg_number,
+                    "source_file": json_file.name,
                     "source_title": title,
                     "text": entry.get("text", ""),
                     "dose_values": entry.get("dose_values", []),

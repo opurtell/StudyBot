@@ -5,6 +5,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 35mg Volume: 3.5ml",
       "dose_values": [
@@ -37,6 +38,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 40mg Volume: 4ml",
       "dose_values": [
@@ -69,6 +71,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 45mg Volume: 4.5ml",
       "dose_values": [
@@ -101,6 +104,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 50mg Volume: 5ml",
       "dose_values": [
@@ -133,6 +137,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 60mg Volume: 6ml",
       "dose_values": [
@@ -165,6 +170,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 70mg Volume: 7ml",
       "dose_values": [
@@ -197,6 +203,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 80mg Volume: 8ml",
       "dose_values": [
@@ -229,6 +236,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 90mg Volume: 9ml",
       "dose_values": [
@@ -261,6 +269,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 100mg Volume: 10ml",
       "dose_values": [
@@ -293,6 +302,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 110mg Volume: 11ml",
       "dose_values": [
@@ -325,6 +335,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 120mg Volume: 12ml",
       "dose_values": [
@@ -357,6 +368,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
       "dose_values": [
@@ -393,6 +405,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
       "dose_values": [],
@@ -404,6 +417,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
       "dose_values": [
@@ -432,6 +446,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine: 1mg/kg fast push",
       "dose_values": [
@@ -448,6 +463,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
       "dose_values": [
@@ -464,6 +480,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
       "dose_values": [
@@ -480,6 +497,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": " 0.05mg/kg IV/IO push over 60 sec. ",
       "dose_values": [
@@ -496,6 +514,7 @@
     {
       "guideline_id": "CMG_2",
       "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "##### Type\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n200mg in 2ml – vial \n\n50mg in 5ml - vial\n\n##### Actions\nComplex, multiple actions:\n\n- Analgesic at low doses\n\n- Sedative\n\n- Amnestic/dissociative properties\n\n- Has bronchodilating properties\n\nOnset of action is rapid: IV = 1 – 2 min; IM = 4 – 8 min.\n\n#### Uses\n\n- Sedation of combative/agitated patients, who are an immediate danger to themselves or others\n\n- Induction agent for intubation **- ICP only**\n\n- Maintenance of sedation **- ICP only**\n\n- Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**\n\n- Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**\n\n- Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose\n\n- Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids\n\n#### Adverse Effects\n\n- Laryngospasm\n\n- Hypersalivation\n\n- Dysphoria/emergence reactions\n\n- Muscle twitching and purposeless movements\n\n- Respiratory depression → apnoea (seen in extreme doses or fast administration)\n\n- Hypotension (generally seen in hypovolaemic/cardiac depressed patients)\n\n#### Contraindications\n\n- Known sensitivity\n\n- Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT) \n\n- Children 65 years, or with general debility.\n- Repeat 1mg/kg IM injection after 5 minutes (if required).\n\n#### For intubation induction with Suxamethonium##### Adult only\n- **ICP:** 1mg/kg IV/IO over 30-60 seconds \n\n#### For intubation when suxamethonium is contraindiated ##### Adult only\n- **ICP:** 2mg/kg IV/IO over 30-60 seconds \n\n#### Post intubation analgosedation##### Adult and Paediatric (Syringe bolus)\n- **ICP:** Up to 1mg/kg IV or IO \n- 1-5 minute intervals as required.\n\n##### Adult (Infusion pump)\n**Note:** Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL \n\n- **ICP:** Initial infusion rate: 100mg/hr \n- Lower soft infusion limit: 10mg/hr \n- Upper soft infusion limit: 400mg/hr \n- Upper hard infusion limit: 800mg/hr \n- **ICP:** Default bolus: 20mg (2mL) \n- Lower hard bolus limit: 5mg (0.5mL)\n- Upper hard bolus limit: 100mg (10mL)\n\n#### Ketamine Analgesia Dose Chart\n- Following mild-moderate analgesic options opioids should be considered prior to ketamine.\n- Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.\n- Ketamine is a first line analgesic only in the setting of current or foreseen hypoperfusion; and in the patient unable to receive opioids due to either allergy, hypersensitivity, or tolerance.**Dose:******≥65 years old**\nINITIAL IV\n\n(ICP/AP)\n\n0.3mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\n0.15mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\nREPEAT IV\n\n(ICP/AP)\n\nAs initial\n\n15 mins post end of initial infusion.\n\nAs initial\n\n15 mins post end of initial infusion.\n\nINITIAL IM\n\n(ICP/AP)\n\n0.5mg/kg\n\n0.25mg/kg\n\nREPEAT IM\n\n(ICP/AP)\n\nAfter 30 minutes:\n\n0.5mg/kg\n\nAfter 30 minutes:\n\n0.25mg/kg\n\nHYPOPERFUSED PATIENT\n\n(ICP)\n\nHalve above doses\n\nHalve above doses\n\n#### Special Notes\n- Patients who have received ketamine may still have a significant awareness, despite an appearance of unconsciousness. They may be able to hear and have some recall. Patients should be advised that they will experience strange / unusual sensations.\n- Ketamine is a Controlled Medicine. Use must be checked by both crew members. Under CL207 – Controlled Medicines Procedure, recording and accounting for its use is a legal requirement.\n- The unused portion of the dose must be appropriately disposed of, and the disposal recorded.",
       "dose_values": [
@@ -636,6 +655,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 35mg Volume: 3.5ml",
       "dose_values": [
@@ -668,6 +688,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 40mg Volume: 4ml",
       "dose_values": [
@@ -700,6 +721,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 45mg Volume: 4.5ml",
       "dose_values": [
@@ -732,6 +754,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 50mg Volume: 5ml",
       "dose_values": [
@@ -764,6 +787,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 60mg Volume: 6ml",
       "dose_values": [
@@ -796,6 +820,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 70mg Volume: 7ml",
       "dose_values": [
@@ -828,6 +853,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 80mg Volume: 8ml",
       "dose_values": [
@@ -860,6 +886,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 90mg Volume: 9ml",
       "dose_values": [
@@ -892,6 +919,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 100mg Volume: 10ml",
       "dose_values": [
@@ -924,6 +952,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 110mg Volume: 11ml",
       "dose_values": [
@@ -956,6 +985,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 120mg Volume: 12ml",
       "dose_values": [
@@ -988,6 +1018,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
       "dose_values": [
@@ -1024,6 +1055,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
       "dose_values": [],
@@ -1035,6 +1067,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
       "dose_values": [
@@ -1063,6 +1096,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine: 1mg/kg fast push",
       "dose_values": [
@@ -1079,6 +1113,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
       "dose_values": [
@@ -1095,6 +1130,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
       "dose_values": [
@@ -1111,6 +1147,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": " 0.05mg/kg IV/IO push over 60 sec. ",
       "dose_values": [
@@ -1127,6 +1164,7 @@
     {
       "guideline_id": "CMG_37",
       "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "##### Type\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n200mg in 2ml – vial \n\n50mg in 5ml - vial\n\n##### Actions\nComplex, multiple actions:\n\n- Analgesic at low doses\n\n- Sedative\n\n- Amnestic/dissociative properties\n\n- Has bronchodilating properties\n\nOnset of action is rapid: IV = 1 – 2 min; IM = 4 – 8 min.\n\n#### Uses\n\n- Sedation of combative/agitated patients, who are an immediate danger to themselves or others\n\n- Induction agent for intubation **- ICP only**\n\n- Maintenance of sedation **- ICP only**\n\n- Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**\n\n- Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**\n\n- Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose\n\n- Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids\n\n#### Adverse Effects\n\n- Laryngospasm\n\n- Hypersalivation\n\n- Dysphoria/emergence reactions\n\n- Muscle twitching and purposeless movements\n\n- Respiratory depression → apnoea (seen in extreme doses or fast administration)\n\n- Hypotension (generally seen in hypovolaemic/cardiac depressed patients)\n\n#### Contraindications\n\n- Known sensitivity\n\n- Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT) \n\n- Children 65 years, or with general debility.\n- Repeat 1mg/kg IM injection after 5 minutes (if required).\n\n#### For intubation induction with Suxamethonium##### Adult only\n- **ICP:** 1mg/kg IV/IO over 30-60 seconds \n\n#### For intubation when suxamethonium is contraindiated ##### Adult only\n- **ICP:** 2mg/kg IV/IO over 30-60 seconds \n\n#### Post intubation analgosedation##### Adult and Paediatric (Syringe bolus)\n- **ICP:** Up to 1mg/kg IV or IO \n- 1-5 minute intervals as required.\n\n##### Adult (Infusion pump)\n**Note:** Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL \n\n- **ICP:** Initial infusion rate: 100mg/hr \n- Lower soft infusion limit: 10mg/hr \n- Upper soft infusion limit: 400mg/hr \n- Upper hard infusion limit: 800mg/hr \n- **ICP:** Default bolus: 20mg (2mL) \n- Lower hard bolus limit: 5mg (0.5mL)\n- Upper hard bolus limit: 100mg (10mL)\n\n#### Ketamine Analgesia Dose Chart\n- Following mild-moderate analgesic options opioids should be considered prior to ketamine.\n- Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.\n- Ketamine is a first line analgesic only in the setting of current or foreseen hypoperfusion; and in the patient unable to receive opioids due to either allergy, hypersensitivity, or tolerance.**Dose:******≥65 years old**\nINITIAL IV\n\n(ICP/AP)\n\n0.3mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\n0.15mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\nREPEAT IV\n\n(ICP/AP)\n\nAs initial\n\n15 mins post end of initial infusion.\n\nAs initial\n\n15 mins post end of initial infusion.\n\nINITIAL IM\n\n(ICP/AP)\n\n0.5mg/kg\n\n0.25mg/kg\n\nREPEAT IM\n\n(ICP/AP)\n\nAfter 30 minutes:\n\n0.5mg/kg\n\nAfter 30 minutes:\n\n0.25mg/kg\n\nHYPOPERFUSED PATIENT\n\n(ICP)\n\nHalve above doses\n\nHalve above doses\n\n#### Special Notes\n- Patients who have received ketamine may still have a significant awareness, despite an appearance of unconsciousness. They may be able to hear and have some recall. Patients should be advised that they will experience strange / unusual sensations.\n- Ketamine is a Controlled Medicine. Use must be checked by both crew members. Under CL207 – Controlled Medicines Procedure, recording and accounting for its use is a legal requirement.\n- The unused portion of the dose must be appropriately disposed of, and the disposal recorded.",
       "dose_values": [
@@ -1267,6 +1305,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 35mg Volume: 3.5ml",
       "dose_values": [
@@ -1299,6 +1338,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 40mg Volume: 4ml",
       "dose_values": [
@@ -1331,6 +1371,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 45mg Volume: 4.5ml",
       "dose_values": [
@@ -1363,6 +1404,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 50mg Volume: 5ml",
       "dose_values": [
@@ -1395,6 +1437,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 60mg Volume: 6ml",
       "dose_values": [
@@ -1427,6 +1470,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 70mg Volume: 7ml",
       "dose_values": [
@@ -1459,6 +1503,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 80mg Volume: 8ml",
       "dose_values": [
@@ -1491,6 +1536,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 90mg Volume: 9ml",
       "dose_values": [
@@ -1523,6 +1569,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 100mg Volume: 10ml",
       "dose_values": [
@@ -1555,6 +1602,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 110mg Volume: 11ml",
       "dose_values": [
@@ -1587,6 +1635,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 120mg Volume: 12ml",
       "dose_values": [
@@ -1619,6 +1668,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
       "dose_values": [
@@ -1655,6 +1705,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
       "dose_values": [],
@@ -1666,6 +1717,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
       "dose_values": [
@@ -1694,6 +1746,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine: 1mg/kg fast push",
       "dose_values": [
@@ -1710,6 +1763,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
       "dose_values": [
@@ -1726,6 +1780,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
       "dose_values": [
@@ -1742,6 +1797,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": " 0.05mg/kg IV/IO push over 60 sec. ",
       "dose_values": [
@@ -1758,6 +1814,7 @@
     {
       "guideline_id": "CMG_3",
       "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "##### Type\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n200mg in 2ml – vial \n\n50mg in 5ml - vial\n\n##### Actions\nComplex, multiple actions:\n\n- Analgesic at low doses\n\n- Sedative\n\n- Amnestic/dissociative properties\n\n- Has bronchodilating properties\n\nOnset of action is rapid: IV = 1 – 2 min; IM = 4 – 8 min.\n\n#### Uses\n\n- Sedation of combative/agitated patients, who are an immediate danger to themselves or others\n\n- Induction agent for intubation **- ICP only**\n\n- Maintenance of sedation **- ICP only**\n\n- Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**\n\n- Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**\n\n- Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose\n\n- Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids\n\n#### Adverse Effects\n\n- Laryngospasm\n\n- Hypersalivation\n\n- Dysphoria/emergence reactions\n\n- Muscle twitching and purposeless movements\n\n- Respiratory depression → apnoea (seen in extreme doses or fast administration)\n\n- Hypotension (generally seen in hypovolaemic/cardiac depressed patients)\n\n#### Contraindications\n\n- Known sensitivity\n\n- Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT) \n\n- Children 65 years, or with general debility.\n- Repeat 1mg/kg IM injection after 5 minutes (if required).\n\n#### For intubation induction with Suxamethonium##### Adult only\n- **ICP:** 1mg/kg IV/IO over 30-60 seconds \n\n#### For intubation when suxamethonium is contraindiated ##### Adult only\n- **ICP:** 2mg/kg IV/IO over 30-60 seconds \n\n#### Post intubation analgosedation##### Adult and Paediatric (Syringe bolus)\n- **ICP:** Up to 1mg/kg IV or IO \n- 1-5 minute intervals as required.\n\n##### Adult (Infusion pump)\n**Note:** Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL \n\n- **ICP:** Initial infusion rate: 100mg/hr \n- Lower soft infusion limit: 10mg/hr \n- Upper soft infusion limit: 400mg/hr \n- Upper hard infusion limit: 800mg/hr \n- **ICP:** Default bolus: 20mg (2mL) \n- Lower hard bolus limit: 5mg (0.5mL)\n- Upper hard bolus limit: 100mg (10mL)\n\n#### Ketamine Analgesia Dose Chart\n- Following mild-moderate analgesic options opioids should be considered prior to ketamine.\n- Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.\n- Ketamine is a first line analgesic only in the setting of current or foreseen hypoperfusion; and in the patient unable to receive opioids due to either allergy, hypersensitivity, or tolerance.**Dose:******≥65 years old**\nINITIAL IV\n\n(ICP/AP)\n\n0.3mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\n0.15mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\nREPEAT IV\n\n(ICP/AP)\n\nAs initial\n\n15 mins post end of initial infusion.\n\nAs initial\n\n15 mins post end of initial infusion.\n\nINITIAL IM\n\n(ICP/AP)\n\n0.5mg/kg\n\n0.25mg/kg\n\nREPEAT IM\n\n(ICP/AP)\n\nAfter 30 minutes:\n\n0.5mg/kg\n\nAfter 30 minutes:\n\n0.25mg/kg\n\nHYPOPERFUSED PATIENT\n\n(ICP)\n\nHalve above doses\n\nHalve above doses\n\n#### Special Notes\n- Patients who have received ketamine may still have a significant awareness, despite an appearance of unconsciousness. They may be able to hear and have some recall. Patients should be advised that they will experience strange / unusual sensations.\n- Ketamine is a Controlled Medicine. Use must be checked by both crew members. Under CL207 – Controlled Medicines Procedure, recording and accounting for its use is a legal requirement.\n- The unused portion of the dose must be appropriately disposed of, and the disposal recorded.",
       "dose_values": [

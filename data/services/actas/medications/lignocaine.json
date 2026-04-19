@@ -5,6 +5,7 @@
     {
       "guideline_id": "CMG_8",
       "cmg_number": "8",
+      "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": "May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer into two separate injection sites.",
       "dose_values": [
@@ -25,6 +26,7 @@
     {
       "guideline_id": "CMG_8",
       "cmg_number": "8",
+      "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats) Total max. dose 80mg",
       "dose_values": [
@@ -53,6 +55,7 @@
     {
       "guideline_id": "CMG_8",
       "cmg_number": "8",
+      "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline",
       "dose_values": [
@@ -77,6 +80,7 @@
     {
       "guideline_id": "CMG_8",
       "cmg_number": "8",
+      "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": "5g tube of cream containing lignocaine 40mg/g",
       "dose_values": [
@@ -97,6 +101,7 @@
     {
       "guideline_id": "CMG_8",
       "cmg_number": "8",
+      "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine. This is to be flushed with 1.2-1.5mls of normal saline in order to push the Lignocaine into the medullary space. Wait 2 to 3mins for Lignocaine to take effect. ",
       "dose_values": [],
@@ -108,6 +113,7 @@
     {
       "guideline_id": "CMG_8",
       "cmg_number": "8",
+      "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Local anaesthesia##### Adult and Paediatric\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output##### Adult and Paediatric\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient##### Adult\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine##### Paediatric\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n#### Solvent for IM Ceftriaxone\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
       "dose_values": [

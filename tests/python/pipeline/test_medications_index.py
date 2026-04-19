@@ -100,6 +100,14 @@ class TestEntryFields:
                 assert "qualifications_required" in entry
                 assert isinstance(entry["qualifications_required"], list)
 
+    def test_each_entry_has_source_file(self, fixture_structured_dir: Path, output_dir: Path):
+        build_medication_index(fixture_structured_dir, output_dir)
+        for f in output_dir.iterdir():
+            data = json.loads(f.read_text())
+            for entry in data["dose_entries"]:
+                assert "source_file" in entry
+                assert entry["source_file"].endswith(".json")
+
     def test_top_level_fields(self, fixture_structured_dir: Path, output_dir: Path):
         build_medication_index(fixture_structured_dir, output_dir)
         for f in output_dir.iterdir():

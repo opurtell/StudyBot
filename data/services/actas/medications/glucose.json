@@ -5,6 +5,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
       "dose_values": [
@@ -37,6 +38,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Glucose 10%",
       "dose_values": [],
@@ -48,6 +50,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "BGL < 4 mmol/L",
       "dose_values": [
@@ -64,6 +67,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Glucose 10% IV (repeat once if required).",
       "dose_values": [],
@@ -75,6 +79,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
       "dose_values": [
@@ -91,6 +96,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Hypertonic glucose solution – containing 0.1g dextrose per ml",
       "dose_values": [
@@ -107,6 +113,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "10% glucose – in 250ml in collapsible plastic flask",
       "dose_values": [
@@ -123,6 +130,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Treat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)",
       "dose_values": [
@@ -139,6 +147,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
       "dose_values": [],
@@ -150,6 +159,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "37.5g tube containing 15g glucose",
       "dose_values": [
@@ -170,6 +180,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow",
       "dose_values": [
@@ -186,6 +197,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "1 x tube of 15g glucose orally  May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered Total maximum dose 30g glucose",
       "dose_values": [
@@ -210,6 +222,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
       "dose_values": [
@@ -230,6 +243,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
       "dose_values": [
@@ -250,6 +264,7 @@
     {
       "guideline_id": "CMG_10",
       "cmg_number": "10",
+      "source_file": "CMG_10_Diabetic_Emergencies.json",
       "source_title": "Diabetic Emergencies",
       "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
       "dose_values": [
@@ -266,6 +281,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
       "dose_values": [
@@ -298,6 +314,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Glucose 10%",
       "dose_values": [],
@@ -309,6 +326,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "BGL < 4 mmol/L",
       "dose_values": [
@@ -325,6 +343,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Glucose 10% IV (repeat once if required).",
       "dose_values": [],
@@ -336,6 +355,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
       "dose_values": [
@@ -352,6 +372,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Hypertonic glucose solution – containing 0.1g dextrose per ml",
       "dose_values": [
@@ -368,6 +389,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "10% glucose – in 250ml in collapsible plastic flask",
       "dose_values": [
@@ -384,6 +406,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Treat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)",
       "dose_values": [
@@ -400,6 +423,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
       "dose_values": [],
@@ -411,6 +435,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "37.5g tube containing 15g glucose",
       "dose_values": [
@@ -431,6 +456,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow",
       "dose_values": [
@@ -447,6 +473,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "1 x tube of 15g glucose orally  May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered Total maximum dose 30g glucose",
       "dose_values": [
@@ -471,6 +498,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
       "dose_values": [
@@ -491,6 +519,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
       "dose_values": [
@@ -511,6 +540,7 @@
     {
       "guideline_id": "CMG_1",
       "cmg_number": "1",
+      "source_file": "CMG_1_General_Care.json",
       "source_title": "General Care",
       "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
       "dose_values": [

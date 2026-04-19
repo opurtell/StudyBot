@@ -5,6 +5,7 @@
     {
       "guideline_id": "CMG_22",
       "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
       "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
       "dose_values": [],
@@ -16,6 +17,7 @@
     {
       "guideline_id": "CMG_22",
       "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
       "text": "##### Type\nAntiepileptic\n\n##### Presentations\n500mg/5mL\n\n##### Pharmacokinetics\nIV/IO \n Onset: Rapid \n Max Effect: 30 – 120 minutes \n Duration: 1 -2 days \n\n#### Uses\nStatus epilepticus:\n\n- Refractory seizure activity 5/60 after second benzodiazepine dose.\n\n- >20/60 seizure duration.\n\n#### Adverse Effects\n\n- Behavioural effects\n\n- Drowsiness\n\n- Weakness\n\n- Dizziness and vertigo\n\n- Headache\n\n- Insomnia\n\n- Amnesia\n\n- Ataxia\n\n- Diplopia\n\n- Anorexia\n\n#### Contraindications\n\n- Known allergy.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses\n- **ICP:** 40mg/kg (max. 3000mg) IV/IO, infused over 5/60 via infusion pump, no repeat. \n\n**Note:** If infusion pump unavailable, dose can be administered via slow IV/IO push over 5/60.",
       "dose_values": [
