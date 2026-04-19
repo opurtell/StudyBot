@@ -19,6 +19,12 @@ export default function AnswerInput({
 
   useEffect(() => {
     if (textareaRef.current) {
+      textareaRef.current.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
