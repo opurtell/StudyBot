@@ -22,8 +22,10 @@ CMG_ONLY_SECTIONS = frozenset({
 })
 
 
-def build_generation_prompt(skill_level: str = "AP") -> str:
-    base = """You are a clinical quiz generator for ACT Ambulance Service paramedics.
+def build_generation_prompt(effective_qualifications: frozenset[str] = frozenset({"AP"})) -> str:
+    from services.active import active_service
+    svc = active_service()
+    base = f"""You are a clinical quiz generator for {svc.display_name} paramedics.
 Generate one question from the provided source material.
 
 Rules:
@@ -34,7 +36,7 @@ Rules:
 - Tone: direct, clinical
 - Do NOT repeat or closely rephrase any previously asked questions listed below"""
 
-    if skill_level == "AP":
+    if "ICP" not in effective_qualifications:
         base += """
 - The user is an Ambulance Paramedic (AP). Do NOT generate questions about Intensive Care Paramedic (ICP) interventions, medications, or procedures. If source material contains ICP-only content, ignore it and only use AP-applicable content."""
 
@@ -87,7 +89,7 @@ def generate_question(
     guideline_id: str | None = None,
     blacklist: list[str] | None = None,
     difficulty: str = "medium",
-    skill_level: str = "AP",
+    effective_qualifications: frozenset[str] = frozenset({"AP"}),
     randomize: bool = True,
     previous_questions: list[str] | None = None,
     used_chunk_contents: list[str] | None = None,
@@ -114,7 +116,7 @@ def generate_question(
     if mode == "random" and random.random() < RANDOM_INJECTION_PROBABILITY:
         injected_chunk = retriever.get_random_chunk(
             exclude_content_keys=exclude_keys or None,
-            skill_level=skill_level,
+            effective_qualifications=effective_qualifications,
         )
 
     if injected_chunk is not None:
@@ -124,7 +126,7 @@ def generate_question(
             n=4,
             filters=filters,
             exclude_categories=blacklist,
-            skill_level=skill_level,
+            effective_qualifications=effective_qualifications,
             exclude_content_keys=exclude_keys or None,
             source_restriction=source_restriction,
             tracker=tracker,
@@ -138,7 +140,7 @@ def generate_question(
             n=n_to_fetch,
             filters=filters,
             exclude_categories=blacklist,
-            skill_level=skill_level,
+            effective_qualifications=effective_qualifications,
             exclude_content_keys=exclude_keys or None,
             source_restriction=source_restriction,
             tracker=tracker,
@@ -151,7 +153,7 @@ def generate_question(
                 n=n_to_fetch,
                 filters=filters,
                 exclude_categories=blacklist,
-                skill_level=skill_level,
+                effective_qualifications=effective_qualifications,
                 source_restriction=source_restriction,
                 tracker=tracker,
             )
@@ -182,7 +184,7 @@ def generate_question(
         )
 
     messages = [
-        {"role": "system", "content": build_generation_prompt(skill_level)},
+        {"role": "system", "content": build_generation_prompt(effective_qualifications)},
         {"role": "user", "content": user_content},
     ]
 

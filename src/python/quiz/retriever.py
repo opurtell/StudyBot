@@ -36,15 +36,20 @@ class Retriever:
         self,
         db_path: str | Path | None = None,
         client: chromadb.ClientAPI | chromadb.PersistentClient | None = None,
+        service_id: str | None = None,
     ):
         if client is not None:
             self._client = client
         else:
             self._client = chromadb.PersistentClient(path=str(db_path or CHROMA_DB_DIR))
+        if service_id is None:
+            from services.active import active_service
+            service_id = active_service().id
+        self._service_id = service_id
         self._notes = self._client.get_or_create_collection(
-            "paramedic_notes", metadata={"hnsw:space": "cosine"}
+            f"personal_{service_id}", metadata={"hnsw:space": "cosine"}
         )
-        self._cmgs = self._client.get_or_create_collection("cmg_guidelines")
+        self._cmgs = self._client.get_or_create_collection(f"guidelines_{service_id}")
 
     def retrieve(
         self,
@@ -52,7 +57,7 @@ class Retriever:
         n: int = 5,
         filters: dict | None = None,
         exclude_categories: list[str] | None = None,
-        skill_level: str = "AP",
+        effective_qualifications: frozenset[str] | None = None,
         exclude_content_keys: set[str] | None = None,
         source_restriction: str | None = None,
         tracker=None,
@@ -62,7 +67,8 @@ class Retriever:
         # Only query notes collection when NOT restricted to CMGs
         if source_restriction != "cmg":
             notes_where = self._build_where(
-                filters, exclude_categories, collection="notes", skill_level=skill_level
+                filters, exclude_categories, collection="notes",
+                effective_qualifications=effective_qualifications,
             )
             notes_results = self._safe_query(self._notes, query, n * 4, notes_where)
             all_chunks.extend(self._parse_results(notes_results, "notes"))
@@ -70,7 +76,8 @@ class Retriever:
         # Always query CMGs collection unless restricted to notes only
         if source_restriction is None or source_restriction == "cmg":
             cmgs_where = self._build_where(
-                filters, exclude_categories, collection="cmgs", skill_level=skill_level
+                filters, exclude_categories, collection="cmgs",
+                effective_qualifications=effective_qualifications,
             )
             cmgs_results = self._safe_query(self._cmgs, query, n * 4, cmgs_where)
             all_chunks.extend(self._parse_results(cmgs_results, "cmgs"))
@@ -110,7 +117,7 @@ class Retriever:
         base_filters: dict | None,
         exclude: list[str] | None,
         collection: str,
-        skill_level: str = "AP",
+        effective_qualifications: frozenset[str] | None = None,
     ) -> dict | None:
         conditions: list[dict] = []
 
@@ -127,10 +134,13 @@ class Retriever:
                 for cat in exclude:
                     conditions.append({"section": {"$nin": [cat]}})
 
-        if collection in ("cmgs", "notes") and skill_level == "AP":
-            conditions.append({"visibility": {"$in": ["both", "ap"]}})
-        elif collection in ("cmgs", "notes") and skill_level == "ICP":
-            conditions.append({"visibility": {"$in": ["both", "icp"]}})
+        # Derive visibility filter from effective qualifications.
+        # ICP users see all content; AP-only users see AP and shared content.
+        if effective_qualifications is not None and collection in ("cmgs", "notes"):
+            if "ICP" in effective_qualifications:
+                conditions.append({"visibility": {"$in": ["both", "icp", "ap"]}})
+            else:
+                conditions.append({"visibility": {"$in": ["both", "ap"]}})
 
         if not conditions:
             return None
@@ -149,14 +159,15 @@ class Retriever:
     def get_random_chunk(
         self,
         exclude_content_keys: set[str] | None = None,
-        skill_level: str = "AP",
+        effective_qualifications: frozenset[str] | None = None,
     ) -> "RetrievedChunk | None":
         """Return a single uniformly random chunk from the combined corpus."""
         where_vis: dict | None = None
-        if skill_level == "AP":
-            where_vis = {"visibility": {"$in": ["both", "ap"]}}
-        elif skill_level == "ICP":
-            where_vis = {"visibility": {"$in": ["both", "icp"]}}
+        if effective_qualifications is not None:
+            if "ICP" in effective_qualifications:
+                where_vis = {"visibility": {"$in": ["both", "icp", "ap"]}}
+            else:
+                where_vis = {"visibility": {"$in": ["both", "ap"]}}
 
         collections = [self._notes, self._cmgs]
         random.shuffle(collections)

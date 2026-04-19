@@ -25,6 +25,9 @@ class Question(BaseModel):
     difficulty: str
     category: str
     primary_chunk_index: int = 0
+    service: str = "actas"
+    guideline_id: str | None = None
+    cmg_number: str | None = None  # deprecated — use guideline_id
 
 
 class Evaluation(BaseModel):

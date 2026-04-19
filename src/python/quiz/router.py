@@ -10,6 +10,8 @@ from pydantic import BaseModel
 from llm.base import LLMClient
 from llm.factory import create_client_for_model, load_config
 from seed import is_seeding_complete
+from services.active import active_service
+from services.qualifications import effective_qualifications
 
 from .agent import generate_question
 from .agent import evaluate_answer
@@ -124,7 +126,12 @@ def generate(req: GenerateQuestionRequest) -> dict:
 
     quiz_model = _get_quiz_model()
     config = load_config()
-    skill_level = config.get("skill_level", "AP")
+    svc = active_service()
+    eff = effective_qualifications(
+        config.get("base_qualification", "AP"),
+        tuple(config.get("endorsements", [])),
+        svc,
+    )
 
     previous_texts: list[str] = []
     for qid in session.asked_question_ids:
@@ -141,7 +148,7 @@ def generate(req: GenerateQuestionRequest) -> dict:
         llm=_get_llm(quiz_model),
         retriever=_get_retriever(),
         tracker=_get_tracker(),
-        skill_level=skill_level,
+        effective_qualifications=eff,
         randomize=session.randomize,
         previous_questions=previous_texts if previous_texts else None,
         used_chunk_contents=session.asked_chunk_contents
