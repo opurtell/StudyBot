@@ -15,6 +15,7 @@ from pydantic import BaseModel
 from paths import CHROMA_DB_DIR, service_uploads_dir
 from upload.extractor import extract_text, SUPPORTED_EXTENSIONS
 from pipeline.personal_docs.chunker import chunk_and_ingest
+from services.registry import _BY_ID as _REGISTRY_BY_ID
 
 logger = logging.getLogger(__name__)
 
@@ -122,6 +123,9 @@ async def upload_document(
     service: str = Form(...),
     scope: Literal["service-specific", "general"] = Form("service-specific"),
 ) -> UploadResponse:
+    if service not in _REGISTRY_BY_ID:
+        raise HTTPException(status_code=422, detail=f"Unknown service: {service!r}")
+
     if not file.filename:
         raise HTTPException(status_code=400, detail="No filename provided")
 

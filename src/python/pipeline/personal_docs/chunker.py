@@ -56,6 +56,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLEC
     source_type = meta["source_type"]
     categories = meta.get("categories", [])
     last_modified = meta.get("last_modified", "")
+    service = meta.get("service", "")
+    scope = meta.get("scope", "")
 
     md_docs = _md_header_splitter.split_text(body)
     if not md_docs:
@@ -111,6 +113,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLEC
                     "last_modified": last_modified,
                     "header_context": header_contexts[i],
                     "visibility": "icp",
+                    "service": service,
+                    "scope": scope,
                 }
             )
             stripped = strip_icp_content(chunk_text)
@@ -128,6 +132,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLEC
                         "last_modified": last_modified,
                         "header_context": header_contexts[i],
                         "visibility": "ap",
+                        "service": service,
+                        "scope": scope,
                     }
                 )
         else:
@@ -144,6 +150,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLEC
                     "last_modified": last_modified,
                     "header_context": header_contexts[i],
                     "visibility": "both",
+                    "service": service,
+                    "scope": scope,
                 }
             )
 
