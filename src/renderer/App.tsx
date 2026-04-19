@@ -15,6 +15,8 @@ import { ResourceCacheProvider } from "./providers/ResourceCacheProvider";
 import { SettingsProvider } from "./providers/SettingsProvider";
 import { ServiceProvider } from "./providers/ServiceProvider";
 import { BackgroundProcessProvider } from "./providers/BackgroundProcessProvider";
+import { ServiceSetupModal } from "./components/ServiceSetupModal";
+import { useService } from "./hooks/useService";
 
 function StandardLayout() {
   return (
@@ -55,6 +57,18 @@ export function AppRoutes() {
   );
 }
 
+function ServiceSetupGate({ children }: { children: React.ReactNode }) {
+  const { activeService } = useService();
+  const showSetupModal = !activeService;
+
+  return (
+    <>
+      {children}
+      {showSetupModal && <ServiceSetupModal open={true} />}
+    </>
+  );
+}
+
 export default function App() {
   return (
     <ThemeProvider>
@@ -63,6 +77,7 @@ export default function App() {
           <SettingsProvider>
             <ServiceProvider>
             <BackgroundProcessProvider>
+            <ServiceSetupGate>
             <HashRouter>
               <BackendBootGate>
                 <ErrorBoundary>
@@ -70,6 +85,7 @@ export default function App() {
                 </ErrorBoundary>
               </BackendBootGate>
             </HashRouter>
+            </ServiceSetupGate>
             </BackgroundProcessProvider>
             </ServiceProvider>
           </SettingsProvider>
