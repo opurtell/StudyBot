@@ -56,7 +56,7 @@ def user_service_structured_dir(service_id: str) -> Path:
         service_id: Service identifier (e.g. "actas", "ambulance_tas")
 
     Returns:
-        Path to USER_DATA_ROOT/services/{service_id}/structured
+        Path to USER_DATA_DIR/services/{service_id}/structured
     """
     return USER_DATA_DIR / "services" / service_id / "structured"
 
@@ -125,6 +125,8 @@ def bundled_service_structured_dir(service_id: str) -> Path:
         Path to APP_ROOT/data/services/{service_id}/structured
     """
     return service_structured_dir(service_id)
+
+
 REFDOCS_DIR = APP_ROOT / "docs" / "REFdocs"
 CPDDOCS_DIR = APP_ROOT / "docs" / "CPDdocs"
 NOTABILITY_NOTE_DOCS_DIR = APP_ROOT / "docs" / "notabilityNotes" / "noteDocs"

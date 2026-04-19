@@ -42,7 +42,7 @@ class TestServiceAwarePaths:
         assert p.parent.name == "actas"
         assert str(p).startswith(str(tmp_path / "user"))
 
-    def test_resolve_service_structured_dir_prefers_user(self, tmp_path, monkeypatch):
+    def test_resolve_prefers_user_dir(self, tmp_path, monkeypatch):
         """Test that resolve_service_structured_dir prefers user directory when it exists with data."""
         user_root = tmp_path / "user"
         app_root = tmp_path / "app"
