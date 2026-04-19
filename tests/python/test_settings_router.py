@@ -156,14 +156,19 @@ def test_clear_vector_store_removes_canonical_chroma_dir(tmp_path, monkeypatch):
 
 
 def test_rerun_pipeline_invalidates_read_caches(monkeypatch):
+    import types
+    from services import registry
+
     calls: list[str] = []
     monkeypatch.setattr(settings_router, "invalidate_guideline_cache", lambda: calls.append("guidelines"))
     monkeypatch.setattr(settings_router, "invalidate_medication_cache", lambda: calls.append("medications"))
-    monkeypatch.setattr(
-        settings_router,
-        "_run_pipeline_ingest_in_background",
-        lambda: calls.append("pipeline"),
-    )
+
+    fake_adapter = types.ModuleType("src.python.pipeline.actas")
+    fake_adapter.run_pipeline = lambda **kwargs: calls.append("pipeline")  # type: ignore[attr-defined]
+
+    actas_service = registry.get_service("actas")
+    monkeypatch.setattr(settings_router, "active_service", lambda: actas_service)
+    monkeypatch.setattr(settings_router.importlib, "import_module", lambda name: fake_adapter)
 
     response = client.post("/settings/pipeline/rerun")
 
@@ -217,14 +222,20 @@ def test_cmg_rebuild_starts_background_job(monkeypatch):
     assert response.json()["status"] == "started"
 
 
-def test_rerun_pipeline_starts_both_pipelines(monkeypatch):
-    """Re-run Pipeline should trigger both notability notes and personal docs ingestion."""
-    commands_run: list[list[str]] = []
+def test_rerun_pipeline_calls_adapter_run_pipeline(monkeypatch):
+    """POST /settings/pipeline/rerun should call the active service adapter's run_pipeline in a background thread."""
+    import types
+    import time
+    from services import registry
 
-    def mock_run(cmd, **kwargs):
-        commands_run.append(cmd)
+    calls: list[str] = []
 
-    monkeypatch.setattr(settings_router.subprocess, "run", mock_run)
+    fake_adapter = types.ModuleType("src.python.pipeline.actas")
+    fake_adapter.run_pipeline = lambda **kwargs: calls.append("run_pipeline")  # type: ignore[attr-defined]
+
+    actas_service = registry.get_service("actas")
+    monkeypatch.setattr(settings_router, "active_service", lambda: actas_service)
+    monkeypatch.setattr(settings_router.importlib, "import_module", lambda name: fake_adapter)
     monkeypatch.setattr(settings_router, "invalidate_guideline_cache", lambda: None)
     monkeypatch.setattr(settings_router, "invalidate_medication_cache", lambda: None)
 
@@ -232,12 +243,62 @@ def test_rerun_pipeline_starts_both_pipelines(monkeypatch):
     assert response.status_code == 200
     assert response.json()["status"] == "started"
 
-    # Wait for background thread to finish
-    import time
-    time.sleep(1)
+    # Allow background thread to finish
+    time.sleep(0.2)
 
-    # Should have run both pipelines
-    assert len(commands_run) >= 2
-    cmd_strs = [" ".join(c) for c in commands_run]
-    assert any("pipeline.run" in c for c in cmd_strs), f"Notability pipeline not found in {cmd_strs}"
-    assert any("pipeline.personal_docs.run" in c for c in cmd_strs), f"Personal docs pipeline not found in {cmd_strs}"
+    assert "run_pipeline" in calls, f"adapter run_pipeline was not called; calls={calls}"
+
+
+# ---------------------------------------------------------------------------
+# Task 8b: active_service() + importlib routing for /settings/pipeline/rerun
+# ---------------------------------------------------------------------------
+
+def test_rerun_pipeline_actas(monkeypatch):
+    """POST /settings/pipeline/rerun with ACTAS active service should call the ACTAS adapter's run_pipeline."""
+    import types
+    from services import registry
+
+    calls: list[str] = []
+
+    # Build a minimal fake actas adapter module with run_pipeline
+    fake_actas = types.ModuleType("src.python.pipeline.actas")
+    fake_actas.run_pipeline = lambda **kwargs: calls.append("actas_run_pipeline")  # type: ignore[attr-defined]
+
+    actas_service = registry.get_service("actas")
+
+    monkeypatch.setattr(settings_router, "active_service", lambda: actas_service)
+    monkeypatch.setattr(settings_router.importlib, "import_module", lambda name: fake_actas)
+    monkeypatch.setattr(settings_router, "invalidate_guideline_cache", lambda: None)
+    monkeypatch.setattr(settings_router, "invalidate_medication_cache", lambda: None)
+
+    response = client.post("/settings/pipeline/rerun")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "started"}
+
+    # Allow background thread to finish
+    import time
+    time.sleep(0.2)
+
+    assert "actas_run_pipeline" in calls, "ACTAS adapter run_pipeline was not called"
+
+
+def test_rerun_pipeline_unimplemented_service(monkeypatch):
+    """POST /settings/pipeline/rerun with a service whose adapter lacks run_pipeline returns 409."""
+    import types
+    from services import registry
+
+    # Build a fake AT adapter module with NO run_pipeline attribute
+    fake_at = types.ModuleType("src.python.pipeline.at")
+
+    at_service = registry.get_service("at")
+
+    monkeypatch.setattr(settings_router, "active_service", lambda: at_service)
+    monkeypatch.setattr(settings_router.importlib, "import_module", lambda name: fake_at)
+    monkeypatch.setattr(settings_router, "invalidate_guideline_cache", lambda: None)
+    monkeypatch.setattr(settings_router, "invalidate_medication_cache", lambda: None)
+
+    response = client.post("/settings/pipeline/rerun")
+
+    assert response.status_code == 409
+    assert response.json() == {"error": "adapter not ready"}
