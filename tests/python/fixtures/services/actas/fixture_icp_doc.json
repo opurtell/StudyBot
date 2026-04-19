@@ -1,0 +1,29 @@
+{
+  "id": "actas-cmg-3a",
+  "cmg_number": "3A",
+  "title": "RSI (Rapid Sequence Intubation)",
+  "version_date": "2024-01-01",
+  "section": "Clinical Guidelines",
+  "content_markdown": "RSI guidelines for ICP only.",
+  "is_icp_only": true,
+  "dose_lookup": {
+    "Suxamethonium": [
+      {
+        "text": "Suxamethonium IV: 1.5mg/kg for RSI.",
+        "dose_values": [{"amount": "1.5", "unit": "mg/kg"}]
+      }
+    ],
+    "Morphine": [
+      {
+        "text": "Morphine IV: 0.1mg/kg for pain.",
+        "dose_values": [{"amount": "0.1", "unit": "mg/kg"}]
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "def456",
+  "extraction_metadata": {},
+  "service": "actas",
+  "guideline_id": "actas-cmg-3a",
+  "extra": {}
+}

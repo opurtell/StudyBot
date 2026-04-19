@@ -1,0 +1,29 @@
+{
+  "id": "actas-cmg-1",
+  "cmg_number": "1",
+  "title": "General Care",
+  "version_date": "2024-01-01",
+  "section": "Clinical Guidelines",
+  "content_markdown": "General care guidelines.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Adrenaline": [
+      {
+        "text": "Adrenaline IM: 0.5mg for anaphylaxis.",
+        "dose_values": [{"amount": "0.5", "unit": "mg"}]
+      }
+    ],
+    "Amiodarone": [
+      {
+        "text": "Amiodarone IV: 300mg for VF.",
+        "dose_values": [{"amount": "300", "unit": "mg"}]
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "abc123",
+  "extraction_metadata": {},
+  "service": "actas",
+  "guideline_id": "actas-cmg-1",
+  "extra": {}
+}
