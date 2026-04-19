@@ -7,6 +7,8 @@ when reading and validating structured JSON files.
 """
 
 from datetime import date
+from typing import Any, Literal
+
 from pydantic import BaseModel, ConfigDict
 
 
@@ -61,7 +63,7 @@ class Flowchart(BaseModel):
 
     title: str
     mermaid: str
-    source_format: str  # "data" | "svg" | "image" | "pdf"
+    source_format: Literal["data", "svg", "image", "pdf"]
     review_required: bool = False
     asset_ref: str | None = None
 
@@ -117,4 +119,4 @@ class GuidelineDocument(BaseModel):
     source_url: str | None = None
     source_hash: str
     last_modified: date | None = None
-    extra: dict = {}
+    extra: dict[str, Any] = {}

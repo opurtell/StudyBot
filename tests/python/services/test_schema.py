@@ -1,4 +1,6 @@
 import pytest
+from pydantic import ValidationError
+
 from src.python.services.schema import GuidelineDocument
 
 
@@ -24,7 +26,7 @@ def test_minimal_valid_document():
 
 def test_rejects_unknown_top_level_field():
     """Test that extra fields at top level are rejected."""
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         GuidelineDocument(
             service="actas",
             guideline_id="X",
@@ -190,7 +192,7 @@ def test_nested_extra_forbid():
     """Test that extra fields are forbidden in nested models."""
     from src.python.services.schema import ContentSection
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         ContentSection(
             heading="Test",
             body="Body",
@@ -202,7 +204,7 @@ def test_medication_dose_extra_forbid():
     """Test that MedicationDose forbids extra fields."""
     from src.python.services.schema import MedicationDose
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         MedicationDose(
             medication="Test",
             indication="Test",
@@ -215,7 +217,7 @@ def test_flowchart_extra_forbid():
     """Test that Flowchart forbids extra fields."""
     from src.python.services.schema import Flowchart
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         Flowchart(
             title="Test",
             mermaid="graph TD",
@@ -228,7 +230,7 @@ def test_reference_extra_forbid():
     """Test that Reference forbids extra fields."""
     from src.python.services.schema import Reference
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         Reference(
             label="Test",
             extra_field="fail",
