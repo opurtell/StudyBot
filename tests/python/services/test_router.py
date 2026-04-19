@@ -13,13 +13,6 @@ def test_list_services_includes_both():
     assert ids == {"actas", "at"}
 
 
-def test_list_services_strips_adapter_path():
-    """Response does not expose internal 'adapter' field."""
-    r = client.get("/services")
-    for s in r.json():
-        assert "adapter" not in s
-
-
 def test_list_services_strips_all_backend_only_fields():
     """Response excludes backend-only fields: adapter, scope_source_doc, category_mapping_doc, source_hierarchy."""
     r = client.get("/services")

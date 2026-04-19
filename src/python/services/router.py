@@ -2,11 +2,11 @@ from fastapi import APIRouter
 from src.python.services.registry import REGISTRY
 
 
-router = APIRouter()
+router = APIRouter(prefix="/services", tags=["services"])
 
 
-@router.get("/services")
-def list_services():
+@router.get("")
+def list_services() -> list[dict]:
     """
     List all available services with their qualifications and metadata.
 
