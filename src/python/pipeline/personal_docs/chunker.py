@@ -11,7 +11,7 @@ from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
 )
 
-COLLECTION_NAME = "paramedic_notes"
+DEFAULT_COLLECTION_NAME = "paramedic_notes"
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 100
 
@@ -48,7 +48,7 @@ def _sanitise_id(source_file: str) -> str:
     return source_file.replace("/", "__").replace(" ", "_")
 
 
-def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLECTION_NAME) -> dict:
+def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str | None = None) -> dict:
     content = md_path.read_text(encoding="utf-8")
     meta, body = _parse_front_matter(content)
 
@@ -58,6 +58,13 @@ def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = COLLEC
     last_modified = meta.get("last_modified", "")
     service = meta.get("service", "")
     scope = meta.get("scope", "")
+
+    # Derive collection name: explicit override > service from front-matter > legacy default
+    if collection_name is None:
+        if service:
+            collection_name = f"personal_{service}"
+        else:
+            collection_name = DEFAULT_COLLECTION_NAME
 
     md_docs = _md_header_splitter.split_text(body)
     if not md_docs:
