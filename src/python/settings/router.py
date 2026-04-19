@@ -3,7 +3,6 @@ from __future__ import annotations
 import importlib
 import json
 import shutil
-import subprocess
 import threading
 from pathlib import Path
 
@@ -141,7 +140,7 @@ def save_models(req: SaveModelsRequest) -> dict:
 
 
 @router.post("/pipeline/rerun")
-def rerun_pipeline():
+def rerun_pipeline() -> dict | JSONResponse:
     service = active_service()
     try:
         adapter = importlib.import_module(service.adapter)
