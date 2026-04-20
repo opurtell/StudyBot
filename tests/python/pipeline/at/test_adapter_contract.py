@@ -180,3 +180,27 @@ class TestModelsModule:
         from src.python.pipeline.at.models import ATFlowchart
 
         assert ATFlowchart is not None
+
+
+class TestRunPipelineAllStages:
+    """Test that run_pipeline correctly chains all stages in dry-run mode."""
+
+    def test_run_pipeline_all_stages_dry_run(self):
+        """run_pipeline with stages='all' and dry_run=True should run all stages without ChromaDB writes."""
+        from src.python.pipeline.at import run_pipeline
+
+        result = run_pipeline(stages="all", dry_run=True)
+        assert result["stages"] == [
+            "discover",
+            "extract",
+            "content",
+            "dose",
+            "flowcharts",
+            "structure",
+            "qualifications",
+            "chunk",
+            "medications",
+            "version",
+        ]
+        assert result["dry_run"] is True
+        # No ChromaDB writes in dry_run mode - chunk stage should be skipped

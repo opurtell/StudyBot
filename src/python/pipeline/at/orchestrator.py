@@ -9,9 +9,20 @@ is adapted for the AT CPG site structure and schema.
 """
 
 import logging
+import os
+from pathlib import Path
 from typing import Any
 
 from .discover import discover_site
+from .extractor import extract_all_metadata
+from .content_extractor import extract_all_guidelines
+from .dose_extractor import extract_dose_sections
+from .flowcharts import process_all_flowcharts
+from .structurer import structure_all_guidelines
+from .qualifications_tagger import tag_guideline_qualifications
+from .chunker import chunk_and_ingest
+from .medications_index import build_medications_index
+from .version_tracker import update_version_tracking
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -54,11 +65,20 @@ def run_pipeline(
     """
     stages_to_run = ALL_STAGES if stages.lower() == "all" else stages.lower().split(",")
     inv_dir = investigation_dir
+    raw_dir = RAW_DIR
+    structured_dir = STRUCTURED_DIR
+
+    # Ensure directories exist
+    os.makedirs(inv_dir, exist_ok=True)
+    os.makedirs(raw_dir, exist_ok=True)
+    os.makedirs(structured_dir, exist_ok=True)
 
     result: dict[str, Any] = {
         "stages": stages_to_run,
         "dry_run": dry_run,
         "investigation_dir": inv_dir,
+        "raw_dir": raw_dir,
+        "structured_dir": structured_dir,
     }
 
     logger.info(f"Starting AT CPG Pipeline. Stages: {stages_to_run}")
@@ -66,60 +86,158 @@ def run_pipeline(
     # Stage 1: Discover site structure
     if "discover" in stages_to_run:
         logger.info("=== Stage 1: Site Discovery ===")
-        discovery_result = discover_site(output_dir=inv_dir)
-        result["discovery"] = discovery_result.model_dump()
-        logger.info(
-            f"Discovered {len(discovery_result.guidelines)} guidelines, "
-            f"{len(discovery_result.medicines)} medicines"
-        )
+        try:
+            discovery_result = discover_site(output_dir=inv_dir)
+            result["discovery"] = discovery_result.model_dump()
+            logger.info(
+                f"Discovered {len(discovery_result.guidelines)} guidelines, "
+                f"{len(discovery_result.medicines)} medicines"
+            )
+        except Exception as e:
+            logger.error(f"Discovery stage failed: {e}")
+            result["discovery_error"] = str(e)
 
-    # Stage 2: Extract JS bundles (no-op stub)
+    # Stage 2: Extract JS bundles and metadata
     if "extract" in stages_to_run:
         logger.info("=== Stage 2: JS Bundle Extraction ===")
-        logger.info("Stage not yet implemented - no-op")
+        try:
+            metadata = extract_all_metadata(investigation_dir=inv_dir)
+            result["extract"] = metadata
+            logger.info(
+                f"Extracted {len(metadata.get('cpg_codes', []))} CPG codes, "
+                f"{len(metadata.get('medicines', []))} medicines"
+            )
+        except Exception as e:
+            logger.error(f"Extraction stage failed: {e}")
+            result["extract_error"] = str(e)
 
-    # Stage 3: Extract guideline content (no-op stub)
+    # Stage 3: Extract guideline content
     if "content" in stages_to_run:
         logger.info("=== Stage 3: Content Extraction ===")
-        logger.info("Stage not yet implemented - no-op")
+        discovery_path = os.path.join(inv_dir, "discovery.json")
+        if os.path.exists(discovery_path):
+            try:
+                guidelines = extract_all_guidelines(
+                    discovery_path=discovery_path,
+                    output_dir=raw_dir,
+                    bundles_dir=inv_dir,
+                )
+                result["content"] = {"count": len(guidelines)}
+                logger.info(f"Extracted content for {len(guidelines)} guidelines")
+            except Exception as e:
+                logger.error(f"Content extraction failed: {e}")
+                result["content_error"] = str(e)
+        else:
+            logger.warning(f"Discovery file not found: {discovery_path}")
+            result["content_error"] = "Discovery file not found"
 
-    # Stage 4: Extract dose tables (no-op stub)
+    # Stage 4: Extract dose tables (integrated into content extraction)
     if "dose" in stages_to_run:
         logger.info("=== Stage 4: Dose Table Extraction ===")
-        logger.info("Stage not yet implemented - no-op")
+        logger.info("Dose extraction is integrated into content extraction stage")
+        result["dose"] = {"status": "integrated"}
 
-    # Stage 5: Extract flowcharts (no-op stub)
+    # Stage 5: Extract flowcharts
     if "flowcharts" in stages_to_run:
         logger.info("=== Stage 5: Flowchart Extraction ===")
-        logger.info("Stage not yet implemented - no-op")
+        discovery_path = os.path.join(inv_dir, "discovery.json")
+        flowcharts_dir = os.path.join(raw_dir, "flowcharts")
+        if os.path.exists(discovery_path):
+            try:
+                flowcharts = process_all_flowcharts(
+                    discovery_path=discovery_path,
+                    output_dir=flowcharts_dir,
+                )
+                result["flowcharts"] = {"count": len(flowcharts)}
+                logger.info(f"Processed {len(flowcharts)} flowcharts")
+            except Exception as e:
+                logger.error(f"Flowchart extraction failed: {e}")
+                result["flowcharts_error"] = str(e)
+        else:
+            logger.warning(f"Discovery file not found: {discovery_path}")
+            result["flowcharts_error"] = "Discovery file not found"
 
-    # Stage 6: Structure guidelines (no-op stub)
+    # Stage 6: Structure guidelines
     if "structure" in stages_to_run:
         logger.info("=== Stage 6: Structuring ===")
-        logger.info("Stage not yet implemented - no-op")
+        if os.path.exists(raw_dir):
+            try:
+                count = structure_all_guidelines(raw_dir=raw_dir, output_dir=structured_dir)
+                result["structure"] = {"count": count}
+                logger.info(f"Structured {count} guidelines")
+            except Exception as e:
+                logger.error(f"Structuring failed: {e}")
+                result["structure_error"] = str(e)
+        else:
+            logger.warning(f"Raw directory not found: {raw_dir}")
+            result["structure_error"] = "Raw directory not found"
 
-    # Stage 7: Extract qualifications (no-op stub)
+    # Stage 7: Tag qualifications
     if "qualifications" in stages_to_run:
-        logger.info("=== Stage 7: Qualifications Extraction ===")
-        logger.info("Stage not yet implemented - no-op")
+        logger.info("=== Stage 7: Qualifications Tagging ===")
+        logger.info("Qualification tagging is integrated into structurer stage")
+        result["qualifications"] = {"status": "integrated"}
 
-    # Stage 8: Chunk and ingest (no-op stub)
+    # Stage 8: Chunk and ingest
     if "chunk" in stages_to_run:
         logger.info("=== Stage 8: Chunking & Ingestion ===")
         if dry_run:
             logger.info("Dry-run specified. Skipping ChromaDB ingestion.")
+            result["chunk"] = {"status": "skipped (dry_run)"}
+        elif os.path.exists(structured_dir):
+            try:
+                db_path = "data/at/chroma_db"
+                chunk_and_ingest(structured_dir=structured_dir, db_path=db_path)
+                result["chunk"] = {"status": "completed"}
+                logger.info("Chunking and ingestion completed")
+            except Exception as e:
+                logger.error(f"Chunking failed: {e}")
+                result["chunk_error"] = str(e)
         else:
-            logger.info("Stage not yet implemented - no-op")
+            logger.warning(f"Structured directory not found: {structured_dir}")
+            result["chunk_error"] = "Structured directory not found"
 
-    # Stage 9: Medication index (no-op stub)
+    # Stage 9: Medication index
     if "medications" in stages_to_run:
         logger.info("=== Stage 9: Medication Index ===")
-        logger.info("Stage not yet implemented - no-op")
+        if os.path.exists(structured_dir):
+            try:
+                med_output_dir = os.path.join(structured_dir, "medications")
+                count = build_medications_index(
+                    structured_dir=structured_dir,
+                    output_dir=med_output_dir,
+                )
+                result["medications"] = {"count": count}
+                logger.info(f"Built medication index for {count} medicines")
+            except Exception as e:
+                logger.error(f"Medication index failed: {e}")
+                result["medications_error"] = str(e)
+        else:
+            logger.warning(f"Structured directory not found: {structured_dir}")
+            result["medications_error"] = "Structured directory not found"
 
-    # Stage 10: Version tracking (no-op stub)
+    # Stage 10: Version tracking
     if "version" in stages_to_run:
         logger.info("=== Stage 10: Version Tracking ===")
-        logger.info("Stage not yet implemented - no-op")
+        if os.path.exists(structured_dir):
+            try:
+                tracker_path = os.path.join(structured_dir, "version_tracker.json")
+                version_summary = update_version_tracking(
+                    structured_dir=structured_dir,
+                    tracker_path=tracker_path,
+                )
+                result["version"] = version_summary
+                logger.info(
+                    f"Version tracking: {version_summary.get('total_count', 0)} total, "
+                    f"{version_summary.get('new_count', 0)} new, "
+                    f"{version_summary.get('modified_count', 0)} modified"
+                )
+            except Exception as e:
+                logger.error(f"Version tracking failed: {e}")
+                result["version_error"] = str(e)
+        else:
+            logger.warning(f"Structured directory not found: {structured_dir}")
+            result["version_error"] = "Structured directory not found"
 
     logger.info("Pipeline completed successfully.")
     return result
