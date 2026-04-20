@@ -11,12 +11,18 @@ import re
 import time
 from pathlib import Path
 
+from at_scrape_utils import (
+    dismiss_modals,
+    extract_page_content,
+    update_structured_file,
+)
+
 BASE_URL = "https://cpg.ambulance.tas.gov.au"
 OUTPUT_DIR = Path("data/at/raw")
 STRUCTURED_DIR = Path("data/services/at/structured")
 DISCOVERY_OUT = Path("data/at/investigation/leaf_urls.json")
 
-# Category slugs mapped to their top-level URL path segments
+# Fallback: category slugs for Playwright discovery when bundle data is absent
 GUIDELINE_SECTIONS = {
     "adult-patient-guidelines": {
         "label": "Adult Patient Guidelines",
@@ -40,138 +46,13 @@ GUIDELINE_SECTIONS = {
     },
 }
 
-# Qualification levels to iterate (ordered broadest first for dedup)
-# Use only Paramedic for discovery — it sees all sections; other levels add duplicates
-QUAL_LEVELS = ["Paramedic"]
 
-# Medicine page slugs (already scraped successfully — skip in guideline pass)
-MEDICINE_SLUGS = {
-    "adrenaline", "amiodarone", "aspirin", "atropine", "ceftriaxone",
-    "dexamethasone", "diazepam", "droperidol", "enoxaparin", "ergometrine",
-    "fentanyl", "frusemide", "glucagon", "glucosefive", "glucoseten",
-    "glucose-paste", "gtn", "heparin", "ibuprofen", "ipratropium-bromide",
-    "ketamine", "lignocaine", "magnesium-sulphate", "methoxyflurane",
-    "metoclopramide", "midazolam", "morphine", "naloxone", "normal-saline",
-    "olanzapint-odt", "ondansetron", "oxygen", "oxytocin", "paracetamol",
-    "prochlorperazine", "quetiapine", "salbutamol", "sodium-bicarbonate",
-    "sumatriptan", "tenecteplase", "tranexamic-acid", "water-for-injection",
-    "clopidogrel", "drug-presentation", "cetirizine-dtp", "cophenylcaine-forte-dtp",
-    "loperamide-dtp", "oral-rehydration-salts-dtp", "ural-dtp",
-    "diazepam-pacer", "adrenaline-cfp", "aspirin-cfp", "glucagon-cfp",
-    "glucose-paste-cfp", "gtn-cfp", "ibuprofen-cfp", "ipratropium-bromide-cfp",
-    "methoxyflurane-cfp", "oxygen-cfp", "paracetamol-cfp", "salbutamol-cfp",
-}
+def sanitize_slug(slug: str) -> str:
+    """Strip special characters from a URL slug for use as a filename."""
+    return re.sub(r"[^a-z0-9-]", "", slug)
 
 
-def dismiss_modals(page) -> None:
-    """Remove any blocking modals from the DOM."""
-    try:
-        ok = page.locator("button:has-text('OK')").first
-        if ok.is_visible(timeout=500):
-            ok.click(force=True, timeout=1000)
-            time.sleep(0.3)
-    except Exception:
-        pass
-    try:
-        page.evaluate("""
-            document.querySelectorAll('ion-modal, ion-backdrop').forEach(m => {
-                m.style.display = 'none'; m.remove();
-            });
-        """)
-    except Exception:
-        pass
-
-
-def select_qualification_level(page, level: str) -> None:
-    """Select a qualification level on the site."""
-    # Try clicking the user-info / level selector
-    try:
-        # Look for the level selector button or dropdown
-        level_btn = page.locator(
-            f"ion-item:has-text('{level}'), ion-button:has-text('{level}')"
-        ).first
-        level_btn.click(force=True, timeout=5000)
-        time.sleep(1)
-        dismiss_modals(page)
-    except Exception:
-        # If no selector found, the level may already be set or not required
-        pass
-
-
-def extract_page_content(page) -> dict:
-    """Extract structured content from a rendered guideline/medicine page."""
-    content = {
-        "title": "",
-        "url": page.url,
-        "sections": [],
-        "full_text": "",
-    }
-
-    try:
-        title_el = page.query_selector("ion-toolbar ion-title")
-        if title_el:
-            content["title"] = (title_el.inner_text() or "").strip()
-    except Exception:
-        pass
-
-    try:
-        main_content = page.query_selector("ion-content")
-        if not main_content:
-            main_content = page.query_selector("body")
-
-        if main_content:
-            sections = []
-            current_heading = None
-            current_body_parts = []
-
-            children = main_content.query_selector_all(
-                "h1, h2, h3, h4, h5, h6, p, ul, ol, section, article, .section, ion-card"
-            )
-
-            for child in children:
-                tag = child.evaluate("el => el.tagName.toLowerCase()")
-                text = (child.inner_text() or "").strip()
-
-                if not text:
-                    continue
-
-                if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
-                    if current_heading and current_body_parts:
-                        sections.append({
-                            "heading": current_heading,
-                            "body": "\n".join(current_body_parts).strip(),
-                        })
-                    current_heading = text
-                    current_body_parts = []
-                elif tag == "ion-card":
-                    card_heading = child.query_selector("h1, h2, h3, h4, h5, h6")
-                    if card_heading:
-                        if current_heading and current_body_parts:
-                            sections.append({
-                                "heading": current_heading,
-                                "body": "\n".join(current_body_parts).strip(),
-                            })
-                        current_heading = (card_heading.inner_text() or "").strip()
-                        current_body_parts = []
-                    else:
-                        current_body_parts.append(text)
-                else:
-                    current_body_parts.append(text)
-
-            if current_heading and current_body_parts:
-                sections.append({
-                    "heading": current_heading,
-                    "body": "\n".join(current_body_parts).strip(),
-                })
-
-            content["sections"] = sections
-            content["full_text"] = (main_content.inner_text() or "").strip()
-
-    except Exception as e:
-        content["error"] = str(e)
-
-    return content
-
+# --- Playwright fallback discovery (used only when bundle data is absent) ---
 
 def _collect_item_texts(page) -> list[str]:
     """Collect the display texts of all visible ion-items on the current page."""
@@ -199,7 +80,6 @@ def _is_leaf_page(page) -> bool:
 def _click_item_by_text(page, display_text: str) -> bool:
     """Click the ion-item matching display_text. Returns True if click succeeded."""
     try:
-        # Re-query fresh — never use a stale handle
         items = page.query_selector_all("ion-item")
         for item in items:
             text = (item.inner_text() or "").strip()
@@ -230,7 +110,6 @@ def discover_leaf_urls(page, section_slug: str, section_info: dict) -> list[dict
         print(f"  FAILED to load {cat_url}: {e}")
         return leaves
 
-    # Collect text labels upfront — navigate by re-clicking fresh elements
     item_texts = _collect_item_texts(page)
     print(f"  Found {len(item_texts)} items on {section_slug}")
 
@@ -265,21 +144,18 @@ def discover_leaf_urls(page, section_slug: str, section_info: dict) -> list[dict
                 leaves.append(leaf_entry)
                 print(f"    LEAF: {display_text} -> {current_url}")
             else:
-                # Sub-category — recurse with index-based navigation
                 print(f"    SUB-CATEGORY: {display_text}")
                 sub_leaves = _discover_subcategory_leaves(
                     page, display_text, section_info["label"], depth=1
                 )
                 leaves.extend(sub_leaves)
 
-            # Navigate back to the section category page
             page.goto(cat_url, wait_until="domcontentloaded", timeout=12000)
             time.sleep(0.8)
             dismiss_modals(page)
 
         except Exception as e:
             print(f"    ERROR on '{display_text}': {e}")
-            # Always return to category page on error
             try:
                 page.goto(cat_url, wait_until="domcontentloaded", timeout=12000)
                 time.sleep(0.5)
@@ -293,11 +169,7 @@ def discover_leaf_urls(page, section_slug: str, section_info: dict) -> list[dict
 def _discover_subcategory_leaves(
     page, parent_name: str, section_label: str, depth: int = 1
 ) -> list[dict]:
-    """Discover leaf pages within a sub-category page (already navigated to it).
-
-    Uses the current page URL as the return-to URL after each child visit,
-    so go_back is replaced by goto(subcat_url) which is reliable.
-    """
+    """Discover leaf pages within a sub-category page (already navigated to it)."""
     if depth > 3:
         print(f"{'  ' * (depth+2)}MAX DEPTH reached, skipping '{parent_name}'")
         return []
@@ -338,13 +210,11 @@ def _discover_subcategory_leaves(
                 })
                 print(f"{indent}  LEAF: {display_text}")
             else:
-                # Deeper nesting
                 deeper = _discover_subcategory_leaves(
                     page, display_text, section_label, depth + 1
                 )
                 leaves.extend(deeper)
 
-            # Return to this subcategory page (reliable — no stale history)
             page.goto(subcat_url, wait_until="domcontentloaded", timeout=12000)
             time.sleep(0.5)
             dismiss_modals(page)
@@ -373,88 +243,14 @@ def scrape_leaf_page(page, url: str) -> dict | None:
         return None
 
 
-def cpg_code_to_filename(code: str) -> str:
-    """Convert a CPG code like 'A0201-1' to a filename like 'CPG_A0201_1.json'."""
-    normalized = code.replace("-", "_")
-    return f"CPG_{normalized}.json"
-
-
-def build_markdown_from_sections(sections: list[dict], full_text: str) -> str:
-    """Build markdown content from scraped sections."""
-    if not sections:
-        return full_text
-
-    parts = []
-    for s in sections:
-        heading = s.get("heading", "")
-        body = s.get("body", "")
-        if heading:
-            parts.append(f"## {heading}\n\n{body}")
-        elif body:
-            parts.append(body)
-
-    return "\n\n".join(parts)
-
-
-def update_structured_file(slug: str, scraped: dict) -> bool:
-    """Find and update the matching CPG_*.json structured file with scraped content."""
-    # Extract CPG code from the scraped title (e.g. "Medical Cardiac Arrest\nCPG A0201-1")
-    title_text = scraped.get("title", "")
-    cpg_code = None
-
-    # Try to extract CPG code from title
-    match = re.search(r'CPG\s+([A-Z]\d+(?:-\d+)?)', title_text)
-    if match:
-        cpg_code = match.group(1)
-
-    if not cpg_code:
-        # Try matching by slug name against structured file titles
-        slug_words = slug.replace("-", " ").lower()
-        for f in STRUCTURED_DIR.glob("CPG_*.json"):
-            data = json.loads(f.read_text())
-            file_title = data.get("title", "").lower()
-            if slug_words in file_title or file_title in slug_words:
-                cpg_code = data.get("cpg_code")
-                break
-
-    if not cpg_code:
-        return False
-
-    filename = cpg_code_to_filename(cpg_code)
-    filepath = STRUCTURED_DIR / filename
-
-    if not filepath.exists():
-        return False
-
-    # Read, update, write
-    data = json.loads(filepath.read_text())
-    content_md = build_markdown_from_sections(
-        scraped.get("sections", []),
-        scraped.get("full_text", "")
-    )
-
-    data["content_markdown"] = content_md
-    data["extraction_metadata"] = {
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S.000000+00:00"),
-        "source_type": "scraped",
-        "agent_version": "at-pipeline-2.0",
-        "source_url": scraped.get("url", ""),
-        "content_flag": "scraped",
-    }
-
-    filepath.write_text(json.dumps(data, indent=2, ensure_ascii=False))
-    return True
-
+# --- Bundle-based discovery ---
 
 BUNDLE_NAV_JSON = Path("data/at/investigation/guidelines_nav.json")
 BUNDLE_LEAF_URLS = Path("data/at/investigation/leaf_urls_from_bundle.json")
 
 
 def extract_leaf_urls_from_bundle() -> list[dict]:
-    """Extract all leaf guideline URLs from the pre-parsed navigation bundle JSON.
-
-    Replicates the dataTitleToUrl + generatePageUrls logic from main.js.
-    """
+    """Extract all leaf guideline URLs from the pre-parsed navigation bundle JSON."""
     import re as _re
 
     def title_to_url(page_obj: dict) -> str:
@@ -484,8 +280,7 @@ def extract_leaf_urls_from_bundle() -> list[dict]:
         return results
 
     nav_data = json.loads(BUNDLE_NAV_JSON.read_text())
-    leaves = recurse(nav_data.get("pages", []), f"/tabs/{nav_data['url']}", "Guidelines")
-    return leaves
+    return recurse(nav_data.get("pages", []), f"/tabs/{nav_data['url']}", "Guidelines")
 
 
 def main():
@@ -493,7 +288,7 @@ def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # --- PHASE 1: DISCOVERY (from pre-extracted bundle data) ---
+    # --- PHASE 1: DISCOVERY ---
     print("=" * 60)
     print("PHASE 1: Loading leaf guideline URLs from bundle")
     print("=" * 60)
@@ -522,7 +317,6 @@ def main():
                         all_leaves.append(leaf)
             browser.close()
 
-    # Save discovery manifest
     DISCOVERY_OUT.parent.mkdir(parents=True, exist_ok=True)
     with open(DISCOVERY_OUT, "w") as f:
         json.dump(all_leaves, f, indent=2, ensure_ascii=False)
@@ -551,7 +345,8 @@ def main():
 
         for i, leaf in enumerate(all_leaves):
             url = leaf["url"]
-            slug = url.rstrip("/").split("/")[-1]
+            raw_slug = url.rstrip("/").split("/")[-1]
+            slug = sanitize_slug(raw_slug)
             print(f"  [{i+1}/{len(all_leaves)}] {slug}: {url}")
 
             scraped = scrape_leaf_page(page, url)
@@ -565,7 +360,6 @@ def main():
 
             results.append(scraped)
 
-            # Save raw JSON
             out_file = OUTPUT_DIR / f"{slug}.json"
             with open(out_file, "w") as f:
                 json.dump(scraped, f, indent=2, ensure_ascii=False)
@@ -574,8 +368,7 @@ def main():
             text_len = len(scraped.get("full_text", ""))
             print(f"    {sections_count} sections, {text_len} chars")
 
-            # Update structured file
-            if update_structured_file(slug, scraped):
+            if update_structured_file(scraped):
                 updated += 1
 
         browser.close()
