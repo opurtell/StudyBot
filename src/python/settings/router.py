@@ -281,21 +281,25 @@ def get_seed_status() -> dict:
 
 @router.get("/vector-store/status")
 def vector_store_status() -> dict:
-    """Return chunk counts per source type across all collections."""
+    """Return chunk counts per source type for the active service's collections."""
     if not CHROMA_DB_DIR.exists():
         return {"cmg": 0, "ref_doc": 0, "cpd_doc": 0, "notability_note": 0}
 
     client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
     counts: dict[str, int] = {"cmg": 0, "ref_doc": 0, "cpd_doc": 0, "notability_note": 0}
 
+    service_id = active_service().id
+    guidelines_name = f"guidelines_{service_id}"
+    personal_name = f"personal_{service_id}"
+
     try:
-        cmg_col = _get_cmg_collection(client)
+        cmg_col = client.get_or_create_collection(guidelines_name)
         counts["cmg"] = cmg_col.count()
     except Exception:
         pass
 
     try:
-        notes_col = client.get_or_create_collection("paramedic_notes")
+        notes_col = client.get_or_create_collection(personal_name)
         for st in ("ref_doc", "cpd_doc", "notability_note"):
             result = notes_col.get(where={"source_type": st})
             counts[st] = len(result["ids"])

@@ -73,3 +73,28 @@ def test_save_with_same_service_does_not_reset_retriever(settings_file, monkeypa
     assert retriever_mod._shared_retriever is actas_r, (
         "Retriever singleton should NOT be cleared when service unchanged"
     )
+
+
+def test_vector_store_status_checks_all_services(tmp_path, monkeypatch):
+    """vector_store_status must report chunk counts for the active
+    service's collections, not hardcoded ACTAS names."""
+    import chromadb
+
+    db_dir = tmp_path / "chroma_db"
+    db_dir.mkdir()
+    client = chromadb.PersistentClient(path=str(db_dir))
+
+    # Seed AT guidelines only
+    at_col = client.get_or_create_collection("guidelines_at")
+    at_col.add(ids=["at1"], documents=["AT chunk"], metadatas=[{"source_type": "cmg"}])
+
+    monkeypatch.setattr("settings.router.CHROMA_DB_DIR", db_dir)
+    # Active service is AT
+    settings = tmp_path / "settings.json"
+    settings.write_text(json.dumps({"active_service": "at"}))
+    monkeypatch.setattr("settings.router._SETTINGS_PATH", settings)
+
+    from settings.router import vector_store_status
+    status = vector_store_status()
+
+    assert status["cmg"] == 1, f"Expected 1 AT CMG chunk, got {status['cmg']}"
