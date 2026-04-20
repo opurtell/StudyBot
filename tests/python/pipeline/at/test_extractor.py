@@ -24,6 +24,10 @@ from src.python.pipeline.at.extractor import (
     parse_medicine_registry,
     parse_route_definitions,
     parse_qualification_levels,
+    parse_calculator_routes,
+    parse_checklist_routes,
+    extract_calculator_content,
+    extract_checklist_content,
 )
 
 
@@ -310,3 +314,158 @@ class TestIntegration:
         assert len(levels) >= 3
         assert "VAO" in levels
         assert "PARAMEDIC" in levels
+
+
+class TestParseCalculatorRoutes:
+    """Test calculator route parsing from JS bundles."""
+
+    def test_parse_calculator_routes(self):
+        """Should extract calculator route slugs."""
+        js_fragment = '{path:"tabs/calculators/medicine-calculator"},{path:"tabs/calculators/news-two"}'
+        routes = parse_calculator_routes(js_fragment)
+        assert "medicine-calculator" in routes
+        assert "news-two" in routes
+
+    def test_parse_calculator_routes_filters_non_calculator_paths(self):
+        """Should only extract routes under tabs/calculators/."""
+        js_fragment = '''
+        {path:"tabs/calculators/medicine-calculator"}
+        {path:"tabs/calculators/news-two"}
+        {path:"tabs/guidelines/cardiac-arrest"}
+        {path:"tabs/checklists/clinical-handover"}
+        '''
+        routes = parse_calculator_routes(js_fragment)
+        assert "medicine-calculator" in routes
+        assert "news-two" in routes
+        assert not any("cardiac-arrest" in r for r in routes)
+        assert not any("clinical-handover" in r for r in routes)
+
+    def test_parse_calculator_routes_handles_various_formats(self):
+        """Should handle different path formats."""
+        js_fragment = '''
+        {path:"tabs/calculators/medicine-calculator"}
+        {path: "tabs/calculators/cewt"}
+        {path:'tabs/calculators/palliative-care-calculator'}
+        '''
+        routes = parse_calculator_routes(js_fragment)
+        assert "medicine-calculator" in routes
+        assert "cewt" in routes
+        assert "palliative-care-calculator" in routes
+
+    def test_parse_calculator_routes_returns_empty_list_for_no_matches(self):
+        """Should return empty list when no calculator routes found."""
+        js_fragment = '{path:"tabs/guidelines/cardiac-arrest"},{path:"tabs/medicines/adrenaline"}'
+        routes = parse_calculator_routes(js_fragment)
+        assert len(routes) == 0
+
+
+class TestParseChecklistRoutes:
+    """Test checklist route parsing from JS bundles."""
+
+    def test_parse_checklist_routes(self):
+        """Should extract checklist route slugs."""
+        js_fragment = '{path:"tabs/checklists/clinical-handover"},{path:"tabs/checklists/stemi-referral-script"}'
+        routes = parse_checklist_routes(js_fragment)
+        assert "clinical-handover" in routes
+        assert "stemi-referral-script" in routes
+
+    def test_parse_checklist_routes_filters_non_checklist_paths(self):
+        """Should only extract routes under tabs/checklists/."""
+        js_fragment = '''
+        {path:"tabs/checklists/clinical-handover"}
+        {path:"tabs/checklists/stemi-referral-script"}
+        {path:"tabs/guidelines/cardiac-arrest"}
+        {path:"tabs/calculators/medicine-calculator"}
+        '''
+        routes = parse_checklist_routes(js_fragment)
+        assert "clinical-handover" in routes
+        assert "stemi-referral-script" in routes
+        assert not any("cardiac-arrest" in r for r in routes)
+        assert not any("medicine-calculator" in r for r in routes)
+
+    def test_parse_checklist_routes_handles_various_formats(self):
+        """Should handle different path formats."""
+        js_fragment = '''
+        {path:"tabs/checklists/clinical-handover"}
+        {path: "tabs/checklists/reperfusion-checklist"}
+        {path:'tabs/checklists/cold-intubation-checklist'}
+        '''
+        routes = parse_checklist_routes(js_fragment)
+        assert "clinical-handover" in routes
+        assert "reperfusion-checklist" in routes
+        assert "cold-intubation-checklist" in routes
+
+    def test_parse_checklist_routes_returns_empty_list_for_no_matches(self):
+        """Should return empty list when no checklist routes found."""
+        js_fragment = '{path:"tabs/guidelines/cardiac-arrest"},{path:"tabs/medicines/adrenaline"}'
+        routes = parse_checklist_routes(js_fragment)
+        assert len(routes) == 0
+
+
+class TestExtractCalculatorContent:
+    """Test calculator content extraction from JS bundles."""
+
+    def test_extract_calculator_content_basic(self):
+        """Should extract calculator content as structured dict."""
+        js_content = '''
+        var medicineCalc = {
+            title: "Medicine Calculator",
+            description: "Calculate medicine doses",
+            fields: [...]
+        };
+        '''
+        result = extract_calculator_content(js_content, "medicine-calculator")
+        assert result is not None
+        assert "route_slug" in result
+        assert result["route_slug"] == "medicine-calculator"
+
+    def test_extract_calculator_content_returns_dict_with_route_info(self):
+        """Should return dict with route_slug and content metadata."""
+        js_content = '''
+        var news2 = {title: "NEWS2", description: "National Early Warning Score 2"};
+        '''
+        result = extract_calculator_content(js_content, "news-two")
+        assert "route_slug" in result
+        assert result["route_slug"] == "news-two"
+        assert "js_content" in result
+
+    def test_extract_calculator_content_handles_empty_content(self):
+        """Should handle empty or missing calculator content."""
+        js_content = ''
+        result = extract_calculator_content(js_content, "medicine-calculator")
+        assert result is not None
+        assert result["route_slug"] == "medicine-calculator"
+
+
+class TestExtractChecklistContent:
+    """Test checklist content extraction from JS bundles."""
+
+    def test_extract_checklist_content_basic(self):
+        """Should extract checklist content as structured dict."""
+        js_content = '''
+        var clinicalHandover = {
+            title: "Clinical Handover",
+            items: ["Patient ID", "Presenter", "History"]
+        };
+        '''
+        result = extract_checklist_content(js_content, "clinical-handover")
+        assert result is not None
+        assert "route_slug" in result
+        assert result["route_slug"] == "clinical-handover"
+
+    def test_extract_checklist_content_returns_dict_with_route_info(self):
+        """Should return dict with route_slug and content metadata."""
+        js_content = '''
+        var stemiReferral = {title: "STEMI Referral Script", steps: [...]};
+        '''
+        result = extract_checklist_content(js_content, "stemi-referral-script")
+        assert "route_slug" in result
+        assert result["route_slug"] == "stemi-referral-script"
+        assert "js_content" in result
+
+    def test_extract_checklist_content_handles_empty_content(self):
+        """Should handle empty or missing checklist content."""
+        js_content = ''
+        result = extract_checklist_content(js_content, "clinical-handover")
+        assert result is not None
+        assert result["route_slug"] == "clinical-handover"

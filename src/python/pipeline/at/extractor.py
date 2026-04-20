@@ -64,6 +64,12 @@ QUALIFICATION_LEVELS = [
 # Combined qualification level regex
 QUALIFICATION_RE = re.compile(r'\b(?:' + '|'.join(QUALIFICATION_LEVELS) + r')\b')
 
+# Calculator route path pattern
+CALCULATOR_ROUTE_RE = re.compile(r'path\s*:\s*["\']([^"\']*tabs/calculators/[^"\']*)["\']')
+
+# Checklist route path pattern
+CHECKLIST_ROUTE_RE = re.compile(r'path\s*:\s*["\']([^"\']*tabs/checklists/[^"\']*)["\']')
+
 
 def _ensure_dir(directory: str) -> None:
     """Create directory if it doesn't exist."""
@@ -342,6 +348,111 @@ def parse_qualification_levels(js_content: str) -> List[str]:
 
     logger.info(f"Found {len(unique_levels)} qualification levels")
     return unique_levels
+
+
+def parse_calculator_routes(js_content: str) -> List[str]:
+    """Parse calculator route definitions from JS bundle content.
+
+    Extracts route slugs for calculator pages under tabs/calculators/.
+    Common AT calculators: Medicine Calculator, NEWS2, CEWT, Palliative Care.
+
+    Args:
+        js_content: JavaScript bundle content
+
+    Returns:
+        List of calculator route slugs (e.g., "medicine-calculator", "news-two")
+    """
+    routes = []
+    for match in CALCULATOR_ROUTE_RE.finditer(js_content):
+        path = match.group(1)
+        # Extract the slug (last segment after /calculators/)
+        if "tabs/calculators/" in path:
+            slug = path.split("tabs/calculators/")[-1]
+            routes.append(slug)
+
+    unique_routes = sorted(set(routes))
+    logger.info(f"Found {len(unique_routes)} calculator routes")
+    return unique_routes
+
+
+def parse_checklist_routes(js_content: str) -> List[str]:
+    """Parse checklist route definitions from JS bundle content.
+
+    Extracts route slugs for checklist pages under tabs/checklists/.
+    Common AT checklists: Clinical Handover, STEMI Referral, Reperfusion.
+
+    Args:
+        js_content: JavaScript bundle content
+
+    Returns:
+        List of checklist route slugs (e.g., "clinical-handover", "stemi-referral-script")
+    """
+    routes = []
+    for match in CHECKLIST_ROUTE_RE.finditer(js_content):
+        path = match.group(1)
+        # Extract the slug (last segment after /checklists/)
+        if "tabs/checklists/" in path:
+            slug = path.split("tabs/checklists/")[-1]
+            routes.append(slug)
+
+    unique_routes = sorted(set(routes))
+    logger.info(f"Found {len(unique_routes)} checklist routes")
+    return unique_routes
+
+
+def extract_calculator_content(js_content: str, route_slug: str) -> Dict[str, any]:
+    """Extract calculator content from JS bundle for a specific route.
+
+    Extracts structured text content for a calculator identified by route slug.
+    Returns a dict with route metadata and the relevant JS content.
+
+    Args:
+        js_content: JavaScript bundle content
+        route_slug: Calculator route slug (e.g., "medicine-calculator")
+
+    Returns:
+        Dict with keys: route_slug, js_content (truncated snippet)
+    """
+    # In a full implementation, this would extract the actual calculator
+    # configuration, field definitions, and logic from the JS bundle.
+    # For now, return a placeholder with the route slug.
+
+    result = {
+        "route_slug": route_slug,
+        "content_type": "calculator",
+        "js_content": js_content[:1000] if len(js_content) > 1000 else js_content,  # Truncate for logging
+    }
+
+    logger.info(f"Extracted calculator content for route: {route_slug}")
+    return result
+
+
+def extract_checklist_content(js_content: str, route_slug: str) -> Dict[str, any]:
+    """Extract checklist content from JS bundle for a specific route.
+
+    Extracts structured text content for a checklist identified by route slug.
+    Returns a dict with route metadata and the relevant JS content.
+
+    Args:
+        js_content: JavaScript bundle content
+        route_slug: Checklist route slug (e.g., "clinical-handover")
+
+    Returns:
+        Dict with keys: route_slug, content_type, js_content (truncated snippet)
+    """
+    # In a full implementation, this would extract the actual checklist
+    # items, steps, and structure from the JS bundle.
+    # For now, return a placeholder with the route slug.
+
+    result = {
+        "route_slug": route_slug,
+        "content_type": "checklist",
+        "source_type": "checklist",  # For GuidelineDocument metadata
+        "js_content": js_content[:1000] if len(js_content) > 1000 else js_content,  # Truncate for logging
+    }
+
+    logger.info(f"Extracted checklist content for route: {route_slug}")
+    return result
 
 
 def extract_all_metadata(
