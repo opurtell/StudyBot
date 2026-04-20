@@ -29,16 +29,6 @@ _rebuild_status: dict = {"is_running": False, "status": "idle", "last_completed_
 _rebuild_lock = threading.Lock()
 
 
-def _get_cmg_collection(client: chromadb.ClientAPI) -> chromadb.Collection:
-    """Return the CMG guidelines collection, checking both new and legacy names."""
-    for name in ("guidelines_actas", "cmg_guidelines"):
-        try:
-            return client.get_collection(name)
-        except Exception:
-            continue
-    return client.get_or_create_collection("guidelines_actas")
-
-
 def _invalidate_read_caches() -> None:
     invalidate_guideline_cache()
     invalidate_medication_cache()
