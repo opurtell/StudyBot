@@ -7,8 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { apiGet, apiPut } from "../lib/apiClient";
-import { useBackendStatus } from "../hooks/useBackendStatus";
+import { apiGet, apiPut, isApiClientError } from "../lib/apiClient";
 import { useSettingsContext } from "./SettingsProvider";
 import type { Service, SettingsConfig } from "../types/api";
 
@@ -26,33 +25,30 @@ export const ServiceContext = createContext<ServiceContextType | null>(null);
 
 export function ServiceProvider({ children }: { children: ReactNode }) {
   const { config, save } = useSettingsContext();
-  const backendStatus = useBackendStatus();
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (backendStatus.state !== "ready") return;
     let cancelled = false;
     let retries = 0;
-    const maxRetries = 5;
+    const maxRetries = 10;
 
     function attemptFetch() {
       if (cancelled) return;
-      setLoading(true);
-      setError(null);
-      apiGet<Service[]>("/services", { retries: 2 })
+      apiGet<Service[]>("/services")
         .then((data) => {
           if (!cancelled) {
-            setServices(data);
+            setServices(Array.isArray(data) ? data : []);
             setLoading(false);
+            setError(null);
           }
         })
         .catch((err: unknown) => {
           if (cancelled) return;
           retries++;
           if (retries < maxRetries) {
-            setTimeout(attemptFetch, 2000);
+            setTimeout(attemptFetch, 3000);
           } else {
             const message =
               err instanceof Error ? err.message : "Failed to load services";
@@ -66,7 +62,7 @@ export function ServiceProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [backendStatus.state]);
+  }, []);
 
   const activeService = useMemo(() => {
     const activeId = (config as SettingsConfig & { active_service?: string } | null)?.active_service;
