@@ -48,7 +48,7 @@ def seed_user_data() -> None:
 def _iter_registry():
     """Yield Service objects from the registry.  Returns empty tuple on import failure."""
     try:
-        from src.python.services.registry import REGISTRY
+        from services.registry import REGISTRY
         return REGISTRY
     except Exception:
         logger.warning("Could not import service registry — falling back to ACTAS-only seed.")
@@ -58,7 +58,7 @@ def _iter_registry():
 def _service_id_from_registry():
     """Fallback: if registry is unavailable, return just ('actas',)."""
     try:
-        from src.python.services.registry import REGISTRY
+        from services.registry import REGISTRY
         return tuple(s.id for s in REGISTRY)
     except Exception:
         return ("actas",)

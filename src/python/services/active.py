@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from src.python.services.registry import get_service, REGISTRY, Service
+from services.registry import get_service, REGISTRY, Service
 
 
 def active_service_from_path(path: Path) -> Service:
@@ -33,7 +33,7 @@ def active_service() -> Service:
     Returns:
         Service instance for the active service
     """
-    from src.python.paths import SETTINGS_PATH, EXAMPLE_SETTINGS_PATH
+    from paths import SETTINGS_PATH, EXAMPLE_SETTINGS_PATH
     if SETTINGS_PATH.is_file():
         return active_service_from_path(SETTINGS_PATH)
     return active_service_from_path(EXAMPLE_SETTINGS_PATH)

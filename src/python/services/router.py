@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from src.python.services.registry import REGISTRY
+from services.registry import REGISTRY
 
 
 router = APIRouter(prefix="/services", tags=["services"])

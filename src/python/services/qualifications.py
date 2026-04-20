@@ -1,4 +1,4 @@
-from src.python.services.registry import Service
+from services.registry import Service
 
 
 def _closure(base_id: str, service: Service) -> frozenset[str]:

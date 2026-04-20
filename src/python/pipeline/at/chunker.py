@@ -13,7 +13,7 @@ from typing import Any, Dict, List
 import chromadb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from src.python.services.schema import GuidelineDocument
+from services.schema import GuidelineDocument
 
 logger = logging.getLogger(__name__)
 

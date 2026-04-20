@@ -10,7 +10,7 @@ import os
 from datetime import date
 from typing import Any, Dict, List
 
-from src.python.services.schema import (
+from services.schema import (
     ContentSection,
     Flowchart,
     GuidelineDocument,
