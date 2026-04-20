@@ -268,13 +268,10 @@ def _copy_between_collections(
 
 
 def _run_adapter_seed(service) -> None:
-    """Run the service's chunker to seed guidelines data.
-
-    Only ACTAS has an adapter pipeline at this stage.  Other services
-    are skipped with a log message (AT will be added in Plan B).
-    """
+    """Run the service's chunker to seed guidelines data."""
     service_id = service.id
     adapter = service.adapter
+    collection_name = _guidelines_collection_name(service_id)
 
     if "actas" in adapter:
         try:
@@ -282,14 +279,30 @@ def _run_adapter_seed(service) -> None:
 
             structured_dir = str(resolve_service_structured_dir(service_id))
             logger.info("Auto-seeding guidelines_%s from %s via adapter.", service_id, structured_dir)
-            actas_chunk_and_ingest(structured_dir=structured_dir)
+            actas_chunk_and_ingest(
+                structured_dir=structured_dir,
+                collection_name=collection_name,
+            )
             logger.info("guidelines_%s auto-seed complete.", service_id)
         except Exception:
             logger.exception("Failed to seed guidelines_%s via ACTAS adapter.", service_id)
+    elif "at" in adapter:
+        try:
+            from pipeline.at.chunker import chunk_and_ingest as at_chunk_and_ingest
+
+            structured_dir = str(resolve_service_structured_dir(service_id))
+            logger.info("Auto-seeding guidelines_%s from %s via AT adapter.", service_id, structured_dir)
+            at_chunk_and_ingest(
+                structured_dir=structured_dir,
+                db_path=str(CHROMA_DB_DIR),
+                collection_name=collection_name,
+            )
+            logger.info("guidelines_%s auto-seed complete.", service_id)
+        except Exception:
+            logger.exception("Failed to seed guidelines_%s via AT adapter.", service_id)
     else:
         logger.info(
-            "No adapter pipeline for service '%s' — skipping guideline seed. "
-            "Adapter will be available after Plan B implementation.",
+            "No adapter pipeline for service '%s' — skipping guideline seed.",
             service_id,
         )
 

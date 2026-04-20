@@ -89,7 +89,9 @@ def _dose_lookup_to_chunks(
 
 
 def chunk_and_ingest(
-    structured_dir: str = "data/cmgs/structured/", db_path: str = str(CHROMA_DB_DIR)
+    structured_dir: str = "data/cmgs/structured/",
+    db_path: str = str(CHROMA_DB_DIR),
+    collection_name: str = "guidelines_actas",
 ):
     """Chunk the markdown content and ingest into ChromaDB."""
     json_files = [
@@ -113,7 +115,7 @@ def chunk_and_ingest(
 
     os.makedirs(db_path, exist_ok=True)
     client = chromadb.PersistentClient(path=db_path)
-    collection = client.get_or_create_collection(name="guidelines_actas")
+    collection = client.get_or_create_collection(name=collection_name)
 
     total_chunks = 0
     for file_path in json_files:
