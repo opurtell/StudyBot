@@ -98,3 +98,33 @@ def test_vector_store_status_checks_all_services(tmp_path, monkeypatch):
     status = vector_store_status()
 
     assert status["cmg"] == 1, f"Expected 1 AT CMG chunk, got {status['cmg']}"
+
+
+def test_clear_cmg_deletes_active_service_collection(tmp_path, monkeypatch):
+    """clear_vector_store with source_type='cmg' must delete the active
+    service's guidelines collection, not hardcoded 'guidelines_actas'."""
+    import chromadb
+
+    db_dir = tmp_path / "chroma_db"
+    db_dir.mkdir()
+    client = chromadb.PersistentClient(path=str(db_dir))
+
+    # Create both collections with data
+    at_col = client.get_or_create_collection("guidelines_at")
+    at_col.add(ids=["at1"], documents=["AT chunk"], metadatas=[{"source_type": "cmg"}])
+    actas_col = client.get_or_create_collection("guidelines_actas")
+    actas_col.add(ids=["a1"], documents=["ACTAS chunk"], metadatas=[{"source_type": "cmg"}])
+
+    monkeypatch.setattr("settings.router.CHROMA_DB_DIR", db_dir)
+    settings = tmp_path / "settings.json"
+    settings.write_text(json.dumps({"active_service": "at"}))
+    monkeypatch.setattr("settings.router._SETTINGS_PATH", settings)
+
+    from settings.router import clear_vector_store
+    clear_vector_store(source_type="cmg")
+
+    # AT should be deleted
+    names = [c.name for c in client.list_collections()]
+    assert "guidelines_at" not in names, "AT collection should be deleted"
+    # ACTAS should survive
+    assert "guidelines_actas" in names, "ACTAS collection should NOT be deleted when AT is active"

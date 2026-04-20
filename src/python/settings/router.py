@@ -311,9 +311,8 @@ def vector_store_status() -> dict:
 
 @router.post("/vector-store/clear")
 def clear_vector_store(source_type: str | None = None) -> dict:
-    """Clear indexed data. Optional source_type for selective clearing."""
+    """Clear indexed data for the active service. Optional source_type for selective clearing."""
     if source_type is None:
-        # Nuclear option: delete entire ChromaDB directory
         if CHROMA_DB_DIR.exists():
             shutil.rmtree(CHROMA_DB_DIR)
         _invalidate_read_caches()
@@ -330,20 +329,18 @@ def clear_vector_store(source_type: str | None = None) -> dict:
         return {"status": "cleared", "source_type": source_type}
 
     client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
+    service_id = active_service().id
 
     if source_type == "cmg":
+        collection_name = f"guidelines_{service_id}"
         try:
-            client.delete_collection("guidelines_actas")
-        except Exception:
-            pass
-        try:
-            client.delete_collection("cmg_guidelines")
+            client.delete_collection(collection_name)
         except Exception:
             pass
     else:
-        # Clear from paramedic_notes collection by source_type metadata
+        collection_name = f"personal_{service_id}"
         try:
-            notes_col = client.get_or_create_collection("paramedic_notes")
+            notes_col = client.get_or_create_collection(collection_name)
             notes_col.delete(where={"source_type": source_type})
         except Exception:
             pass
