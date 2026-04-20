@@ -9,7 +9,7 @@ interface ServiceSetupModalProps {
 }
 
 export function ServiceSetupModal({ open, onClose }: ServiceSetupModalProps) {
-  const { services, setActiveService, loading } = useService();
+  const { services, setActiveService, loading, error } = useService();
   const { save, config } = useSettingsContext();
 
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
@@ -96,6 +96,13 @@ export function ServiceSetupModal({ open, onClose }: ServiceSetupModalProps) {
         {loading ? (
           <div className="flex justify-center py-8">
             <div className="loading-spinner" />
+          </div>
+        ) : error ? (
+          <div className="text-center py-8">
+            <p className="text-on-surface-variant text-body-md mb-3">{error}</p>
+            <p className="text-on-surface-variant text-body-sm">
+              Restart the app to try again.
+            </p>
           </div>
         ) : (
           <>

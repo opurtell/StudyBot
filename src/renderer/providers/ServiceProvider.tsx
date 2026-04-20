@@ -34,23 +34,35 @@ export function ServiceProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (backendStatus.state !== "ready") return;
     let cancelled = false;
-    setLoading(true);
-    setError(null);
-    apiGet<Service[]>("/services")
-      .then((data) => {
-        if (!cancelled) {
-          setServices(data);
-          setLoading(false);
-        }
-      })
-      .catch((err: unknown) => {
-        if (!cancelled) {
-          const message =
-            err instanceof Error ? err.message : "Failed to load services";
-          setError(message);
-          setLoading(false);
-        }
-      });
+    let retries = 0;
+    const maxRetries = 5;
+
+    function attemptFetch() {
+      if (cancelled) return;
+      setLoading(true);
+      setError(null);
+      apiGet<Service[]>("/services", { retries: 2 })
+        .then((data) => {
+          if (!cancelled) {
+            setServices(data);
+            setLoading(false);
+          }
+        })
+        .catch((err: unknown) => {
+          if (cancelled) return;
+          retries++;
+          if (retries < maxRetries) {
+            setTimeout(attemptFetch, 2000);
+          } else {
+            const message =
+              err instanceof Error ? err.message : "Failed to load services";
+            setError(message);
+            setLoading(false);
+          }
+        });
+    }
+
+    attemptFetch();
     return () => {
       cancelled = true;
     };
