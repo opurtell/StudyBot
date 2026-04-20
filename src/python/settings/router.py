@@ -112,18 +112,54 @@ def get_settings() -> dict:
     return loaded
 
 
+def _read_active_service_id() -> str | None:
+    """Read the current active_service from disk without caching."""
+    try:
+        if _SETTINGS_PATH.is_file():
+            data = json.loads(_SETTINGS_PATH.read_text())
+            return data.get("active_service")
+    except (OSError, json.JSONDecodeError):
+        pass
+    return None
+
+
+def _invalidate_service_caches() -> None:
+    """Clear all caches that depend on the active service."""
+    _invalidate_read_caches()
+    try:
+        from quiz.router import reset_quiz_retriever
+        reset_quiz_retriever()
+    except Exception:
+        pass
+    try:
+        from search.router import reset_search_retriever
+        reset_search_retriever()
+    except Exception:
+        pass
+
+
 @router.put("")
 def save_settings(req: SaveSettingsRequest) -> dict:
     global _settings_cache
     config = req.model_dump()
+
+    # Detect active_service change before writing
+    _previous_service = _read_active_service_id()
+
     try:
         _SETTINGS_PATH.parent.mkdir(parents=True, exist_ok=True)
         with open(_SETTINGS_PATH, "w") as f:
             json.dump(config, f, indent=2)
     except OSError as exc:
         raise HTTPException(status_code=500, detail=str(exc))
+
     with _cache_lock:
         _settings_cache = _clone_dict(config)
+
+    # Invalidate caches that depend on active_service
+    if config.get("active_service") and config["active_service"] != _previous_service:
+        _invalidate_service_caches()
+
     return {"status": "ok"}
 
 
