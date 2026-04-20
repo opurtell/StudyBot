@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { apiGet, apiPut } from "../lib/apiClient";
+import { useBackendStatus } from "../hooks/useBackendStatus";
 import { useSettingsContext } from "./SettingsProvider";
 import type { Service, SettingsConfig } from "../types/api";
 
@@ -25,11 +26,13 @@ export const ServiceContext = createContext<ServiceContextType | null>(null);
 
 export function ServiceProvider({ children }: { children: ReactNode }) {
   const { config, save } = useSettingsContext();
+  const backendStatus = useBackendStatus();
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (backendStatus.state !== "ready") return;
     let cancelled = false;
     setLoading(true);
     setError(null);
@@ -51,7 +54,7 @@ export function ServiceProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [backendStatus.state]);
 
   const activeService = useMemo(() => {
     const activeId = (config as SettingsConfig & { active_service?: string } | null)?.active_service;
