@@ -106,6 +106,7 @@ export default function Settings() {
 
   const [quizModel, setQuizModel] = useState(config?.quiz_model ?? "claude-haiku-4-5-20251001");
   const [cleanModel, setCleanModel] = useState(config?.clean_model ?? "claude-opus-4.6");
+  const [visionModel, setVisionModel] = useState(config?.vision_model ?? config?.clean_model ?? "claude-sonnet-4.6");
   const [skillLevel, setSkillLevel] = useState(config?.skill_level ?? "AP");
   const [apiKeys, setApiKeys] = useState<Record<ProviderKey, string>>({
     anthropic: config?.providers?.anthropic?.api_key ?? "",
@@ -129,6 +130,7 @@ export default function Settings() {
     if (!config) return;
     setQuizModel(config.quiz_model);
     setCleanModel(config.clean_model);
+    setVisionModel(config.vision_model ?? config.clean_model ?? "claude-sonnet-4.6");
     setApiKeys({
       anthropic: config.providers?.anthropic?.api_key ?? "",
       google: config.providers?.google?.api_key ?? "",
@@ -233,6 +235,10 @@ export default function Settings() {
     if (cleanProvider) {
       nextProviders[cleanProvider].default_model = cleanModel;
     }
+    const visionProvider = getProviderForModel(activeRegistry, visionModel);
+    if (visionProvider) {
+      nextProviders[visionProvider].default_model = visionModel;
+    }
 
     const saved = await save({
       providers: {
@@ -244,6 +250,7 @@ export default function Settings() {
       active_provider: activeProvider,
       quiz_model: quizModel,
       clean_model: cleanModel,
+      vision_model: visionModel,
       skill_level: skillLevel,
     });
     if (saved) {
@@ -443,6 +450,15 @@ export default function Settings() {
           onChange={(value) => {
             setSaveMessage(null);
             setCleanModel(value);
+          }}
+        />
+        <ModelSelector
+          label="Vision Model"
+          value={visionModel}
+          registry={activeRegistry}
+          onChange={(value) => {
+            setSaveMessage(null);
+            setVisionModel(value);
           }}
         />
       </section>

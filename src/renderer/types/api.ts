@@ -98,6 +98,7 @@ export interface SettingsConfig {
   active_provider: string;
   quiz_model: string;
   clean_model: string;
+  vision_model: string;
   skill_level: string;
 }
 

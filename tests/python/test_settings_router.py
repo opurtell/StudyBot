@@ -83,6 +83,7 @@ def test_save_settings_persists_api_keys_and_model_selection(tmp_path, monkeypat
         "active_provider": "google",
         "quiz_model": "gemini-2.5-pro",
         "clean_model": "claude-opus-4.6",
+        "vision_model": "claude-sonnet-4.6",
         "skill_level": "ICP",
     }
 
@@ -90,6 +91,35 @@ def test_save_settings_persists_api_keys_and_model_selection(tmp_path, monkeypat
 
     assert response.status_code == 200
     assert json.loads(settings_path.read_text()) == payload
+
+
+def test_vision_model_setting():
+    """Verify vision_model is included in settings schema."""
+    from settings.router import SaveSettingsRequest
+
+    req = SaveSettingsRequest(
+        providers={},
+        active_provider="anthropic",
+        quiz_model="claude-haiku-4-5-20251001",
+        clean_model="claude-sonnet-4.6",
+        vision_model="claude-sonnet-4.6",
+    )
+    data = req.model_dump()
+    assert data["vision_model"] == "claude-sonnet-4.6"
+
+
+def test_vision_model_defaults_to_empty_string():
+    """Verify vision_model defaults to empty string when not provided."""
+    from settings.router import SaveSettingsRequest
+
+    req = SaveSettingsRequest(
+        providers={},
+        active_provider="anthropic",
+        quiz_model="claude-haiku-4-5-20251001",
+        clean_model="claude-sonnet-4.6",
+    )
+    data = req.model_dump()
+    assert data["vision_model"] == ""
 
 
 def test_get_settings_uses_cache(monkeypatch):
@@ -107,6 +137,7 @@ def test_get_settings_uses_cache(monkeypatch):
             "active_provider": "anthropic",
             "quiz_model": "a",
             "clean_model": "a",
+            "vision_model": "a",
             "skill_level": "AP",
         }
 

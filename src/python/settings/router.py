@@ -68,6 +68,7 @@ class SaveSettingsRequest(BaseModel):
     active_provider: str
     quiz_model: str
     clean_model: str
+    vision_model: str = ""
     skill_level: str = "AP"
 
 
