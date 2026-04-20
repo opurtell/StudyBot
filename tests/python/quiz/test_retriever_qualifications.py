@@ -287,3 +287,80 @@ def test_none_qualifications_returns_all(in_memory_client):
     assert len(results) == 3, (
         f"No qualifications filter should return all 3 chunks, got {len(results)}"
     )
+
+
+# ---------------------------------------------------------------------------
+# Test 7: Cross-service isolation with AT fixtures
+# ---------------------------------------------------------------------------
+
+def test_cross_service_isolation_with_at_fixtures(in_memory_client):
+    """AT and ACTAS retrievers should maintain strict isolation using fixture data."""
+    # Load AT fixture data
+    import json
+    at_cardiac_path = "tests/python/fixtures/services/at/AT_CPG_A0201-1.json"
+    with open(at_cardiac_path) as f:
+        at_cardiac_doc = json.load(f)
+
+    # Seed ACTAS with a simple cardiac chunk
+    _seed_collection(
+        in_memory_client,
+        "guidelines_actas",
+        [
+            ("actas_cardiac", "ACTAS cardiac arrest management includes defibrillation and CPR.",
+             {"source_type": "cmg", "visibility": "both", "section": "Cardiac", "guideline_id": "actas-cmg-14"}),
+        ],
+        lambda m: m,
+    )
+
+    # Seed AT with fixture-derived chunks
+    _seed_collection(
+        in_memory_client,
+        "guidelines_at",
+        [
+            ("at_cardiac_1", at_cardiac_doc["content_sections"][0]["body"],
+             {"source_type": "cmg", "visibility": "both", "section": "Cardiac", "guideline_id": "AT_CPG_A0201-1"}),
+            ("at_cardiac_2", at_cardiac_doc["content_sections"][1]["body"],
+             {"source_type": "cmg", "visibility": "both", "section": "Cardiac", "guideline_id": "AT_CPG_A0201-1"}),
+        ],
+        lambda m: m,
+    )
+
+    # ACTAS retriever should only see ACTAS content
+    actas_retriever = Retriever(client=in_memory_client, service_id="actas")
+    actas_results = actas_retriever.retrieve(
+        query="cardiac arrest",
+        n=10,
+        effective_qualifications=frozenset({"AP"}),
+    )
+    actas_contents = [c.content for c in actas_results]
+
+    assert len(actas_results) >= 1, f"ACTAS retriever should find at least 1 chunk, got {len(actas_results)}"
+    assert any("ACTAS" in c for c in actas_contents), (
+        f"ACTAS retriever should see ACTAS content: {actas_contents}"
+    )
+    assert not any("Australian Resuscitation Council" in c for c in actas_contents), (
+        f"ACTAS retriever should NOT see AT content (AT fixture has ARC reference): {actas_contents}"
+    )
+
+    # AT retriever should only see AT content
+    at_retriever = Retriever(client=in_memory_client, service_id="at")
+    at_results = at_retriever.retrieve(
+        query="cardiac arrest",
+        n=10,
+        effective_qualifications=frozenset({"PARAMEDIC"}),
+    )
+    at_contents = [c.content for c in at_results]
+
+    assert len(at_results) >= 1, f"AT retriever should find at least 1 chunk, got {len(at_results)}"
+    assert not any("ACTAS" in c for c in at_contents), (
+        f"AT retriever should NOT see ACTAS content: {at_contents}"
+    )
+
+    # Verify that AT fixture content is actually retrievable
+    # The AT fixture has unique phrases like "Adrenaline 1 mg IV/IO after third shock"
+    assert any("after third shock" in c for c in at_contents), (
+        f"AT retriever should return AT fixture data (should have post-shock adrenaline): {at_contents}"
+    )
+    assert any("4 Hs and 4 Ts" in c for c in at_contents), (
+        f"AT retriever should return AT fixture data (should mention Hs and Ts): {at_contents}"
+    )

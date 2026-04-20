@@ -1,0 +1,55 @@
+{
+  "service": "at",
+  "guideline_id": "AT_CPG_A0201-1",
+  "title": "Medical Cardiac Arrest",
+  "categories": ["Clinical Guidelines"],
+  "qualifications_required": [],
+  "content_sections": [
+    {
+      "heading": "Indications",
+      "body": "This guideline applies to all patients in cardiac arrest, including trauma cardiac arrest. Cardiac arrest is defined as the absence of signs of life (unresponsive, apnoeic, pulseless).",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Clinical Management",
+      "body": "Commence CPR immediately. Apply defibrillator pads as soon as possible. Monitor rhythm and follow the appropriate algorithm:\n\n- VF/VT: Defibrillate immediately. Continue CPR while charging. Adrenaline 1 mg IV/IO after third shock and every 3-5 minutes thereafter. Amiodarone 300 mg IV/IO after third shock.\n\n- PEA/Asystole: Commence CPR immediately. Give Adrenaline 1 mg IV/IO as soon as IV access is achieved and every 3-5 minutes thereafter.\n\nReversible causes should be considered and treated where possible (4 Hs and 4 Ts).",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Pharmacology",
+      "body": "Adrenaline is a sympathomimetic amine that acts on alpha, beta-1, and beta-2 adrenergic receptors. In cardiac arrest, it increases coronary and cerebral perfusion pressure by peripheral vasoconstriction.\n\nAmiodarone is a class III antiarrhythmic agent that prolongs the action potential duration and refractory period in cardiac tissue. It is used for shock-refractory VF/VT.",
+      "qualifications_required": []
+    }
+  ],
+  "medications": [
+    {
+      "medication": "Adrenaline",
+      "indication": "Cardiac arrest (all rhythms)",
+      "dose": "1 mg",
+      "route": "IV/IO",
+      "qualifications_required": []
+    },
+    {
+      "medication": "Amiodarone",
+      "indication": "Shock-refractory VF/VT",
+      "dose": "300 mg",
+      "route": "IV/IO",
+      "qualifications_required": []
+    }
+  ],
+  "flowcharts": [],
+  "references": [
+    {
+      "label": "Australian Resuscitation Council Guideline 11.5",
+      "url": "https://resus.org.au/guidelines/"
+    },
+    {
+      "label": "ARC Guideline 4",
+      "url": null
+    }
+  ],
+  "source_url": "https://example.com/at/cpg/A0201-1",
+  "source_hash": "abc123def456",
+  "last_modified": "2024-03-15",
+  "extra": {}
+}

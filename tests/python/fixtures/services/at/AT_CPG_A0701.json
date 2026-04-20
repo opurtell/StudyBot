@@ -1,0 +1,87 @@
+{
+  "service": "at",
+  "guideline_id": "AT_CPG_A0701",
+  "title": "Acute Coronary Syndrome",
+  "categories": ["Clinical Guidelines"],
+  "qualifications_required": [],
+  "content_sections": [
+    {
+      "heading": "Indications",
+      "body": "This guideline applies to patients presenting with symptoms suggestive of acute coronary syndrome, including chest pain, shortness of breath, diaphoresis, nausea, or syncope. Consider ACS in any patient with chest discomfort or other symptoms suggestive of myocardial ischaemia.",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Clinical Assessment",
+      "body": "Perform focused clinical assessment including vital signs, cardiac auscultation, and assessment of peripheral perfusion. Obtain 12-lead ECG as soon as possible but do not delay transport if ECG cannot be obtained in the pre-hospital setting.",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Management",
+      "body": "Administer aspirin 300 mg orally unless contraindicated. Apply defibrillator pads and monitor rhythm. Establish IV access. Consider oxygen if SpO2 < 94%.\n\nFor STEMI on ECG, consider activation of catheterisation laboratory if available within appropriate timeframe.\n\nNitroglycerin 300-600 mcg SL or spray may be administered for ongoing chest pain, repeated every 5 minutes as needed. Monitor for hypotension.",
+      "qualifications_required": []
+    },
+    {
+      "heading": "ICP Considerations",
+      "body": "ICP paramedics may administer additional medications including morphine 2.5-5 mg IV/IO for pain relief, and enoxaparin 1 mg/kg subcutaneously for STEMI when directed by medical direction or protocol. ICPs should consider early notification of receiving hospital and preparation for reperfusion therapy.",
+      "qualifications_required": ["ICP"]
+    },
+    {
+      "heading": "Contraindications and Precautions",
+      "body": "Nitroglycerin is contraindicated in patients with SBP < 90 mmHg, right ventricular infarct, or recent phosphodiesterase inhibitor use. Use aspirin with caution in patients with aspirin allergy or active bleeding.",
+      "qualifications_required": []
+    }
+  ],
+  "medications": [
+    {
+      "medication": "Aspirin",
+      "indication": "Suspected ACS",
+      "dose": "300 mg",
+      "route": "PO",
+      "qualifications_required": []
+    },
+    {
+      "medication": "Nitroglycerin",
+      "indication": "Chest pain",
+      "dose": "300-600 mcg",
+      "route": "SL/spray",
+      "qualifications_required": []
+    },
+    {
+      "medication": "Morphine",
+      "indication": "ACS pain (ICP only)",
+      "dose": "2.5-5 mg",
+      "route": "IV/IO",
+      "qualifications_required": ["ICP"]
+    },
+    {
+      "medication": "Enoxaparin",
+      "indication": "STEMI (ICP only)",
+      "dose": "1 mg/kg",
+      "route": "SC",
+      "qualifications_required": ["ICP"]
+    }
+  ],
+  "flowcharts": [
+    {
+      "title": "ACS Assessment and Management",
+      "mermaid": "graph TD\n    A[Patient with chest pain] --> B{Assess ABCDE}\n    B --> C[12-lead ECG]\n    C --> D{ST elevation?}\n    D -->|Yes| E[Consider STEMI pathway]\n    D -->|No| F[Manage as NSTEMI/unstable angina]\n    E --> G[Aspirin 300mg PO]\n    E --> H[Consider cath lab activation]\n    F --> G\n    G --> I[Nitroglycerin if pain]\n    I --> J[Morphine if ICP and pain persists]",
+      "source_format": "data",
+      "review_required": false,
+      "asset_ref": null
+    }
+  ],
+  "references": [
+    {
+      "label": "Australian Resuscitation Council Guideline 12.2",
+      "url": "https://resus.org.au/guidelines/"
+    },
+    {
+      "label": "National Heart Foundation of Australia",
+      "url": "https://heartfoundation.org.au"
+    }
+  ],
+  "source_url": "https://example.com/at/cpg/A0701",
+  "source_hash": "ghi789jkl012",
+  "last_modified": "2024-04-01",
+  "extra": {}
+}
