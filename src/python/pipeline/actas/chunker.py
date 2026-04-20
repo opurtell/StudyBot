@@ -113,7 +113,7 @@ def chunk_and_ingest(
 
     os.makedirs(db_path, exist_ok=True)
     client = chromadb.PersistentClient(path=db_path)
-    collection = client.get_or_create_collection(name="cmg_guidelines")
+    collection = client.get_or_create_collection(name="guidelines_actas")
 
     total_chunks = 0
     for file_path in json_files:

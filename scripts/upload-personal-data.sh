@@ -38,11 +38,11 @@ CMG_STRUCT="$ARCHIVE_DIR/cmgs/structured"
 if [[ -d "$CMG_STRUCT" ]] && ls "$CMG_STRUCT"/*.json &>/dev/null; then
   echo "--- Ingesting CMG guidelines ---"
   PYTHONPATH="$PYTHONPATH" python3 -c "
-from pipeline.cmg.chunker import chunk_and_ingest
+from pipeline.actas.chunker import chunk_and_ingest
 chunk_and_ingest(structured_dir='$CMG_STRUCT', db_path='$ARCHIVE_DIR/chroma_db')
 import chromadb
 client = chromadb.PersistentClient(path='$ARCHIVE_DIR/chroma_db')
-col = client.get_or_create_collection('cmg_guidelines')
+col = client.get_or_create_collection('guidelines_actas')
 print(f'  cmg_guidelines: {col.count()} chunks')
 "
 else
@@ -99,7 +99,7 @@ echo "--- ChromaDB summary ---"
 PYTHONPATH="$PYTHONPATH" python3 -c "
 import chromadb
 client = chromadb.PersistentClient(path='$ARCHIVE_DIR/chroma_db')
-for name in ['cmg_guidelines', 'paramedic_notes']:
+for name in ['guidelines_actas', 'paramedic_notes']:
     try:
         col = client.get_collection(name)
         print(f'  {name}: {col.count()} chunks')

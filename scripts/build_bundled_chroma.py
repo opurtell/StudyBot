@@ -53,10 +53,8 @@ def _build_actas_chroma(structured_dir: Path, output_dir: Path) -> int:
 
     Returns the number of chunks ingested.
     """
-    # The ACTAS chunker writes to a PersistentClient at db_path with
-    # collection name "cmg_guidelines". We need to rename it to
-    # "guidelines_actas", so we do the ingestion ourselves using the
-    # same logic but with the correct collection name.
+    # The ACTAS chunker now writes to "guidelines_actas" directly.
+    # We ingest ourselves to control the collection name and cosine metric.
     from pipeline.actas.models import CMGGuideline
     from pipeline.actas.chunker import (
         determine_chunk_type,

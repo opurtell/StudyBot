@@ -38,8 +38,8 @@ def test_seed_cmg_index_ingests_from_bundled_dir(tmp_path, monkeypatch):
         json.dump(sample, f)
 
     in_memory = chromadb.Client()
-    # ACTAS chunker writes to cmg_guidelines (will be updated in Task 16)
-    collection = in_memory.get_or_create_collection("cmg_guidelines")
+    # ACTAS chunker writes to guidelines_actas
+    collection = in_memory.get_or_create_collection("guidelines_actas")
 
     monkeypatch.setattr("seed.CHROMA_DB_DIR", tmp_path / "chroma_db")
     monkeypatch.setattr("seed.resolve_service_structured_dir", lambda svc_id: structured_dir)

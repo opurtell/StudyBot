@@ -29,6 +29,16 @@ _rebuild_status: dict = {"is_running": False, "status": "idle", "last_completed_
 _rebuild_lock = threading.Lock()
 
 
+def _get_cmg_collection(client: chromadb.ClientAPI) -> chromadb.Collection:
+    """Return the CMG guidelines collection, checking both new and legacy names."""
+    for name in ("guidelines_actas", "cmg_guidelines"):
+        try:
+            return client.get_collection(name)
+        except Exception:
+            continue
+    return client.get_or_create_collection("guidelines_actas")
+
+
 def _invalidate_read_caches() -> None:
     invalidate_guideline_cache()
     invalidate_medication_cache()
@@ -243,7 +253,7 @@ def vector_store_status() -> dict:
     counts: dict[str, int] = {"cmg": 0, "ref_doc": 0, "cpd_doc": 0, "notability_note": 0}
 
     try:
-        cmg_col = client.get_or_create_collection("cmg_guidelines")
+        cmg_col = _get_cmg_collection(client)
         counts["cmg"] = cmg_col.count()
     except Exception:
         pass
@@ -282,6 +292,10 @@ def clear_vector_store(source_type: str | None = None) -> dict:
     client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
 
     if source_type == "cmg":
+        try:
+            client.delete_collection("guidelines_actas")
+        except Exception:
+            pass
         try:
             client.delete_collection("cmg_guidelines")
         except Exception:

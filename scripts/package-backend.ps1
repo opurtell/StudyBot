@@ -128,11 +128,11 @@ if ($env:PERSONAL_BUILD -ne "1") {
 import sys
 sys.path.insert(0, '$SitePackagesDir')
 sys.path.insert(0, '$AppDir\src\python')
-from pipeline.cmg.chunker import chunk_and_ingest
+from pipeline.actas.chunker import chunk_and_ingest
 chunk_and_ingest(structured_dir=r'$RepoRoot\data\cmgs\structured', db_path=r'$ChromaOutput')
 import chromadb
 client = chromadb.PersistentClient(path=r'$ChromaOutput')
-col = client.get_or_create_collection('cmg_guidelines')
+col = client.get_or_create_collection('guidelines_actas')
 print(f'Pre-built index: {col.count()} chunks')
 "@
 } else {

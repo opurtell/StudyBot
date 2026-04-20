@@ -19,6 +19,18 @@ SETTINGS_PATH = CONFIG_DIR / "settings.json"
 EXAMPLE_SETTINGS_PATH = APP_ROOT / "config" / "settings.example.json"
 CHROMA_DB_DIR = DATA_DIR / "chroma_db"
 BUNDLED_CHROMA_DB_DIR = APP_ROOT / "data" / "chroma_db"
+
+
+def bundled_service_chroma_dir(service_id: str) -> Path:
+    """Returns the bundled ChromaDB directory for a service.
+
+    Args:
+        service_id: Service identifier (e.g. "actas", "at")
+
+    Returns:
+        Path to APP_ROOT/data/services/{service_id}/chroma
+    """
+    return APP_ROOT / "data" / "services" / service_id / "chroma"
 MASTERY_DB_PATH = DATA_DIR / "mastery.db"
 LOGS_DIR = USER_DATA_DIR / "logs"
 

@@ -7,6 +7,7 @@ import chromadb
 
 from paths import (
     BUNDLED_CHROMA_DB_DIR,
+    bundled_service_chroma_dir,
     CHROMA_DB_DIR,
     CLEANED_NOTES_DIR,
     CONFIG_DIR,
@@ -106,6 +107,11 @@ def _personal_collection_name(service_id: str) -> str:
     return f"personal_{service_id}"
 
 
+_LEGACY_COLLECTION_MAP: dict[str, str] = {
+    "guidelines_actas": "cmg_guidelines",
+}
+
+
 def _seed_service_if_needed(service) -> None:
     """Seed the guidelines collection for a single service.
 
@@ -121,10 +127,30 @@ def _seed_service_if_needed(service) -> None:
         logger.info("Collection '%s' already has data — skipping seed.", collection_name)
         return
 
-    # Try copying from bundled DB.
-    if _copy_bundled_collection(collection_name, dst_collection_name=collection_name):
-        logger.info("Copied '%s' from bundled ChromaDB.", collection_name)
-        return
+    # Migrate from legacy collection name if present (e.g. cmg_guidelines → guidelines_actas).
+    legacy_name = _LEGACY_COLLECTION_MAP.get(collection_name)
+    if legacy_name and _collection_has_data(CHROMA_DB_DIR, legacy_name):
+        logger.info("Migrating legacy collection '%s' → '%s'.", legacy_name, collection_name)
+        if _copy_between_collections(CHROMA_DB_DIR, legacy_name, CHROMA_DB_DIR, collection_name):
+            return
+
+    # Try copying from bundled DB (legacy location), checking both new and legacy names.
+    for src_name in [collection_name, legacy_name]:
+        if src_name and _copy_bundled_collection(src_name, dst_collection_name=collection_name):
+            logger.info("Copied '%s' from bundled ChromaDB.", src_name)
+            return
+
+    # Try copying from service-scoped bundled ChromaDB, checking both names.
+    svc_bundled = bundled_service_chroma_dir(service_id)
+    if svc_bundled.exists():
+        for src_name in [collection_name, legacy_name]:
+            if src_name and _copy_bundled_collection(
+                src_name,
+                dst_collection_name=collection_name,
+                src_db_path=svc_bundled,
+            ):
+                logger.info("Copied '%s' from service-scoped bundled ChromaDB.", src_name)
+                return
 
     # Fall back to adapter-based ingestion.
     _run_adapter_seed(service)
@@ -133,7 +159,10 @@ def _seed_service_if_needed(service) -> None:
 def _collection_has_data(db_path: Path, collection_name: str) -> bool:
     try:
         client = chromadb.PersistentClient(path=str(db_path))
-        collection = client.get_or_create_collection(collection_name)
+        try:
+            collection = client.get_collection(collection_name)
+        except Exception:
+            return False
         return collection.count() > 0
     except Exception:
         return False
@@ -142,15 +171,17 @@ def _collection_has_data(db_path: Path, collection_name: str) -> bool:
 def _copy_bundled_collection(
     src_collection_name: str,
     dst_collection_name: str | None = None,
+    src_db_path: Path | None = None,
 ) -> bool:
     """Copy a single collection from the bundled ChromaDB to the user ChromaDB."""
     if dst_collection_name is None:
         dst_collection_name = src_collection_name
 
-    if not BUNDLED_CHROMA_DB_DIR.exists():
+    db_path = src_db_path or BUNDLED_CHROMA_DB_DIR
+    if not db_path.exists():
         return False
     try:
-        bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
+        bundled_client = chromadb.PersistentClient(path=str(db_path))
         src = bundled_client.get_or_create_collection(src_collection_name)
         if src.count() == 0:
             return False
@@ -190,6 +221,49 @@ def _copy_bundled_collection(
             src_collection_name,
             exc_info=True,
         )
+        return False
+
+
+def _copy_between_collections(
+    src_db_path: Path, src_collection_name: str,
+    dst_db_path: Path, dst_collection_name: str,
+) -> bool:
+    """Copy all records from one collection to another (same or different DB)."""
+    try:
+        src_client = chromadb.PersistentClient(path=str(src_db_path))
+        src = src_client.get_collection(src_collection_name)
+        if src.count() == 0:
+            return False
+
+        dst_client = chromadb.PersistentClient(path=str(dst_db_path))
+        dst = dst_client.get_or_create_collection(dst_collection_name)
+
+        batch_size = 500
+        total = src.count()
+        offset = 0
+        while offset < total:
+            batch = src.get(
+                include=["documents", "metadatas", "embeddings"],
+                limit=batch_size,
+                offset=offset,
+            )
+            if not batch["ids"]:
+                break
+            dst.upsert(
+                ids=batch["ids"],
+                documents=batch["documents"],
+                metadatas=batch["metadatas"],
+                embeddings=batch["embeddings"],
+            )
+            offset += len(batch["ids"])
+
+        logger.info(
+            "Migrated %d chunks from '%s' to '%s'.",
+            total, src_collection_name, dst_collection_name,
+        )
+        return True
+    except Exception:
+        logger.warning("Could not copy '%s' → '%s'", src_collection_name, dst_collection_name, exc_info=True)
         return False
 
 
@@ -359,8 +433,15 @@ def _copy_bundled_chroma_db() -> bool:
         return False
     try:
         bundled_client = chromadb.PersistentClient(path=str(BUNDLED_CHROMA_DB_DIR))
-        collection = bundled_client.get_or_create_collection("cmg_guidelines")
-        if collection.count() == 0:
+        has_data = False
+        for name in ("guidelines_actas", "cmg_guidelines"):
+            try:
+                if bundled_client.get_collection(name).count() > 0:
+                    has_data = True
+                    break
+            except Exception:
+                continue
+        if not has_data:
             return False
     except Exception:
         logger.warning("Bundled chroma_db exists but could not be read")
@@ -370,10 +451,32 @@ def _copy_bundled_chroma_db() -> bool:
     try:
         CHROMA_DB_DIR.parent.mkdir(parents=True, exist_ok=True)
         shutil.copytree(str(BUNDLED_CHROMA_DB_DIR), str(CHROMA_DB_DIR), dirs_exist_ok=True)
+        # Migrate legacy collection name if present.
+        _migrate_legacy_collection(CHROMA_DB_DIR, "cmg_guidelines", "guidelines_actas")
         return True
     except Exception:
         logger.exception("Failed to copy bundled ChromaDB")
         return False
+
+
+def _migrate_legacy_collection(db_path: Path, old_name: str, new_name: str) -> None:
+    """If old_name collection exists with data and new_name doesn't, copy data over."""
+    try:
+        client = chromadb.PersistentClient(path=str(db_path))
+        try:
+            old_col = client.get_collection(old_name)
+        except Exception:
+            return
+        if old_col.count() == 0:
+            return
+        try:
+            client.get_collection(new_name)
+            return  # new name already exists
+        except Exception:
+            pass
+        _copy_between_collections(db_path, old_name, db_path, new_name)
+    except Exception:
+        logger.warning("Legacy collection migration '%s' → '%s' failed", old_name, new_name, exc_info=True)
 
 
 def _seed_cmg_index() -> None:
