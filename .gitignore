@@ -23,6 +23,8 @@ data/notes_md/raw/
 data/notes_md/extraction_log.json
 data/notes_md/ingestion_log.json
 data/cmgs/*
+data/services/
+data/at/
 !data/cmgs/structured/
 data/notes_md/cleaned/
 .opencode/
