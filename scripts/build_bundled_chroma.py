@@ -235,6 +235,26 @@ def _build_actas_chroma(structured_dir: Path, output_dir: Path) -> int:
     return total
 
 
+def _build_at_chroma(structured_dir: Path, output_dir: Path) -> int:
+    """Build ChromaDB for AT using the AT chunker.
+
+    Returns the number of chunks ingested.
+    """
+    from pipeline.at.chunker import chunk_and_ingest
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Call the AT chunker, which creates the ChromaDB at db_path
+    # with collection name "guidelines_at"
+    stats = chunk_and_ingest(
+        structured_dir=str(structured_dir),
+        db_path=str(output_dir),
+        collection_name="guidelines_at",
+    )
+
+    return stats["total_chunks"]
+
+
 def _build_empty_chroma(service_id: str, output_dir: Path) -> int:
     """Create an empty ChromaDB tree for a service with no data yet."""
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -268,6 +288,9 @@ def build_all(repo_root: Path) -> None:
 
         if service_id == "actas" and structured_dir.exists() and any(structured_dir.glob("*.json")):
             count = _build_actas_chroma(structured_dir, chroma_output)
+            logger.info("Service '%s': %d chunks ingested", service_id, count)
+        elif service_id == "at" and structured_dir.exists() and any(structured_dir.glob("AT_CPG_*.json")):
+            count = _build_at_chroma(structured_dir, chroma_output)
             logger.info("Service '%s': %d chunks ingested", service_id, count)
         else:
             count = _build_empty_chroma(service_id, chroma_output)
