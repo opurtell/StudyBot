@@ -107,7 +107,6 @@ export default function Settings() {
   const [quizModel, setQuizModel] = useState(config?.quiz_model ?? "claude-haiku-4-5-20251001");
   const [cleanModel, setCleanModel] = useState(config?.clean_model ?? "claude-opus-4.6");
   const [visionModel, setVisionModel] = useState(config?.vision_model ?? config?.clean_model ?? "claude-sonnet-4.6");
-  const [skillLevel, setSkillLevel] = useState(config?.skill_level ?? "AP");
   const [apiKeys, setApiKeys] = useState<Record<ProviderKey, string>>({
     anthropic: config?.providers?.anthropic?.api_key ?? "",
     google: config?.providers?.google?.api_key ?? "",
@@ -137,7 +136,6 @@ export default function Settings() {
       zai: config.providers?.zai?.api_key ?? "",
       openai: config.providers?.openai?.api_key ?? "",
     });
-    setSkillLevel(config.skill_level || "AP");
   }, [config]);
 
   useEffect(() => {
@@ -251,7 +249,8 @@ export default function Settings() {
       quiz_model: quizModel,
       clean_model: cleanModel,
       vision_model: visionModel,
-      skill_level: skillLevel,
+      base_qualification: localBaseQualification || "AP",
+      endorsements: localEndorsements,
     });
     if (saved) {
       setSaveMessage("Settings Saved");
@@ -512,40 +511,6 @@ export default function Settings() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
-          Clinical Skill Level
-        </h3>
-        <p className="font-mono text-[10px] text-on-surface-variant max-w-2xl">
-          Selecting "AP" will filter quiz questions and guidelines to Ambulance Paramedic scope only. 
-          Selecting "ICP" includes all AP content plus Intensive Care Paramedic guidelines and medications.
-        </p>
-        <div className="flex gap-2">
-          <button
-            onClick={() => {
-              setSaveMessage(null);
-              setSkillLevel("AP");
-            }}
-            className={`px-4 py-2 font-label text-label-sm uppercase tracking-wider transition-colors ${
-              skillLevel === "AP" ? "bg-primary text-on-primary" : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
-            }`}
-          >
-            Ambulance Paramedic (AP)
-          </button>
-          <button
-            onClick={() => {
-              setSaveMessage(null);
-              setSkillLevel("ICP");
-            }}
-            className={`px-4 py-2 font-label text-label-sm uppercase tracking-wider transition-colors ${
-              skillLevel === "ICP" ? "bg-primary text-on-primary" : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
-            }`}
-          >
-            Intensive Care Paramedic (ICP)
-          </button>
         </div>
       </section>
 

@@ -69,7 +69,8 @@ class SaveSettingsRequest(BaseModel):
     quiz_model: str
     clean_model: str
     vision_model: str = ""
-    skill_level: str = "AP"
+    base_qualification: str = "AP"
+    endorsements: list[str] = []
 
 
 class ModelTier(BaseModel):

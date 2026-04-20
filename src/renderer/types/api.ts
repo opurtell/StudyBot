@@ -99,7 +99,8 @@ export interface SettingsConfig {
   quiz_model: string;
   clean_model: string;
   vision_model: string;
-  skill_level: string;
+  base_qualification: string;
+  endorsements: string[];
 }
 
 export type ProviderKey = "anthropic" | "google" | "zai" | "openai";

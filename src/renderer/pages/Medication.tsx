@@ -6,6 +6,7 @@ import PageStateNotice from "../components/PageStateNotice";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
 import { ServiceChip } from "../components/ServiceChip";
+import { useService } from "../hooks/useService";
 
 function Section({ label, text }: { label: string; text: string }) {
   return (
@@ -23,13 +24,22 @@ function Section({ label, text }: { label: string; text: string }) {
 
 export default function Medication() {
   const { config } = useSettings();
+  const { activeService } = useService();
   const { data: medicines, loading, error, refetch } = useApi<MedicationDose[]>("/medication/doses", 4);
   const backendStatus = useBackendStatus();
   const { restart } = useBackendStatusActions();
   const errorCopy = getErrorStateCopy(error, backendStatus, "medication data");
 
+  const baseQual = config?.base_qualification ?? "AP";
+  const endorsements = config?.endorsements ?? [];
+  const hasICP = activeService
+    ? (activeService.qualifications.bases.find((b) => b.id === baseQual)?.implies?.includes("ICP") ?? false)
+      || baseQual === "ICP"
+      || endorsements.includes("ICP")
+    : baseQual === "ICP" || endorsements.includes("ICP");
+
   const filtered = (medicines || []).filter((med) => {
-    if (config?.skill_level === "AP" && med.is_icp_only) return false;
+    if (!hasICP && med.is_icp_only) return false;
     return true;
   });
 

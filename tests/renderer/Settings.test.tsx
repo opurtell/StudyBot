@@ -63,7 +63,8 @@ beforeEach(() => {
             active_provider: "anthropic",
             quiz_model: "claude-haiku-4-5-20251001",
             clean_model: "claude-opus-4.6",
-            skill_level: "AP",
+            base_qualification: "AP",
+            endorsements: [],
           }),
       });
     }

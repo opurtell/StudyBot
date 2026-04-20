@@ -84,7 +84,8 @@ def test_save_settings_persists_api_keys_and_model_selection(tmp_path, monkeypat
         "quiz_model": "gemini-2.5-pro",
         "clean_model": "claude-opus-4.6",
         "vision_model": "claude-sonnet-4.6",
-        "skill_level": "ICP",
+        "base_qualification": "ICP",
+        "endorsements": [],
     }
 
     response = client.put("/settings", json=payload)
