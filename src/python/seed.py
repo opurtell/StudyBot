@@ -33,11 +33,21 @@ def get_seed_status() -> dict:
 
 def seed_user_data() -> None:
     """Run all seed steps: settings, dirs, per-service guidelines, personal data."""
-    _ensure_settings()
-    _ensure_dirs()
-    for svc in _iter_registry():
-        _seed_service_if_needed(svc)
-    _seed_personal_data()
+    global _seed_status
+    _seed_status = "seeding"
+    try:
+        _ensure_settings()
+        _ensure_dirs()
+        for svc in _iter_registry():
+            _seed_service_if_needed(svc)
+        _seed_personal_data()
+        _seed_status = "complete"
+    except Exception:
+        _seed_status = "failed"
+        logger.exception("Seed failed")
+        raise
+    finally:
+        _seeding_complete.set()
 
 
 # ---------------------------------------------------------------------------
