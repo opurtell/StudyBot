@@ -166,12 +166,11 @@ export default function Settings() {
     if (!config) return;
     setQualificationsSaving(true);
     setSaveMessage(null);
-    const payload = {
+    const saved = await save({
       ...config,
       base_qualification: localBaseQualification,
       endorsements: localEndorsements,
-    } as unknown as typeof config;
-    const saved = await save(payload);
+    });
     if (saved) {
       setSaveMessage("Qualifications Saved");
     }
@@ -239,6 +238,7 @@ export default function Settings() {
     }
 
     const saved = await save({
+      ...config,
       providers: {
         anthropic: nextProviders.anthropic,
         google: nextProviders.google,

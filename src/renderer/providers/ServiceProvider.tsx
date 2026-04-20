@@ -7,9 +7,9 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { apiGet, apiPut, isApiClientError } from "../lib/apiClient";
+import { apiGet } from "../lib/apiClient";
 import { useSettingsContext } from "./SettingsProvider";
-import type { Service, SettingsConfig } from "../types/api";
+import type { Service } from "../types/api";
 
 export interface ServiceContextType {
   services: Service[];
@@ -65,13 +65,13 @@ export function ServiceProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const activeService = useMemo(() => {
-    const activeId = (config as SettingsConfig & { active_service?: string } | null)?.active_service;
+    const activeId = config?.active_service;
     if (!activeId) return services[0] ?? null;
     return services.find((s) => s.id === activeId) ?? services[0] ?? null;
   }, [services, config]);
 
   const baseQualification = useMemo(() => {
-    const baseId = (config as SettingsConfig & { base_qualification?: string } | null)?.base_qualification;
+    const baseId = config?.base_qualification;
     if (!baseId || !activeService) return "";
     const base = activeService.qualifications.bases.find(
       (b) => b.id === baseId
@@ -80,17 +80,14 @@ export function ServiceProvider({ children }: { children: ReactNode }) {
   }, [activeService, config]);
 
   const endorsements = useMemo(() => {
-    const raw = (config as SettingsConfig & { endorsements?: string[] } | null)?.endorsements;
+    const raw = config?.endorsements;
     return Array.isArray(raw) ? raw : [];
   }, [config]);
 
   const setActiveService = useCallback(
     async (id: string) => {
       if (!config) return;
-      const updated = { ...config, active_service: id } as SettingsConfig & {
-        active_service: string;
-      };
-      await save(updated);
+      await save({ ...config, active_service: id });
     },
     [config, save]
   );

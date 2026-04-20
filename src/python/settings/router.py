@@ -71,6 +71,7 @@ class SaveSettingsRequest(BaseModel):
     vision_model: str = ""
     base_qualification: str = "AP"
     endorsements: list[str] = []
+    active_service: str = ""
 
 
 class ModelTier(BaseModel):

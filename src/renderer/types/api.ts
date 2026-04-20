@@ -101,6 +101,7 @@ export interface SettingsConfig {
   vision_model: string;
   base_qualification: string;
   endorsements: string[];
+  active_service?: string;
 }
 
 export type ProviderKey = "anthropic" | "google" | "zai" | "openai";
