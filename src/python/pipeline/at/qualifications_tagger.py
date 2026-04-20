@@ -62,6 +62,18 @@ _ICP_MEDICATIONS = [
     "succinylcholine",
 ]
 
+# Known qualification-restricted medicines for AT CPG
+# These sets will be populated when definitive mapping is obtained from AT site
+# For now, using conservative defaults based on common ambulance service patterns
+_KNOWN_ICP_MEDICINES = {
+    "amiodarone",  # Antiarrhythmic for cardiac arrest
+    # Additional ICP medicines will be added when AT site is probed
+}
+
+_KNOWN_PACER_MEDICINES = set()  # Empty until AT site probing
+
+_KNOWN_CP_ECP_MEDICINES = set()  # Empty until AT site probing
+
 # Compile regex patterns for efficiency
 _ICP_PATTERNS = [re.compile(pattern, re.IGNORECASE) for pattern in _ICP_MARKERS]
 _PACER_PATTERNS = [re.compile(pattern, re.IGNORECASE) for pattern in _PACER_MARKERS]
@@ -191,5 +203,51 @@ def tag_guideline_qualifications(guideline: Dict[str, Any]) -> Dict[str, Any]:
         tagged_sections.append(tagged_section)
 
     result["sections"] = tagged_sections
+
+    return result
+
+
+def tag_medicine_qualifications(med: Dict[str, Any]) -> Dict[str, Any]:
+    """Tag a medicine with qualification requirements.
+
+    Determines which qualification levels are required to administer
+    a specific medicine based on known qualification restrictions.
+
+    Args:
+        med: Dict with at least: name (str)
+
+    Returns:
+        New dict with original keys plus qualifications_required (list of qualification IDs)
+
+    Examples:
+        >>> tag_medicine_qualifications({"name": "Adrenaline", "cpg_code": "D003"})
+        {"name": "Adrenaline", "cpg_code": "D003", "qualifications_required": []}
+
+        >>> tag_medicine_qualifications({"name": "Amiodarone", "cpg_code": "D004"})
+        {"name": "Amiodarone", "cpg_code": "D004", "qualifications_required": ["ICP"]}
+    """
+    # Create a copy to avoid modifying input
+    result = dict(med)
+
+    # Get medicine name for lookup
+    medicine_name = med.get("name", "").strip().lower()
+
+    # Determine qualification requirements
+    qualifications_required: Set[str] = set()
+
+    # Check if medicine is ICP-restricted
+    if medicine_name in _KNOWN_ICP_MEDICINES:
+        qualifications_required.add("ICP")
+
+    # Check if medicine is PACER-restricted
+    if medicine_name in _KNOWN_PACER_MEDICINES:
+        qualifications_required.add("PACER")
+
+    # Check if medicine is CP/ECP-restricted
+    if medicine_name in _KNOWN_CP_ECP_MEDICINES:
+        qualifications_required.add("CP_ECP")
+
+    # Default to empty list (universally available to PARAMEDIC level)
+    result["qualifications_required"] = sorted(list(qualifications_required))
 
     return result

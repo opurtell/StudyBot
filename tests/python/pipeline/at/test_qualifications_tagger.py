@@ -16,6 +16,7 @@ import pytest
 from src.python.pipeline.at.qualifications_tagger import (
     tag_section_qualifications,
     tag_guideline_qualifications,
+    tag_medicine_qualifications,
 )
 
 
@@ -288,3 +289,60 @@ class TestQualificationPatterns:
         result = tag_section_qualifications(section)
         # ICP should be tagged due to ICP-specific medications
         assert "ICP" in result["qualifications_required"]
+
+
+class TestTagMedicineQualifications:
+    """Test per-medicine qualification tagging."""
+
+    def test_paramedic_medicine_gets_empty_required(self):
+        """Medicines available to all PARAMEDIC-level staff."""
+        med = {"name": "Adrenaline", "cpg_code": "D003"}
+        result = tag_medicine_qualifications(med)
+        assert result["qualifications_required"] == []
+
+    def test_icp_medicine_gets_icp_required(self):
+        """Medicines restricted to ICP endorsement."""
+        med = {"name": "Amiodarone", "cpg_code": "D004"}
+        result = tag_medicine_qualifications(med)
+        assert "ICP" in result["qualifications_required"]
+
+    def test_preserves_all_original_keys(self):
+        """Should preserve all original medicine dict keys."""
+        med = {
+            "name": "Morphine",
+            "cpg_code": "D005",
+            "category": "Analgesic",
+            "route_slug": "morphine",
+        }
+        result = tag_medicine_qualifications(med)
+        assert result["name"] == "Morphine"
+        assert result["cpg_code"] == "D005"
+        assert result["category"] == "Analgesic"
+        assert result["route_slug"] == "morphine"
+
+    def test_unknown_medicine_defaults_to_universal(self):
+        """Unknown medicines should default to empty (universally available)."""
+        med = {"name": "Unknown Medicine", "cpg_code": "D999"}
+        result = tag_medicine_qualifications(med)
+        assert result["qualifications_required"] == []
+
+    def test_case_insensitive_medicine_matching(self):
+        """Medicine name matching should be case-insensitive."""
+        med = {"name": "amiodarone", "cpg_code": "D004"}
+        result = tag_medicine_qualifications(med)
+        assert "ICP" in result["qualifications_required"]
+
+    def test_whitespace_tolerant_medicine_matching(self):
+        """Medicine name matching should tolerate extra whitespace."""
+        med = {"name": " Amiodarone ", "cpg_code": "D004"}
+        result = tag_medicine_qualifications(med)
+        assert "ICP" in result["qualifications_required"]
+
+    def test_does_not_modify_original_medicine_dict(self):
+        """Should not modify the input medicine dict."""
+        med = {"name": "Adrenaline", "cpg_code": "D003"}
+        original = dict(med)
+        result = tag_medicine_qualifications(med)
+        assert med == original
+        assert "qualifications_required" in result
+        assert "qualifications_required" not in med
