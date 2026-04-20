@@ -27,6 +27,10 @@ def _start_warmup_thread() -> None:
         return
 
     def warm() -> None:
+        from seed import is_seeding_complete
+        while not is_seeding_complete():
+            import time
+            time.sleep(1)
         try:
             warm_quiz_dependencies()
         except Exception:
@@ -35,9 +39,23 @@ def _start_warmup_thread() -> None:
     threading.Thread(target=warm, daemon=True).start()
 
 
+def _start_seed_thread() -> None:
+    """Run data seeding in a background thread so the server starts immediately."""
+    if os.getenv("PYTEST_CURRENT_TEST"):
+        return
+
+    def seed() -> None:
+        try:
+            seed_user_data()
+        except Exception:
+            traceback.print_exc()
+
+    threading.Thread(target=seed, daemon=True).start()
+
+
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    seed_user_data()
+    _start_seed_thread()
     _start_warmup_thread()
     yield
 
