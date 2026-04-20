@@ -288,6 +288,12 @@ def _parse_json(text: str) -> dict:
         return {}
 
 
+def _resolve_section(section: str) -> str:
+    """Translate a quiz-internal section name to the active service's ChromaDB section."""
+    from services.active import active_service
+    return active_service().resolve_section(section)
+
+
 def _resolve_mode(
     mode: str, topic: str | None, tracker: Tracker
 ) -> tuple[str, dict | None, str | None]:
@@ -301,7 +307,8 @@ def _resolve_mode(
         if not topic:
             raise ValueError("Topic mode requires a topic")
         restriction = "cmg" if topic in CMG_ONLY_SECTIONS else None
-        return topic, {"section": topic}, restriction
+        resolved = _resolve_section(topic)
+        return topic, {"section": resolved}, restriction
     elif mode == "gap_driven":
         weak = tracker.get_weak_categories(n=1)
         query = weak[0] if weak else random.choice(["Cardiac", "Trauma", "Respiratory"])
@@ -327,7 +334,8 @@ def _resolve_mode(
             ("ECGs", None),
         ]
         query, section = random.choice(_random_options)
-        filters: dict | None = {"section": section} if section else None
+        resolved = _resolve_section(section) if section else None
+        filters: dict | None = {"section": resolved} if resolved else None
         restriction = "cmg" if section and section in CMG_ONLY_SECTIONS else None
         return query, filters, restriction
     elif mode == "clinical_guidelines":
@@ -350,6 +358,7 @@ def _resolve_mode(
             ]
         )
         query = random.choice(clinical_sections)
-        return query, {"section": query}, "cmg"
+        resolved = _resolve_section(query)
+        return query, {"section": resolved}, "cmg"
     else:
         raise ValueError(f"Unknown mode: {mode}")

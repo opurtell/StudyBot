@@ -42,6 +42,11 @@ class Service:
     adapter: str
     category_mapping_doc: str
     source_hierarchy: tuple[tuple[str, float], ...] = SOURCE_HIERARCHY_DEFAULTS
+    section_aliases: tuple[tuple[str, str], ...] = ()
+
+    def resolve_section(self, section: str) -> str:
+        """Translate a quiz-internal section name to the service's ChromaDB section."""
+        return dict(self.section_aliases).get(section, section)
 
     @property
     def short_name(self) -> str:
@@ -90,6 +95,24 @@ REGISTRY: tuple[Service, ...] = (
         ),
         adapter="src.python.pipeline.at",
         category_mapping_doc="Guides/categories-at.md",
+        section_aliases=(
+            ("Cardiac", "Adult Patient Guidelines"),
+            ("Trauma", "Adult Patient Guidelines"),
+            ("Medical", "Adult Patient Guidelines"),
+            ("Respiratory", "Adult Patient Guidelines"),
+            ("Airway Management", "Adult Patient Guidelines"),
+            ("Obstetric", "Maternity"),
+            ("Neurology", "Adult Patient Guidelines"),
+            ("Behavioural", "Adult Patient Guidelines"),
+            ("Toxicology", "Adult Patient Guidelines"),
+            ("Environmental", "Adult Patient Guidelines"),
+            ("Pain Management", "Adult Patient Guidelines"),
+            ("Palliative Care", "Adult Patient Guidelines"),
+            ("HAZMAT", "Adult Patient Guidelines"),
+            ("General Care", "Adult Patient Guidelines"),
+            ("Medicine", "Medicines"),
+            ("Clinical Skill", "Adult Patient Guidelines"),
+        ),
     ),
 )
 

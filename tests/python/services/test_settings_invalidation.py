@@ -79,20 +79,19 @@ def test_vector_store_status_checks_all_services(tmp_path, monkeypatch):
     """vector_store_status must report chunk counts for the active
     service's collections, not hardcoded ACTAS names."""
     import chromadb
+    from services.registry import get_service
+
+    at_svc = get_service("at")
+    monkeypatch.setattr("settings.router.active_service", lambda: at_svc)
 
     db_dir = tmp_path / "chroma_db"
     db_dir.mkdir()
     client = chromadb.PersistentClient(path=str(db_dir))
 
-    # Seed AT guidelines only
     at_col = client.get_or_create_collection("guidelines_at")
     at_col.add(ids=["at1"], documents=["AT chunk"], metadatas=[{"source_type": "cmg"}])
 
     monkeypatch.setattr("settings.router.CHROMA_DB_DIR", db_dir)
-    # Active service is AT
-    settings = tmp_path / "settings.json"
-    settings.write_text(json.dumps({"active_service": "at"}))
-    monkeypatch.setattr("settings.router._SETTINGS_PATH", settings)
 
     from settings.router import vector_store_status
     status = vector_store_status()
@@ -104,21 +103,21 @@ def test_clear_cmg_deletes_active_service_collection(tmp_path, monkeypatch):
     """clear_vector_store with source_type='cmg' must delete the active
     service's guidelines collection, not hardcoded 'guidelines_actas'."""
     import chromadb
+    from services.registry import get_service
+
+    at_svc = get_service("at")
+    monkeypatch.setattr("settings.router.active_service", lambda: at_svc)
 
     db_dir = tmp_path / "chroma_db"
     db_dir.mkdir()
     client = chromadb.PersistentClient(path=str(db_dir))
 
-    # Create both collections with data
     at_col = client.get_or_create_collection("guidelines_at")
     at_col.add(ids=["at1"], documents=["AT chunk"], metadatas=[{"source_type": "cmg"}])
     actas_col = client.get_or_create_collection("guidelines_actas")
     actas_col.add(ids=["a1"], documents=["ACTAS chunk"], metadatas=[{"source_type": "cmg"}])
 
     monkeypatch.setattr("settings.router.CHROMA_DB_DIR", db_dir)
-    settings = tmp_path / "settings.json"
-    settings.write_text(json.dumps({"active_service": "at"}))
-    monkeypatch.setattr("settings.router._SETTINGS_PATH", settings)
 
     from settings.router import clear_vector_store
     clear_vector_store(source_type="cmg")
