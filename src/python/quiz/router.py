@@ -50,6 +50,14 @@ def _get_retriever() -> Retriever:
     return _retriever
 
 
+def reset_quiz_retriever() -> None:
+    """Clear the local and shared retriever singletons."""
+    global _retriever
+    _retriever = None
+    from .retriever import reset_retriever
+    reset_retriever()
+
+
 def _get_tracker() -> Tracker:
     global _tracker
     if _tracker is None:

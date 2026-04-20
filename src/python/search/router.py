@@ -18,6 +18,14 @@ def _get_retriever() -> Retriever:
     return _retriever
 
 
+def reset_search_retriever() -> None:
+    """Clear the local and shared retriever singletons."""
+    global _retriever
+    _retriever = None
+    from quiz.retriever import reset_retriever
+    reset_retriever()
+
+
 def _check_seeding() -> None:
     if not is_seeding_complete():
         raise HTTPException(status_code=503, detail="CMG index is still seeding. Please try again in a moment.")
