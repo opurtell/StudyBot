@@ -126,10 +126,10 @@ def chunk_and_ingest(
     Returns:
         Dictionary with ingestion stats (total_chunks, files_processed)
     """
-    # Find all AT_CPG_*.json files
+    # Find all CPG_*.json files
     json_files = [
         f
-        for f in glob.glob(os.path.join(structured_dir, "AT_CPG_*.json"))
+        for f in glob.glob(os.path.join(structured_dir, "CPG_*.json"))
         if "index" not in os.path.basename(f)
     ]
 
@@ -192,6 +192,7 @@ def chunk_and_ingest(
                         "qualifications_required": qualifications_json,
                         "chunk_type": chunk_type,
                         "last_modified": last_modified,
+                        "visibility": "both",
                     }
 
                     collection.add(
@@ -222,6 +223,7 @@ def chunk_and_ingest(
                         "qualifications_required": qualifications_json,
                         "chunk_type": "dosage",
                         "last_modified": last_modified,
+                        "visibility": "both",
                     }
 
                     collection.add(
