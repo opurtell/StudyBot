@@ -1,0 +1,60 @@
+{
+  "medication": "Glyceryl Trinitrate",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_18",
+      "cmg_number": "18A",
+      "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
+      "source_title": "Autonomic Dysreflexia",
+      "text": "Glyceryl trinitrate:  Adult: 400mcg spray or 300mcg tablet – sublingually.  Paediatric (12-16yrs): 150mcg tablet – sublingually (do not use spray. ",
+      "dose_values": [
+        {
+          "amount": "400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "300",
+          "unit": "mcg"
+        },
+        {
+          "amount": "150",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_18",
+      "cmg_number": "18A",
+      "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
+      "source_title": "Autonomic Dysreflexia",
+      "text": "##### Type\nNitrate smooth muscle relaxant and vasodilator [S3]\n\n##### Presentations\n\n- White 300mcg or 600mcg sublingual tablets\n\n- Metered dose pump spray – multiple patient use 400mcg/dose – 200 dose bottle \n\n##### Actions\n\n- Arterial and venous vasodilation\n\n- Dilation of collateral coronary vessels\n\n#### Uses\n\n- Relieve cardiac pain of ischaemic origin\n\n- Relieve acute pulmonary oedema\n\n- Management of autonomic dysreflexia\n\n#### Adverse Effects\n\n- Hypotension\n\n- Headache\n\n- Flushing of skin\n\n- Occasionally – bradycardia\n\n#### Contraindications\n\n- Do not administer if systolic BP is",
+      "dose_values": [
+        {
+          "amount": "300",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "400",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 2,
+  "sources": [
+    "CMG_18"
+  ]
+}

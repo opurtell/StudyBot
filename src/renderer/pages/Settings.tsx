@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "../hooks/useTheme";
 import { useBlacklist } from "../hooks/useBlacklist";
 import { useSettings } from "../hooks/useSettings";
+import { useService } from "../hooks/useService";
 import BlacklistManager from "../components/BlacklistManager";
 import ModelSelector from "../components/ModelSelector";
 import ApiKeyInput from "../components/ApiKeyInput";
@@ -83,7 +84,6 @@ export default function Settings() {
     clearSourceType,
     clearMastery,
     vectorStoreStatus,
-    refetchVectorStoreStatus,
     cmgRefreshStatus,
     cmgRefreshLoading,
     startCmgRefresh,
@@ -91,10 +91,22 @@ export default function Settings() {
     rebuildIndex,
     rebuildRunning,
   } = useSettings();
+  const {
+    services: rawServices,
+    activeService,
+    setActiveService,
+    loading: serviceLoading,
+  } = useService();
+  const services = Array.isArray(rawServices) ? rawServices : [];
+
+  // Local state for qualifications editing
+  const [localBaseQualification, setLocalBaseQualification] = useState<string>("");
+  const [localEndorsements, setLocalEndorsements] = useState<string[]>([]);
+  const [qualificationsSaving, setQualificationsSaving] = useState(false);
 
   const [quizModel, setQuizModel] = useState(config?.quiz_model ?? "claude-haiku-4-5-20251001");
   const [cleanModel, setCleanModel] = useState(config?.clean_model ?? "claude-opus-4.6");
-  const [skillLevel, setSkillLevel] = useState(config?.skill_level ?? "AP");
+  const [visionModel, setVisionModel] = useState(config?.vision_model ?? config?.clean_model ?? "claude-sonnet-4.6");
   const [apiKeys, setApiKeys] = useState<Record<ProviderKey, string>>({
     anthropic: config?.providers?.anthropic?.api_key ?? "",
     google: config?.providers?.google?.api_key ?? "",
@@ -117,13 +129,13 @@ export default function Settings() {
     if (!config) return;
     setQuizModel(config.quiz_model);
     setCleanModel(config.clean_model);
+    setVisionModel(config.vision_model ?? config.clean_model ?? "claude-sonnet-4.6");
     setApiKeys({
       anthropic: config.providers?.anthropic?.api_key ?? "",
       google: config.providers?.google?.api_key ?? "",
       zai: config.providers?.zai?.api_key ?? "",
       openai: config.providers?.openai?.api_key ?? "",
     });
-    setSkillLevel(config.skill_level || "AP");
   }, [config]);
 
   useEffect(() => {
@@ -137,6 +149,34 @@ export default function Settings() {
       setRegistryUnavailable(true);
     }
   }, [modelRegistry, loading]);
+
+  // Sync local qualification state from config
+  useEffect(() => {
+    if (!config) return;
+    const cfg = config as unknown as Record<string, unknown>;
+    if (typeof cfg.base_qualification === "string") {
+      setLocalBaseQualification(cfg.base_qualification);
+    }
+    if (Array.isArray(cfg.endorsements)) {
+      setLocalEndorsements(cfg.endorsements as string[]);
+    }
+  }, [config]);
+
+  const handleSaveQualifications = async () => {
+    if (!config) return;
+    setQualificationsSaving(true);
+    setSaveMessage(null);
+    const payload = {
+      ...config,
+      base_qualification: localBaseQualification,
+      endorsements: localEndorsements,
+    } as unknown as typeof config;
+    const saved = await save(payload);
+    if (saved) {
+      setSaveMessage("Qualifications Saved");
+    }
+    setQualificationsSaving(false);
+  };
 
   const errorCopy = getErrorStateCopy(error, backendStatus, "configuration");
 
@@ -193,6 +233,10 @@ export default function Settings() {
     if (cleanProvider) {
       nextProviders[cleanProvider].default_model = cleanModel;
     }
+    const visionProvider = getProviderForModel(activeRegistry, visionModel);
+    if (visionProvider) {
+      nextProviders[visionProvider].default_model = visionModel;
+    }
 
     const saved = await save({
       providers: {
@@ -204,7 +248,9 @@ export default function Settings() {
       active_provider: activeProvider,
       quiz_model: quizModel,
       clean_model: cleanModel,
-      skill_level: skillLevel,
+      vision_model: visionModel,
+      base_qualification: localBaseQualification || "AP",
+      endorsements: localEndorsements,
     });
     if (saved) {
       setSaveMessage("Settings Saved");
@@ -257,6 +303,115 @@ export default function Settings() {
         <p className="font-mono text-[10px] text-emerald-700">{saveMessage}</p>
       )}
 
+      {/* Active Service */}
+      <section className="space-y-6">
+        <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
+          Active Service
+        </h3>
+        {serviceLoading ? (
+          <p className="font-mono text-[10px] text-on-surface-variant">Loading services...</p>
+        ) : (
+          <div className="flex gap-2 flex-wrap">
+            {services.map((svc) => (
+              <button
+                key={svc.id}
+                onClick={() => {
+                  setSaveMessage(null);
+                  void setActiveService(svc.id);
+                }}
+                className={`px-4 py-2 font-label text-label-sm uppercase tracking-wider transition-colors ${
+                  activeService?.id === svc.id
+                    ? "bg-primary text-on-primary"
+                    : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
+                }`}
+              >
+                {svc.display_name}
+              </button>
+            ))}
+          </div>
+        )}
+        {activeService && (
+          <p className="font-mono text-[10px] text-on-surface-variant">
+            Region: {activeService.region}
+          </p>
+        )}
+      </section>
+
+      {/* Qualifications */}
+      {activeService && (
+        <section className="space-y-6">
+          <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
+            Qualifications
+          </h3>
+          <div className="space-y-4">
+            <div>
+              <span className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">
+                Base Qualification
+              </span>
+              <div className="flex gap-2 mt-2">
+                {activeService.qualifications.bases.map((base) => (
+                  <button
+                    key={base.id}
+                    onClick={() => {
+                      setSaveMessage(null);
+                      setLocalBaseQualification(base.id);
+                    }}
+                    className={`px-4 py-2 font-label text-label-sm uppercase tracking-wider transition-colors ${
+                      localBaseQualification === base.id
+                        ? "bg-primary text-on-primary"
+                        : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
+                    }`}
+                  >
+                    {base.display}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {activeService.qualifications.endorsements.length > 0 && (
+              <div>
+                <span className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">
+                  Endorsements
+                </span>
+                <div className="mt-2 space-y-2">
+                  {activeService.qualifications.endorsements
+                    .filter((endo) => {
+                      if (endo.requires_base.length === 0) return true;
+                      return endo.requires_base.includes(localBaseQualification);
+                    })
+                    .map((endo) => (
+                      <label key={endo.id} className="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={localEndorsements.includes(endo.id)}
+                          onChange={(e) => {
+                            setSaveMessage(null);
+                            setLocalEndorsements((prev) =>
+                              e.target.checked
+                                ? [...prev, endo.id]
+                                : prev.filter((id) => id !== endo.id)
+                            );
+                          }}
+                          className="w-4 h-4 accent-primary"
+                        />
+                        <span className="font-label text-label-sm text-on-surface">
+                          {endo.display}
+                        </span>
+                      </label>
+                    ))}
+                </div>
+              </div>
+            )}
+            <Button
+              variant="secondary"
+              onClick={handleSaveQualifications}
+              disabled={qualificationsSaving}
+            >
+              {qualificationsSaving ? "Saving..." : "Save Qualifications"}
+            </Button>
+          </div>
+        </section>
+      )}
+
       <section className="space-y-6">
         <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
           API Keys
@@ -294,6 +449,15 @@ export default function Settings() {
           onChange={(value) => {
             setSaveMessage(null);
             setCleanModel(value);
+          }}
+        />
+        <ModelSelector
+          label="Vision Model"
+          value={visionModel}
+          registry={activeRegistry}
+          onChange={(value) => {
+            setSaveMessage(null);
+            setVisionModel(value);
           }}
         />
       </section>
@@ -347,40 +511,6 @@ export default function Settings() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
-          Clinical Skill Level
-        </h3>
-        <p className="font-mono text-[10px] text-on-surface-variant max-w-2xl">
-          Selecting "AP" will filter quiz questions and guidelines to Ambulance Paramedic scope only. 
-          Selecting "ICP" includes all AP content plus Intensive Care Paramedic guidelines and medications.
-        </p>
-        <div className="flex gap-2">
-          <button
-            onClick={() => {
-              setSaveMessage(null);
-              setSkillLevel("AP");
-            }}
-            className={`px-4 py-2 font-label text-label-sm uppercase tracking-wider transition-colors ${
-              skillLevel === "AP" ? "bg-primary text-on-primary" : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
-            }`}
-          >
-            Ambulance Paramedic (AP)
-          </button>
-          <button
-            onClick={() => {
-              setSaveMessage(null);
-              setSkillLevel("ICP");
-            }}
-            className={`px-4 py-2 font-label text-label-sm uppercase tracking-wider transition-colors ${
-              skillLevel === "ICP" ? "bg-primary text-on-primary" : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
-            }`}
-          >
-            Intensive Care Paramedic (ICP)
-          </button>
         </div>
       </section>
 
@@ -548,6 +678,52 @@ export default function Settings() {
           <p className="font-body text-[10px] text-on-surface-variant mt-1">
             Deletes the entire search index. Individual source types can be cleared above.
           </p>
+        </div>
+
+        {/* Per-doc retag (placeholder UI — API endpoint pending) */}
+        <div>
+          <h4 className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">
+            Per-Document Service Tagging
+          </h4>
+          <p className="font-mono text-[10px] text-on-surface-variant mb-4">
+            Assign service and scope to structured documents. Changes will apply once the retag endpoint is available.
+          </p>
+          <div className="space-y-2">
+            {/* Placeholder rows for demonstration */}
+            {[
+              { name: "ACTAS Policies and procedures.md", service: activeService?.display_name ?? "—", scope: "general" },
+              { name: "Reference Info ACTAS CMGs.md", service: activeService?.display_name ?? "—", scope: "general" },
+              { name: "ECGs.md", service: activeService?.display_name ?? "—", scope: "service-specific" },
+              { name: "Finals Study.md", service: activeService?.display_name ?? "—", scope: "service-specific" },
+            ].map((doc) => (
+              <div
+                key={doc.name}
+                className="flex items-center gap-4 bg-surface-container-low p-3"
+              >
+                <span className="font-mono text-[10px] text-on-surface flex-1 truncate">
+                  {doc.name}
+                </span>
+                <select
+                  defaultValue={doc.service}
+                  className="bg-surface-container-lowest text-on-surface font-mono text-[10px] px-2 py-1"
+                >
+                  <option value="general">General</option>
+                  {services.map((svc) => (
+                    <option key={svc.id} value={svc.display_name}>
+                      {svc.display_name}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  defaultValue={doc.scope}
+                  className="bg-surface-container-lowest text-on-surface font-mono text-[10px] px-2 py-1"
+                >
+                  <option value="service-specific">Service-specific</option>
+                  <option value="general">General</option>
+                </select>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

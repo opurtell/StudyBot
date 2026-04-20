@@ -1,3 +1,0 @@
-"""
-ACTAS CMG Extraction Pipeline
-"""

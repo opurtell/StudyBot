@@ -1,0 +1,47 @@
+{
+  "medication": "Calcium Chloride",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_file": "CMG_27_Hyperkalaemia.json",
+      "source_title": "Hyperkalaemia",
+      "text": "##### Type\nElectrolyte – utilised in both electrical and mechanical actions of the myocardium [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n1g in 10ml – glass vial \n\n##### Actions\nOpposes the action of high serum potassium on the myocardium\n\nOnset: several minutes\n Duration: 30 – 90 minutes \n\n#### Uses\n\n- Emergency treatment of hyperkalaemia\n\n- Cardiac arrest secondary to hyperkalaemia (i.e., hyperkalaemia is thought to be the cause of the cardiac arrest)\n\n- Prolonged hypotension post-magnesium administration, if unresponsive to fluid \n\n#### Adverse Effects\n- Tissue necrosis if extravasation\n- Precipitates out in contact with bicarbonate\n- If fast pushed: \n\n- Bradycardia\n\n- Peripheral vasodilation\n\n- Hypotension\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Digoxin overdose\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Approved for administration in ACTAS setting\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting\n\n#### Doses##### Adult and Paediatric \n- **ICP:**** With cardiac output:** 10mg/kg (up to 1g) IV/IO \n- Over 2 minutes\n- Repeat once, if required.\n\n- **ICP:**** No cardiac output:** 10mg/kg (up to 1g) IV/IO \n- Over 30 – 60 seconds\n- Repeat once, if required.",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "g"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "g"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 1,
+  "sources": [
+    "CMG_27"
+  ]
+}

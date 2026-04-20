@@ -8,6 +8,7 @@ import GroundTruth from "../components/GroundTruth";
 import ResponseTimeMetrics from "../components/ResponseTimeMetrics";
 import Button from "../components/Button";
 import SourceFootnotes from "../components/SourceFootnotes";
+import { ServiceChip } from "../components/ServiceChip";
 
 type Score = "correct" | "partial" | "incorrect";
 
@@ -96,6 +97,9 @@ export default function Feedback() {
     <div className="min-h-screen">
       <div className="px-8 py-12 max-w-7xl mx-auto">
         <div className="border-l-4 border-primary pl-8 py-2 mb-8">
+          <div className="mb-2">
+            <ServiceChip />
+          </div>
           <span className="font-mono text-[10px] text-on-surface-variant">
             Quiz Review
           </span>

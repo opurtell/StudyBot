@@ -63,5 +63,4 @@ def load_config(path: str | Path = _DEFAULT_CONFIG_PATH) -> dict:
     for key, defaults in _DEFAULT_PROVIDERS.items():
         if key not in providers:
             providers[key] = dict(defaults)
-    config.setdefault("skill_level", "AP")
     return config

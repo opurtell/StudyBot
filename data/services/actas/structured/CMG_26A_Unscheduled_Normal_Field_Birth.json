@@ -1,0 +1,79 @@
+{
+  "id": "CMG_26A_Unscheduled_Normal_Field_Birth",
+  "cmg_number": "26A",
+  "title": "Unscheduled Normal Field Birth",
+  "version_date": null,
+  "section": "Obstetric",
+  "content_markdown": "# Unscheduled Normal Field Birth\n\n- The preferred management is usually birth at a hospital but if birth is imminent, reassure the mother and help her to a comfortable position.\n- Gain a full patient and pregnancy history (refer to the mother’s antenatal card if available). \n- If the labour is premature (20 to 34 weeks gestation), consider bypassing the closest hospital and transporting the patient/s straight to the Centenary Hospital for Women & Children birthing suite (at TCH)\n- Otherwise, transport to the closest hospital or the hospital into which the mother is booked (paramedic clinical judgement)\n- Pre‐notify the destination as appropriate.\n- Provide analgesia as required (methoxyflurane only, but have the mother discontinue use after delivery, due to uterine relaxation effects).\n- Support the neonate’s head while it is delivered. \n- Encourage the mother to control her breathing to make sure the head is delivered slowly and gently.\n- Ensure the cord is not around the neonate’s neck: \n- If it is around the neck, assess whether the neonate can be delivered through the cord \n- If this is not possible, attempt to slip the cord over the neonate’s head being careful not to stretch or tear the cord- If cord is too tight to slip over the head, clamp cord in two places and carefully cut the cord.\n- Support head to allow shoulders to be birthed: \n- Gentle axial traction may be required to deliver the shoulders \n- The rest of the body will deliver quickly after the shoulders - **If the shoulders do not deliver within 60 seconds of head delivery, manage as per CMG 26B Complicated Birth: Shoulder Dystocia.**- Once neonate is delivered: \n- Place the neonate immediately onto mother’s chest and dry to maintain normothermia \n- Cover mother and neonate with blanket- Note time of birth (mother and the neonate each require a separate PCR).\n- Provide tactile stimulation and assess APGAR at 1 and 5 minute intervals. Encourage breast feeding. - Clamp cord three times: \n- First clamp approximately 10cm from the neonate\n- Second clamp 15cm from the neonate- Third clamp close to the mother’s perineum- **Note:** Cut between the first and second clamps. - Carefully assess neonate’s heart rate and respiration \n- Refer to the CMG 5B Neonate Resuscitation as required. \n- Assess for any significant post‐partum haemorrhage (and treat as appropriate).\n- Be mindful of the delivery of the placenta, but do not delay transport unnecessarily waiting for this. \n- If the placenta is delivered out of hospital, ensure it is presented for assessment at hospital.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Methoxyflurane": [
+      {
+        "text": " Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "##### Type\nVolatile inhalation anaesthetic and analgesic agent [S4]\n\n- **High-risk medication**\n\n##### Presentations\n3ml bottle\n\n##### Actions\nCentral nervous system depressant\n\nOnset: 3 – 5 mins. Offset: 3 – 5 mins.\n\n#### Uses\nFor relief of pain of all origins\n\n#### Adverse Effects\n\n- Altered consciousness\n\n- Renal dysfunction (rare with once only ambulance use)\n\n- Jaundice (rare with once only ambulance use)\n\n- Uterine atonia\n\n#### Contraindications\n\n- Depressed level of consciousness\n\n- Known hypersensitivity\n\n- Malignant hyperthermia\n\n- Concurrent doxycycline use (e.g. Doryx, Doxsig, Doxylin, Frakas, etc.) \n\n#### Precautions\n\n- Renal disease\n\n- Diabetes\n\n- Caution if patient unable to self-administer\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting\n\n#### Doses##### Adult and Paediatric \n- Up to 3ml – self administered via Penthrox inhaler \n- Repeat once if required\n- Dose should not exceed 6ml/day or 15ml/week\n- If used during labour, discontinue use post-delivery, and if PPH is suspected.",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "ml"
+          },
+          {
+            "amount": "6",
+            "unit": "ml"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-methoxyflurane",
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "#### Indications\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+        "dose_values": [
+          {
+            "amount": "3",
+            "unit": "ml"
+          }
+        ],
+        "source": "app-methoxyflurane-administration",
+        "qualifications_required": [
+          "AP"
+        ]
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "245d9eaff0d3d52fe5dd8d96cec59b87b7666a375dc8a2760a21556496d557d9",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.750954+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_26",
+  "extra": {
+    "cmg_number": "26A"
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

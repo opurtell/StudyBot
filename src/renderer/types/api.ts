@@ -98,7 +98,9 @@ export interface SettingsConfig {
   active_provider: string;
   quiz_model: string;
   clean_model: string;
-  skill_level: string;
+  vision_model: string;
+  base_qualification: string;
+  endorsements: string[];
 }
 
 export type ProviderKey = "anthropic" | "google" | "zai" | "openai";
@@ -226,4 +228,16 @@ export interface UploadResponse {
 export interface AcceptedFormatsResponse {
   extensions: string[];
   max_size_mb: number;
+}
+
+export interface Service {
+  id: string;
+  display_name: string;
+  region: string;
+  accent_colour: string;
+  source_url: string;
+  qualifications: {
+    bases: { id: string; display: string; implies: string[] }[];
+    endorsements: { id: string; display: string; requires_base: string[] }[];
+  };
 }

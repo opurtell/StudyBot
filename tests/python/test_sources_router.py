@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 
 from main import app
 from sources import router as sources_router
+from services.registry import REGISTRY
 
 client = TestClient(app)
 
@@ -39,7 +40,8 @@ def test_get_sources_returns_repository_cards(monkeypatch, tmp_path):
     cleaned_dir.mkdir(parents=True, exist_ok=True)
     (cleaned_dir / "topic-1.md").write_text("# cleaned", encoding="utf-8")
 
-    monkeypatch.setattr(sources_router, "CMG_STRUCTURED_DIR", cmg_dir)
+    monkeypatch.setattr(sources_router, "resolve_service_structured_dir", lambda _: cmg_dir)
+    monkeypatch.setattr(sources_router, "active_service", lambda: REGISTRY[0])
     monkeypatch.setattr(sources_router, "REFDOCS_DIR", ref_dir)
     monkeypatch.setattr(sources_router, "CPDDOCS_DIR", cpd_dir)
     monkeypatch.setattr(sources_router, "PERSONAL_STRUCTURED_DIR", personal_dir)
@@ -69,7 +71,8 @@ def test_get_sources_returns_repository_cards(monkeypatch, tmp_path):
 def test_get_sources_handles_missing_directories(monkeypatch, tmp_path):
     missing = tmp_path / "missing"
 
-    monkeypatch.setattr(sources_router, "CMG_STRUCTURED_DIR", missing / "cmgs")
+    monkeypatch.setattr(sources_router, "resolve_service_structured_dir", lambda _: missing / "cmgs")
+    monkeypatch.setattr(sources_router, "active_service", lambda: REGISTRY[0])
     monkeypatch.setattr(sources_router, "REFDOCS_DIR", missing / "ref")
     monkeypatch.setattr(sources_router, "CPDDOCS_DIR", missing / "cpd")
     monkeypatch.setattr(sources_router, "PERSONAL_STRUCTURED_DIR", missing / "personal")

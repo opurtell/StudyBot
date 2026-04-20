@@ -1,9 +1,9 @@
 import pytest
 import os
 import json
-from pipeline.cmg.models import CMGGuideline
-from pipeline.cmg.flowcharts import convert_to_mermaid
-from pipeline.cmg.chunker import determine_chunk_type
+from pipeline.actas.models import CMGGuideline
+from pipeline.actas.flowcharts import convert_to_mermaid
+from pipeline.actas.chunker import determine_chunk_type
 
 
 def test_pydantic_schema_validation():
@@ -28,7 +28,7 @@ def test_pydantic_schema_validation():
 
 
 def test_structure_flags_short_content(tmp_path):
-    from pipeline.cmg.structurer import structure_guidelines
+    from pipeline.actas.structurer import structure_guidelines
 
     raw_dir = tmp_path / "raw"
     raw_dir.mkdir()
@@ -92,7 +92,7 @@ def test_chunk_type_determination():
 
 
 def test_dose_lookup_matches_by_content(tmp_path):
-    from pipeline.cmg.structurer import structure_guidelines
+    from pipeline.actas.structurer import structure_guidelines
 
     raw_dir = tmp_path / "raw"
     raw_dir.mkdir()
@@ -148,7 +148,7 @@ def test_dose_lookup_matches_by_content(tmp_path):
 
 
 def test_structure_handles_med_entries(tmp_path):
-    from pipeline.cmg.structurer import structure_guidelines
+    from pipeline.actas.structurer import structure_guidelines
 
     raw_dir = tmp_path / "raw"
     raw_dir.mkdir()
@@ -193,7 +193,7 @@ def test_structure_handles_med_entries(tmp_path):
 
 
 def test_structure_flags_known_icp_only_entries(tmp_path):
-    from pipeline.cmg.structurer import structure_guidelines
+    from pipeline.actas.structurer import structure_guidelines
 
     raw_dir = tmp_path / "raw"
     raw_dir.mkdir()

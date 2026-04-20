@@ -64,19 +64,26 @@ def test_supported_extensions_includes_key_formats():
 # --- router tests ---
 
 def test_upload_markdown_file(tmp_path: Path, monkeypatch):
-    uploads_dir = tmp_path / "uploads"
-    uploads_dir.mkdir()
-    structured_dir = tmp_path / "structured"
-    structured_dir.mkdir()
     chroma_dir = tmp_path / "chroma"
     chroma_dir.mkdir()
-    monkeypatch.setattr(upload_router, "UPLOADS_DIR", uploads_dir)
-    monkeypatch.setattr(upload_router, "UPLOADS_STRUCTURED_DIR", structured_dir)
     monkeypatch.setattr(upload_router, "CHROMA_DB_DIR", chroma_dir)
+
+    def _fake_service_uploads_dir(service_id: str) -> Path:
+        d = tmp_path / "services" / service_id / "uploads"
+        d.mkdir(parents=True, exist_ok=True)
+        return d
+
+    monkeypatch.setattr(upload_router, "service_uploads_dir", _fake_service_uploads_dir)
+
+    def _fake_chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str = "paramedic_notes") -> dict:
+        return {"chunk_count": 1, "source_file": str(md_path.name), "success": True}
+
+    monkeypatch.setattr(upload_router, "chunk_and_ingest", _fake_chunk_and_ingest)
 
     content = "# Cardiac Assessment\n\nKey steps for cardiac assessment."
     response = client.post(
         "/upload",
+        data={"service": "actas"},
         files={"file": ("cardiac.md", io.BytesIO(content.encode("utf-8")), "text/markdown")},
     )
     assert response.status_code == 200
@@ -87,12 +94,16 @@ def test_upload_markdown_file(tmp_path: Path, monkeypatch):
 
 
 def test_upload_rejects_unsupported_format(monkeypatch, tmp_path: Path):
-    uploads_dir = tmp_path / "uploads"
-    uploads_dir.mkdir()
-    monkeypatch.setattr(upload_router, "UPLOADS_DIR", uploads_dir)
+    def _fake_service_uploads_dir(service_id: str) -> Path:
+        d = tmp_path / "services" / service_id / "uploads"
+        d.mkdir(parents=True, exist_ok=True)
+        return d
+
+    monkeypatch.setattr(upload_router, "service_uploads_dir", _fake_service_uploads_dir)
 
     response = client.post(
         "/upload",
+        data={"service": "actas"},
         files={"file": ("image.png", io.BytesIO(b"\x89PNG"), "image/png")},
     )
     assert response.status_code == 400
@@ -100,12 +111,16 @@ def test_upload_rejects_unsupported_format(monkeypatch, tmp_path: Path):
 
 
 def test_upload_rejects_empty_filename(monkeypatch, tmp_path: Path):
-    uploads_dir = tmp_path / "uploads"
-    uploads_dir.mkdir()
-    monkeypatch.setattr(upload_router, "UPLOADS_DIR", uploads_dir)
+    def _fake_service_uploads_dir(service_id: str) -> Path:
+        d = tmp_path / "services" / service_id / "uploads"
+        d.mkdir(parents=True, exist_ok=True)
+        return d
+
+    monkeypatch.setattr(upload_router, "service_uploads_dir", _fake_service_uploads_dir)
 
     response = client.post(
         "/upload",
+        data={"service": "actas"},
         files={"file": ("", io.BytesIO(b"content"), "text/plain")},
     )
     # FastAPI returns 422 for validation errors (empty filename)

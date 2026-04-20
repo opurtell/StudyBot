@@ -1,0 +1,26 @@
+{
+  "id": "CMG_31_Electric_Shock",
+  "cmg_number": "31",
+  "title": "Electric Shock",
+  "version_date": null,
+  "section": "Environmental",
+  "content_markdown": "#### Types of Electric Shock##### Low Voltage ( 1000 volts) \nHigh tension power lines, substations, transformers, lightning strike.\n\n- Request assistance from electricity authority.\n- Use short steps to approach victim.\n- Retreat immediately if tingling is felt.##### Conducted Energy Weapons (e.g. Taser) \nThese weapons fire at up to 50,000 volts, but only a few milliamps. High voltage ensures the pulse reaches its target; low amperage prevents sustained damage.\n\n#### Management\n- **Do not become a victim yourself!**\n- If in cardiac arrest: \n- Treat by specific CMG\n- Consider prolonging treatment of cardiac arrest secondary to electrocution or lightning strike (these patients are often salvageable with prolonged treatment)\n- **Note:** Lightning strike patients may transiently display fixed, dilated pupils (resuscitation should continue despite this).\n- Consider all potential injury mechanisms from the electric shock, and manage as per appropriate CMG: \n- Direct effect of the electric current (e.g. cardiac injury or arrhythmia, deep tissue / organ injury, etc)\n- Burns resulting from conversion of electric current to thermal energy (e.g. entry and exit burns, clothing that has caught fire, etc)- Trauma from a fall (consider especially potential spinal injury).\n- **Always transport** the patient to hospital \n- Electrical burns usually cause greater tissue damage than the appearance of the skin would suggest.\n- Monitor ECG and treat arrhythmias as per appropriate CMG.\n- Manage hypotension as per CMG 14 Shock and Hypoperfusion.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "1353ba2f91bd877a1b5b72eb2c84cf1384832fbd3bee83c7d837a0993a4f0698",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.736090+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_31",
+  "extra": {
+    "cmg_number": "31"
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

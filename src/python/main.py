@@ -15,6 +15,7 @@ from settings.router import router as settings_router
 from guidelines.router import router as guidelines_router
 from sources.router import router as sources_router
 from upload.router import router as upload_router
+from services.router import router as services_router
 from quiz.router import warm_quiz_dependencies
 from llm.base import LLMError, ErrorCategory
 from paths import HOST as _HOST, PORT as _PORT
@@ -26,6 +27,10 @@ def _start_warmup_thread() -> None:
         return
 
     def warm() -> None:
+        from seed import is_seeding_complete
+        while not is_seeding_complete():
+            import time
+            time.sleep(1)
         try:
             warm_quiz_dependencies()
         except Exception:
@@ -34,9 +39,23 @@ def _start_warmup_thread() -> None:
     threading.Thread(target=warm, daemon=True).start()
 
 
+def _start_seed_thread() -> None:
+    """Run data seeding in a background thread so the server starts immediately."""
+    if os.getenv("PYTEST_CURRENT_TEST"):
+        return
+
+    def seed() -> None:
+        try:
+            seed_user_data()
+        except Exception:
+            traceback.print_exc()
+
+    threading.Thread(target=seed, daemon=True).start()
+
+
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    seed_user_data()
+    _start_seed_thread()
     _start_warmup_thread()
     yield
 
@@ -87,6 +106,7 @@ app.include_router(search_router)
 app.include_router(guidelines_router)
 app.include_router(sources_router)
 app.include_router(upload_router)
+app.include_router(services_router)
 
 
 @app.get("/health")

@@ -1,0 +1,45 @@
+{
+  "medication": "Salbutamol",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_27",
+      "cmg_number": "27",
+      "source_file": "CMG_27_Hyperkalaemia.json",
+      "source_title": "Hyperkalaemia",
+      "text": "##### Type\nSynthetic \\u03b22 receptor stimulant [S4]\n\n##### Presentations\nPressurised metered dose inhaler (pMDI) – 100mcg per activation\n\n##### Actions\n\n- Bronchodilation\n\n- Relaxation of involuntary muscle\n\n- Moves K+ from extracellular to intracellular space\n\n#### Uses\n\n- Respiratory distress due to asthma or COPD\n\n- Emergency treatment of suspected hyperkalaemia \n\n#### Adverse Effects\n\n- Tachycardia\n\n- Tremors\n\n- Hypotension\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Mild to moderate respiratory distress\n**pMDI via spacer**\n##### Adult ≥6 years\n- 4-12 actuations \n- Repeat every 20-30 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "##### Type\nSynthetic \\u03b22 receptor stimulant [S4]\n\n##### Presentations\nPressurised metered dose inhaler (pMDI) – 100mcg per activation\n\n##### Actions\n\n- Bronchodilation\n\n- Relaxation of involuntary muscle\n\n- Moves K+ from extracellular to intracellular space\n\n#### Uses\n\n- Respiratory distress due to asthma or COPD\n\n- Emergency treatment of suspected hyperkalaemia \n\n#### Adverse Effects\n\n- Tachycardia\n\n- Tremors\n\n- Hypotension\n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Mild to moderate respiratory distress\n**pMDI via spacer**\n##### Adult ≥6 years\n- 4-12 actuations \n- Repeat every 20-30 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 2,
+  "sources": [
+    "CMG_27",
+    "CMG_9"
+  ]
+}

@@ -28,7 +28,7 @@ def test_medication_index_payload_is_normalised(tmp_path, monkeypatch):
     )
 
     medication_router.invalidate_medication_cache()
-    monkeypatch.setattr(medication_router, "MEDICATION_INDEX_PATH", index_path)
+    monkeypatch.setattr(medication_router, "_resolve_medication_index_path", lambda: index_path)
 
     items = medication_router.get_doses()
 

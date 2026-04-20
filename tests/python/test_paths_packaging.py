@@ -116,9 +116,9 @@ class TestSettingsRouterUsesPaths:
                 setattr(mod, a, lambda *args, **kwargs: None)
             monkeypatch.setitem(sys.modules, name, mod)
 
-        _stub("pipeline.cmg.capture_assets", "capture_all_assets")
+        _stub("pipeline.actas.capture_assets", "capture_all_assets")
         _stub(
-            "pipeline.cmg.refresh", "load_refresh_status", "start_refresh_in_background"
+            "pipeline.actas.refresh", "load_refresh_status", "start_refresh_in_background"
         )
         _stub("guidelines.router", "invalidate_guideline_cache")
         _stub("medication.router", "invalidate_medication_cache")
@@ -208,9 +208,9 @@ class TestMainCors:
 
         _stub_router = APIRouter()
 
-        _stub("pipeline.cmg.capture_assets", "capture_all_assets")
+        _stub("pipeline.actas.capture_assets", "capture_all_assets")
         _stub(
-            "pipeline.cmg.refresh", "load_refresh_status", "start_refresh_in_background"
+            "pipeline.actas.refresh", "load_refresh_status", "start_refresh_in_background"
         )
         _stub("llm.factory", "load_config")
         _stub("llm.models", "load_model_registry", "save_model_registry")

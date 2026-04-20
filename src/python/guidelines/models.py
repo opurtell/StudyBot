@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 class GuidelineSummary(BaseModel):
     id: str
+    guideline_id: Optional[str] = None
     cmg_number: str
     title: str
     section: str
@@ -16,6 +17,7 @@ class GuidelineSummary(BaseModel):
 
 class GuidelineDetail(BaseModel):
     id: str
+    guideline_id: Optional[str] = None
     cmg_number: str
     title: str
     section: str

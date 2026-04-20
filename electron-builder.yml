@@ -16,8 +16,8 @@ extraResources:
     to: data/cmgs/structured
     filter:
       - "**/*.json"
-  - from: build/resources/data/chroma_db
-    to: data/chroma_db
+  - from: build/resources/data/services
+    to: data/services
     filter:
       - "**/*"
 mac:

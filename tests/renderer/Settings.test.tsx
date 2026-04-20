@@ -7,6 +7,7 @@ import AppShell from "../../src/renderer/components/AppShell";
 import Settings from "../../src/renderer/pages/Settings";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
+import { ServiceProvider } from "../../src/renderer/providers/ServiceProvider";
 import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus";
 import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { stubWindowBackendApi } from "./testUtils";
@@ -62,7 +63,8 @@ beforeEach(() => {
             active_provider: "anthropic",
             quiz_model: "claude-haiku-4-5-20251001",
             clean_model: "claude-opus-4.6",
-            skill_level: "AP",
+            base_qualification: "AP",
+            endorsements: [],
           }),
       });
     }
@@ -109,11 +111,13 @@ describe("Settings", () => {
           <BackgroundProcessProvider>
             <ResourceCacheProvider>
               <SettingsProvider>
+                <ServiceProvider>
                 <MemoryRouter>
                 <Routes>
                   <Route path="/" element={<AppShell><Settings /></AppShell>} />
                 </Routes>
               </MemoryRouter>
+              </ServiceProvider>
             </SettingsProvider>
           </ResourceCacheProvider>
         </BackgroundProcessProvider>
@@ -132,11 +136,13 @@ describe("Settings", () => {
           <BackgroundProcessProvider>
             <ResourceCacheProvider>
               <SettingsProvider>
+                <ServiceProvider>
                 <MemoryRouter>
                 <Routes>
                   <Route path="/" element={<AppShell><Settings /></AppShell>} />
                 </Routes>
               </MemoryRouter>
+              </ServiceProvider>
             </SettingsProvider>
           </ResourceCacheProvider>
         </BackgroundProcessProvider>

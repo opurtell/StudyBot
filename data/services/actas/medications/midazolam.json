@@ -1,0 +1,4493 @@
+{
+  "medication": "Midazolam",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Midazolam: 2.5mg – 5mg SC",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "52.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "67.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.5",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "90",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.8",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "105",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "120",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "135",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.7",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": " Up to 4mg/kg IM injection",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+      "dose_values": [
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "0.2mg/kg IM (max. 10mg) ",
+      "dose_values": [
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_22",
+      "cmg_number": "22",
+      "source_file": "CMG_22_Seizures.json",
+      "source_title": "Seizures",
+      "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+      "dose_values": [
+        {
+          "amount": "15",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Midazolam: 2.5mg – 5mg SC",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "52.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "67.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.5",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "90",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.8",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "105",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "120",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "135",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.7",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": " Up to 4mg/kg IM injection",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+      "dose_values": [
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "0.2mg/kg IM (max. 10mg) ",
+      "dose_values": [
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_37",
+      "cmg_number": "37",
+      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
+      "source_title": "Combative and Agitated Patients",
+      "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+      "dose_values": [
+        {
+          "amount": "15",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Midazolam: 2.5mg – 5mg SC",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "52.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "67.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.5",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "90",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.8",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "105",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "120",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "135",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.7",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " Up to 4mg/kg IM injection",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+      "dose_values": [
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "0.2mg/kg IM (max. 10mg) ",
+      "dose_values": [
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+      "dose_values": [
+        {
+          "amount": "15",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Midazolam: 2.5mg – 5mg SC",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "52.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "67.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.5",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "90",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.8",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "105",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "120",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "135",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.7",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": " Up to 4mg/kg IM injection",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+      "dose_values": [
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "0.2mg/kg IM (max. 10mg) ",
+      "dose_values": [
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3",
+      "source_file": "CMG_3_Airway_Management.json",
+      "source_title": "Airway Management",
+      "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+      "dose_values": [
+        {
+          "amount": "15",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Midazolam: 2.5mg – 5mg SC",
+      "dose_values": [
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+      "dose_values": [
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 1.75mg Volume: 1.75ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "52.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.75",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2mg Volume: 2ml",
+      "dose_values": [
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.25mg Volume: 2.25ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "67.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.25",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 2.5mg Volume: 2.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "75",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.5",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3mg Volume: 3ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "90",
+          "unit": "mg"
+        },
+        {
+          "amount": "1.8",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 3.5mg Volume: 3.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "105",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.1",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "3.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4mg Volume: 4ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "120",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 4.5mg Volume: 4.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "135",
+          "unit": "mg"
+        },
+        {
+          "amount": "2.7",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5mg Volume: 5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 5.5mg Volume: 5.5ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5.5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in 5mls Dose: 6mg Volume: 6ml",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "150",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "ml"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": " Up to 4mg/kg IM injection",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+      "dose_values": [
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+      "dose_values": [
+        {
+          "amount": "1.5",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "0.2mg/kg IM (max. 10mg) ",
+      "dose_values": [
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+      "dose_values": [
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_45",
+      "cmg_number": "45",
+      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
+      "source_title": "Palliative Care and VAD",
+      "text": "##### Type\nBenzodiazepine \n\n##### Presentations\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n- **Approved** for administration in ACTAS setting.\n\n#### Doses#### Status Epilepticus##### Adult and Paediatric\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n#### Post Intubation Sedation (as adjunct to ketamine)##### Adult and Paediatric\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)##### Adult\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative Care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with distress or restlessness\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n##### Adult with terminal palliative care emergency\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
+      "dose_values": [
+        {
+          "amount": "15",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.2",
+          "unit": "mg"
+        },
+        {
+          "amount": "10",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.05",
+          "unit": "mg"
+        },
+        {
+          "amount": "29",
+          "unit": "mL"
+        },
+        {
+          "amount": "50",
+          "unit": "mL"
+        },
+        {
+          "amount": "6",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "3",
+          "unit": "mL"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "1",
+          "unit": "mg"
+        },
+        {
+          "amount": "30",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mL"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mL"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "mg"
+        },
+        {
+          "amount": "60",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 105,
+  "sources": [
+    "CMG_22",
+    "CMG_3",
+    "CMG_37",
+    "CMG_45"
+  ]
+}

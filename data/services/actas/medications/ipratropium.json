@@ -1,0 +1,27 @@
+{
+  "medication": "Ipratropium",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "##### Type\nAnticholinergic bronchodilators [S4]\n\n##### Presentations\nPressurised metered dose inhaler (pMDI) – 21mcg per activation\n\n##### Actions\n\n- Bronchodilation\n\n- Blocks vagal reflexes which mediate bronchoconstriction\n\nOnset: 3 – 5 minutes \n Duration: 2 – 4 hours \n\n#### Uses\n\n- Severe respiratory distress due to asthma or COPD\n\n#### Adverse Effects\nRare with single use. Occasionally, urine retention.\n\n#### Contraindications\nKnown hypersensitivity\n\n#### Precautions\nCare needed with use in patients with glaucoma\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Severe to life threatening respiratory distress\n**pMDI via spacer**\n##### Adult ≥6yrs\n- 8 actuations \n- Repeat once after 20 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric",
+      "dose_values": [
+        {
+          "amount": "21",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 1,
+  "sources": [
+    "CMG_9"
+  ]
+}

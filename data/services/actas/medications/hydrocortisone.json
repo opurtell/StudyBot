@@ -1,0 +1,151 @@
+{
+  "medication": "Hydrocortisone",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_43",
+      "cmg_number": "43",
+      "source_file": "CMG_43_Adrenal_Crisis.json",
+      "source_title": "Adrenal Crisis",
+      "text": "200mg tablet  100mg/5ml liquid ",
+      "dose_values": [
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_43",
+      "cmg_number": "43",
+      "source_file": "CMG_43_Adrenal_Crisis.json",
+      "source_title": "Adrenal Crisis",
+      "text": "##### Type\nAdrenocorticosteroid [S4]\n\n##### Presentations\n100mg powder in 2ml vial (reconstitute with 2ml normal saline)\n\n##### Actions\nNumerous and widespread. ACTAS administration for:\n\n- Anti-inflammatory effects on the airways\n\n- Stimulates the normal increase in cortisol secretion in response to stress \n\n#### Uses\n\n- Moderate to severe respiratory distress due to asthma or exacerbation of COPD \n\n- Patients with a diagnosed adrenal insufficiency who experience a stress response and exhibit altered conscious state and/or refractory hypotension \n\n#### Adverse Effects\nNil significant with single use\n\n#### Contraindications\nKnown previous reaction to corticosteroids\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, advise against breastfeeding for 4 hours post administration \n\n#### Doses#### Asthma and COPD##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n\n##### Paediatric\n- **ICP:** 4mg/kg IV (to a maximum of 100mg) – slowly over 2 minutes \n\n#### Adrenal crisis##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n- May be administered IM.\n\n##### Paediatric\n- **ICP:** IV (slowly over 2 minutes): \n- 12 years = 100mg IV.\n- **ICP:** May be administered IM.\n#### Special Notes\n- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "200mg tablet  100mg/5ml liquid ",
+      "dose_values": [
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "##### Type\nAdrenocorticosteroid [S4]\n\n##### Presentations\n100mg powder in 2ml vial (reconstitute with 2ml normal saline)\n\n##### Actions\nNumerous and widespread. ACTAS administration for:\n\n- Anti-inflammatory effects on the airways\n\n- Stimulates the normal increase in cortisol secretion in response to stress \n\n#### Uses\n\n- Moderate to severe respiratory distress due to asthma or exacerbation of COPD \n\n- Patients with a diagnosed adrenal insufficiency who experience a stress response and exhibit altered conscious state and/or refractory hypotension \n\n#### Adverse Effects\nNil significant with single use\n\n#### Contraindications\nKnown previous reaction to corticosteroids\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, advise against breastfeeding for 4 hours post administration \n\n#### Doses#### Asthma and COPD##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n\n##### Paediatric\n- **ICP:** 4mg/kg IV (to a maximum of 100mg) – slowly over 2 minutes \n\n#### Adrenal crisis##### Adult\n- **ICP:** 100mg IV – slowly over 2 minutes \n- May be administered IM.\n\n##### Paediatric\n- **ICP:** IV (slowly over 2 minutes): \n- 12 years = 100mg IV.\n- **ICP:** May be administered IM.\n#### Special Notes\n- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.",
+      "dose_values": [
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "ICP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 4,
+  "sources": [
+    "CMG_43",
+    "CMG_9"
+  ]
+}

@@ -4,8 +4,8 @@ import json
 
 import pytest
 
-from pipeline.cmg import refresh
-from pipeline.cmg.version_tracker import update_version_tracking
+from pipeline.actas import refresh
+from pipeline.actas.version_tracker import update_version_tracking
 
 
 def test_update_version_tracking_reports_state_changes(tmp_path):
@@ -172,7 +172,7 @@ def test_run_refresh_preserves_last_successful_time_on_failure(monkeypatch, tmp_
 
 
 def test_generate_manifest_creates_file(tmp_path):
-    from pipeline.cmg.version_tracker import generate_manifest
+    from pipeline.actas.version_tracker import generate_manifest
 
     structured_dir = tmp_path / "structured"
     structured_dir.mkdir()

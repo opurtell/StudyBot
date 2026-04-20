@@ -1,0 +1,329 @@
+{
+  "medication": "Ibuprofen",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "Previous ibuprofen administration within 4 hours",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "Tablets: 20-40kg: 200mg PO (liquid): Ibuprofen 100mg/5ml  3-6 months (6-8 kg): 3 - 4ml 6-12 months (8-10 kg): 4 - 5ml 1-3 years (10-14 kg): 5 - 7ml 3-5 years (14-18 kg): 7 - 9ml 5-7 years (18-22 kg): 9 - 11ml 7-9 years (22-28 kg): 11 - 14ml 9-12 years (28-40 kg): 14 - 20ml",
+      "dose_values": [
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "9",
+          "unit": "ml"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        },
+        {
+          "amount": "14",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "≤ 50kg = 1g (100mls) over 5 minutes. ≥50kg = 15mg/kg over 15 minutes (via burette).",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "g"
+        },
+        {
+          "amount": "15",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "##### Type\nNon-steroidal anti-inflammatory\n\n##### Presentations\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated**\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n##### Paediatric\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+      "dose_values": [
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "400",
+          "unit": "mg"
+        },
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "9",
+          "unit": "ml"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        },
+        {
+          "amount": "14",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_44",
+      "cmg_number": "44",
+      "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
+      "source_title": "Febrile Paediatric (<12yo)",
+      "text": "Previous ibuprofen administration within 4 hours",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_44",
+      "cmg_number": "44",
+      "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
+      "source_title": "Febrile Paediatric (<12yo)",
+      "text": "Tablets: 20-40kg: 200mg PO (liquid): Ibuprofen 100mg/5ml  3-6 months (6-8 kg): 3 - 4ml 6-12 months (8-10 kg): 4 - 5ml 1-3 years (10-14 kg): 5 - 7ml 3-5 years (14-18 kg): 7 - 9ml 5-7 years (18-22 kg): 9 - 11ml 7-9 years (22-28 kg): 11 - 14ml 9-12 years (28-40 kg): 14 - 20ml",
+      "dose_values": [
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "9",
+          "unit": "ml"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        },
+        {
+          "amount": "14",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_44",
+      "cmg_number": "44",
+      "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
+      "source_title": "Febrile Paediatric (<12yo)",
+      "text": "≤ 50kg = 1g (100mls) over 5 minutes. ≥50kg = 15mg/kg over 15 minutes (via burette).",
+      "dose_values": [
+        {
+          "amount": "1",
+          "unit": "g"
+        },
+        {
+          "amount": "15",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_44",
+      "cmg_number": "44",
+      "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
+      "source_title": "Febrile Paediatric (<12yo)",
+      "text": "##### Type\nNon-steroidal anti-inflammatory\n\n##### Presentations\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated**\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n##### Paediatric\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+      "dose_values": [
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "400",
+          "unit": "mg"
+        },
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "200",
+          "unit": "mg"
+        },
+        {
+          "amount": "100",
+          "unit": "mg"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "ml"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        },
+        {
+          "amount": "7",
+          "unit": "ml"
+        },
+        {
+          "amount": "9",
+          "unit": "ml"
+        },
+        {
+          "amount": "11",
+          "unit": "ml"
+        },
+        {
+          "amount": "14",
+          "unit": "ml"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 8,
+  "sources": [
+    "CMG_2",
+    "CMG_44"
+  ]
+}

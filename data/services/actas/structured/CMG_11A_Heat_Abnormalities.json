@@ -1,0 +1,26 @@
+{
+  "id": "CMG_11A_Heat_Abnormalities",
+  "cmg_number": "11A",
+  "title": "Heat Abnormalities",
+  "version_date": null,
+  "section": "Medical",
+  "content_markdown": "#### Heat Abnormalities\n**Hyperthermia is defined as a core temperature above 37.5\\xb0C.**\n\nThe accuracy of tympanic thermometers in the field (and in hyperthermia in general) has not been established. Assessment should be based on all aspects of patient presentation and history.\n\nThere are many potential causes of elevated body temperature. Consider the possibility of other causes, including sepsis, and manage accordingly. **The aim of cooling is to actively reduce core body temperature to about 38\\xb0C. Active cooling should be ceased at this point to avoid overcooling.**\n\n**Note:** that some organised events may have facilities for active cooling available – consider using these prior to transport if appropriate.\n##### Cooling may include:\n- Evaporative cooling (spray / sponge patient’s body with tepid water and then fan over the moist skin). \n- Ice packs (placed on the skin overlying vascular beds, such as groin, axillae and neck). Avoid direct exposure of ice packs on skin.\n- Cooled intravenous fluid (approximately 4\\xb0C – from the refrigerator).\n\n#### Minor Heat Syndromes (Including Heat Exhaustion)\n- Normal or transient disturbances in mentation.\n- Sweating\n- **Core temperature typically \n- Cease exertion.\n- Move patient to a cool location.\n- Gentle cooling.\n- Oral rehydration: \n- Allow small sips only.\n- IV rehydration if: \n- Nausea +/‐ vomiting\n- Significant dehydration.\n- Consider antiemetic administration.\n#### Heat Stroke\n- Altered conscious state and/or abnormal neurological signs.\n- No sweating (hot, dry skin).\n- Core temperature typically ≥ 40\\xb0C.\n- Other complications can include cardiovascular, respiratory, neurological, haematological and musculoskeletal involvement.\n**Heat stroke is a time‐critical life‐threatening condition. Transport should always occur due to the risk of multiple organ failure.**\n\n- Rapid, active cooling (as aggressive as possible).\n- IV resuscitation (cool fluids if possible).\n- **ICP:** Treat significant arrhythmias (as per appropriate CMG).\n- Check BGL.\n- Aggressively manage seizures and shivering.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "abe27623baa317c537409356714505931b5124a366e4be85891c8b2ca8903fff",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.750035+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_11",
+  "extra": {
+    "cmg_number": "11A"
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

@@ -7,6 +7,7 @@ import { BackendStatusProvider } from "../../src/renderer/hooks/useBackendStatus
 import { BackgroundProcessProvider } from "../../src/renderer/providers/BackgroundProcessProvider";
 import { ResourceCacheProvider } from "../../src/renderer/providers/ResourceCacheProvider";
 import { SettingsProvider } from "../../src/renderer/providers/SettingsProvider";
+import { ServiceProvider } from "../../src/renderer/providers/ServiceProvider";
 
 export function stubWindowBackendApi() {
   window.api = {
@@ -52,7 +53,9 @@ function AppProviderStack({ children }: { children: ReactNode }) {
       <BackendStatusProvider>
         <BackgroundProcessProvider>
           <ResourceCacheProvider>
-            <SettingsProvider>{children}</SettingsProvider>
+            <SettingsProvider>
+              <ServiceProvider>{children}</ServiceProvider>
+            </SettingsProvider>
           </ResourceCacheProvider>
         </BackgroundProcessProvider>
       </BackendStatusProvider>

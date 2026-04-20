@@ -1,0 +1,26 @@
+{
+  "id": "CMG_11B_Hypothermia",
+  "cmg_number": "11B",
+  "title": "Hypothermia",
+  "version_date": null,
+  "section": "Medical",
+  "content_markdown": "#### Hypothermia\n**Hypothermia is defined as a core temperature below 35\\xb0C.**\n\nThe accuracy of tympanic thermometers in the field (and in hypothermia in general) has not been established. Assessment should be based on all aspects of patient presentation and history.\n\nThere are many potential causes of hypothermia. Consider the possibility of coexisting and alternate causes (e.g. sepsis, trauma, hypoglycaemia, drug intoxication) and manage accordingly.\n\nAccidental hypothermia can occur even with exposure to mild or warm temperatures.\n\n#### Mild Hypothermia\n- Normal mentation, though may display apathy / confusion.\n- Shivering.\n- **Core temperature approx 32 -35\\xb0C.**\n- Other symptoms may include dysarthia, ataxia.\n- More rapid warming is acceptable.\n- Warm oral fluids (sweetened if possible).\n#### Moderate to Severe Hypothermia\n- Significantly altered conscious state.\n- Decreased heart rate and respiration rate.\n- No shivering, increased muscle tone.\n- **Core temperature approx \n- Handle patient gently (rough handling may precipitate arrhythmias).\n- If sheltered: remove wet clothing and dry patient. \n- **Note:** Prevention of further cooling is more important than speed of rewarming. \n- Gentle rewarming: \n- Wrap in warm blankets, then space blankets.\n- If intravenous fluids required: \n- Use warmed fluids.\n- Check BGL and correct where necessary: \n- The body requires energy to produce heat (have a low threshold for treatment).\n- If IPPV required: \n- Do not hyperventilate.\n- Carefully consider the need for medications (the actions of medications are substantially altered or unknown at low body temperatures).\n- **ICP:** Most cardiac arrhythmias resolve with rewarming \n- Consider actively treating only life‐threatening arrhythmias. \n\n#### Cardiac Arrest\n- Normal cardiac arrest management.\n- **If in VF / VT: **\n- No more than 3 shocks (defibrillation is unlikely to be effective",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "05a76a266e88d1588c3f0390b0490119bc081134c92fc0da8fdf8656d4e2f390",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.750457+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_11",
+  "extra": {
+    "cmg_number": "11B"
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

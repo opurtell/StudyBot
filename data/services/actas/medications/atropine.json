@@ -1,0 +1,448 @@
+{
+  "medication": "Atropine",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_file": "CMG_35A_Poisoning_and_Overdose.json",
+      "source_title": "Poisoning and Overdose",
+      "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_file": "CMG_35A_Poisoning_and_Overdose.json",
+      "source_title": "Poisoning and Overdose",
+      "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35A",
+      "source_file": "CMG_35A_Poisoning_and_Overdose.json",
+      "source_title": "Poisoning and Overdose",
+      "text": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+      "dose_values": [
+        {
+          "amount": "1200",
+          "unit": "mcg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.8",
+          "unit": "mg"
+        },
+        {
+          "amount": "9.6",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35B",
+      "source_file": "CMG_35B_Bites_and_Stings.json",
+      "source_title": "Bites and Stings",
+      "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35B",
+      "source_file": "CMG_35B_Bites_and_Stings.json",
+      "source_title": "Bites and Stings",
+      "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_35",
+      "cmg_number": "35B",
+      "source_file": "CMG_35B_Bites_and_Stings.json",
+      "source_title": "Bites and Stings",
+      "text": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+      "dose_values": [
+        {
+          "amount": "1200",
+          "unit": "mcg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.8",
+          "unit": "mg"
+        },
+        {
+          "amount": "9.6",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_3",
+      "cmg_number": "3A",
+      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
+      "source_title": "RSI (Rapid Sequence Intubation)",
+      "text": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+      "dose_values": [
+        {
+          "amount": "1200",
+          "unit": "mcg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.8",
+          "unit": "mg"
+        },
+        {
+          "amount": "9.6",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_7",
+      "cmg_number": "7",
+      "source_file": "CMG_7_Bradyarrhythmias.json",
+      "source_title": "Bradyarrhythmias",
+      "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_7",
+      "cmg_number": "7",
+      "source_file": "CMG_7_Bradyarrhythmias.json",
+      "source_title": "Bradyarrhythmias",
+      "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_7",
+      "cmg_number": "7",
+      "source_file": "CMG_7_Bradyarrhythmias.json",
+      "source_title": "Bradyarrhythmias",
+      "text": "##### Type\nParasympathetic blocking agent [S4]\n\n##### Presentations\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n- Blocks the action of the vagus nerve on the heart\n\n- Increases the rate of the sinus node\n\n- Increases speed of conduction through the AV node\n\n- Reduces the amount of secretions from some glands (e.g., tear and salivary glands)\n\nOnset IV: 2 minutes. Max effect: 5 minutes.\n\nIV half-life: adult – 2–3 hours; paed – approx. 6.5 hours.\n\n#### Uses\n\n- Bradyarrhythmias with poor perfusion **- ICP only**\n\n- Organophosphate/ nerve agent poisoning\n\n- Big black spider bite with cholinergic symptoms\n\n#### Adverse Effects\n\n- Tachycardia\n\n- Palpitations\n\n- Blurred vision\n\n- Dry mouth\n\n- Confusion\n\n- Urinary retention\n\n- Increased body temperature (by decreasing perspiration)\n\n#### Contraindications\nKnown hypersensitivity.\n\n#### Precautions\n\n- Care needed in patients with glaucoma\n\n- Aim not to increase heart rate above 100bpm\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Bradyarrhythmias##### Adult\n- **ICP:** IV / IO: 600mcg – fast push \n- Repeat once after 3-5 minutes, if required.\n##### Paediatric\nNot used\n\n#### Organophosphate / Nerve Agent Poisoning##### Adult\n- IV / IO / IM: initial dose 2400mcg – fast push\n- **AP: ** IM/IV: initial dose 2400mcg – fast push\n- Repeat every 3 – 5 minutes.\n- Double each repeat dose as required (e.g. 2.4mg → 4.8mg → 9.6mg etc.). - No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n##### Paediatric\n- IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push \n- **AP: ** IM/IV: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push - Repeat every 3 – 5 minutes.\n- Double each repeat dose as required- No upper limit on doses until all management end goals achieved.\n\n- **Note:** Give IM while IV/IO access is being obtained.\n- Split larger doses into multiple injections. \n**Note:** In an MCI situation where multiple patients require simultaneous management, a simplified repeat dose regimen, where the initial dose is repeated instead of doubled doses, can be used. \n\n#### Big black spider bite with cholinergic symptoms##### Adult\n- IV / IO / IM: 600mcg – fast push\n- **AP: ** IM/IV: 600mcg – fast push\n- No repeat##### Paediatric\n- IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push\n- **AP: ** IM/IV: 20mcg/kg (max. 600mcg) - fast- No repeat",
+      "dose_values": [
+        {
+          "amount": "1200",
+          "unit": "mcg"
+        },
+        {
+          "amount": "1",
+          "unit": "ml"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2.4",
+          "unit": "mg"
+        },
+        {
+          "amount": "4.8",
+          "unit": "mg"
+        },
+        {
+          "amount": "9.6",
+          "unit": "mg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "50",
+          "unit": "mcg"
+        },
+        {
+          "amount": "2400",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        },
+        {
+          "amount": "20",
+          "unit": "mcg"
+        },
+        {
+          "amount": "600",
+          "unit": "mcg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 12,
+  "sources": [
+    "CMG_3",
+    "CMG_35",
+    "CMG_7"
+  ]
+}

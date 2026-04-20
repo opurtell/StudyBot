@@ -1,0 +1,74 @@
+{
+  "service": "at",
+  "guideline_id": "AT_CPG_D003",
+  "title": "Adrenaline (Epinephrine)",
+  "categories": ["Medication Guidelines", "Pharmacology"],
+  "qualifications_required": [],
+  "content_sections": [
+    {
+      "heading": "Pharmacology",
+      "body": "Adrenaline is a sympathomimetic catecholamine with alpha and beta adrenergic effects. Alpha effects cause peripheral vasoconstriction, increasing systemic vascular resistance and diastolic blood pressure. Beta-1 effects increase heart rate and myocardial contractility. Beta-2 effects cause bronchodilation and skeletal muscle vasodilation.",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Dose Recommendations",
+      "body": "Anaphylaxis: 0.5 mg IM (0.5 mL of 1:1000 solution) into mid-anterolateral thigh. May repeat every 5 minutes if required.\n\nCardiac arrest: 1 mg IV/IO (10 mL of 1:10000 solution) every 3-5 minutes.\n\nSevere asthma: 0.5 mg IM, may repeat.\n\nHypotension/shock: Commence infusion at 0.05-0.1 mcg/kg/min and titrate to response.",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Contraindications",
+      "body": "There are no absolute contraindications to adrenaline in life-threatening situations such as cardiac arrest or anaphylaxis. In less urgent situations, use with caution in patients with hypertension, tachyarrhythmias, or narrow-angle glaucoma.",
+      "qualifications_required": []
+    },
+    {
+      "heading": "Precautions",
+      "body": "Adrenaline should be used with caution in pregnancy, though the benefits in life-threatening situations outweigh risks. Monitor ECG and blood pressure during administration. Extravasation can cause tissue necrosis - ensure secure IV access.",
+      "qualifications_required": []
+    }
+  ],
+  "medications": [
+    {
+      "medication": "Adrenaline",
+      "indication": "Anaphylaxis",
+      "dose": "0.5 mg",
+      "route": "IM",
+      "qualifications_required": []
+    },
+    {
+      "medication": "Adrenaline",
+      "indication": "Cardiac arrest",
+      "dose": "1 mg",
+      "route": "IV/IO",
+      "qualifications_required": []
+    },
+    {
+      "medication": "Adrenaline",
+      "indication": "Severe asthma",
+      "dose": "0.5 mg",
+      "route": "IM",
+      "qualifications_required": []
+    },
+    {
+      "medication": "Adrenaline",
+      "indication": "Hypotension/shock",
+      "dose": "0.05-0.1 mcg/kg/min",
+      "route": "IV infusion",
+      "qualifications_required": []
+    }
+  ],
+  "flowcharts": [],
+  "references": [
+    {
+      "label": "Australian Medicines Handbook",
+      "url": null
+    },
+    {
+      "label": "AT Therapeutic Guidelines",
+      "url": "https://example.com/tg/"
+    }
+  ],
+  "source_url": "https://example.com/at/cpg/D003",
+  "source_hash": "def456ghi789",
+  "last_modified": "2024-02-20",
+  "extra": {}
+}

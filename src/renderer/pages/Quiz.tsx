@@ -10,6 +10,7 @@ import QuizTimer from "../components/QuizTimer";
 import Button from "../components/Button";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import LoadingIndicator from "../components/LoadingIndicator";
+import { ServiceChip } from "../components/ServiceChip";
 import { QUIZ_CATEGORIES } from "../data/quizCategories";
 
 type Score = "correct" | "partial" | "incorrect";
@@ -256,6 +257,9 @@ export default function Quiz() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-8">
         <div className="max-w-xl text-center space-y-8">
+          <div className="flex justify-center">
+            <ServiceChip />
+          </div>
           <span className="inline-block bg-tertiary-fixed/40 px-3 py-1 font-label text-[10px] uppercase tracking-widest text-on-surface-variant">
             Active Recall
           </span>

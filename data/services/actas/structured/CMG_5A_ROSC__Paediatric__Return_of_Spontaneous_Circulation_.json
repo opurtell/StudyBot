@@ -1,0 +1,26 @@
+{
+  "id": "CMG_5A_ROSC__Paediatric__Return_of_Spontaneous_Circulation_",
+  "cmg_number": "5A",
+  "title": "ROSC: Paediatric (Return of Spontaneous Circulation)",
+  "version_date": null,
+  "section": "Cardiac",
+  "content_markdown": "# ROSC: Paediatric (Return of Spontaneous Circulation)\n\n**This guideline is to be used for patients CMG 4A ROSC: Adult (Return of Spontaneous Circulation)\n\n- **Stop: Post-arrest, correctable check causes should be aggressively checked for, and addressed.**\n\n#### Respiratory\n- Paediatric RSI is **not authorised.**\n- **ICP:** Maintain sedation if an ETT was placed during arrest \n- Prevent dislodgement.\n\n- Maintain SpO2 94-98% (unless patient has a specific condition that necessitates special management).\n- Ventilate at a rate within normal range for child’s age\n- Do not hyperventilate\n- Ventilate to maintain EtCO2 at 35-40mmHg.\n#### Blood Sugar\n- Correct hypoglycaemia cautiously \n- Aim for normoglycaemia.\n\n#### Cardiac / Perfusion\n- Treat significant arrhythmias if persistent \n- **Note:** that bradycardia (",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "694045d83760b1bb766c9cd7d90f40e586ca2b1379b88b08ddcaec466d78c4ef",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.681154+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_5",
+  "extra": {
+    "cmg_number": "5A"
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

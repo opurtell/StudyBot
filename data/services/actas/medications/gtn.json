@@ -1,0 +1,120 @@
+{
+  "medication": "Gtn",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_18",
+      "cmg_number": "18A",
+      "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
+      "source_title": "Autonomic Dysreflexia",
+      "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_18",
+      "cmg_number": "18A",
+      "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
+      "source_title": "Autonomic Dysreflexia",
+      "text": "Respiratory rate: ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_18",
+      "cmg_number": "18A",
+      "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
+      "source_title": "Autonomic Dysreflexia",
+      "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "Respiratory rate: ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_2",
+      "cmg_number": "2",
+      "source_file": "CMG_2_Pain_Management.json",
+      "source_title": "Pain Management",
+      "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "Respiratory rate: ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_9",
+      "cmg_number": "9",
+      "source_file": "CMG_9_Respiratory_Distress.json",
+      "source_title": "Respiratory Distress",
+      "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 9,
+  "sources": [
+    "CMG_18",
+    "CMG_2",
+    "CMG_9"
+  ]
+}

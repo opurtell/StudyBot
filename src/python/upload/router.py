@@ -6,14 +6,16 @@ import logging
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Literal
 
 import yaml
-from fastapi import APIRouter, HTTPException, UploadFile, File
+from fastapi import APIRouter, Form, HTTPException, UploadFile, File
 from pydantic import BaseModel
 
-from paths import UPLOADS_DIR, UPLOADS_STRUCTURED_DIR, CHROMA_DB_DIR
+from paths import CHROMA_DB_DIR, service_uploads_dir
 from upload.extractor import extract_text, SUPPORTED_EXTENSIONS
 from pipeline.personal_docs.chunker import chunk_and_ingest
+from services.registry import _BY_ID as _REGISTRY_BY_ID
 
 logger = logging.getLogger(__name__)
 
@@ -26,6 +28,8 @@ class UploadResponse(BaseModel):
     chunks: int
     categories: list[str]
     source_type: str
+    service: str
+    scope: str
     error: str | None = None
 
 
@@ -48,16 +52,18 @@ def _structure_and_ingest(
     text: str,
     filename: str,
     uploads_dir: Path,
-    structured_dir: Path,
     db_path: Path,
+    service: str,
+    scope: str,
 ) -> UploadResponse:
     """Add YAML front matter and ingest into ChromaDB.
 
-    Uses source_type 'cpd_doc' for user uploads (tier 3, same as CPD docs).
+    Writes into the per-service uploads directory. Tags chunks with service
+    and scope metadata. Uses source_type 'upload' for user-uploaded documents.
     """
     title = _extract_title(text, filename)
-    source_file = f"uploads/{filename}"
-    source_type = "cpd_doc"
+    source_file = f"uploads/{service}/{filename}"
+    source_type = "upload"
     categories = ["General Paramedicine"]
     last_modified = datetime.now(tz=timezone.utc).isoformat()
 
@@ -67,6 +73,7 @@ def _structure_and_ingest(
     (raw_dir / filename).write_text(text, encoding="utf-8")
 
     # Create structured version with front matter
+    structured_dir = uploads_dir / "structured"
     structured_dir.mkdir(parents=True, exist_ok=True)
     out_path = structured_dir / filename
 
@@ -76,20 +83,25 @@ def _structure_and_ingest(
         "source_file": source_file,
         "categories": categories,
         "last_modified": last_modified,
+        "service": service,
+        "scope": scope,
     }
     yaml_block = yaml.dump(front_matter, default_flow_style=False, allow_unicode=True)
     structured = f"---\n{yaml_block}---\n{text}"
     out_path.write_text(structured, encoding="utf-8")
 
-    # Ingest into ChromaDB
+    # Ingest into the per-service personal collection
+    collection_name = f"personal_{service}"
     try:
-        result = chunk_and_ingest(out_path, db_path)
+        result = chunk_and_ingest(out_path, db_path, collection_name=collection_name)
         return UploadResponse(
             filename=filename,
             status="processed",
             chunks=result.get("chunk_count", 0),
             categories=categories,
             source_type=source_type,
+            service=service,
+            scope=scope,
         )
     except Exception as e:
         logger.error(f"Ingestion failed for {filename}: {e}")
@@ -99,12 +111,21 @@ def _structure_and_ingest(
             chunks=0,
             categories=categories,
             source_type=source_type,
+            service=service,
+            scope=scope,
             error=str(e),
         )
 
 
 @router.post("", response_model=UploadResponse)
-async def upload_document(file: UploadFile = File(...)) -> UploadResponse:
+async def upload_document(
+    file: UploadFile = File(...),
+    service: str = Form(...),
+    scope: Literal["service-specific", "general"] = Form("service-specific"),
+) -> UploadResponse:
+    if service not in _REGISTRY_BY_ID:
+        raise HTTPException(status_code=422, detail=f"Unknown service: {service!r}")
+
     if not file.filename:
         raise HTTPException(status_code=400, detail="No filename provided")
 
@@ -124,9 +145,12 @@ async def upload_document(file: UploadFile = File(...)) -> UploadResponse:
     if len(contents) > MAX_UPLOAD_SIZE_BYTES:
         raise HTTPException(status_code=400, detail="File exceeds 20 MB limit")
 
+    # Resolve per-service uploads directory
+    uploads_dir = service_uploads_dir(service)
+    uploads_dir.mkdir(parents=True, exist_ok=True)
+
     # Save uploaded file to temp location for extraction
-    UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
-    temp_path = UPLOADS_DIR / f"_temp_{safe_name}"
+    temp_path = uploads_dir / f"_temp_{safe_name}"
     temp_path.write_bytes(contents)
 
     try:
@@ -143,9 +167,10 @@ async def upload_document(file: UploadFile = File(...)) -> UploadResponse:
     return _structure_and_ingest(
         text=text,
         filename=safe_name,
-        uploads_dir=UPLOADS_DIR,
-        structured_dir=UPLOADS_STRUCTURED_DIR,
+        uploads_dir=uploads_dir,
         db_path=CHROMA_DB_DIR,
+        service=service,
+        scope=scope,
     )
 
 

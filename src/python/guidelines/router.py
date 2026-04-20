@@ -5,8 +5,8 @@ from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
 
-from paths import CMG_STRUCTURED_DIR
-from paths import resolve_cmg_structured_dir
+from paths import resolve_service_structured_dir, CMG_STRUCTURED_DIR
+from services.active import active_service
 
 from .markdown import normalise_markdown_payload, normalise_markdown_syntax, strip_icp_content
 from .models import GuidelineDetail, GuidelineSummary
@@ -15,16 +15,22 @@ router = APIRouter(prefix="/guidelines", tags=["guidelines"])
 
 
 def _get_structured_dir() -> Path:
-    return resolve_cmg_structured_dir()
+    return resolve_service_structured_dir(active_service().id)
 
 
 def _get_type_dirs() -> dict[str, Path]:
     structured_dir = _get_structured_dir()
-    return {
+    type_dirs: dict[str, Path] = {
         "cmg": structured_dir,
-        "med": structured_dir / "med",
-        "csm": structured_dir / "csm",
     }
+    for sub in ("med", "csm"):
+        svc_subdir = structured_dir / sub
+        # Prefer service-aware subdir; fall back to legacy for partially-migrated data
+        if svc_subdir.exists():
+            type_dirs[sub] = svc_subdir
+        else:
+            type_dirs[sub] = CMG_STRUCTURED_DIR / sub
+    return type_dirs
 
 
 _guideline_summaries_cache: list[dict] | None = None
@@ -57,6 +63,7 @@ def invalidate_guideline_cache() -> None:
 def _summary_from_item(item: dict, source_type: str) -> dict:
     return GuidelineSummary(
         id=item["id"],
+        guideline_id=item.get("guideline_id", ""),
         cmg_number=item.get("cmg_number", ""),
         title=item.get("title", ""),
         section=item.get("section", "Other"),
@@ -149,6 +156,7 @@ def get_guideline(guideline_id: str, skill_level: str | None = None) -> dict:
 
     detail = GuidelineDetail(
         id=data["id"],
+        guideline_id=data.get("guideline_id", ""),
         cmg_number=data.get("cmg_number", ""),
         title=data.get("title", ""),
         section=data.get("section", "Other"),

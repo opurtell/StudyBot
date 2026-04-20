@@ -6,6 +6,8 @@ import { useSettings } from "../hooks/useSettings";
 import Card from "../components/Card";
 import AdaptiveText from "../components/AdaptiveText";
 import PageStateNotice from "../components/PageStateNotice";
+import { ServiceChip } from "../components/ServiceChip";
+import { useService } from "../hooks/useService";
 import type { GuidelineSummary, GuidelineDetail } from "../types/api";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
@@ -47,8 +49,20 @@ const TYPE_TAG_COLOUR: Record<string, string> = {
 export default function Guidelines() {
   const navigate = useNavigate();
   const { config } = useSettings();
+  const { activeService } = useService();
+
+  // Determine if the user's effective qualifications include ICP
+  const baseQual = config?.base_qualification ?? "AP";
+  const endorsements = config?.endorsements ?? [];
+  const hasICP = useMemo(() => {
+    if (!activeService) return baseQual === "ICP" || endorsements.includes("ICP");
+    const base = activeService.qualifications.bases.find((b) => b.id === baseQual);
+    const impliesICP = base?.implies?.includes("ICP") ?? false;
+    return baseQual === "ICP" || impliesICP || endorsements.includes("ICP");
+  }, [activeService, baseQual, endorsements]);
+
   const { data: guidelines, loading, error, refetch } = useApi<GuidelineSummary[]>(
-    config?.skill_level === "AP" ? "/guidelines?skill_level=AP" : "/guidelines"
+    hasICP ? "/guidelines" : "/guidelines?skill_level=AP"
   );
   const backendStatus = useBackendStatus();
   const { restart } = useBackendStatusActions();
@@ -61,9 +75,9 @@ export default function Guidelines() {
 
   const { data: detail } = useApi<GuidelineDetail>(
     selectedId
-      ? config?.skill_level === "AP"
-        ? `/guidelines/${selectedId}?skill_level=AP`
-        : `/guidelines/${selectedId}`
+      ? hasICP
+        ? `/guidelines/${selectedId}`
+        : `/guidelines/${selectedId}?skill_level=AP`
       : ""
   );
   const errorCopy = getErrorStateCopy(error, backendStatus, "guidelines");
@@ -81,14 +95,13 @@ export default function Guidelines() {
   const filtered = useMemo(() => {
     if (!guidelines) return [];
     return guidelines.filter((g) => {
-      // Filter by skill level if user is AP
-      if (config?.skill_level === "AP" && g.is_icp_only) return false;
-      
+      if (!hasICP && g.is_icp_only) return false;
+
       if (selectedType !== "all" && g.source_type !== selectedType) return false;
       if (selectedSection !== "all" && g.section !== selectedSection) return false;
       return true;
     });
-  }, [guidelines, selectedType, selectedSection, config?.skill_level]);
+  }, [guidelines, selectedType, selectedSection, hasICP]);
 
   const sections = useMemo(() => {
     const present = new Set(filtered.map((g) => g.section));
@@ -128,6 +141,9 @@ export default function Guidelines() {
   return (
     <div>
       <div className="mb-8">
+        <div className="mb-2">
+          <ServiceChip />
+        </div>
         <span className="font-label text-label-sm text-on-surface-variant">
           Clinical Reference
         </span>

@@ -13,6 +13,7 @@ import PageStateNotice from "../components/PageStateNotice";
 import { getErrorStateCopy } from "../lib/loadingState";
 import { resolveTopic } from "../utils/resolveTopic";
 import { useSettings } from "../hooks/useSettings";
+import { useService } from "../hooks/useService";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function Dashboard() {
   const backendStatus = useBackendStatus();
   const { restart } = useBackendStatusActions();
   const { clearMastery } = useSettings();
+  const { activeService } = useService();
   const [showClearMastery, setShowClearMastery] = useState(false);
   const hasDashboardData = categories.length > 0 || Boolean(entries?.length);
   const dashboardError = error ?? historyError;
@@ -60,10 +62,11 @@ export default function Dashboard() {
   }
 
   if (!loading && !dashboardError && !hasDashboardData) {
+    const serviceName = activeService?.display_name ?? "this service";
     return (
       <PageStateNotice
         title="No progress yet"
-        message="Your dashboard will populate after you complete quiz sessions and record results."
+        message={`No quiz data for ${serviceName} yet. Start a quiz to begin tracking your progress.`}
         actionLabel="Start Session"
         onAction={() => navigate("/quiz")}
       />

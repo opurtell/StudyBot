@@ -1,0 +1,85 @@
+{
+  "id": "CMG_20_Eye_Emergencies",
+  "cmg_number": "20",
+  "title": "Eye Emergencies",
+  "version_date": null,
+  "section": "Trauma",
+  "content_markdown": "#### General Care\n- Avoid any stimulus that may increase intraocular pressure.\n- Posture supine with 30\\xb0 head elevation (if other injuries allow).\n- Administer antiemetic early \n- Ondansetron is preferred due to reduced risk of extrapyramidal side effects.\n\n- Provide adequate analgesia.\n- Avoid over‐infusion of IV fluids.\n- Caution in oral medication administration: Avoid oral intake if possible.\n#### Trauma\n- Assume that all eye trauma has a ruptured globe until proven otherwise.\n- Protect the eye from any pressure.\n- Control haemorrhage with pressure around the eye and eyelids, but not on the eyeball itself. - Cover either the injured eye alone, or both eyes, based on patient presentation and acceptance. - Do not remove penetrating foreign bodies \n- Protect with a raised shield (e.g. plastic cup taped over the eye).\n- If the eyeball is extruded \n- Do not push it back into the socket\n- Support with a saline moistened dressing taped in place. \n#### Chemical Burns\n- Irrigate immediately with copious quantities of water or saline (preferred) for at least thirty minutes \n- The eyelids must be pulled apart to ensure the fluid washes completely over the eye \n- Consider everting the eyelid for better access\n- Ask patient to look in all directions during irrigation to wash entire surface of eye. \n- **Do not delay transport**\n- Continue irrigation throughout transport\n- Irrigation until review by a doctor is preferred.\n- Remove contact lenses as soon as possible.\n- Remove particulate matter from eye, but do not delay irrigation to do so.\n#### Flash Burns\n- Flushing eyes with cool water or use of an ice pack may help with pain.\n- If photophobic: \n- Dressing or covering the eyes may help.\n\n#### Foreign Bodies in Cornea\n- Do not make attempts to lift/scrape debris.\n- Protect the eye from any pressure.",
+  "is_icp_only": false,
+  "dose_lookup": {
+    "Ondansetron": [
+      {
+        "text": "Ondansetron may be given in exceptional circumstances, but is not recommended (category B1). ",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "##### Type\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n4mg in 2ml – plastic or glass ampoule \n 4mg – orally disintegrating tablet (ODT) \n\n##### Actions\n\n- Potent, highly specific and selective serotonin 5-HT receptor antagonist. \n\n- Precise mode of action in control of nausea and vomiting is not known. Likely to have actions peripherally and in the central nervous system.\n\n- Maximum effect is approximately 10 minutes following IV administration. \n\n- Hepatic metabolism.\n\n#### Uses\nFor the prevention or treatment of nausea and vomiting\n\n#### Adverse Effects\n\n- Headache\n\n- Flushing of skin\n\n- Occasional reaction at the site of IV injection\n\n- Drowsiness\n\n- Anxiety and agitation\n\n- Transient visual disturbances\n\n#### Contraindications\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Use only for hyperemesis\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- IV: 8mg slowly over 2 minutes \n- May be administered IM if necessary\n- Single dose only.\n\n- ODT: 8mg sublingually \n- Single dose only.\n##### Paediatric\n- IV: 0.1mg/kg (max. 4mg) \n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT: \n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.1",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "8",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-ondansetron-zofran",
+        "qualifications_required": [
+          "AP"
+        ]
+      }
+    ]
+  },
+  "flowchart": null,
+  "checksum": "908383088d043f19b3360e52deca2050f51e66ec3720f82d5742788baf56280b",
+  "extraction_metadata": {
+    "timestamp": "2026-04-05T12:20:27.736526+00:00",
+    "source_type": "cmg",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "service": "actas",
+  "guideline_id": "CMG_20",
+  "extra": {
+    "cmg_number": "20"
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

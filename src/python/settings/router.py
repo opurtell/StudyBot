@@ -1,23 +1,25 @@
 from __future__ import annotations
 
+import importlib
 import json
 import shutil
-import subprocess
 import threading
 from pathlib import Path
 
 import chromadb
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from llm.factory import load_config
 from llm.models import load_model_registry, save_model_registry
 from guidelines.router import invalidate_guideline_cache
 from medication.router import invalidate_medication_cache
-from pipeline.cmg.refresh import load_refresh_status, start_refresh_in_background
+from pipeline.actas.refresh import load_refresh_status, start_refresh_in_background
 from paths import CHROMA_DB_DIR, SETTINGS_PATH as _SETTINGS_PATH
 from paths import resolve_cmg_structured_dir
 from seed import get_seed_status as _get_seed_status
+from services.active import active_service
 
 router = APIRouter(prefix="/settings", tags=["settings"])
 _settings_cache: dict | None = None
@@ -32,18 +34,10 @@ def _invalidate_read_caches() -> None:
     invalidate_medication_cache()
 
 
-def _run_pipeline_ingest_in_background() -> None:
+def _run_pipeline_ingest_in_background(adapter_module_path: str) -> None:
     try:
-        subprocess.run(
-            ["python3", "-m", "pipeline.run", "ingest"],
-            cwd=str(Path(__file__).resolve().parent.parent),
-            check=False,
-        )
-        subprocess.run(
-            ["python3", "-m", "pipeline.personal_docs.run", "ingest"],
-            cwd=str(Path(__file__).resolve().parent.parent),
-            check=False,
-        )
+        adapter = importlib.import_module(adapter_module_path)
+        adapter.run_pipeline()
     finally:
         _invalidate_read_caches()
 
@@ -74,7 +68,9 @@ class SaveSettingsRequest(BaseModel):
     active_provider: str
     quiz_model: str
     clean_model: str
-    skill_level: str = "AP"
+    vision_model: str = ""
+    base_qualification: str = "AP"
+    endorsements: list[str] = []
 
 
 class ModelTier(BaseModel):
@@ -145,10 +141,23 @@ def save_models(req: SaveModelsRequest) -> dict:
     return {"status": "ok"}
 
 
-@router.post("/pipeline/rerun")
-def rerun_pipeline() -> dict:
+@router.post("/pipeline/rerun", response_model=None)
+def rerun_pipeline() -> dict | JSONResponse:
+    service = active_service()
+    try:
+        adapter = importlib.import_module(service.adapter)
+    except ImportError:
+        return JSONResponse(status_code=409, content={"error": "adapter not ready"})
+
+    if not hasattr(adapter, "run_pipeline"):
+        return JSONResponse(status_code=409, content={"error": "adapter not ready"})
+
     _invalidate_read_caches()
-    thread = threading.Thread(target=_run_pipeline_ingest_in_background, daemon=True)
+    thread = threading.Thread(
+        target=_run_pipeline_ingest_in_background,
+        args=(service.adapter,),
+        daemon=True,
+    )
     thread.start()
     return {"status": "started"}
 
@@ -180,7 +189,7 @@ def get_cmg_manifest() -> dict:
 def _run_cmg_rebuild_in_background() -> None:
     global _rebuild_status
     try:
-        from pipeline.cmg.chunker import chunk_and_ingest
+        from pipeline.actas.chunker import chunk_and_ingest
         chunk_and_ingest(structured_dir=str(resolve_cmg_structured_dir()))
         with _rebuild_lock:
             _rebuild_status = {

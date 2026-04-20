@@ -11,7 +11,7 @@ from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
 )
 
-COLLECTION_NAME = "paramedic_notes"
+DEFAULT_COLLECTION_NAME = "paramedic_notes"
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 100
 
@@ -48,7 +48,7 @@ def _sanitise_id(source_file: str) -> str:
     return source_file.replace("/", "__").replace(" ", "_")
 
 
-def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
+def chunk_and_ingest(md_path: Path, db_path: Path, collection_name: str | None = None) -> dict:
     content = md_path.read_text(encoding="utf-8")
     meta, body = _parse_front_matter(content)
 
@@ -56,6 +56,15 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
     source_type = meta["source_type"]
     categories = meta.get("categories", [])
     last_modified = meta.get("last_modified", "")
+    service = meta.get("service", "")
+    scope = meta.get("scope", "")
+
+    # Derive collection name: explicit override > service from front-matter > legacy default
+    if collection_name is None:
+        if service:
+            collection_name = f"personal_{service}"
+        else:
+            collection_name = DEFAULT_COLLECTION_NAME
 
     md_docs = _md_header_splitter.split_text(body)
     if not md_docs:
@@ -83,7 +92,7 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
 
     client = chromadb.PersistentClient(path=str(db_path))
     collection = client.get_or_create_collection(
-        name=COLLECTION_NAME,
+        name=collection_name,
         metadata={"hnsw:space": "cosine"},
     )
 
@@ -111,6 +120,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
                     "last_modified": last_modified,
                     "header_context": header_contexts[i],
                     "visibility": "icp",
+                    "service": service,
+                    "scope": scope,
                 }
             )
             stripped = strip_icp_content(chunk_text)
@@ -128,6 +139,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
                         "last_modified": last_modified,
                         "header_context": header_contexts[i],
                         "visibility": "ap",
+                        "service": service,
+                        "scope": scope,
                     }
                 )
         else:
@@ -144,6 +157,8 @@ def chunk_and_ingest(md_path: Path, db_path: Path) -> dict:
                     "last_modified": last_modified,
                     "header_context": header_contexts[i],
                     "visibility": "both",
+                    "service": service,
+                    "scope": scope,
                 }
             )
 

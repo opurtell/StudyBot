@@ -1,0 +1,141 @@
+{
+  "medication": "Ondansetron",
+  "service": "actas",
+  "dose_entries": [
+    {
+      "guideline_id": "CMG_20",
+      "cmg_number": "20",
+      "source_file": "CMG_20_Eye_Emergencies.json",
+      "source_title": "Eye Emergencies",
+      "text": "Ondansetron may be given in exceptional circumstances, but is not recommended (category B1). ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_20",
+      "cmg_number": "20",
+      "source_file": "CMG_20_Eye_Emergencies.json",
+      "source_title": "Eye Emergencies",
+      "text": "##### Type\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n4mg in 2ml – plastic or glass ampoule \n 4mg – orally disintegrating tablet (ODT) \n\n##### Actions\n\n- Potent, highly specific and selective serotonin 5-HT receptor antagonist. \n\n- Precise mode of action in control of nausea and vomiting is not known. Likely to have actions peripherally and in the central nervous system.\n\n- Maximum effect is approximately 10 minutes following IV administration. \n\n- Hepatic metabolism.\n\n#### Uses\nFor the prevention or treatment of nausea and vomiting\n\n#### Adverse Effects\n\n- Headache\n\n- Flushing of skin\n\n- Occasional reaction at the site of IV injection\n\n- Drowsiness\n\n- Anxiety and agitation\n\n- Transient visual disturbances\n\n#### Contraindications\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Use only for hyperemesis\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- IV: 8mg slowly over 2 minutes \n- May be administered IM if necessary\n- Single dose only.\n\n- ODT: 8mg sublingually \n- Single dose only.\n##### Paediatric\n- IV: 0.1mg/kg (max. 4mg) \n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT: \n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "8",
+          "unit": "mg"
+        },
+        {
+          "amount": "8",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.1",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "8",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_41",
+      "cmg_number": "41",
+      "source_file": "CMG_41_Nausea_and_Vomiting.json",
+      "source_title": "Nausea and Vomiting",
+      "text": "Ondansetron may be given in exceptional circumstances, but is not recommended (category B1). ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "CMG_41",
+      "cmg_number": "41",
+      "source_file": "CMG_41_Nausea_and_Vomiting.json",
+      "source_title": "Nausea and Vomiting",
+      "text": "##### Type\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n4mg in 2ml – plastic or glass ampoule \n 4mg – orally disintegrating tablet (ODT) \n\n##### Actions\n\n- Potent, highly specific and selective serotonin 5-HT receptor antagonist. \n\n- Precise mode of action in control of nausea and vomiting is not known. Likely to have actions peripherally and in the central nervous system.\n\n- Maximum effect is approximately 10 minutes following IV administration. \n\n- Hepatic metabolism.\n\n#### Uses\nFor the prevention or treatment of nausea and vomiting\n\n#### Adverse Effects\n\n- Headache\n\n- Flushing of skin\n\n- Occasional reaction at the site of IV injection\n\n- Drowsiness\n\n- Anxiety and agitation\n\n- Transient visual disturbances\n\n#### Contraindications\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Use only for hyperemesis\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- IV: 8mg slowly over 2 minutes \n- May be administered IM if necessary\n- Single dose only.\n\n- ODT: 8mg sublingually \n- Single dose only.\n##### Paediatric\n- IV: 0.1mg/kg (max. 4mg) \n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT: \n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
+      "dose_values": [
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "8",
+          "unit": "mg"
+        },
+        {
+          "amount": "8",
+          "unit": "mg"
+        },
+        {
+          "amount": "0.1",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "2",
+          "unit": "mg"
+        },
+        {
+          "amount": "4",
+          "unit": "mg"
+        },
+        {
+          "amount": "8",
+          "unit": "mg"
+        }
+      ],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    }
+  ],
+  "total_entries": 4,
+  "sources": [
+    "CMG_20",
+    "CMG_41"
+  ]
+}

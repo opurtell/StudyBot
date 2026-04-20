@@ -7,17 +7,17 @@ import os
 import tempfile
 import pytest
 
-from pipeline.cmg.extractor import (
+from pipeline.actas.extractor import (
     extract_navigation,
     extract_route_mappings,
     _classify_section,
 )
-from pipeline.cmg.template_parser import (
+from pipeline.actas.template_parser import (
     parse_template_instructions,
     html_to_markdown,
     _decode_unicode_escapes,
 )
-from pipeline.cmg.dose_tables import _is_dose_related, _group_dose_texts
+from pipeline.actas.dose_tables import _is_dose_related, _group_dose_texts
 
 
 SAMPLE_MAIN_BUNDLE = """
@@ -221,7 +221,7 @@ class TestSectionClassification:
 
 class TestTitleToPathMatching:
     def test_title_to_path_strips_special_chars(self):
-        from pipeline.cmg.content_extractor import _title_to_path
+        from pipeline.actas.content_extractor import _title_to_path
 
         assert _title_to_path("General Care") == "general-care"
         assert (
@@ -230,7 +230,7 @@ class TestTitleToPathMatching:
         )
 
     def test_find_route_for_title_fuzzy_match(self, tmp_path):
-        from pipeline.cmg.content_extractor import _find_route_for_title
+        from pipeline.actas.content_extractor import _find_route_for_title
 
         routes = {
             "cardiac-arrest-paediatric": {"path": "cardiac-arrest-paediatric"},
@@ -251,7 +251,7 @@ class TestTitleToPathMatching:
 
 class TestBoilerplateStripping:
     def test_strip_more_information(self):
-        from pipeline.cmg.template_parser import strip_boilerplate
+        from pipeline.actas.template_parser import strip_boilerplate
 
         html = "<span>More information<fa-icon /></span><section><p>Real content</p></section>"
         result = strip_boilerplate(html)
@@ -259,7 +259,7 @@ class TestBoilerplateStripping:
         assert "Real content" in result
 
     def test_strip_my_notes(self):
-        from pipeline.cmg.template_parser import strip_boilerplate
+        from pipeline.actas.template_parser import strip_boilerplate
 
         html = "<section><h4>My Notes</h4><div></div></section><p>Clinical text</p>"
         result = strip_boilerplate(html)
@@ -267,7 +267,7 @@ class TestBoilerplateStripping:
         assert "Clinical text" in result
 
     def test_strip_tap_to_zoom(self):
-        from pipeline.cmg.template_parser import strip_boilerplate
+        from pipeline.actas.template_parser import strip_boilerplate
 
         html = "<div><span>Tap to zoom</span></div><p>Important</p>"
         result = strip_boilerplate(html)
@@ -275,7 +275,7 @@ class TestBoilerplateStripping:
         assert "Important" in result
 
     def test_strip_open_print_version(self):
-        from pipeline.cmg.template_parser import strip_boilerplate
+        from pipeline.actas.template_parser import strip_boilerplate
 
         html = "<ion-button>Open print version</ion-button><p>Content</p>"
         result = strip_boilerplate(html)
@@ -283,7 +283,7 @@ class TestBoilerplateStripping:
         assert "Content" in result
 
     def test_strip_ui_components(self):
-        from pipeline.cmg.template_parser import strip_boilerplate
+        from pipeline.actas.template_parser import strip_boilerplate
 
         html = "<content-header /><ion-content><section-menu></section-menu><div><p>Real clinical text</p></div></ion-content>"
         result = strip_boilerplate(html)
@@ -293,7 +293,7 @@ class TestBoilerplateStripping:
         assert "Real clinical text" in result
 
     def test_strip_all_boilerplate_preserves_clinical(self):
-        from pipeline.cmg.template_parser import strip_boilerplate
+        from pipeline.actas.template_parser import strip_boilerplate
 
         html = (
             "<content-header />"
@@ -310,7 +310,7 @@ class TestBoilerplateStripping:
         assert "My Notes" not in result
 
     def test_strip_boilerplate_markdown(self):
-        from pipeline.cmg.template_parser import strip_boilerplate_md
+        from pipeline.actas.template_parser import strip_boilerplate_md
 
         md = "More information\n\n#### My Notes\n\nTap to zoom\n\nOpen print version\n\n## Indications\n- Chest pain"
         result = strip_boilerplate_md(md)
@@ -324,7 +324,7 @@ class TestBoilerplateStripping:
 
 class TestSelectorExtractor:
     def test_extract_selectors_from_bundle(self, tmp_path):
-        from pipeline.cmg.selector_extractor import extract_selector_templates
+        from pipeline.actas.selector_extractor import extract_selector_templates
 
         bundle = tmp_path / "7_common.test123.js"
         bundle.write_text(
@@ -343,7 +343,7 @@ class TestSelectorExtractor:
         assert "Treat all patients with dignity." in results[0]["html"]
 
     def test_extract_multiple_selectors(self, tmp_path):
-        from pipeline.cmg.selector_extractor import extract_selector_templates
+        from pipeline.actas.selector_extractor import extract_selector_templates
 
         bundle = tmp_path / "7_common.test123.js"
         bundle.write_text(
@@ -360,14 +360,14 @@ class TestSelectorExtractor:
         assert "app-shock" in selectors
 
     def test_selector_to_route_path(self):
-        from pipeline.cmg.selector_extractor import selector_to_route
+        from pipeline.actas.selector_extractor import selector_to_route
 
         assert selector_to_route("app-general-care") == "general-care"
         assert selector_to_route("app-cardiac-arrest-adult") == "cardiac-arrest-adult"
         assert selector_to_route("app-cresst-screening-tool") == "cresst-screening-tool"
 
     def test_extract_selectors_missing_file(self, tmp_path):
-        from pipeline.cmg.selector_extractor import extract_selector_templates
+        from pipeline.actas.selector_extractor import extract_selector_templates
 
         results = extract_selector_templates(str(tmp_path / "nonexistent.js"))
         assert results == []
@@ -377,7 +377,7 @@ class TestSelectorExtractor:
         if not os.path.exists(inv_dir):
             pytest.skip("No investigation data")
 
-        from pipeline.cmg.selector_extractor import extract_selector_templates
+        from pipeline.actas.selector_extractor import extract_selector_templates
         import glob
 
         common_files = glob.glob(os.path.join(inv_dir, "7_common.*.js"))
@@ -398,7 +398,7 @@ class TestSelectorExtractor:
 
 class TestContentExtractorIntegration:
     def test_extract_content_uses_selector_fallback(self, tmp_path):
-        from pipeline.cmg.content_extractor import extract_content
+        from pipeline.actas.content_extractor import extract_content
 
         inv_dir = "data/cmgs/investigation/"
         if not os.path.exists(inv_dir):
@@ -422,9 +422,9 @@ class TestContentExtractorIntegration:
         assert "Patient Centred Care" in md
 
     def test_merge_includes_previously_unmatched_cmgs(self, tmp_path):
-        from pipeline.cmg.content_extractor import merge_navigation_and_content
-        from pipeline.cmg.extractor import extract_navigation
-        from pipeline.cmg.content_extractor import extract_content
+        from pipeline.actas.content_extractor import merge_navigation_and_content
+        from pipeline.actas.extractor import extract_navigation
+        from pipeline.actas.content_extractor import extract_content
 
         inv_dir = "data/cmgs/investigation/"
         if not os.path.exists(inv_dir):
@@ -458,11 +458,11 @@ class TestContentExtractorIntegration:
         if not os.path.exists(inv_dir):
             pytest.skip("No investigation data")
 
-        from pipeline.cmg.content_extractor import (
+        from pipeline.actas.content_extractor import (
             merge_navigation_and_content,
             extract_content,
         )
-        from pipeline.cmg.extractor import extract_navigation
+        from pipeline.actas.extractor import extract_navigation
 
         nav_path = str(tmp_path / "nav.json")
         content_path = str(tmp_path / "content.json")
@@ -511,14 +511,14 @@ class TestDoseDetection:
 
 class TestMEDCSMExtraction:
     def test_med_section_regex(self):
-        from pipeline.cmg.extractor import _MED_SECTION_RE
+        from pipeline.actas.extractor import _MED_SECTION_RE
 
         assert _MED_SECTION_RE.match("MED01")
         assert _MED_SECTION_RE.match("MED35")
         assert not _MED_SECTION_RE.match("CMG 1")
 
     def test_csm_section_regex(self):
-        from pipeline.cmg.extractor import _CSM_SECTION_RE
+        from pipeline.actas.extractor import _CSM_SECTION_RE
 
         assert _CSM_SECTION_RE.match("CSM.A01")
         assert _CSM_SECTION_RE.match("CSM.B99")
@@ -528,7 +528,7 @@ class TestMEDCSMExtraction:
 
 class TestDoseSegmentation:
     def test_dose_groups_include_source_file(self, tmp_path):
-        from pipeline.cmg.dose_tables import extract_dose_tables_segmented
+        from pipeline.actas.dose_tables import extract_dose_tables_segmented
 
         inv_dir = tmp_path / "inv"
         inv_dir.mkdir()
@@ -556,7 +556,7 @@ class TestDoseSegmentation:
         if not os.path.exists(inv_dir):
             pytest.skip("No investigation data")
 
-        from pipeline.cmg.dose_tables import extract_dose_tables_segmented
+        from pipeline.actas.dose_tables import extract_dose_tables_segmented
 
         output = str(tmp_path / "dose.json")
         extract_dose_tables_segmented(investigation_dir=inv_dir, output_path=output)
@@ -602,7 +602,7 @@ class TestIntegrationFromBundles:
         assert len(routes) >= 100
 
     def test_content_extraction_produces_output(self, tmp_path):
-        from pipeline.cmg.content_extractor import extract_content
+        from pipeline.actas.content_extractor import extract_content
 
         output = str(tmp_path / "content.json")
         extract_content(
@@ -615,7 +615,7 @@ class TestIntegrationFromBundles:
         assert len(data) > 0
 
     def test_dose_tables_find_medicines(self, tmp_path):
-        from pipeline.cmg.dose_tables import extract_dose_tables
+        from pipeline.actas.dose_tables import extract_dose_tables
 
         output = str(tmp_path / "dose.json")
         extract_dose_tables(

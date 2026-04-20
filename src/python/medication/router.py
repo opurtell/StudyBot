@@ -7,15 +7,32 @@ from pathlib import Path
 from fastapi import APIRouter
 
 from guidelines.markdown import normalise_markdown_payload, normalise_markdown_syntax
-from paths import CMG_STRUCTURED_DIR
+from paths import resolve_service_structured_dir, CMG_STRUCTURED_DIR
+from services.active import active_service
 
 from .models import MedicationDose
 
 router = APIRouter(prefix="/medication", tags=["medication"])
 
-MED_DIR = CMG_STRUCTURED_DIR / "med"
-MEDICATION_INDEX_PATH = CMG_STRUCTURED_DIR / "medications-index.json"
 _medication_cache: list[dict] | None = None
+
+
+def _resolve_med_dir() -> Path:
+    """Resolve the med subdirectory, falling back to legacy if not yet migrated."""
+    svc_dir = resolve_service_structured_dir(active_service().id)
+    med_dir = svc_dir / "med"
+    if med_dir.exists():
+        return med_dir
+    return CMG_STRUCTURED_DIR / "med"
+
+
+def _resolve_medication_index_path() -> Path:
+    """Resolve the medications-index.json, falling back to legacy if not yet migrated."""
+    svc_dir = resolve_service_structured_dir(active_service().id)
+    index_path = svc_dir / "medications-index.json"
+    if index_path.exists():
+        return index_path
+    return CMG_STRUCTURED_DIR / "medications-index.json"
 
 
 def _extract_section(content: str, heading: str) -> str:
@@ -49,11 +66,12 @@ def _extract_dose_section(content: str) -> str:
 
 
 def load_medications() -> list[MedicationDose]:
-    if not MED_DIR.exists():
+    med_dir = _resolve_med_dir()
+    if not med_dir.exists():
         return []
 
     results: list[MedicationDose] = []
-    for fpath in sorted(MED_DIR.glob("*.json")):
+    for fpath in sorted(med_dir.glob("*.json")):
         try:
             with open(fpath, encoding="utf-8") as f:
                 data = json.load(f)
@@ -115,9 +133,10 @@ def _load_medication_payload() -> list[dict]:
     if _medication_cache is not None:
         return _medication_cache
 
-    if MEDICATION_INDEX_PATH.exists():
+    medication_index_path = _resolve_medication_index_path()
+    if medication_index_path.exists():
         try:
-            with open(MEDICATION_INDEX_PATH, encoding="utf-8") as f:
+            with open(medication_index_path, encoding="utf-8") as f:
                 payload = json.load(f)
             items = payload.get("items", payload)
             if isinstance(items, list):
