@@ -234,3 +234,14 @@ def get_retriever() -> Retriever:
 
 def warm_retriever() -> Retriever:
     return get_retriever()
+
+
+def reset_retriever() -> None:
+    """Clear the shared retriever singleton.
+
+    Call this when active_service changes so the next get_retriever()
+    creates a fresh Retriever scoped to the new service.
+    """
+    global _shared_retriever
+    with _retriever_lock:
+        _shared_retriever = None
