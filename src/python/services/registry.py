@@ -43,6 +43,11 @@ class Service:
     category_mapping_doc: str
     source_hierarchy: tuple[tuple[str, float], ...] = SOURCE_HIERARCHY_DEFAULTS
 
+    @property
+    def short_name(self) -> str:
+        """Short uppercase identifier for citations (e.g. 'ACTAS', 'AT')."""
+        return self.id.upper()
+
 
 REGISTRY: tuple[Service, ...] = (
     Service(

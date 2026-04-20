@@ -48,7 +48,7 @@ Respond with valid JSON only:
 {
   "question_text": "...",
   "question_type": "recall|definition|scenario|drug_dose",
-  "source_citation": "e.g. ACTAS CMG 14.1",
+  "source_citation": f"e.g. {svc.short_name} CMG 14.1",
   "category": "e.g. Cardiac",
   "source_index": 1
 }"""
