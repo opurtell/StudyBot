@@ -69,6 +69,18 @@ jobs:
       - run: npm ci
       - run: ${{ matrix.backend_cmd }}
       - run: ${{ matrix.verify_cmd }}
+      - name: Set version
+        shell: bash
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [[ -z "$VERSION" ]]; then
+            if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+              VERSION="${GITHUB_REF#refs/tags/}"
+            else
+              VERSION="$(date +%Y.%m.%d-%H%M)"
+            fi
+          fi
+          npm version "${VERSION#v}" --no-git-tag-version --allow-same-version
       - run: npx vite build && npx electron-builder ${{ matrix.eb_args }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

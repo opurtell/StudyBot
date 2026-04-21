@@ -414,7 +414,7 @@ Update `electron-builder.yml` `artifactName` if the default build should reflect
 new service. Currently:
 
 ```yaml
-artifactName: "StudyBot - ACTAS CMGs-${version}-${arch}.${ext}"
+artifactName: "StudyBot - CMGs-${version}-${arch}.${ext}"
 ```
 
 For a multi-service build, consider a generic name:

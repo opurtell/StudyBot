@@ -26,13 +26,13 @@ mac:
   identity: "-"
   entitlements: "build/entitlements.mac.plist"
   entitlementsInherit: "build/entitlements.mac.plist"
-  artifactName: "StudyBot - ACTAS CMGs-${version}-${arch}.${ext}"
+  artifactName: "StudyBot - CMGs-${version}-${arch}.${ext}"
   target:
     - target: dmg
 win:
   signingHashAlgorithms:
     - sha256
-  artifactName: "StudyBot - ACTAS CMGs-${version}-${arch}.${ext}"
+  artifactName: "StudyBot - CMGs-${version}-${arch}.${ext}"
   target:
     - target: nsis
 extraMetadata:
