@@ -17,6 +17,7 @@ import { ServiceProvider } from "./providers/ServiceProvider";
 import { BackgroundProcessProvider } from "./providers/BackgroundProcessProvider";
 import { ServiceSetupModal } from "./components/ServiceSetupModal";
 import { useService } from "./hooks/useService";
+import { useSettingsContext } from "./providers/SettingsProvider";
 
 function StandardLayout() {
   return (
@@ -58,8 +59,12 @@ export function AppRoutes() {
 }
 
 function ServiceSetupGate({ children }: { children: React.ReactNode }) {
-  const { activeService } = useService();
-  const showSetupModal = !activeService;
+  const { services, loading: servicesLoading } = useService();
+  const { config, loading: configLoading } = useSettingsContext();
+
+  // Wait for both config and services to be ready, then only show if no service has been chosen
+  const isReady = !configLoading && !servicesLoading && services.length > 0;
+  const showSetupModal = isReady && !config?.active_service;
 
   return (
     <>

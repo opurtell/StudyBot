@@ -9,7 +9,7 @@ interface ServiceSetupModalProps {
 }
 
 export function ServiceSetupModal({ open, onClose }: ServiceSetupModalProps) {
-  const { services, setActiveService, loading, error } = useService();
+  const { services, loading, error } = useService();
   const { save, config } = useSettingsContext();
 
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
@@ -38,21 +38,19 @@ export function ServiceSetupModal({ open, onClose }: ServiceSetupModalProps) {
   const canSave = selectedServiceId !== null && selectedBaseId !== null && !saving;
 
   const handleSave = useCallback(async () => {
-    if (!selectedServiceId || !selectedBaseId) return;
+    if (!selectedServiceId || !selectedBaseId || !config) return;
     setSaving(true);
     try {
-      await setActiveService(selectedServiceId);
-      if (config) {
-        await save({
-          ...config,
-          base_qualification: selectedBaseId,
-          endorsements: selectedEndorsementIds,
-        } as typeof config & { base_qualification: string; endorsements: string[] });
-      }
+      await save({
+        ...config,
+        active_service: selectedServiceId,
+        base_qualification: selectedBaseId,
+        endorsements: selectedEndorsementIds,
+      } as typeof config & { active_service: string; base_qualification: string; endorsements: string[] });
     } finally {
       setSaving(false);
     }
-  }, [selectedServiceId, selectedBaseId, selectedEndorsementIds, setActiveService, save, config]);
+  }, [selectedServiceId, selectedBaseId, selectedEndorsementIds, save, config]);
 
   const handleEndorsementToggle = useCallback((id: string) => {
     setSelectedEndorsementIds((prev) =>
