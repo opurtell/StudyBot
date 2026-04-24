@@ -4,13 +4,13 @@
   "title": "Patient Restraints",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- To secure agitated or combative patients to the stretcher.\n- The use of this procedure should be strictly limited to: \n- Patients in police custody, with the collaboration of a police officer.\n- Patients who are aggressive for organic reasons (e.g. closed head injury).\n- Psycho-stimulant abuse or mental health patients. Chemical restraint should be used first if it is safe to do so.\n\n#### Procedure\n\n- Posture patient in supine position.\n\n- Apply wrist restraints securing the Velcro tabs and attach to stretcher rails.\n\n- Apply the ankle restraints securing with Velcro tabs and attach firmly to stretcher rail.\n\n- All restrained patients require monitoring (SaO2, BP, ECG).\n\n- Monitor patient closely, checking distal perfusion of limbs and respiratory effort and need for further sedation.\n\n#### Contraindications\n- Do not position the patient prone.\n\n#### Complications\n- Vomiting leading to aspiration.\n- Hyperthermia and rhabdomyolysis of an inadequately sedated patient.",
+  "content_markdown": "#### Indications\n\n- To secure agitated or combative patients to the stretcher.\n- The use of this procedure should be strictly limited to: \n- Patients in police custody, with the collaboration of a police officer.\n- Patients who are aggressive for organic reasons (e.g. closed head injury).\n- Psycho-stimulant abuse or mental health patients. Chemical restraint should be used first if it is safe to do so.\n\n#### Procedure\n\n- Posture patient in supine position.\n\n- Apply wrist restraints securing the Velcro tabs and attach to stretcher rails.\n\n- Apply the ankle restraints securing with Velcro tabs and attach firmly to stretcher rail.\n\n- All restrained patients require monitoring (SaO2, BP, ECG).\n\n- Monitor patient closely, checking distal perfusion of limbs and respiratory effort and need for further sedation.\n\n#### Contraindications\n\n- Do not position the patient prone.\n\n#### Complications\n\n- Vomiting leading to aspiration.\n- Hyperthermia and rhabdomyolysis of an inadequately sedated patient.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "a04cd49703613bb357e499432f965909145f1ba6f26863a90857f75015a887d9",
+  "checksum": "959c75b4ed90beca00b9c44ca9be5dba45f6fc14d46b750163806c172ca48f71",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.910337+00:00",
+    "timestamp": "2026-04-24T03:17:43.639606+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

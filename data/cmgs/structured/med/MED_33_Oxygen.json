@@ -1,0 +1,18 @@
+{
+  "id": "MED_33_Oxygen",
+  "cmg_number": "33",
+  "title": "Oxygen",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nA naturally occurring gas \n\n##### Presentations\n\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\n\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\n\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\n\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n\n#### Conditions with specific oxygen requirement\n\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "c86f7b0085fa633240537d022159d033336d19a63771363c8235450ba85e2093",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.563279+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

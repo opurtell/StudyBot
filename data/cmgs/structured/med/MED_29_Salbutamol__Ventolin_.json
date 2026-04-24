@@ -1,0 +1,18 @@
+{
+  "id": "MED_29_Salbutamol__Ventolin_",
+  "cmg_number": "29",
+  "title": "Salbutamol (Ventolin)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nSynthetic \\u03b22 receptor stimulant [S4]\n\n##### Presentations\n\nPressurised metered dose inhaler (pMDI) – 100mcg per activation\n\n##### Actions\n\n- Bronchodilation\n\n- Relaxation of involuntary muscle\n\n- Moves K+ from extracellular to intracellular space\n\n#### Uses\n\n- Respiratory distress due to asthma or COPD\n\n- Emergency treatment of suspected hyperkalaemia \n\n#### Adverse Effects\n\n- Tachycardia\n\n- Tremors\n\n- Hypotension\n\n#### Contraindications\n\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### Mild to moderate respiratory distress\n\n**pMDI via spacer**\n\n##### Adult ≥6 years\n\n- 4-12 actuations \n- Repeat every 20-30 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric <6years\n\n- 2-6 actuations \n- Repeat every 20-30 minutes\n- 1 actuation to 4 breaths.\n\n#### Severe respiratory distress\n\n**pMDI (via spacer or with pMDI adaptor on BVM/CPAP) **\n\n##### Adult ≥6 years\n\n- 12 actuations \n- Repeat every 20 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric <6years\n\n- 6 actuations \n- Repeat every 20 minutes\n- 1 actuation to 4 breaths.\n\n#### Life threatening respiratory distress and hyperkalaemia\n\n**pMDI (with pMDT adaptor on BVM/CPAP)**\n\n##### Adult ≥6 years\n\n- 12 actuations \n- Repeat every 10 minutes\n- No repeat limit.\n\n##### Paediatric <6 years\n\n- 6 actuations \n- Repeat every 10 minutes\n- No repeat limit.\n\n#### Special Notes\n\n- The solution in the pMDI is separated. Please shake prior to every actuation.\\u2003",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "aff540ab7723288e4a849a1dcf0ac4abec5f4b76352b5642334c92e23abe13cd",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.565097+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

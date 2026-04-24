@@ -1,0 +1,18 @@
+{
+  "id": "MED_06_Calcium_Chloride",
+  "cmg_number": "06",
+  "title": "Calcium Chloride",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nElectrolyte – utilised in both electrical and mechanical actions of the myocardium [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n\n1g in 10ml – glass vial \n\n##### Actions\n\nOpposes the action of high serum potassium on the myocardium\n\nOnset: several minutes\n Duration: 30 – 90 minutes \n\n#### Uses\n\n- Emergency treatment of hyperkalaemia\n\n- Cardiac arrest secondary to hyperkalaemia (i.e., hyperkalaemia is thought to be the cause of the cardiac arrest)\n\n- Prolonged hypotension post-magnesium administration, if unresponsive to fluid \n\n#### Adverse Effects\n\n- Tissue necrosis if extravasation\n- Precipitates out in contact with bicarbonate\n- If fast pushed: \n\n- Bradycardia\n\n- Peripheral vasodilation\n\n- Hypotension\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Digoxin overdose\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Approved for administration in ACTAS setting\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting\n\n#### Doses\n\n##### Adult and Paediatric \n\n- **ICP:**** With cardiac output:** 10mg/kg (up to 1g) IV/IO \n- Over 2 minutes\n- Repeat once, if required.\n\n- **ICP:**** No cardiac output:** 10mg/kg (up to 1g) IV/IO \n- Over 30 – 60 seconds\n- Repeat once, if required.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "043cf649beefa7151463d53ab6d2f9699bb00a095789f24f621690a85fa1408e",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.547370+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

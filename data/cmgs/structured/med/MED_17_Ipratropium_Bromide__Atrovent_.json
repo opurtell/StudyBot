@@ -1,0 +1,18 @@
+{
+  "id": "MED_17_Ipratropium_Bromide__Atrovent_",
+  "cmg_number": "17",
+  "title": "Ipratropium Bromide (Atrovent)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nAnticholinergic bronchodilators [S4]\n\n##### Presentations\n\nPressurised metered dose inhaler (pMDI) – 21mcg per activation\n\n##### Actions\n\n- Bronchodilation\n\n- Blocks vagal reflexes which mediate bronchoconstriction\n\nOnset: 3 – 5 minutes \n Duration: 2 – 4 hours \n\n#### Uses\n\n- Severe respiratory distress due to asthma or COPD\n\n#### Adverse Effects\n\nRare with single use. Occasionally, urine retention.\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Precautions\n\nCare needed with use in patients with glaucoma\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### Severe to life threatening respiratory distress\n\n**pMDI via spacer**\n\n##### Adult ≥6yrs\n\n- 8 actuations \n- Repeat once after 20 minutes\n- 1 actuation to 4 breaths.\n\n##### Paediatric < 6yrs\n\n- 4 actuations \n- Repeat once after 20 minutes\n- 1 actuation to 4 breaths.\\u2003",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "5d5a70fe85f2dfc024581ffba5df3c9430e12cd9223638bc373ec84e50c4f60a",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.553407+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -4,7 +4,7 @@
   "title": "Oral / Sublingual Drug Administration",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patients requiring administration of a drug via the oral or sublingual route (e.g. Aspirin, Glucose Gel, Glyceryl Trinitrate (tablet or spray) or Panadol).\n\n#### Procedure\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time- Route##### Aspirin\n- Chewed or may be dissolved in a small amount of water and swallowed.\n##### Glucose Gel\n- Administer small amounts to the patient if unable to self administer.\n- Regularly check to ensure patient is swallowing gel completely.##### Glyceryl Trinitrate\n- Tablet should be placed under the tongue and allowed to dissolve. Inform the patient not to chew or swallow tablet.\n- Spray should be primed by pressing nozzle 5 times prior to first use and once for subsequent uses (directed away from any person/animal). Hold spray upright and close to the mouth and spray sublingually. Instruct patient to close mouth and not inhale or swallow. Following use, wipe pumpspray with alcohol wipe. Can be used for multiple patients unless significantly contaminated.##### Ondansetron\n- Oral disintegrating tablet (ODT) dissolved sublingually.\n##### Panadol, Ibuprofen (oral only)\n- PO: Drawn up in a syringe and administered orally.\n- PO: Tablet swallowed.\n- IV: \n- ≤ 50kg = 1g (100mls) over 5 minutes.\n- ≥50kg = 15mg/kg over 15 minutes (via burette).\n#### Specific Notes\n- Always ensure medication preadministration checks are completed prior to any drug administration.",
+  "content_markdown": "#### Indications\n\n- Patients requiring administration of a drug via the oral or sublingual route (e.g. Aspirin, Glucose Gel, Glyceryl Trinitrate (tablet or spray) or Panadol).\n\n#### Procedure\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time- Route\n##### Aspirin\n\n- Chewed or may be dissolved in a small amount of water and swallowed.\n\n##### Glucose Gel\n\n- Administer small amounts to the patient if unable to self administer.\n- Regularly check to ensure patient is swallowing gel completely.\n##### Glyceryl Trinitrate\n\n- Tablet should be placed under the tongue and allowed to dissolve. Inform the patient not to chew or swallow tablet.\n- Spray should be primed by pressing nozzle 5 times prior to first use and once for subsequent uses (directed away from any person/animal). Hold spray upright and close to the mouth and spray sublingually. Instruct patient to close mouth and not inhale or swallow. Following use, wipe pumpspray with alcohol wipe. Can be used for multiple patients unless significantly contaminated.\n##### Ondansetron\n\n- Oral disintegrating tablet (ODT) dissolved sublingually.\n\n##### Panadol, Ibuprofen (oral only)\n\n- PO: Drawn up in a syringe and administered orally.\n- PO: Tablet swallowed.\n- IV: \n- ≤ 50kg = 1g (100mls) over 5 minutes.\n- ≥50kg = 15mg/kg over 15 minutes (via burette).\n\n#### Specific Notes\n\n- Always ensure medication preadministration checks are completed prior to any drug administration.",
   "is_icp_only": false,
   "dose_lookup": {
     "Glucose": [
@@ -434,9 +434,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "6fea8346c5b009a39e43591f82421857073ba7d6d8d53739561e19276fcd5df7",
+  "checksum": "20d4657fb0542fed8bae56d337ca50470d2f570b279b89c13c5806c5860498b1",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.888755+00:00",
+    "timestamp": "2026-04-24T03:17:43.628032+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

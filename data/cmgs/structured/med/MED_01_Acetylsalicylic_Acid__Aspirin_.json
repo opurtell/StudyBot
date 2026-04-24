@@ -1,0 +1,18 @@
+{
+  "id": "MED_01_Acetylsalicylic_Acid__Aspirin_",
+  "cmg_number": "01",
+  "title": "Acetylsalicylic Acid (Aspirin)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nNon – steroidal anti-inflammatory drug [S2]\n\n##### Presentation\n\n300mg tablet\n\n##### Actions\n\n- Inhibits platelet function (for up to 7 days)\n\n- Suppresses inflammation, reduces fever, relieves pain (rapidly absorbed from the stomach and small bowel)\n\n#### Uses\n\nSuspected myocardial ischaemia\n\n#### Adverse Effects\n\n- Allergic reactions\n\n- Aggravation of bleeding tendencies\n\n- Gastric irritation (unlikely after single dose)\n\n#### Contraindications\n\n- Known or suspected allergy to salicylates\n\n- Known or suspected active bleeding\n\n- Known bleeding tendency\n\n- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) \n\n#### Precautions\n\n- Peptic ulcer\n\n- Patients on anticoagulants\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- 300mg until 32 weeks, then reduce to 75mg\n\n##### Breastfeeding\n\n- 150mg when breastfeeding\n\n#### Doses\n\n##### Adult\n\n- 1 tablet (300mg) \n- Chewed and swallowed, or dissolved in a small amount of water. \n\n- \\xbd tablet (150mg) if on warfarin.\n\n#### Special Notes\n\n- Single dose only.\n- Administer even when patient is on slow release aspirin.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "114250a34856ee431e238197a7ff5ccaccc79971966f20455812159db14419dc",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.542631+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

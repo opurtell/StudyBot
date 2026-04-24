@@ -4,7 +4,7 @@
   "title": "Intravenous Cannulation",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patients requiring intravenous access for drug or fluid administration. \n\n#### Procedure\n\n- Apply a venous tourniquet proximal to attempt site.\n\n- Locate by palpation an appropriate vein and swab the site with an alcohol wipe. \n- Do not touch the swab site again as this will result in contamination.\n\n- Prepare equipment required: \n- Cannula, bung, normal saline flush, tegaderm, sharps container and ambulance cannula sticker.\n\n- Tension the vein with the non-cannulation hand.\n\n- Insert the cannula, bevel up, at approx 25-30\\xb0 angle.\n\n- When flashback is observed, lower and advance the stylet further to ensure the cannula sheath is securely within the vein.\n\n- Advance the cannula sheath fully into the vein while retracting the stylet within the self-locking cover.\n\n- Remove venous tourniquet.\n\n- Apply digital pressure to the vein, disconnect the protective cover and dispose within a sharps container. Secure a needleless injection port to the cannula.\n\n- Flush cannula with saline to confirm patency, ensuring no extravasation occurs.\n\n- Secure with tegaderm adhesive dressing, fill out and apply the time/date sticker and yellow cannula advisory sticker.\n\n- Reassess for dislodgment, haemorrhage, swelling, reddening or discomfort.\n\n#### Complications\n- Extravasation.\n- Thrombophlebitis.\n- Haematoma formation.\n- Venous air embolism.\n- Dislodgement.",
+  "content_markdown": "#### Indications\n\n- Patients requiring intravenous access for drug or fluid administration. \n\n#### Procedure\n\n- Apply a venous tourniquet proximal to attempt site.\n\n- Locate by palpation an appropriate vein and swab the site with an alcohol wipe. \n- Do not touch the swab site again as this will result in contamination.\n\n- Prepare equipment required: \n- Cannula, bung, normal saline flush, tegaderm, sharps container and ambulance cannula sticker.\n\n- Tension the vein with the non-cannulation hand.\n\n- Insert the cannula, bevel up, at approx 25-30\\xb0 angle.\n\n- When flashback is observed, lower and advance the stylet further to ensure the cannula sheath is securely within the vein.\n\n- Advance the cannula sheath fully into the vein while retracting the stylet within the self-locking cover.\n\n- Remove venous tourniquet.\n\n- Apply digital pressure to the vein, disconnect the protective cover and dispose within a sharps container. Secure a needleless injection port to the cannula.\n\n- Flush cannula with saline to confirm patency, ensuring no extravasation occurs.\n\n- Secure with tegaderm adhesive dressing, fill out and apply the time/date sticker and yellow cannula advisory sticker.\n\n- Reassess for dislodgment, haemorrhage, swelling, reddening or discomfort.\n\n#### Complications\n\n- Extravasation.\n- Thrombophlebitis.\n- Haematoma formation.\n- Venous air embolism.\n- Dislodgement.",
   "is_icp_only": false,
   "dose_lookup": {
     "Normal Saline": [
@@ -472,9 +472,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "15ce1165ec1ee1b2b84ab4aee226ece008800574dde5ed600df3695dda523fa9",
+  "checksum": "f88ad9dd7d6cc716bd06b1246276dd89250262105a8d7d7238cb1b746d5e37b7",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.875966+00:00",
+    "timestamp": "2026-04-24T03:17:43.622369+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

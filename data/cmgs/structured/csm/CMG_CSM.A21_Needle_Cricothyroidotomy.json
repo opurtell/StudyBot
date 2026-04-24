@@ -4,7 +4,7 @@
   "title": "Needle Cricothyroidotomy",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- For patients \nFigure 1\n\n- Advance the needle through the anterior wall of the membrane until it is in the trachea.\n\n- Continue to advance the needle a further 1-2cm then advance the cannula sheath distally until flush with the skin.\n\n- Whilst securely holding the hub of the cannula, remove the needle and secure with adhesive tape.\n\n- Connect the pre-assembled ventilating set to the hub of the cannula and run at: \n- 1L/year of age up to 12 years old.\n\n- With your thumb, occlude the opening on the Y catheter for **1 second and release for 4 seconds** (see **Figure 1**). \n- This provides an inspiratory/expiratory ratio of 1:4 allowing time for expiration. Complete obstruction rarely occurs and some gas may escape through the mouth and nose.\n\n- Initiate transport urgently - this procedure provides short term oxygenation only without ventilation.\n\n#### Contraindications\n- The ability to secure the airway with less invasive options.\n\n#### Complications\n- Hypercapnia.\n- Barotrauma.\n- Subcutaneous emphysema.\n- Aspiration.\n- Trauma and/or perforation of surrounding structures.\n- Kinking of the catheter.\n- Over time, expect that CO2 retention will occur.",
+  "content_markdown": "#### Indications\n\n- For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have been unsuccessful such as: \n- Cannot intubate, cannot ventilate.\n- Severe upper airway oedema.\n- Severe facial trauma.\n- Foreign body obstruction.\n- Spinal trauma unable to ventilate.\n\n#### Procedure\n\n- Confirm other ventilation attempts via normal airway have proven impossible.\n\n- Prepare the equipment.\n\n- Place patient in supine position.\n\n- Locate and hold the larynx between the thumb and second finger of your non-dominant hand.\n\n- Place the first finger on the same hand on the larynx and slide it in a distal direction until you locate the cricothyroid membrane.\n\n- Clean the area and insert an 18g cannula through the cricothyroid membrane, exactly where you had palpated it previously (see **Figure 1**)\n\nFigure 1\n\n- Advance the needle through the anterior wall of the membrane until it is in the trachea.\n\n- Continue to advance the needle a further 1-2cm then advance the cannula sheath distally until flush with the skin.\n\n- Whilst securely holding the hub of the cannula, remove the needle and secure with adhesive tape.\n\n- Connect the pre-assembled ventilating set to the hub of the cannula and run at: \n- 1L/year of age up to 12 years old.\n\n- With your thumb, occlude the opening on the Y catheter for **1 second and release for 4 seconds** (see **Figure 1**). \n- This provides an inspiratory/expiratory ratio of 1:4 allowing time for expiration. Complete obstruction rarely occurs and some gas may escape through the mouth and nose.\n\n- Initiate transport urgently - this procedure provides short term oxygenation only without ventilation.\n\n#### Contraindications\n\n- The ability to secure the airway with less invasive options.\n\n#### Complications\n\n- Hypercapnia.\n- Barotrauma.\n- Subcutaneous emphysema.\n- Aspiration.\n- Trauma and/or perforation of surrounding structures.\n- Kinking of the catheter.\n- Over time, expect that CO2 retention will occur.",
   "is_icp_only": true,
   "dose_lookup": {
     "Oxygen": [
@@ -276,9 +276,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "c40c63275e8cc7a584531fed61bf29087d29e8819bd0841707d585beeb8a6ebb",
+  "checksum": "3b59612d0e6febad150e4e802cad168e18476d55fc2962886a371688670eb012",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.834681+00:00",
+    "timestamp": "2026-04-24T03:17:43.590481+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

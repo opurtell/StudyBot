@@ -1,0 +1,18 @@
+{
+  "id": "MED_10_Glucagon",
+  "cmg_number": "10",
+  "title": "Glucagon",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nPancreatic hormone [S4]\n\n##### Presentations\n\nVial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution\n\n##### Actions\n\nCauses the liver to metabolise stores of glycogen to glucose, resulting in a rise in the blood glucose level. \n Only effective if liver glycogen is available. \n Onset IM: 5 – 20 minutes \n\n#### Uses\n\nTreatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.\n\n#### Adverse Effects\n\nVery rare\n\n- Nausea and vomiting\n\n- Very occasionally, hypersensitivity\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adults\n\n- 1 International Unit (IU) – IM \n- Single dose only.\n\n##### Paediatric\n\n- Weight <20kg (approx. 5yrs): 0.5 IU – IM \n- Single dose only.\n\n- Weight >20kg: 1 IU – IM \n- Single dose only.\n\n#### Special Notes\n\n- Patients who respond to glucagon should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "a7565622e1c29ac28120efdf42867cd742123263df001f1338d478af80eb6728",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.549415+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

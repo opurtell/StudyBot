@@ -4,13 +4,13 @@
   "title": "Lateral Posture",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Non-intubated unconscious patients.\n- Syncope.\n- Continuous vomiting or upper airway bleeding with decreased level of consciousness.\n- Chest injuries (affected side down).\n#### Procedure\n\nFigure 1\n\n- Select appropriate side on which to roll patient, taking into account injuries and location.\n\n- Kneel at patient’s hips on opposite side.\n\n- Remove belts and items from pockets that are likely to cause patient pain or pressure.\n\n- Place patient’s far arm out straight from shoulder.\n\n- Fold near arm across chest and flex near leg at knee.\n\n- Maintain neutral alignment of spine and support head utilising assistant where possible.\n\n- Grasp patient at hip and shoulder and rotate away.\n\n- Draw upper leg towards patient’s head and flex knee at right angles to support patient in lateral position.\n\n- Flex far arm and bring patient’s hand under their head to assist in airway support.\n\n- Place upper arm flexed to side of patient’s head clear of the face.\n\n- Check patient’s position is stable.\n\n- Continuously monitor patient.\n\n#### Specific Notes\n- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.",
+  "content_markdown": "#### Indications\n\n- Non-intubated unconscious patients.\n- Syncope.\n- Continuous vomiting or upper airway bleeding with decreased level of consciousness.\n- Chest injuries (affected side down).\n\n#### Procedure\n\nFigure 1\n\n- Select appropriate side on which to roll patient, taking into account injuries and location.\n\n- Kneel at patient’s hips on opposite side.\n\n- Remove belts and items from pockets that are likely to cause patient pain or pressure.\n\n- Place patient’s far arm out straight from shoulder.\n\n- Fold near arm across chest and flex near leg at knee.\n\n- Maintain neutral alignment of spine and support head utilising assistant where possible.\n\n- Grasp patient at hip and shoulder and rotate away.\n\n- Draw upper leg towards patient’s head and flex knee at right angles to support patient in lateral position.\n\n- Flex far arm and bring patient’s hand under their head to assist in airway support.\n\n- Place upper arm flexed to side of patient’s head clear of the face.\n\n- Check patient’s position is stable.\n\n- Continuously monitor patient.\n\n#### Specific Notes\n\n- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "a9524de4012a57c22113b210b536027a07c0f5b226e5b08ec643407ae8aec710",
+  "checksum": "28c04144026c66cabcf85f5af3aa73d76fcb94f0cc018dc8b85cba4f99781a4e",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.864370+00:00",
+    "timestamp": "2026-04-24T03:17:43.614525+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

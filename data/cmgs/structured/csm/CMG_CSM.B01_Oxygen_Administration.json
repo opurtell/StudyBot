@@ -4,7 +4,7 @@
   "title": "Oxygen Administration",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
+  "content_markdown": "#### Indications\n\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
   "is_icp_only": false,
   "dose_lookup": {
     "Oxygen": [
@@ -276,9 +276,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "e7aee953038dbd50cfbc958e5875e026cb99bdf66ac103280bc93f4953a701f6",
+  "checksum": "f0f58f6ec5dd2967dcbe779b954039ec1c5e4dd361ae47087fcf0bcdbaefe7ad",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.835140+00:00",
+    "timestamp": "2026-04-24T03:17:43.591182+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

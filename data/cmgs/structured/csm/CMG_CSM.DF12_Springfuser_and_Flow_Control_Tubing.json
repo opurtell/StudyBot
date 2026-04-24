@@ -4,7 +4,7 @@
   "title": "Springfuser and Flow Control Tubing",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patients that require administration of medication as an infusion: \n- Amiodarone for VT, rapid AF or AFl, with output.\n- Magnesium for eclampsia.\n\n#### Procedure\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Using a 10ml syringe, dilute the medication with the required volume of NaCl to give a total volume of 7mls.\n\n- Remove any air bubbles from the syringe and firmly attach flow control tubing.\n\n- Prime the tubing (approx 0.2mls).\n\n- Connect the flow control tubing to the patient’s cannula.\n\n- Insert the syringe plunger fully into the Springfuser unit, rotating the flange 90\\xb0 to lock into place (see **Figure 1**).\n\nFigure 1\n\n- Tape the Springfuser securely to the limb in line with the cannula.\n\n- Regularly reassess the cannula site for dislodgment, swelling, reddening or discomfort and the flow control tubing for kinks or blockages. If a blockage occurs, replace the tubing.\n\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+  "content_markdown": "#### Indications\n\n- Patients that require administration of medication as an infusion: \n- Amiodarone for VT, rapid AF or AFl, with output.\n- Magnesium for eclampsia.\n\n#### Procedure\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Using a 10ml syringe, dilute the medication with the required volume of NaCl to give a total volume of 7mls.\n\n- Remove any air bubbles from the syringe and firmly attach flow control tubing.\n\n- Prime the tubing (approx 0.2mls).\n\n- Connect the flow control tubing to the patient’s cannula.\n\n- Insert the syringe plunger fully into the Springfuser unit, rotating the flange 90\\xb0 to lock into place (see **Figure 1**).\n\nFigure 1\n\n- Tape the Springfuser securely to the limb in line with the cannula.\n\n- Regularly reassess the cannula site for dislodgment, swelling, reddening or discomfort and the flow control tubing for kinks or blockages. If a blockage occurs, replace the tubing.\n\n#### Specific Notes\n\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
   "is_icp_only": false,
   "dose_lookup": {
     "Amiodarone": [
@@ -1253,9 +1253,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "d29a326138a15d3703fd79466eef5867c576acdb2f399e71451116cb368a89e6",
+  "checksum": "1acb1ecccbed3ab23d57bd93b3c5ebdac40e3e3f446fbf8509a9793ae1588dc6",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.879095+00:00",
+    "timestamp": "2026-04-24T03:17:43.625723+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

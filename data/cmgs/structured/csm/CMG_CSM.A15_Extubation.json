@@ -4,7 +4,7 @@
   "title": "Extubation",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Removal of the endotracheal tube is rarely indicated in the pre hospital setting.\n- Tube becomes blocked, kinked or cuff has herniation. In these cases use the bougie and laryngoscope to replace the ET Tube.\n- Patient who regains consciousness (consider sedating patient).\n\n#### Procedure\n\n- Monitor patient’s oxygen saturations.\n\n- Pre-oxygenate the patient, if possible.\n\n- Place patient in the lateral position, if possible.\n\n- Suction the tube and oral cavity thoroughly.\n\n- Cut the tube tie or loosen securing device, then completely deflate the cuff.\n\n- Instruct the patient to attempt to cough the tube out.\n\n- Swiftly withdraw the tube as the patient coughs.\n\n- Reassess respiratory status.\n\n- Provide high concentration oxygen. Be alert for any respiratory deterioration.\n\n- Document time of removal and reason.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Complications\n- Asthmatic patients, once intubated, are generally better managed if the tube remains in situ, as deterioration may occur from irritation during the extubation process. In this situation, it is preferable to keep the tube in by sedating the patient.\n- Loss of a secure airway; aspiration and hypoxia.",
+  "content_markdown": "#### Indications\n\n- Removal of the endotracheal tube is rarely indicated in the pre hospital setting.\n- Tube becomes blocked, kinked or cuff has herniation. In these cases use the bougie and laryngoscope to replace the ET Tube.\n- Patient who regains consciousness (consider sedating patient).\n\n#### Procedure\n\n- Monitor patient’s oxygen saturations.\n\n- Pre-oxygenate the patient, if possible.\n\n- Place patient in the lateral position, if possible.\n\n- Suction the tube and oral cavity thoroughly.\n\n- Cut the tube tie or loosen securing device, then completely deflate the cuff.\n\n- Instruct the patient to attempt to cough the tube out.\n\n- Swiftly withdraw the tube as the patient coughs.\n\n- Reassess respiratory status.\n\n- Provide high concentration oxygen. Be alert for any respiratory deterioration.\n\n- Document time of removal and reason.\n\n#### Contraindications\n\n- Nil when indicated.\n\n#### Complications\n\n- Asthmatic patients, once intubated, are generally better managed if the tube remains in situ, as deterioration may occur from irritation during the extubation process. In this situation, it is preferable to keep the tube in by sedating the patient.\n- Loss of a secure airway; aspiration and hypoxia.",
   "is_icp_only": true,
   "dose_lookup": {
     "Oxygen": [
@@ -276,9 +276,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "55eb4beef425ab93cb10cb005759984b5cecbb251d50e7f9cfc65e9695b29964",
+  "checksum": "e20d3fb49548145fd96d4076de5431f138e1f4b93e4293c67534e281323215c4",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.830648+00:00",
+    "timestamp": "2026-04-24T03:17:43.586907+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

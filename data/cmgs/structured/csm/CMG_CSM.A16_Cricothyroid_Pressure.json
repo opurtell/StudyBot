@@ -4,13 +4,13 @@
   "title": "Cricothyroid Pressure",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Where direct visualisation of the vocal cords is not possible during initial laryngoscopy.\n- To compress the oesophagus, preventing gastric contents from entering the airway during intubation.\n\n#### Procedure\n\n- Locate the cricoid cartilage (below the “Adam’s Apple”) (see **Figure 1**).\n\n- Using the thumb and index fingers of one hand, firmly push the cricoid cartilage backwards.\n\n- Maintain pressure until the intubating paramedic directs a release of the pressure post ET tube insertion.\n\nFigure 1",
+  "content_markdown": "#### Indications\n\n- Where direct visualisation of the vocal cords is not possible during initial laryngoscopy.\n- To compress the oesophagus, preventing gastric contents from entering the airway during intubation.\n\n#### Procedure\n\n- Locate the cricoid cartilage (below the “Adam’s Apple”) (see **Figure 1**).\n\n- Using the thumb and index fingers of one hand, firmly push the cricoid cartilage backwards.\n\n- Maintain pressure until the intubating paramedic directs a release of the pressure post ET tube insertion.\n\nFigure 1",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "3d84f9140cb6fe420bb3ca4e7b1310962dcb7098b03d2a64f7b7f65e6457d3ed",
+  "checksum": "6ee01fa8cd5f51188ba4c72c54d091f1fb19aaf7963100d0f16a687b08fdacaa",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.831260+00:00",
+    "timestamp": "2026-04-24T03:17:43.587501+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

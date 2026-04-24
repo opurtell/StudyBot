@@ -1,0 +1,18 @@
+{
+  "id": "MED_14_Heparin",
+  "cmg_number": "14",
+  "title": "Heparin",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nUnfractioned heparin anticoagulant\n\n- **High-risk medication**\n\n##### Presentations\n\n5000u heparin in 1 ml – glass ampoule\n\n##### Actions\n\n- Inhibits blood clotting\n\n- Combines with antithrombin III, a naturally occurring anti-clotting factor in plasma, and inhibits the conversion of prothrombin to thrombin\n\n- It also interferes with the actions of other clotting factors with fibrin stabilising factor\n\n#### Uses\n\nPatients with an acute ST elevation myocardial infarction who meet the requirements for early percutaneous coronary intervention (PCI) procedure\n\n#### Adverse Effects\n\n- Bleeding\n\n- Thrombocytopenia\n\n- Anaphylactoid reactions (rare)\n\n#### Contraindications\n\nRefer to heparin checklist\n\n#### Precautions\n\nUse with care in patients with extensive history of allergies\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Approved for administration in ACTAS setting, **contraindicated** during labour\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- 5000u IV – over 30-60 seconds\n\n##### Paediatric\n\nNot used.\n\n#### Special Notes\n\n- This treatment should not delay transport time to hospital.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "6b25a5889fea0674a55a41bd71bf1ffedf06eeb53dd7a5e221db89f309eb2914",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.551832+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

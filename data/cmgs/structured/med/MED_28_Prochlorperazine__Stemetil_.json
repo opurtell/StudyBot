@@ -1,0 +1,18 @@
+{
+  "id": "MED_28_Prochlorperazine__Stemetil_",
+  "cmg_number": "28",
+  "title": "Prochlorperazine (Stemetil)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nPhenothiazine antiemetic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n12.5mg in 1ml – ampoule\n\n##### Actions\n\nActs on several neurotransmitter systems:\n\n- Antidopamine action\n\n- Alpha-adrenergic antagonism\n\n- Potentiates noradrenaline\n\n- Weak anticholinergic and antihistamine effects\n\n- Weak serotonin antagonism\n\nOnset IM: limited data. \n Duration IM: unknown – likely to be prolonged \n\n#### Uses\n\nFor the treatment (only) of nausea and vomiting from a variety of vestibular causes, including: \n\n- Motion sickness \n- Migraine\n- Vertigo- Labyrinthitis\n\n#### Adverse Effects\n\n- Gastrointestinal: constipation, dry mouth\n\n- Nervous system: drowsiness, extrapyramidal symptoms\n\n- Cardiovascular: hypotension, ECG changes (especially QT prolongation) \n\n- Respiratory: respiratory depression\n\n#### Contraindications\n\n- Known hypersensitivity to phenothiazines\n\n- CNS depression\n\n- Shock from any cause, or other circulatory compromise\n\n- Paediatric patients (<18 years old)\n\n- Not to be given in conjunction with intravenous amiodarone\n\n- Previous oral prochlorperazine within last 8 hours\n\n#### Precautions\n\n- Renal dysfunction\n\n- Parkinson’s disease\n\n- Myasthenia gravis\n\n- Epilepsy\n\n- Caution in elderly – increased risk of dystonic reactions\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Approved for ACTAS administration in <28 weeks gestation. **Contraindicated** when gestation ≥28 weeks.\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS as per approved indications only\n\n#### Doses\n\n##### Adult\n\n- 12.5mg deep IMI \n- Single dose only.\n\n##### Paediatric (<18 years old) \n\nNot used.\n\n#### Special Notes\n\n- Patients who are administered prochlorperazine are not to be left at home, due to extensive adverse effect profile, potential symptom masking and extended half-life of the drug.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "bdfbcf7b7aa1cd8bce0758b1aa0da87727228235e3beaf39981404c675c55933",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.564544+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

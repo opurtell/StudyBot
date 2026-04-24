@@ -1,0 +1,18 @@
+{
+  "id": "MED_08_Droperidol__Dorm_",
+  "cmg_number": "08",
+  "title": "Droperidol (Dorm)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nAntipsychotic\n\n- **High-risk medication**\n\n##### Presentations\n\n10mg in 2ml – vial \n\n##### Actions\n\n- Droperidol is an antipsychotic and a tranquiliser. It gives no analgesia and no amnestic effects\n\n- Acts on several neurotransmitters; antipsychotic actions are thought to be mediated by dopamine blockade\n\nOnset of action: IM 3-10 min \n Peak action up to 30 min \n Duration 2-4 hours \n\n#### Uses\n\nPharmacological intervention for combative / agitated patients.\n\n#### Adverse Effects\n\n- Arrhythmias, including prolonged QT interval or torsades de pointes (all patients receiving droperidol must have ECG monitoring)\n\n- Extrapyramidal effects (rare)\n\n- Neuroleptic malignant syndrome (rare)\n\n- May lower seizure threshold\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Parkinson’s disease\n\n- Post ictal\n\n#### Precautions\n\nPatients in severe pain; analgesia should also be provided\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Approved for administration in ACTAS setting during trimester one and two, during third trimester only use if alternative management unavailable or ineffective\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, caution against breastfeeding in the pre-hospital setting\n\n#### Doses\n\n##### Adult (>14 years of age)\n\n- 10mg via IM injection only (no IV/IO use) \n- Repeat once, after 10-15 minutes, if required.\n\n##### Frail / elderly (>65 years)\n\n- 5mg via IM injection only (no IV/IO use) \n- Repeat once, after 10-15 minutes, if required.\n\n##### Paediatric (<14 years of age)\n\nNot used.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "427452761f6716e9bd160fde394fb0b42289ffa72fda2e03fb6cbb8016ec257f",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.548368+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

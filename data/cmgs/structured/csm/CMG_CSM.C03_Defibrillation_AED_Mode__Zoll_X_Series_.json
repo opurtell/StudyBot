@@ -4,13 +4,13 @@
   "title": "Defibrillation AED Mode (Zoll X Series)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- To deliver DCCS to a pulseless, unconscious patient presenting with: \n- Ventricular Fibrillation (VF).\n- Pulseless Ventricular Tachycardia (VT).\n- Torsades de pointes\n\n#### Procedure\n\n- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: \n- Multiple people using multiple checks at multiple times.\n\n- Begin cardiac arrest algorithm.\n\n- Turn monitor on\n\n- Attach the defibrillation pads to patient: \n- Place pads either Anterior / Posterior or both anterior.\n- Ensure good pad adherence.\n- Ensure CPR feedback pad is in center of chest on sternum\n\n- Press the ANALYZE button\n\n- \n\n- Continue or start CPR.\n\n- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.\n\n#### Specific Notes\n- AED mode monitors through the pads.\n- AED mode shocks at 200J in Adult Mode.\n- AED mode shocks at 50J in Pediatric Mode.\n- AED will not ANALYZE in Neonate Mode.\n- AED mode will not shock narrow complex tachycardia.",
+  "content_markdown": "#### Indications\n\n- To deliver DCCS to a pulseless, unconscious patient presenting with: \n- Ventricular Fibrillation (VF).\n- Pulseless Ventricular Tachycardia (VT).\n- Torsades de pointes\n\n#### Procedure\n\n- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: \n- Multiple people using multiple checks at multiple times.\n\n- Begin cardiac arrest algorithm.\n\n- Turn monitor on\n\n- Attach the defibrillation pads to patient: \n- Place pads either Anterior / Posterior or both anterior.\n- Ensure good pad adherence.\n- Ensure CPR feedback pad is in center of chest on sternum\n\n- Press the ANALYZE button\n\n- \n\n- Continue or start CPR.\n\n- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.\n\n#### Specific Notes\n\n- AED mode monitors through the pads.\n- AED mode shocks at 200J in Adult Mode.\n- AED mode shocks at 50J in Pediatric Mode.\n- AED will not ANALYZE in Neonate Mode.\n- AED mode will not shock narrow complex tachycardia.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "bf7d9467bb019c6843e3fa7dd1c7e71f93baef21d0a857d04dbc9c60cd727b62",
+  "checksum": "5261dd8d87eef64c061127e49208a7c22616f420ae127bbc650dd0dfa4d83265",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.853132+00:00",
+    "timestamp": "2026-04-24T03:17:43.601002+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

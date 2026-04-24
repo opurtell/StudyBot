@@ -4,13 +4,13 @@
   "title": "Chest Auscultation",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- As part of a normal patient assessment: \n- Particularly when the patient has a respiratory complaint.\n- To confirm placement of advanced airways.\n\n#### Procedure\n\n- Position the patient in an upright seated position. \n- Only if conscious and if there are no spinal precautions or signs of shock.\n\n- Explain the procedure to the patient, ensuring they understand to take deep breaths in and out of their mouth. \n- Nose breathing causes distorted perception of breath sounds.\n- Do not attempt to listen to breath sounds through clothing, bone, breast tissue or excessive fat tissue.\n\n- Place the stethoscope over the bases, and work towards the apexes. \n- A methodical and horizontal approach is best in order to compare the right and left (see **Figure 1**).\n\n- Make note of the location and type of any abnormal breath sounds.\n\n- On completion inform the patient that they can resume normal breathing.\n\nFigure 1",
+  "content_markdown": "#### Indications\n\n- As part of a normal patient assessment: \n- Particularly when the patient has a respiratory complaint.\n- To confirm placement of advanced airways.\n\n#### Procedure\n\n- Position the patient in an upright seated position. \n- Only if conscious and if there are no spinal precautions or signs of shock.\n\n- Explain the procedure to the patient, ensuring they understand to take deep breaths in and out of their mouth. \n- Nose breathing causes distorted perception of breath sounds.\n- Do not attempt to listen to breath sounds through clothing, bone, breast tissue or excessive fat tissue.\n\n- Place the stethoscope over the bases, and work towards the apexes. \n- A methodical and horizontal approach is best in order to compare the right and left (see **Figure 1**).\n\n- Make note of the location and type of any abnormal breath sounds.\n\n- On completion inform the patient that they can resume normal breathing.\n\nFigure 1",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "73f665e804fd84530f8aa1da27fbf5ff3b9f3becf0b762c1dcda7b3060b39c9b",
+  "checksum": "b8dfe0b995c6f5ec7c53d011462e33424545479d3ec0dd9d374a3a53745867c2",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.859539+00:00",
+    "timestamp": "2026-04-24T03:17:43.605197+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

@@ -4,13 +4,13 @@
   "title": "External Haemorrhage Control",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Uncontrolled haemorrhage.\n\n#### Procedure\n\nFigure 1\n\n- Immediately apply pressure using a gloved hand, then apply the pad (see **Figure 1**).\n\n- If haemorrhage is not life-threatening, check area for any easily removed foreign object such as pebbles, twigs, glass etc. Remove foreign objects.\n\n- Place combine over wound. Consider placing a non-adhesive dressing over wound first.\n\n- Apply direct manual pressure to wound.\n\n- If able, bandage the wound using a crepe bandage. If haemorrhage does not slow, then continue manual pressure.\n\n- Check patient for comfort and frequently reassess perfusion status. Adjust dressing and pressure as required.\n\n#### Specific Notes\n- Monitor patient for perfusion status and deterioration.",
+  "content_markdown": "#### Indications\n\n- Uncontrolled haemorrhage.\n\n#### Procedure\n\nFigure 1\n\n- Immediately apply pressure using a gloved hand, then apply the pad (see **Figure 1**).\n\n- If haemorrhage is not life-threatening, check area for any easily removed foreign object such as pebbles, twigs, glass etc. Remove foreign objects.\n\n- Place combine over wound. Consider placing a non-adhesive dressing over wound first.\n\n- Apply direct manual pressure to wound.\n\n- If able, bandage the wound using a crepe bandage. If haemorrhage does not slow, then continue manual pressure.\n\n- Check patient for comfort and frequently reassess perfusion status. Adjust dressing and pressure as required.\n\n#### Specific Notes\n\n- Monitor patient for perfusion status and deterioration.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "eb71e1a11f757666099b65c34e33645fb5a54bd9400d3c53d970ac17777f9a2a",
+  "checksum": "85bfa5437232b9dd6be9c2f3fb3d52a77a0e5c451a66de5b9205f80ab2e7efec",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.905247+00:00",
+    "timestamp": "2026-04-24T03:17:43.635367+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

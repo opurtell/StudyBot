@@ -4,13 +4,13 @@
   "title": "Collar and Cuff Sling",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- For the comfort and support of suspected wrist, arm, or shoulder fractures, or soft tissue injuries.\n\n#### Procedure\n\n- If required, administer pain relief prior to applying splint and/or arm sling.\n\n- Confirm distal pulses are present.\n\n- Remove triangular bandage from packaging.\n\n- Have the patient position injured arm so that fingers are resting on/near uninjured side clavicle.\n\n- Roll up the triangular bandage so that each “tying” end is at greatest distance from each other.\n\n- Select one “tying” end and create a loop, with the “tying” end laying over the middle of the bandage, pointing downwards.\n\n- Select the other “tying” end and create a loop, with the “tying” end laying over the middle of the bandage, pointing upwards. The bandage should now resemble a figure eight (see **Figure 1**).\n\nFigure 1\n\n- Place one loop on top of the other so that the bandage resembles a circle with two tails at the base pointing in opposite directions (see **Figure 2**).\n\nFigure 2\n\n- Position the loops over the patient’s injured side wrist and tighten to the appropriate level.\n\n- Secure “tying” ends in place with a knot behind the uninjured side shoulder (see **Figure 3**). \n\nFigure 3\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
+  "content_markdown": "#### Indications\n\n- For the comfort and support of suspected wrist, arm, or shoulder fractures, or soft tissue injuries.\n\n#### Procedure\n\n- If required, administer pain relief prior to applying splint and/or arm sling.\n\n- Confirm distal pulses are present.\n\n- Remove triangular bandage from packaging.\n\n- Have the patient position injured arm so that fingers are resting on/near uninjured side clavicle.\n\n- Roll up the triangular bandage so that each “tying” end is at greatest distance from each other.\n\n- Select one “tying” end and create a loop, with the “tying” end laying over the middle of the bandage, pointing downwards.\n\n- Select the other “tying” end and create a loop, with the “tying” end laying over the middle of the bandage, pointing upwards. The bandage should now resemble a figure eight (see **Figure 1**).\n\nFigure 1\n\n- Place one loop on top of the other so that the bandage resembles a circle with two tails at the base pointing in opposite directions (see **Figure 2**).\n\nFigure 2\n\n- Position the loops over the patient’s injured side wrist and tighten to the appropriate level.\n\n- Secure “tying” ends in place with a knot behind the uninjured side shoulder (see **Figure 3**). \n\nFigure 3\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "dc333f0d53b6c6670f45bfc561da6657e55e531801e2de2215687aac89ce435e",
+  "checksum": "3686e481ddd6a7325ab5babba1ae5540d4f309e8878ac54e499dcfe7056ce247",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.898390+00:00",
+    "timestamp": "2026-04-24T03:17:43.631743+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

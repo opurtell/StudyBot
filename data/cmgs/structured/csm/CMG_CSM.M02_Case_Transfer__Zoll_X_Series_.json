@@ -4,13 +4,13 @@
   "title": "Case Transfer (Zoll X Series)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- All cases on the Zoll must be transferred at end of each shift.\n\n#### Procedure\n\n- Select the Log button.\n\nFigure 1\n\n- Select the Disclosure Log Transfer button\n\nFigure 2\n\n- To close the current case, press Select Key (this will allow you to include the current case in the transfer, otherwise choose continue).\n\n- With selected cases key highlighted, click to move to list\n\nFigure 3\n\n- Select the cases to transfer, using the up/down arrows and select to tick (select) them\n\nFigure 4\n\n- Press the HOME key to move to the transfer button and then press to transfer the cases.\n\nFigure 5\n\n#### Troubleshooting\n- **Zoll shows cases not sent** - select row and click to change and to resend.\n- **Disclosure Log Transfer Failure** – Bluetooth Phone Unavailable – check iPhone Bluetooth is on, and select to retry.\n\nFigure 6",
+  "content_markdown": "#### Indications\n\n- All cases on the Zoll must be transferred at end of each shift.\n\n#### Procedure\n\n- Select the Log button.\n\nFigure 1\n\n- Select the Disclosure Log Transfer button\n\nFigure 2\n\n- To close the current case, press Select Key (this will allow you to include the current case in the transfer, otherwise choose continue).\n\n- With selected cases key highlighted, click to move to list\n\nFigure 3\n\n- Select the cases to transfer, using the up/down arrows and select to tick (select) them\n\nFigure 4\n\n- Press the HOME key to move to the transfer button and then press to transfer the cases.\n\nFigure 5\n\n#### Troubleshooting\n\n- **Zoll shows cases not sent** - select row and click to change and to resend.\n- **Disclosure Log Transfer Failure** – Bluetooth Phone Unavailable – check iPhone Bluetooth is on, and select to retry.\n\nFigure 6",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "7d22058c800c372e53996de67f2ff8283f99d88f6ba0922247f3b51680087a6a",
+  "checksum": "6754f1b88ba6e2c0e60cda86cb6f1669c8997844effa31752c0b6b35f3f61e03",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.909648+00:00",
+    "timestamp": "2026-04-24T03:17:43.638805+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

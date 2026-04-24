@@ -4,13 +4,13 @@
   "title": "Arm Sling",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- For the comfort and support of suspected wrist, arm, or shoulder fractures, or soft tissue injuries.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- If required, administer pain relief prior to applying splint and/or arm sling.\n\n- Confirm distal pulses are present.\n\n- Apply cardboard splint if required.\n\n- Remove triangular bandage from packaging.\n\n- Position bandage underneath the patient’s injured arm with the “pointed” end at the elbow of the injured arm and the “tying” end over the shoulder of the uninjured arm (see **Figure 1**).\n\n- Fold the other half of the bandage over the injured arm so that the “tying” end is positioned over the shoulder of the injured arm. (see **Figure 2**).\n\n- Secure both tying ends in a knot behind the patient’s neck/behind the shoulder of the uninjured arm at a level of comfort for the patient (see **Figure 3**).\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
+  "content_markdown": "#### Indications\n\n- For the comfort and support of suspected wrist, arm, or shoulder fractures, or soft tissue injuries.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- If required, administer pain relief prior to applying splint and/or arm sling.\n\n- Confirm distal pulses are present.\n\n- Apply cardboard splint if required.\n\n- Remove triangular bandage from packaging.\n\n- Position bandage underneath the patient’s injured arm with the “pointed” end at the elbow of the injured arm and the “tying” end over the shoulder of the uninjured arm (see **Figure 1**).\n\n- Fold the other half of the bandage over the injured arm so that the “tying” end is positioned over the shoulder of the injured arm. (see **Figure 2**).\n\n- Secure both tying ends in a knot behind the patient’s neck/behind the shoulder of the uninjured arm at a level of comfort for the patient (see **Figure 3**).\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "141a1717b14be9722f6683b8059cc4b63978006993dac4da80bbcbc6d56dc98b",
+  "checksum": "043da05c42a7f89115010a038fd22ca2b787db0f28b1be55f75c92d9ea409d31",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.896448+00:00",
+    "timestamp": "2026-04-24T03:17:43.630694+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

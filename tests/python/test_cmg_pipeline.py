@@ -237,7 +237,7 @@ def test_structure_flags_known_icp_only_entries(tmp_path):
         output_dir=str(output_dir),
     )
 
-    with open(output_dir / "med" / "CMG_02_Adenosine.json") as f:
+    with open(output_dir / "med" / "MED_02_Adenosine.json") as f:
         adenosine = json.load(f)
     assert adenosine["is_icp_only"] is True
 
@@ -249,6 +249,6 @@ def test_structure_flags_known_icp_only_entries(tmp_path):
         pacing = json.load(f)
     assert pacing["is_icp_only"] is True
 
-    with open(output_dir / "med" / "CMG_22_Midazolam.json") as f:
+    with open(output_dir / "med" / "MED_22_Midazolam.json") as f:
         midazolam = json.load(f)
     assert midazolam["is_icp_only"] is False

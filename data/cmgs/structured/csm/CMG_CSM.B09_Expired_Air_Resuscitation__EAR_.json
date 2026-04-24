@@ -4,13 +4,13 @@
   "title": "Expired Air Resuscitation (EAR)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Apnoeic patient where resuscitation equipment is not available.\n\n#### Procedure\n\n- Utilise standard infection control precautions.\n\n- Posture supine where possible.\n\n- Clear airway and insert an oropharyngeal airway if available.\n\n- Kneel alongside patient’s head.\n\n- Perform head tilt and jaw support.\n\n- Seal patient’s nostrils or apply mask.\n\n- Take a deep breath.\n\n- Seal your mouth over patient’s mouth or mask.\n\n- Exhale to inflate patient’s lungs and remove your mouth.\n\n- Check for a pulse, if absent commence CPR.\n\n- If confident the patient has a pulse at a rate fast enough to sustain life, then continue EAR with the following breaths per minute: \n- **Adults:** 12-16/min\n- **Children:** 15-25/min\n- **Babies:** 20-40/min.\n\n#### Complications\n- Infection.\n\n#### Specific Notes\n- This procedure should not normally be used or expected to be used in ACT Ambulance practice where resuscitation equipment is readily available.",
+  "content_markdown": "#### Indications\n\n- Apnoeic patient where resuscitation equipment is not available.\n\n#### Procedure\n\n- Utilise standard infection control precautions.\n\n- Posture supine where possible.\n\n- Clear airway and insert an oropharyngeal airway if available.\n\n- Kneel alongside patient’s head.\n\n- Perform head tilt and jaw support.\n\n- Seal patient’s nostrils or apply mask.\n\n- Take a deep breath.\n\n- Seal your mouth over patient’s mouth or mask.\n\n- Exhale to inflate patient’s lungs and remove your mouth.\n\n- Check for a pulse, if absent commence CPR.\n\n- If confident the patient has a pulse at a rate fast enough to sustain life, then continue EAR with the following breaths per minute: \n- **Adults:** 12-16/min\n- **Children:** 15-25/min\n- **Babies:** 20-40/min.\n\n#### Complications\n\n- Infection.\n\n#### Specific Notes\n\n- This procedure should not normally be used or expected to be used in ACT Ambulance practice where resuscitation equipment is readily available.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "f11881ba836bf2f7f0c39b9e0dd872c175fa681e7632173640ad73a821793e7d",
+  "checksum": "3cf4dc891c80ba46648243483301d844699a1b52215c16816115dbca30fe75f2",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.841045+00:00",
+    "timestamp": "2026-04-24T03:17:43.597673+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

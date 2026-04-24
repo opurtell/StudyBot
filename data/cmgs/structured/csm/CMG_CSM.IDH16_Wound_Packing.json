@@ -4,13 +4,13 @@
   "title": "Wound Packing",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Catastrophic life-threatening haemorrhage where arterial tourniquets are ineffective or inappropriate.\n- Ideally used in anatomical regions where there is a solid object/bone to pack against (groin, axillae, neck).\n- Can be used high on limbs (where a CAT will not work) and to de-escalate (replace in the setting of bleeding controlled) a CAT.\n\n#### Procedure\n\n- Expose the wound and evacuate pooled blood as best you can. Attempt to identify the source of bleeding and pack as close to it as possible.\n\n- Pack the entire cavity using your fingertips to pack into every crevice (may require additional packing material).\n\n- Apply maximal direct pressure for a minimum of three minutes.\n\n- Dress the wound. Make sure you include that packing was performed in your handover.\n\n#### Specific Notes\n- Wound packing is not to be used unless bleeding is active and life threatening.\n- You can use any dressing (preferably sterile) that will absorb blood and allow clot creation (e.g. roller bandages, cotton slings, packing gauze). Quikclot or other haemostatic dressing can be used but are not essential.",
+  "content_markdown": "#### Indications\n\n- Catastrophic life-threatening haemorrhage where arterial tourniquets are ineffective or inappropriate.\n- Ideally used in anatomical regions where there is a solid object/bone to pack against (groin, axillae, neck).\n- Can be used high on limbs (where a CAT will not work) and to de-escalate (replace in the setting of bleeding controlled) a CAT.\n\n#### Procedure\n\n- Expose the wound and evacuate pooled blood as best you can. Attempt to identify the source of bleeding and pack as close to it as possible.\n\n- Pack the entire cavity using your fingertips to pack into every crevice (may require additional packing material).\n\n- Apply maximal direct pressure for a minimum of three minutes.\n\n- Dress the wound. Make sure you include that packing was performed in your handover.\n\n#### Specific Notes\n\n- Wound packing is not to be used unless bleeding is active and life threatening.\n- You can use any dressing (preferably sterile) that will absorb blood and allow clot creation (e.g. roller bandages, cotton slings, packing gauze). Quikclot or other haemostatic dressing can be used but are not essential.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "c790f35ebb153d42898714c16d97e1ed8e0f84dd16813ea4a1fabfb1ea63fe17",
+  "checksum": "7bb1804cc564485e2e452fbb6c7fd3e9c2e516bc71a846ec6e44f1cd274526f5",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.906427+00:00",
+    "timestamp": "2026-04-24T03:17:43.636708+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

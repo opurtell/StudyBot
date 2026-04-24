@@ -1,0 +1,18 @@
+{
+  "id": "MED_19_Lignocaine",
+  "cmg_number": "19",
+  "title": "Lignocaine",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\n\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\n\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### Local anaesthesia\n\n##### Adult and Paediatric\n\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output\n\n##### Adult and Paediatric\n\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient\n\n##### Adult\n\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine\n##### Paediatric\n\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n\n#### Solvent for IM Ceftriaxone\n\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "ea5671fb9617f9015e00120fbdf454438d0f7932440e98ed9c22392a2dfacd98",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.556472+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

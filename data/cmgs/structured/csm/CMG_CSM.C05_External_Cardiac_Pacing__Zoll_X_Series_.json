@@ -4,7 +4,7 @@
   "title": "External Cardiac Pacing (Zoll X Series)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Bradycardia with poor perfusion. \n\n#### Procedure\n\n- Ensure chest leads are positioned well off the chest. \n- Remove CPR feedback pad from the posterior pad (red rectangle) (see **Figure 1**).\n\nFigure 1\n\n- Place posterior pad vertically beneath scapula, along left vertebral edge (see **Figure 2**).\n\nFigure 2\n\nFigure 3\n\n- Place anterior pad (purple circle) horizontally in V2/V3 position (see **Figure 3**).\n\n- Place CPR feedback pad in centre of the chest on the sternum. \n- Attach pads to pads cable.\n\n- Push Green PACER button.\n\n- Select [PACER RATE] to at least 50% above the patient’s intrinsic rate.\n\n- Select [PACER OUTPUT] and reduce to 10mA.\n\n- Select [START PACING].\n\n- Ensure pacing markers are visible on ECG.\n\n- Slowly increase electrical current by 10mA increments until electrical and mechanical capture are achieved.\n\n- Once electrical and mechanical capture are obtained (change in QRS morphology and pacing markers synchronised with each QRS complex) increase out by a further 10mA and then decrease by 5mA.\n\n- Confirm capture with manual pulse rate and BP.\n\n- Provide analgesia (morphine/ fentanyl/ midazolam) if required.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Complications\n- Pain – provide reassurance and appropriate pain relief (morphine/fentanyl/midazolam).\n- Failure to capture due to resistance or unknown reason.\n\n#### Specific Notes\n- External cardiac pacing is preferred over adrenaline infusion for bradycardia post cardiac arrest.\n- If IV access in situ, Adrenaline infusion must also be prepared for use in event of pacing failure.",
+  "content_markdown": "#### Indications\n\n- Bradycardia with poor perfusion. \n\n#### Procedure\n\n- Ensure chest leads are positioned well off the chest. \n- Remove CPR feedback pad from the posterior pad (red rectangle) (see **Figure 1**).\n\nFigure 1\n\n- Place posterior pad vertically beneath scapula, along left vertebral edge (see **Figure 2**).\n\nFigure 2\n\nFigure 3\n\n- Place anterior pad (purple circle) horizontally in V2/V3 position (see **Figure 3**).\n\n- Place CPR feedback pad in centre of the chest on the sternum. \n- Attach pads to pads cable.\n\n- Push Green PACER button.\n\n- Select [PACER RATE] to at least 50% above the patient’s intrinsic rate.\n\n- Select [PACER OUTPUT] and reduce to 10mA.\n\n- Select [START PACING].\n\n- Ensure pacing markers are visible on ECG.\n\n- Slowly increase electrical current by 10mA increments until electrical and mechanical capture are achieved.\n\n- Once electrical and mechanical capture are obtained (change in QRS morphology and pacing markers synchronised with each QRS complex) increase out by a further 10mA and then decrease by 5mA.\n\n- Confirm capture with manual pulse rate and BP.\n\n- Provide analgesia (morphine/ fentanyl/ midazolam) if required.\n\n#### Contraindications\n\n- Nil when indicated.\n\n#### Complications\n\n- Pain – provide reassurance and appropriate pain relief (morphine/fentanyl/midazolam).\n- Failure to capture due to resistance or unknown reason.\n\n#### Specific Notes\n\n- External cardiac pacing is preferred over adrenaline infusion for bradycardia post cardiac arrest.\n- If IV access in situ, Adrenaline infusion must also be prepared for use in event of pacing failure.",
   "is_icp_only": true,
   "dose_lookup": {
     "Morphine": [
@@ -2089,9 +2089,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "874b5e0bea59307274bc7bed653b26e423341f83f100383a835f6f7ba3771ae9",
+  "checksum": "c2479136704aff02557a7ca0faacd78a8532f31512521d85c905e78be6ad481a",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.854559+00:00",
+    "timestamp": "2026-04-24T03:17:43.601972+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

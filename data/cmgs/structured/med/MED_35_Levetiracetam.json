@@ -1,0 +1,18 @@
+{
+  "id": "MED_35_Levetiracetam",
+  "cmg_number": "35",
+  "title": "Levetiracetam",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nAntiepileptic\n\n##### Presentations\n\n500mg/5mL\n\n##### Pharmacokinetics\n\nIV/IO \n Onset: Rapid \n Max Effect: 30 – 120 minutes \n Duration: 1 -2 days \n\n#### Uses\n\nStatus epilepticus:\n\n- Refractory seizure activity 5/60 after second benzodiazepine dose.\n\n- >20/60 seizure duration.\n\n#### Adverse Effects\n\n- Behavioural effects\n\n- Drowsiness\n\n- Weakness\n\n- Dizziness and vertigo\n\n- Headache\n\n- Insomnia\n\n- Amnesia\n\n- Ataxia\n\n- Diplopia\n\n- Anorexia\n\n#### Contraindications\n\n- Known allergy.\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n- **ICP:** 40mg/kg (max. 3000mg) IV/IO, infused over 5/60 via infusion pump, no repeat. \n\n**Note:** If infusion pump unavailable, dose can be administered via slow IV/IO push over 5/60.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "ea6a926026f50e5b791f0d3385116dd9b4191cc37240736935793331c9a6de06",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.555890+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

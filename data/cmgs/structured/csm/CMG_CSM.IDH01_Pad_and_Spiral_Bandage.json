@@ -4,13 +4,13 @@
   "title": "Pad and Spiral Bandage",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Pad and bandage: to cover wound or lesion and slow haemorrhage.\n- Spiral bandage: limb injuries, soft issues injuries, securing splints.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- Check area for any easily removed foreign objects.\n\n- Place combine dressing over the wound, consider placing a Non-Adhesive Dressing (NAD) over wound first (see **Figure 1**).\n\n- Apply bandage of appropriate width: \n- Commence with two turns to anchor the bandage (see **Figure 2**).\n- Work up the limb covering two thirds of the previous turn.\n- Ensure adequate coverage.\n- Finish with two turns and secure (see **Figure 3**).\n\n- Check patient for comfort and frequently reassess perfusion of the distal limb and adjust as required.\n\n- Check for continued haemorrhage and reinforce existing bandage if required.\n\n#### Considerations\n- The use of an arterial tourniquet if there is uncontrolled, life threatening haemorrhage of a limb.",
+  "content_markdown": "#### Indications\n\n- Pad and bandage: to cover wound or lesion and slow haemorrhage.\n- Spiral bandage: limb injuries, soft issues injuries, securing splints.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- Check area for any easily removed foreign objects.\n\n- Place combine dressing over the wound, consider placing a Non-Adhesive Dressing (NAD) over wound first (see **Figure 1**).\n\n- Apply bandage of appropriate width: \n- Commence with two turns to anchor the bandage (see **Figure 2**).\n- Work up the limb covering two thirds of the previous turn.\n- Ensure adequate coverage.\n- Finish with two turns and secure (see **Figure 3**).\n\n- Check patient for comfort and frequently reassess perfusion of the distal limb and adjust as required.\n\n- Check for continued haemorrhage and reinforce existing bandage if required.\n\n#### Considerations\n\n- The use of an arterial tourniquet if there is uncontrolled, life threatening haemorrhage of a limb.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "be14500ccd28b5afef60a2b849847210be292cb9c73545f86e08267066881977",
+  "checksum": "f527df55120183f4e5118b396499797b68dd674cf10ed7e614cdb46052d975c8",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.895934+00:00",
+    "timestamp": "2026-04-24T03:17:43.630185+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

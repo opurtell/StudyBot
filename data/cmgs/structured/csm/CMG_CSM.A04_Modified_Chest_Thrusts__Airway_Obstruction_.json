@@ -4,13 +4,13 @@
   "title": "Modified Chest Thrusts (Airway Obstruction)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Complete upper airway obstruction due to foreign body.\n\n#### Procedure##### Conscious\n\n- Have the patient sit or stand if possible with the paramedic positioned behind with arms wrapped around the patient’s chest (see **Figure 1**).\n\n- Grasp hands in a fist with thumb side against mid sternum area.\n\n- Compress forcefully, up to 5 times. Assess the airway after each thrust to determine if the obstruction has been dislodged.\n\n##### Unconscious\n\n- Position the patient supine and kneel alongside chest. \n- A child or infant may be positioned across the knees in a head down, supine position. (see **Figures 2 & 3**)\n\n- Place hands in the mid sternum area, one on top of the other (as if to perform CPR).\n\n- Compress sharply up to 5 times. Assess the airway after each thrust to determine if the obstruction has been dislodged.\n\nFigure 1\n\nFigure 2\n\nFigure 3",
+  "content_markdown": "#### Indications\n\n- Complete upper airway obstruction due to foreign body.\n\n#### Procedure\n\n##### Conscious\n\n- Have the patient sit or stand if possible with the paramedic positioned behind with arms wrapped around the patient’s chest (see **Figure 1**).\n\n- Grasp hands in a fist with thumb side against mid sternum area.\n\n- Compress forcefully, up to 5 times. Assess the airway after each thrust to determine if the obstruction has been dislodged.\n\n##### Unconscious\n\n- Position the patient supine and kneel alongside chest. \n- A child or infant may be positioned across the knees in a head down, supine position. (see **Figures 2 & 3**)\n\n- Place hands in the mid sternum area, one on top of the other (as if to perform CPR).\n\n- Compress sharply up to 5 times. Assess the airway after each thrust to determine if the obstruction has been dislodged.\n\nFigure 1\n\nFigure 2\n\nFigure 3",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "14a0f63e604e85f802d658256700c390a168f96a82eb218acd097e81e2f4e019",
+  "checksum": "e2ea4c98e4595c7cd2559ccfc8121f9acdafee78ba8f93938cbeaefbfd0ecb78",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.811397+00:00",
+    "timestamp": "2026-04-24T03:17:43.569583+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

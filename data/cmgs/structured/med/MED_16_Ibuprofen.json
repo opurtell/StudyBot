@@ -1,0 +1,18 @@
+{
+  "id": "MED_16_Ibuprofen",
+  "cmg_number": "16",
+  "title": "Ibuprofen",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nNon-steroidal anti-inflammatory\n\n##### Presentations\n\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\n\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Contraindicated**\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n\n##### Paediatric\n\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "dcd971c87884c50f27142255d34b81d2010831a3decd0ca876837931cc710eef",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.552861+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -4,13 +4,13 @@
   "title": "Elevation Sling",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- For the comfort and support of suspected wrist, arm, or shoulder fractures, or soft tissue injuries.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- If required, administer pain relief prior to applying splint and/or arm sling.\n\n- Confirm distal pulses are present.\n\n- Apply cardboard splint if required.\n\n- Remove triangular bandage from packaging.\n\n- Have the patient position injured arm so that fingers are resting on/near uninjured side clavicle.\n\n- Position the triangular bandage over the injured arm so that the “pointed” end is on top of the injured side elbow and the “tying” end is over the uninjured side shoulder (see **Figure 1**).\n\n- Tucking the bottom half of the sling slightly under the injured arm, wrap the other “tying” end under the proximal forearm/elbow and move around the back, meeting the other “tying” end at the back of the uninjured side shoulder (see **Figure 2**).\n\n- Secure “tying” ends in place with a knot (see **Figure 3**).\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
+  "content_markdown": "#### Indications\n\n- For the comfort and support of suspected wrist, arm, or shoulder fractures, or soft tissue injuries.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- If required, administer pain relief prior to applying splint and/or arm sling.\n\n- Confirm distal pulses are present.\n\n- Apply cardboard splint if required.\n\n- Remove triangular bandage from packaging.\n\n- Have the patient position injured arm so that fingers are resting on/near uninjured side clavicle.\n\n- Position the triangular bandage over the injured arm so that the “pointed” end is on top of the injured side elbow and the “tying” end is over the uninjured side shoulder (see **Figure 1**).\n\n- Tucking the bottom half of the sling slightly under the injured arm, wrap the other “tying” end under the proximal forearm/elbow and move around the back, meeting the other “tying” end at the back of the uninjured side shoulder (see **Figure 2**).\n\n- Secure “tying” ends in place with a knot (see **Figure 3**).\n\n- Reconfirm distal pulses are present, sensation, and capillary refill.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "29e6fcb11987f4ab6fb8bf247038154ceba6b29457d0a8dea3ab5930481ac6c5",
+  "checksum": "62316954c1d890be7f2b1491930b4a857731e48e39e9ad7f58994a77eda10d11",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.897793+00:00",
+    "timestamp": "2026-04-24T03:17:43.631260+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

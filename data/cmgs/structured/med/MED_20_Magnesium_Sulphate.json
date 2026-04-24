@@ -1,0 +1,18 @@
+{
+  "id": "MED_20_Magnesium_Sulphate",
+  "cmg_number": "20",
+  "title": "Magnesium Sulphate",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n\n2.5g in 5 ml (50% solution) – glass ampoule\n\n##### Actions\n\nMagnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.\n\n#### Uses\n\n- Torsades de pointes / polymorphic VT **- ICP only**\n\n- Refractory VF (3rd drug) **- ICP only**\n\n- Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation\n\n- Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**\n\n#### Adverse Effects\n\nRare – more common if serum magnesium is normal:\n\n- Respiratory depression\n\n- Nausea and vomiting\n\n- Hypotension\n\n- Confusion\n\n- Bradycardia\n\n#### Contraindications\n\n- AV block\n\n- Renal failure\n\n- Hepatic failure\n\n#### Precautions\n\nMyasthenia gravis\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- **ICP: ****With cardiac output: **2.5g IV/IO \n- Diluted up to 10ml with normal saline\n- Given over 5 minutes. \n\n- **ICP: ****Refractory VF: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Torsades de pointes: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n##### Paediatric\n\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.\n\n#### Special Notes\n\n- Prolonged hypotension post-magnesium administration – if unresponsive to fluids, patient may be treated with IV calcium.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "b4de6c818f17274f7207bc6bfade6b02e9373c1f177a7585935c2d27129b93c9",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.557106+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -4,7 +4,7 @@
   "title": "Methoxyflurane Administration",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+  "content_markdown": "#### Indications\n\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n\n#### Specific Notes\n\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
   "is_icp_only": false,
   "dose_lookup": {
     "Oxygen": [
@@ -319,9 +319,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "918a345d27b475a89ed64dc7304172399dfe23152f664324f1736b7324c8ad97",
+  "checksum": "98ca08cb47ec0605d9b948e71d4e5ca6a4b5cd0516c66b97d58ecd3f735c6886",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.880773+00:00",
+    "timestamp": "2026-04-24T03:17:43.626502+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

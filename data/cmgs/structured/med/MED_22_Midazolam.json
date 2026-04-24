@@ -1,0 +1,18 @@
+{
+  "id": "MED_22_Midazolam",
+  "cmg_number": "22",
+  "title": "Midazolam",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nBenzodiazepine \n\n##### Presentations\n\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anxiolytic\n\n- Amnesic\n\n##### Pharmacokinetics\n\n**IV/IO**\n Onset: 2 minutes\n Max Effect: 3 - 5 minutes\n Duration: 7 - 75 minutes\n\n**IM**\n Onset: 5 - 15 minutes\n Max Effect: 30 - 60 minutes\n Duration: 2 - 6 hours\n\n#### Uses\n\n- Status epilepticus\n\n- Post intubation analgosedation in conjunction with morphine\n\n- Relieve distress or restlessness in the palliative care patient\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment)\n\n#### Adverse Effects\n\n- Hypotension\nMore common when administer via fast IV push\n\n- Respiratory depression and loss of airway\nMore common at high doses or when synergising with other CNS depressant substances\n\n#### Contraindications\n\n- Previous allergic reaction to Midazolam\n\n#### Precautions\n\n- Hepatic failure\n\n- Frail or elderly\n\n- Known or suspected concurrent CNS depressant use\n\n- Known or suspected haemodynamic compromise\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Approved** for administration in ACTAS setting.\n\n##### Breastfeeding\n\n- **Approved** for administration in ACTAS setting.\n\n#### Doses\n\n#### Status Epilepticus\n\n##### Adult and Paediatric\n\n- 0.2mg/kg IM (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n- **ICP:** 0.2mg/kg IV/IO push over 60 sec. (max. 10mg) \n- Repeat @5/60 if required. (max. 2 doses)\n\n#### Post Intubation Sedation (as adjunct to ketamine)\n\n##### Adult and Paediatric\n\n- **ICP:** 0.05mg/kg IV/IO push over 60 sec. \n- Repeat @5/60 as required.\n\n#### Post Intubation Sedation (as adjunct to morphine)\n\n##### Adult\n\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL\n\n- **ICP:** Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP:** Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)\n#### Palliative Care\n\n**Note:** Always refer to and follow patient specific treatment plan when available.\n\n##### Adult with distress or restlessness\n\n- 2.5 – 5mg SC/IM\nConsider patient weight when selecting dose\n\n##### Adult with terminal palliative care emergency\n\n- 5mg SC/IM/IV\nIn conjunction with morphine\n- Repeat @10/60 if requires (max. 60mg)\n\n##### Paediatric\n\nRefer to patient specific treatment plan for all palliative care presentations.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "3776c884907c53dc8e0ea76858a679d2153fe1d75742ae0431a2a190b4157684",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.559055+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

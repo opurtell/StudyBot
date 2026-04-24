@@ -4,13 +4,13 @@
   "title": "Chest Seal (Hyfin Vent)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Open chest wounds.\n\n#### Procedure\n\n- Assess for dangers, ensure scene is safe before proceeding.\n\n- Remove clothing from patient’s torso to visualize wounds, ensure you roll patient and check back and in armpits for concealed entry/exit wounds.\n\n- Open chest seal packet at indicated red marks, keep packaging.\n\n- Use included gauze to clean and dry area around chest wound.\n\n- Grip red tab and peel off backing.\n\n- Place dressing over chest wound, ensure wound is in the center of dressing.\n\n- Smooth out edges of dressing ensuring good contact with skin.\n\n- Repeat steps 3 – 7 for all chest wounds requiring dressings.\n\n- Continually monitor for signs of a tension pneumothorax.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Complications\n- Occlusion of the vents may lead to a tension pneumothorax.\n\n#### Specific Notes\n- If the patient develops a tension pneumothorax remove or ‘burp’ the chest seal and/or perform chest decompression.",
+  "content_markdown": "#### Indications\n\n- Open chest wounds.\n\n#### Procedure\n\n- Assess for dangers, ensure scene is safe before proceeding.\n\n- Remove clothing from patient’s torso to visualize wounds, ensure you roll patient and check back and in armpits for concealed entry/exit wounds.\n\n- Open chest seal packet at indicated red marks, keep packaging.\n\n- Use included gauze to clean and dry area around chest wound.\n\n- Grip red tab and peel off backing.\n\n- Place dressing over chest wound, ensure wound is in the center of dressing.\n\n- Smooth out edges of dressing ensuring good contact with skin.\n\n- Repeat steps 3 – 7 for all chest wounds requiring dressings.\n\n- Continually monitor for signs of a tension pneumothorax.\n\n#### Contraindications\n\n- Nil when indicated.\n\n#### Complications\n\n- Occlusion of the vents may lead to a tension pneumothorax.\n\n#### Specific Notes\n\n- If the patient develops a tension pneumothorax remove or ‘burp’ the chest seal and/or perform chest decompression.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "9166ca37e58f4d9d634a43c7014687fe27c04de35c2c2025f6eecf888d77b55f",
+  "checksum": "54bb53460a1c22b300159847192355055bd97a182a467afef670f847cf4c4ff9",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.846039+00:00",
+    "timestamp": "2026-04-24T03:17:43.599009+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

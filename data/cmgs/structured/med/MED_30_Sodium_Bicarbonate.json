@@ -1,0 +1,18 @@
+{
+  "id": "MED_30_Sodium_Bicarbonate",
+  "cmg_number": "30",
+  "title": "Sodium Bicarbonate",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nHypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n\n50ml sodium bicarbonate solution – glass vial\n\n##### Actions\n\n- Neutralises metabolic acidosis as a result of cardiac arrest or poor perfusion \n\n- Causes movement of K+ into cells – swaps with H+ ions\n\nOnset IV: 30 – 60 seconds.\n\n#### Uses\n\n- Cardiac arrest secondary to cardioactive drug overdose or hyperkalaemia \n\n- Prolonged cardiac arrest (>15 minutes) \n\n- For emergency treatment of hyperkalaemia \n\n- For treatment of arrhythmias, seizures or coma in overdose of cardioactive medications (e.g., tricyclics antidepressant, \\u03b2 blocker, digoxin) \n\n- To combat acidosis and hyperkalaemia in crush syndrome \n\n#### Adverse Effects\n\n- Metabolic alkalosis\n\n- High sodium content may lead to fluid overload and cardiac failure \n\n- Interacts with some other drugs (especially calcium and adrenaline): \n- always flush well through the line before and after administration\n- consider a second line\n\n#### Contraindications\n\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### In cardiac arrest\n\n**Secondary to hyperkalaemia or cardioactive drug overdose; prolonged arrest >15 minutes**\n\n##### Adult and Paediatric\n\n- **ICP: **1mMol/kg IV or IO \n- Fast push\n- No repeat.\n\n#### Hyperkalaemia with cardiac output \n\n##### Adult and Paediatric\n\n- **ICP: **0.5mMol/kg IV or IO \n- Over 2 to 5 minutes\n- May repeat once, if required.\n\n#### Cardio-active medication overdose\n\n##### Adult and Paediatric (12 lead with wide QRS complex)\n\n- **ICP: **1mMol/kg IV or IO \n- Over 30 to 60 seconds\n- May repeat once, if required. \n\n#### Special Notes\n\n- Always administer sodium bicarbonate to cardioactive medication overdose patients when in cardiac arrest.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "8fa5336eaf192f2131b4d6db06ef8a943690b333ff807d8ddcb6ef8a4a386e61",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.565669+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

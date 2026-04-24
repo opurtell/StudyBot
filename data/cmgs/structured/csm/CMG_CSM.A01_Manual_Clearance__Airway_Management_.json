@@ -4,7 +4,7 @@
   "title": "Manual Clearance (Airway Management)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "# Manual Clearance (Airway Management)\n\nThe primary goals of airway management are in this order of priority:\n\n1\n\nOxygenation. \n\n2\n\nVentilation.\n\n3\n\nAirway protection.\n\n#### Management\n- Assess need for airway management \n- Start basic and work up\n- It is permissible to ‘leap‐frog’ steps if, in your clinical judgement, the patient’s condition warrants this.\n\n#### Decreased level of consciousness AND breathing\n- Basic airway manoeuvres \n- Posture, suction, oral airway, nasopharyngeal airway.\n\n- Consider LMA.\n- **ICP:** Mild sedation to permit **basic** airway management (midazolam). - **ICP: Assess need to intubate:**\n- Refer to CMG 3B Intubation Algorithm.\n- ‘Cold’ endotracheal intubation (cardiac arrest only).\n- **Adults:** Refer to CMG 3A Rapid Sequence Intubation.\n#### Decreased level of consciousness AND not breathing\n- Basic airway manoeuvres \n- Posture, suction, oral airway, nasopharyngeal airway.\n\n- LMA preferred.\n- **ICP:** Mild sedation to permit **basic** airway management (midazolam).\n- **ICP: Assess need to intubate:**\n- Refer to CMG 3B Intubation Algorithm.\n- ‘Cold’ endotracheal intubation (cardiac arrest only).\n- **Adults:** Refer to CMG 3A Rapid Sequence Intubation.",
+  "content_markdown": "# Manual Clearance (Airway Management)\n\nThe primary goals of airway management are in this order of priority:\n\n1\n\nOxygenation. \n\n2\n\nVentilation.\n\n3\n\nAirway protection.\n\n#### Management\n\n- Assess need for airway management \n- Start basic and work up\n- It is permissible to ‘leap‐frog’ steps if, in your clinical judgement, the patient’s condition warrants this.\n\n#### Decreased level of consciousness AND breathing\n\n- Basic airway manoeuvres \n- Posture, suction, oral airway, nasopharyngeal airway.\n\n- Consider LMA.\n- **ICP:** Mild sedation to permit **basic** airway management (midazolam). - **ICP: Assess need to intubate:**\n- Refer to CMG 3B Intubation Algorithm.\n- ‘Cold’ endotracheal intubation (cardiac arrest only).\n- **Adults:** Refer to CMG 3A Rapid Sequence Intubation.\n\n#### Decreased level of consciousness AND not breathing\n\n- Basic airway manoeuvres \n- Posture, suction, oral airway, nasopharyngeal airway.\n\n- LMA preferred.\n- **ICP:** Mild sedation to permit **basic** airway management (midazolam).\n- **ICP: Assess need to intubate:**\n- Refer to CMG 3B Intubation Algorithm.\n- ‘Cold’ endotracheal intubation (cardiac arrest only).\n- **Adults:** Refer to CMG 3A Rapid Sequence Intubation.",
   "is_icp_only": false,
   "dose_lookup": {
     "Midazolam": [
@@ -1007,9 +1007,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "5d2f022143e4065a2fe1a8aba1cc0962f5ea5c919d4c74815d8286b71c3881fd",
+  "checksum": "fe9e8bd2c45dbf68969ffbdfeb72ddd5b6b50aab9e2ac7ad6292978bd7f67c2c",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.808594+00:00",
+    "timestamp": "2026-04-24T03:17:43.567369+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

@@ -4,13 +4,13 @@
   "title": "Pulse Palpation",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- As part of a normal patient assessment.\n\n#### Procedure\n\n- Locate the artery: ##### Radial Pulse\n- Place two finders on the wrist under the thumb.\n\n##### Brachial Pulse\n- Expose antecubital fossa.\n- Locate brachial artery in the medial aspect of the antecubital fossa.\n\n##### Carotid Pulse\n- Place two fingers beside the patient’s thyroid cartilage. \n- Press inwards and backwards gently against the neck muscle.\n\n##### Femoral Pulse\n- Place two fingers below the inguinal ligament, midway between symphysis pubis and anterior superior iliac spine.\n\n- Count the amount of beats in 15 seconds, or 30 seconds if irregular, and record the amount of beats per minute.\n\n- Record the rate, strength and regularity of the pulse.\n\n#### Specific Notes\n- In shocked states, a peripheral pulse (radial) may not be palpable because the blood pressure is low.\n- Palpated pulses may differ from the heart rate seen on the monitor, this is to be recorded.\n- Do not use the thumb to palpate a pulse.\n- For paediatrics use either the brachial or femoral pulse points.\n\nRadial pulse\n\nBrachial pulse\n\nCarotid pulse\n\nFemoral pulse",
+  "content_markdown": "#### Indications\n\n- As part of a normal patient assessment.\n\n#### Procedure\n\n- Locate the artery: \n##### Radial Pulse\n\n- Place two finders on the wrist under the thumb.\n\n##### Brachial Pulse\n\n- Expose antecubital fossa.\n- Locate brachial artery in the medial aspect of the antecubital fossa.\n\n##### Carotid Pulse\n\n- Place two fingers beside the patient’s thyroid cartilage. \n- Press inwards and backwards gently against the neck muscle.\n\n##### Femoral Pulse\n\n- Place two fingers below the inguinal ligament, midway between symphysis pubis and anterior superior iliac spine.\n\n- Count the amount of beats in 15 seconds, or 30 seconds if irregular, and record the amount of beats per minute.\n\n- Record the rate, strength and regularity of the pulse.\n\n#### Specific Notes\n\n- In shocked states, a peripheral pulse (radial) may not be palpable because the blood pressure is low.\n- Palpated pulses may differ from the heart rate seen on the monitor, this is to be recorded.\n- Do not use the thumb to palpate a pulse.\n- For paediatrics use either the brachial or femoral pulse points.\n\nRadial pulse\n\nBrachial pulse\n\nCarotid pulse\n\nFemoral pulse",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "62e54fe1b93975712ea50b7f5ea8dcb6816565343264a341248c2e2667d4d430",
+  "checksum": "b88c8dc6d261315805f9e68fcfdf8c401754c883098356d42cd1be85148037a2",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.857077+00:00",
+    "timestamp": "2026-04-24T03:17:43.604182+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

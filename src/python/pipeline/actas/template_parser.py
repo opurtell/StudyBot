@@ -200,6 +200,14 @@ def _tokenize_template(block: str) -> List[Dict[str, any]]:
                 text = text_arg[1:-1]
                 text = _decode_unicode_escapes(text)
                 if len(text) >= 1:
+                    # Escape HTML metacharacters so stray `<` in clinical text
+                    # (e.g. "BGL <4mmol/L") isn't treated as a tag start by the
+                    # downstream tag-stripping regex in html_to_markdown.
+                    text = (
+                        text.replace("&", "&amp;")
+                        .replace("<", "&lt;")
+                        .replace(">", "&gt;")
+                    )
                     tokens.append({"type": "text", "content": text})
 
         elif method in ("j41",) and len(args) >= 2:
@@ -382,7 +390,9 @@ def html_to_markdown(html: str) -> str:
     html = strip_boilerplate(html)
     md = html
     md = re.sub(
-        r"<h([1-6])>(.*?)</h\1>", lambda m: "#" * int(m.group(1)) + " " + m.group(2), md
+        r"<h([1-6])>(.*?)</h\1>",
+        lambda m: "\n" + "#" * int(m.group(1)) + " " + m.group(2) + "\n",
+        md,
     )
     md = re.sub(r"<section[^>]*>", "\n", md)
     md = re.sub(r"</section>", "\n", md)
@@ -418,6 +428,8 @@ def html_to_markdown(html: str) -> str:
     md = re.sub(r"<button[^>]*>", " ", md)
     md = re.sub(r"</button>", " ", md)
     md = re.sub(r"<[^>]+>", "", md)
+    # Decode HTML entities that were escaped in EFF text tokens.
+    md = md.replace("&lt;", "<").replace("&gt;", ">").replace("&amp;", "&")
     md = re.sub(r"\n{3,}", "\n\n", md)
     md = re.sub(r"([.!?])([-])", r"\1\n\2", md)
     return md.strip()

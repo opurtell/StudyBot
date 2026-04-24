@@ -4,13 +4,13 @@
   "title": "Blood Lactate Measurement",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patient displaying signs of infection or septic shock.\n\n#### Procedure\n\n- Remove the test strip from the packaging and insert into the lactate device.\n\n- Select a finger and clean with an alcohol swab.\n\n- Allow the finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Wipe away the first drop of blood (it can be used for BGL testing).\n\n- Place a sample of blood on the test strip until the lactate device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result, and record the lactate measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HIGH” reading indicates a lactate 25mmol/L.\n- Excessive exercise, movement of the limb, suspected crush injury or compartment syndrome of the limb to be tested may produce inaccurate results.",
+  "content_markdown": "#### Indications\n\n- Patient displaying signs of infection or septic shock.\n\n#### Procedure\n\n- Remove the test strip from the packaging and insert into the lactate device.\n\n- Select a finger and clean with an alcohol swab.\n\n- Allow the finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Wipe away the first drop of blood (it can be used for BGL testing).\n\n- Place a sample of blood on the test strip until the lactate device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result, and record the lactate measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n\n- A “LO” or “HIGH” reading indicates a lactate <0.5mmol /L or >25mmol/L.\n- Excessive exercise, movement of the limb, suspected crush injury or compartment syndrome of the limb to be tested may produce inaccurate results.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "a4ccc9dd3c86d92153981c04aca7284d62a21905ff7b4d458c1c33ecd3143e90",
+  "checksum": "e75fd0dd0487878a06d6860fbc1be584cbc430addd35cf5b4b08e01f8ef99a5c",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.863707+00:00",
+    "timestamp": "2026-04-24T03:17:43.609740+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

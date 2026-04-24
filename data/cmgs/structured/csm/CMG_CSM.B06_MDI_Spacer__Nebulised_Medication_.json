@@ -4,7 +4,7 @@
   "title": "MDI Spacer (Nebulised Medication)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patients requiring nebulised medications and BVM O2 therapy / ventilation.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\n- Ensure all medication checks have been completed prior to administration by two officers.\n\n- Assemble the BVM circuit with the inline MDI spacer in the following order (see **Figure 1**): \n- Oxygen tubing or demand valve.\n- BVM with or without PEEP.\n- Bacterial filter.\n- Inline MDI spacer.\n- Flexible liquorish stick.\n- Zoll in-line capnography- Mask or advanced airway.\n- Position the mask over the patient’s nose and mouth and ventilate as required.\n\n- Insert MDI aerosol canister into the inline MDI spacer and holding it upright, administer metered dose as per CMG’s (see **Figure 2**). \n- Shake canister between each dose.\n\n- Reassess respiratory and perfusion status.\n\n#### Contraindications\n- Nil when indicated.\n\n#### Specific Notes\n- Increased apparatus dead space.\n- Will occupy one officer in totality to deliver medication in this manner.\n- If MDI has a counter attached ensure green inline MDI spacer is used.",
+  "content_markdown": "#### Indications\n\n- Patients requiring nebulised medications and BVM O2 therapy / ventilation.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\n- Ensure all medication checks have been completed prior to administration by two officers.\n\n- Assemble the BVM circuit with the inline MDI spacer in the following order (see **Figure 1**): \n- Oxygen tubing or demand valve.\n- BVM with or without PEEP.\n- Bacterial filter.\n- Inline MDI spacer.\n- Flexible liquorish stick.\n- Zoll in-line capnography- Mask or advanced airway.\n- Position the mask over the patient’s nose and mouth and ventilate as required.\n\n- Insert MDI aerosol canister into the inline MDI spacer and holding it upright, administer metered dose as per CMG’s (see **Figure 2**). \n- Shake canister between each dose.\n\n- Reassess respiratory and perfusion status.\n\n#### Contraindications\n\n- Nil when indicated.\n\n#### Specific Notes\n\n- Increased apparatus dead space.\n- Will occupy one officer in totality to deliver medication in this manner.\n- If MDI has a counter attached ensure green inline MDI spacer is used.",
   "is_icp_only": false,
   "dose_lookup": {
     "Oxygen": [
@@ -276,9 +276,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "24132ad2297a3d886e0f7c20552e066337d37a960cedfa739c7bcb909e53a726",
+  "checksum": "9bec3e7d0d56321eb6ec414c2d058a0fdf17621786b955051edc28150518dc3c",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.838804+00:00",
+    "timestamp": "2026-04-24T03:17:43.595890+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

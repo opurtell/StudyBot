@@ -4,7 +4,7 @@
   "title": "External Jugular Cannulation",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patients requiring intravenous access for drug or fluid administration in life-threatening situations where a peripheral vein cannot be cannulated or intraosseous needle cannot be inserted. The external jugular must be visible. \n\n#### Procedure\n\n- Position the patient supine, legs elevated with head turned away from the cannulation side.\n\n- Locate insertion site (midway between the angle of the jaw and the clavicle) and swab with alcohol wipe (see **Figure 1**).\n\nFigure 1\n\n- Prepare required equipment: \n- Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.\n\n- Tension the vein at the clavicle with the non-cannulation hand.\n\n- Insert the cannula, bevel up, at approx 25-30\\xb0 angle.\n\n- When flashback is observed, lower and further advance the stylet to ensure the cannula sheath is securely within the vein.\n\n- Advance the cannula sheath fully into the vein and retract the stylet within the self-locking cover.\n\n- Whilst applying digital pressure to the vein, carefully disconnect the self-locking cover and secure a needleless injection port to the cannula. Dispose of the cover within a sharps container.\n\n- Flush cannula to confirm patency, ensuring no extravasation occurs.\n\n- Secure with tegaderm adhesive dressing, fill out and apply the time/date sticker and yellow cannula advisory sticker.\n\n- Regularly reassess for dislodgment, haemorrhage, swelling, reddening or discomfort.\n\n#### Complications\n- Venous air embolism, more likely than with peripheral veins.\n- Extravasation.\n- Thrombophlebitis.\n- Haematoma formation.\n- Disconnection/haemorrhage.\n- Pneumothorax.",
+  "content_markdown": "#### Indications\n\n- Patients requiring intravenous access for drug or fluid administration in life-threatening situations where a peripheral vein cannot be cannulated or intraosseous needle cannot be inserted. The external jugular must be visible. \n\n#### Procedure\n\n- Position the patient supine, legs elevated with head turned away from the cannulation side.\n\n- Locate insertion site (midway between the angle of the jaw and the clavicle) and swab with alcohol wipe (see **Figure 1**).\n\nFigure 1\n\n- Prepare required equipment: \n- Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.\n\n- Tension the vein at the clavicle with the non-cannulation hand.\n\n- Insert the cannula, bevel up, at approx 25-30\\xb0 angle.\n\n- When flashback is observed, lower and further advance the stylet to ensure the cannula sheath is securely within the vein.\n\n- Advance the cannula sheath fully into the vein and retract the stylet within the self-locking cover.\n\n- Whilst applying digital pressure to the vein, carefully disconnect the self-locking cover and secure a needleless injection port to the cannula. Dispose of the cover within a sharps container.\n\n- Flush cannula to confirm patency, ensuring no extravasation occurs.\n\n- Secure with tegaderm adhesive dressing, fill out and apply the time/date sticker and yellow cannula advisory sticker.\n\n- Regularly reassess for dislodgment, haemorrhage, swelling, reddening or discomfort.\n\n#### Complications\n\n- Venous air embolism, more likely than with peripheral veins.\n- Extravasation.\n- Thrombophlebitis.\n- Haematoma formation.\n- Disconnection/haemorrhage.\n- Pneumothorax.",
   "is_icp_only": true,
   "dose_lookup": {
     "Normal Saline": [
@@ -472,9 +472,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "00e1d112eaefdd90bbf4139a0942582da6923684901a18b01e543c439ae35726",
+  "checksum": "aa309bf97669482a3a8cdc2b7852467bdeaeddd3543eb3aaff5c8b39ff1393a7",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.876627+00:00",
+    "timestamp": "2026-04-24T03:17:43.622912+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

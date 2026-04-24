@@ -4,13 +4,13 @@
   "title": "15 Lead ECG Monitoring",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Suspected posterior myocardial infarction.\n- Reciprocal changes in anterior leads (as per CMG).\n- To be performed secondary to a 12 lead ECG where there is a high suspicion of acute coronary syndrome but no ECG changes are evident.\n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Locate V4R and attach V1 electrode: \n- V4R is located at the 5th intercostal space on the right side of the chest, mid-clavicular line (see **Figure 1**).\n\n- Attach V5 to the V8 position: \n- Posterior 5th intercostal space, mid-scapular region on the left side of the back (see **Figure 1 & 2**).\n\n- Attach V6 to the V9 position: \n- 5th intercostal space, left paraspinal boarder (see **Figure 2**)\n\n- Ensure the patient is as still as possible.\n\n- Print and record the ECG: \n- Ensure that V1 is marked V4R, V5 is marked V8, and V6 is marked V9 on all 15 lead ECGs.\n\nFigure 1\n\nFigure 2",
+  "content_markdown": "#### Indications\n\n- Suspected posterior myocardial infarction.\n- Reciprocal changes in anterior leads (as per CMG).\n- To be performed secondary to a 12 lead ECG where there is a high suspicion of acute coronary syndrome but no ECG changes are evident.\n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Locate V4R and attach V1 electrode: \n- V4R is located at the 5th intercostal space on the right side of the chest, mid-clavicular line (see **Figure 1**).\n\n- Attach V5 to the V8 position: \n- Posterior 5th intercostal space, mid-scapular region on the left side of the back (see **Figure 1 & 2**).\n\n- Attach V6 to the V9 position: \n- 5th intercostal space, left paraspinal boarder (see **Figure 2**)\n\n- Ensure the patient is as still as possible.\n\n- Print and record the ECG: \n- Ensure that V1 is marked V4R, V5 is marked V8, and V6 is marked V9 on all 15 lead ECGs.\n\nFigure 1\n\nFigure 2",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "de547020c0b28241b692721137a984077d1d05c727b4134071c154f62f7abed2",
+  "checksum": "e466cebf2b183b2b78e4517cb3c1cee9ed7b7a51b38012b331b06b47071b46ef",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.862287+00:00",
+    "timestamp": "2026-04-24T03:17:43.607735+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

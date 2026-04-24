@@ -4,7 +4,7 @@
   "title": "Applying Topical Anaesthetic Cream",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "##### Type\nTopical anaesthetic\n\n##### Presentations\n5g tube of cream containing lignocaine 40mg/g\n\n##### Actions\nLocal topical anaesthesia \n Onset: 30 minutes \n\n#### Uses\nTopical anaesthesia prior to anticipated IV cannulation in paediatric patients.\n\n#### Adverse Effects\n\n- Irritation\n\n- Redness\n\n- Itching\n\n- Rash\n\n- Anaphylaxis (rare)\n\n- Corneal irritation (accidental eye exposure)\n\n#### Contraindications\n\n- Amide local anaesthetic hypersensitivity\n\n- Broken skin (atopic dermatitis, wounds, mucous membranes)\n\n- Infants",
+  "content_markdown": "##### Type\n\nTopical anaesthetic\n\n##### Presentations\n\n5g tube of cream containing lignocaine 40mg/g\n\n##### Actions\n\nLocal topical anaesthesia \n Onset: 30 minutes \n\n#### Uses\n\nTopical anaesthesia prior to anticipated IV cannulation in paediatric patients.\n\n#### Adverse Effects\n\n- Irritation\n\n- Redness\n\n- Itching\n\n- Rash\n\n- Anaphylaxis (rare)\n\n- Corneal irritation (accidental eye exposure)\n\n#### Contraindications\n\n- Amide local anaesthetic hypersensitivity\n\n- Broken skin (atopic dermatitis, wounds, mucous membranes)\n\n- Infants < 3 months old\n\n#### Precautions\n\n- Eye contact\n\n- Excessive dosing (large area and prolonged application time)\n\n- Severe hepatic, renal or cardiac impairment\n\n- Anticipated need for IV access within 30 minutes\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Paediatric only \n\n- 1 g cream = 5cm cream \n- 3-12 months: ≤ 1g per site – 3 sites only (2 x ACF, 1 dorsum of hand)\n- ≥ 12 months: 1g – 2.5g per site\n- Do not exceed 10g total application\n\n#### Special Notes\n\n- Pain, anxiety, distress and subsequent needle phobia is associated with IV access attempts. Preparation of potential IV cannulation sites with topical anaesthetic cream can reduce pain and minimise distress to patients.\n- If skin irritation occurs, remove the cream immediately.",
   "is_icp_only": false,
   "dose_lookup": {
     "Lignocaine": [
@@ -167,9 +167,9 @@
     ]
   },
   "flowchart": null,
-  "checksum": "5112bbd9fb772025b900ce1ca60ff824d6bdb92875c55313d4baae711fba48e1",
+  "checksum": "62c4a8b4f824e25e8db8987d168fcb6907f21eeb3a42591bf11450f783c2411f",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.893259+00:00",
+    "timestamp": "2026-04-24T03:17:43.629711+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

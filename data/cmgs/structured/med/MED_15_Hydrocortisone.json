@@ -1,0 +1,18 @@
+{
+  "id": "MED_15_Hydrocortisone",
+  "cmg_number": "15",
+  "title": "Hydrocortisone",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nAdrenocorticosteroid [S4]\n\n##### Presentations\n\n100mg powder in 2ml vial (reconstitute with 2ml normal saline)\n\n##### Actions\n\nNumerous and widespread. ACTAS administration for:\n\n- Anti-inflammatory effects on the airways\n\n- Stimulates the normal increase in cortisol secretion in response to stress \n\n#### Uses\n\n- Moderate to severe respiratory distress due to asthma or exacerbation of COPD \n\n- Patients with a diagnosed adrenal insufficiency who experience a stress response and exhibit altered conscious state and/or refractory hypotension \n\n#### Adverse Effects\n\nNil significant with single use\n\n#### Contraindications\n\nKnown previous reaction to corticosteroids\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, advise against breastfeeding for 4 hours post administration \n\n#### Doses\n\n#### Asthma and COPD\n\n##### Adult\n\n- **ICP:** 100mg IV – slowly over 2 minutes \n\n##### Paediatric\n\n- **ICP:** 4mg/kg IV (to a maximum of 100mg) – slowly over 2 minutes \n\n#### Adrenal crisis\n\n##### Adult\n\n- **ICP:** 100mg IV – slowly over 2 minutes \n- May be administered IM.\n\n##### Paediatric\n\n- **ICP:** IV (slowly over 2 minutes): \n- <3 years = 25mg IV\n- 3-12 years = 50mg IV\n- >12 years = 100mg IV.\n- **ICP:** May be administered IM.\n\n#### Special Notes\n\n- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.",
+  "is_icp_only": true,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "d0aa37c5a563f344c2907b3ae86ad363fe0cd4a8ac88617def76b56adcdfc3c3",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.552318+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

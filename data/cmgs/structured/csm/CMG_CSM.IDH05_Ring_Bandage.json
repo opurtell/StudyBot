@@ -4,13 +4,13 @@
   "title": "Ring Bandage",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- To control bleeding caused by penetrating injury and secure the penetrating object in place.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- Using a triangular bandage, roll up so that each “tying” end is at greatest distance from each other.\n\n- Form a loose overhand knot at the centre so that a small loop is formed (see **Figure 1**).\n\n- Wrap “tying” ends in and around the knot to form a doughnut (see **Figures 2 & 3**).\n\n- Position ring bandage around penetrating object.\n\n- Secure in place with appropriate bandage.\n\n- Ensure there is no pressure being applied to the penetrating object and that the ring bandage is not touching the penetrating object.",
+  "content_markdown": "#### Indications\n\n- To control bleeding caused by penetrating injury and secure the penetrating object in place.\n\n#### Procedure\n\nFigure 1\n\nFigure 2\n\nFigure 3\n\n- Using a triangular bandage, roll up so that each “tying” end is at greatest distance from each other.\n\n- Form a loose overhand knot at the centre so that a small loop is formed (see **Figure 1**).\n\n- Wrap “tying” ends in and around the knot to form a doughnut (see **Figures 2 & 3**).\n\n- Position ring bandage around penetrating object.\n\n- Secure in place with appropriate bandage.\n\n- Ensure there is no pressure being applied to the penetrating object and that the ring bandage is not touching the penetrating object.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "b1f87b2bcee98aebdf7e8e78534d11cf26e46b22ec772c861f833134bc799391",
+  "checksum": "61cc5bb0a479deef69d3beb512e909d604dc97b000c604c7174c660e5f70bd44",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.899836+00:00",
+    "timestamp": "2026-04-24T03:17:43.632168+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

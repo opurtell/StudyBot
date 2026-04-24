@@ -104,7 +104,7 @@ def load_medications() -> list[MedicationDose]:
         dose_text = _extract_dose_section(content)
 
         cmg_number = data.get("cmg_number", "")
-        cmg_reference = f"CMG {cmg_number}" if cmg_number else ""
+        cmg_reference = f"MED {cmg_number}" if cmg_number else ""
 
         results.append(
             MedicationDose(

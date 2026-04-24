@@ -4,13 +4,13 @@
   "title": "Log Roll",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- Patient with suspected spinal injuries.\n\n#### Procedure\n\n- Prepare any lifting devices (spine board, support straps, scoop stretcher or carry sheet).\n\n- Remove items from pockets etc that may cause patient pain or pressure.\n\n- Instruct assistants on procedure: \n- Brief assistant/s to stand/kneel on one side of patient and place hands on patient’s far side shoulder, hip, upper thigh and lower leg.\n\n- Maintain neutral alignment of spine and support head.\n\n- The person at the head end controls the process.\n\n- Maintain neutral alignment of spine and support head.\n\n- On pre-agreed count, roll patient in alignment toward assistants.\n\n- Complete a secondary survey of patients back: \n- Check back pockets.\n\n- If lifting device is required, instruct assistant to place device against patient’s back.\n\n- Roll to supine position keeping head in alignment.\n\n#### Complications\n- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.\n- Spine boards/scoops are cold, hard and uncomfortable. They should be removed from underneath the patient as soon as practicable.",
+  "content_markdown": "#### Indications\n\n- Patient with suspected spinal injuries.\n\n#### Procedure\n\n- Prepare any lifting devices (spine board, support straps, scoop stretcher or carry sheet).\n\n- Remove items from pockets etc that may cause patient pain or pressure.\n\n- Instruct assistants on procedure: \n- Brief assistant/s to stand/kneel on one side of patient and place hands on patient’s far side shoulder, hip, upper thigh and lower leg.\n\n- Maintain neutral alignment of spine and support head.\n\n- The person at the head end controls the process.\n\n- Maintain neutral alignment of spine and support head.\n\n- On pre-agreed count, roll patient in alignment toward assistants.\n\n- Complete a secondary survey of patients back: \n- Check back pockets.\n\n- If lifting device is required, instruct assistant to place device against patient’s back.\n\n- Roll to supine position keeping head in alignment.\n\n#### Complications\n\n- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.\n- Spine boards/scoops are cold, hard and uncomfortable. They should be removed from underneath the patient as soon as practicable.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "16dd811e763e13c9a80230fcbbe3b64dd105f0cbfe42d03000887aff30653d47",
+  "checksum": "150eaf9f1ffe24a9613c0a8af986778f25b09df87e9db3c280e00e9741e1c91c",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.864047+00:00",
+    "timestamp": "2026-04-24T03:17:43.610517+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

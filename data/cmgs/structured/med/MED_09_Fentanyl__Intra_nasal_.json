@@ -1,0 +1,18 @@
+{
+  "id": "MED_09_Fentanyl__Intra_nasal_",
+  "cmg_number": "09",
+  "title": "Fentanyl (Intra-nasal)",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nSynthetic narcotic analgesic [S8]\n\n##### Presentations\n\n100mcg in 2mL (5mcg/0.1mL) glass ampoule\n\n##### Actions\n\n- Precipitates CNS effects by binding to opioid receptors.\n\n##### Pharmacokinetics\n\nIN\n Onset: ~ 5 minutes\n Max Effect: 5 – 15 minutes\n Duration: ~ 60 minutes\n\n#### Uses\n\n- Analgesic for moderate to severe pain.\n\n- Safe alternative analgesic in patients with known morphine allergy.\n\n#### Adverse Effects\n\n- Reduced conscious state\n\n- Respiratory depression\n\n- Nausea/vomiting\n\n- Bradycardia (rare)\n\n- Rigidity of the diaphragm, intercostals and jaw (rare)\n\n#### Contraindications\n\n- Known allergy or hypersensitivity\n\n- Bilateral bleeding or occluded nostrils\n\n- Age <1yo\n\n#### Precautions\n\n- Previous opioids\nIncreased risk of adverse effects. Consider reducing dose. \n\n- Frail or elderly\nIncreased risk of adverse effects. Consider reducing dose. \n\n- Reduced level of consciousness\nPotential difficulty correctly administering via IN route. \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Refrain from use if labour suspected. If administered, prepare for neonatal respiratory support and naloxone administration. \n\n##### Breastfeeding\n\n- May be used in conservative doses. Encourage feeding/expressing prior to administration.\n\n#### Doses\n\n#### Analgesia – Intranasal\n\n##### Adult and Paediatric\n\n- 1.5mcg/kg IN, up to 100mcg. \n- Repeat @5/60 intervals as required.\n\n#### Further Information\n\n- The atomiser dead space is 0.1mL. To account for this, an additional 0.1mL must be drawn up with the first administration. Pragmatically, this is not required when delivering the full 100mcg dose\n- Ideally volume administered should be limited to 0.3mL – 0.5mL per nostril to a maximum of 1mL.\n- Alternate nostrils until total dose has been delivered.\n- Where possible, IN Fentanyl should be used in addition to paracetamol and an NSAID. - All patients receiving Fentanyl should be on continuous monitoring. - Fentanyl should not be administered if the maximum dose of Morphine has already been administered.\n- Antiemetics should only be administered if the patient has nausea / vomiting prior to or post administration of Fentanyl.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "2acc70675bdbe61f56fe1fe293a439a1f80ac9ade6b6679a19a6a442697ec984",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.548898+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

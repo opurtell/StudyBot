@@ -1,0 +1,18 @@
+{
+  "id": "MED_25_Olanzapine",
+  "cmg_number": "25",
+  "title": "Olanzapine",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nAntipsychotic\n\n- **High-risk medication**\n\n##### Presentations\n\n5mg and 10mg wafer \n\n##### Actions\n\nOlanzapine is an atypical antipsychotic. \n Acts on several neurotransmitters; antipsychotic actions are thought to be mediated by dopamine blockade. \n Onset of action: PO 10-20 min | Duration 12-24 hours\n\n#### Uses\n\nPharmacological intervention for mild to moderately agitated patients.\n\n#### Adverse Effects\n\n- Prolonged QT interval (particularly in the elderly)\n\n- Extrapyramidal effects (rare)\n\n- Neuroleptic malignant syndrome (rare)\n\n- May lower seizure threshold\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Parkinson’s disease\n\n- Post ictal\n\n#### Precautions\n\nIncreased effects in patients who have consumed alcohol, recreational drugs and with other sedative agents.\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Contraindicated** when <28 weeks gestation. When ≥28 weeks, only administer if alternative management is ineffective.\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting, transport is recommended for child monitoring\n\n#### Doses\n\n#### Pacer use only\n\n##### Adult (>14 years)\n\n- 10mg wafer \n- Repeat once, after 20 minutes, if required.\n\n- Modify dose to 5mg wafer if: \n- Frail/elderly (>65 years) or\n- Aboriginal/Torres Straight Island background >55 years- Repeat once, after 10-15 minutes, if required.\n##### Paediatric (<14 years)\n\nNot used.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "2df211584699df7d737b9c705f56724596a3851d4c3464867f7fddfb8f7c1010",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.562232+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

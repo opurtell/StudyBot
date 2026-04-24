@@ -74,7 +74,9 @@ def _extract_dose_section(content: str) -> str:
     return text
 
 
-def _build_medication_index_entry(raw: dict, content_markdown: str, is_icp_only: bool) -> dict:
+def _build_medication_index_entry(
+    raw: dict, content_markdown: str, is_icp_only: bool
+) -> dict:
     indication = ""
     ind_match = re.search(
         r"(?:####\s*(?:Indications?|Uses?))[^\n]*\n(.+?)(?:\n####|\n#####|\Z)",
@@ -106,7 +108,7 @@ def _build_medication_index_entry(raw: dict, content_markdown: str, is_icp_only:
         "adverse_effects": adverse_effects or "See clinical management guideline",
         "precautions": precautions or "See clinical management guideline",
         "dose": dose_text or "See CMG for dose details",
-        "cmg_reference": f"CMG {cmg_number}" if cmg_number else "",
+        "cmg_reference": f"MED {cmg_number}" if cmg_number else "",
         "is_icp_only": is_icp_only,
     }
 
@@ -177,18 +179,28 @@ def structure_guidelines(
             cmg_dose = None
             content_lower = content_markdown.lower()
             is_icp_only = _is_icp_only_entry(title, content_markdown)
-            
-            matched_meds = {}
-            for med_name, entries in dose_lookup.items():
-                if med_name.lower() in content_lower:
-                    matched_meds[med_name] = entries
-            if matched_meds:
-                cmg_dose = matched_meds
+
+            # Dose lookup tables (weight-band field references) are only useful
+            # for clinical guideline entries — medication monograph bodies already
+            # contain their full dose section, and the lookup tables bleed
+            # unrelated medicines into MED entries.
+            if entry_type != "med":
+                matched_meds = {}
+                for med_name, entries in dose_lookup.items():
+                    if med_name.lower() in content_lower:
+                        matched_meds[med_name] = entries
+                if matched_meds:
+                    cmg_dose = matched_meds
 
             safe_title = title.replace("/", "_").replace("\\", "_").replace(" ", "_")
             safe_title = re.sub(r"[^\w]", "_", safe_title)
+            if entry_type == "med":
+                num_key = cmg_number.zfill(2) if cmg_number.isdigit() else cmg_number
+                entry_id = f"MED_{num_key}_{safe_title}"
+            else:
+                entry_id = f"CMG_{cmg_number}_{safe_title}"
             cmg = CMGGuideline(
-                id=f"CMG_{cmg_number}_{safe_title}",
+                id=entry_id,
                 cmg_number=cmg_number,
                 title=title,
                 version_date=raw.get("version_date"),

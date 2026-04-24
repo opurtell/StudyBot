@@ -4,13 +4,13 @@
   "title": "STEMI Transmission (Zoll X Series)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n- STEMI found on 12 lead ECG. \n\n#### Procedure\n\n- Press the **12-Lead** button then press the **Acquire** button.\n\n- In Patient Info enter **Patient Age, Patient Sex** and then the **Patient Initials** in the **LAST NAME** field and click on the Save icon (this menu will only appear for a new patient case).\n\n- Push **12 lead snapshot** button to acquire the 12 lead.\n\n- Press **12-Lead Transfer** button and select **CANBERRA Hospital** from the distribution list. Arrow down to **highlight** the transmit button and Press **Transmit**.\n\nFigure 1\n\n- The X-Series will indicate **Transmission Completed** for successful transmission.\n\n- If **Transmission failed**, click back arrow and press **12-Lead Review Icon** select the **12-lead ECG** you would like to transmit again. **Repeat Step 4**.\n\nFigure 2\n\n- After patient handover at TCH and before turning off the monitor, return to the Patient Info screen and put the **VACIS case number** into the **Patient ID field**.",
+  "content_markdown": "#### Indications\n\n- STEMI found on 12 lead ECG. \n\n#### Procedure\n\n- Press the **12-Lead** button then press the **Acquire** button.\n\n- In Patient Info enter **Patient Age, Patient Sex** and then the **Patient Initials** in the **LAST NAME** field and click on the Save icon (this menu will only appear for a new patient case).\n\n- Push **12 lead snapshot** button to acquire the 12 lead.\n\n- Press **12-Lead Transfer** button and select **CANBERRA Hospital** from the distribution list. Arrow down to **highlight** the transmit button and Press **Transmit**.\n\nFigure 1\n\n- The X-Series will indicate **Transmission Completed** for successful transmission.\n\n- If **Transmission failed**, click back arrow and press **12-Lead Review Icon** select the **12-lead ECG** you would like to transmit again. **Repeat Step 4**.\n\nFigure 2\n\n- After patient handover at TCH and before turning off the monitor, return to the Patient Info screen and put the **VACIS case number** into the **Patient ID field**.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "69fdcf026ea4d849ea14137ed18190e1148a66e6b8dd3899e383dd88132c29a0",
+  "checksum": "9bf5b14f8831c69be1f28c6bfbf2330a6efbddb90ee0f384aabf7c11c2939c93",
   "extraction_metadata": {
-    "timestamp": "2026-04-05T12:20:27.909999+00:00",
+    "timestamp": "2026-04-24T03:17:43.639208+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

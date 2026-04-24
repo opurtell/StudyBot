@@ -1,0 +1,18 @@
+{
+  "id": "MED_27_Paracetamol",
+  "cmg_number": "27",
+  "title": "Paracetamol",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nSimple analgesic / antipyretic \n\n##### Presentations\n\n**PO:** 48mg/ml colour free liquid (oral) \n**IV:** 1g in 100ml in collapsible plastic flask (IV) \n**PO:** 500mg tablet (oral) \n\n##### Actions\n\n- Antipyretic\n\n- Mild—moderate analgesic\n\nOnset Oral: 30 minutes \n IV: 5-10 minutes \n\n#### Uses\n\n- Pyrexia in children who have had or may have a febrile convulsion (for ACTAS treatment, pyrexia is generally >38\\xb0C)\n\n- Mild to moderate pain (oral)\n\n- Moderate to severe pain (IV)\n\n#### Adverse Effects\n\nRare – none of these side effects have been confirmed or refuted as being linked to the casual use of paracetamol:\n\n- Dyspepsia\n\n- Nausea\n\n- Allergic reactions\n\n- Haematological reactions\n\n- Dizziness\n\n- Pain at injection site\n\n#### Contraindications\n\n- Known or suspected allergy to paracetamol\n\n- Previous paracetamol dose in last 4 hours (oral doses only)\n\n- Previous paracetamol dose in last 6 hours (IV doses only)\n\n- Children who do not have a sufficient gag reflex to swallow the measured dose \n\n- Not to be given to children < 1 month old\n\n- Diagnosed liver failure\n\n#### Precautions\n\n- Impaired hepatic function\n\n- Impaired renal function\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### Pyrexia in children\n\n##### Paediatric only\n\n- 15mg/kg – oral liquid given (via syringe)\n\n#### Analgesia \n\n##### Adult ≥ 12 years\n\n- ≥ 50kg: \n- 2 tablets (1g) PO, or\n- 1g IV over 15/60 via burette\n\n- < 50kg: \n- 1 tablet (500mg) PO, or\n- 15mg/kg IV over 15/60 via burette\n##### Paediatric \n\n- 15mg/kg PO (liquid), or\n- 15mg/kg IV over 15/60 via burette\n\n#### Special Notes\n\n- It is envisaged that the administration of Panadol Liquid will be for children that are post-ictal / post febrile convulsion, or who are likely to have a febrile convulsion and are not responding to non-medical treatment.\n- Paracetamol does not necessarily prevent febrile convulsions.\n- Active cooling measures should still be carried out, as well as checking for the reason for pyrexia (URTI, meningococcal disease, etc).\n- As a general rule, if children are administered paracetamol, they should not be left at home. - Do not exceed 60mg/kg/24hours.\n- Children aged 10-12 may take a 500mg tablet if preferred.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "444e3a65ec2d093d8efe0263384bc534672f3f493104fa968fbe41d5d36939e1",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.563868+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "MED_11_Glucose_10_",
+  "cmg_number": "11",
+  "title": "Glucose 10%",
+  "version_date": null,
+  "section": "Medicine",
+  "content_markdown": "##### Type\n\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\n\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\n\nTreat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)\n\n#### Adverse Effects\n\n- Tissue necrosis if allowed to escape from the vein\n\n- Hyperglycaemia / hyperosmolality\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\n- Up to 2.5ml/kg (0.25g/kg) slowly over 5 minutes \n- Continue to check patency of vein\n- May repeat dose once, if LOC or BGL has not improved.\n\n#### Special Notes\n\n- Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "9059d3150ed324e86dfc4828778b1896d3a6860ef469fdb7eaddde835810ff97",
+  "extraction_metadata": {
+    "timestamp": "2026-04-24T03:17:43.550024+00:00",
+    "source_type": "med",
+    "agent_version": "2.0",
+    "content_flag": null
+  }
+}
