@@ -19,6 +19,8 @@ dependencies = [
   "openai",
   "python-dotenv",
   "python-multipart",
+  "pypdf",
+  "requests",
 ]
 
 [project.optional-dependencies]
