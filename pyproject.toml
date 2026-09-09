@@ -34,3 +34,5 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = ["src/python"]
+testpaths = ["tests"]
+norecursedirs = ["release", "build", "dist", "node_modules", ".venv", "data"]
