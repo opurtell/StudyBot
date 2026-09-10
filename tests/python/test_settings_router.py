@@ -334,3 +334,42 @@ def test_rerun_pipeline_unimplemented_service(monkeypatch):
 
     assert response.status_code == 409
     assert response.json() == {"error": "adapter not ready"}
+
+
+def test_lmstudio_status_reports_unreachable_server():
+    response = client.get("/settings/lmstudio/status", params={"base_url": "http://127.0.0.1:9"})
+    assert response.status_code == 200
+    data = response.json()
+    assert data["available"] is False
+    assert data["models"] == []
+    assert data["base_url"] == "http://127.0.0.1:9/v1"
+    assert "LM Studio" in data["error"]
+
+
+def test_lmstudio_status_lists_models_when_reachable(monkeypatch):
+    monkeypatch.setattr(
+        settings_router,
+        "list_server_models",
+        lambda url: [{"id": "qwen/test", "type": "llm", "loaded": True}],
+    )
+
+    response = client.get("/settings/lmstudio/status", params={"base_url": "http://localhost:1234"})
+    assert response.status_code == 200
+    data = response.json()
+    assert data["available"] is True
+    assert data["error"] is None
+    assert data["models"] == [{"id": "qwen/test", "type": "llm", "loaded": True}]
+
+
+def test_save_models_defaults_lmstudio_when_client_omits_it(monkeypatch):
+    saved: dict = {}
+    monkeypatch.setattr(settings_router, "save_model_registry", lambda reg: saved.update(reg))
+
+    tier = {"low": "a", "medium": "b", "high": "c"}
+    response = client.put(
+        "/settings/models",
+        json={"anthropic": tier, "google": tier, "zai": tier, "openai": tier},
+    )
+    assert response.status_code == 200
+    assert set(saved["lmstudio"]) == {"low", "medium", "high"}
+    assert all(saved["lmstudio"].values())

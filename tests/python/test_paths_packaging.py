@@ -107,13 +107,16 @@ class TestDevMode:
 class TestSettingsRouterUsesPaths:
     @pytest.fixture(autouse=True)
     def _mock_heavy_imports(self, monkeypatch):
+        import importlib
         import types
         import sys
 
-        def _stub(name, *attrs):
+        def _stub(name, *attrs, **values):
             mod = types.ModuleType(name)
             for a in attrs:
                 setattr(mod, a, lambda *args, **kwargs: None)
+            for key, value in values.items():
+                setattr(mod, key, value)
             monkeypatch.setitem(sys.modules, name, mod)
 
         _stub("pipeline.actas.capture_assets", "capture_all_assets")
@@ -123,7 +126,27 @@ class TestSettingsRouterUsesPaths:
         _stub("guidelines.router", "invalidate_guideline_cache")
         _stub("medication.router", "invalidate_medication_cache")
         _stub("llm.factory", "load_config")
-        _stub("llm.models", "load_model_registry", "save_model_registry")
+        _stub(
+            "llm.models",
+            "load_model_registry",
+            "save_model_registry",
+            "default_models_for",
+        )
+        # Every llm submodule the router imports must be stubbed. An unstubbed one
+        # forces Python to import the real `llm` package, whose __init__ then chokes
+        # on the stubbed `llm.factory`.
+        _stub("llm.base", LLMError=type("LLMError", (Exception,), {}))
+        _stub("llm.lmstudio_provider", "list_server_models", "normalise_base_url")
+
+        yield
+
+        # The tests below reload settings.router, which rebinds its globals to the
+        # stubs above. Drop the stubs and reload once more so later tests in the
+        # session see the real implementations again.
+        monkeypatch.undo()
+        importlib.reload(sys.modules["paths"])
+        if "settings.router" in sys.modules:
+            importlib.reload(sys.modules["settings.router"])
 
     def test_settings_path_matches_paths_module(self, monkeypatch):
         monkeypatch.delenv("STUDYBOT_USER_DATA", raising=False)

@@ -5,6 +5,8 @@ import random
 import re
 import uuid
 
+from llm.local_tuning import grading_calibration_for
+
 from .models import Question, Evaluation
 from .retriever import Retriever
 from .tracker import Tracker
@@ -72,6 +74,36 @@ Respond with valid JSON only:
   "source_quote": "exact quote from source",
   "feedback_summary": "2-3 sentence clinical feedback"
 }"""
+
+# The shape of an evaluation reply, offered to the provider as a hint. Only local models
+# that cannot produce parseable JSON unaided act on it (see llm/local_tuning.py).
+EVALUATION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "score": {"type": "string", "enum": ["correct", "partial", "incorrect"]},
+        "correct_elements": {"type": "array", "items": {"type": "string"}},
+        "missing_or_wrong": {"type": "array", "items": {"type": "string"}},
+        "source_quote": {"type": "string"},
+        "feedback_summary": {"type": "string"},
+    },
+    "required": [
+        "score",
+        "correct_elements",
+        "missing_or_wrong",
+        "source_quote",
+        "feedback_summary",
+    ],
+}
+
+
+def _evaluation_prompt_for(llm) -> str:
+    """The evaluation prompt, plus any supplement this client's model needs.
+
+    Hosted providers expose no model hint, so they always get the prompt unchanged.
+    """
+    model_id = getattr(llm, "get_model", lambda: "")()
+    return EVALUATION_SYSTEM_PROMPT + grading_calibration_for(model_id)
+
 
 DIFFICULTY_INSTRUCTIONS = {
     "easy": "Difficulty adjustment: Ask straightforward recall questions — single-fact definitions, drug names, basic indications. The answer should be 1-2 sentences maximum.",
@@ -239,7 +271,7 @@ def evaluate_answer(
     source_text = "\n\n".join(c.content for c in question.source_chunks)
 
     messages = [
-        {"role": "system", "content": EVALUATION_SYSTEM_PROMPT},
+        {"role": "system", "content": _evaluation_prompt_for(llm)},
         {
             "role": "user",
             "content": (
@@ -250,7 +282,7 @@ def evaluate_answer(
         },
     ]
 
-    response_text = llm.complete(messages)
+    response_text = llm.complete(messages, response_schema=EVALUATION_SCHEMA)
     parsed = _parse_json(response_text)
 
     return Evaluation(

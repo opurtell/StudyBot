@@ -11,8 +11,10 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
+from llm.base import LLMError
 from llm.factory import load_config
-from llm.models import load_model_registry, save_model_registry
+from llm.lmstudio_provider import list_server_models, normalise_base_url
+from llm.models import default_models_for, load_model_registry, save_model_registry
 from guidelines.router import invalidate_guideline_cache
 from medication.router import invalidate_medication_cache
 from pipeline.actas.refresh import load_refresh_status, start_refresh_in_background
@@ -61,6 +63,9 @@ def invalidate_models_cache() -> None:
 class ProviderConfig(BaseModel):
     api_key: str = ""
     default_model: str = ""
+    # Only meaningful for self-hosted providers such as LM Studio; omitted from the
+    # persisted config for providers that do not send one.
+    base_url: str | None = None
 
 
 class SaveSettingsRequest(BaseModel):
@@ -85,6 +90,8 @@ class SaveModelsRequest(BaseModel):
     google: ModelTier
     zai: ModelTier
     openai: ModelTier
+    # Optional so clients predating local-model support keep working.
+    lmstudio: ModelTier | None = None
 
 
 @router.get("")
@@ -131,7 +138,7 @@ def _invalidate_service_caches() -> None:
 @router.put("")
 def save_settings(req: SaveSettingsRequest) -> dict:
     global _settings_cache
-    config = req.model_dump()
+    config = req.model_dump(exclude_none=True)
 
     # Detect active_service change before writing
     _previous_service = _read_active_service_id()
@@ -169,6 +176,8 @@ def get_models() -> dict:
 def save_models(req: SaveModelsRequest) -> dict:
     global _models_cache
     registry = req.model_dump()
+    if registry.get("lmstudio") is None:
+        registry["lmstudio"] = default_models_for("lmstudio")
     try:
         save_model_registry(registry)
     except OSError as exc:
@@ -176,6 +185,23 @@ def save_models(req: SaveModelsRequest) -> dict:
     with _cache_lock:
         _models_cache = _clone_dict(registry)
     return {"status": "ok"}
+
+
+@router.get("/lmstudio/status")
+def lmstudio_status(base_url: str | None = None) -> dict:
+    """Report whether a local LM Studio server is reachable and what it can serve.
+
+    Used by Settings to detect local models without the user typing model IDs by hand.
+    """
+    if not base_url:
+        config = load_config()
+        base_url = config.get("providers", {}).get("lmstudio", {}).get("base_url", "")
+    resolved = normalise_base_url(base_url)
+    try:
+        models = list_server_models(resolved)
+    except LLMError as exc:
+        return {"available": False, "base_url": resolved, "models": [], "error": str(exc)}
+    return {"available": True, "base_url": resolved, "models": models, "error": None}
 
 
 @router.post("/pipeline/rerun", response_model=None)
