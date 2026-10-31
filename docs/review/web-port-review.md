@@ -106,7 +106,7 @@ the web CI in Phase 2 rather than auditing the desktop UI now.
 |---|---|---|---|
 | C-3 | Critical | **Clinical skills and medication monographs are missing from the per-service corpus.** `data/services/actas/structured/` holds 56 CMGs and 2 index files only. The 98 CSMs and 35 MED monographs live only in the deprecated `data/cmgs/structured/{csm,med}/`. `seed.py` passes the services path to the chunker, which looks for `csm/` and `med/` subfolders there and finds none. A fresh install therefore quizzes on CMGs only. | `paths.py:37-52`, `seed.py:278-285`, `pipeline/actas/chunker.py:97-111` |
 | C-4 | Critical | **No guideline has a version date.** `version_date` is `null` in all 56 CMGs and all 35 MED files. The plan's cache invalidation (`corpus_version`, retire questions when a guideline changes) needs a per-guideline change signal. Use the existing `checksum` field per guideline instead of dates, and record it on every bank question. | `data/services/actas/structured/*.json` |
-| H-9 | High | **AP/ICP tags on dose entries are whole-medication, not per-indication.** Every dose entry for a given drug carries the same tag (e.g. all 594 adrenaline entries are `AP`, all 105 midazolam `AP`, all 120 sodium bicarbonate `ICP`). If any of those drugs has indications with different scope, one group of users gets wrong-scope questions. **Needs Oscar's clinical check**, not something I can verify from the data. | `data/services/actas/medications/*.json` |
+| H-9 | High | **AP/ICP tags on dose entries are whole-medication, not per-indication.** Every dose entry for a given drug carries the same tag (e.g. all 594 adrenaline entries are `AP`, all 105 midazolam `AP`, all 120 sodium bicarbonate `ICP`). If any of those drugs has indications with different scope, one group of users gets wrong-scope questions. **Needs Oscar's clinical check.** Full list in Appendix A; RSI doses contradict CMG 3A's own ICP-only flag. | `data/services/actas/medications/*.json` |
 | H-10 | High | **`source_type` mismatch with the plan.** The chunker writes `source_type: "cmg"`; the plan's allowlist is `source_type = "guideline"`. Pick one value and make the build-script test assert it, or the allowlist will reject the whole corpus (or, worse, be loosened to make it pass). | `pipeline/actas/chunker.py:154+` |
 | M-4 | Medium | **Thin dose data for some medicines.** Fentanyl 1 entry, calcium chloride 1, ipratropium 1, salbutamol 2, oxygen 1,344. Five formulary medicines (aspirin, droperidol, glucagon, olanzapine, LMX4) have no file in `services/actas/medications/`. Some of this may be correct (fixed doses); worth a check against the live CMG site before bulk generation. | same |
 | M-5 | Medium | **Flowcharts: none extracted.** `flowchart` is `null` everywhere. Questions that depend on algorithm structure will be weak. Not a launch blocker. | |
@@ -300,3 +300,49 @@ numbers. Revisit after the marking benchmark picks a model.
 3. Push `feature/lmstudio-local-models` (or confirm the benchmark should be rebuilt).
 4. Rotate the three local API keys (Phase 0).
 5. Confirm the quota numbers (§8) or set a launch spend cap.
+
+---
+
+## Appendix A: H-9 medication scope tags for clinical review
+
+Source: `data/services/actas/medications/*.json`. Each medicine carries **one tag on every dose entry**, whatever guideline
+the dose comes from. Review each row: is the tag right for every guideline listed?
+
+**Internal contradiction found:** the guideline data marks **CMG 3A RSI** (and 3B Intubation Algorithm) as ICP-only, but
+RSI doses for **atropine, ketamine, midazolam, morphine and normal saline** are tagged AP. At minimum those RSI entries
+look wrong. Other rows need your judgement.
+
+Not in the index at all: aspirin, droperidol, glucagon, olanzapine, topical anaesthetic (LMX4).
+
+| Medicine | Tag on every entry | Entries | Guidelines the doses come from |
+|---|---|---|---|
+| Adenosine | ICP | 3 | CMG 8 Tachyarrhythmias |
+| Adrenaline | AP | 594 | CMG 12 Upper Airway Obstruction; CMG 14 Shock and Hypoperfusion; CMG 29 Allergic and Anaphylactic Reactions; CMG 38A Meningococcal Disease; CMG 38 Sepsis; CMG 39 Major Trauma; CMG 4A ROSC: Adult (Return of Spontaneous Circulation); CMG 4 Cardiac Arrest: Adult; CMG 5 Cardiac Arrest: Paediatric (<12 years old); CMG 7 Bradyarrhythmias; CMG 9 Respiratory Distress |
+| Amiodarone | ICP | 84 | CMG 4 Cardiac Arrest: Adult; CMG 5 Cardiac Arrest: Paediatric (<12 years old); CMG 8 Tachyarrhythmias |
+| Atropine | AP | 12 | CMG 35A Poisoning and Overdose; CMG 35B Bites and Stings; CMG 3A RSI (Rapid Sequence Intubation); CMG 7 Bradyarrhythmias |
+| Calcium Chloride | AP | 1 | CMG 27 Hyperkalaemia |
+| Ceftriaxone | AP | 6 | CMG 38A Meningococcal Disease |
+| Fentanyl | AP | 1 | CMG 2 Pain Management |
+| Glucose | AP | 30 | CMG 10 Diabetic Emergencies; CMG 1 General Care |
+| Glyceryl Trinitrate | AP | 2 | CMG 18A Autonomic Dysreflexia |
+| Gtn | AP | 9 | CMG 18A Autonomic Dysreflexia; CMG 2 Pain Management; CMG 9 Respiratory Distress |
+| Heparin | ICP | 10 | CMG 16 Suspected ACS (Acute Coronary Syndrome); CMG 28 Home Dialysis Emergencies |
+| Hydrocortisone | ICP | 4 | CMG 43 Adrenal Crisis; CMG 9 Respiratory Distress |
+| Ibuprofen | AP | 8 | CMG 2 Pain Management; CMG 44 Febrile Paediatric (<12yo) |
+| Ipratropium | AP | 1 | CMG 9 Respiratory Distress |
+| Ketamine | AP | 57 | CMG 2 Pain Management; CMG 37 Combative and Agitated Patients; CMG 3A RSI (Rapid Sequence Intubation) |
+| Levetiracetam | ICP | 2 | CMG 22 Seizures |
+| Lignocaine | ICP | 6 | CMG 8 Tachyarrhythmias |
+| Magnesium | AP | 124 | CMG 26C Other Obstetric and Gynaecological Emergencies; CMG 4 Cardiac Arrest: Adult; CMG 5 Cardiac Arrest: Paediatric (<12 years old); CMG 8 Tachyarrhythmias |
+| Methoxyflurane | AP | 6 | CMG 26A Unscheduled Normal Field Birth; CMG 2 Pain Management |
+| Midazolam | AP | 105 | CMG 22 Seizures; CMG 37 Combative and Agitated Patients; CMG 3A RSI (Rapid Sequence Intubation); CMG 3 Airway Management; CMG 45 Palliative Care and VAD |
+| Morphine | AP | 42 | CMG 2 Pain Management; CMG 3A RSI (Rapid Sequence Intubation); CMG 45 Palliative Care and VAD |
+| Naloxone | AP | 2 | CMG 35A Poisoning and Overdose |
+| Normal Saline | AP | 132 | CMG 28 Home Dialysis Emergencies; CMG 39 Major Trauma; CMG 3A RSI (Rapid Sequence Intubation); CMG 5 Cardiac Arrest: Paediatric (<12 years old) |
+| Ondansetron | AP | 4 | CMG 20 Eye Emergencies; CMG 41 Nausea and Vomiting |
+| Oxygen | AP | 1344 | CMG 12 Upper Airway Obstruction; CMG 14 Shock and Hypoperfusion; CMG 15 Altered Level of Consciousness; CMG 16 Suspected ACS (Acute Coronary Syndrome); CMG 17 Chest Injuries; CMG 18 Spinal Injuries; CMG 1 General Care; CMG 21 Burns; CMG 22 Seizures; CMG 24 Drowning; CMG 25 Diving Emergencies; CMG 26C Other Obstetric and Gynaecological Emergencies; CMG 28 Home Dialysis Emergencies; CMG 29 Allergic and Anaphylactic Reactions; CMG 30 Crush Syndrome; CMG 35A Poisoning and Overdose; CMG 37 Combative and Agitated Patients; CMG 39 Major Trauma; CMG 3A RSI (Rapid Sequence Intubation); CMG 3B Intubation Algorithm; CMG 3C Preexisting Tracheostomy Management; CMG 3 Airway Management; CMG 41 Nausea and Vomiting; CMG 4 Cardiac Arrest: Adult; CMG 5B Neonate Resuscitation; CMG 5 Cardiac Arrest: Paediatric (<12 years old); CMG 7 Bradyarrhythmias; CMG 9 Respiratory Distress |
+| Paracetamol | AP | 6 | CMG 2 Pain Management; CMG 44 Febrile Paediatric (<12yo) |
+| Prochlorperazine | AP | 3 | CMG 41 Nausea and Vomiting |
+| Salbutamol | AP | 2 | CMG 27 Hyperkalaemia; CMG 9 Respiratory Distress |
+| Sodium Bicarbonate | ICP | 120 | CMG 27 Hyperkalaemia; CMG 35A Poisoning and Overdose; CMG 4 Cardiac Arrest: Adult; CMG 5 Cardiac Arrest: Paediatric (<12 years old) |
+| Suxamethonium | ICP | 18 | CMG 3A RSI (Rapid Sequence Intubation) |
