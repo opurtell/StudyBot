@@ -2,12 +2,36 @@
 
 ## Project Overview
 
-A desktop study tool for an ACT Ambulance Service (ACTAS) paramedic. The app quizzes the user on clinical knowledge drawn from two authoritative source pools:
+A desktop study tool for Australian ambulance paramedics, originally built for an ACT Ambulance Service (ACTAS) paramedic. The app quizzes the user on clinical knowledge drawn from two authoritative source pools:
 
-1. **ACTAS Clinical Management Guidelines (CMGs)** — scraped from `https://cmg.ambulance.act.gov.au`
+1. **Service clinical guidelines** — one set per supported ambulance service (see Multi-Service Architecture below):
+   - **ACTAS Clinical Management Guidelines (CMGs)** — scraped from `https://cmg.ambulance.act.gov.au`
+   - **Ambulance Tasmania (AT) Clinical Practice Guidelines (CPGs)** — scraped from `https://cpg.ambulance.tas.gov.au`
 2. **Personal study notes and reference documents** — located in `docs/`
 
 The app exposes an active-recall quiz interface through a local GUI, with AI-powered feedback grounded in source material. The design language follows "The Archival Protocol" — an editorial, clinical aesthetic defined in the Stitch design prototype.
+
+---
+
+## Multi-Service Architecture
+
+The app supports more than one ambulance service. The user picks the active service in Settings; guidelines, medications, quiz retrieval and citations all follow it.
+
+- **Registry:** `src/python/services/registry.py` — one `Service(...)` entry per service (`id`, display name, source URL, qualification model, adapter module, section aliases)
+- **Supported services:**
+
+| `id` | Service | Guideline source | Adapter | Qualifications |
+|------|---------|------------------|---------|----------------|
+| `actas` | ACT Ambulance Service | `cmg.ambulance.act.gov.au` | `src/python/pipeline/actas/` | AP, ICP |
+| `at` | Ambulance Tasmania | `cpg.ambulance.tas.gov.au` | `src/python/pipeline/at/` | VAO, PARAMEDIC + ICP / PACER / CP_ECP endorsements |
+
+- **Active service:** stored as `active_service` in `config/settings.json`; read via `services/active.py`. Defaults to the first registry entry (`actas`)
+- **ChromaDB collections:** `guidelines_<id>` for guidelines, `personal_<id>` for personal docs (legacy `cmg_guidelines` is migrated to `guidelines_actas` on startup)
+- **Data paths:** `data/services/<id>/structured/` and `data/services/<id>/medications/` (bundled), with user-local equivalents under `USER_DATA_DIR/services/<id>/`
+- **Service switching:** retriever/search singletons are reset when `active_service` changes — new code that caches per-service state must do the same
+- **Frontend:** `ServiceProvider.tsx` exposes the active service to the renderer
+- **Citations:** prefix with the service's `short_name` (`ACTAS`, `AT`), as `quiz/agent.py` does — never hardcode "ACTAS"
+- **Adding a service:** follow `Guides/adding-a-service.md`; scope-of-practice docs live in `Guides/scope-of-practice-<id>.md`
 
 ---
 
@@ -43,7 +67,7 @@ When sources conflict, resolve using this order. Never break this unless the use
 
 | Priority | Source | Location |
 |----------|--------|----------|
-| 1 | ACTAS CMGs | Scraped from web / `data/cmgs/` once processed |
+| 1 | Active service's guidelines (ACTAS CMGs / AT CPGs) | Scraped from web / `data/services/<id>/structured/` once processed |
 | 2 | REF docs | `docs/REFdocs/` (2 files — ACTAS policies, CMG reference tables) |
 | 3 | CPD docs | `docs/CPDdocs/` (9 files — clinical study notes, ECGs, assessments) |
 | 4 | Notability Notes | `docs/notabilityNotes/` (handwritten OCR, may contain errors) |
@@ -113,7 +137,8 @@ StudyBot/
 │   ├── python/                        # FastAPI backend
 │   │   ├── main.py                    # FastAPI app on :7777 (lifespan: auto-seed + warmup thread)
 │   │   ├── seed.py                    # Auto-seed ChromaDB on startup (bundled copy or chunker fallback)
-│   │   ├── paths.py                   # All runtime path constants + resolve_cmg_structured_dir()
+│   │   ├── paths.py                   # All runtime path constants + resolve_service_structured_dir()
+│   │   ├── services/                  # Service registry, active service, qualifications API
 │   │   ├── pipeline/                  # Data ingestion pipeline
 │   │   │   ├── extractor.py           # .note → raw text extraction
 │   │   │   ├── clinical_dictionary.py # Category mappings + clinical terms
@@ -121,7 +146,8 @@ StudyBot/
 │   │   │   ├── chunker.py             # Text splitting + ChromaDB ingestion
 │   │   │   ├── run.py                 # CLI entrypoint (extract, ingest, status)
 │   │   │   ├── cleaning_prompt.md     # Claude Code OCR cleaning prompt
-│   │   │   ├── cmg/                   # ACTAS CMG extraction pipeline
+│   │   │   ├── actas/                 # ACTAS CMG extraction pipeline (reference adapter)
+│   │   │   ├── at/                    # Ambulance Tasmania CPG extraction pipeline
 │   │   │   └── personal_docs/         # REFdocs/CPDdocs chunk + ingest pipeline
 │   │   ├── quiz/                      # Quiz agent (retriever, agent, tracker, router, store)
 │   │   │   └── store.py               # SQLite-backed question/session store (thread-safe, clears stale on startup)
@@ -173,13 +199,15 @@ StudyBot/
 │       └── styles/
 │           └── global.css             # Tailwind layers + CSS custom properties (light/dark)
 ├── data/                              # Processed data stores (gitignored, user-local)
-│   ├── cmgs/structured/               # Per-CMG JSON files (also bundled in packaged app via electron-builder.yml)
+│   ├── services/<id>/structured/      # Per-service guideline JSON (bundled in packaged app via electron-builder.yml)
+│   ├── services/<id>/medications/     # Per-service medication data
+│   ├── cmgs/structured/               # Legacy ACTAS CMG path (deprecated — use services/actas/)
 │   ├── notes_md/raw/                  # Extracted uncleaned notability markdown
 │   ├── notes_md/cleaned/              # LLM-cleaned notability markdown (380 files)
 │   ├── personal_docs/structured/      # Structured REFdocs + CPDdocs (11 files)
 │   ├── uploads/                       # User-uploaded documents + structured output
 │   └── chroma_db/                     # Vector store (user-data copy, seeded from bundled on first launch)
-├── build/resources/data/chroma_db/    # Pre-built ChromaDB bundled in packaged app (CMG data only)
+├── build/resources/data/services/     # Per-service bundled data + pre-built ChromaDB for packaged app
 ├── tests/                             # Test suites
 │   ├── python/                        # pytest tests for FastAPI backend
 │   ├── quiz/                          # pytest tests for quiz agent
@@ -215,7 +243,11 @@ Non-exhaustive; a single piece of information may span multiple categories.
 
 The app has three data ingestion pipelines feeding a unified ChromaDB instance, plus a user document upload path.
 
-### Pipeline 1: ACTAS CMG Extraction
+### Pipeline 1: Service Guideline Extraction
+
+One adapter per service under `src/python/pipeline/<id>/`, following the contract in `Guides/adding-a-service.md`. ACTAS is the reference implementation; AT findings are in `Guides/at-cpg-extraction-findings.md`. The ACTAS specifics are below.
+
+#### ACTAS CMGs
 
 **Reference:** `Guides/AI_Agent_Guideline_ACTAS_CMG_Scraping_Framework.md`
 
@@ -227,7 +259,7 @@ The app has three data ingestion pipelines feeding a unified ChromaDB instance, 
 - **Output schema:** JSON conforming to the CMG Guideline Schema (see guide Section 4.1)
 - **Flowcharts:** Store as Mermaid.js; use vision LLM for image-based flowcharts
 - **Tools:** Playwright (SPA rendering), BeautifulSoup4, Pandas
-- **CMG structured data path:** `data/cmgs/structured/` — resolved at runtime via `resolve_cmg_structured_dir()` which prefers user-fetched data in `USER_CMG_STRUCTURED_DIR` over bundled app data
+- **Structured data path:** `data/services/actas/structured/` — resolved at runtime via `resolve_service_structured_dir(service_id)`, which prefers user-fetched data over bundled app data
 
 ### Pipeline 2: Notability Notes Extraction
 
@@ -268,7 +300,7 @@ The app has three data ingestion pipelines feeding a unified ChromaDB instance, 
 
 ### Unified Vector Store
 
-All pipelines feed into a single ChromaDB instance (`data/chroma_db/`). Each chunk carries metadata:
+All pipelines feed into a single ChromaDB instance (`data/chroma_db/`), split into per-service collections (`guidelines_<id>`, `personal_<id>`). Each chunk carries metadata:
 - `source_type`: `"cmg"` | `"ref_doc"` | `"cpd_doc"` | `"notability_note"` | `"upload"`
 - `source_file`: original filename
 - `category`: clinical category
@@ -279,9 +311,10 @@ All pipelines feed into a single ChromaDB instance (`data/chroma_db/`). Each chu
 ### ChromaDB First-Launch Seeding
 
 `seed.py` runs in the FastAPI lifespan on every startup:
-1. If a bundled `APP_ROOT/data/chroma_db/` exists with CMG data → copy to user data dir (packaged app fast path)
-2. Otherwise → run CMG chunker as fallback auto-seed (dev environment path)
-3. Personal notes / REFdocs / CPDdocs are not auto-seeded — user must run the pipeline or use the "Re-run Pipeline" button in Settings
+1. For each registered service, skip if `guidelines_<id>` already has data (migrating legacy `cmg_guidelines` if found)
+2. Otherwise copy from bundled ChromaDB (`APP_ROOT/data/chroma_db/` or `APP_ROOT/data/services/<id>/chroma/`) — packaged app fast path
+3. Otherwise run the service adapter's chunker as fallback auto-seed (dev environment path)
+4. Personal notes / REFdocs / CPDdocs are not auto-seeded — user must run the pipeline or use the "Re-run Pipeline" button in Settings
 
 ---
 
@@ -311,6 +344,7 @@ All LLM calls in the app route through a provider abstraction layer (`src/python
 | Anthropic | `claude-haiku-4-5-20251001` (low), `claude-sonnet-4.6` (medium), `claude-opus-4.6` (high) | Default; highest quality feedback |
 | Google | `gemini-3.1-flash-lite-preview` (low), `gemini-3-flash-preview` (medium), `gemini-2.5-pro` (high) | Fast / alternative |
 | Z.ai (Zhipu) | `glm-4.7-flash` (low), `glm-4.7` (medium), `glm-5` (high) | Cost-effective alternative |
+| OpenAI | `gpt-5.4-nano` (low), `gpt-5.4-mini` (medium), `gpt-5.4` (high) | Alternative |
 
 **Task defaults (overridable in settings):**
 
@@ -380,8 +414,8 @@ The design system is called **"The Archival Protocol"** — a high-end editorial
 | Routing | **React Router v7** | Client-side navigation with nested routes |
 | Language | **TypeScript 5** (renderer), **Python 3.10+** (backend) | |
 | Backend | **FastAPI** on `127.0.0.1:7777` | CORS configured for dev server origins |
-| Vector DB | **ChromaDB** | Local persistent client, collection per source type |
-| LLM Integration | Multi-provider abstraction layer | Anthropic (Claude), Google (Gemini), Z.ai (GLM) — user selects per-task in settings |
+| Vector DB | **ChromaDB** | Local persistent client, collections per service (`guidelines_<id>`, `personal_<id>`) |
+| LLM Integration | Multi-provider abstraction layer | Anthropic (Claude), Google (Gemini), Z.ai (GLM), OpenAI (GPT) — user selects per-task in settings |
 | Data Pipeline | Python scripts | Playwright for SPA scraping, langchain for chunking |
 | Testing | **vitest** + **@testing-library/react** + **@testing-library/user-event** (renderer), **pytest** + **httpx** (Python) | |
 | State Management | SQLite for quiz history + user prefs | Lightweight, local, no server needed |
@@ -429,7 +463,8 @@ The design system is called **"The Archival Protocol"** — a high-end editorial
 9. **Route matching needs number normalization** — "12 Lead ECG" maps to selector `twelve-lead-ecg-monitoring`, not `12-lead-ecg-monitoring`.
 10. **Phantom medicine keywords removed** — entinox, tetracaine, tranexamic acid, clopidogrel, ticagrelor, diazepam, furosemide, rocuronium, promethazine, sodium chloride are NOT in the ACTAS formulary and have been removed from `_MEDICINE_KEYWORDS`.
 11. **All runtime paths go through `paths.py`** — never use bare relative `Path("data/...")` calls in backend modules. Always import from `paths`.
-12. **`resolve_cmg_structured_dir()` must be used** in guidelines/medication routers — it prefers user-fetched data in `USER_CMG_STRUCTURED_DIR` over bundled `CMG_STRUCTURED_DIR`.
+12. **`resolve_service_structured_dir(active_service().id)` must be used** in guidelines/medication routers — it prefers user-fetched data over bundled data. `resolve_cmg_structured_dir()` and `CMG_STRUCTURED_DIR` are deprecated ACTAS-only paths.
 13. **`KNOWN_TEST_FAILURES.md`** documents 17 frontend + 4 Python pre-existing failures — do not treat as regressions. Fix them as part of dedicated test-repair work, not as part of unrelated PRs.
 14. **macOS builds must run sequentially** (arm64 then x64). `build/resources/backend/` is overwritten per build — rename or move the first DMG out of `release/` before starting the next arch.
 15. **Windows PYTHONPATH** requires both `backend/Lib` (stdlib) and `backend/Lib/site-packages` (pip packages). macOS uses `backend/lib` only.
+16. **Nothing is ACTAS-only any more** — route service names, collection names and citation prefixes through the active `Service`, not hardcoded `"actas"` / `"ACTAS"` strings.
