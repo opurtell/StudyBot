@@ -96,9 +96,9 @@ See CLAUDE.md for full pipeline architecture, chunking parameters, and metadata 
 10. `KNOWN_TEST_FAILURES.md` documents 17 frontend + 4 Python pre-existing failures — do not treat as regressions introduced by your changes.
 11. All runtime paths go through `paths.py` constants — never use bare relative `Path("data/...")` calls in backend modules.
 12. Use `resolve_service_structured_dir(active_service().id)` in guidelines/medication routers — it returns user-fetched data if present, otherwise bundled app data. `resolve_cmg_structured_dir()` is deprecated (ACTAS-only).
-15. The app is multi-service (ACTAS, Ambulance Tasmania) — see the Multi-Service Architecture section in CLAUDE.md. Never hardcode `"actas"` / `"ACTAS"`.
 13. macOS builds must run sequentially (arm64 then x64) and rename artifacts between runs — `build/resources/backend/` is overwritten per build.
 14. Windows PYTHONPATH includes both `backend/Lib` (stdlib) and `backend/Lib/site-packages` (pip packages) — macOS uses `backend/lib` only.
+15. The app is multi-service (ACTAS, Ambulance Tasmania) — see the Multi-Service Architecture section in CLAUDE.md. Never hardcode `"actas"` / `"ACTAS"`.
 
 ## What to Run
 
