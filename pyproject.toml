@@ -19,6 +19,8 @@ dependencies = [
   "openai",
   "python-dotenv",
   "python-multipart",
+  "pypdf",
+  "requests",
 ]
 
 [project.optional-dependencies]
@@ -32,3 +34,5 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = ["src/python"]
+testpaths = ["tests"]
+norecursedirs = ["release", "build", "dist", "node_modules", ".venv", "data"]

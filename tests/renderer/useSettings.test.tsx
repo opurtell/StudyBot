@@ -34,6 +34,11 @@ const config: SettingsConfig = {
       api_key: "openai-key",
       default_model: "gpt-5.4-nano",
     },
+    lmstudio: {
+      api_key: "",
+      default_model: "qwen/qwen3.6-35b-a3b",
+      base_url: "http://127.0.0.1:1234/v1",
+    },
   },
   active_provider: "anthropic",
   quiz_model: "claude-haiku-4-5-20251001",
@@ -63,6 +68,11 @@ const registry: ModelRegistry = {
     low: "gpt-5.4-nano",
     medium: "gpt-5.4-mini",
     high: "gpt-5.4",
+  },
+  lmstudio: {
+    low: "openai/gpt-oss-20b",
+    medium: "qwen/qwen3.6-35b-a3b",
+    high: "qwen/qwen3.8-27b",
   },
 };
 

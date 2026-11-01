@@ -32,6 +32,15 @@ _DEFAULTS: dict[str, dict[str, str]] = {
         "medium": "gpt-5.4-mini",
         "high": "gpt-5.4",
     },
+    # Local models served by LM Studio. IDs must match what LM Studio reports at
+    # GET /v1/models — check Settings > Local Model (LM Studio) > Detect models.
+    # Tiers are speed/size, not raw capability: "low" is the fastest and smallest local
+    # option, "medium" the best all-round one. Both were benchmarked — see CLAUDE.md.
+    "lmstudio": {
+        "low": "medgemma-1.5-4b-it",
+        "medium": "openai/gpt-oss-20b",
+        "high": "qwen/qwen3.6-35b-a3b",
+    },
 }
 
 _ENV_KEYS: dict[str, dict[str, str]] = {
@@ -55,6 +64,11 @@ _ENV_KEYS: dict[str, dict[str, str]] = {
         "medium": "OPENAI_MODEL_MEDIUM",
         "high": "OPENAI_MODEL_HIGH",
     },
+    "lmstudio": {
+        "low": "LMSTUDIO_MODEL_LOW",
+        "medium": "LMSTUDIO_MODEL_MEDIUM",
+        "high": "LMSTUDIO_MODEL_HIGH",
+    },
 }
 
 PROVIDER_LABELS: dict[str, str] = {
@@ -62,6 +76,7 @@ PROVIDER_LABELS: dict[str, str] = {
     "google": "Google",
     "zai": "Z.ai",
     "openai": "OpenAI",
+    "lmstudio": "LM Studio (Local)",
 }
 
 TIER_LABELS: dict[str, str] = {
@@ -69,6 +84,11 @@ TIER_LABELS: dict[str, str] = {
     "medium": "Medium",
     "high": "High",
 }
+
+
+def default_models_for(provider: str) -> dict[str, str]:
+    """Built-in tier defaults for a provider (empty dict if unknown)."""
+    return dict(_DEFAULTS.get(provider, {}))
 
 
 def _ensure_env() -> None:
@@ -111,7 +131,7 @@ def save_model_registry(registry: dict[str, dict[str, str]]) -> None:
     lines: list[str] = [line for line in preserved_lines if line.strip()]
     if lines:
         lines.append("")
-    for provider in ("zai", "anthropic", "google", "openai"):
+    for provider in ("zai", "anthropic", "google", "openai", "lmstudio"):
         label = PROVIDER_LABELS.get(provider, provider)
         lines.append(f"# {label} models")
         for tier in ("low", "medium", "high"):

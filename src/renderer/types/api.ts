@@ -88,12 +88,20 @@ export interface FeedbackNavigationState {
   questionId: string;
 }
 
+export interface ProviderConfig {
+  api_key: string;
+  default_model: string;
+  /** Only used by self-hosted providers such as LM Studio. */
+  base_url?: string;
+}
+
 export interface SettingsConfig {
   providers: {
-    anthropic: { api_key: string; default_model: string };
-    google: { api_key: string; default_model: string };
-    zai: { api_key: string; default_model: string };
-    openai: { api_key: string; default_model: string };
+    anthropic: ProviderConfig;
+    google: ProviderConfig;
+    zai: ProviderConfig;
+    openai: ProviderConfig;
+    lmstudio: ProviderConfig;
   };
   active_provider: string;
   quiz_model: string;
@@ -104,7 +112,7 @@ export interface SettingsConfig {
   active_service?: string;
 }
 
-export type ProviderKey = "anthropic" | "google" | "zai" | "openai";
+export type ProviderKey = "anthropic" | "google" | "zai" | "openai" | "lmstudio";
 
 export interface ModelTier {
   low: string;
@@ -117,6 +125,21 @@ export interface ModelRegistry {
   google: ModelTier;
   zai: ModelTier;
   openai: ModelTier;
+  lmstudio: ModelTier;
+}
+
+export interface LmStudioModel {
+  id: string;
+  /** "llm" or "vlm" as reported by LM Studio. */
+  type: string;
+  loaded: boolean;
+}
+
+export interface LmStudioStatus {
+  available: boolean;
+  base_url: string;
+  models: LmStudioModel[];
+  error: string | null;
 }
 
 export interface MedicationDose {

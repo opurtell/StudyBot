@@ -1,0 +1,3706 @@
+row,model_code,qualification,difficulty,source,question,citation,source_excerpt,accurate (Y/N),in scope (Y/N),useful (1-5),notes
+1,M1,AP,easy,CSM.B02 Intermittent Positive Pressure Ventilation (IPPV),What is the volume in mL of a disposable Adult Laerdal Bag Resuscitator?,Source 1: cmg,"#### Specific Notes
+
+Over-inflation of the lungs can result in barotrauma and gas entering the stomach, thus an increased risk of aspiration.
+
+##### Laerdal Bag Resuscitators (Disposable)
+
+ **Size**  **Adult**  **Child**  **Infant** 
+ Volume in mL  1600  500  240 
+ Weight Range  >20 kg  12 - 20 kg  2.5 - 12 kg 
+
+Consideration needs to be given to apparatus dead space, particularly in children. Approximate volumes are given below.
+
+ Liquorish stick fully extended  48 mls 
+ Liquorish stick compressed  25 mls 
+ Adult bacterial filter  40 mls 
+ MDI adapter  20 mls 
+ EtCO2 adapter  15 mls 
+ Adult resuscitation mask  200 mls 
+ Paediatric resuscitation mask  90 mls 
+ Neonate resuscitation mask  60 mls
+",,,,
+2,M3,AP,easy,19 Limb Injuries,How should a completely severed limb part be prepared for transport?,ACT AS CMG - Fracture/Dislocation Management,"#### Management
+
+- Haemorrhage control.
+- Analgesia as per CMG 2 Pain Management.
+- Check arterial circulation in the limb 
+- If distal pulse is absent, gently re‐align fractured segments until pulse returns or alignment is near normal.
+
+- In the absence of life‐threatening haemorrhage, open fractures or wounds should be irrigated prior to splinting.
+- Immobilise/ splint all fractures unless the patient is otherwise time‐critical 
+- Traction splint for suspected fractured mid‐shaft femur
+- Pelvic splint for suspected pelvic fracture.
+- Elevate the limb, if possible.
+- Do not attempt to reduce dislocations.
+- IV fluid as per CMG 14 Shock and Hypoperfusion.
+- Crush injured limbs should be treated as per CMG 30 Crush Syndrome.
+
+#### Completely Severed Limb
+
+- Keep severed part dry, wrapped and cold 
+- Place in a dry, sealed plastic bag
+- Then place within another bag or bucket filled with iced water. 
+
+- Do not immerse the part directly in ice.
+- Do not attempt to clean or disinfect the severed part.
+",,,,
+3,M1,ICP,medium,15 Hydrocortisone,What is the ICP IV dose of hydrocortisone for a paediatric patient aged 5 years experiencing an adrenal crisis?,CMG Adrenal crisis,"#### Adrenal crisis
+
+##### Adult
+
+- **ICP:** 100mg IV – slowly over 2 minutes 
+- May be administered IM.
+
+##### Paediatric
+
+- **ICP:** IV (slowly over 2 minutes): 
+- <3 years = 25mg IV
+- 3-12 years = 50mg IV
+- >12 years = 100mg IV.
+- **ICP:** May be administered IM.
+
+#### Special Notes
+
+- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.
+",,,,
+4,M2,AP,easy,CSM.B02 Intermittent Positive Pressure Ventilation (IPPV),"According to ACTAS clinical guidance, what is the recommended patient weight range for a child-sized disposable Laerdal bag resuscitator?",ACTAS CMG,"#### Specific Notes
+
+Over-inflation of the lungs can result in barotrauma and gas entering the stomach, thus an increased risk of aspiration.
+
+##### Laerdal Bag Resuscitators (Disposable)
+
+ **Size**  **Adult**  **Child**  **Infant** 
+ Volume in mL  1600  500  240 
+ Weight Range  >20 kg  12 - 20 kg  2.5 - 12 kg 
+
+Consideration needs to be given to apparatus dead space, particularly in children. Approximate volumes are given below.
+
+ Liquorish stick fully extended  48 mls 
+ Liquorish stick compressed  25 mls 
+ Adult bacterial filter  40 mls 
+ MDI adapter  20 mls 
+ EtCO2 adapter  15 mls 
+ Adult resuscitation mask  200 mls 
+ Paediatric resuscitation mask  90 mls 
+ Neonate resuscitation mask  60 mls
+",,,,
+5,M2,AP,hard,10 Diabetic Emergencies,"You are treating a 24-year-old female presenting with severe hypoglycaemia (BGL 1.9 mmol/L) who is confused and diaphoretic. You note she has an insulin pump attached to her abdomen. Her flatmate is on scene but states they have no knowledge of how to operate the device. According to ACTAS guidelines, what are the specific clinical directives regarding adjusting pump settings, pump removal, and ongoing management during transport?",ACTAS CMG - Insulin Pumps,"#### Insulin Pumps
+
+- In the event of hypoglycaemia, consider suspending administration **if the patient or a carer on scene is able to assist in doing so. **
+- If there is no assistance on scene do not attempt to alter settings.
+
+Whether suspended or not, **do not remove the pump** – transport with pump in situ. No special management is required as long as the pump and infusion site are protected.
+",,,,
+6,M2,AP,easy,CSM.PA11 Blood Lactate Measurement,"According to ACTAS clinical guidelines, what blood lactate level is indicated by a 'LO' reading on a point-of-care lactate meter?",ACTAS Clinical Management Guidelines,"#### Specific Notes
+
+- A “LO” or “HIGH” reading indicates a lactate <0.5mmol /L or >25mmol/L.
+- Excessive exercise, movement of the limb, suspected crush injury or compartment syndrome of the limb to be tested may produce inaccurate results.
+",,,,
+7,M3,ICP,medium,CSM.IDH14 Arterial Tourniquet,"You apply a tourniquet to a patient's lower limb and the haemorrhage is controlled. During transport, you consider loosening the tourniquet to reassess distal circulation. What is the correct course of action, and in what circumstances is tourniquet application indicated?",ACTAS CMG - Tourniquet (Specific Notes),"#### Specific Notes
+
+- This is a procedure of last resort - saving a **life** or saving a **limb**.
+- **Once the tourniquet is applied and haemorrhage is controlled, the tourniquet should not be released or removed.**
+",,,,
+8,M2,AP,hard,45 Palliative Care and VAD,"You are called to an 82-year-old male at home with diagnosed metastatic malignancy. His family contacted triple zero due to increasing lethargy and noisy respirations. On assessment, the patient is bed-bound, unresponsive to verbal stimuli, has had no oral fluid intake in 24 hours, has negligible urine output, and presents with cold, mottled peripheries.
+
+Integrating the ACTAS guidelines for palliative and end-of-life care:
+1. Identify the specific target patient phase this patient is in, and list the observed features that support this classification.
+2. Explain the ACTAS guidance regarding routine vital sign observations in this patient group, including how the presence of abnormal vitals or an absence of recent vital sign assessments impacts the administration of comfort measures.",ACTAS CMG Palliative Care - Target Patient Groups,"#### Target Patient Groups
+
+- Palliative Care patient, or 
+
+Palliative care is the approach used to improve quality of life for patients diagnosed with incurable life-limiting-condition/s, by tailoring management to the individual care goals of the patient.
+
+A common misconception is that palliative care is only provided to patients near their end of life (EOL). Many palliative patients continue to receive life prolonging treatment and live for an extensive time after diagnosis.
+
+- Diagnosed life-limiting-condition
+- Cause for ACTAS attendance is associated with life-limiting-condition
+
+- Terminal Phase patient, or 
+
+EOL care is for patients in the Terminal Phase (last days of life). 
+
+It may be helpful to consider yourself or ask the patient’s family/carer if the patient’s death in the next days or weeks would be a surprise or not.
+
+In the Terminal Phase, ACTAS’ role continues to be facilitation of the patient’s care goals. Commonly, the primary goal is to provide comfort during the normal and expected dying process. Patients will typically present with abnormal vital signs, as such it’s accepted in EOL care situations to forgo the potentially distressing or painful practice of routine vital sign observation. The lack of recent vital sign assessment, or the presence of abnormal vital signs should not inhibit the provision of comfort measures such as effective analgesia and anti-anxiety medication.
+
+- Diagnosed life-limiting-condition
+- Cause for ACTAS attendance is associated with life-limiting-condition
+- Signs suggestive of the Terminal Phase are: 
+- Bed-bound, requires complete assistance for activities of daily living.
+- Unconscious or limited response.
+- Reduced oral intake.
+- Limited ability to swallow.
+- Reduce urine output.
+- Peripherally cold, cyanotic, or mot",,,,
+9,M2,AP,hard,16 Suspected ACS (Acute Coronary Syndrome),"You are assessing a 62-year-old male presenting with ongoing ischaemic chest pain. Vital signs are BP 134/82 mmHg, HR 76 bpm regular, RR 16 breaths/min, and SpO2 96% on room air. An initial 12-lead ECG reveals S-T segment depression in leads V1 to V3.
+
+Based on ACTAS clinical management guidelines for Acute Coronary Syndromes:
+1. What pathology should be suspected from these specific ECG changes, and what additional leads must be performed to diagnose it?
+2. What is the clinical indication for supplemental oxygen administration in this patient based on his current presentation?
+3. If diagnostic changes for STEMI are identified on the modified lead view, state the transport priority and on-scene time principles to be applied.",ACTAS CMG Acute Coronary Syndromes,"#### Management
+
+- 12 lead ECG 
+- Perform serial 12 lead ECGs throughout contact time in symptomatic patients, especially if initial ECG was non‐diagnostic.
+
+- Ischaemic symptoms, with S‐T depression in leads V1 to V3 (indicative of potential **posterior AMI** – diagnosed in V8 – V9) 
+- Inferior (II, III, aVF) S‐T elevation (indicative of potential **right ventricular AMI** – diagnosed in V4R).
+- Administer oxygen only if: 
+- SpO2 is < 94%, **or**
+- Shocked
+- Aspirin
+- GTN
+- Antiemetic.
+- Analgesia 
+- Aim to abolish pain or discomfort.
+- If hypotensive: 
+- Refer to CMG 14 Shock and Hypoperfusion: Cardiogenic Shock.
+
+#### STEMI (S-T Elevation Myocardial Infarction)
+
+- **Prompt transport**
+- Do not delay on scene for STEMI specific treatment. Where possible, do this en route. 
+
+- Notify hospital as early as possible if STEMI is suspected 
+- Follow **STEMI Bypass Flowchart.**
+",,,,
+10,M3,ICP,medium,CSM.A14 BURP Manoeuvre,"During endotracheal intubation, the intubating paramedic cannot achieve an adequate view of the glottis. Per the procedure, in which three directions should the assistant firmly push the thyroid cartilage?",ACTAS CMG – Intubation procedure (BURP manoeuvre),"#### Procedure
+
+- Locate the thyroid cartilage.
+
+- Assistant to place thumb and index fingers of one hand on thyroid cartilage.
+
+- Firmly push the thyroid cartilage backwards, upwards (towards the patient’s head), and to the right (the patient’s right) (see **Figure 1**).
+
+Figure 1
+
+- Intubating paramedic guides assistant's hand until best view of the glottis is achieved.
+
+- Maintain pressure until the intubating paramedic directs release of pressure post ET tube insertion.
+
+",,,,
+11,M2,AP,easy,19 Limb Injuries,"According to ACTAS guidelines, what type of splint is indicated for the management of a suspected fractured mid-shaft femur?",ACTAS CMG,"#### Management
+
+- Haemorrhage control.
+- Analgesia as per CMG 2 Pain Management.
+- Check arterial circulation in the limb 
+- If distal pulse is absent, gently re‐align fractured segments until pulse returns or alignment is near normal.
+
+- In the absence of life‐threatening haemorrhage, open fractures or wounds should be irrigated prior to splinting.
+- Immobilise/ splint all fractures unless the patient is otherwise time‐critical 
+- Traction splint for suspected fractured mid‐shaft femur
+- Pelvic splint for suspected pelvic fracture.
+- Elevate the limb, if possible.
+- Do not attempt to reduce dislocations.
+- IV fluid as per CMG 14 Shock and Hypoperfusion.
+- Crush injured limbs should be treated as per CMG 30 Crush Syndrome.
+
+#### Completely Severed Limb
+
+- Keep severed part dry, wrapped and cold 
+- Place in a dry, sealed plastic bag
+- Then place within another bag or bucket filled with iced water. 
+
+- Do not immerse the part directly in ice.
+- Do not attempt to clean or disinfect the severed part.
+",,,,
+12,M2,AP,hard,29 Salbutamol (Ventolin),"You are dispatched to a 5-year-old child presenting with severe respiratory distress secondary to acute bronchospasm. Based on the ACTAS guideline for the synthetic β2 receptor stimulant pMDI:
+
+1. State the required dose (number of actuations and total microgram dose) and the ratio of actuations to breaths for delivery via spacer or BVM adaptor.
+2. State the repeat dosing interval for severe respiratory distress, and specify how this dosing interval changes if the child deteriorates into life-threatening respiratory distress.
+3. List the three physiological actions of this medication.",ACTAS CMG Salbutamol,"##### Type
+
+Synthetic \u03b22 receptor stimulant [S4]
+
+##### Presentations
+
+Pressurised metered dose inhaler (pMDI) – 100mcg per activation
+
+##### Actions
+
+- Bronchodilation
+
+- Relaxation of involuntary muscle
+
+- Moves K+ from extracellular to intracellular space
+
+#### Mild to moderate respiratory distress
+
+**pMDI via spacer**
+
+##### Adult ≥6 years
+
+- 4-12 actuations 
+- Repeat every 20-30 minutes
+- 1 actuation to 4 breaths.
+
+##### Paediatric <6years
+
+- 2-6 actuations 
+- Repeat every 20-30 minutes
+- 1 actuation to 4 breaths.
+
+#### Severe respiratory distress
+
+**pMDI (via spacer or with pMDI adaptor on BVM/CPAP) **
+
+##### Adult ≥6 years
+
+- 12 actuations 
+- Repeat every 20 minutes
+- 1 actuation to 4 breaths.
+
+##### Paediatric <6years
+
+- 6 actuations 
+- Repeat every 20 minutes
+- 1 actuation to 4 breaths.
+
+#### Life threatening respiratory distress and hyperkalaemia
+
+**pMDI (with pMDT adaptor on BVM/CPAP)**
+
+##### Adult ≥6 years
+
+- 12 actuations 
+- Repeat every 10 minutes
+- No repeat limit.
+
+##### Paediatric <6 years
+
+- 6 actuations 
+- Repeat every 10 minutes
+- No repeat limit.
+
+",,,,
+13,M2,AP,medium,CSM.C03 Defibrillation AED Mode (Zoll X Series),"According to the AED operational procedure, in which patient mode will the AED not ANALYSE the rhythm?",ACTAS CMG,"#### Procedure
+
+- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: 
+- Multiple people using multiple checks at multiple times.
+
+- Begin cardiac arrest algorithm.
+
+- Turn monitor on
+
+- Attach the defibrillation pads to patient: 
+- Place pads either Anterior / Posterior or both anterior.
+- Ensure good pad adherence.
+- Ensure CPR feedback pad is in center of chest on sternum
+
+- Press the ANALYZE button
+
+- 
+
+- Continue or start CPR.
+
+- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.
+
+#### Specific Notes
+
+- AED mode monitors through the pads.
+- AED mode shocks at 200J in Adult Mode.
+- AED mode shocks at 50J in Pediatric Mode.
+- AED will not ANALYZE in Neonate Mode.
+- AED mode will not shock narrow complex tachycardia.
+",,,,
+14,M2,AP,easy,CSM.PA04 Blood Pressure Measurement (Auscultate),"According to the glucometry procedure notes, what blood glucose level is represented by a 'LO' reading on the monitor?",ACTAS CMG Glucometry,"#### Procedure
+
+- Place strip into monitor. The glucometer will auto turn on.
+
+- Select a finger and clean with an alcohol swab, allow finger to dry.
+
+- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.
+
+- Dispose of the used lancet appropriately.
+
+- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.
+
+- Apply a Band-Aid to the wound.
+
+- Wait for the test result and record the BGL measurement.
+
+- Dispose of the used test strip appropriately.
+
+#### Specific Notes
+
+- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.
+- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.
+",,,,
+15,M2,AP,easy,11A Heat Abnormalities,"According to the Heat Stroke clinical management guideline, what core body temperature is typically associated with heat stroke?",ACTAS CMG Heat Stroke,"#### Heat Stroke
+
+- Altered conscious state and/or abnormal neurological signs.
+- No sweating (hot, dry skin).
+- Core temperature typically ≥ 40\xb0C.
+- Other complications can include cardiovascular, respiratory, neurological, haematological and musculoskeletal involvement.
+**Heat stroke is a time‐critical life‐threatening condition. Transport should always occur due to the risk of multiple organ failure.**
+
+- Rapid, active cooling (as aggressive as possible).
+- IV resuscitation (cool fluids if possible).
+- Check BGL.
+- Aggressively manage seizures and shivering.
+",,,,
+16,M2,AP,easy,23 Morphine,"According to the ACT Ambulance Service clinical guidelines, what are the three contraindications to the administration of morphine (excluding palliative care emergencies)?",ACTAS CMG Morphine,"##### Type
+
+Opioid analgesic [S8]
+
+##### Presentations
+
+10mg in 1ml – glass ampoule
+
+##### Actions
+
+- Analgesia
+
+- Anxiolytic
+
+- Vasodilation
+
+##### Pharmacokinetics
+
+**IV**
+ Onset: 5 - 10 minutes
+ Max Effect: 20 minutes
+ Duration: 4 - 5 hours
+
+**IM**
+ Onset: 10 - 30 minutes
+ Max Effect: 30 minutes
+ Duration: 4 - 5 hours
+
+#### Uses
+
+- Analgesia for moderate to severe pain
+
+- Maintain analgosedation in intubated patients in conjunction with midazolam.
+
+- Reduce dyspnoea in palliative care patients.
+
+- Relieve suffering due to terminal palliative care emergencies (no active treatment).
+
+#### Contraindications
+
+- Respiratory depression
+
+- Systolic blood pressure <70mmHg
+
+- Acute asthma
+Disregard contraindications when managing palliative care emergencies (no active treatment) patients.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Refrain from use if labour suspected. Prepare for neonatal respiratory support and naloxone administration.
+
+##### Breastfeeding
+
+- Safe to use, use conservative doses, encourage feeding/expressing prior to administration if feasible. 
+- Infant must also be transported for monitoring if breastfed post morphine administration. 
+
+",,,,
+17,M1,AP,easy,CSM.B06 MDI Spacer (Nebulised Medication),What type of MDI spacer must be used if the metered-dose inhaler has a counter attached?,CMG,"#### Specific Notes
+
+- Increased apparatus dead space.
+- Will occupy one officer in totality to deliver medication in this manner.
+- If MDI has a counter attached ensure green inline MDI spacer is used.
+",,,,
+18,M3,AP,hard,32 Assault,"You are dispatched to a private residence where a 19-year-old female discloses she was sexually assaulted approximately 6 hours ago. On arrival, police are already on scene and the scene is secure. The patient is alert (GCS 15), BP 118/76, HR 92, RR 18, SpO2 99% on room air, with superficial abrasions to both forearms. She is visibly distressed and tells you she showered before calling for help. She asks if her housemate can travel with her. Detail your complete management of this patient, addressing: (a) communication and physical contact considerations specific to sexual assault patients; (b) consent requirements before assessment or treatment, including the exceptions where consent is not required; (c) evidence preservation, including how clothing should be handled and what further patient actions you should discourage; (d) documentation requirements regarding her injuries; and (e) restrictions on what information you may transmit over the radio.",ACT AS CMG - Assault / Sexual Assault,"#### Management
+
+- Be aware of risks to yourself and others 
+- Consider police assistance
+- Ensure scene control and safety.
+
+- As much as is practical, be wary of evidence preservation at the scene 
+- Wear gloves, watch where you walk, etc.
+- Treat injuries as per appropriate CMG
+- Attention to detail (such as full name, location, times, others present) is very important.
+- Be sure to document, in detail, any injuries/markings found during examination.
+- Report any suspicion, belief or concern about child abuse or neglect as soon as possible.
+
+#### Specifically for Sexual Assault
+
+- Be aware that some patients may resent physical contact from carers.
+- Avoid judgemental comments 
+- Do not allow personal beliefs to interfere with any communication.
+
+- Ensure that every assessment or treatment procedure is explained fully and consent is gained before it is conducted. 
+- Exceptions to this include patients with a decreased LOC, or with life threatening injuries. 
+- Articles of evidence, such as clothing, must be taken with the patient (use a paper bag).
+- Discourage the patient from showering or washing.
+- Consider offering to bring a support person with the patient, if appropriate.
+- Do not give details of the assault over the radio.\u2003
+",,,,
+19,M1,ICP,hard,CSM.DF03 Subcutaneous Injection,"When administering a subcutaneous injection, what specific actions and checks must a paramedic perform regarding needle insertion angle, aspiration, and immediate post-injection handling according to the procedure?",Source 1: cmg,"#### Procedure
+
+- Confirm “5 rights” with paramedic partner, **the right**: 
+- Patient
+- Drug
+- Dose
+- Time
+- Route
+- Draw up confirmed medication into appropriate sized syringe: 
+- blunt needle for drawing up and 25G needle to administer.
+
+- Select an appropriate site of administration and swab the skin with an alcohol wipe.
+
+- Gently pinch a fold of the patient’s skin at the injection site.
+
+- Insert the needle at 45\xb0, bevel up, into the subcutaneous tissue.
+
+- Continue to hold tissue and apply back pressure on plunger ensuring no blood is aspirated: 
+- If blood appears, withdraw the needle and discard. Blood indicates insertion into a blood vessel and continuing injection may be dangerous.
+
+- Inject medication slowly using steady pressure.
+
+- Withdraw the needle and immediately dispose in a sharps container: 
+- Do not resheath any needle.
+
+",,,,
+20,M3,AP,easy,11A Heat Abnormalities,What core temperature is typically associated with heat stroke?,ACTAS CMG – Heat Stroke,"#### Heat Stroke
+
+- Altered conscious state and/or abnormal neurological signs.
+- No sweating (hot, dry skin).
+- Core temperature typically ≥ 40\xb0C.
+- Other complications can include cardiovascular, respiratory, neurological, haematological and musculoskeletal involvement.
+**Heat stroke is a time‐critical life‐threatening condition. Transport should always occur due to the risk of multiple organ failure.**
+
+- Rapid, active cooling (as aggressive as possible).
+- IV resuscitation (cool fluids if possible).
+- Check BGL.
+- Aggressively manage seizures and shivering.
+",,,,
+21,M3,ICP,hard,CSM.DF03 Subcutaneous Injection,"You are administering a confirmed medication subcutaneously to a 58-year-old patient. Your partner confirms the 5 rights, and you insert the 25G needle at 45°, bevel up, into the subcutaneous tissue while pinching a fold of skin. On applying back pressure to the plunger, you observe blood in the syringe. Explain what this finding indicates, outline your immediate management, and describe the complete sequence of steps required to safely complete the medication administration.",ACT Ambulance Service CMG – Subcutaneous Injection Procedure,"#### Procedure
+
+- Confirm “5 rights” with paramedic partner, **the right**: 
+- Patient
+- Drug
+- Dose
+- Time
+- Route
+- Draw up confirmed medication into appropriate sized syringe: 
+- blunt needle for drawing up and 25G needle to administer.
+
+- Select an appropriate site of administration and swab the skin with an alcohol wipe.
+
+- Gently pinch a fold of the patient’s skin at the injection site.
+
+- Insert the needle at 45\xb0, bevel up, into the subcutaneous tissue.
+
+- Continue to hold tissue and apply back pressure on plunger ensuring no blood is aspirated: 
+- If blood appears, withdraw the needle and discard. Blood indicates insertion into a blood vessel and continuing injection may be dangerous.
+
+- Inject medication slowly using steady pressure.
+
+- Withdraw the needle and immediately dispose in a sharps container: 
+- Do not resheath any needle.
+
+",,,,
+22,M1,AP,hard,CSM.P08 Sitting,"A 68-year-old male presents with acute shortness of breath and respiratory distress. After having the patient lean forward, what specific physical action must be performed at the head end of the stretcher to adjust the height, and what subsequent assessments must be conducted immediately following this action according to the procedure?",CMG,"#### Procedure
+
+- Have the patient lean forward if possible.
+
+- Lift the red leaver located at the head end of the stretcher and raise the head end to the desired height (see **Figure 1**).
+
+Figure 1
+
+- Release the red leaver.
+
+- Reassess patient’s respiratory and perfusion status.
+",,,,
+23,M2,AP,hard,32 Assault,"You are called to manage an alert 22-year-old female who has sustained superficial abrasions following an alleged sexual assault. In accordance with ACTAS guidelines for managing patients of sexual assault, outline the key principles you must apply regarding: 1) physical assessment and consent, 2) handling of physical evidence and patient hygiene, and 3) communication via radio.",ACTAS CMG - Abuse / Assault,"#### Management
+
+- Be aware of risks to yourself and others 
+- Consider police assistance
+- Ensure scene control and safety.
+
+- As much as is practical, be wary of evidence preservation at the scene 
+- Wear gloves, watch where you walk, etc.
+- Treat injuries as per appropriate CMG
+- Attention to detail (such as full name, location, times, others present) is very important.
+- Be sure to document, in detail, any injuries/markings found during examination.
+- Report any suspicion, belief or concern about child abuse or neglect as soon as possible.
+
+#### Specifically for Sexual Assault
+
+- Be aware that some patients may resent physical contact from carers.
+- Avoid judgemental comments 
+- Do not allow personal beliefs to interfere with any communication.
+
+- Ensure that every assessment or treatment procedure is explained fully and consent is gained before it is conducted. 
+- Exceptions to this include patients with a decreased LOC, or with life threatening injuries. 
+- Articles of evidence, such as clothing, must be taken with the patient (use a paper bag).
+- Discourage the patient from showering or washing.
+- Consider offering to bring a support person with the patient, if appropriate.
+- Do not give details of the assault over the radio.\u2003
+",,,,
+24,M1,AP,medium,2 Pain Management,"According to the stepwise approach for pain management, which class of medication is indicated for mild to moderate pain (Step 2)?",Source 1,"#### Stepwise Approach
+
+1
+
+**Step 1: Non-pharmacological options**
+- e.g. reassurance, posture, splinting, cooling of burns, occlusive dressing, temperature control, gentle handling, etc.
+
+2
+
+**Step 2: Inhalation/ enteral medication**
+**Mild – moderate pain**
+- e.g. methoxyflurane, ibuprofen, paracetamol, GTN (for ischaemic chest pain) 
+- Provide advice and assistance for the patient to take their own prescribed analgesia
+
+3
+
+**Step 3: Parenteral medication**
+**Moderate – severe pain**
+- e.g. morphine, fentanyl, ketamine, IV paracetamol.
+
+**Aim to control all pain to a comfortable level.**
+
+#### Management
+
+**Relief of pain and suffering is a primary goal of Ambulance care.**
+
+- Pain is what the patient says it is. Always offer pain relief to the patient.
+- Pain assessment (PQRST) 
+- Quantitate if possible (scale and description)
+- Document on case sheet.
+- If possible, pharmacology should be directed at the apparent underlying cause of the pain.
+- Generally, pain management should be initiated with a single agent (depending on the patient’s need, and preference) 
+- If ineffective, consider adding a second agent (noting that incremental doses should be smaller when using multiple agents)
+- There is an increased likelihood of side effects with multiple agents – always consider the risks/benefits of using this method.
+",,,,
+25,M2,AP,medium,2 Pain Management,"According to the stepwise approach to pain management, what dosing consideration must be applied when introducing a second analgesic agent if an initial single agent proves ineffective?",ACTAS CMG,"#### Stepwise Approach
+
+1
+
+**Step 1: Non-pharmacological options**
+- e.g. reassurance, posture, splinting, cooling of burns, occlusive dressing, temperature control, gentle handling, etc.
+
+2
+
+**Step 2: Inhalation/ enteral medication**
+**Mild – moderate pain**
+- e.g. methoxyflurane, ibuprofen, paracetamol, GTN (for ischaemic chest pain) 
+- Provide advice and assistance for the patient to take their own prescribed analgesia
+
+3
+
+**Step 3: Parenteral medication**
+**Moderate – severe pain**
+- e.g. morphine, fentanyl, ketamine, IV paracetamol.
+
+**Aim to control all pain to a comfortable level.**
+
+#### Management
+
+**Relief of pain and suffering is a primary goal of Ambulance care.**
+
+- Pain is what the patient says it is. Always offer pain relief to the patient.
+- Pain assessment (PQRST) 
+- Quantitate if possible (scale and description)
+- Document on case sheet.
+- If possible, pharmacology should be directed at the apparent underlying cause of the pain.
+- Generally, pain management should be initiated with a single agent (depending on the patient’s need, and preference) 
+- If ineffective, consider adding a second agent (noting that incremental doses should be smaller when using multiple agents)
+- There is an increased likelihood of side effects with multiple agents – always consider the risks/benefits of using this method.
+",,,,
+26,M3,AP,hard,CSM.P08 Sitting,"During transport, a 68-year-old patient develops worsening respiratory distress and you decide to elevate the head end of the stretcher. Outline, in order, the complete procedural steps to raise the head end of the stretcher — including any adjustment required of the patient — and state the patient assessment that must be performed immediately after completing the manoeuvre.",ACT Ambulance Service CMG – Stretcher Head-End Elevation Procedure,"#### Procedure
+
+- Have the patient lean forward if possible.
+
+- Lift the red leaver located at the head end of the stretcher and raise the head end to the desired height (see **Figure 1**).
+
+Figure 1
+
+- Release the red leaver.
+
+- Reassess patient’s respiratory and perfusion status.
+",,,,
+27,M2,ICP,medium,28 Prochlorperazine (Stemetil),"According to ACTAS guidelines, prochlorperazine is contraindicated in pregnant patients at or beyond what gestational age?",ACTAS CMG,"#### Adverse Effects
+
+- Gastrointestinal: constipation, dry mouth
+
+- Nervous system: drowsiness, extrapyramidal symptoms
+
+- Cardiovascular: hypotension, ECG changes (especially QT prolongation) 
+
+- Respiratory: respiratory depression
+
+#### Contraindications
+
+- Known hypersensitivity to phenothiazines
+
+- CNS depression
+
+- Shock from any cause, or other circulatory compromise
+
+- Paediatric patients (<18 years old)
+
+- Not to be given in conjunction with intravenous amiodarone
+
+- Previous oral prochlorperazine within last 8 hours
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Approved for ACTAS administration in <28 weeks gestation. **Contraindicated** when gestation ≥28 weeks.
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS as per approved indications only
+
+",,,,
+28,M1,AP,easy,3C Preexisting Tracheostomy Management,What action should be taken regarding oxygen delivery if there is any doubt whether a patient has had a laryngectomy?,Source 1,"#### Secondary Emergency Oxygenation
+
+- Advance tube beyond stoma
+- Use a smaller size down from previous tracheostomy tube or size 6 tube (or smaller than previous tube)
+- Consider use of bougie
+
+- Look, listen and feel over mouth and tracheostomy
+- Assess for obvious kink/obstruction of tube
+
+Is the patient breathing?
+
+ Yes  No  
+
+- Apply O2 to laryngectomy stoma
+- If there is any doubt whether patient has had laryngectomy, apply O2 to face also
+
+**Assess laryngectomy stoma patency**
+
+Most laryngectomy stomas won’t have a tube insitu
+
+- Remove stoma cover (if present)
+- Remove inner tube (if present)
+
+- Call for backup
+- Commence cardiac arrest algorithm if no pulse
+
+**Assess laryngectomy stoma patency**
+
+Most laryngectomy stomas won’t have a tube insitu
+
+- Remove stoma cover (if present)
+- Remove inner tube (if present)
+
+Can you pass a suction catheter?
+
+ Yes  No  
+
+**The laryngectomy tube is patent**
+
+- Suction
+- Consider partial obstruction
+- Ventilate via stoma if not breathing
+- Continue A-E assessment
+
+- Deflate the cuff (if present) 
+- Look, listen and feel at mouth and laryngectomy stoma or tube
+- Use waveform capnography
+
+Is the patient stable or improving?
+
+ Yes  No  
+
+- Continue airway management and A-E assessment
+
+- **Remove the tube from the laryngectomy stoma (if present)**
+- Look, listen and feel at laryngectomy stoma
+- Reapply oxygen to stoma
+- Use waveform capnography
+
+Is the patient breathing?
+
+ Yes  No  
+
+- Continue A-E assessment
+
+- Call for ICP backup
+- Start cardiac arrest algorithm if no pulse
+
+",,,,
+29,M1,AP,easy,CSM.PA11 Blood Lactate Measurement,What does a 'LO' lactate reading indicate?,CMG,"#### Specific Notes
+
+- A “LO” or “HIGH” reading indicates a lactate <0.5mmol /L or >25mmol/L.
+- Excessive exercise, movement of the limb, suspected crush injury or compartment syndrome of the limb to be tested may produce inaccurate results.
+",,,,
+30,M1,AP,medium,CSM.C03 Defibrillation AED Mode (Zoll X Series),What energy level does the AED mode deliver for shocks in Adult Mode?,Source 1: cmg,"#### Procedure
+
+- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: 
+- Multiple people using multiple checks at multiple times.
+
+- Begin cardiac arrest algorithm.
+
+- Turn monitor on
+
+- Attach the defibrillation pads to patient: 
+- Place pads either Anterior / Posterior or both anterior.
+- Ensure good pad adherence.
+- Ensure CPR feedback pad is in center of chest on sternum
+
+- Press the ANALYZE button
+
+- 
+
+- Continue or start CPR.
+
+- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.
+
+#### Specific Notes
+
+- AED mode monitors through the pads.
+- AED mode shocks at 200J in Adult Mode.
+- AED mode shocks at 50J in Pediatric Mode.
+- AED will not ANALYZE in Neonate Mode.
+- AED mode will not shock narrow complex tachycardia.
+",,,,
+31,M3,ICP,easy,CSM.A10 AirTraq (Endotracheal Intubation),"Which unconscious patient group should have intubation delayed until the effect of one dose of adrenaline has been evaluated, unless the airway is seriously compromised?",ACT Ambulance Service CMG – Intubation Complications,"#### Complications
+
+- Copious amounts of secretions and blood can obscure lens. Adequately assess and suction airway before insertion.
+- Hypoxia in the paralysed patient.
+- Inadequate ventilation/CPR during insertion and placement checks.
+- Obstruction by mucus/bleed, kinking of tube, external pressure from biting, cuff herniation or bevel impingement on the carina or trachea.
+- Dislodgement - always tie tube in firmly, use cervical collar and perform frequent ET tube checks especially after moving the patient.
+- Malposition - oesophageal or endobronchial. Multiple ET tube checks by multiple people.
+- Trauma to structures.
+- Pneumothorax by over-inflation of lungs.
+- Unrecognised undersedation in the paralysed patient.
+- Unable to tolerate tube due to increasing LOC. If so, sedation required.
+- Unconscious asthma - unless airway seriously compromised should have intubation delayed until the effect of one dose of adrenaline has been evaluated.
+
+",,,,
+32,M3,ICP,easy,21 Methoxyflurane,What is the maximum dose of methoxyflurane (Penthrox) that should not be exceeded in a 24-hour period?,ACTAS CMG – Methoxyflurane (Penthrox),"##### Type
+
+Volatile inhalation anaesthetic and analgesic agent [S4]
+
+- **High-risk medication**
+
+##### Presentations
+
+3ml bottle
+
+##### Actions
+
+Central nervous system depressant
+
+Onset: 3 – 5 mins. Offset: 3 – 5 mins.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS setting
+
+#### Doses
+
+##### Adult and Paediatric 
+
+- Up to 3ml – self administered via Penthrox inhaler 
+- Repeat once if required
+- Dose should not exceed 6ml/day or 15ml/week
+- If used during labour, discontinue use post-delivery, and if PPH is suspected.
+",,,,
+33,M2,ICP,medium,CSM.IDH06 Splinting (Basic Limb),"You are assessing a patient with a suspected limb fracture. On assessment, distal pulses are absent and perfusion to the extremity is compromised. According to ACTAS clinical procedure, what action is indicated prior to applying a splint?",ACTAS CMG - Splinting,"#### Procedure
+
+- If required, administer pain relief prior to applying splint.
+- Confirm distal pulses are present.
+- Realign limb if perfusion is compromised.
+
+##### Cardboard Splint
+
+- Select appropriate cardboard splint size, trauma combines or a towel for padding, and a roller bandage.
+
+- Support the patient’s injured limb and position on cardboard splint and padding so that fingers/toes are at the rounded end (see **Figures 1 & 2**).
+
+Figure 1
+
+Figure 2
+
+- Fold up sides of cardboard splint and secure with roller bandage and tape roller bandage in place with the help of a second person.
+
+- Reconfirm distal pulses are present, sensation, and capillary refill.
+
+##### Anatomical Leg Splint
+
+- Place padding in between legs at level of any bony prominences (knees and ankles).
+
+- Secure legs together with triangular bandage at proximal, middle, and distal regions appropriate to injury (see **Figure 3**).
+
+Figure 3
+
+- Reconfirm distal pulses are present, sensation, and capillary refill.
+",,,,
+34,M3,AP,easy,3C Preexisting Tracheostomy Management,"You are managing a patient with a stoma who is not breathing, but you are unsure whether they have had a laryngectomy. Where should you apply oxygen?",ACT Ambulance Service CMG – Tracheostomy/Laryngectomy Emergency (Secondary Emergency Oxygenation),"#### Secondary Emergency Oxygenation
+
+- Advance tube beyond stoma
+- Use a smaller size down from previous tracheostomy tube or size 6 tube (or smaller than previous tube)
+- Consider use of bougie
+
+- Look, listen and feel over mouth and tracheostomy
+- Assess for obvious kink/obstruction of tube
+
+Is the patient breathing?
+
+ Yes  No  
+
+- Apply O2 to laryngectomy stoma
+- If there is any doubt whether patient has had laryngectomy, apply O2 to face also
+
+**Assess laryngectomy stoma patency**
+
+Most laryngectomy stomas won’t have a tube insitu
+
+- Remove stoma cover (if present)
+- Remove inner tube (if present)
+
+- Call for backup
+- Commence cardiac arrest algorithm if no pulse
+
+**Assess laryngectomy stoma patency**
+
+Most laryngectomy stomas won’t have a tube insitu
+
+- Remove stoma cover (if present)
+- Remove inner tube (if present)
+
+Can you pass a suction catheter?
+
+ Yes  No  
+
+**The laryngectomy tube is patent**
+
+- Suction
+- Consider partial obstruction
+- Ventilate via stoma if not breathing
+- Continue A-E assessment
+
+- Deflate the cuff (if present) 
+- Look, listen and feel at mouth and laryngectomy stoma or tube
+- Use waveform capnography
+
+Is the patient stable or improving?
+
+ Yes  No  
+
+- Continue airway management and A-E assessment
+
+- **Remove the tube from the laryngectomy stoma (if present)**
+- Look, listen and feel at laryngectomy stoma
+- Reapply oxygen to stoma
+- Use waveform capnography
+
+Is the patient breathing?
+
+ Yes  No  
+
+- Continue A-E assessment
+
+- Call for ICP backup
+- Start cardiac arrest algorithm if no pulse
+
+",,,,
+35,M3,AP,easy,CSM.PA11 Blood Lactate Measurement,What does a 'HIGH' reading on the lactate display indicate?,ACT Ambulance Service CMG – Lactate Monitoring (Specific Notes),"#### Specific Notes
+
+- A “LO” or “HIGH” reading indicates a lactate <0.5mmol /L or >25mmol/L.
+- Excessive exercise, movement of the limb, suspected crush injury or compartment syndrome of the limb to be tested may produce inaccurate results.
+",,,,
+36,M1,ICP,medium,28 Prochlorperazine (Stemetil),"According to the provided guidelines, what is the gestational age threshold at which administration of phenothiazines becomes contraindicated in pregnant patients?",ACTAS CMG,"#### Adverse Effects
+
+- Gastrointestinal: constipation, dry mouth
+
+- Nervous system: drowsiness, extrapyramidal symptoms
+
+- Cardiovascular: hypotension, ECG changes (especially QT prolongation) 
+
+- Respiratory: respiratory depression
+
+#### Contraindications
+
+- Known hypersensitivity to phenothiazines
+
+- CNS depression
+
+- Shock from any cause, or other circulatory compromise
+
+- Paediatric patients (<18 years old)
+
+- Not to be given in conjunction with intravenous amiodarone
+
+- Previous oral prochlorperazine within last 8 hours
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Approved for ACTAS administration in <28 weeks gestation. **Contraindicated** when gestation ≥28 weeks.
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS as per approved indications only
+
+",,,,
+37,M3,AP,medium,CSM.C03 Defibrillation AED Mode (Zoll X Series),During a cardiac arrest you switch the defibrillator to AED mode and press ANALYZE. The rhythm identified is a narrow complex tachycardia. Will the AED deliver a shock in this mode?,ACTAS CMG - Cardiac Arrest / AED Mode,"#### Procedure
+
+- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: 
+- Multiple people using multiple checks at multiple times.
+
+- Begin cardiac arrest algorithm.
+
+- Turn monitor on
+
+- Attach the defibrillation pads to patient: 
+- Place pads either Anterior / Posterior or both anterior.
+- Ensure good pad adherence.
+- Ensure CPR feedback pad is in center of chest on sternum
+
+- Press the ANALYZE button
+
+- 
+
+- Continue or start CPR.
+
+- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.
+
+#### Specific Notes
+
+- AED mode monitors through the pads.
+- AED mode shocks at 200J in Adult Mode.
+- AED mode shocks at 50J in Pediatric Mode.
+- AED will not ANALYZE in Neonate Mode.
+- AED mode will not shock narrow complex tachycardia.
+",,,,
+38,M1,AP,medium,32 Topical Anaesthetic Cream (LMX4),What action should be taken if skin irritation occurs after applying topical anaesthetic cream for IV cannulation?,ACT Ambulance Service CMG,"#### Special Notes
+
+- Pain, anxiety, distress and subsequent needle phobia is associated with IV access attempts. Preparation of potential IV cannulation sites with topical anaesthetic cream can reduce pain and minimise distress to patients.
+- If skin irritation occurs, remove the cream immediately.
+",,,,
+39,M2,AP,medium,27 Hyperkalaemia,"According to the ACTAS clinical management guidelines, what foundational management must be provided for a cardiac arrest thought to be secondary to hyperkalaemia, in addition to condition-specific interventions?",ACTAS CMG,"#### Cardiac Arrest Secondary to Hyperkalaemia
+
+In cardiac arrest thought to be secondary to hyperkalaemia (i.e. hyperkalaemia is thought to be the cause of the arrest):
+
+- Cardiac arrest management as per relevant CMG with the addition of:
+",,,,
+40,M3,AP,medium,32 Topical Anaesthetic Cream (LMX4),"A patient reports significant needle phobia and you anticipate a distressing IV cannulation attempt. According to the CMG special notes, what preparation can be used at potential cannulation sites to reduce pain and minimise distress?",ACTAS CMG Special Notes,"#### Special Notes
+
+- Pain, anxiety, distress and subsequent needle phobia is associated with IV access attempts. Preparation of potential IV cannulation sites with topical anaesthetic cream can reduce pain and minimise distress to patients.
+- If skin irritation occurs, remove the cream immediately.
+",,,,
+41,M3,ICP,hard,CSM.A15 Extubation,"You are transporting a 24-year-old female (58 kg) with severe asthma who was intubated approximately 40 minutes ago for refractory bronchospasm. She is now making strong spontaneous respiratory efforts, biting the tube, with SpO2 96% on ventilator support, HR 118, BP 138/84. The senior paramedic asks whether she should be extubated prior to arrival. (a) State the preferred management in this situation and explain the clinical rationale specific to asthmatic patients. (b) If extubation were nonetheless required, outline the sequence of procedural steps you must follow to minimise risk. (c) Identify two complications of extubation you must remain vigilant for, and describe the immediate post-extubation management.",ACT AS CMG – Extubation Procedure,"#### Procedure
+
+- Monitor patient’s oxygen saturations.
+
+- Pre-oxygenate the patient, if possible.
+
+- Place patient in the lateral position, if possible.
+
+- Suction the tube and oral cavity thoroughly.
+
+- Cut the tube tie or loosen securing device, then completely deflate the cuff.
+
+- Instruct the patient to attempt to cough the tube out.
+
+- Swiftly withdraw the tube as the patient coughs.
+
+- Reassess respiratory status.
+
+- Provide high concentration oxygen. Be alert for any respiratory deterioration.
+
+- Document time of removal and reason.
+
+#### Complications
+
+- Asthmatic patients, once intubated, are generally better managed if the tube remains in situ, as deterioration may occur from irritation during the extubation process. In this situation, it is preferable to keep the tube in by sedating the patient.
+- Loss of a secure airway; aspiration and hypoxia.
+",,,,
+42,M3,AP,hard,10 Diabetic Emergencies,"You are called to a 58-year-old male with type 1 diabetes found confused and diaphoretic, BGL 2.2 mmol/L. He wears an insulin pump connected to a continuous subcutaneous infusion site. He is too altered to operate the pump himself, and no carer or family member is present on scene. Outline your management of this patient with respect to the insulin pump: what actions may you take regarding the pump settings, what must you avoid, and what is your transport disposition?",CMG – Insulin Pumps,"#### Insulin Pumps
+
+- In the event of hypoglycaemia, consider suspending administration **if the patient or a carer on scene is able to assist in doing so. **
+- If there is no assistance on scene do not attempt to alter settings.
+
+Whether suspended or not, **do not remove the pump** – transport with pump in situ. No special management is required as long as the pump and infusion site are protected.
+",,,,
+43,M2,AP,medium,4A ROSC: Adult (Return of Spontaneous Circulation),"According to post-resuscitation care guidelines, active re-warming should only be initiated if the patient's core temperature falls below what threshold?",ACTAS CMG,"#### Cardiac / Perfusion
+
+- 12‐lead ECG (unless obvious non‐cardiac cause) 
+- Repeat en‐route if 1st ECG normal
+- **If STEMI detected on 12‐lead:** transmit and consult with STEMI doctor 
+- Consider transport direct to TCH.
+- **If bradycardic:** consider external pacing (preferred over adrenaline for ROSC bradycardia).
+- Maintain cerebral perfusion 
+- Aim for BP ≥ 100mmHg
+- By any means: posture and fluids **and/ or **
+
+#### Temperature
+
+- Check core temperature.
+- Aim to maintain normothermia 
+- No active re‐warming unless profoundly hypothermic (< 32\xb0C) - refer CMG 11B Hypothermia
+- No active, aggressive colling unless hyperthermic (> 39\xb0C) - refer CMG 11A Heat Abnormalities.
+- Do not allow patient to shiver.
+
+",,,,
+44,M1,ICP,hard,CSM.B03 Positive End Expiratory Pressure (PEEP),"A 58-year-old male is intubated following a severe near-drowning incident. He is mechanically ventilated by an ACT Ambulance Service paramedic, but remains persistently desaturated despite initial airway management and a PEEP setting of 5 cmH2O. According to the PEEP procedure, what is the next appropriate step regarding the PEEP titration, and what is the maximum PEEP level permitted for this specific presentation?",ACT Ambulance Service CMG,"#### Indications
+
+- For use with ventilated patients who meet PEEP criteria: 
+- Cardiac arrest.
+- Near drowning.
+- Severe asthma/COPD exacerbation.
+- Severe pulmonary oedema.
+- Carbon monoxide poisoning.
+- Intubated patients.
+
+#### Procedure
+
+Figure 1
+
+- Attach the PEEP valve to the bag valve (see **Figure 1**).
+
+- Start PEEP level at 5cm.
+
+- Increase to 10cm if not responding to 5cmH2O (max for asthma, CAL, infants and children).
+
+- Increase to 15cm as required for pulmonary oedema, near drowning and CO poisoning (only if still desaturated with 10 cmH2O).
+
+- Maintain continuous PEEP.
+
+",,,,
+45,M1,AP,easy,11A Heat Abnormalities,What is the typical core temperature threshold used to define heat stroke?,cmg,"#### Heat Stroke
+
+- Altered conscious state and/or abnormal neurological signs.
+- No sweating (hot, dry skin).
+- Core temperature typically ≥ 40\xb0C.
+- Other complications can include cardiovascular, respiratory, neurological, haematological and musculoskeletal involvement.
+**Heat stroke is a time‐critical life‐threatening condition. Transport should always occur due to the risk of multiple organ failure.**
+
+- Rapid, active cooling (as aggressive as possible).
+- IV resuscitation (cool fluids if possible).
+- Check BGL.
+- Aggressively manage seizures and shivering.
+",,,,
+46,M2,AP,hard,CSM.IDH12 Compression Bandage,"You are dispatched to a 42-year-old male who was bitten on the right lateral malleolus by an unidentified snake 10 minutes ago while gardening. He is anxious with vital signs: HR 96 bpm, BP 136/82 mmHg, RR 18/min, and SpO2 99% on room air. Outline the step-by-step procedural management required to apply the pressure immobilisation technique and splint the affected limb in accordance with ACTAS guidelines, including specific bandaging sequence, patient instruction, and post-application assessments.",ACTAS Clinical Management Guidelines - Bites and Envenomation,"#### Procedure
+
+Figure 1
+
+Figure 2
+
+Figure 3
+
+- Inform the patient to move as little as possible.
+
+- If possible, mark the location of the envenomation (see **Figure 1**).
+
+- Utilise 2 separate bandages, a roller or crepe (preferred) bandage: 
+- Bandage 1 = over the top of the site (see **Figure 2**).
+- Bandage 2 = start at the distal end of the limb working your way up proximally (see **Figure 3**).
+
+- Splint limb utilising cardboard splint or anatomical splinting if nil cardboard splint available.
+
+- Confirm distal pulse is present, sensation, and capillary refill.
+
+",,,,
+47,M3,ICP,hard,CSM.B03 Positive End Expiratory Pressure (PEEP),"A 32-year-old patient with severe asthma has been intubated and is being ventilated with a bag-valve device and attached PEEP valve. You commenced PEEP at 5 cmH2O but the patient remains desaturated. According to the guideline, what PEEP level should you now set, and what is the maximum PEEP level permitted for this patient?",ACTAS CMG – PEEP Valve (Indications and Procedure),"#### Indications
+
+- For use with ventilated patients who meet PEEP criteria: 
+- Cardiac arrest.
+- Near drowning.
+- Severe asthma/COPD exacerbation.
+- Severe pulmonary oedema.
+- Carbon monoxide poisoning.
+- Intubated patients.
+
+#### Procedure
+
+Figure 1
+
+- Attach the PEEP valve to the bag valve (see **Figure 1**).
+
+- Start PEEP level at 5cm.
+
+- Increase to 10cm if not responding to 5cmH2O (max for asthma, CAL, infants and children).
+
+- Increase to 15cm as required for pulmonary oedema, near drowning and CO poisoning (only if still desaturated with 10 cmH2O).
+
+- Maintain continuous PEEP.
+
+",,,,
+48,M1,AP,hard,32 Assault,"An Ambulance Paramedic attends to an adult patient following a sexual assault. The patient is conscious, alert, and expresses reluctance towards physical contact and treatment. Applying the management principles for sexual assault outlined in the source, what specific steps must the paramedic take regarding communication, consent, physical evidence, and radio communications during this response?",cmg,"#### Management
+
+- Be aware of risks to yourself and others 
+- Consider police assistance
+- Ensure scene control and safety.
+
+- As much as is practical, be wary of evidence preservation at the scene 
+- Wear gloves, watch where you walk, etc.
+- Treat injuries as per appropriate CMG
+- Attention to detail (such as full name, location, times, others present) is very important.
+- Be sure to document, in detail, any injuries/markings found during examination.
+- Report any suspicion, belief or concern about child abuse or neglect as soon as possible.
+
+#### Specifically for Sexual Assault
+
+- Be aware that some patients may resent physical contact from carers.
+- Avoid judgemental comments 
+- Do not allow personal beliefs to interfere with any communication.
+
+- Ensure that every assessment or treatment procedure is explained fully and consent is gained before it is conducted. 
+- Exceptions to this include patients with a decreased LOC, or with life threatening injuries. 
+- Articles of evidence, such as clothing, must be taken with the patient (use a paper bag).
+- Discourage the patient from showering or washing.
+- Consider offering to bring a support person with the patient, if appropriate.
+- Do not give details of the assault over the radio.\u2003
+",,,,
+49,M1,ICP,easy,21 Methoxyflurane,What is the maximum daily dose for methoxyflurane in both adult and paediatric patients?,Source 1: cmg,"##### Type
+
+Volatile inhalation anaesthetic and analgesic agent [S4]
+
+- **High-risk medication**
+
+##### Presentations
+
+3ml bottle
+
+##### Actions
+
+Central nervous system depressant
+
+Onset: 3 – 5 mins. Offset: 3 – 5 mins.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS setting
+
+#### Doses
+
+##### Adult and Paediatric 
+
+- Up to 3ml – self administered via Penthrox inhaler 
+- Repeat once if required
+- Dose should not exceed 6ml/day or 15ml/week
+- If used during labour, discontinue use post-delivery, and if PPH is suspected.
+",,,,
+50,M2,ICP,easy,CSM.A10 AirTraq (Endotracheal Intubation),"In an unconscious asthma patient without serious airway compromise, intubation should be delayed until the effect of which medication has been evaluated?",ACTAS CMG,"#### Complications
+
+- Copious amounts of secretions and blood can obscure lens. Adequately assess and suction airway before insertion.
+- Hypoxia in the paralysed patient.
+- Inadequate ventilation/CPR during insertion and placement checks.
+- Obstruction by mucus/bleed, kinking of tube, external pressure from biting, cuff herniation or bevel impingement on the carina or trachea.
+- Dislodgement - always tie tube in firmly, use cervical collar and perform frequent ET tube checks especially after moving the patient.
+- Malposition - oesophageal or endobronchial. Multiple ET tube checks by multiple people.
+- Trauma to structures.
+- Pneumothorax by over-inflation of lungs.
+- Unrecognised undersedation in the paralysed patient.
+- Unable to tolerate tube due to increasing LOC. If so, sedation required.
+- Unconscious asthma - unless airway seriously compromised should have intubation delayed until the effect of one dose of adrenaline has been evaluated.
+
+",,,,
+51,M1,AP,medium,4A ROSC: Adult (Return of Spontaneous Circulation),"According to the cardiac and perfusion guidelines, which intervention is preferred over adrenaline for ROSC bradycardia?",CMG Cardiac / Perfusion,"#### Cardiac / Perfusion
+
+- 12‐lead ECG (unless obvious non‐cardiac cause) 
+- Repeat en‐route if 1st ECG normal
+- **If STEMI detected on 12‐lead:** transmit and consult with STEMI doctor 
+- Consider transport direct to TCH.
+- **If bradycardic:** consider external pacing (preferred over adrenaline for ROSC bradycardia).
+- Maintain cerebral perfusion 
+- Aim for BP ≥ 100mmHg
+- By any means: posture and fluids **and/ or **
+
+#### Temperature
+
+- Check core temperature.
+- Aim to maintain normothermia 
+- No active re‐warming unless profoundly hypothermic (< 32\xb0C) - refer CMG 11B Hypothermia
+- No active, aggressive colling unless hyperthermic (> 39\xb0C) - refer CMG 11A Heat Abnormalities.
+- Do not allow patient to shiver.
+
+",,,,
+52,M2,AP,easy,CSM.B06 MDI Spacer (Nebulised Medication),"When administering medication via a metered-dose inhaler (MDI) that has a counter attached, which specific spacer must be used?",ACTAS CMG,"#### Specific Notes
+
+- Increased apparatus dead space.
+- Will occupy one officer in totality to deliver medication in this manner.
+- If MDI has a counter attached ensure green inline MDI spacer is used.
+",,,,
+53,M1,AP,easy,CSM.PA06 ECG Monitoring,What action should be avoided when removing ECG leads to prevent the metal electrode plate from separating and becoming stuck in the lead?,CMG,"#### Specific Notes
+
+- Artifact can be reduced by ensuring: 
+- The patient (or ambulance) is not moving, electric blankets are turned off and the patient takes quiet, regular respirations where possible.
+- During removal do not pull leads to remove them from monitoring dots – this can result in the metal electrode plate separating from adhesive pad and becoming stuck in the lead.
+",,,,
+54,M2,AP,easy,CSM.PA06 ECG Monitoring,"According to ACTAS guidelines, what risk is associated with pulling ECG leads directly to remove them from monitoring dots?",ACTAS CMG,"#### Specific Notes
+
+- Artifact can be reduced by ensuring: 
+- The patient (or ambulance) is not moving, electric blankets are turned off and the patient takes quiet, regular respirations where possible.
+- During removal do not pull leads to remove them from monitoring dots – this can result in the metal electrode plate separating from adhesive pad and becoming stuck in the lead.
+",,,,
+55,M3,AP,hard,CSM.P01 Log Roll,"A 72-year-old woman is found supine on her bathroom floor after a syncopal fall. GCS 14, HR 96, BP 152/90, RR 18. She reports mid-thoracic back pain and you suspect a spinal injury, so you prepare to log roll her onto a scoop stretcher. Describe the correct log roll technique: where assistants position themselves and place their hands, the direction of the roll, and who controls the movement. State the assessment you must complete while the patient is on her side, and identify the clinical priority if maintaining neutral spinal alignment conflicts with airway management.",ACT AS CMG – Log Roll Procedure,"#### Procedure
+
+- Prepare any lifting devices (spine board, support straps, scoop stretcher or carry sheet).
+
+- Remove items from pockets etc that may cause patient pain or pressure.
+
+- Instruct assistants on procedure: 
+- Brief assistant/s to stand/kneel on one side of patient and place hands on patient’s far side shoulder, hip, upper thigh and lower leg.
+
+- Maintain neutral alignment of spine and support head.
+
+- The person at the head end controls the process.
+
+- Maintain neutral alignment of spine and support head.
+
+- On pre-agreed count, roll patient in alignment toward assistants.
+
+- Complete a secondary survey of patients back: 
+- Check back pockets.
+
+- If lifting device is required, instruct assistant to place device against patient’s back.
+
+- Roll to supine position keeping head in alignment.
+
+#### Complications
+
+- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.
+- Spine boards/scoops are cold, hard and uncomfortable. They should be removed from underneath the patient as soon as practicable.
+",,,,
+56,M3,ICP,medium,28 Prochlorperazine (Stemetil),"A 32-week pregnant patient presents with severe nausea and vomiting and requires antiemetic therapy. According to ACTAS guidelines, why is prochlorperazine contraindicated in this patient?",ACTAS CMG - Prochlorperazine (Pregnancy and Breastfeeding),"#### Adverse Effects
+
+- Gastrointestinal: constipation, dry mouth
+
+- Nervous system: drowsiness, extrapyramidal symptoms
+
+- Cardiovascular: hypotension, ECG changes (especially QT prolongation) 
+
+- Respiratory: respiratory depression
+
+#### Contraindications
+
+- Known hypersensitivity to phenothiazines
+
+- CNS depression
+
+- Shock from any cause, or other circulatory compromise
+
+- Paediatric patients (<18 years old)
+
+- Not to be given in conjunction with intravenous amiodarone
+
+- Previous oral prochlorperazine within last 8 hours
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Approved for ACTAS administration in <28 weeks gestation. **Contraindicated** when gestation ≥28 weeks.
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS as per approved indications only
+
+",,,,
+57,M1,AP,easy,CSM.PA04 Blood Pressure Measurement (Auscultate),"What does a ""LO"" reading on a blood glucose meter indicate regarding the patient's BGL?",Source 1,"#### Procedure
+
+- Place strip into monitor. The glucometer will auto turn on.
+
+- Select a finger and clean with an alcohol swab, allow finger to dry.
+
+- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.
+
+- Dispose of the used lancet appropriately.
+
+- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.
+
+- Apply a Band-Aid to the wound.
+
+- Wait for the test result and record the BGL measurement.
+
+- Dispose of the used test strip appropriately.
+
+#### Specific Notes
+
+- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.
+- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.
+",,,,
+58,M2,ICP,medium,22 Seizures,"Following the administration of a second benzodiazepine dose, after how many minutes of persistent refractory seizure activity is Levetiracetam indicated?",ACTAS CMG,"#### Mx - Midazolam
+
+- Continue initial Mx.
+- Midazolam (2 doses) 
+
+##### Benzodiazepine Repeat Doses
+
+After more than two doses of any benzodiazepine, the chance of successful seizure termination is low, and the risk of adverse effect is relatively high.
+
+Family/carers of epileptic patients are often provided with benzodiazepine supply, training, and education to administer benzodiazepines correctly. It’s prudent to respectfully double check with the family member/carer that the correct dose was administered via the correct route as per the patient’s management plan. Benzodiazepines doses correctly administered prior to ACTAS arrival, should be counted in the total benzodiazepine dose.
+
+- IV/IO access 
+
+##### Optimal Route of Midazolam Administration
+
+Overall shortest time to Midazolam therapeutic effect is via the IM. The time required to safely insert an IV/IO negates the slightly increased absorption and distribution rate of Midazolam via these routes.
+
+The IV/IO route should be used if secured prior to seizure activity.
+
+- Extricate and transport.
+
+#### Confirm Levetiracetam Indication
+
+- Refractory seizure activity 5/60 after second benzodiazepine dose 
+**OR**
+- >20/60 seizure duration. 
+
+It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.
+
+",,,,
+59,M2,ICP,hard,30 Crush Syndrome,"You have just extricated a 34-year-old worker whose lower leg was trapped under heavy machinery for two hours. Vital signs post-extrication are HR 112, BP 98/62, RR 20, and SpO2 97%. As you commence rapid transport to a trauma facility and continue IV fluids, what specific instruction is given regarding the splinting and positioning of the injured limb, including the critical action to avoid, and which three specific Clinical Management Guidelines (CMGs) are flagged for consideration?",ACTAS Clinical Management Guidelines - Post-Extrication,"#### Post-Extrication
+
+- Rapid transport to trauma facility, as soon as possible 
+- Patients have better outcomes when they arrive at definitive care earlier.
+
+- Continue IV fluids.
+- Monitor ECG for changes.
+- Manage, as appropriate: 
+- CMG 14 Shock and Hypoperfusion
+- CMG 19 Limb injuries
+- CMG 27 Hyperkalaemia.
+- Analgesia as required.
+- Splint and immobilise the injured limb at heart level. **Do not elevate**.
+",,,,
+60,M1,AP,medium,27 Hyperkalaemia,"In cardiac arrest thought to be secondary to hyperkalaemia, what is the primary management strategy regarding cardiac arrest protocols?",cmg Cardiac Arrest Secondary to Hyperkalaemia,"#### Cardiac Arrest Secondary to Hyperkalaemia
+
+In cardiac arrest thought to be secondary to hyperkalaemia (i.e. hyperkalaemia is thought to be the cause of the arrest):
+
+- Cardiac arrest management as per relevant CMG with the addition of:
+",,,,
+61,M3,AP,medium,15 Altered Level of Consciousness,"You are managing a patient with an altered level of consciousness whose GCS has been rapidly declining over the past ten minutes. According to the CMG, what does a rapidly decreasing level of consciousness signify, and how should you prioritise your scene management and transport?",ACT AS CMG 14.1,"#### Assessment
+
+There are many potential causes of an altered level of consciousness, but very few can be diagnosed in the pre‐hospital environment.
+
+The mnemonic ‘AEIOU TIPS’ can help clinicians to identify possible reversible causes:
+
+A
+
+Alcohol, acidosis. 
+
+E
+
+Epilepsy, endocrine, electrolytes, environment. 
+
+I
+
+Insulin (i.e. hypo / hyperglycaemia). 
+
+O
+
+Overdose, oxygen (hypoxia). 
+
+U
+
+Uraemia, underdose. 
+
+T
+
+Trauma, tumour, toxin. 
+
+I
+
+Infection. 
+
+P
+
+Psychogenic, poison, pharmacological. 
+
+S
+
+Seizures, sepsis, syncope, stroke, shock, space‐occupying lesion. 
+
+#### Management
+
+- Assess patient’s presenting level of consciousness by AVPU and/or GCS as appropriate.
+- Manage airway as per CMG 3 Airway Management.
+- Assess and monitor vital signs (e.g. BGL, temperature, ECG, BP, etc).
+- Oxygen if required 
+- Aim to maintain SpO2 ≥ 94%.
+- Do not hyperventilate 
+- Monitor EtCO2
+- Aim to maintain between 35‐40mmHg.
+- IV fluids as per CMG 14 Shock and Hypoperfusion.
+- Aim to maintain systolic BP > 100mmHg.
+- Treat associated conditions as required (e.g. overdose, hypoglycaemia, seizures, etc).
+- Consider spinal precautions if trauma or if history is unknown.
+- Unless otherwise contraindicated, posture by perfusion or comfort.
+- **Evidence of a rapidly decreasing level of consciousness is a flag for a time‐critical patient**
+- **Minimise scene time and transport urgently to hospital.**
+",,,,
+62,M1,AP,hard,16 Suspected ACS (Acute Coronary Syndrome),"An ACT Ambulance Service paramedic is treating a 58-year-old male presenting with acute ischaemic chest pain. The initial 12-lead ECG reveals S-T depression in leads V1 to V3, and the patient remains symptomatic after initial analgesia. What specific diagnostic addition is indicated for this ECG finding, and what is the primary transport directive for a suspected STEMI patient according to these guidelines?",cmg,"#### Management
+
+- 12 lead ECG 
+- Perform serial 12 lead ECGs throughout contact time in symptomatic patients, especially if initial ECG was non‐diagnostic.
+
+- Ischaemic symptoms, with S‐T depression in leads V1 to V3 (indicative of potential **posterior AMI** – diagnosed in V8 – V9) 
+- Inferior (II, III, aVF) S‐T elevation (indicative of potential **right ventricular AMI** – diagnosed in V4R).
+- Administer oxygen only if: 
+- SpO2 is < 94%, **or**
+- Shocked
+- Aspirin
+- GTN
+- Antiemetic.
+- Analgesia 
+- Aim to abolish pain or discomfort.
+- If hypotensive: 
+- Refer to CMG 14 Shock and Hypoperfusion: Cardiogenic Shock.
+
+#### STEMI (S-T Elevation Myocardial Infarction)
+
+- **Prompt transport**
+- Do not delay on scene for STEMI specific treatment. Where possible, do this en route. 
+
+- Notify hospital as early as possible if STEMI is suspected 
+- Follow **STEMI Bypass Flowchart.**
+",,,,
+63,M1,AP,hard,45 Palliative Care and VAD,"An ACT Ambulance Service paramedic attends an 82-year-old patient diagnosed with a life-limiting condition whose attendance is associated with that condition. The family states the patient is in the Terminal Phase (last days of life), and assessment reveals the patient is bed-bound requiring complete assistance for daily activities, unconscious, has a reduced urine output, and is peripherally cold and cyanotic. Vital signs have not been obtained. Based on the clinical management guidelines for end-of-life care, what is the clinical justification for forgoing routine vital sign observations in this patient, and how should the lack of these vital sign assessments influence the provision of comfort measures such as analgesia and anti-anxiety medication?",ACTAS CMG,"#### Target Patient Groups
+
+- Palliative Care patient, or 
+
+Palliative care is the approach used to improve quality of life for patients diagnosed with incurable life-limiting-condition/s, by tailoring management to the individual care goals of the patient.
+
+A common misconception is that palliative care is only provided to patients near their end of life (EOL). Many palliative patients continue to receive life prolonging treatment and live for an extensive time after diagnosis.
+
+- Diagnosed life-limiting-condition
+- Cause for ACTAS attendance is associated with life-limiting-condition
+
+- Terminal Phase patient, or 
+
+EOL care is for patients in the Terminal Phase (last days of life). 
+
+It may be helpful to consider yourself or ask the patient’s family/carer if the patient’s death in the next days or weeks would be a surprise or not.
+
+In the Terminal Phase, ACTAS’ role continues to be facilitation of the patient’s care goals. Commonly, the primary goal is to provide comfort during the normal and expected dying process. Patients will typically present with abnormal vital signs, as such it’s accepted in EOL care situations to forgo the potentially distressing or painful practice of routine vital sign observation. The lack of recent vital sign assessment, or the presence of abnormal vital signs should not inhibit the provision of comfort measures such as effective analgesia and anti-anxiety medication.
+
+- Diagnosed life-limiting-condition
+- Cause for ACTAS attendance is associated with life-limiting-condition
+- Signs suggestive of the Terminal Phase are: 
+- Bed-bound, requires complete assistance for activities of daily living.
+- Unconscious or limited response.
+- Reduced oral intake.
+- Limited ability to swallow.
+- Reduce urine output.
+- Peripherally cold, cyanotic, or mot",,,,
+64,M2,ICP,hard,CSM.DF03 Subcutaneous Injection,"You are preparing to administer a medication via the subcutaneous route to an adult patient. In accordance with the subcutaneous injection procedure, outline the specific clinical requirements for:
+1. Needle selection for drawing up versus administering the medication
+2. Tissue manipulation, insertion angle, and needle orientation
+3. The aspiration check, including the required immediate action and clinical rationale if blood is aspirated
+4. Disposal and needle safety immediately following administration",ACTAS Clinical Procedure - Subcutaneous Injection,"#### Procedure
+
+- Confirm “5 rights” with paramedic partner, **the right**: 
+- Patient
+- Drug
+- Dose
+- Time
+- Route
+- Draw up confirmed medication into appropriate sized syringe: 
+- blunt needle for drawing up and 25G needle to administer.
+
+- Select an appropriate site of administration and swab the skin with an alcohol wipe.
+
+- Gently pinch a fold of the patient’s skin at the injection site.
+
+- Insert the needle at 45\xb0, bevel up, into the subcutaneous tissue.
+
+- Continue to hold tissue and apply back pressure on plunger ensuring no blood is aspirated: 
+- If blood appears, withdraw the needle and discard. Blood indicates insertion into a blood vessel and continuing injection may be dangerous.
+
+- Inject medication slowly using steady pressure.
+
+- Withdraw the needle and immediately dispose in a sharps container: 
+- Do not resheath any needle.
+
+",,,,
+65,M3,AP,easy,CSM.DF14 Mucosal Atomising Device (MAD),"When a MAD300 is attached to a 1 mL Luer lock syringe, what is the device's dead space?",ACT AS CMG — Mucosal Atomization Device (MAD) Notes,"#### Notes
+
+- The device is latex-free and typically for single-patient use but can be re-used by the same patient during the same episode of care after rinsing and air-drying.
+
+##### Dead Space
+
+- When attached to a 1mL Luer lock syringe, the MAD300 has a “dead space” of 0.1mL
+- The dead space is the volume of medication that remains in the device after actuation.
+- There is no requirement to draw up extra volume to “prime” the device, unless explicitly instructed in the Clinical Pharmacology Pages or the Medication Calculator.
+##### For maximum efficacy
+
+- **Minimize volume, maximize concentration**
+- The nasal cavity has a low volume capacity (approximately 100-150 \xb5L).
+- Use the appropriately concentrated drug as per CMG
+- **Maximize total mucosal absorptive surface area**
+- Press briskly, rather than “dripping” the medication – Atomization produces particles 30-100 microns, maximizing surface area coverage. 
+- Use BOTH nostrils to double the absorptive surface area – even when dosage could fit in one nostril.
+- Aim slightly up and outwards to cover the turbinates and olfactory mucosa
+- **Prepare the patient**
+- Instruct the patient that they do not need to inhale during medication administration.
+- Positioned patient upright with their head tilted slightly back, or reclining at a 45-degree angle.
+
+",,,,
+66,M3,AP,easy,CSM.PA04 Blood Pressure Measurement (Auscultate),"During blood glucose level measurement, what does a 'LO' reading on the glucometer indicate?",ACT AS CMG – BGL Measurement Procedure,"#### Procedure
+
+- Place strip into monitor. The glucometer will auto turn on.
+
+- Select a finger and clean with an alcohol swab, allow finger to dry.
+
+- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.
+
+- Dispose of the used lancet appropriately.
+
+- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.
+
+- Apply a Band-Aid to the wound.
+
+- Wait for the test result and record the BGL measurement.
+
+- Dispose of the used test strip appropriately.
+
+#### Specific Notes
+
+- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.
+- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.
+",,,,
+67,M1,AP,hard,CSM.C04 Defibrillation Using an AED,"An Ambulance Paramedic is treating an adult cardiac arrest patient and has attached the defibrillation pads in the anterior/posterior position. When operating the monitor in AED mode, what is the specific energy dose delivered for shocks, and under what rhythm condition will the AED mode not deliver a shock?",ACT Ambulance Service CMG,"#### Procedure
+
+- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: 
+- Multiple people using multiple checks at multiple times.
+
+- Begin cardiac arrest algorithm.
+
+- Turn monitor on
+
+- Attach the defibrillation pads to patient: 
+- Place pads either Anterior / Posterior or both anterior.
+- Ensure good pad adherence.
+- Ensure CPR feedback pad is in center of chest on sternum
+
+- Press the ANALYZE button
+
+- 
+
+- Continue or start CPR.
+
+- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.
+
+#### Specific Notes
+
+- AED mode monitors through the pads.
+- AED mode shocks at 200J in Adult Mode.
+- AED mode shocks at 50J in Pediatric Mode.
+- AED will not ANALYZE in Neonate Mode.
+- AED mode will not shock narrow complex tachycardia.
+",,,,
+68,M3,AP,hard,CSM.C04 Defibrillation Using an AED,"You arrive to find a 58-year-old male collapsed at a shopping centre. He is unresponsive and apnoeic, with no palpable carotid pulse; arrest is confirmed by multiple crew members on repeated checks. CPR is commenced, defibrillation pads are applied anterior/posterior with the CPR feedback pad centred on the sternum, and you select AED mode in Adult Mode before pressing ANALYSE. The rhythm is identified as narrow complex tachycardia at 170 bpm. (a) Will the device deliver a shock for this rhythm, and why? (b) What energy does AED mode deliver in Adult Mode? (c) Through what does AED mode monitor the rhythm?",ACTAS CMG – Defibrillation (AED Mode Procedure & Specific Notes),"#### Procedure
+
+- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: 
+- Multiple people using multiple checks at multiple times.
+
+- Begin cardiac arrest algorithm.
+
+- Turn monitor on
+
+- Attach the defibrillation pads to patient: 
+- Place pads either Anterior / Posterior or both anterior.
+- Ensure good pad adherence.
+- Ensure CPR feedback pad is in center of chest on sternum
+
+- Press the ANALYZE button
+
+- 
+
+- Continue or start CPR.
+
+- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.
+
+#### Specific Notes
+
+- AED mode monitors through the pads.
+- AED mode shocks at 200J in Adult Mode.
+- AED mode shocks at 50J in Pediatric Mode.
+- AED will not ANALYZE in Neonate Mode.
+- AED mode will not shock narrow complex tachycardia.
+",,,,
+69,M1,AP,easy,23 Morphine,What is the standard presentation of morphine according to the clinical guidelines?,Source 1: cmg,"##### Type
+
+Opioid analgesic [S8]
+
+##### Presentations
+
+10mg in 1ml – glass ampoule
+
+##### Actions
+
+- Analgesia
+
+- Anxiolytic
+
+- Vasodilation
+
+##### Pharmacokinetics
+
+**IV**
+ Onset: 5 - 10 minutes
+ Max Effect: 20 minutes
+ Duration: 4 - 5 hours
+
+**IM**
+ Onset: 10 - 30 minutes
+ Max Effect: 30 minutes
+ Duration: 4 - 5 hours
+
+#### Uses
+
+- Analgesia for moderate to severe pain
+
+- Maintain analgosedation in intubated patients in conjunction with midazolam.
+
+- Reduce dyspnoea in palliative care patients.
+
+- Relieve suffering due to terminal palliative care emergencies (no active treatment).
+
+#### Contraindications
+
+- Respiratory depression
+
+- Systolic blood pressure <70mmHg
+
+- Acute asthma
+Disregard contraindications when managing palliative care emergencies (no active treatment) patients.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Refrain from use if labour suspected. Prepare for neonatal respiratory support and naloxone administration.
+
+##### Breastfeeding
+
+- Safe to use, use conservative doses, encourage feeding/expressing prior to administration if feasible. 
+- Infant must also be transported for monitoring if breastfed post morphine administration. 
+
+",,,,
+70,M1,AP,easy,35A Poisoning and Overdose,What are the management end goals for atropine administration in a patient aged 15 years or older with organophosphate or nerve agent poisoning?,cmg,"#### General Management
+
+- Prompt transport to definitive care. 
+
+##### Reasoning
+
+ Numerous presentations of overdose or poisoning cannot be definitively managed in the out-of-hospital environment and have a small window of opportunity to receive effective in-hospital management. Do not delay transport to hospital.
+
+- Manage agitation as per CMG 37 Combative and Agitated Patients.
+- Airway management as per CMG 3 Airway Management.
+- Oxygen therapy as required.
+- Maintain perfusion as per CMG 14 Shock and Hypoperfusion.
+- Cardiac arrhythmias as per: 
+- CMG 6 Cardiac Arrhythmias
+- CMG 7 Bradyarrhythmias
+- CMG 8 Tachyarrhythmias
+- Terminate seizures as per CMG 22 Seizures.
+- Signs and symptoms of ACS as per CMG 16 Suspected Acute Coronary Syndrome.
+- Signs of hyperkalaemia as per CMG 27 Hyperkalaemia.
+- CMG 33 Behavioural and Psych Emergencies.
+
+#### Organophosphate/Nerve Agents
+
+- Decontaminate patient.
+- Atropine: Continue repeat doses until all management end goals achieved. 
+- **≥ 15yo:**
+- Heart rate >80bpm
+- Systolic BP >80mmHg
+- Clear chest on auscultation.
+- **< 15yo:**
+- Heart rate and and systolic BP within normal range for age (refer to Critical Care Reference Cards)
+- Clear chest on auscultation.
+- In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.
+#### Suspected Alcohol Intoxication
+
+- Assess for alternative causes of altered conscious state as per CMG 15 Altered Level of Consciousness.
+- Consider appropriate ongoing care of patient: 
+- Private residence in the care of non-intoxicated adult
+- Sobering up shelter
+- AFP Watchhouse
+- ED.
+",,,,
+71,M2,ICP,medium,CSM.IDH14 Arterial Tourniquet,"Following the application of a tourniquet and successful control of haemorrhage, what is the clinical instruction regarding the release or removal of the tourniquet?",ACTAS CMG Tourniquet Application,"#### Specific Notes
+
+- This is a procedure of last resort - saving a **life** or saving a **limb**.
+- **Once the tourniquet is applied and haemorrhage is controlled, the tourniquet should not be released or removed.**
+",,,,
+72,M1,ICP,medium,CSM.IDH06 Splinting (Basic Limb),"When applying an anatomical leg splint, where should padding be placed?",Source 1,"#### Procedure
+
+- If required, administer pain relief prior to applying splint.
+- Confirm distal pulses are present.
+- Realign limb if perfusion is compromised.
+
+##### Cardboard Splint
+
+- Select appropriate cardboard splint size, trauma combines or a towel for padding, and a roller bandage.
+
+- Support the patient’s injured limb and position on cardboard splint and padding so that fingers/toes are at the rounded end (see **Figures 1 & 2**).
+
+Figure 1
+
+Figure 2
+
+- Fold up sides of cardboard splint and secure with roller bandage and tape roller bandage in place with the help of a second person.
+
+- Reconfirm distal pulses are present, sensation, and capillary refill.
+
+##### Anatomical Leg Splint
+
+- Place padding in between legs at level of any bony prominences (knees and ankles).
+
+- Secure legs together with triangular bandage at proximal, middle, and distal regions appropriate to injury (see **Figure 3**).
+
+Figure 3
+
+- Reconfirm distal pulses are present, sensation, and capillary refill.
+",,,,
+73,M2,ICP,easy,35 Levetiracetam,"According to ACT Ambulance Service guidelines, what is the ICP weight-based dose and maximum total dose for IV/IO administration of the antiepileptic (500 mg/5 mL) in status epilepticus?",ACTAS CMG,"##### Type
+
+Antiepileptic
+
+##### Presentations
+
+500mg/5mL
+
+##### Pharmacokinetics
+
+IV/IO 
+ Onset: Rapid 
+ Max Effect: 30 – 120 minutes 
+ Duration: 1 -2 days 
+
+#### Uses
+
+Status epilepticus:
+
+- Refractory seizure activity 5/60 after second benzodiazepine dose.
+
+- >20/60 seizure duration.
+
+#### Adverse Effects
+
+- Behavioural effects
+
+- Drowsiness
+
+- Weakness
+
+- Dizziness and vertigo
+
+- Headache
+
+- Insomnia
+
+- Amnesia
+
+- Ataxia
+
+- Diplopia
+
+- Anorexia
+
+#### Contraindications
+
+- Known allergy.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Safe to use
+
+##### Breastfeeding
+
+- Safe to use
+
+#### Doses
+
+- **ICP:** 40mg/kg (max. 3000mg) IV/IO, infused over 5/60 via infusion pump, no repeat. 
+
+**Note:** If infusion pump unavailable, dose can be administered via slow IV/IO push over 5/60.",,,,
+74,M3,ICP,easy,35 Levetiracetam,"According to the ACT Ambulance Service CMG, in what two circumstances should this antiepileptic be administered for status epilepticus?",ACT Ambulance Service CMG – Antiepileptic (Status Epilepticus),"##### Type
+
+Antiepileptic
+
+##### Presentations
+
+500mg/5mL
+
+##### Pharmacokinetics
+
+IV/IO 
+ Onset: Rapid 
+ Max Effect: 30 – 120 minutes 
+ Duration: 1 -2 days 
+
+#### Uses
+
+Status epilepticus:
+
+- Refractory seizure activity 5/60 after second benzodiazepine dose.
+
+- >20/60 seizure duration.
+
+#### Adverse Effects
+
+- Behavioural effects
+
+- Drowsiness
+
+- Weakness
+
+- Dizziness and vertigo
+
+- Headache
+
+- Insomnia
+
+- Amnesia
+
+- Ataxia
+
+- Diplopia
+
+- Anorexia
+
+#### Contraindications
+
+- Known allergy.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Safe to use
+
+##### Breastfeeding
+
+- Safe to use
+
+#### Doses
+
+- **ICP:** 40mg/kg (max. 3000mg) IV/IO, infused over 5/60 via infusion pump, no repeat. 
+
+**Note:** If infusion pump unavailable, dose can be administered via slow IV/IO push over 5/60.",,,,
+75,M1,AP,easy,CSM.DF14 Mucosal Atomising Device (MAD),"What is the volume of the ""dead space"" when the MAD300 device is attached to a 1mL Luer lock syringe?",CMG,"#### Notes
+
+- The device is latex-free and typically for single-patient use but can be re-used by the same patient during the same episode of care after rinsing and air-drying.
+
+##### Dead Space
+
+- When attached to a 1mL Luer lock syringe, the MAD300 has a “dead space” of 0.1mL
+- The dead space is the volume of medication that remains in the device after actuation.
+- There is no requirement to draw up extra volume to “prime” the device, unless explicitly instructed in the Clinical Pharmacology Pages or the Medication Calculator.
+##### For maximum efficacy
+
+- **Minimize volume, maximize concentration**
+- The nasal cavity has a low volume capacity (approximately 100-150 \xb5L).
+- Use the appropriately concentrated drug as per CMG
+- **Maximize total mucosal absorptive surface area**
+- Press briskly, rather than “dripping” the medication – Atomization produces particles 30-100 microns, maximizing surface area coverage. 
+- Use BOTH nostrils to double the absorptive surface area – even when dosage could fit in one nostril.
+- Aim slightly up and outwards to cover the turbinates and olfactory mucosa
+- **Prepare the patient**
+- Instruct the patient that they do not need to inhale during medication administration.
+- Positioned patient upright with their head tilted slightly back, or reclining at a 45-degree angle.
+
+",,,,
+76,M3,AP,easy,37 Combative and Agitated Patients,"According to this CMG, what must be submitted to CGU for all patients sedated with ketamine or midazolam?",cmg – Behavioural Emergency Management,"#### Management
+
+- For use in situations where the patient cannot be managed with less aggressive means. 
+
+- If concerned about safety, call for police assistance.
+- Consider / exclude medical causes: 
+- E.g. hypoxia, hypoglycaemia, head injury, drug overdose, post‐ictal state, infection. 
+- Treat as appropriate.
+- Attempt quiet reassurance in an attempt to persuade the patient to accept treatment 
+- Speak quietly (do not shout)
+- Do not leave the patient alone.
+- Consider Emergency Apprehension where the patient has a mental health disorder or mental illness, and there is risk of serious harm to the patient or another person.
+- If reassurance and persuasion are ineffective or impractical, move to pharmacological management 
+- Pharmacological management should be a last resort after completing a mental competency assessment.
+- Sedation as required per SAT (Sedation Assessment Tool)
+- APs must call ICP backup after using ketamine for sedation. 
+- **Use of limb restraints should be considered in conjunction with pharmacological restraint.**
+- Clinical reasoning for restraint/non‐restraint should be thoroughly documented on the PCR. 
+- Once restrained and on oxygen: 
+- Monitor ECG, temperature, SpO2, EtCO2. 
+- Patients managed with pharmacological control must be transported to hospital.
+- Ensure thorough documentation on PCR. 
+- All patients sedated with ketamine / midazolam under this CMG will require an incident report to be submitted to CGU.
+",,,,
+77,M3,AP,hard,CSM.IDH12 Compression Bandage,"A 34-year-old hiker presents with a suspected snake bite to the left lower leg sustained 15 minutes ago. He is anxious and wants to walk to the ambulance. BP 128/78, HR 96, GCS 15. Describe your complete pressure immobilisation bandage technique for this patient, including: (1) why he must be kept still and what you should do to record the bite location, (2) the correct application sequence using two separate bandages and the preferred bandage type, (3) limb immobilisation, and (4) the three checks you must confirm on the limb before transport.",CMG – Envenomation: Pressure Immobilisation Bandage,"#### Procedure
+
+Figure 1
+
+Figure 2
+
+Figure 3
+
+- Inform the patient to move as little as possible.
+
+- If possible, mark the location of the envenomation (see **Figure 1**).
+
+- Utilise 2 separate bandages, a roller or crepe (preferred) bandage: 
+- Bandage 1 = over the top of the site (see **Figure 2**).
+- Bandage 2 = start at the distal end of the limb working your way up proximally (see **Figure 3**).
+
+- Splint limb utilising cardboard splint or anatomical splinting if nil cardboard splint available.
+
+- Confirm distal pulse is present, sensation, and capillary refill.
+
+",,,,
+78,M2,AP,easy,3C Preexisting Tracheostomy Management,"When managing a breathing patient with a stoma, where should oxygen be applied if there is any doubt about whether the patient has had a laryngectomy?",ACTAS CMG - Secondary Emergency Oxygenation,"#### Secondary Emergency Oxygenation
+
+- Advance tube beyond stoma
+- Use a smaller size down from previous tracheostomy tube or size 6 tube (or smaller than previous tube)
+- Consider use of bougie
+
+- Look, listen and feel over mouth and tracheostomy
+- Assess for obvious kink/obstruction of tube
+
+Is the patient breathing?
+
+ Yes  No  
+
+- Apply O2 to laryngectomy stoma
+- If there is any doubt whether patient has had laryngectomy, apply O2 to face also
+
+**Assess laryngectomy stoma patency**
+
+Most laryngectomy stomas won’t have a tube insitu
+
+- Remove stoma cover (if present)
+- Remove inner tube (if present)
+
+- Call for backup
+- Commence cardiac arrest algorithm if no pulse
+
+**Assess laryngectomy stoma patency**
+
+Most laryngectomy stomas won’t have a tube insitu
+
+- Remove stoma cover (if present)
+- Remove inner tube (if present)
+
+Can you pass a suction catheter?
+
+ Yes  No  
+
+**The laryngectomy tube is patent**
+
+- Suction
+- Consider partial obstruction
+- Ventilate via stoma if not breathing
+- Continue A-E assessment
+
+- Deflate the cuff (if present) 
+- Look, listen and feel at mouth and laryngectomy stoma or tube
+- Use waveform capnography
+
+Is the patient stable or improving?
+
+ Yes  No  
+
+- Continue airway management and A-E assessment
+
+- **Remove the tube from the laryngectomy stoma (if present)**
+- Look, listen and feel at laryngectomy stoma
+- Reapply oxygen to stoma
+- Use waveform capnography
+
+Is the patient breathing?
+
+ Yes  No  
+
+- Continue A-E assessment
+
+- Call for ICP backup
+- Start cardiac arrest algorithm if no pulse
+
+",,,,
+79,M3,AP,medium,08 Droperidol (Dorm),"According to the dosing guideline, a frail or elderly patient (>65 years) requires this medication. What is the initial dose, the approved route, and the minimum interval before a repeat dose may be given?",ACTAS CMG – Doses (Frail/elderly >65 years),"#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Approved for administration in ACTAS setting during trimester one and two, during third trimester only use if alternative management unavailable or ineffective
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, caution against breastfeeding in the pre-hospital setting
+
+#### Doses
+
+##### Adult (>14 years of age)
+
+- 10mg via IM injection only (no IV/IO use) 
+- Repeat once, after 10-15 minutes, if required.
+
+##### Frail / elderly (>65 years)
+
+- 5mg via IM injection only (no IV/IO use) 
+- Repeat once, after 10-15 minutes, if required.
+
+##### Paediatric (<14 years of age)
+
+Not used.
+",,,,
+80,M2,ICP,medium,CSM.A14 BURP Manoeuvre,"During endotracheal intubation, in which three directions should the assistant firmly push the patient's thyroid cartilage to optimise the view of the glottis?",ACTAS CMG,"#### Procedure
+
+- Locate the thyroid cartilage.
+
+- Assistant to place thumb and index fingers of one hand on thyroid cartilage.
+
+- Firmly push the thyroid cartilage backwards, upwards (towards the patient’s head), and to the right (the patient’s right) (see **Figure 1**).
+
+Figure 1
+
+- Intubating paramedic guides assistant's hand until best view of the glottis is achieved.
+
+- Maintain pressure until the intubating paramedic directs release of pressure post ET tube insertion.
+
+",,,,
+81,M1,AP,hard,CSM.P03 Left Lateral with Buttocks Raised,"An unconscious pregnant patient requires positioning adjustments on the stretcher. According to the procedure, what specific physical adjustments should be made to the patient and the stretcher following placement in the left lateral position?",Source 1,"#### Procedure
+
+- Have the patient position themself in the left lateral position (if possible). 
+- In an unconscious patient, utilising two (or more, if necessary) paramedics; position the patient in a left lateral position.
+
+- Place a rolled blanket or pillow under the left buttock.
+
+- The head end can be raised slightly for patient comfort by lifting the red leaver and raising the head end upwards until the desired height is reached, then release the yellow tab.
+
+Figure 1
+",,,,
+82,M1,AP,hard,CSM.PA10 Blood Glucose Measurement,"An Ambulance Paramedic arrives at a scene to treat an adult patient who presents with altered conscious state. Initial point-of-care blood glucose level (BGL) testing displays a 'LO' reading on the glucometer, with an accompanying upward pointing arrow (^). Based on clinical guidelines, what specific BGL value does a 'LO' reading indicate, and does the presence of the upward arrow suggest the presence of ketones?",cmg,"#### Specific Notes
+
+- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.
+- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.
+",,,,
+83,M1,ICP,hard,CSM.A15 Extubation,"A 58-year-old male with a severe acute asthma exacerbation was previously intubated due to impending respiratory arrest. He is currently sedated and ventilated in the back of the ambulance, but his vital signs are now stable and crew are considering extubation. According to clinical guidelines, what is the recommended management for intubated asthmatic patients regarding extubation, and what specific complication must paramedics be alert for during this process?",ACT Ambulance Service CMG,"#### Procedure
+
+- Monitor patient’s oxygen saturations.
+
+- Pre-oxygenate the patient, if possible.
+
+- Place patient in the lateral position, if possible.
+
+- Suction the tube and oral cavity thoroughly.
+
+- Cut the tube tie or loosen securing device, then completely deflate the cuff.
+
+- Instruct the patient to attempt to cough the tube out.
+
+- Swiftly withdraw the tube as the patient coughs.
+
+- Reassess respiratory status.
+
+- Provide high concentration oxygen. Be alert for any respiratory deterioration.
+
+- Document time of removal and reason.
+
+#### Complications
+
+- Asthmatic patients, once intubated, are generally better managed if the tube remains in situ, as deterioration may occur from irritation during the extubation process. In this situation, it is preferable to keep the tube in by sedating the patient.
+- Loss of a secure airway; aspiration and hypoxia.
+",,,,
+84,M3,ICP,easy,CSM.A09 Laryngeal Mask Airway (LMA Supreme),"In a spontaneously breathing patient, at what point in the respiratory cycle should the LMA be withdrawn?",ACT Ambulance Service CMG – LMA Removal,"#### LMA Removal
+
+- Oxygenate patient.
+
+- Roll patient on their side, suction the mouth and cut the tie.
+
+- Deflate the cuff.
+
+- If breathing spontaneously withdraw on exhalation.
+
+- Clear/suction airway if required.
+",,,,
+85,M2,ICP,medium,15 Hydrocortisone,"According to ACTAS guidelines for an adrenal crisis, what is the recommended ICP dose and administration duration of intravenous hydrocortisone for a 7-year-old paediatric patient?",ACTAS CMG - Adrenal Crisis,"#### Adrenal crisis
+
+##### Adult
+
+- **ICP:** 100mg IV – slowly over 2 minutes 
+- May be administered IM.
+
+##### Paediatric
+
+- **ICP:** IV (slowly over 2 minutes): 
+- <3 years = 25mg IV
+- 3-12 years = 50mg IV
+- >12 years = 100mg IV.
+- **ICP:** May be administered IM.
+
+#### Special Notes
+
+- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.
+",,,,
+86,M1,AP,medium,CSM.PA07 12 Lead ECG Monitoring,"According to the procedure for electrode placement, where should electrode V4 be located and applied?",cmg,"#### Procedure
+
+- Clip and clean areas as required.
+
+- Locate and apply electrode to V1: 
+- 4th intercostal space, right lateral to the sternum.
+
+- Locate and apply electrode to V2: 
+- 4th intercostal space, left lateral to the sternum.
+
+- Locate and apply electrode to V4: 
+- 5th intercostal space, mid clavicular line of the left side of the chest.
+
+- Locate and apply electrode to V6: 
+- 5th intercostal space, mid axillary line, of the left side of the chest.
+
+- Locate and apply electrode to V3 and V5: 
+- V3 is placed diagonally between V2 and V4.
+- V5 is placed on the fifth intercostal space between V4 and V6.
+
+- Print ECG, ensure the patient is as still as possible.
+
+#### Specific Notes
+
+- For women with large breast tissue, place V4-V6 at the highest point beneath the breast. Bras may be left in place.
+- Ensure the patient is fully aware that their chest and breasts may need to be exposed and obtain their consent prior to commencement of the procedure.
+",,,,
+87,M3,AP,easy,35A Poisoning and Overdose,"When administering repeat atropine doses to a patient aged 15 years or over for organophosphate poisoning, what three management end goals must be achieved before stopping doses?",CMG – Overdose/Poisoning (Organophosphate/Nerve Agents),"#### General Management
+
+- Prompt transport to definitive care. 
+
+##### Reasoning
+
+ Numerous presentations of overdose or poisoning cannot be definitively managed in the out-of-hospital environment and have a small window of opportunity to receive effective in-hospital management. Do not delay transport to hospital.
+
+- Manage agitation as per CMG 37 Combative and Agitated Patients.
+- Airway management as per CMG 3 Airway Management.
+- Oxygen therapy as required.
+- Maintain perfusion as per CMG 14 Shock and Hypoperfusion.
+- Cardiac arrhythmias as per: 
+- CMG 6 Cardiac Arrhythmias
+- CMG 7 Bradyarrhythmias
+- CMG 8 Tachyarrhythmias
+- Terminate seizures as per CMG 22 Seizures.
+- Signs and symptoms of ACS as per CMG 16 Suspected Acute Coronary Syndrome.
+- Signs of hyperkalaemia as per CMG 27 Hyperkalaemia.
+- CMG 33 Behavioural and Psych Emergencies.
+
+#### Organophosphate/Nerve Agents
+
+- Decontaminate patient.
+- Atropine: Continue repeat doses until all management end goals achieved. 
+- **≥ 15yo:**
+- Heart rate >80bpm
+- Systolic BP >80mmHg
+- Clear chest on auscultation.
+- **< 15yo:**
+- Heart rate and and systolic BP within normal range for age (refer to Critical Care Reference Cards)
+- Clear chest on auscultation.
+- In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.
+#### Suspected Alcohol Intoxication
+
+- Assess for alternative causes of altered conscious state as per CMG 15 Altered Level of Consciousness.
+- Consider appropriate ongoing care of patient: 
+- Private residence in the care of non-intoxicated adult
+- Sobering up shelter
+- AFP Watchhouse
+- ED.
+",,,,
+88,M3,AP,hard,45 Palliative Care and VAD,"You are called to an 82-year-old with metastatic pancreatic cancer. On arrival the patient is bed-bound and requires complete assistance for all activities of daily living, responds only to painful stimuli, has had minimal oral intake for several days, has markedly reduced urine output, and the peripheral skin is cold and cyanotic. Monitored observations show BP 84/52, HR 116, RR 7 irregular, SpO2 76%. The family states the patient appears distressed and in pain, and asks if you can 'do everything possible to keep her alive'. (a) Identify whether this patient meets the criteria for palliative care or Terminal Phase EOL care, justifying your answer with at least three signs from the guideline. (b) Describe how the 'surprise question' can assist your assessment in this presentation. (c) Explain ACTAS' role in this phase of care, and state whether the abnormal vital signs should prevent or delay the provision of effective analgesia and anti-anxiety medication.",ACTAS CMG – Palliative Care / EOL Care (Target Patient Groups),"#### Target Patient Groups
+
+- Palliative Care patient, or 
+
+Palliative care is the approach used to improve quality of life for patients diagnosed with incurable life-limiting-condition/s, by tailoring management to the individual care goals of the patient.
+
+A common misconception is that palliative care is only provided to patients near their end of life (EOL). Many palliative patients continue to receive life prolonging treatment and live for an extensive time after diagnosis.
+
+- Diagnosed life-limiting-condition
+- Cause for ACTAS attendance is associated with life-limiting-condition
+
+- Terminal Phase patient, or 
+
+EOL care is for patients in the Terminal Phase (last days of life). 
+
+It may be helpful to consider yourself or ask the patient’s family/carer if the patient’s death in the next days or weeks would be a surprise or not.
+
+In the Terminal Phase, ACTAS’ role continues to be facilitation of the patient’s care goals. Commonly, the primary goal is to provide comfort during the normal and expected dying process. Patients will typically present with abnormal vital signs, as such it’s accepted in EOL care situations to forgo the potentially distressing or painful practice of routine vital sign observation. The lack of recent vital sign assessment, or the presence of abnormal vital signs should not inhibit the provision of comfort measures such as effective analgesia and anti-anxiety medication.
+
+- Diagnosed life-limiting-condition
+- Cause for ACTAS attendance is associated with life-limiting-condition
+- Signs suggestive of the Terminal Phase are: 
+- Bed-bound, requires complete assistance for activities of daily living.
+- Unconscious or limited response.
+- Reduced oral intake.
+- Limited ability to swallow.
+- Reduce urine output.
+- Peripherally cold, cyanotic, or mot",,,,
+89,M2,ICP,hard,CSM.A15 Extubation,"You are transporting an intubated 28-year-old female with severe acute asthma who begins to emerge from sedation and fight the endotracheal tube.
+
+1. According to the clinical guidance on extubation, what is the preferred management strategy and clinical rationale regarding the tube in this specific patient cohort?
+2. If extubation is performed, outline the sequential procedural steps required from preparation through to post-removal care.",ACTAS CMG,"#### Procedure
+
+- Monitor patient’s oxygen saturations.
+
+- Pre-oxygenate the patient, if possible.
+
+- Place patient in the lateral position, if possible.
+
+- Suction the tube and oral cavity thoroughly.
+
+- Cut the tube tie or loosen securing device, then completely deflate the cuff.
+
+- Instruct the patient to attempt to cough the tube out.
+
+- Swiftly withdraw the tube as the patient coughs.
+
+- Reassess respiratory status.
+
+- Provide high concentration oxygen. Be alert for any respiratory deterioration.
+
+- Document time of removal and reason.
+
+#### Complications
+
+- Asthmatic patients, once intubated, are generally better managed if the tube remains in situ, as deterioration may occur from irritation during the extubation process. In this situation, it is preferable to keep the tube in by sedating the patient.
+- Loss of a secure airway; aspiration and hypoxia.
+",,,,
+90,M2,AP,medium,CSM.PA07 12 Lead ECG Monitoring,"According to the 12-lead ECG procedure, where should electrodes V4–V6 be positioned when performing an ECG on a female patient with large breast tissue?",ACTAS Clinical Management Guidelines - Procedure: 12-Lead ECG,"#### Procedure
+
+- Clip and clean areas as required.
+
+- Locate and apply electrode to V1: 
+- 4th intercostal space, right lateral to the sternum.
+
+- Locate and apply electrode to V2: 
+- 4th intercostal space, left lateral to the sternum.
+
+- Locate and apply electrode to V4: 
+- 5th intercostal space, mid clavicular line of the left side of the chest.
+
+- Locate and apply electrode to V6: 
+- 5th intercostal space, mid axillary line, of the left side of the chest.
+
+- Locate and apply electrode to V3 and V5: 
+- V3 is placed diagonally between V2 and V4.
+- V5 is placed on the fifth intercostal space between V4 and V6.
+
+- Print ECG, ensure the patient is as still as possible.
+
+#### Specific Notes
+
+- For women with large breast tissue, place V4-V6 at the highest point beneath the breast. Bras may be left in place.
+- Ensure the patient is fully aware that their chest and breasts may need to be exposed and obtain their consent prior to commencement of the procedure.
+",,,,
+91,M1,AP,hard,CSM.M03 STEMI Transmission (Zoll X Series),"An Ambulance Paramedic is preparing to transmit a pre-hospital 12-lead ECG from a Zoll X-Series monitor to Canberra Hospital. After successfully acquiring the 12-lead, the paramedic presses the 12-Lead Transfer button, selects Canberra Hospital from the distribution list, highlights the transmit button, and presses Transmit. The monitor indicates 'Transmission failed'. What are the precise steps the paramedic must take next to re-attempt transmission according to the procedure, and what specific action must be performed on the monitor after patient handover at TCH before powering it off?",Source 1,"#### Procedure
+
+- Press the **12-Lead** button then press the **Acquire** button.
+
+- In Patient Info enter **Patient Age, Patient Sex** and then the **Patient Initials** in the **LAST NAME** field and click on the Save icon (this menu will only appear for a new patient case).
+
+- Push **12 lead snapshot** button to acquire the 12 lead.
+
+- Press **12-Lead Transfer** button and select **CANBERRA Hospital** from the distribution list. Arrow down to **highlight** the transmit button and Press **Transmit**.
+
+Figure 1
+
+- The X-Series will indicate **Transmission Completed** for successful transmission.
+
+- If **Transmission failed**, click back arrow and press **12-Lead Review Icon** select the **12-lead ECG** you would like to transmit again. **Repeat Step 4**.
+
+Figure 2
+
+- After patient handover at TCH and before turning off the monitor, return to the Patient Info screen and put the **VACIS case number** into the **Patient ID field**.
+",,,,
+92,M3,ICP,medium,15 Hydrocortisone,"A 5-year-old patient presents in adrenal crisis and requires hydrocortisone. What is the appropriate IV dose for this patient, and over what time period should it be administered?",ICP CMG – Adrenal Crisis,"#### Adrenal crisis
+
+##### Adult
+
+- **ICP:** 100mg IV – slowly over 2 minutes 
+- May be administered IM.
+
+##### Paediatric
+
+- **ICP:** IV (slowly over 2 minutes): 
+- <3 years = 25mg IV
+- 3-12 years = 50mg IV
+- >12 years = 100mg IV.
+- **ICP:** May be administered IM.
+
+#### Special Notes
+
+- Hydrocortisone is not a first-line priority drug in the management of severe respiratory distress. It is only to be given after aggressive oxygenation, inhaled bronchodilators, and (where necessary) adrenaline.
+",,,,
+93,M1,ICP,easy,01 Acetylsalicylic Acid (Aspirin),What is a contraindication for the administration of aspirin related to current drug overdose?,ACT Ambulance Service CMG,"#### Contraindications
+
+- Known or suspected allergy to salicylates
+
+- Known or suspected active bleeding
+
+- Known bleeding tendency
+
+- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) 
+
+",,,,
+94,M2,AP,medium,32 Topical Anaesthetic Cream (LMX4),"According to ACT Ambulance Service guidance on preparing IV cannulation sites with topical anaesthetic cream, what immediate action must be taken if skin irritation occurs?",ACTAS CMG,"#### Special Notes
+
+- Pain, anxiety, distress and subsequent needle phobia is associated with IV access attempts. Preparation of potential IV cannulation sites with topical anaesthetic cream can reduce pain and minimise distress to patients.
+- If skin irritation occurs, remove the cream immediately.
+",,,,
+95,M3,AP,easy,CSM.B06 MDI Spacer (Nebulised Medication),"If a metered dose inhaler (MDI) has a counter attached, which spacer must be used for medication administration?",ACTAS CMG – Specific Notes (MDI Administration),"#### Specific Notes
+
+- Increased apparatus dead space.
+- Will occupy one officer in totality to deliver medication in this manner.
+- If MDI has a counter attached ensure green inline MDI spacer is used.
+",,,,
+96,M1,AP,easy,37 Combative and Agitated Patients,What action must an Ambulance Paramedic (AP) take after using ketamine for sedation?,ACT Ambulance Service CMG,"#### Management
+
+- For use in situations where the patient cannot be managed with less aggressive means. 
+
+- If concerned about safety, call for police assistance.
+- Consider / exclude medical causes: 
+- E.g. hypoxia, hypoglycaemia, head injury, drug overdose, post‐ictal state, infection. 
+- Treat as appropriate.
+- Attempt quiet reassurance in an attempt to persuade the patient to accept treatment 
+- Speak quietly (do not shout)
+- Do not leave the patient alone.
+- Consider Emergency Apprehension where the patient has a mental health disorder or mental illness, and there is risk of serious harm to the patient or another person.
+- If reassurance and persuasion are ineffective or impractical, move to pharmacological management 
+- Pharmacological management should be a last resort after completing a mental competency assessment.
+- Sedation as required per SAT (Sedation Assessment Tool)
+- APs must call ICP backup after using ketamine for sedation. 
+- **Use of limb restraints should be considered in conjunction with pharmacological restraint.**
+- Clinical reasoning for restraint/non‐restraint should be thoroughly documented on the PCR. 
+- Once restrained and on oxygen: 
+- Monitor ECG, temperature, SpO2, EtCO2. 
+- Patients managed with pharmacological control must be transported to hospital.
+- Ensure thorough documentation on PCR. 
+- All patients sedated with ketamine / midazolam under this CMG will require an incident report to be submitted to CGU.
+",,,,
+97,M3,AP,medium,38 Sepsis,"You are assessing a 3-year-old with fever and lethargy. On examination the child is bradycardic and hypotensive. According to the paediatric sepsis guideline, how should this clinical picture be interpreted and what does it require?",ACT Ambulance Service CMG – Paediatric Sepsis,"#### Paediatrics
+
+- If at least one risk factor present **and** one vital sign outside normal parameters – **suspect sepsis**
+- Refer to **Critical Care Reference Cards** for age-appropriate vital signs.
+
+- A child who is bradycardic and/or hypotensive is pre‐arrest and requires immediate intervention.
+",,,,
+98,M1,AP,medium,38 Sepsis,What clinical state is indicated in a paediatric patient who presents as bradycardic and/or hypotensive?,CMG,"#### Paediatrics
+
+- If at least one risk factor present **and** one vital sign outside normal parameters – **suspect sepsis**
+- Refer to **Critical Care Reference Cards** for age-appropriate vital signs.
+
+- A child who is bradycardic and/or hypotensive is pre‐arrest and requires immediate intervention.
+",,,,
+99,M2,AP,hard,CSM.C04 Defibrillation Using an AED,"You and your crew arrive on scene to find a 62-year-old male collapsed and unresponsive on the floor. In accordance with the AED procedure:
+
+1. Detail the assessment criteria and verification method required to confirm cardiac arrest before commencing the algorithm.
+2. State the acceptable configurations for defibrillation pad placement and the precise location required for the CPR feedback pad.
+3. Identify the delivered energy level in Adult Mode if a shock is advised, and state which rhythm type the AED mode will not shock.",ACTAS CMG - AED Procedure,"#### Procedure
+
+- Confirm cardiac arrest - unresponsive, apnoeic and no palpable central pulse: 
+- Multiple people using multiple checks at multiple times.
+
+- Begin cardiac arrest algorithm.
+
+- Turn monitor on
+
+- Attach the defibrillation pads to patient: 
+- Place pads either Anterior / Posterior or both anterior.
+- Ensure good pad adherence.
+- Ensure CPR feedback pad is in center of chest on sternum
+
+- Press the ANALYZE button
+
+- 
+
+- Continue or start CPR.
+
+- CPR dashboard will display on screen and Metronome will start as soon as compressions commence.
+
+#### Specific Notes
+
+- AED mode monitors through the pads.
+- AED mode shocks at 200J in Adult Mode.
+- AED mode shocks at 50J in Pediatric Mode.
+- AED will not ANALYZE in Neonate Mode.
+- AED mode will not shock narrow complex tachycardia.
+",,,,
+100,M1,ICP,hard,30 Crush Syndrome,"A 45-year-old male is extricated following a prolonged entrapment of his lower limb. During the post-extrication phase, paramedics note he requires ongoing IV fluid resuscitation, analgesia, and ECG monitoring. Based on the clinical management guidelines, how should the injured limb be positioned and what specific complication must paramedics be prepared to manage?",CMG Post-Extrication,"#### Post-Extrication
+
+- Rapid transport to trauma facility, as soon as possible 
+- Patients have better outcomes when they arrive at definitive care earlier.
+
+- Continue IV fluids.
+- Monitor ECG for changes.
+- Manage, as appropriate: 
+- CMG 14 Shock and Hypoperfusion
+- CMG 19 Limb injuries
+- CMG 27 Hyperkalaemia.
+- Analgesia as required.
+- Splint and immobilise the injured limb at heart level. **Do not elevate**.
+",,,,
+101,M2,AP,medium,1 General Care,"According to the ACTAS Monitoring and Assessment guideline, what is the minimum requirement for recording vital signs regarding the number of sets and the time interval between them, and what six specific parameters must be included?",ACTAS CMG,"#### Monitoring and Assessment
+
+**Monitor and assess as required / appropriate: **
+
+- Vital signs 
+- At least 2 sets, 5 minutes apart
+- Heart rate, GCS, respiratory rate, BP, skin condition, SpO2.
+
+- Cardiac monitor \xb1 12/15 lead ECG.
+- Blood glucose.
+- Temperature.
+- Chest auscultation.
+- Pain assessment.
+- Mental competence assessment.
+- EtCO2.
+- Hydration assessment.
+- Blood lactate.
+- Mobilisation assessment.
+- Specific observations and assessments as per patient condition.
+
+#### Subsequent Actions
+
+- **Treatment** as required (as per appropriate CMG(s)).
+- Remember to verbally and visually **cross-check all medications** prior to administration, wherever possible.
+- Identify and manage **time critical** presentations 
+- Refer to Time Critical Patient Guideline
+- **Note: time critical does not just mean rapid transport!** Minimum scene time, treatment en route (where possible) and prompt transport are all required for time critical patients.
+- Facilitate or provide **transport** as required (notify hospital as appropriate) 
+- Remember: **Transport is treatment!**
+- **Communicate** patient and situational details to receiving facility, as appropriate 
+- e.g. IMISTER‐AMBO handover protocol.
+- Complete accurate and comprehensive **documentation.**
+",,,,
+102,M1,AP,medium,15 Altered Level of Consciousness,"According to the altered level of consciousness guidelines, what EtCO2 range should clinicians aim to maintain?",CMG,"#### Assessment
+
+There are many potential causes of an altered level of consciousness, but very few can be diagnosed in the pre‐hospital environment.
+
+The mnemonic ‘AEIOU TIPS’ can help clinicians to identify possible reversible causes:
+
+A
+
+Alcohol, acidosis. 
+
+E
+
+Epilepsy, endocrine, electrolytes, environment. 
+
+I
+
+Insulin (i.e. hypo / hyperglycaemia). 
+
+O
+
+Overdose, oxygen (hypoxia). 
+
+U
+
+Uraemia, underdose. 
+
+T
+
+Trauma, tumour, toxin. 
+
+I
+
+Infection. 
+
+P
+
+Psychogenic, poison, pharmacological. 
+
+S
+
+Seizures, sepsis, syncope, stroke, shock, space‐occupying lesion. 
+
+#### Management
+
+- Assess patient’s presenting level of consciousness by AVPU and/or GCS as appropriate.
+- Manage airway as per CMG 3 Airway Management.
+- Assess and monitor vital signs (e.g. BGL, temperature, ECG, BP, etc).
+- Oxygen if required 
+- Aim to maintain SpO2 ≥ 94%.
+- Do not hyperventilate 
+- Monitor EtCO2
+- Aim to maintain between 35‐40mmHg.
+- IV fluids as per CMG 14 Shock and Hypoperfusion.
+- Aim to maintain systolic BP > 100mmHg.
+- Treat associated conditions as required (e.g. overdose, hypoglycaemia, seizures, etc).
+- Consider spinal precautions if trauma or if history is unknown.
+- Unless otherwise contraindicated, posture by perfusion or comfort.
+- **Evidence of a rapidly decreasing level of consciousness is a flag for a time‐critical patient**
+- **Minimise scene time and transport urgently to hospital.**
+",,,,
+103,M2,AP,hard,CSM.M03 STEMI Transmission (Zoll X Series),"You are assessing a 64-year-old female presenting with acute retrosternal chest pain and diaphoresis. You decide to acquire and transmit a 12-lead ECG to The Canberra Hospital (TCH) using the ZOLL X-Series monitor.
+
+Outline:
+1. The specific patient details and fields required in the 'Patient Info' menu prior to ECG acquisition.
+2. The monitor procedure to transmit the acquired 12-lead ECG to the receiving hospital.
+3. The immediate troubleshooting steps to perform if the screen indicates 'Transmission failed'.
+4. The administrative/monitor step required after patient handover at TCH prior to turning off the device.",ACTAS Clinical Management Guidelines,"#### Procedure
+
+- Press the **12-Lead** button then press the **Acquire** button.
+
+- In Patient Info enter **Patient Age, Patient Sex** and then the **Patient Initials** in the **LAST NAME** field and click on the Save icon (this menu will only appear for a new patient case).
+
+- Push **12 lead snapshot** button to acquire the 12 lead.
+
+- Press **12-Lead Transfer** button and select **CANBERRA Hospital** from the distribution list. Arrow down to **highlight** the transmit button and Press **Transmit**.
+
+Figure 1
+
+- The X-Series will indicate **Transmission Completed** for successful transmission.
+
+- If **Transmission failed**, click back arrow and press **12-Lead Review Icon** select the **12-lead ECG** you would like to transmit again. **Repeat Step 4**.
+
+Figure 2
+
+- After patient handover at TCH and before turning off the monitor, return to the Patient Info screen and put the **VACIS case number** into the **Patient ID field**.
+",,,,
+104,M1,AP,hard,CSM.IDH12 Compression Bandage,"An adult patient presents following a suspected snakebite to the lower leg. According to the procedure for applying a pressure immobilisation bandage, what is the correct sequence and method for applying the two separate bandages?",CMG,"#### Procedure
+
+Figure 1
+
+Figure 2
+
+Figure 3
+
+- Inform the patient to move as little as possible.
+
+- If possible, mark the location of the envenomation (see **Figure 1**).
+
+- Utilise 2 separate bandages, a roller or crepe (preferred) bandage: 
+- Bandage 1 = over the top of the site (see **Figure 2**).
+- Bandage 2 = start at the distal end of the limb working your way up proximally (see **Figure 3**).
+
+- Splint limb utilising cardboard splint or anatomical splinting if nil cardboard splint available.
+
+- Confirm distal pulse is present, sensation, and capillary refill.
+
+",,,,
+105,M1,AP,hard,10 Diabetic Emergencies,"An Ambulance Paramedic arrives at the scene of an adult patient presenting with symptomatic hypoglycaemia. The patient is wearing an insulin pump and is currently unable to assist in altering the device settings, and there are no carers present to help. What is the correct management regarding the insulin pump during your care and transport of this patient?",cmg Insulin Pumps,"#### Insulin Pumps
+
+- In the event of hypoglycaemia, consider suspending administration **if the patient or a carer on scene is able to assist in doing so. **
+- If there is no assistance on scene do not attempt to alter settings.
+
+Whether suspended or not, **do not remove the pump** – transport with pump in situ. No special management is required as long as the pump and infusion site are protected.
+",,,,
+106,M3,AP,medium,4A ROSC: Adult (Return of Spontaneous Circulation),"Following ROSC, your patient's core temperature is measured at 33°C. According to the CMG, what is the target for temperature management in this patient, and at what temperature threshold would active re-warming be indicated?",ACTAS CMG – Cardiac/Perfusion (Post-ROSC),"#### Cardiac / Perfusion
+
+- 12‐lead ECG (unless obvious non‐cardiac cause) 
+- Repeat en‐route if 1st ECG normal
+- **If STEMI detected on 12‐lead:** transmit and consult with STEMI doctor 
+- Consider transport direct to TCH.
+- **If bradycardic:** consider external pacing (preferred over adrenaline for ROSC bradycardia).
+- Maintain cerebral perfusion 
+- Aim for BP ≥ 100mmHg
+- By any means: posture and fluids **and/ or **
+
+#### Temperature
+
+- Check core temperature.
+- Aim to maintain normothermia 
+- No active re‐warming unless profoundly hypothermic (< 32\xb0C) - refer CMG 11B Hypothermia
+- No active, aggressive colling unless hyperthermic (> 39\xb0C) - refer CMG 11A Heat Abnormalities.
+- Do not allow patient to shiver.
+
+",,,,
+107,M2,AP,hard,CSM.P03 Left Lateral with Buttocks Raised,"You are attending an unconscious patient who requires positioning in the left lateral position on the stretcher. According to the procedure:
+1. How many paramedics are required to position the unconscious patient?
+2. Where should a rolled blanket or pillow be positioned?
+3. What specific stretcher controls are operated to slightly raise the head end for patient comfort?",ACTAS CMG,"#### Procedure
+
+- Have the patient position themself in the left lateral position (if possible). 
+- In an unconscious patient, utilising two (or more, if necessary) paramedics; position the patient in a left lateral position.
+
+- Place a rolled blanket or pillow under the left buttock.
+
+- The head end can be raised slightly for patient comfort by lifting the red leaver and raising the head end upwards until the desired height is reached, then release the yellow tab.
+
+Figure 1
+",,,,
+108,M3,AP,medium,CSM.PA07 12 Lead ECG Monitoring,"You are performing a 12-lead ECG on a female patient with large breast tissue. According to the procedure, where should electrodes V4-V6 be placed, and may her bra remain in place?",ACTAS CMG - 12-Lead ECG Procedure,"#### Procedure
+
+- Clip and clean areas as required.
+
+- Locate and apply electrode to V1: 
+- 4th intercostal space, right lateral to the sternum.
+
+- Locate and apply electrode to V2: 
+- 4th intercostal space, left lateral to the sternum.
+
+- Locate and apply electrode to V4: 
+- 5th intercostal space, mid clavicular line of the left side of the chest.
+
+- Locate and apply electrode to V6: 
+- 5th intercostal space, mid axillary line, of the left side of the chest.
+
+- Locate and apply electrode to V3 and V5: 
+- V3 is placed diagonally between V2 and V4.
+- V5 is placed on the fifth intercostal space between V4 and V6.
+
+- Print ECG, ensure the patient is as still as possible.
+
+#### Specific Notes
+
+- For women with large breast tissue, place V4-V6 at the highest point beneath the breast. Bras may be left in place.
+- Ensure the patient is fully aware that their chest and breasts may need to be exposed and obtain their consent prior to commencement of the procedure.
+",,,,
+109,M1,AP,medium,08 Droperidol (Dorm),What is the appropriate adult (>14 years of age) dose and route of administration for this medication in the ACTAS setting?,Source 1,"#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Approved for administration in ACTAS setting during trimester one and two, during third trimester only use if alternative management unavailable or ineffective
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, caution against breastfeeding in the pre-hospital setting
+
+#### Doses
+
+##### Adult (>14 years of age)
+
+- 10mg via IM injection only (no IV/IO use) 
+- Repeat once, after 10-15 minutes, if required.
+
+##### Frail / elderly (>65 years)
+
+- 5mg via IM injection only (no IV/IO use) 
+- Repeat once, after 10-15 minutes, if required.
+
+##### Paediatric (<14 years of age)
+
+Not used.
+",,,,
+110,M3,AP,hard,CSM.PA10 Blood Glucose Measurement,"You attend a 54-year-old insulin-dependent diabetic who is drowsy, pale and diaphoretic. BGL 6 minutes prior at home was documented as unrecordable by family. On assessment your glucometer displays 'LO' with an up-arrow symbol. Your partner states the arrow confirms ketones are present and begins preparing to manage the patient as DKA. (a) What does the 'LO' reading indicate numerically, and what is the likely underlying glycaemic emergency given this patient's presentation? (b) Is your partner's interpretation of the up-arrow correct? Explain what the arrow indicates and how ketones must actually be assessed.",ACTAS CMG – Specific Notes (BGL Monitoring),"#### Specific Notes
+
+- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.
+- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.
+",,,,
+111,M1,ICP,easy,CSM.A09 Laryngeal Mask Airway (LMA Supreme),What action should be taken regarding the cuff before withdrawing an LMA from a spontaneously breathing patient?,CMG,"#### LMA Removal
+
+- Oxygenate patient.
+
+- Roll patient on their side, suction the mouth and cut the tie.
+
+- Deflate the cuff.
+
+- If breathing spontaneously withdraw on exhalation.
+
+- Clear/suction airway if required.
+",,,,
+112,M2,AP,medium,38 Sepsis,"In a paediatric patient being assessed for sepsis, which vital sign abnormalities indicate that the child is pre-arrest and requires immediate intervention?",ACTAS CMG Paediatrics,"#### Paediatrics
+
+- If at least one risk factor present **and** one vital sign outside normal parameters – **suspect sepsis**
+- Refer to **Critical Care Reference Cards** for age-appropriate vital signs.
+
+- A child who is bradycardic and/or hypotensive is pre‐arrest and requires immediate intervention.
+",,,,
+113,M3,AP,hard,16 Suspected ACS (Acute Coronary Syndrome),"A 68-year-old male presents with ischaemic chest pain. His initial 12 lead ECG shows S-T elevation in leads II, III and aVF, and he remains symptomatic. On reassessment he is hypotensive (BP 88/60). (a) What does the inferior S-T elevation indicate and in which lead would this be confirmed? (b) What additional ECG actions are required given his ongoing symptoms? (c) Outline the management pathway for this patient, including how his hypotension should be handled and the transport priorities if this pattern progresses to S-T elevation myocardial infarction.",ACT AS CMG – Acute Coronary Syndrome Management (ref. CMG 14),"#### Management
+
+- 12 lead ECG 
+- Perform serial 12 lead ECGs throughout contact time in symptomatic patients, especially if initial ECG was non‐diagnostic.
+
+- Ischaemic symptoms, with S‐T depression in leads V1 to V3 (indicative of potential **posterior AMI** – diagnosed in V8 – V9) 
+- Inferior (II, III, aVF) S‐T elevation (indicative of potential **right ventricular AMI** – diagnosed in V4R).
+- Administer oxygen only if: 
+- SpO2 is < 94%, **or**
+- Shocked
+- Aspirin
+- GTN
+- Antiemetic.
+- Analgesia 
+- Aim to abolish pain or discomfort.
+- If hypotensive: 
+- Refer to CMG 14 Shock and Hypoperfusion: Cardiogenic Shock.
+
+#### STEMI (S-T Elevation Myocardial Infarction)
+
+- **Prompt transport**
+- Do not delay on scene for STEMI specific treatment. Where possible, do this en route. 
+
+- Notify hospital as early as possible if STEMI is suspected 
+- Follow **STEMI Bypass Flowchart.**
+",,,,
+114,M1,ICP,medium,06 Calcium Chloride,What is the correct IV/IO dose and administration time for an ICP treating an adult patient with no cardiac output?,CMG,"#### Doses
+
+##### Adult and Paediatric 
+
+- **ICP:**** With cardiac output:** 10mg/kg (up to 1g) IV/IO 
+- Over 2 minutes
+- Repeat once, if required.
+
+- **ICP:**** No cardiac output:** 10mg/kg (up to 1g) IV/IO 
+- Over 30 – 60 seconds
+- Repeat once, if required.
+",,,,
+115,M3,ICP,medium,22 Seizures,"A patient remains in refractory seizure activity 5 minutes after receiving their second dose of benzodiazepine. According to the CMG, what medication should now be considered?",ACTAS CMG – Seizure Mx (Levetiracetam Indication),"#### Mx - Midazolam
+
+- Continue initial Mx.
+- Midazolam (2 doses) 
+
+##### Benzodiazepine Repeat Doses
+
+After more than two doses of any benzodiazepine, the chance of successful seizure termination is low, and the risk of adverse effect is relatively high.
+
+Family/carers of epileptic patients are often provided with benzodiazepine supply, training, and education to administer benzodiazepines correctly. It’s prudent to respectfully double check with the family member/carer that the correct dose was administered via the correct route as per the patient’s management plan. Benzodiazepines doses correctly administered prior to ACTAS arrival, should be counted in the total benzodiazepine dose.
+
+- IV/IO access 
+
+##### Optimal Route of Midazolam Administration
+
+Overall shortest time to Midazolam therapeutic effect is via the IM. The time required to safely insert an IV/IO negates the slightly increased absorption and distribution rate of Midazolam via these routes.
+
+The IV/IO route should be used if secured prior to seizure activity.
+
+- Extricate and transport.
+
+#### Confirm Levetiracetam Indication
+
+- Refractory seizure activity 5/60 after second benzodiazepine dose 
+**OR**
+- >20/60 seizure duration. 
+
+It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.
+
+",,,,
+116,M3,AP,medium,2 Pain Management,"A patient with mild-moderate pain has not achieved adequate relief from reassurance, positioning and splinting. According to the stepwise approach to pain management, which medication step should be trialled next, and what are appropriate examples of medications at this step?",ACT Ambulance Service CMG Pain Management,"#### Stepwise Approach
+
+1
+
+**Step 1: Non-pharmacological options**
+- e.g. reassurance, posture, splinting, cooling of burns, occlusive dressing, temperature control, gentle handling, etc.
+
+2
+
+**Step 2: Inhalation/ enteral medication**
+**Mild – moderate pain**
+- e.g. methoxyflurane, ibuprofen, paracetamol, GTN (for ischaemic chest pain) 
+- Provide advice and assistance for the patient to take their own prescribed analgesia
+
+3
+
+**Step 3: Parenteral medication**
+**Moderate – severe pain**
+- e.g. morphine, fentanyl, ketamine, IV paracetamol.
+
+**Aim to control all pain to a comfortable level.**
+
+#### Management
+
+**Relief of pain and suffering is a primary goal of Ambulance care.**
+
+- Pain is what the patient says it is. Always offer pain relief to the patient.
+- Pain assessment (PQRST) 
+- Quantitate if possible (scale and description)
+- Document on case sheet.
+- If possible, pharmacology should be directed at the apparent underlying cause of the pain.
+- Generally, pain management should be initiated with a single agent (depending on the patient’s need, and preference) 
+- If ineffective, consider adding a second agent (noting that incremental doses should be smaller when using multiple agents)
+- There is an increased likelihood of side effects with multiple agents – always consider the risks/benefits of using this method.
+",,,,
+117,M2,ICP,easy,21 Methoxyflurane,What is the maximum daily dose permitted when administering analgesia via a Penthrox inhaler?,ACTAS CMG - Methoxyflurane,"##### Type
+
+Volatile inhalation anaesthetic and analgesic agent [S4]
+
+- **High-risk medication**
+
+##### Presentations
+
+3ml bottle
+
+##### Actions
+
+Central nervous system depressant
+
+Onset: 3 – 5 mins. Offset: 3 – 5 mins.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS setting
+
+#### Doses
+
+##### Adult and Paediatric 
+
+- Up to 3ml – self administered via Penthrox inhaler 
+- Repeat once if required
+- Dose should not exceed 6ml/day or 15ml/week
+- If used during labour, discontinue use post-delivery, and if PPH is suspected.
+",,,,
+118,M1,AP,hard,CSM.P01 Log Roll,"A 45-year-old male is being log-rolled following a motor vehicle collision. During the procedure, who is responsible for controlling the process, and what are the specific clinical priorities regarding airway management versus spinal injury according to the procedure guidelines?",Source 1,"#### Procedure
+
+- Prepare any lifting devices (spine board, support straps, scoop stretcher or carry sheet).
+
+- Remove items from pockets etc that may cause patient pain or pressure.
+
+- Instruct assistants on procedure: 
+- Brief assistant/s to stand/kneel on one side of patient and place hands on patient’s far side shoulder, hip, upper thigh and lower leg.
+
+- Maintain neutral alignment of spine and support head.
+
+- The person at the head end controls the process.
+
+- Maintain neutral alignment of spine and support head.
+
+- On pre-agreed count, roll patient in alignment toward assistants.
+
+- Complete a secondary survey of patients back: 
+- Check back pockets.
+
+- If lifting device is required, instruct assistant to place device against patient’s back.
+
+- Roll to supine position keeping head in alignment.
+
+#### Complications
+
+- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.
+- Spine boards/scoops are cold, hard and uncomfortable. They should be removed from underneath the patient as soon as practicable.
+",,,,
+119,M3,AP,easy,CSM.PA06 ECG Monitoring,"When removing ECG leads from monitoring dots, what action should be avoided and why?",ACT Ambulance Service CMG – ECG Monitoring (Specific Notes),"#### Specific Notes
+
+- Artifact can be reduced by ensuring: 
+- The patient (or ambulance) is not moving, electric blankets are turned off and the patient takes quiet, regular respirations where possible.
+- During removal do not pull leads to remove them from monitoring dots – this can result in the metal electrode plate separating from adhesive pad and becoming stuck in the lead.
+",,,,
+120,M1,ICP,medium,CSM.IDH14 Arterial Tourniquet,"According to the specific notes, what action must not be taken once a tourniquet is applied and haemorrhage is controlled?",ACT Ambulance Service CMG,"#### Specific Notes
+
+- This is a procedure of last resort - saving a **life** or saving a **limb**.
+- **Once the tourniquet is applied and haemorrhage is controlled, the tourniquet should not be released or removed.**
+",,,,
+121,M3,AP,easy,CSM.B02 Intermittent Positive Pressure Ventilation (IPPV),What is the approximate dead space volume of an adult bacterial filter used during ventilation?,ACT Ambulance Service CMG – Specific Notes: Bag Resuscitators,"#### Specific Notes
+
+Over-inflation of the lungs can result in barotrauma and gas entering the stomach, thus an increased risk of aspiration.
+
+##### Laerdal Bag Resuscitators (Disposable)
+
+ **Size**  **Adult**  **Child**  **Infant** 
+ Volume in mL  1600  500  240 
+ Weight Range  >20 kg  12 - 20 kg  2.5 - 12 kg 
+
+Consideration needs to be given to apparatus dead space, particularly in children. Approximate volumes are given below.
+
+ Liquorish stick fully extended  48 mls 
+ Liquorish stick compressed  25 mls 
+ Adult bacterial filter  40 mls 
+ MDI adapter  20 mls 
+ EtCO2 adapter  15 mls 
+ Adult resuscitation mask  200 mls 
+ Paediatric resuscitation mask  90 mls 
+ Neonate resuscitation mask  60 mls
+",,,,
+122,M1,ICP,easy,CSM.A10 AirTraq (Endotracheal Intubation),"In the unconscious asthma patient, when should intubation be delayed until the effect of one dose of adrenaline has been evaluated, unless the airway is seriously compromised?",CMG,"#### Complications
+
+- Copious amounts of secretions and blood can obscure lens. Adequately assess and suction airway before insertion.
+- Hypoxia in the paralysed patient.
+- Inadequate ventilation/CPR during insertion and placement checks.
+- Obstruction by mucus/bleed, kinking of tube, external pressure from biting, cuff herniation or bevel impingement on the carina or trachea.
+- Dislodgement - always tie tube in firmly, use cervical collar and perform frequent ET tube checks especially after moving the patient.
+- Malposition - oesophageal or endobronchial. Multiple ET tube checks by multiple people.
+- Trauma to structures.
+- Pneumothorax by over-inflation of lungs.
+- Unrecognised undersedation in the paralysed patient.
+- Unable to tolerate tube due to increasing LOC. If so, sedation required.
+- Unconscious asthma - unless airway seriously compromised should have intubation delayed until the effect of one dose of adrenaline has been evaluated.
+
+",,,,
+123,M2,ICP,medium,06 Calcium Chloride,"According to ACTAS clinical guidelines, what is the recommended administration duration for an ICP delivering an IV/IO dose of 10 mg/kg (up to 1 g) to a patient with a cardiac output?",ACTAS CMG,"#### Doses
+
+##### Adult and Paediatric 
+
+- **ICP:**** With cardiac output:** 10mg/kg (up to 1g) IV/IO 
+- Over 2 minutes
+- Repeat once, if required.
+
+- **ICP:**** No cardiac output:** 10mg/kg (up to 1g) IV/IO 
+- Over 30 – 60 seconds
+- Repeat once, if required.
+",,,,
+124,M3,AP,hard,CSM.P03 Left Lateral with Buttocks Raised,"You are called to a 68-year-old patient who is unconscious and breathing adequately. You and a second paramedic need to position the patient in the left lateral position, and the patient requires slight elevation of the head end for comfort. Describe the correct technique for positioning this patient, including the use of support under the buttock, and outline the exact steps for raising the head end of the trolley.",ACT AS CMG – Left Lateral Positioning Procedure,"#### Procedure
+
+- Have the patient position themself in the left lateral position (if possible). 
+- In an unconscious patient, utilising two (or more, if necessary) paramedics; position the patient in a left lateral position.
+
+- Place a rolled blanket or pillow under the left buttock.
+
+- The head end can be raised slightly for patient comfort by lifting the red leaver and raising the head end upwards until the desired height is reached, then release the yellow tab.
+
+Figure 1
+",,,,
+125,M3,ICP,easy,01 Acetylsalicylic Acid (Aspirin),Why is aspirin contraindicated in a patient with a current psychostimulant overdose?,"ACTAS CMG – Aspirin, Contraindications","#### Contraindications
+
+- Known or suspected allergy to salicylates
+
+- Known or suspected active bleeding
+
+- Known bleeding tendency
+
+- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) 
+
+",,,,
+126,M1,ICP,easy,35 Levetiracetam,What is the maximum dose for an Intensive Care Paramedic administering Levetiracetam in status epilepticus?,Source 1,"##### Type
+
+Antiepileptic
+
+##### Presentations
+
+500mg/5mL
+
+##### Pharmacokinetics
+
+IV/IO 
+ Onset: Rapid 
+ Max Effect: 30 – 120 minutes 
+ Duration: 1 -2 days 
+
+#### Uses
+
+Status epilepticus:
+
+- Refractory seizure activity 5/60 after second benzodiazepine dose.
+
+- >20/60 seizure duration.
+
+#### Adverse Effects
+
+- Behavioural effects
+
+- Drowsiness
+
+- Weakness
+
+- Dizziness and vertigo
+
+- Headache
+
+- Insomnia
+
+- Amnesia
+
+- Ataxia
+
+- Diplopia
+
+- Anorexia
+
+#### Contraindications
+
+- Known allergy.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Safe to use
+
+##### Breastfeeding
+
+- Safe to use
+
+#### Doses
+
+- **ICP:** 40mg/kg (max. 3000mg) IV/IO, infused over 5/60 via infusion pump, no repeat. 
+
+**Note:** If infusion pump unavailable, dose can be administered via slow IV/IO push over 5/60.",,,,
+127,M2,AP,hard,CSM.P08 Sitting,"You are managing a 68-year-old patient presenting with acute dyspnoea who requires the head of the ambulance stretcher elevated. According to the documented procedure for raising the head end of the stretcher, outline the sequential steps required to adjust the backrest and identify which specific clinical parameters must be reassessed immediately following the adjustment.",ACTAS CMG,"#### Procedure
+
+- Have the patient lean forward if possible.
+
+- Lift the red leaver located at the head end of the stretcher and raise the head end to the desired height (see **Figure 1**).
+
+Figure 1
+
+- Release the red leaver.
+
+- Reassess patient’s respiratory and perfusion status.
+",,,,
+128,M1,AP,easy,19 Limb Injuries,What action should be taken if a distal pulse is absent when checking arterial circulation in a fractured limb?,Source 1: cmg,"#### Management
+
+- Haemorrhage control.
+- Analgesia as per CMG 2 Pain Management.
+- Check arterial circulation in the limb 
+- If distal pulse is absent, gently re‐align fractured segments until pulse returns or alignment is near normal.
+
+- In the absence of life‐threatening haemorrhage, open fractures or wounds should be irrigated prior to splinting.
+- Immobilise/ splint all fractures unless the patient is otherwise time‐critical 
+- Traction splint for suspected fractured mid‐shaft femur
+- Pelvic splint for suspected pelvic fracture.
+- Elevate the limb, if possible.
+- Do not attempt to reduce dislocations.
+- IV fluid as per CMG 14 Shock and Hypoperfusion.
+- Crush injured limbs should be treated as per CMG 30 Crush Syndrome.
+
+#### Completely Severed Limb
+
+- Keep severed part dry, wrapped and cold 
+- Place in a dry, sealed plastic bag
+- Then place within another bag or bucket filled with iced water. 
+
+- Do not immerse the part directly in ice.
+- Do not attempt to clean or disinfect the severed part.
+",,,,
+129,M3,ICP,medium,CSM.IDH06 Splinting (Basic Limb),"You are attending a patient with a suspected mid-shaft forearm fracture. The hand is pale, cool to touch, and distal pulses are not palpable. According to the splinting procedure, what action must be taken before applying the splint?",ACT AS CMG – Splinting Procedure,"#### Procedure
+
+- If required, administer pain relief prior to applying splint.
+- Confirm distal pulses are present.
+- Realign limb if perfusion is compromised.
+
+##### Cardboard Splint
+
+- Select appropriate cardboard splint size, trauma combines or a towel for padding, and a roller bandage.
+
+- Support the patient’s injured limb and position on cardboard splint and padding so that fingers/toes are at the rounded end (see **Figures 1 & 2**).
+
+Figure 1
+
+Figure 2
+
+- Fold up sides of cardboard splint and secure with roller bandage and tape roller bandage in place with the help of a second person.
+
+- Reconfirm distal pulses are present, sensation, and capillary refill.
+
+##### Anatomical Leg Splint
+
+- Place padding in between legs at level of any bony prominences (knees and ankles).
+
+- Secure legs together with triangular bandage at proximal, middle, and distal regions appropriate to injury (see **Figure 3**).
+
+Figure 3
+
+- Reconfirm distal pulses are present, sensation, and capillary refill.
+",,,,
+130,M3,AP,medium,27 Hyperkalaemia,You are managing a cardiac arrest where hyperkalaemia is suspected to be the cause of the arrest. How should this arrest be managed?,ACT AS CMG - Cardiac Arrest Secondary to Hyperkalaemia,"#### Cardiac Arrest Secondary to Hyperkalaemia
+
+In cardiac arrest thought to be secondary to hyperkalaemia (i.e. hyperkalaemia is thought to be the cause of the arrest):
+
+- Cardiac arrest management as per relevant CMG with the addition of:
+",,,,
+131,M3,AP,easy,23 Morphine,What are the three documented actions of morphine?,ACTAS CMG – Morphine,"##### Type
+
+Opioid analgesic [S8]
+
+##### Presentations
+
+10mg in 1ml – glass ampoule
+
+##### Actions
+
+- Analgesia
+
+- Anxiolytic
+
+- Vasodilation
+
+##### Pharmacokinetics
+
+**IV**
+ Onset: 5 - 10 minutes
+ Max Effect: 20 minutes
+ Duration: 4 - 5 hours
+
+**IM**
+ Onset: 10 - 30 minutes
+ Max Effect: 30 minutes
+ Duration: 4 - 5 hours
+
+#### Uses
+
+- Analgesia for moderate to severe pain
+
+- Maintain analgosedation in intubated patients in conjunction with midazolam.
+
+- Reduce dyspnoea in palliative care patients.
+
+- Relieve suffering due to terminal palliative care emergencies (no active treatment).
+
+#### Contraindications
+
+- Respiratory depression
+
+- Systolic blood pressure <70mmHg
+
+- Acute asthma
+Disregard contraindications when managing palliative care emergencies (no active treatment) patients.
+
+#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Refrain from use if labour suspected. Prepare for neonatal respiratory support and naloxone administration.
+
+##### Breastfeeding
+
+- Safe to use, use conservative doses, encourage feeding/expressing prior to administration if feasible. 
+- Infant must also be transported for monitoring if breastfed post morphine administration. 
+
+",,,,
+132,M1,AP,medium,1 General Care,"According to the monitoring and assessment guidelines, how many sets of vital signs should be taken, and what is the minimum time interval required between them?",Source 1: cmg,"#### Monitoring and Assessment
+
+**Monitor and assess as required / appropriate: **
+
+- Vital signs 
+- At least 2 sets, 5 minutes apart
+- Heart rate, GCS, respiratory rate, BP, skin condition, SpO2.
+
+- Cardiac monitor \xb1 12/15 lead ECG.
+- Blood glucose.
+- Temperature.
+- Chest auscultation.
+- Pain assessment.
+- Mental competence assessment.
+- EtCO2.
+- Hydration assessment.
+- Blood lactate.
+- Mobilisation assessment.
+- Specific observations and assessments as per patient condition.
+
+#### Subsequent Actions
+
+- **Treatment** as required (as per appropriate CMG(s)).
+- Remember to verbally and visually **cross-check all medications** prior to administration, wherever possible.
+- Identify and manage **time critical** presentations 
+- Refer to Time Critical Patient Guideline
+- **Note: time critical does not just mean rapid transport!** Minimum scene time, treatment en route (where possible) and prompt transport are all required for time critical patients.
+- Facilitate or provide **transport** as required (notify hospital as appropriate) 
+- Remember: **Transport is treatment!**
+- **Communicate** patient and situational details to receiving facility, as appropriate 
+- e.g. IMISTER‐AMBO handover protocol.
+- Complete accurate and comprehensive **documentation.**
+",,,,
+133,M2,AP,medium,08 Droperidol (Dorm),"According to ACTAS guidelines, what is the recommended dose, route, and repeat interval for a frail or elderly patient (>65 years of age) where the standard adult dose is 10 mg IM?",ACTAS CMG,"#### Pregnancy and Breastfeeding
+
+##### Pregnancy
+
+- Approved for administration in ACTAS setting during trimester one and two, during third trimester only use if alternative management unavailable or ineffective
+
+##### Breastfeeding
+
+- Approved for administration in ACTAS setting, document breastfeeding status in ePCR, caution against breastfeeding in the pre-hospital setting
+
+#### Doses
+
+##### Adult (>14 years of age)
+
+- 10mg via IM injection only (no IV/IO use) 
+- Repeat once, after 10-15 minutes, if required.
+
+##### Frail / elderly (>65 years)
+
+- 5mg via IM injection only (no IV/IO use) 
+- Repeat once, after 10-15 minutes, if required.
+
+##### Paediatric (<14 years of age)
+
+Not used.
+",,,,
+134,M2,AP,easy,CSM.DF14 Mucosal Atomising Device (MAD),"When attached to a 1mL Luer lock syringe, what is the dead space volume of the MAD300 mucosal atomisation device?",ACTAS CMG,"#### Notes
+
+- The device is latex-free and typically for single-patient use but can be re-used by the same patient during the same episode of care after rinsing and air-drying.
+
+##### Dead Space
+
+- When attached to a 1mL Luer lock syringe, the MAD300 has a “dead space” of 0.1mL
+- The dead space is the volume of medication that remains in the device after actuation.
+- There is no requirement to draw up extra volume to “prime” the device, unless explicitly instructed in the Clinical Pharmacology Pages or the Medication Calculator.
+##### For maximum efficacy
+
+- **Minimize volume, maximize concentration**
+- The nasal cavity has a low volume capacity (approximately 100-150 \xb5L).
+- Use the appropriately concentrated drug as per CMG
+- **Maximize total mucosal absorptive surface area**
+- Press briskly, rather than “dripping” the medication – Atomization produces particles 30-100 microns, maximizing surface area coverage. 
+- Use BOTH nostrils to double the absorptive surface area – even when dosage could fit in one nostril.
+- Aim slightly up and outwards to cover the turbinates and olfactory mucosa
+- **Prepare the patient**
+- Instruct the patient that they do not need to inhale during medication administration.
+- Positioned patient upright with their head tilted slightly back, or reclining at a 45-degree angle.
+
+",,,,
+135,M3,AP,hard,CSM.M03 STEMI Transmission (Zoll X Series),"You are transporting a 68-year-old male with 40 minutes of central chest pain. You acquire a 12-lead ECG on the X-Series and transmit it to Canberra Hospital, but the screen indicates 'Transmission Failed'. Describe the steps you must take to successfully retransmit this ECG, and identify the additional information you must enter into the monitor before turning it off once handover at TCH is complete.",ACT Ambulance Service CMG – 12-Lead Acquisition & Transmission (X-Series),"#### Procedure
+
+- Press the **12-Lead** button then press the **Acquire** button.
+
+- In Patient Info enter **Patient Age, Patient Sex** and then the **Patient Initials** in the **LAST NAME** field and click on the Save icon (this menu will only appear for a new patient case).
+
+- Push **12 lead snapshot** button to acquire the 12 lead.
+
+- Press **12-Lead Transfer** button and select **CANBERRA Hospital** from the distribution list. Arrow down to **highlight** the transmit button and Press **Transmit**.
+
+Figure 1
+
+- The X-Series will indicate **Transmission Completed** for successful transmission.
+
+- If **Transmission failed**, click back arrow and press **12-Lead Review Icon** select the **12-lead ECG** you would like to transmit again. **Repeat Step 4**.
+
+Figure 2
+
+- After patient handover at TCH and before turning off the monitor, return to the Patient Info screen and put the **VACIS case number** into the **Patient ID field**.
+",,,,
+136,M2,AP,hard,CSM.P01 Log Roll,"You are managing a 34-year-old male who has been involved in a high-speed motorcycle crash. He is found lying prone on the roadside, conscious, with suspected spinal trauma (BP 128/76 mmHg, HR 84 bpm, RR 16/min, SpO2 98%). You decide to log roll the patient into a supine position using a scoop stretcher. Integrating the ACTAS procedure and complication guidelines for this maneuver, outline:
+1. The initial patient and equipment preparation required before rolling.
+2. Assistant briefing, hand placement, and team coordination to maintain alignment.
+3. The assessment and actions performed while the patient is rolled.
+4. The primary procedural complications and their stated clinical priorities/actions.",ACTAS Clinical Management Guidelines - Log Roll,"#### Procedure
+
+- Prepare any lifting devices (spine board, support straps, scoop stretcher or carry sheet).
+
+- Remove items from pockets etc that may cause patient pain or pressure.
+
+- Instruct assistants on procedure: 
+- Brief assistant/s to stand/kneel on one side of patient and place hands on patient’s far side shoulder, hip, upper thigh and lower leg.
+
+- Maintain neutral alignment of spine and support head.
+
+- The person at the head end controls the process.
+
+- Maintain neutral alignment of spine and support head.
+
+- On pre-agreed count, roll patient in alignment toward assistants.
+
+- Complete a secondary survey of patients back: 
+- Check back pockets.
+
+- If lifting device is required, instruct assistant to place device against patient’s back.
+
+- Roll to supine position keeping head in alignment.
+
+#### Complications
+
+- Exacerbation of spinal injury if alignment is not maintained. Airway takes precedence over spinal injury.
+- Spine boards/scoops are cold, hard and uncomfortable. They should be removed from underneath the patient as soon as practicable.
+",,,,
+137,M1,AP,hard,29 Salbutamol (Ventolin),"A 4-year-old child presents in severe respiratory distress. According to the guidelines, what is the correct pMDI dose and repetition interval for salbutamol in this specific clinical presentation?",CMG,"##### Type
+
+Synthetic \u03b22 receptor stimulant [S4]
+
+##### Presentations
+
+Pressurised metered dose inhaler (pMDI) – 100mcg per activation
+
+##### Actions
+
+- Bronchodilation
+
+- Relaxation of involuntary muscle
+
+- Moves K+ from extracellular to intracellular space
+
+#### Mild to moderate respiratory distress
+
+**pMDI via spacer**
+
+##### Adult ≥6 years
+
+- 4-12 actuations 
+- Repeat every 20-30 minutes
+- 1 actuation to 4 breaths.
+
+##### Paediatric <6years
+
+- 2-6 actuations 
+- Repeat every 20-30 minutes
+- 1 actuation to 4 breaths.
+
+#### Severe respiratory distress
+
+**pMDI (via spacer or with pMDI adaptor on BVM/CPAP) **
+
+##### Adult ≥6 years
+
+- 12 actuations 
+- Repeat every 20 minutes
+- 1 actuation to 4 breaths.
+
+##### Paediatric <6years
+
+- 6 actuations 
+- Repeat every 20 minutes
+- 1 actuation to 4 breaths.
+
+#### Life threatening respiratory distress and hyperkalaemia
+
+**pMDI (with pMDT adaptor on BVM/CPAP)**
+
+##### Adult ≥6 years
+
+- 12 actuations 
+- Repeat every 10 minutes
+- No repeat limit.
+
+##### Paediatric <6 years
+
+- 6 actuations 
+- Repeat every 10 minutes
+- No repeat limit.
+
+",,,,
+138,M2,AP,hard,CSM.PA10 Blood Glucose Measurement,"You are assessing an unwell patient and obtain a capillary blood glucose test. The glucometer displays a 'HI' reading accompanied by an upward arrow (^). Based on the CMG Specific Notes:
+
+1. What specific blood glucose level range does the 'HI' reading represent?
+2. What is the clinical significance of the upward arrow (^), and does it indicate the presence of ketones?",ACTAS CMG,"#### Specific Notes
+
+- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.
+- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.
+",,,,
+139,M3,AP,medium,1 General Care,"You identify a patient as time critical. According to the CMG, time critical management does not just mean rapid transport. What three components are required for the management of a time critical patient?",ACTAS CMG - Subsequent Actions,"#### Monitoring and Assessment
+
+**Monitor and assess as required / appropriate: **
+
+- Vital signs 
+- At least 2 sets, 5 minutes apart
+- Heart rate, GCS, respiratory rate, BP, skin condition, SpO2.
+
+- Cardiac monitor \xb1 12/15 lead ECG.
+- Blood glucose.
+- Temperature.
+- Chest auscultation.
+- Pain assessment.
+- Mental competence assessment.
+- EtCO2.
+- Hydration assessment.
+- Blood lactate.
+- Mobilisation assessment.
+- Specific observations and assessments as per patient condition.
+
+#### Subsequent Actions
+
+- **Treatment** as required (as per appropriate CMG(s)).
+- Remember to verbally and visually **cross-check all medications** prior to administration, wherever possible.
+- Identify and manage **time critical** presentations 
+- Refer to Time Critical Patient Guideline
+- **Note: time critical does not just mean rapid transport!** Minimum scene time, treatment en route (where possible) and prompt transport are all required for time critical patients.
+- Facilitate or provide **transport** as required (notify hospital as appropriate) 
+- Remember: **Transport is treatment!**
+- **Communicate** patient and situational details to receiving facility, as appropriate 
+- e.g. IMISTER‐AMBO handover protocol.
+- Complete accurate and comprehensive **documentation.**
+",,,,
+140,M3,AP,hard,29 Salbutamol (Ventolin),"A 25-year-old known asthmatic presents with life-threatening respiratory distress: silent chest on auscultation, speaking single words only, marked accessory muscle use, and an SpO2 of 85% on room air. You decide to deliver salbutamol via pMDI with a pMDI adaptor attached to your BVM. According to the salbutamol CMG, state: (1) the number of actuations required for an adult in life-threatening distress, (2) the repeat interval, (3) whether there is any limit on the number of repeats, and (4) the correct administration technique for each actuation.",ACT AS CMG – Salbutamol (drug reference),"##### Type
+
+Synthetic \u03b22 receptor stimulant [S4]
+
+##### Presentations
+
+Pressurised metered dose inhaler (pMDI) – 100mcg per activation
+
+##### Actions
+
+- Bronchodilation
+
+- Relaxation of involuntary muscle
+
+- Moves K+ from extracellular to intracellular space
+
+#### Mild to moderate respiratory distress
+
+**pMDI via spacer**
+
+##### Adult ≥6 years
+
+- 4-12 actuations 
+- Repeat every 20-30 minutes
+- 1 actuation to 4 breaths.
+
+##### Paediatric <6years
+
+- 2-6 actuations 
+- Repeat every 20-30 minutes
+- 1 actuation to 4 breaths.
+
+#### Severe respiratory distress
+
+**pMDI (via spacer or with pMDI adaptor on BVM/CPAP) **
+
+##### Adult ≥6 years
+
+- 12 actuations 
+- Repeat every 20 minutes
+- 1 actuation to 4 breaths.
+
+##### Paediatric <6years
+
+- 6 actuations 
+- Repeat every 20 minutes
+- 1 actuation to 4 breaths.
+
+#### Life threatening respiratory distress and hyperkalaemia
+
+**pMDI (with pMDT adaptor on BVM/CPAP)**
+
+##### Adult ≥6 years
+
+- 12 actuations 
+- Repeat every 10 minutes
+- No repeat limit.
+
+##### Paediatric <6 years
+
+- 6 actuations 
+- Repeat every 10 minutes
+- No repeat limit.
+
+",,,,
+141,M2,AP,medium,15 Altered Level of Consciousness,"According to the Altered Level of Consciousness guideline, what is the target end-tidal carbon dioxide (EtCO2) range that clinicians should aim to maintain to avoid hyperventilation?",ACTAS CMG Altered Level of Consciousness,"#### Assessment
+
+There are many potential causes of an altered level of consciousness, but very few can be diagnosed in the pre‐hospital environment.
+
+The mnemonic ‘AEIOU TIPS’ can help clinicians to identify possible reversible causes:
+
+A
+
+Alcohol, acidosis. 
+
+E
+
+Epilepsy, endocrine, electrolytes, environment. 
+
+I
+
+Insulin (i.e. hypo / hyperglycaemia). 
+
+O
+
+Overdose, oxygen (hypoxia). 
+
+U
+
+Uraemia, underdose. 
+
+T
+
+Trauma, tumour, toxin. 
+
+I
+
+Infection. 
+
+P
+
+Psychogenic, poison, pharmacological. 
+
+S
+
+Seizures, sepsis, syncope, stroke, shock, space‐occupying lesion. 
+
+#### Management
+
+- Assess patient’s presenting level of consciousness by AVPU and/or GCS as appropriate.
+- Manage airway as per CMG 3 Airway Management.
+- Assess and monitor vital signs (e.g. BGL, temperature, ECG, BP, etc).
+- Oxygen if required 
+- Aim to maintain SpO2 ≥ 94%.
+- Do not hyperventilate 
+- Monitor EtCO2
+- Aim to maintain between 35‐40mmHg.
+- IV fluids as per CMG 14 Shock and Hypoperfusion.
+- Aim to maintain systolic BP > 100mmHg.
+- Treat associated conditions as required (e.g. overdose, hypoglycaemia, seizures, etc).
+- Consider spinal precautions if trauma or if history is unknown.
+- Unless otherwise contraindicated, posture by perfusion or comfort.
+- **Evidence of a rapidly decreasing level of consciousness is a flag for a time‐critical patient**
+- **Minimise scene time and transport urgently to hospital.**
+",,,,
+142,M2,ICP,easy,01 Acetylsalicylic Acid (Aspirin),"According to ACTAS clinical guidelines, why is a current psychostimulant overdose a contraindication to aspirin administration?",ACTAS CMG Aspirin,"#### Contraindications
+
+- Known or suspected allergy to salicylates
+
+- Known or suspected active bleeding
+
+- Known bleeding tendency
+
+- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) 
+
+",,,,
+143,M1,ICP,medium,22 Seizures,"According to the ACTAS guidelines, what are the two indications for confirming Levetiracetam administration in seizure management?",ACTAS CMG,"#### Mx - Midazolam
+
+- Continue initial Mx.
+- Midazolam (2 doses) 
+
+##### Benzodiazepine Repeat Doses
+
+After more than two doses of any benzodiazepine, the chance of successful seizure termination is low, and the risk of adverse effect is relatively high.
+
+Family/carers of epileptic patients are often provided with benzodiazepine supply, training, and education to administer benzodiazepines correctly. It’s prudent to respectfully double check with the family member/carer that the correct dose was administered via the correct route as per the patient’s management plan. Benzodiazepines doses correctly administered prior to ACTAS arrival, should be counted in the total benzodiazepine dose.
+
+- IV/IO access 
+
+##### Optimal Route of Midazolam Administration
+
+Overall shortest time to Midazolam therapeutic effect is via the IM. The time required to safely insert an IV/IO negates the slightly increased absorption and distribution rate of Midazolam via these routes.
+
+The IV/IO route should be used if secured prior to seizure activity.
+
+- Extricate and transport.
+
+#### Confirm Levetiracetam Indication
+
+- Refractory seizure activity 5/60 after second benzodiazepine dose 
+**OR**
+- >20/60 seizure duration. 
+
+It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.
+
+",,,,
+144,M3,ICP,hard,30 Crush Syndrome,"A 48-year-old male has just been extricated after his lower right leg was entrapped beneath machinery for approximately 2 hours. The limb is grossly swollen and bruised, but a distal pulse is present. BP 105/70, HR 105, GCS 15. Outline your post-extrication management for this patient, addressing each of the following: (a) the position in which the injured limb must be splinted and immobilised, and the position that must be avoided; (b) the ongoing fluids and monitoring required en route; (c) three specific CMGs you should consider consulting given the mechanism of injury; (d) the rationale for prioritising rapid transport to a trauma facility.",ACT Ambulance Service CMG – Post-Extrication,"#### Post-Extrication
+
+- Rapid transport to trauma facility, as soon as possible 
+- Patients have better outcomes when they arrive at definitive care earlier.
+
+- Continue IV fluids.
+- Monitor ECG for changes.
+- Manage, as appropriate: 
+- CMG 14 Shock and Hypoperfusion
+- CMG 19 Limb injuries
+- CMG 27 Hyperkalaemia.
+- Analgesia as required.
+- Splint and immobilise the injured limb at heart level. **Do not elevate**.
+",,,,
+145,M2,ICP,hard,CSM.B03 Positive End Expiratory Pressure (PEEP),"You are managing a 68-year-old male with severe pulmonary oedema who is being ventilated via bag-valve mask with a PEEP valve attached. Initial ventilation was commenced with a PEEP setting of 5 cmH2O, but the patient remains desaturated.
+
+According to the Clinical Management Guideline for PEEP:
+1. What is the next immediate stepwise adjustment to the PEEP level?
+2. Under what specific condition may the PEEP level be further increased to 15 cmH2O for this patient?
+3. What would be the maximum allowable PEEP level if this patient were instead being ventilated for a severe asthma or chronic airways limitation (CAL) exacerbation?",ACTAS CMG PEEP,"#### Indications
+
+- For use with ventilated patients who meet PEEP criteria: 
+- Cardiac arrest.
+- Near drowning.
+- Severe asthma/COPD exacerbation.
+- Severe pulmonary oedema.
+- Carbon monoxide poisoning.
+- Intubated patients.
+
+#### Procedure
+
+Figure 1
+
+- Attach the PEEP valve to the bag valve (see **Figure 1**).
+
+- Start PEEP level at 5cm.
+
+- Increase to 10cm if not responding to 5cmH2O (max for asthma, CAL, infants and children).
+
+- Increase to 15cm as required for pulmonary oedema, near drowning and CO poisoning (only if still desaturated with 10 cmH2O).
+
+- Maintain continuous PEEP.
+
+",,,,
+146,M1,ICP,medium,CSM.A14 BURP Manoeuvre,"During the manipulation of the thyroid cartilage to optimise glottic view, in which directions should the assistant firmly push the cartilage?",ACT Ambulance Service CMG,"#### Procedure
+
+- Locate the thyroid cartilage.
+
+- Assistant to place thumb and index fingers of one hand on thyroid cartilage.
+
+- Firmly push the thyroid cartilage backwards, upwards (towards the patient’s head), and to the right (the patient’s right) (see **Figure 1**).
+
+Figure 1
+
+- Intubating paramedic guides assistant's hand until best view of the glottis is achieved.
+
+- Maintain pressure until the intubating paramedic directs release of pressure post ET tube insertion.
+
+",,,,
+147,M2,ICP,easy,CSM.A09 Laryngeal Mask Airway (LMA Supreme),"According to the ACTAS clinical management guideline for LMA removal, at what phase of the respiratory cycle should the LMA be withdrawn if the patient is breathing spontaneously?",ACTAS CMG LMA Removal,"#### LMA Removal
+
+- Oxygenate patient.
+
+- Roll patient on their side, suction the mouth and cut the tie.
+
+- Deflate the cuff.
+
+- If breathing spontaneously withdraw on exhalation.
+
+- Clear/suction airway if required.
+",,,,
+148,M3,ICP,medium,06 Calcium Chloride,"A patient requires ICP administration and has no cardiac output. According to the CMG, what dose should be given, over what timeframe, and how many times may the dose be repeated?","ACT Ambulance Service CMG – Doses (ICP, Adult and Paediatric)","#### Doses
+
+##### Adult and Paediatric 
+
+- **ICP:**** With cardiac output:** 10mg/kg (up to 1g) IV/IO 
+- Over 2 minutes
+- Repeat once, if required.
+
+- **ICP:**** No cardiac output:** 10mg/kg (up to 1g) IV/IO 
+- Over 30 – 60 seconds
+- Repeat once, if required.
+",,,,
+149,M2,AP,easy,37 Combative and Agitated Patients,"According to ACTAS guidelines, what backup must an Ambulance Paramedic (AP) request after administering ketamine for sedation?",ACTAS CMG,"#### Management
+
+- For use in situations where the patient cannot be managed with less aggressive means. 
+
+- If concerned about safety, call for police assistance.
+- Consider / exclude medical causes: 
+- E.g. hypoxia, hypoglycaemia, head injury, drug overdose, post‐ictal state, infection. 
+- Treat as appropriate.
+- Attempt quiet reassurance in an attempt to persuade the patient to accept treatment 
+- Speak quietly (do not shout)
+- Do not leave the patient alone.
+- Consider Emergency Apprehension where the patient has a mental health disorder or mental illness, and there is risk of serious harm to the patient or another person.
+- If reassurance and persuasion are ineffective or impractical, move to pharmacological management 
+- Pharmacological management should be a last resort after completing a mental competency assessment.
+- Sedation as required per SAT (Sedation Assessment Tool)
+- APs must call ICP backup after using ketamine for sedation. 
+- **Use of limb restraints should be considered in conjunction with pharmacological restraint.**
+- Clinical reasoning for restraint/non‐restraint should be thoroughly documented on the PCR. 
+- Once restrained and on oxygen: 
+- Monitor ECG, temperature, SpO2, EtCO2. 
+- Patients managed with pharmacological control must be transported to hospital.
+- Ensure thorough documentation on PCR. 
+- All patients sedated with ketamine / midazolam under this CMG will require an incident report to be submitted to CGU.
+",,,,
+150,M2,AP,easy,35A Poisoning and Overdose,"According to ACTAS clinical guidelines, what are the three management end goals when administering atropine to a patient aged 15 years or older with suspected organophosphate or nerve agent toxicity?",ACTAS CMG Organophosphate/Nerve Agents,"#### General Management
+
+- Prompt transport to definitive care. 
+
+##### Reasoning
+
+ Numerous presentations of overdose or poisoning cannot be definitively managed in the out-of-hospital environment and have a small window of opportunity to receive effective in-hospital management. Do not delay transport to hospital.
+
+- Manage agitation as per CMG 37 Combative and Agitated Patients.
+- Airway management as per CMG 3 Airway Management.
+- Oxygen therapy as required.
+- Maintain perfusion as per CMG 14 Shock and Hypoperfusion.
+- Cardiac arrhythmias as per: 
+- CMG 6 Cardiac Arrhythmias
+- CMG 7 Bradyarrhythmias
+- CMG 8 Tachyarrhythmias
+- Terminate seizures as per CMG 22 Seizures.
+- Signs and symptoms of ACS as per CMG 16 Suspected Acute Coronary Syndrome.
+- Signs of hyperkalaemia as per CMG 27 Hyperkalaemia.
+- CMG 33 Behavioural and Psych Emergencies.
+
+#### Organophosphate/Nerve Agents
+
+- Decontaminate patient.
+- Atropine: Continue repeat doses until all management end goals achieved. 
+- **≥ 15yo:**
+- Heart rate >80bpm
+- Systolic BP >80mmHg
+- Clear chest on auscultation.
+- **< 15yo:**
+- Heart rate and and systolic BP within normal range for age (refer to Critical Care Reference Cards)
+- Clear chest on auscultation.
+- In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.
+#### Suspected Alcohol Intoxication
+
+- Assess for alternative causes of altered conscious state as per CMG 15 Altered Level of Consciousness.
+- Consider appropriate ongoing care of patient: 
+- Private residence in the care of non-intoxicated adult
+- Sobering up shelter
+- AFP Watchhouse
+- ED.
+",,,,

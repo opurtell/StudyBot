@@ -9,7 +9,14 @@ class AnthropicProvider:
         self._client = anthropic.Anthropic(api_key=api_key)
         self._default_model = default_model
 
-    def complete(self, messages: list[dict], model: str | None = None) -> str:
+    def complete(
+        self,
+        messages: list[dict],
+        model: str | None = None,
+        response_schema: dict | None = None,
+    ) -> str:
+        # response_schema is ignored: this provider's models return reliable JSON
+        # from the prompt alone.
         model = model or self._default_model
         try:
             response = self._client.messages.create(

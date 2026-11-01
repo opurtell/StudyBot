@@ -1,0 +1,85 @@
+{
+  "marking": [
+    {
+      "model": "google:gemini-3.8-flash",
+      "errors": [],
+      "n": 20,
+      "json": "20/20",
+      "accuracy": "10/10",
+      "by_grade": {
+        "incorrect": "5/5",
+        "partial": "3/3",
+        "correct": "2/2"
+      },
+      "fabricated": 0,
+      "grounded": "8/10",
+      "median_s": 6.1,
+      "max_s": 7.8,
+      "usd_per_mark": 0.00346
+    },
+    {
+      "model": "google:gemini-3.5-flash-lite",
+      "errors": [],
+      "n": 20,
+      "json": "19/20",
+      "accuracy": "10/10",
+      "by_grade": {
+        "incorrect": "5/5",
+        "partial": "3/3",
+        "correct": "2/2"
+      },
+      "fabricated": 0,
+      "grounded": "7/10",
+      "median_s": 1.5,
+      "max_s": 2.0,
+      "usd_per_mark": 0.00082
+    },
+    {
+      "model": "zai:glm-5.3-flash",
+      "errors": [],
+      "n": 20,
+      "json": "20/20",
+      "accuracy": "9/10",
+      "by_grade": {
+        "incorrect": "5/5",
+        "partial": "3/3",
+        "correct": "1/2"
+      },
+      "fabricated": 2,
+      "grounded": "6/10",
+      "median_s": 19.3,
+      "max_s": 38.1,
+      "usd_per_mark": 0.00032
+    },
+    {
+      "model": "zai:glm-5.3-flashx",
+      "fatal": "Error code: 429, with error text {\"error\":{\"code\":\"1311\",\"message\":\"Your current subscription plan does not yet include access to GLM-5.3-FlashX\"}}"
+    }
+  ],
+  "generation": [
+    {
+      "model": "google:gemini-3.8-flash",
+      "generated": 50,
+      "failures": 0,
+      "exact_duplicates": 0,
+      "median_s": 7.6,
+      "usd_per_question": 0.00156
+    },
+    {
+      "model": "google:gemini-3.5-flash-lite",
+      "generated": 50,
+      "failures": 0,
+      "exact_duplicates": 0,
+      "median_s": 1.2,
+      "usd_per_question": 0.00036
+    },
+    {
+      "model": "zai:glm-5.3-flash",
+      "generated": 50,
+      "failures": 0,
+      "exact_duplicates": 0,
+      "median_s": 12.7,
+      "usd_per_question": 0.00013
+    }
+  ]
+}
