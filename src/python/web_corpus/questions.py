@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import difflib
 import hashlib
 import json
 import random
@@ -46,6 +47,8 @@ COVERED_BY = {
 MIN_CHARS = 150
 FULL_SET_CHARS = 400
 NEAR_DUPLICATE = 0.8
+TWIN_SIMILARITY = 0.85
+MIN_FOCUS_CHARS = 30
 EST_INPUT_TOKENS = 750
 EST_OUTPUT_TOKENS = 450
 
@@ -62,6 +65,7 @@ class Task:
     chunk: Chunk
     gen_view: str
     difficulties: tuple[str, ...]
+    focus: tuple[str, ...] = ()
 
 
 def gen_view_for(chunk: Chunk) -> str:
@@ -76,24 +80,57 @@ def difficulties_for(chunk: Chunk) -> tuple[str, ...]:
     return ("easy", "medium", "hard")
 
 
+def _ap_visible(chunk: Chunk) -> bool:
+    return "ap" in chunk.views or "ap_pacer" in chunk.views
+
+
+def icp_focus(chunk: Chunk, siblings: list[Chunk]) -> tuple[str, ...] | None:
+    """For an ICP-only chunk that nearly repeats an AP chunk of the same section, the lines only ICPs see.
+
+    Returns None when the chunk has no AP twin, so it is planned normally.
+    """
+    twins = [s for s in siblings if difflib.SequenceMatcher(None, chunk.text, s.text).ratio() >= TWIN_SIMILARITY]
+    if not twins:
+        return None
+    shared = {line.strip() for twin in twins for line in twin.text.splitlines()}
+    return tuple(line.strip() for line in chunk.text.splitlines() if line.strip() and line.strip() not in shared)
+
+
 def plan(corpus: Corpus) -> list[Task]:
+    ap_sections: dict[tuple[str, str], list[Chunk]] = {}
+    for chunk in corpus.chunks:
+        if _ap_visible(chunk):
+            ap_sections.setdefault((chunk.document_id, chunk.heading), []).append(chunk)
     tasks = []
     for chunk in corpus.chunks:
         diffs = difficulties_for(chunk)
-        if diffs:
-            tasks.append(Task(chunk, gen_view_for(chunk), diffs))
+        if not diffs:
+            continue
+        if not _ap_visible(chunk):
+            focus = icp_focus(chunk, ap_sections.get((chunk.document_id, chunk.heading), []))
+            if focus is not None:
+                if sum(len(line) for line in focus) >= MIN_FOCUS_CHARS:
+                    tasks.append(Task(chunk, gen_view_for(chunk), ("medium",), focus))
+                continue
+        tasks.append(Task(chunk, gen_view_for(chunk), diffs))
     return tasks
+
+
+def focus_chunk_ids(tasks: list[Task]) -> set[str]:
+    return {t.chunk.id for t in tasks if t.focus}
 
 
 def system_prompt(gen_view: str) -> str:
     return PROMPTS["generationSystem"]["icp" if gen_view.startswith("icp") else "ap"]
 
 
-def user_prompt(source: str, difficulty: str, previous: list[str]) -> str:
+def user_prompt(source: str, difficulty: str, previous: list[str], focus: tuple[str, ...] = ()) -> str:
     user = f"Source material:\n\n[Source 1: {SOURCE_TYPE}]\n{source}\n\nDifficulty: {difficulty}"
     extra = PROMPTS["difficultyInstructions"].get(difficulty, "")
     if extra:
         user += f"\n\n{extra}"
+    if focus:
+        user += "\n\n" + PROMPTS["icpFocusInstruction"] + "\n" + "\n".join(f"- {line}" for line in focus)
     if previous:
         user += "\n\nPreviously asked questions (do NOT repeat these):\n" + "\n".join(f"- {q}" for q in previous)
     return user
@@ -220,7 +257,7 @@ class Runner:
         self.max_usd = max_usd
         self.lock = threading.Lock()
         existing = load_raw(self.raw_path)
-        self.done = {(r["chunk_id"], r["difficulty"]) for r in existing if r.get("ok")}
+        self.done = {(r["chunk_id"], r["difficulty"], bool(r.get("focus"))) for r in existing if r.get("ok")}
         self.previous: dict[str, list[str]] = {}
         for r in existing:
             if r.get("ok"):
@@ -242,7 +279,7 @@ class Runner:
     def run_task(self, task: Task) -> None:
         chunk = task.chunk
         for difficulty in task.difficulties:
-            if (chunk.id, difficulty) in self.done:
+            if (chunk.id, difficulty, bool(task.focus)) in self.done:
                 continue
             if self.spent >= self.max_usd:
                 return
@@ -256,6 +293,7 @@ class Runner:
                 "prompt_version": PROMPTS["promptVersion"],
                 "corpus_version": self.corpus.version,
                 "source_text": chunk.embed_text,
+                "focus": bool(task.focus),
                 "ok": False,
                 "cost_usd": 0.0,
             }
@@ -264,7 +302,7 @@ class Runner:
                 try:
                     text, usage = call_gemini(
                         self.transport, self.api_key, system_prompt(task.gen_view),
-                        user_prompt(chunk.embed_text, difficulty, previous),
+                        user_prompt(chunk.embed_text, difficulty, previous, task.focus),
                     )
                 except GenerationError as exc:
                     record["error"] = str(exc)
@@ -303,7 +341,10 @@ def _doc_label(doc) -> str:
 def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], dict]:
     chunks = {c.id: c for c in corpus.chunks}
     docs = {d.id: d for d in corpus.documents}
-    stats = {"stale": 0, "exact_duplicates": 0, "near_duplicates": 0, "ap_restricted": 0}
+    tasks = plan(corpus)
+    planned = {t.chunk.id for t in tasks}
+    focused = focus_chunk_ids(tasks)
+    stats = {"stale": 0, "unplanned": 0, "exact_duplicates": 0, "near_duplicates": 0, "ap_restricted": 0}
     kept: list[dict] = []
     hashes: set[str] = set()
     by_chunk: dict[str, list[str]] = {}
@@ -313,6 +354,9 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
         chunk = chunks.get(r["chunk_id"])
         if chunk is None or chunk.embed_text != r["source_text"]:
             stats["stale"] += 1
+            continue
+        if chunk.id not in planned or (chunk.id in focused) != bool(r.get("focus")):
+            stats["unplanned"] += 1
             continue
         h = content_hash(r["question_text"])
         if h in hashes:

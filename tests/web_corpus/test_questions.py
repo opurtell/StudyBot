@@ -158,7 +158,7 @@ def test_export_dedupes_drops_stale_rows_and_loads_into_d1_schema(tmp_path, corp
     ]
     questions, stats = qb.select_questions(corpus, records)
     assert [q["question_text"] for q in questions] == ["What is the patient's first priority?", "Which adenosine dose is used?"]
-    assert stats == {"stale": 1, "exact_duplicates": 1, "near_duplicates": 1, "ap_restricted": int("ap" in second.views)}
+    assert stats == {"stale": 1, "unplanned": 0, "exact_duplicates": 1, "near_duplicates": 1, "ap_restricted": int("ap" in second.views)}
     assert questions[0]["source_citation"].startswith("ACTAS ")
     assert questions[0]["id"] == questions[0]["content_hash"][:16]
 
@@ -184,3 +184,30 @@ def test_export_dedupes_drops_stale_rows_and_loads_into_d1_schema(tmp_path, corp
 def test_generate_needs_explicit_confirmation(tmp_path, capsys):
     assert qb.main(["generate", "--out", str(tmp_path), "--limit", "2"], transport=FakeGemini()) == 1
     assert "--yes" in capsys.readouterr().out
+
+
+def _chunk(chunk_id, text, views, heading="#### Management", doc="CMG_99_Test"):
+    return corpus_build.Chunk(chunk_id, doc, 0, heading, text, f"[ACTAS CMG 99]\n{heading}\n{text}", set(views))
+
+
+def test_icp_twins_of_ap_sections_get_one_question_on_the_icp_only_lines():
+    shared = "\n".join(f"- Shared management step number {i} for both levels." for i in range(12))
+    ap = _chunk("ap1", shared, {"ap", "ap_pacer", "icp", "icp_pacer"})
+    icp = _chunk("icp1", shared + "\n- **ICP:** Consider adrenaline infusion if refractory.", {"icp", "icp_pacer"})
+    lone = _chunk("icp2", "- **ICP:** RSI drug sequence step. " * 15, {"icp", "icp_pacer"}, heading="#### RSI")
+    corpus = corpus_build.Corpus("v", "t", None, [], [ap, icp, lone])
+    tasks = {t.chunk.id: t for t in qb.plan(corpus)}
+    assert tasks["ap1"].difficulties == ("easy", "medium", "hard") and tasks["ap1"].focus == ()
+    assert tasks["icp1"].difficulties == ("medium",)
+    assert tasks["icp1"].focus == ("- **ICP:** Consider adrenaline infusion if refractory.",)
+    assert tasks["icp2"].focus == ()
+    prompt = qb.user_prompt(icp.embed_text, "medium", [], tasks["icp1"].focus)
+    assert qb.PROMPTS["icpFocusInstruction"] in prompt and prompt.endswith("refractory.")
+
+
+def test_icp_twins_with_trivial_differences_are_skipped():
+    shared = "\n".join(f"- Shared management step number {i} for both levels." for i in range(12))
+    ap = _chunk("ap1", shared, {"ap", "ap_pacer"})
+    icp = _chunk("icp1", shared + "\n- ICP.", {"icp", "icp_pacer"})
+    tasks = qb.plan(corpus_build.Corpus("v", "t", None, [], [ap, icp]))
+    assert [t.chunk.id for t in tasks] == ["ap1"]

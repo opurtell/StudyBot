@@ -51,12 +51,17 @@ else. The build stops if any input isn't ACTAS guideline content, and D1 rejects
 rules in `src/python/guidelines/actas_scope.py`. Each chunk records which of those views can see it (`vis_*` columns and
 Vectorize metadata), so AP users never get ICP-only text.
 
+**No pooled dose tables:** the scrape's `dose_lookup` tables pool every medicine's dose lines from across the CMG app
+and attach the whole pool to any guideline that mentions the medicine, so the oxygen table (RSI pre-oxygenation and
+all) appeared under 45 unrelated guidelines. The web build leaves them out (Oscar's bank review, 2026-11-02). Doses are
+still in each guideline's own text and in the medicine monographs.
+
 **Versions:** `corpus_version` is a hash of the build output, so an unchanged corpus gives the same version. Loading is
 an upsert: unchanged chunks keep their embeddings, changed ones are re-embedded, and chunks that disappear are marked
 retired and then removed from Vectorize and D1 by the next sync.
 
-**Embeddings:** Workers AI `@cf/baai/bge-base-en-v1.5` (768 dimensions) into Vectorize, both on the free plan. About 760
-chunks, so roughly 0.6M of the 5M free stored dimensions. The sync runs from the daily cron, or straight away from
+**Embeddings:** Workers AI `@cf/baai/bge-base-en-v1.5` (768 dimensions) into Vectorize, both on the free plan. About 450
+chunks, so roughly 0.35M of the 5M free stored dimensions. The sync runs from the daily cron, or straight away from
 **Account > Guideline corpus > Sync search index** (admins only).
 
 ### Loading the corpus into production (Oscar's Mac)
@@ -116,6 +121,7 @@ Run from the repo root on an up-to-date `main`, after the corpus is loaded. Need
 4. **Export:** `cd web && npm run bank:export`
    *Writes `questions.sql`, `review-sample.csv` (60 rows across scope and difficulty) and `report.json` to `corpus-build/questions/`.*
 5. **Clinical review:** Oscar rates `review-sample.csv` before anything is loaded.
+   *ICP chunks that nearly repeat an AP chunk of the same section get one question aimed at their ICP-only lines, so the bank doesn't hold ICP-only copies of AP questions.*
 6. **Load:** `npm run bank:load:production`
    *Rows whose source chunk doesn't match the loaded corpus are skipped, so a bank built against an old corpus can't load stale questions.*
 

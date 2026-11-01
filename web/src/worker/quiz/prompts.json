@@ -81,5 +81,6 @@
       "feedback_summary"
     ]
   },
-  "icpMentionPattern": "\\b(adenosine|amiodarone|calcium chloride|heparin|hydrocortisone|levetiracetam|sodium bicarbonate|suxamethonium|ICP|intensive care paramedic|intubat\\w*|RSI|(?:external |transcutaneous )?pacing)\\b|(?<!topical )\\blignocaine\\b"
+  "icpMentionPattern": "\\b(adenosine|amiodarone|calcium chloride|heparin|hydrocortisone|levetiracetam|sodium bicarbonate|suxamethonium|ICP|intensive care paramedic|intubat\\w*|RSI|(?:external |transcutaneous )?pacing)\\b|(?<!topical )\\blignocaine\\b",
+  "icpFocusInstruction": "This source is the ICP version of a section that AP paramedics also study. The question must test the ICP-only content below, not material both levels share:"
 }

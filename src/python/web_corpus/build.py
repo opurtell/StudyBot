@@ -24,7 +24,7 @@ from guidelines import actas_scope as scope
 from guidelines.markdown import normalise_markdown_syntax
 from paths import APP_ROOT, service_structured_dir
 
-BUILDER_VERSION = "1"
+BUILDER_VERSION = "2"
 SERVICE_ID = "actas"
 SOURCE_TYPE = "guideline"
 ALLOWED_SOURCE_TYPES = frozenset({SOURCE_TYPE})
@@ -241,24 +241,6 @@ def _document_scope(data: dict, bodies: dict[str, str]) -> str:
     return "all" if len(set(bodies.values())) == 1 else "mixed"
 
 
-def _dose_groups(data: dict, whole: str | None) -> list[tuple[str, str, list[str]]]:
-    groups: dict[tuple[str, str], list[str]] = {}
-    for medicine, entries in (data.get("dose_lookup") or {}).items():
-        if not isinstance(entries, list):
-            continue
-        seen: set[str] = set()
-        for entry in entries:
-            if not isinstance(entry, dict) or entry.get("source"):
-                continue
-            text = decode_literal_escapes(entry.get("text") or "").strip()
-            if not text or text in seen:
-                continue
-            seen.add(text)
-            entry_scope, _ = scope.dose_entry_scope(medicine, text, whole == scope.ICP)
-            groups.setdefault((medicine, entry_scope), []).append(f"- {text}")
-    return [(medicine, entry_scope, lines) for (medicine, entry_scope), lines in sorted(groups.items())]
-
-
 def build_document(data: dict) -> tuple[Document, list[Chunk]]:
     content = normalise_markdown_syntax(decode_literal_escapes(data.get("content_markdown") or ""))
     segments = scope.classify(data, content)
@@ -292,10 +274,6 @@ def build_document(data: dict) -> tuple[Document, list[Chunk]]:
         for heading, section_text in merge_sections(sections(bodies[view])):
             for piece in pack(section_text):
                 add(heading, piece, [view])
-
-    for medicine, entry_scope, lines in _dose_groups(data, whole):
-        for piece in pack("\n".join(lines)):
-            add(f"Dose lookup: {medicine}", piece, SCOPE_VIEWS[entry_scope])
 
     return doc, list(chunks.values())
 
