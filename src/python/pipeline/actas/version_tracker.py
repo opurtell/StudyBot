@@ -11,11 +11,13 @@ import os
 from datetime import datetime, timezone
 from typing import Any
 
+from paths import service_structured_dir
+
 logger = logging.getLogger(__name__)
 
 
 def update_version_tracking(
-    structured_dir: str = "data/cmgs/structured/",
+    structured_dir: str = str(service_structured_dir("actas")),
     tracking_csv: str = "data/cmgs/version_tracking.csv",
 )-> dict[str, Any]:
     """Update version tracking CSV against structured CMGs."""
@@ -98,7 +100,7 @@ def update_version_tracking(
 
 
 def generate_manifest(
-    structured_dir: str = "data/cmgs/structured/",
+    structured_dir: str = str(service_structured_dir("actas")),
     source: str = "cmg.ambulance.act.gov.au",
     pipeline_version: str = "1",
 ) -> dict:

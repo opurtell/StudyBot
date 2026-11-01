@@ -17,7 +17,7 @@ from guidelines.router import invalidate_guideline_cache
 from medication.router import invalidate_medication_cache
 from pipeline.actas.refresh import load_refresh_status, start_refresh_in_background
 from paths import CHROMA_DB_DIR, SETTINGS_PATH as _SETTINGS_PATH
-from paths import resolve_cmg_structured_dir
+from paths import resolve_service_structured_dir
 from seed import get_seed_status as _get_seed_status
 from services.active import active_service
 
@@ -213,9 +213,13 @@ def run_cmg_refresh() -> dict:
         raise HTTPException(status_code=409, detail=str(exc))
 
 
+def _actas_structured_dir() -> Path:
+    return resolve_service_structured_dir("actas")
+
+
 @router.get("/cmg-manifest")
 def get_cmg_manifest() -> dict:
-    structured_dir = resolve_cmg_structured_dir()
+    structured_dir = _actas_structured_dir()
     manifest_path = structured_dir / ".manifest.json"
     if not manifest_path.exists():
         raise HTTPException(status_code=404, detail="No CMG manifest found")
@@ -227,7 +231,7 @@ def _run_cmg_rebuild_in_background() -> None:
     global _rebuild_status
     try:
         from pipeline.actas.chunker import chunk_and_ingest
-        chunk_and_ingest(structured_dir=str(resolve_cmg_structured_dir()))
+        chunk_and_ingest(structured_dir=str(_actas_structured_dir()))
         with _rebuild_lock:
             _rebuild_status = {
                 "is_running": False,

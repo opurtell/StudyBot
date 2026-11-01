@@ -2,7 +2,7 @@ import json
 import os
 import pytest
 
-STRUCTURED_DIR = "data/cmgs/structured"
+STRUCTURED_DIR = "data/services/actas/structured"
 MED_DIR = f"{STRUCTURED_DIR}/med"
 
 

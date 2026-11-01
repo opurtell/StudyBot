@@ -12,10 +12,11 @@ extraResources:
       - "**/*"
   - from: config/settings.example.json
     to: config/settings.example.json
-  - from: data/cmgs/structured
-    to: data/cmgs/structured
+  - from: data/services
+    to: data/services
     filter:
-      - "**/*.json"
+      - "*/structured/**/*.json"
+      - "*/medications/**/*.json"
   - from: build/resources/data/services
     to: data/services
     filter:

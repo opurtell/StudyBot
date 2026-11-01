@@ -121,7 +121,8 @@ resources/
       src/python/...
   app-root/
     config/settings.example.json
-    data/cmgs/...
+    data/services/<id>/structured/...   (guidelines, csm/, med/)
+    data/services/<id>/medications/...
     data/chroma_db/...
     data/... other bundled read-only runtime seeds
 ```
@@ -363,6 +364,7 @@ When major repo changes land and a new app build is needed, use this sequence:
 | 2026-04-08 | Ad-hoc macOS signing with hardenedRuntime and entitlements | Free alternative to paid Apple Developer signing. `identity: "-"` triggers `codesign --sign -` without a certificate. Entitlements (`allow-jit`, `allow-unsigned-executable-memory`, `disable-library-validation`) are required for Electron + bundled Python under hardenedRuntime. Gatekeeper still warns but the warning is bypassable. | Active |
 | 2026-04-08 | Configure Windows `signingHashAlgorithms` for future Authenticode signing | electron-builder is ready to sign Windows builds when `CSC_LINK`/`CSC_KEY_PASSWORD` env vars are provided. No cert is bundled; unsigned builds work as before. | Active |
 | 2026-04-08 | Set window title from `extraMetadata.displayName` injected into built package.json | `productName` controls the macOS bundle name and Windows executable name correctly, but the HTML `<title>` (which drives the window title bar and taskbar) was still "Clinical Recall Assistant". Each electron-builder config now injects a `displayName` field into the built app's `package.json` via `extraMetadata`. `main.js` reads this at startup and sets the BrowserWindow `title`, then blocks `page-title-updated` to prevent the renderer from overriding it. | Active |
+| 2026-11-01 | Bundle per-service structured JSON from `data/services/*/structured/` and `data/services/*/medications/`; drop the legacy `data/cmgs/structured/` bundle | ACTAS clinical skills (`csm/`) and medicine monographs (`med/`) now live under `data/services/actas/structured/`, which the routers and chunker read. The legacy folder was a stale duplicate without scope tags, and the per-service folder was never bundled, so packaged builds read guidelines from the wrong place. Not yet verified on a real macOS/Windows build | Active |
 
 ## Personal Build Workflow
 
@@ -453,6 +455,12 @@ Add dated entries here as packaging work progresses. Record failures as well as 
 - **Root cause:** `package-backend.ps1` copied `python.exe`, `Lib/`, and `DLLs/` but missed the top-level DLLs (`python312.dll`, `python3.dll`, `vcruntime140.dll`, etc.) that sit alongside `python.exe` in the python-build-standalone distribution. Windows needs these in the same directory as the executable.
 - **Fix:** Added a `Get-ChildItem -Filter "*.dll"` pass after copying executables to stage all top-level DLLs into the output directory.
 - **Lesson:** The macOS script already had a `lib/libpython*.dylib` copy step, but the Windows equivalent was missing. When staging standalone Python runtimes, always verify that shared libraries (`.dll`/`.dylib`/`.so`) at the executable level are included.
+
+### 2026-11-01 — Per-service structured data bundle
+
+- `electron-builder.yml` and `electron-builder.personal.yml` now copy `data/services` (filtered to `*/structured/**/*.json` and `*/medications/**/*.json`) to `data/services` in the app root, alongside the pre-built ChromaDB trees from `build/resources/data/services`. Both sources land in the same target folder.
+- `data/cmgs/structured/` was removed from the repo. ACTAS skills and monographs moved to `data/services/actas/structured/{csm,med}/`.
+- **Check on the next build:** the packaged app's Guidelines and Medication pages list CMGs, skills and medicines, and `Resources/data/services/actas/` holds both `structured/` and `chroma/`.
 
 ### 2026-04-06 — Per-architecture Mac build fix
 

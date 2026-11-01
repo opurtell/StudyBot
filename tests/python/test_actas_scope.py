@@ -17,7 +17,7 @@ def _load(pattern: str) -> dict:
 
 
 def _med(prefix: str) -> dict:
-    return _load(f"data/cmgs/structured/med/{prefix}_*.json")
+    return _load(f"data/services/actas/structured/med/{prefix}_*.json")
 
 
 def _cmg(prefix: str) -> dict:
@@ -25,7 +25,7 @@ def _cmg(prefix: str) -> dict:
 
 
 def _csm(code: str) -> dict:
-    return _load(f"data/cmgs/structured/csm/CMG_CSM.{code}_*.json")
+    return _load(f"data/services/actas/structured/csm/CMG_CSM.{code}_*.json")
 
 
 @pytest.mark.parametrize(

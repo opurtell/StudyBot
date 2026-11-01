@@ -199,9 +199,8 @@ StudyBot/
 │       └── styles/
 │           └── global.css             # Tailwind layers + CSS custom properties (light/dark)
 ├── data/                              # Processed data stores (gitignored, user-local)
-│   ├── services/<id>/structured/      # Per-service guideline JSON (bundled in packaged app via electron-builder.yml)
+│   ├── services/<id>/structured/      # Per-service guideline JSON; ACTAS skills in csm/, monographs in med/ (bundled via electron-builder.yml)
 │   ├── services/<id>/medications/     # Per-service medication data
-│   ├── cmgs/structured/               # Legacy ACTAS CMG path (deprecated — use services/actas/)
 │   ├── notes_md/raw/                  # Extracted uncleaned notability markdown
 │   ├── notes_md/cleaned/              # LLM-cleaned notability markdown (380 files)
 │   ├── personal_docs/structured/      # Structured REFdocs + CPDdocs (11 files)

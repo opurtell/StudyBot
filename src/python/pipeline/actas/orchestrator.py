@@ -16,6 +16,8 @@ from .flowcharts import process_flowcharts
 from .structurer import structure_guidelines
 from .chunker import chunk_and_ingest
 from .version_tracker import update_version_tracking
+from .discover_metadata import discover_metadata
+from .version_dates import apply_version_dates
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
@@ -31,6 +33,7 @@ ALL_STAGES = [
     "merge",
     "flowcharts",
     "structure",
+    "dates",
     "chunk",
     "version",
 ]
@@ -89,6 +92,11 @@ def run_pipeline(
     if "structure" in stages_to_run:
         logger.info("=== Stage 6: Structuring ===")
         structure_guidelines()
+
+    if "dates" in stages_to_run:
+        logger.info("=== Stage 6b: Version Dates ===")
+        discover_metadata()
+        result["version_dates"] = apply_version_dates()
 
     if "chunk" in stages_to_run:
         logger.info("=== Stage 7: Chunking & Ingestion ===")
