@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_27",
+      "guideline_id": "",
       "cmg_number": "27",
       "source_file": "CMG_27_Hyperkalaemia.json",
       "source_title": "Hyperkalaemia",
@@ -35,13 +35,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
   "total_entries": 1,
-  "sources": [
-    "CMG_27"
-  ]
+  "sources": []
 }

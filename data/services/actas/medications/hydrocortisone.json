@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_43",
+      "guideline_id": "",
       "cmg_number": "43",
       "source_file": "CMG_43_Adrenal_Crisis.json",
       "source_title": "Adrenal Crisis",
@@ -28,7 +28,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_43",
+      "guideline_id": "",
       "cmg_number": "43",
       "source_file": "CMG_43_Adrenal_Crisis.json",
       "source_title": "Adrenal Crisis",
@@ -73,7 +73,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_9",
+      "guideline_id": "",
       "cmg_number": "9",
       "source_file": "CMG_9_Respiratory_Distress.json",
       "source_title": "Respiratory Distress",
@@ -98,7 +98,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_9",
+      "guideline_id": "",
       "cmg_number": "9",
       "source_file": "CMG_9_Respiratory_Distress.json",
       "source_title": "Respiratory Distress",
@@ -144,8 +144,5 @@
     }
   ],
   "total_entries": 4,
-  "sources": [
-    "CMG_43",
-    "CMG_9"
-  ]
+  "sources": []
 }

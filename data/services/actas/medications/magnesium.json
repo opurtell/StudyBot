@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -27,12 +27,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -60,12 +60,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -89,12 +89,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -118,12 +118,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -147,12 +147,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -176,12 +176,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -205,12 +205,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -234,12 +234,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -263,12 +263,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -292,12 +292,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -321,12 +321,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -350,12 +350,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -379,12 +379,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -408,12 +408,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -437,12 +437,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -466,12 +466,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -495,12 +495,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -524,12 +524,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -553,12 +553,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -582,12 +582,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -611,12 +611,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -640,12 +640,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -669,12 +669,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -686,12 +686,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -707,12 +707,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -728,24 +728,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
       "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -761,12 +761,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -778,12 +778,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -795,12 +795,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26C",
       "source_file": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies.json",
       "source_title": "Other Obstetric and Gynaecological Emergencies",
@@ -876,12 +876,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -905,12 +905,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -938,12 +938,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -967,12 +967,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -996,12 +996,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1025,12 +1025,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1054,12 +1054,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1083,12 +1083,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1112,12 +1112,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1141,12 +1141,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1170,12 +1170,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1199,12 +1199,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1228,12 +1228,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1257,12 +1257,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1286,12 +1286,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1315,12 +1315,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1344,12 +1344,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1373,12 +1373,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1402,12 +1402,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1431,12 +1431,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1460,12 +1460,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1489,12 +1489,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1518,12 +1518,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1547,12 +1547,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1564,12 +1564,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1585,12 +1585,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1606,24 +1606,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
       "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1639,12 +1639,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1656,12 +1656,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1673,12 +1673,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -1754,12 +1754,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1783,12 +1783,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1816,12 +1816,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1845,12 +1845,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1874,12 +1874,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1903,12 +1903,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1932,12 +1932,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1961,12 +1961,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1990,12 +1990,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2019,12 +2019,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2048,12 +2048,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2077,12 +2077,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2106,12 +2106,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2135,12 +2135,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2164,12 +2164,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2193,12 +2193,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2222,12 +2222,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2251,12 +2251,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2280,12 +2280,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2309,12 +2309,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2338,12 +2338,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2367,12 +2367,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2396,12 +2396,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2425,12 +2425,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2442,12 +2442,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2463,12 +2463,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2484,24 +2484,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
       "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2517,12 +2517,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2534,12 +2534,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2551,12 +2551,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -2632,12 +2632,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2661,12 +2661,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2694,12 +2694,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2723,12 +2723,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2752,12 +2752,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2781,12 +2781,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2810,12 +2810,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2839,12 +2839,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2868,12 +2868,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2897,12 +2897,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2926,12 +2926,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2955,12 +2955,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2984,12 +2984,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3013,12 +3013,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3042,12 +3042,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3071,12 +3071,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3100,12 +3100,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3129,12 +3129,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3158,12 +3158,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3187,12 +3187,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3216,12 +3216,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3245,12 +3245,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3274,12 +3274,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3303,12 +3303,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3320,12 +3320,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3341,12 +3341,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3362,24 +3362,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
       "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3395,12 +3395,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3412,12 +3412,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3429,12 +3429,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -3510,16 +3510,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
   "total_entries": 124,
-  "sources": [
-    "CMG_26",
-    "CMG_4",
-    "CMG_5",
-    "CMG_8"
-  ]
+  "sources": []
 }

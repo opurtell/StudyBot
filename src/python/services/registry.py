@@ -67,6 +67,9 @@ REGISTRY: tuple[Service, ...] = (
                 Base("AP", "Ambulance Paramedic"),
                 Base("ICP", "Intensive Care Paramedic", implies=("AP",)),
             ),
+            endorsements=(
+                Endorsement("PACER", "PACER", requires_base=("AP", "ICP")),
+            ),
         ),
         adapter="src.python.pipeline.actas",
         category_mapping_doc="Guides/categories-actas.md",

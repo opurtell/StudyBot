@@ -14,7 +14,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from paths import CHROMA_DB_DIR
 
 from .models import CMGGuideline
-from guidelines.markdown import has_icp_content, strip_icp_content
+from guidelines import actas_scope as scope
 
 logger = logging.getLogger(__name__)
 
@@ -124,164 +124,74 @@ def chunk_and_ingest(
                 data = json.load(f)
 
             cmg = CMGGuideline(**data)
+            source_file = os.path.basename(file_path)
+            whole_scope = scope.document_scope(data)
 
-            # Very basic markdown splitting by headers
-            # A more advanced logic would be to use MarkdownHeaderTextSplitter
-            sections = cmg.content_markdown.split("\n# ")
-
-            for section in sections:
-                if not section.strip():
-                    continue
-
-                chunk_type = determine_chunk_type(section)
-                max_tok = MAX_TOKENS[chunk_type]
-
-                # Approximate token size using characters
-                splitter = RecursiveCharacterTextSplitter(
-                    chunk_size=max_tok * 4, chunk_overlap=50
-                )
-
-                chunks = splitter.split_text(section)
-
-                for idx, chunk_text in enumerate(chunks):
-                    chunk_has_icp = has_icp_content(chunk_text)
-
-                    if cmg.is_icp_only:
-                        # Whole guideline is ICP-only — single chunk
-                        visibility = "icp"
-                        chunk_id = f"{cmg.id}_{chunk_type}_{idx}"
-                        metadata = {
+            def add_chunk(chunk_id: str, text: str, visibility: str, chunk_type: str) -> None:
+                collection.add(
+                    ids=[chunk_id],
+                    documents=[text],
+                    metadatas=[
+                        {
                             "source_type": "cmg",
-                            "source_file": os.path.basename(file_path),
+                            "source_file": source_file,
                             "cmg_number": cmg.cmg_number,
                             "section": cmg.section,
-                            "is_icp_only": True,
+                            "is_icp_only": whole_scope == scope.ICP,
                             "visibility": visibility,
                             "chunk_type": chunk_type,
                             "last_modified": cmg.extraction_metadata.timestamp,
                         }
-                        collection.add(
-                            ids=[chunk_id], documents=[chunk_text], metadatas=[metadata]
-                        )
-                        total_chunks += 1
-                    elif chunk_has_icp:
-                        # Mixed chunk — store two versions
-                        # ICP version (full content)
-                        icp_id = f"{cmg.id}_{chunk_type}_{idx}_icp"
-                        metadata_icp = {
-                            "source_type": "cmg",
-                            "source_file": os.path.basename(file_path),
-                            "cmg_number": cmg.cmg_number,
-                            "section": cmg.section,
-                            "is_icp_only": False,
-                            "visibility": "icp",
-                            "chunk_type": chunk_type,
-                            "last_modified": cmg.extraction_metadata.timestamp,
-                        }
-                        collection.add(
-                            ids=[icp_id], documents=[chunk_text], metadatas=[metadata_icp]
-                        )
-                        total_chunks += 1
+                    ],
+                )
 
-                        # AP version (stripped content)
-                        ap_id = f"{cmg.id}_{chunk_type}_{idx}_ap"
-                        stripped = strip_icp_content(chunk_text)
-                        metadata_ap = {
-                            "source_type": "cmg",
-                            "source_file": os.path.basename(file_path),
-                            "cmg_number": cmg.cmg_number,
-                            "section": cmg.section,
-                            "is_icp_only": False,
-                            "visibility": "ap",
-                            "chunk_type": chunk_type,
-                            "last_modified": cmg.extraction_metadata.timestamp,
-                        }
-                        collection.add(
-                            ids=[ap_id], documents=[stripped], metadatas=[metadata_ap]
-                        )
-                        total_chunks += 1
-                    else:
-                        # No ICP content — shared chunk
-                        chunk_id = f"{cmg.id}_{chunk_type}_{idx}"
-                        metadata = {
-                            "source_type": "cmg",
-                            "source_file": os.path.basename(file_path),
-                            "cmg_number": cmg.cmg_number,
-                            "section": cmg.section,
-                            "is_icp_only": False,
-                            "visibility": "both",
-                            "chunk_type": chunk_type,
-                            "last_modified": cmg.extraction_metadata.timestamp,
-                        }
-                        collection.add(
-                            ids=[chunk_id], documents=[chunk_text], metadatas=[metadata]
+            segments = scope.classify(data)
+            full_text = scope.render(segments, {"AP", "ICP", "PACER"})
+            ap_only = scope.render(segments, {"AP"})
+
+            if whole_scope is not None:
+                variants = [(full_text, whole_scope, "")]
+            elif ap_only == full_text:
+                variants = [(full_text, "both", "")]
+            else:
+                variants = [(full_text, "icp", "_icp"), (ap_only, "ap", "_ap")]
+
+            for variant_text, visibility, suffix in variants:
+                for sec_idx, section in enumerate(variant_text.split("\n# ")):
+                    if not section.strip():
+                        continue
+                    chunk_type = determine_chunk_type(section)
+                    splitter = RecursiveCharacterTextSplitter(
+                        chunk_size=MAX_TOKENS[chunk_type] * 4, chunk_overlap=50
+                    )
+                    for idx, chunk_text in enumerate(splitter.split_text(section)):
+                        add_chunk(
+                            f"{cmg.id}_{sec_idx}_{chunk_type}_{idx}{suffix}",
+                            chunk_text,
+                            visibility,
+                            chunk_type,
                         )
                         total_chunks += 1
 
             if cmg.dose_lookup:
-                dose_chunks = _dose_lookup_to_chunks(cmg.dose_lookup)
-                for dose_idx, dose_text in enumerate(dose_chunks):
-                    dose_has_icp = has_icp_content(dose_text)
-
-                    if cmg.is_icp_only:
-                        visibility = "icp"
-                        chunk_id = f"{cmg.id}_dose_lookup_{dose_idx}"
-                    elif dose_has_icp:
-                        # ICP version
-                        icp_id = f"{cmg.id}_dose_lookup_{dose_idx}_icp"
-                        meta_icp = {
-                            "source_type": "cmg",
-                            "source_file": os.path.basename(file_path),
-                            "cmg_number": cmg.cmg_number,
-                            "section": cmg.section,
-                            "is_icp_only": False,
-                            "visibility": "icp",
-                            "chunk_type": "dosage",
-                            "last_modified": cmg.extraction_metadata.timestamp,
-                        }
-                        collection.add(
-                            ids=[icp_id], documents=[dose_text], metadatas=[meta_icp]
-                        )
-                        total_chunks += 1
-
-                        # AP version
-                        ap_id = f"{cmg.id}_dose_lookup_{dose_idx}_ap"
-                        stripped = strip_icp_content(dose_text)
-                        meta_ap = {
-                            "source_type": "cmg",
-                            "source_file": os.path.basename(file_path),
-                            "cmg_number": cmg.cmg_number,
-                            "section": cmg.section,
-                            "is_icp_only": False,
-                            "visibility": "ap",
-                            "chunk_type": "dosage",
-                            "last_modified": cmg.extraction_metadata.timestamp,
-                        }
-                        collection.add(
-                            ids=[ap_id], documents=[stripped], metadatas=[meta_ap]
-                        )
-                        total_chunks += 1
+                by_scope: Dict[str, Dict[str, Any]] = {}
+                for med_name, entries in cmg.dose_lookup.items():
+                    if not isinstance(entries, list):
                         continue
-                    else:
-                        visibility = "both"
-                        chunk_id = f"{cmg.id}_dose_lookup_{dose_idx}"
-
-                    if not dose_has_icp or cmg.is_icp_only:
-                        collection.add(
-                            ids=[chunk_id],
-                            documents=[dose_text],
-                            metadatas=[
-                                {
-                                    "source_type": "cmg",
-                                    "source_file": os.path.basename(file_path),
-                                    "cmg_number": cmg.cmg_number,
-                                    "section": cmg.section,
-                                    "is_icp_only": cmg.is_icp_only,
-                                    "visibility": visibility,
-                                    "chunk_type": "dosage",
-                                    "last_modified": cmg.extraction_metadata.timestamp,
-                                }
-                            ],
+                    for entry in entries:
+                        if not isinstance(entry, dict):
+                            continue
+                        entry_scope, _ = scope.dose_entry_scope(
+                            med_name, entry.get("text", ""), whole_scope == scope.ICP
+                        )
+                        by_scope.setdefault(entry_scope, {}).setdefault(med_name, []).append(entry)
+                for visibility, lookup in sorted(by_scope.items()):
+                    for dose_idx, dose_text in enumerate(_dose_lookup_to_chunks(lookup)):
+                        add_chunk(
+                            f"{cmg.id}_dose_lookup_{visibility}_{dose_idx}",
+                            dose_text,
+                            visibility,
+                            "dosage",
                         )
                         total_chunks += 1
 

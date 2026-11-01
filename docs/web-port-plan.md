@@ -146,6 +146,7 @@ Each phase ends with a written handoff in `docs/NEXT_SESSION.md`. Use Opus for P
 - Rotate the three API keys in `config/settings.json`; confirm `.env`/`settings.json` are not in git history.
 - Delete `studyBotcode-archive/` duplicate and orphan root scripts only **after** asking Oscar (archive rule in root CLAUDE.md).
 - Create a new repo/folder for the web build so the desktop app remains maintainable; keep this plan with it.
+- **Rescrape the ACTAS CMGs before the rewrite.** The scraped data is out of date (for example CSM.C07 is missing). Re-run the ACTAS pipeline, then re-run `scripts/backfill_actas_qualifications.py` and `scripts/report_actas_scope.py`, and have Oscar check the new scope report (`docs/review/actas-scope-tagging.md`) before Phase 3 builds the corpus from it.
 
 ### Phase 1: Thorough review (REQUIRED before any build)
 Output: `docs/review/web-port-review.md` with severity-ranked findings and a go/no-go per area. Slices, each reviewable in isolation:

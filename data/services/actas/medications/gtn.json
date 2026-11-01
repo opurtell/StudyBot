@@ -3,7 +3,43 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_18",
+      "guideline_id": "",
+      "cmg_number": "16",
+      "source_file": "CMG_16_Suspected_ACS__Acute_Coronary_Syndrome_.json",
+      "source_title": "Suspected ACS (Acute Coronary Syndrome)",
+      "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "",
+      "cmg_number": "16",
+      "source_file": "CMG_16_Suspected_ACS__Acute_Coronary_Syndrome_.json",
+      "source_title": "Suspected ACS (Acute Coronary Syndrome)",
+      "text": "Respiratory rate: ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "",
+      "cmg_number": "16",
+      "source_file": "CMG_16_Suspected_ACS__Acute_Coronary_Syndrome_.json",
+      "source_title": "Suspected ACS (Acute Coronary Syndrome)",
+      "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients ",
+      "dose_values": [],
+      "qualifications_required": [
+        "AP"
+      ],
+      "service": "actas"
+    },
+    {
+      "guideline_id": "",
       "cmg_number": "18A",
       "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
       "source_title": "Autonomic Dysreflexia",
@@ -15,7 +51,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_18",
+      "guideline_id": "",
       "cmg_number": "18A",
       "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
       "source_title": "Autonomic Dysreflexia",
@@ -27,7 +63,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_18",
+      "guideline_id": "",
       "cmg_number": "18A",
       "source_file": "CMG_18A_Autonomic_Dysreflexia.json",
       "source_title": "Autonomic Dysreflexia",
@@ -39,7 +75,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -51,7 +87,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -63,7 +99,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -75,7 +111,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_9",
+      "guideline_id": "",
       "cmg_number": "9",
       "source_file": "CMG_9_Respiratory_Distress.json",
       "source_title": "Respiratory Distress",
@@ -87,7 +123,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_9",
+      "guideline_id": "",
       "cmg_number": "9",
       "source_file": "CMG_9_Respiratory_Distress.json",
       "source_title": "Respiratory Distress",
@@ -99,7 +135,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_9",
+      "guideline_id": "",
       "cmg_number": "9",
       "source_file": "CMG_9_Respiratory_Distress.json",
       "source_title": "Respiratory Distress",
@@ -111,10 +147,6 @@
       "service": "actas"
     }
   ],
-  "total_entries": 9,
-  "sources": [
-    "CMG_18",
-    "CMG_2",
-    "CMG_9"
-  ]
+  "total_entries": 12,
+  "sources": []
 }
