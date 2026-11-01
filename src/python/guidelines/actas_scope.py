@@ -108,6 +108,7 @@ _ICP_DRUG_MENTION = re.compile(
     re.IGNORECASE,
 )
 _TOPICAL = re.compile(r"topical|LMX4|cream", re.IGNORECASE)
+_ICP_SKILL_MENTION = re.compile(r"\b(?:external |transcutaneous )?pacing\b", re.IGNORECASE)
 
 _ICP_LABEL = re.compile(
     r"\*\*\s*-?\s*ICP\s*(?::|only|\*\*)|^\s*-?\s*ICP:|\(ICP\)|\bICP\.\s*$"
@@ -182,6 +183,13 @@ def doc_kind(doc: dict) -> str:
 
 def doc_key(doc: dict) -> str:
     return f"{doc_kind(doc)}:{doc.get('cmg_number', '')}"
+
+
+def context_header(doc: dict) -> str:
+    """One line naming the document, so a chunk taken from its middle still says what it is about."""
+    label = {"med": "MED", "csm": "", "cmg": "CMG"}[doc_kind(doc)]
+    name = f"{label} {doc.get('cmg_number', '')}".strip()
+    return f"[ACTAS {name}: {doc.get('title', '')}]"
 
 
 def document_scope(doc: dict) -> str | None:
@@ -286,6 +294,8 @@ def classify(doc: dict, text: str | None = None) -> list[Segment]:
             scope, reason = carry
         elif kind != "med" and _ICP_DRUG_MENTION.search(line) and not _TOPICAL.search(line):
             scope, reason = ICP, "names an ICP-only medicine"
+        elif kind != "med" and _ICP_SKILL_MENTION.search(line):
+            scope, reason = ICP, "names an ICP-only skill (CSM.C05 external pacing)"
         else:
             scope, reason = BOTH, "unlabelled"
         segments.append(Segment(line, scope, reason, heading_path))

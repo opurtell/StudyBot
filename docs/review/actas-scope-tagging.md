@@ -414,6 +414,7 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | Shown to | Line | Why |
 |---|---|---|
 | ICP | - **ICP:** Treat significant arrhythmias if persistent | labelled ICP |
+| ICP | - **If bradycardic:** consider external pacing (preferred over adrenaline for ROSC bradycardia). | names an ICP-only skill (CSM.C05 external pacing) |
 | ICP | - **ICP:** Consider adrenaline infusion. | labelled ICP |
 
 ### CMG 4 Cardiac Arrest: Adult
@@ -451,6 +452,7 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | ICP | - **ICP:** If poorly perfused or symptomatic: | labelled ICP |
 | ICP | - **ICP:** Repeat atropine once, if required. | labelled ICP |
 | ICP | - **ICP:** If perfusion remains poor: | labelled ICP |
+| ICP | - External pacing (more appropriate in ROSC patients). | names an ICP-only skill (CSM.C05 external pacing) |
 
 ### CMG 8 Tachyarrhythmias
 
@@ -548,6 +550,7 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 
 | Shown to | Line | Why |
 |---|---|---|
+| ICP | External cardiac pacing \u2714 | names an ICP-only skill (CSM.C05 external pacing) |
 | ICP | Adenosine \u2714 | names an ICP-only medicine |
 | ICP | Amiodarone \u2714 | names an ICP-only medicine |
 | ICP | Calcium chloride \u2714 | names an ICP-only medicine |
