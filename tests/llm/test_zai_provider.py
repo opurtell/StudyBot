@@ -93,3 +93,9 @@ def test_list_models():
     models = provider.list_models()
     assert _DEFAULTS["zai"]["low"] in models
     assert _DEFAULTS["zai"]["medium"] in models
+
+
+def test_uses_international_zai_endpoint():
+    with patch("llm.zai_provider.ZhipuAI") as mock_cls:
+        ZaiProvider(api_key="test-key")
+    mock_cls.assert_called_once_with(api_key="test-key", base_url="https://api.z.ai/api/paas/v4")
