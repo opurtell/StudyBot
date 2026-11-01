@@ -81,7 +81,7 @@ and `wrangler` skills; do not rely on memory for limits or pricing):
 | Vector search | Vectorize for guideline chunks and question near-dup checks; embeddings via Workers AI |
 | LLM calls | **Gemini or GLM (Z.ai)**, chosen by Phase 1 benchmark; routed through AI Gateway if it supports the chosen provider (verify), for spend logs, rate limits and response caching. Keep the provider behind one small interface so switching is a config change |
 | Per-user quota counters | Durable Object (or D1 with atomic update) so concurrent requests cannot overshoot quota |
-| Auth | Email magic link or OAuth, email verification required, Turnstile on sign-up |
+| Auth | Email magic link only (OAuth later), Turnstile on sign-up |
 | Rate limiting / abuse | Workers rate limiting binding + per-IP caps for anonymous traffic |
 | Bulk pre-generation | Offline job (Queue/Workflow or local script) using the provider batch API, writes to the question bank |
 | Corpus build | **Stays Python, offline**: existing scrape/extract/chunk pipeline outputs structured JSON, a build script loads D1 + Vectorize. No Python runs in production |
@@ -163,7 +163,7 @@ Output: `docs/review/web-port-review.md` with severity-ranked findings and a go/
 Gate: Oscar reviews the findings and signs off on scope, hosting option, quota numbers and the content-rights position. Nothing in Phases 2+ starts before this. **Signed off 2026-11-01.**
 
 ### Phase 2: Foundations
-New repo with Workers project (`wrangler` config, dev/staging/prod environments), CI/CD, D1 migrations, secrets via Workers secrets, auth (magic link/OAuth) with email verification and Turnstile, rate limiting, AI Gateway set up with a spend cap, React shell on static assets, structured logging and error tracking. Deliverable: a deployed "hello world" with working sign-in and an anonymous/signed-in distinction in the API.
+New repo with Workers project (`wrangler` config, dev/staging/prod environments), CI/CD, D1 migrations, secrets via Workers secrets, auth (email magic link only) with Turnstile, rate limiting, AI Gateway set up with a spend cap, React shell on static assets, structured logging and error tracking. Deliverable: a deployed "hello world" with working sign-in and an anonymous/signed-in distinction in the API.
 
 ### Phase 3: Data layer and corpus (ACTAS only)
 Offline Python build step turns `data/services/actas/structured/` (guidelines, `csm/`, `med/`) into `corpus_chunks` rows in D1 plus embeddings in Vectorize, with `corpus_version`. Guidelines and medication read APIs served from D1/static JSON (the current pre-built `guidelines-index.json` / `medications-index.json` approach suits this). Admin-only refresh job replaces `/settings/cmg-refresh`, `/cmg-rebuild`, `/pipeline/rerun`. **Excluded from the web version:** all of Oscar's personal material (Notability notes, uni coursework, CPD docs, REF docs), enforced by a `source_type = "guideline"` allowlist in the build script plus a test that fails the build if any other type appears. **Deferred:** Ambulance Tasmania data and user uploads. Each corpus chunk and each question carries `source_type`, `licence` and `attribution` fields now, so a second source can be added later without a schema change.
@@ -221,6 +221,4 @@ Resolved at Phase 1 sign-off (Oscar, 2026-11-01; see `docs/review/web-port-revie
 - **Models:** Gemini 3.8 Flash for question generation and bank pre-seeding (batch API); Gemini 3.5 Flash-Lite for live marking. GLM isn't used: it credited wholly wrong answers in the benchmark (`docs/review/model-bench/README.md`). Because only Google receives user answers, the privacy policy names Google.
 - **Database:** D1 (the review found the data volumes are tiny against D1's limits).
 - **Quota:** keep the placeholders (20 generations and 30 marks per signed-in user per month). Oscar sets provider spend caps as the backstop, alongside the global circuit breaker.
-
-Still open, to settle in Phase 2:
-1. Auth method (magic link only vs also Google sign-in).
+- **Auth:** email magic link only for now (Oscar, 2026-11-01). Google sign-in can be added later.
