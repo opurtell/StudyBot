@@ -165,3 +165,11 @@ def test_literal_escapes_from_the_scrape_are_decoded(corpus):
     assert corpus_build.decode_literal_escapes(r"\u03b2 effects, 30\xb0C, \xbd tablet,\xa0x") == "\u03b2 effects, 30\xb0C, \xbd tablet, x"
     for doc in corpus.documents:
         assert not corpus_build._LITERAL_ESCAPE.search(doc.bodies["icp_pacer"]), doc.id
+
+
+def test_pooled_dose_lookups_never_become_chunks(tmp_path, corpus):
+    pooled = {"Oxygen": [{"text": "Pre-oxygenation for at least 3 mins", "source": None}]}
+    _write(tmp_path, _doc(dose_lookup=pooled))
+    built = corpus_build.build(tmp_path)
+    assert all("Pre-oxygenation" not in c.text for c in built.chunks)
+    assert not [c for c in corpus.chunks if c.heading.startswith("Dose lookup")]
