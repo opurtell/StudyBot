@@ -156,8 +156,16 @@ class Meter:
         self.calls = 0
 
     def call(self, client, messages: list[dict]) -> str:
-        started = time.time()
-        raw = client.complete(messages) or ""
+        for attempt in range(4):
+            started = time.time()
+            try:
+                raw = client.complete(messages) or ""
+                break
+            except LLMError as exc:
+                transient = any(code in str(exc) for code in ("429", "500", "503", "UNAVAILABLE"))
+                if not transient or "1113" in str(exc) or attempt == 3:
+                    raise
+                time.sleep(5 * 2 ** attempt)
         self.times.append(time.time() - started)
         self.chars_in += sum(len(m["content"]) for m in messages)
         self.chars_out += len(raw)
@@ -308,7 +316,8 @@ def generate_sample(spec: str, plan: list[dict]) -> tuple[list[dict], dict]:
             "question": (parsed or {}).get("question_text") or f"[UNPARSEABLE] {raw[:200]}",
             "citation": (parsed or {}).get("source_citation", ""),
         })
-    hashes = [hashlib.sha1(_normalise(r["question"]).encode()).hexdigest() for r in rows]
+    hashes = [hashlib.sha1(_normalise(r["question"]).encode()).hexdigest()
+              for r in rows if not r["question"].startswith(("[ERROR]", "[UNPARSEABLE]"))]
     per_call = cost(model, meter.chars_in, meter.chars_out)
     stats = {
         "model": spec,
