@@ -127,10 +127,12 @@ def chunk_and_ingest(
             source_file = os.path.basename(file_path)
             whole_scope = scope.document_scope(data)
 
+            context = scope.context_header(data)
+
             def add_chunk(chunk_id: str, text: str, visibility: str, chunk_type: str) -> None:
                 collection.add(
                     ids=[chunk_id],
-                    documents=[text],
+                    documents=[f"{context}\n{text}"],
                     metadatas=[
                         {
                             "source_type": "cmg",

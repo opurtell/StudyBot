@@ -200,3 +200,14 @@ def test_structured_data_has_no_misfiled_doses():
             assert "4mg/kg IM" not in entry["text"], path
         for entry in lookup.get("Naloxone", []):
             assert "1.5mcg/kg IN" not in entry["text"], path
+
+
+def test_external_pacing_is_icp_in_guidelines():
+    for prefix in ("CMG_4A", "CMG_7"):
+        ap = scope.ap_text(_cmg(prefix))
+        assert "external pacing" not in ap.lower(), prefix
+
+
+def test_context_header_names_the_document():
+    assert scope.context_header(_med("MED_08")).startswith("[ACTAS MED 08: Droperidol")
+    assert scope.context_header(_csm("P03")).startswith("[ACTAS CSM.P03:")

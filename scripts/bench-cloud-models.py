@@ -285,7 +285,7 @@ def sample_plan(n: int, seed: int = 20261101) -> list[dict]:
             "difficulty": ("easy", "medium", "hard")[i % 3],
             "qualification": "ICP" if icp else "AP",
             "quals": quals,
-            "chunk": _chunk(text, rng),
+            "chunk": f"{actas_scope.context_header(doc)}\n{_chunk(text, rng)}",
         })
     return plan
 

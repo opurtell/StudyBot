@@ -36,9 +36,41 @@ Clinical accuracy and usefulness still need Oscar's rating.
   quotes slightly better (8/10 vs 7/10). Single-run differences of a point are noise.
 - **GLM-5.3-Flash credited two wholly wrong answers** and marked a correct answer down. It's also the slowest
   (median 19 s). For a study tool, made-up credit is the worst failure, because it hides a knowledge gap.
-- **Recommendation (pending the question rating):** Gemini 3.5 Flash-Lite for marking and generation. It's
-  4× cheaper and 4× faster than 3.8 Flash at the same marking accuracy. Keep 3.8 Flash as the fallback,
-  or use it for pre-seeding the bank if its questions rate better.
+- **Recommendation:** see "Decision" below.
+
+## Oscar's rating (2026-11-01, `question-sample-top2.csv`, 100 rows)
+
+M1 = Gemini 3.5 Flash-Lite, M2 = Gemini 3.8 Flash.
+
+| Model | Accurate | Useful (mean, 1 to 5) | Rated 1 | AP-level questions out of AP scope |
+|---|---|---|---|---|
+| Gemini 3.8 Flash | **48/50** | **3.96** | 2 | 0/34 |
+| Gemini 3.5 Flash-Lite | 45/50 | 3.65 | 5 | 1/34 |
+
+The "in scope" column marked 17 ICP-level rows N with "is AP scope". This isn't a fault. An ICP-level row is a
+question for an ICP user, whose scope includes all AP content, so AP material is expected there. The sheet
+labelled the column ambiguously.
+
+Causes of the inaccurate or 1-rated questions:
+1. **The question doesn't name the medicine** (droperidol, calcium chloride, levetiracetam; 5 rows across both
+   models). The chunk came from the middle of a monograph, so the drug name wasn't in the text. **Fixed:** every
+   ACTAS chunk now starts with a `[ACTAS MED 08: Droperidol (Droleptan)]` style header.
+2. **The answer wasn't in the excerpt** (hyperkalaemia; 2 rows). The chunk was cut before the answer. The bank
+   build should keep sections whole or store neighbouring chunks.
+3. **Illogical or self-answering questions** (2 rows, both Flash-Lite).
+4. **One AP scope leak** (CMG 4A, external pacing). This is a tagging gap, not the model. **Fixed:** guideline
+   lines that name external pacing are now ICP.
+5. **Too wordy** at hard difficulty (4 notes). Tune the hard-difficulty prompt in the port.
+
+Source errors Oscar spotted (CSM.P03 buttock side, CSM.C04 adult pad placement) are logged in `InfoERRORS.md`.
+
+## Decision
+
+- **Question generation (bank pre-seeding): Gemini 3.8 Flash.** It's more accurate and more useful. It runs
+  offline in batch, so its speed doesn't matter, and the cost is about $8 for a 5,000-question bank at batch prices.
+- **Live marking: Gemini 3.5 Flash-Lite.** It marks the same as 3.8 Flash (10/10, no fabricated credit), and
+  it's 4× faster and 4× cheaper. Users wait on this call.
+- **GLM-5.3-Flash: not used.** It credited wrong answers.
 
 ## Caveats
 
