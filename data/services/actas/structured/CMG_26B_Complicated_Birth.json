@@ -14,5 +14,8 @@
     "source_type": "cmg",
     "agent_version": "2.0",
     "content_flag": null
-  }
+  },
+  "qualifications_required": [
+    "AP"
+  ]
 }

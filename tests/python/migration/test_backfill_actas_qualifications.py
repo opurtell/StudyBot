@@ -10,8 +10,7 @@ from pathlib import Path
 
 import pytest
 
-# Import will fail until the script exists — that is expected at the failing-test stage.
-from scripts.backfill_actas_qualifications import backfill_directory, ICP_DRUGS
+from scripts.backfill_actas_qualifications import backfill_directory
 
 FIXTURES_DIR = Path(__file__).parent.parent / "fixtures" / "services" / "actas"
 
@@ -66,12 +65,12 @@ class TestMedicineLevelQualifications:
         for entry in data["dose_lookup"]["Suxamethonium"]:
             assert entry["qualifications_required"] == ["ICP"]
 
-    def test_ap_medicine_in_icp_doc_gets_ap_qualification(self, tmp_actas_dir: Path) -> None:
-        """Morphine is not an ICP drug, so it gets AP even in an ICP document."""
+    def test_any_medicine_in_icp_doc_gets_icp_qualification(self, tmp_actas_dir: Path) -> None:
+        """Doses inside an ICP-only guideline are ICP context, whatever the medicine."""
         backfill_directory(tmp_actas_dir)
         data = json.loads((tmp_actas_dir / "fixture_icp_doc.json").read_text())
         for entry in data["dose_lookup"]["Morphine"]:
-            assert entry["qualifications_required"] == ["AP"]
+            assert entry["qualifications_required"] == ["ICP"]
 
 
 # ---------------------------------------------------------------------------
@@ -107,8 +106,10 @@ class TestIdempotency:
 
 class TestIcpDrugList:
     def test_authoritative_drugs_present(self) -> None:
+        from guidelines.actas_scope import DRUG_SCOPE, ICP_DRUG
+
         expected = {
-            "Adenosine", "Amiodarone", "Heparin", "Hydrocortisone",
-            "Lignocaine", "Sodium Bicarbonate", "Suxamethonium", "Levetiracetam",
+            "adenosine", "amiodarone", "calcium chloride", "heparin", "hydrocortisone",
+            "lignocaine", "sodium bicarbonate", "suxamethonium", "levetiracetam",
         }
-        assert expected.issubset(set(ICP_DRUGS))
+        assert expected == {d for d, s in DRUG_SCOPE.items() if s == ICP_DRUG}

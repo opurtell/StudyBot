@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -31,12 +31,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -64,12 +64,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -97,12 +97,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -130,12 +130,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -163,12 +163,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -196,12 +196,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -229,12 +229,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -262,12 +262,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -295,12 +295,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -328,12 +328,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -361,12 +361,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -398,24 +398,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
       "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -444,7 +444,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -456,12 +456,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -473,12 +473,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -490,12 +490,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -507,12 +507,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -648,12 +648,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -681,12 +681,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -714,12 +714,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -747,12 +747,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -780,12 +780,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -813,12 +813,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -846,12 +846,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -879,12 +879,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -912,12 +912,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -945,12 +945,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -978,12 +978,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1011,12 +1011,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1048,24 +1048,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1094,7 +1094,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1106,12 +1106,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1123,12 +1123,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1140,12 +1140,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1157,12 +1157,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1298,12 +1298,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1331,12 +1331,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1364,12 +1364,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1397,12 +1397,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1430,12 +1430,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1463,12 +1463,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1496,12 +1496,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1529,12 +1529,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1562,12 +1562,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1595,12 +1595,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1628,12 +1628,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1661,12 +1661,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1698,24 +1698,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1739,12 +1739,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1756,12 +1756,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1773,12 +1773,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1790,12 +1790,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1807,12 +1807,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1948,15 +1948,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
   "total_entries": 57,
-  "sources": [
-    "CMG_2",
-    "CMG_3",
-    "CMG_37"
-  ]
+  "sources": []
 }

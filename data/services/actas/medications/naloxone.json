@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35A",
       "source_file": "CMG_35A_Poisoning_and_Overdose.json",
       "source_title": "Poisoning and Overdose",
@@ -24,7 +24,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35A",
       "source_file": "CMG_35A_Poisoning_and_Overdose.json",
       "source_title": "Poisoning and Overdose",
@@ -56,13 +56,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
   "total_entries": 2,
-  "sources": [
-    "CMG_35"
-  ]
+  "sources": []
 }

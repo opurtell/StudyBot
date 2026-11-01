@@ -6,6 +6,7 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 
 from paths import resolve_service_structured_dir, CMG_STRUCTURED_DIR
+from . import actas_scope as scope
 from services.active import active_service
 
 from .markdown import normalise_markdown_payload, normalise_markdown_syntax, strip_icp_content
@@ -68,7 +69,7 @@ def _summary_from_item(item: dict, source_type: str) -> dict:
         title=item.get("title", ""),
         section=item.get("section", "Other"),
         source_type=source_type,
-        is_icp_only=item.get("is_icp_only", False),
+        is_icp_only=_is_icp_only(item),
     ).model_dump()
 
 
@@ -100,6 +101,12 @@ def _load_guideline_summaries() -> list[dict]:
 
 def _detail_path(source_type: str, guideline_id: str) -> Path:
     return _get_type_dirs().get(source_type, _get_structured_dir()) / f"{guideline_id}.json"
+
+
+def _is_icp_only(item: dict) -> bool:
+    if active_service().id == "actas":
+        return scope.document_scope(item) == scope.ICP
+    return bool(item.get("is_icp_only", False))
 
 
 def _find_summary(guideline_id: str) -> dict | None:
@@ -152,7 +159,10 @@ def get_guideline(guideline_id: str, skill_level: str | None = None) -> dict:
 
     content = normalise_markdown_syntax(data.get("content_markdown", ""))
     if skill_level == "AP":
-        content = strip_icp_content(content)
+        if active_service().id == "actas":
+            content = scope.ap_text(data, content)
+        else:
+            content = strip_icp_content(content)
 
     detail = GuidelineDetail(
         id=data["id"],
@@ -162,7 +172,7 @@ def get_guideline(guideline_id: str, skill_level: str | None = None) -> dict:
         section=data.get("section", "Other"),
         source_type=source_type,
         content_markdown=content,
-        is_icp_only=data.get("is_icp_only", False),
+        is_icp_only=_is_icp_only(data),
         dose_lookup=normalise_markdown_payload(data.get("dose_lookup")),
         flowchart=normalise_markdown_payload(data.get("flowchart")),
     ).model_dump()

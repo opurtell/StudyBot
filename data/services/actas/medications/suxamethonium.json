@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -52,7 +52,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -97,7 +97,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -146,7 +146,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -195,7 +195,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -244,7 +244,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -293,7 +293,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -342,7 +342,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -391,7 +391,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -440,7 +440,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -489,7 +489,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -538,7 +538,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -555,7 +555,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -572,7 +572,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -589,7 +589,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -606,7 +606,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -695,7 +695,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -707,7 +707,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -813,7 +813,5 @@
     }
   ],
   "total_entries": 18,
-  "sources": [
-    "CMG_3"
-  ]
+  "sources": []
 }

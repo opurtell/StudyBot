@@ -115,7 +115,7 @@ def test_list_guidelines_skill_level_ap_excludes_icp_only(monkeypatch, tmp_path)
             },
             {
                 "id": "CMG_2_ICP",
-                "cmg_number": "2",
+                "cmg_number": "3A",
                 "title": "ICP Guideline",
                 "section": "Cardiac",
                 "_source_type": "cmg",

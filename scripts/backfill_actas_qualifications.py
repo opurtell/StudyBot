@@ -4,12 +4,11 @@ structured JSON file in ``data/services/actas/structured/``.
 Two levels are tagged:
 
 1. **Document level** (root ``qualifications_required`` key):
-   - ``is_icp_only: True``  →  ``["ICP"]``
-   - otherwise              →  ``["AP"]``
+   - from ``guidelines.actas_scope.document_scope``
 
 2. **Medicine level** (each dose-entry dict inside ``dose_lookup``):
-   - medicine name in ICP_DRUGS  →  ``["ICP"]``
-   - otherwise                   →  ``["AP"]``
+   - per entry, from ``guidelines.actas_scope.dose_entry_scope``
+     (Oscar's medication scope list + the ACTAS Scope of Practice PDF)
 
 The script is idempotent — re-running on already-tagged files is a no-op.
 
@@ -24,35 +23,25 @@ import json
 import sys
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Authoritative ICP-only drug list (user-signed-off, do not modify without
-# explicit user instruction).
-# ---------------------------------------------------------------------------
-ICP_DRUGS: frozenset[str] = frozenset(
-    {
-        "Adenosine",
-        "Amiodarone",
-        "Heparin",
-        "Hydrocortisone",
-        "Lignocaine",
-        "Sodium Bicarbonate",
-        "Suxamethonium",
-        "Levetiracetam",
-    }
-)
+sys.path.insert(0, str(Path(__file__).parent.parent / "src" / "python"))
+
+from guidelines import actas_scope as scope  # noqa: E402
 
 # Default path relative to repo root.
 _DEFAULT_DIR = Path(__file__).parent.parent / "data" / "services" / "actas" / "structured"
 
 
-def _qualification_for_medicine(medicine_name: str) -> list[str]:
-    """Return the qualification list for a given medicine name."""
-    return ["ICP"] if medicine_name in ICP_DRUGS else ["AP"]
+def _qualification_for_entry(medicine_name: str, entry: dict, doc: dict) -> list[str]:
+    """Return the qualification list for one dose entry."""
+    entry_scope, _ = scope.dose_entry_scope(
+        medicine_name, entry.get("text", ""), scope.document_scope(doc) == scope.ICP
+    )
+    return scope.qualifications_for(entry_scope)
 
 
 def _qualification_for_document(doc: dict) -> list[str]:
-    """Return the qualification list for a document based on is_icp_only."""
-    return ["ICP"] if doc.get("is_icp_only") else ["AP"]
+    """Return the qualification list for a whole document."""
+    return scope.qualifications_for(scope.document_scope(doc) or scope.BOTH)
 
 
 def backfill_file(path: Path, *, dry_run: bool = False) -> bool:
@@ -69,12 +58,12 @@ def backfill_file(path: Path, *, dry_run: bool = False) -> bool:
     # --- Medicine level ---
     dose_lookup: dict = data.get("dose_lookup") or {}
     for medicine_name, entries in dose_lookup.items():
-        expected_med_qual = _qualification_for_medicine(medicine_name)
         if not isinstance(entries, list):
             continue
         for entry in entries:
             if not isinstance(entry, dict):
                 continue
+            expected_med_qual = _qualification_for_entry(medicine_name, entry, data)
             if entry.get("qualifications_required") != expected_med_qual:
                 entry["qualifications_required"] = expected_med_qual
                 changed = True
@@ -95,6 +84,8 @@ def backfill_directory(
     directory = Path(directory)
     results: dict[str, bool] = {}
     for json_file in sorted(directory.glob("*.json")):
+        if "index" in json_file.name:
+            continue
         results[json_file.name] = backfill_file(json_file, dry_run=dry_run)
     return results
 

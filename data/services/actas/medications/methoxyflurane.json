@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26A",
       "source_file": "CMG_26A_Unscheduled_Normal_Field_Birth.json",
       "source_title": "Unscheduled Normal Field Birth",
@@ -20,7 +20,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26A",
       "source_file": "CMG_26A_Unscheduled_Normal_Field_Birth.json",
       "source_title": "Unscheduled Normal Field Birth",
@@ -49,7 +49,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_26",
+      "guideline_id": "",
       "cmg_number": "26A",
       "source_file": "CMG_26A_Unscheduled_Normal_Field_Birth.json",
       "source_title": "Unscheduled Normal Field Birth",
@@ -66,7 +66,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -83,7 +83,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -112,7 +112,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -130,8 +130,5 @@
     }
   ],
   "total_entries": 6,
-  "sources": [
-    "CMG_2",
-    "CMG_26"
-  ]
+  "sources": []
 }

@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_27",
+      "guideline_id": "",
       "cmg_number": "27",
       "source_file": "CMG_27_Hyperkalaemia.json",
       "source_title": "Hyperkalaemia",
@@ -20,7 +20,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_9",
+      "guideline_id": "",
       "cmg_number": "9",
       "source_file": "CMG_9_Respiratory_Distress.json",
       "source_title": "Respiratory Distress",
@@ -38,8 +38,5 @@
     }
   ],
   "total_entries": 2,
-  "sources": [
-    "CMG_27",
-    "CMG_9"
-  ]
+  "sources": []
 }

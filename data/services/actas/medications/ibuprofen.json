@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -15,7 +15,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -68,7 +68,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -89,7 +89,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_2",
+      "guideline_id": "",
       "cmg_number": "2",
       "source_file": "CMG_2_Pain_Management.json",
       "source_title": "Pain Management",
@@ -162,7 +162,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_44",
+      "guideline_id": "",
       "cmg_number": "44",
       "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
       "source_title": "Febrile Paediatric (<12yo)",
@@ -174,7 +174,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_44",
+      "guideline_id": "",
       "cmg_number": "44",
       "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
       "source_title": "Febrile Paediatric (<12yo)",
@@ -227,7 +227,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_44",
+      "guideline_id": "",
       "cmg_number": "44",
       "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
       "source_title": "Febrile Paediatric (<12yo)",
@@ -248,7 +248,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_44",
+      "guideline_id": "",
       "cmg_number": "44",
       "source_file": "CMG_44_Febrile_Paediatric___12yo_.json",
       "source_title": "Febrile Paediatric (<12yo)",
@@ -322,8 +322,5 @@
     }
   ],
   "total_entries": 8,
-  "sources": [
-    "CMG_2",
-    "CMG_44"
-  ]
+  "sources": []
 }

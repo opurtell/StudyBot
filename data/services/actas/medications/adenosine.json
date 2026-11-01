@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -15,7 +15,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -32,7 +32,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -74,7 +74,5 @@
     }
   ],
   "total_entries": 3,
-  "sources": [
-    "CMG_8"
-  ]
+  "sources": []
 }

@@ -20,6 +20,13 @@ _shared_retriever: "Retriever | None" = None
 _retriever_lock = threading.Lock()
 
 
+def _visibility_values(effective_qualifications: frozenset[str]) -> list[str]:
+    values = ["both", "icp", "ap"] if "ICP" in effective_qualifications else ["both", "ap"]
+    if "PACER" in effective_qualifications:
+        values.append("pacer")
+    return values
+
+
 def _matches_excluded_category(chunk: RetrievedChunk, exclude: list[str]) -> bool:
     cat_str = (chunk.category or "").lower()
     if not cat_str:
@@ -137,10 +144,7 @@ class Retriever:
         # Derive visibility filter from effective qualifications.
         # ICP users see all content; AP-only users see AP and shared content.
         if effective_qualifications is not None and collection in ("cmgs", "notes"):
-            if "ICP" in effective_qualifications:
-                conditions.append({"visibility": {"$in": ["both", "icp", "ap"]}})
-            else:
-                conditions.append({"visibility": {"$in": ["both", "ap"]}})
+            conditions.append({"visibility": {"$in": _visibility_values(effective_qualifications)}})
 
         if not conditions:
             return None
@@ -164,10 +168,7 @@ class Retriever:
         """Return a single uniformly random chunk from the combined corpus."""
         where_vis: dict | None = None
         if effective_qualifications is not None:
-            if "ICP" in effective_qualifications:
-                where_vis = {"visibility": {"$in": ["both", "icp", "ap"]}}
-            else:
-                where_vis = {"visibility": {"$in": ["both", "ap"]}}
+            where_vis = {"visibility": {"$in": _visibility_values(effective_qualifications)}}
 
         collections = [self._notes, self._cmgs]
         random.shuffle(collections)
