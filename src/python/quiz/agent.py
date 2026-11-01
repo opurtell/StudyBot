@@ -42,18 +42,19 @@ Rules:
         base += """
 - The user is an Ambulance Paramedic (AP). Do NOT generate questions about Intensive Care Paramedic (ICP) interventions, medications, or procedures. If source material contains ICP-only content, ignore it and only use AP-applicable content."""
 
-    base += """
+    base += f"""
 
 Each source is labelled [Source 1], [Source 2], etc. You MUST identify which single source the question is drawn from.
+The question must be answerable from that one source alone, because the answer is marked against it and nothing else.
 
 Respond with valid JSON only:
-{
+{{
   "question_text": "...",
   "question_type": "recall|definition|scenario|drug_dose",
-  "source_citation": f"e.g. {svc.short_name} CMG 14.1",
+  "source_citation": "e.g. {svc.short_name} CMG 14.1",
   "category": "e.g. Cardiac",
   "source_index": 1
-}"""
+}}"""
     return base
 
 
@@ -94,6 +95,13 @@ EVALUATION_SCHEMA = {
         "feedback_summary",
     ],
 }
+
+
+VALID_SCORES = frozenset({"correct", "partial", "incorrect"})
+
+
+class EvaluationParseError(ValueError):
+    pass
 
 
 def _evaluation_prompt_for(llm) -> str:
@@ -229,6 +237,11 @@ def generate_question(
         )
 
     raw_index = parsed.get("source_index", 1)
+    if not isinstance(raw_index, int) or isinstance(raw_index, bool):
+        try:
+            raw_index = int(raw_index)
+        except (TypeError, ValueError):
+            raw_index = 1
     primary_chunk_index = max(0, min(raw_index - 1, len(chunks) - 1)) if chunks else 0
 
     return Question(
@@ -253,13 +266,9 @@ def evaluate_answer(
     elapsed_seconds: float,
     llm,
 ) -> Evaluation:
+    source = _primary_chunk(question)
+
     if user_answer is None:
-        idx = question.primary_chunk_index
-        source = (
-            question.source_chunks[idx]
-            if idx < len(question.source_chunks)
-            else (question.source_chunks[0] if question.source_chunks else None)
-        )
         return Evaluation(
             score=None,
             source_quote=source.content if source else "",
@@ -268,7 +277,7 @@ def evaluate_answer(
             response_time_seconds=elapsed_seconds,
         )
 
-    source_text = "\n\n".join(c.content for c in question.source_chunks)
+    source_text = source.content if source else ""
 
     messages = [
         {"role": "system", "content": _evaluation_prompt_for(llm)},
@@ -285,17 +294,35 @@ def evaluate_answer(
     response_text = llm.complete(messages, response_schema=EVALUATION_SCHEMA)
     parsed = _parse_json(response_text)
 
+    score = parsed.get("score") if isinstance(parsed, dict) else None
+    if score not in VALID_SCORES:
+        raise EvaluationParseError(
+            f"Marking response was not a valid evaluation: {response_text[:200]!r}"
+        )
+
     return Evaluation(
-        score=parsed.get("score", "incorrect"),
-        correct_elements=parsed.get("correct_elements", []),
-        missing_or_wrong=parsed.get("missing_or_wrong", []),
-        source_quote=parsed.get("source_quote", ""),
+        score=score,
+        correct_elements=_string_list(parsed.get("correct_elements")),
+        missing_or_wrong=_string_list(parsed.get("missing_or_wrong")),
+        source_quote=str(parsed.get("source_quote") or ""),
         source_citation=question.source_citation,
-        feedback_summary=parsed.get(
-            "feedback_summary", "Feedback unavailable due to parsing error."
-        ),
+        feedback_summary=str(parsed.get("feedback_summary") or ""),
         response_time_seconds=elapsed_seconds,
     )
+
+
+def _primary_chunk(question: Question):
+    chunks = question.source_chunks
+    if not chunks:
+        return None
+    idx = question.primary_chunk_index
+    return chunks[idx] if 0 <= idx < len(chunks) else chunks[0]
+
+
+def _string_list(value) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [str(v) for v in value]
 
 
 def _parse_json(text: str) -> dict:

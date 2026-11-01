@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import threading
 import uuid
 from typing import Optional
@@ -14,7 +15,7 @@ from services.active import active_service
 from services.qualifications import effective_qualifications
 
 from .agent import generate_question
-from .agent import evaluate_answer
+from .agent import EvaluationParseError, evaluate_answer
 from .models import Evaluation, SessionConfig
 from .retriever import Retriever, get_retriever as get_shared_retriever
 from .store import (
@@ -25,6 +26,8 @@ from .store import (
     record_asked,
 )
 from .tracker import Tracker
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/quiz", tags=["quiz"])
 
@@ -187,12 +190,19 @@ def evaluate(req: EvaluateRequest) -> dict:
         raise HTTPException(status_code=404, detail="Question not found")
 
     quiz_model = _get_quiz_model()
-    evaluation = evaluate_answer(
-        question=question,
-        user_answer=req.user_answer,
-        elapsed_seconds=req.elapsed_seconds,
-        llm=_get_llm(quiz_model),
-    )
+    try:
+        evaluation = evaluate_answer(
+            question=question,
+            user_answer=req.user_answer,
+            elapsed_seconds=req.elapsed_seconds,
+            llm=_get_llm(quiz_model),
+        )
+    except EvaluationParseError as exc:
+        logger.warning("Unreadable marking response for question %s: %s", question.id, exc)
+        raise HTTPException(
+            status_code=502,
+            detail="The marking model returned an unreadable response, so your answer was not scored. Please try again.",
+        ) from exc
 
     tracker = _get_tracker()
     tracker.record_answer(

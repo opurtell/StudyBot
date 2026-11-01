@@ -1,0 +1,82 @@
+# Question generation and marking: spec for the web port
+
+The Python quiz agent (`src/python/quiz/agent.py`) is the reference implementation. Port its behaviour, including
+the fixes below, when Phase 4 builds generation and marking in the Worker. Tests that pin this behaviour:
+`tests/quiz/test_prompt_fixes.py`.
+
+## Prompts
+
+Port `build_generation_prompt()` and `EVALUATION_SYSTEM_PROMPT` text as they render today. To see the exact
+generation prompt for a service and qualification set:
+
+```bash
+PYTHONPATH=src/python python3 -c "
+from unittest.mock import patch
+from services.registry import get_service
+from quiz.agent import build_generation_prompt
+with patch('services.active.active_service', return_value=get_service('actas')):
+    print(build_generation_prompt(frozenset({'AP'})))
+"
+```
+
+Store a `prompt_version` with every banked question and every mark, and bump it whenever either prompt changes.
+
+## Generation (Gemini 3.8 Flash)
+
+1. **Send up to five candidate chunks**, labelled `[Source 1: <source_type>]` to `[Source 5: ...]`. Each chunk
+   already starts with its document name (PR #10).
+2. **The model returns `source_index` (1-based)** for the single chunk the question comes from. Accept an
+   integer or a numeric string; clamp to the range; default to the first chunk if it is missing or unreadable.
+3. **Store that chunk on the banked question** (its corpus chunk id), not the other four. It is the only text
+   the answer is marked against.
+4. **The citation in the JSON example is rendered**, for example `"source_citation": "e.g. ACTAS CMG 14.1"`.
+   The old prompt showed the model the literal text `f"e.g. {svc.short_name} CMG 14.1"` (review C-5).
+5. **An unparseable generation reply is an error.** Do not bank it, do not charge for it, and retry or report.
+
+## Marking (Gemini 3.5 Flash-Lite)
+
+1. **Mark against the question's primary chunk only** (review H-11). Never send the other retrieved chunks:
+   they let the grader credit facts from unrelated guidelines and multiply input tokens about five times.
+2. **User turn format:**
+   ```
+   Question: <question_text>
+
+   Source material:
+   <primary chunk text>
+
+   Student answer: <answer>
+   ```
+3. **A reply is valid only if it parses as a JSON object and `score` is exactly `correct`, `partial` or
+   `incorrect`** (review H-5). Anything else (prose, broken JSON, a missing or unknown score, a JSON array) is a
+   marking failure:
+   - do not record it in mastery or history
+   - refund the marking credit (or never take it)
+   - tell the user the answer was not scored and let them resubmit
+   - log it with the model id and `prompt_version`, so the failure rate is visible
+4. **Coerce the other fields defensively:** `correct_elements` and `missing_or_wrong` become `[]` unless they
+   are lists; `source_quote` and `feedback_summary` become `""` when missing.
+5. **"Reveal reference" (no answer) never calls the model.** Return the primary chunk text as the quote with a
+   null score, and do not charge a mark.
+
+The desktop app returns HTTP 502 with "The marking model returned an unreadable response, so your answer was
+not scored. Please try again." for case 3.
+
+## Structured output
+
+`complete()` in `web/src/worker/llm/gemini.ts` already accepts `responseSchema`, which sets
+`responseMimeType: application/json` and `responseJsonSchema`. Use `EVALUATION_SCHEMA` from `agent.py` for
+marking and a matching schema for generation. In the cloud benchmark (run without a schema), Flash-Lite
+returned unparseable JSON once in 20 marks; a schema should remove that. **Re-run
+`scripts/bench-cloud-models.py` with the schema on before relying on it**: on LM Studio, constrained decoding
+cost gpt-oss-20b four grading points, so a schema is not free.
+
+The benchmark in `docs/review/model-bench/` used the pre-fix generation prompt and marked against all five
+chunks. Both Gemini models still marked 10/10, so the model decision stands, but token and cost figures for
+marking were measured on the larger input.
+
+## Token usage (review H-8)
+
+Done for the web code: `complete()` returns `usage` (input, output, thinking and cached input tokens), the
+gateway log id and cache status. Write these to `usage_ledger` on every generation and every mark, including
+marking failures (they still cost money even though the user is refunded). The desktop app does not need
+usage tracking and is unchanged.
