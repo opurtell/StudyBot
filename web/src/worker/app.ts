@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { authRoutes, meRoutes } from "./auth/routes";
 import { loadSession } from "./auth/sessions";
+import { adminCorpusRoutes, guidelineRoutes, medicationRoutes } from "./corpus/routes";
 import { apiError, clientIp } from "./lib/http";
 import { createLogger } from "./lib/log";
 import type { AppEnv } from "./types";
@@ -19,7 +20,7 @@ app.use("*", async (c, next) => {
   c.set("user", null);
   c.set("sessionHash", null);
   await next();
-  c.header("Cache-Control", "no-store");
+  if (!c.res.headers.has("Cache-Control")) c.header("Cache-Control", "no-store");
   c.header("X-Content-Type-Options", "nosniff");
   c.header("X-Request-Id", requestId);
   log.info("request", { status: c.res.status, durationMs: Date.now() - started, userId: c.get("user")?.id ?? null });
@@ -67,6 +68,9 @@ app.get("/config", (c) =>
 
 app.route("/auth", authRoutes);
 app.route("/me", meRoutes);
+app.route("/guidelines", guidelineRoutes);
+app.route("/medications", medicationRoutes);
+app.route("/admin/corpus", adminCorpusRoutes);
 
 app.notFound((c) => apiError(c, 404, "not_found", "No such endpoint."));
 

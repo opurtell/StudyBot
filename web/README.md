@@ -5,17 +5,19 @@ One Worker serves the React app as static assets and the API under `/api/*`, so 
 
 **Live:** https://study.paramedtools.com (production).
 
-**Status:** Phase 2 (foundations). Sign-in, accounts, the anonymous/signed-in split, rate limiting, logging and the
-AI Gateway client are built and tested. No quiz yet (Phases 3 to 5).
+**Status:** Phase 3 (corpus). Sign-in, accounts, rate limiting, logging and the AI Gateway client (Phase 2), plus the
+ACTAS guideline corpus in D1 and Vectorize with guideline, skill and medication pages (Phase 3). No quiz yet (Phases 4 and 5).
 
 ## Layout
 
 | Path | What it is |
 |---|---|
 | `src/worker/` | Hono API on Workers. `app.ts` holds the middleware chain; `auth/` holds Google sign-in and sessions |
+| `src/worker/corpus/` | Guideline and medication read APIs (`/api/guidelines`, `/api/medications`), the admin corpus API, and the Workers AI → Vectorize sync |
 | `src/worker/llm/gemini.ts` | Gemini through AI Gateway. Returns text **and token usage** for the future `usage_ledger` (review H-8) |
 | `src/client/` | React shell (React Router, Tailwind 4, Archival Protocol tokens, self-hosted fonts) |
-| `migrations/` | D1 migrations (`users`, `sessions`) |
+| `migrations/` | D1 migrations (`users`, `sessions`, corpus tables) |
+| `../src/python/web_corpus/` | Offline Python build that turns `data/services/actas/structured/` into `corpus-build/corpus.sql` |
 | `test/worker/` | API tests run inside workerd with a real local D1 and the rate-limit bindings |
 | `test/client/` | jsdom tests for the pages, each with an axe accessibility check |
 | `wrangler.jsonc` | Dev defaults at the top level; `staging` and `production` under `env` |
@@ -30,6 +32,48 @@ AI Gateway client are built and tested. No quiz yet (Phases 3 to 5).
    *Vite on :5173 with the Worker running in workerd. The sign-in page shows a "Dev sign-in" button on localhost, so you don't need Google set up to work locally.*
 
 Checks before pushing: `npm run check` (typecheck, tests, build).
+
+To see the guideline pages locally, build and load the corpus once (after step 3):
+
+1. `npm run corpus:build`
+2. `npm run corpus:load:local`
+
+## The guideline corpus
+
+**What goes in:** ACTAS CMGs, clinical skills and medicine monographs from `data/services/actas/structured/`, nothing
+else. The build stops if any input isn't ACTAS guideline content, and D1 rejects any row whose `source_type` isn't
+`guideline`. Oscar's personal material (notes, CPD and REF docs) can never reach the web corpus.
+
+**Scope of practice:** each document is rendered four ways (`ap`, `ap_pacer`, `icp`, `icp_pacer`) with the desktop app's
+rules in `src/python/guidelines/actas_scope.py`. Each chunk records which of those views can see it (`vis_*` columns and
+Vectorize metadata), so AP users never get ICP-only text.
+
+**Versions:** `corpus_version` is a hash of the build output, so an unchanged corpus gives the same version. Loading is
+an upsert: unchanged chunks keep their embeddings, changed ones are re-embedded, and chunks that disappear are marked
+retired and then removed from Vectorize and D1 by the next sync.
+
+**Embeddings:** Workers AI `@cf/baai/bge-base-en-v1.5` (768 dimensions) into Vectorize, both on the free plan. About 760
+chunks, so roughly 0.6M of the 5M free stored dimensions. The sync runs from the daily cron, or straight away from
+**Account > Guideline corpus > Sync search index** (admins only).
+
+### Loading the corpus into production (Oscar's Mac)
+
+Run from the repo root on an up-to-date `main`, with `wrangler` logged in.
+
+1. **Create the Vectorize index** *(once)*:
+   - `cd web && npx wrangler vectorize create studybot-corpus-production --dimensions=768 --metric=cosine`
+   - For each of `vis_ap`, `vis_ap_pacer`, `vis_icp`, `vis_icp_pacer`:
+     `npx wrangler vectorize create-metadata-index studybot-corpus-production --propertyName=<name> --type=boolean`
+   *Metadata indexes only cover vectors inserted after they exist, so create them before the first sync. The deploy fails if the index is missing.*
+2. **Deploy** (applies migration `0002_corpus.sql`): `npm run deploy:production`
+3. **Build:** `npm run corpus:build`
+4. **Load:** `npm run corpus:load:production`
+5. **Make yourself admin** *(once, after signing in on the site)*:
+   `CLOUDFLARE_ENV=production npx wrangler d1 execute DB --remote --command "UPDATE users SET is_admin = 1 WHERE email = '<your email>'"`
+6. **Embed:** Account > Guideline corpus > Sync search index.
+   *Or leave it for the daily cron, which embeds 50 chunks a run; the button loops until done.*
+
+After a rescrape, repeat steps 3, 4 and 6.
 
 ## How sign-in works
 
