@@ -6,6 +6,7 @@ import { GuidelineDetail, Guidelines } from "./pages/Guidelines";
 import { Home } from "./pages/Home";
 import { MedicationDetail, Medications } from "./pages/Medications";
 import { NotFound } from "./pages/NotFound";
+import { Quiz } from "./pages/Quiz";
 import { SignIn } from "./pages/SignIn";
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="quiz" element={<Quiz />} />
           <Route path="sign-in" element={<SignIn />} />
           <Route path="guidelines" element={<Guidelines />} />
           <Route path="guidelines/:id" element={<GuidelineDetail />} />

@@ -156,6 +156,7 @@ describe("corpus admin", () => {
     mockApi({
       "GET /api/me": { ...signedIn, isAdmin: true },
       "GET /api/admin/corpus": () => ({ body: { ...status, pending, embedded: 761 - pending } }),
+      "GET /api/admin/questions": { status: 500, body: { error: "x", message: "nope" } },
       "POST /api/admin/corpus/sync": () => {
         const embedded = Math.min(pending, 400);
         pending -= embedded;

@@ -34,6 +34,13 @@ export function Home() {
         </p>
       )}
 
+      <Link
+        to="/quiz"
+        className="inline-block rounded-sm bg-primary px-5 py-3 font-semibold text-on-primary hover:opacity-90"
+      >
+        Start a quiz
+      </Link>
+
       {me?.signedIn ? (
         <section aria-labelledby="quota-heading" className="space-y-4 rounded-sm bg-surface-container-low p-5">
           <h2 id="quota-heading" className="font-headline text-xl font-semibold">
@@ -79,7 +86,6 @@ export function Home() {
             <span className="text-sm text-on-surface-variant">Medicine monographs with doses.</span>
           </Link>
         </div>
-        <p className="text-sm text-on-surface-variant">The quiz is on its way.</p>
       </section>
     </div>
   );
