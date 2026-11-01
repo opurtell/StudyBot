@@ -1,0 +1,45 @@
+name: Web CI
+
+on:
+  pull_request:
+    paths:
+      - "web/**"
+      - ".github/workflows/web-*.yml"
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - ".github/workflows/web-*.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Check generated Worker types are current
+        run: |
+          cp .dev.vars.example .dev.vars
+          npm run cf-typegen
+          git diff --exit-code -- src/worker/worker-configuration.d.ts
+      - name: Tests (Worker, client, accessibility)
+        run: npm test
+      - name: Build
+        run: npm run build

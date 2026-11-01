@@ -1,20 +1,22 @@
 # Next session
 
-**Task:** Web port of Clinical Recall Assistant. Plan is in `docs/web-port-plan.md` (draft v2, 2026-10-31).
+**Task:** Web port of Clinical Recall Assistant. Plan: `docs/web-port-plan.md`. Review and sign-off: `docs/review/web-port-review.md`.
 
-**Decisions locked:** Cloudflare-native TS rewrite; anonymous = pre-generated questions only; signed-in free tier = small monthly
-generation + marking quotas (about 20 / 30, re-set from cost model); ACTAS only; uploads/notes/AT deferred.
+**State (2026-11-01):** Phases 0 and 1 done and signed off. Phase 2 (foundations) is built in `web/` (see `web/README.md`):
+one Worker serving the React shell and `/api/*`, magic-link sign-in with Turnstile, sessions in D1, rate limiting, CSRF
+guard, structured logs, a Gemini-through-AI-Gateway client that reports token usage, Web CI and a deploy workflow.
 
-**Corpus rule:** web version uses ACTAS guideline content ONLY. Never any of Oscar's personal notes, uni work, CPD or REF docs.
-Post-launch idea: pathophysiology questions from a free source; source NOT chosen, options left open. OpenStax A&P 2e is
-CC BY-NC-SA 4.0 and needs prior written permission for generative-AI use; other candidates and fallbacks are in plan Phase 7.
-Not needed for the launch, so it does not hold up Phases 0-6.
+**Blocked on Oscar:** the one-time Cloudflare setup in `web/README.md` ("One-time Cloudflare setup"): Workers Paid, a
+domain onboarded for Email Service, D1 databases (`--location=oc`), Turnstile widget, AI Gateways with a spend limit,
+Worker secrets, GitHub secrets/environments. Until then the deploy job skips itself. Steps that need a browser or
+`wrangler login` run on Oscar's Mac via Remote Control.
 
-**State:** Plan written; nothing built.
+**Next step:** Phase 3 (corpus into D1 + Vectorize, ACTAS guideline content only, `source_type = "guideline"` allowlist).
+Phase 4 needs the prompt fixes first: C-5, H-5, H-11 (review §4). Don't change `src/python/guidelines/actas_scope.py`
+without Oscar.
 
-**Next step:** Phase 0 (freeze/clean, rotate the 3 API keys in `config/settings.json`, tag `desktop-final`), then Phase 1 full review,
-one slice per session (Opus for backend coupling and security). Write findings to `docs/review/web-port-review.md`.
-Content rights are settled (public ACTAS guidelines are fine). Model family is Gemini or GLM; first Phase 1 benchmark is
-Gemini vs GLM for marking (reuse `scripts/bench-local-models.py` and its labelled set).
+**Locked decisions:** Gemini 3.8 Flash generates the bank, Gemini 3.5 Flash-Lite marks; D1; email magic link only;
+placeholder quotas 20 generations / 30 marks a month; ACTAS only; no personal material in the web corpus.
 
-**Do not start building (Phase 2+) until Oscar signs off the Phase 1 review.**
+**Still open from Phase 0:** the `desktop-final` tag (needs Oscar's go-ahead; never push tags without it).
+**Post-launch idea:** pathophysiology questions from a free, openly licensed source; not chosen yet (plan Phase 7).

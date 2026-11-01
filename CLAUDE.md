@@ -35,6 +35,14 @@ The app supports more than one ambulance service. The user picks the active serv
 
 ---
 
+## Web Port (`web/`)
+
+A Cloudflare-native rewrite for a hosted multi-user version lives in `web/` (TypeScript Worker + React, D1). It has its
+own `package.json`, tests and CI (`.github/workflows/web-*.yml`); the desktop app and its checks ignore it. Read
+`web/README.md` and `docs/web-port-plan.md` before working there. The web corpus is ACTAS guideline content only.
+
+---
+
 ## Development Workflow
 
 All project-building work (coding, pipelines, scaffolding, debugging) is done via **Claude Code** using the developer's subscription. Do not call the Anthropic API or any other LLM API to assist in building the project — use Claude Code subagents and tools instead.

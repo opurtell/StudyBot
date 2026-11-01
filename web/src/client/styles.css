@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource/ibm-plex-mono/400.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-headline: "Newsreader Variable", Georgia, serif;
+  --font-body: "Space Grotesk Variable", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", Menlo, monospace;
+
+  --color-surface: #fbf9f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3ed;
+  --color-surface-container: #f0eee8;
+  --color-surface-container-high: #eae8e2;
+  --color-on-surface: #1b1c18;
+  --color-on-surface-variant: #404847;
+  --color-outline-variant: #bfc8c6;
+  --color-primary: #2d5a54;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #bcece4;
+  --color-highlight: #dae058;
+  --color-on-highlight: #1a1d00;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+}
+
+@layer base {
+  html {
+    background: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    -webkit-text-size-adjust: 100%;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
