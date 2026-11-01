@@ -1,0 +1,21 @@
+{
+  "id": "CMG_CSM.IDH11_Kendrick_Extrication_Device__KED_",
+  "cmg_number": "CSM.IDH11",
+  "title": "Kendrick Extrication Device (KED)",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n\n- To aid in immobilisation and extrication of a patient with suspected or actual spinal injury.\n- For pelvic fractures where a Pelvic Splint is not available.\n\n#### Procedure\n\n- Explain to the patient that this procedure requires some degree of intimate contact.\n\n- Apply a cervical collar if required.\n\n- Remove KED from bag and place head straps and head padding to one side (see **Figure 1**).\n\nFigure 1\n\n- Position the smooth side of the KED down the patient’s back and fold the side “wings” under the patient’s axilla, ensuring that the KED is in line with the patient’s spine.\n\n- Loosely buckle the middle (yellow) strap and the bottom (red strap), then tension (see **Figure 2**).\n\nFigure 2\n\n- Position the leg straps as far under the buttock crease as possible (see **Figure 3**).\n\nFigure 3\n\n- Buckle leg straps either on same or opposite sides.\n\n- If there is a large space between the patient’s head and the back of the KED, place head padding between head and KED.\n\n- Secure the head using a chin strap and then a forehead strap (or triangular bandage) and angle to ensure position (see **Figure 4**).\n\nFigure 4\n\n- Buckle the top (green) strap: \n- Inform the patient to take a deep breath before you tension the top (green) strap while breath is being held.\n\n- Confirm all straps are tensioned tightly.\n\n- Secure the patient’s knees with a triangular bandage.\n\n- The patient may be lifted using the handles on the sides and back of the KED.\n\n- Once positioned on the stretcher, loosen all buckles and straps.\n\n#### Complications\n\n- Prolonged extrication and on scene time with a critical ill patient.\n- Bariatric patients: straps may not fit.\n\n#### Specific Notes\n\n- For pregnant patients: tension the chest and abdominal straps for support only.\n- For small paediatric patients: place a folded blanket underneath the chest straps and then tension.\n- To use as a pelvic splint: \n- Turn the KED upside down so that the chest straps can be tensioned across the pelvis and the head end is at the distal end of the patient’s legs.\n- The leg straps remain folded.",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "917abb2b99a557c215929089daa37853b9cff94ffc27bbd2c72c856a854b8db9",
+  "extraction_metadata": {
+    "timestamp": "2026-11-01T07:43:15.746129+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

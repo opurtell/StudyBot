@@ -1,0 +1,21 @@
+{
+  "id": "CMG_CSM.P05_Supine_with_10__Head_Elevation",
+  "cmg_number": "CSM.P05",
+  "title": "Supine with 10° Head Elevation",
+  "version_date": null,
+  "section": "Clinical Skill",
+  "content_markdown": "#### Indications\n\n- General patient comfort.\n\n#### Procedure\n\n- Lift the head end by lifting the red leaver and raise the head end upwards until the desired height is reached, then release the red leaver.\n\n- Constantly reassess the patient comfort and perfusion status, adjusting as required.\n\nFigure 1",
+  "is_icp_only": false,
+  "dose_lookup": null,
+  "flowchart": null,
+  "checksum": "359279d2728b1325b76ec87d308deecf97c99c14f5814d404334314eeff06f70",
+  "extraction_metadata": {
+    "timestamp": "2026-11-01T07:43:15.742867+00:00",
+    "source_type": "csm",
+    "agent_version": "2.0",
+    "content_flag": null
+  },
+  "qualifications_required": [
+    "AP"
+  ]
+}

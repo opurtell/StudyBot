@@ -601,14 +601,22 @@
         ]
       },
       {
-        "text": " Amiodarone 5mg/kg  (max 150mg) ",
+        "text": " Amiodarone 300mg, repeat 150mg @5/60 if required, max. one repeat. Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
         "dose_values": [
           {
-            "amount": "5",
+            "amount": "300",
             "unit": "mg"
           },
           {
             "amount": "150",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
             "unit": "mg"
           }
         ],
@@ -617,10 +625,30 @@
         ]
       },
       {
-        "text": " 300mg after 3",
+        "text": " Amiodarone 5mg/kg (max. 300mg), repeat 2.5mg/kg @5/60 if required, max. one repeat (max. total dose 450mg) Adrenaline 0.01mg/kg, repeat 0.01mg/kg @4/60, no max. repeat.",
         "dose_values": [
           {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
             "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "450",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.01",
             "unit": "mg"
           }
         ],
@@ -645,7 +673,7 @@
         ]
       },
       {
-        "text": "##### Type\nPotent anti-arrhythmic agent [S4]\n\n##### Presentations\n150mg in 3ml – glass ampoule\n\n##### Actions\nComplex electrophysiological and pharmacological profile:\n\n- Prolongs the action potential duration; increases the refractoriness of all cardiac tissues\n\n- Blocks Na+ channels (class I action)\n\n- Has some anti-adrenergic effects (class II action)\n\n- Ca2+ blockade (class IV action)\n\n- Prolongs QT interval – reflects global prolongation of repolarisation \n\n- When given IV, there is a significant effect on the AV node which causes a delay in nodal conduction\n\n- Also effective for accessory pathway conduction \n\n#### Uses\nEffective for both supraventricular and ventricular arrhythmias. ACTAS uses: \n\n- To slow the ventricular rate in atrial fibrillation and flutter \n\n- To treat VF and VT\n\n#### Adverse Effects\nWhen given IV, can cause vasodilation, negative inotropic effects and hypotension (dose and rate dependent).\n\nOccasionally may cause:\n\n- Bradycardia (especially in older patients)\n\n- Phlebitis\n\n- Hot flushes / sweating\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Cross sensitivity to iodine\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Only use in the setting of cardiac arrest or peri-arrest\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR\n\n#### Doses#### VF/VT cardiac arrest##### Adult\n- **ICP:** 300mg IV/IO \n- Over 30-60 seconds.\n\n##### Paediatric\n- **ICP:** 5mg/kg IV/IO (to maximum 300mg) \n- Over 30-60 seconds.\n\n#### VT, AF and A.flutter - with cardiac output##### Adult\n- **ICP:** 150mg IV via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n##### Paediatric\n- **ICP:** 5mg/kg IV (to maximum 150mg) via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n#### Special Notes\n- Significant potential drug interactions.\n- The following may potentiate the actions of amiodarone: \n- Digoxin\n- Phenytoin (Dilantin)\n- \\u03b2 blockers- Ca2+ channel blocker- Other antiarrhythmics.",
+        "text": "##### Type\n\nPotent anti-arrhythmic agent [S4]\n\n##### Presentations\n\n150mg in 3ml – glass ampoule\n\n##### Actions\n\nComplex electrophysiological and pharmacological profile:\n\n- Prolongs the action potential duration; increases the refractoriness of all cardiac tissues\n\n- Blocks Na+ channels (class I action)\n\n- Has some anti-adrenergic effects (class II action)\n\n- Ca2+ blockade (class IV action)\n\n- Prolongs QT interval – reflects global prolongation of repolarisation \n\n- When given IV, there is a significant effect on the AV node which causes a delay in nodal conduction\n\n- Also effective for accessory pathway conduction \n\n#### Uses\n\nEffective for both supraventricular and ventricular arrhythmias. ACTAS uses: \n\n- To slow the ventricular rate in atrial fibrillation and flutter \n\n- To treat VF and VT\n\n#### Adverse Effects\n\nWhen given IV, can cause vasodilation, negative inotropic effects and hypotension (dose and rate dependent).\n\nOccasionally may cause:\n\n- Bradycardia (especially in older patients)\n\n- Phlebitis\n\n- Hot flushes / sweating\n\n#### Contraindications\n\n- Known hypersensitivity\n\n- Suspected prolonged QT (e.g. Torsades de Pointes)\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Only use in the setting of cardiac arrest or peri-arrest\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting, document breastfeeding status in ePCR\n\n#### Doses\n\n#### VF/VT cardiac arrest\n\n##### Adult\n\n- **ICP:** 300mg IV/IO \n- Repeat 150mg once @5/60 if required.\n\n##### Paediatric\n\n- **ICP:** 5mg/kg IV/IO (max. 300mg) \n- Repeat once @5/60 if required (max. total dose 450mg).\n\n#### VT, AF and A.flutter - with cardiac output\n\n##### Adult\n\n- **ICP:** 150mg IV via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n\n##### Paediatric\n\n- **ICP:** 5mg/kg IV (to maximum 150mg) via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)\n- VT – if extremely compromised, may be given over 5 minutes by slow IV injection\n- No repeat dose for either treatment regime.\n\n#### Special Notes\n\n- Significant potential drug interactions.\n- The following may potentiate the actions of amiodarone: \n- Digoxin\n- Phenytoin (Dilantin)\n- \\u03b2 blockers- Ca2+ channel blocker- Other antiarrhythmics.",
         "dose_values": [
           {
             "amount": "150",
@@ -660,11 +688,19 @@
             "unit": "mg"
           },
           {
+            "amount": "150",
+            "unit": "mg"
+          },
+          {
             "amount": "5",
             "unit": "mg"
           },
           {
             "amount": "300",
+            "unit": "mg"
+          },
+          {
+            "amount": "450",
             "unit": "mg"
           },
           {
@@ -1260,18 +1296,6 @@
         ]
       },
       {
-        "text": " Magnesium sulphate 50mg/kg (max 2.5kg)",
-        "dose_values": [
-          {
-            "amount": "50",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
         "text": "Postpartum haemorrhage is generally defined as an acute haemorrhage with blood loss of ≥ 500ml occurring within 12 weeks post‐delivery. Severe PPH is defined as ≥ 1,000ml of blood loss.",
         "dose_values": [
           {
@@ -1281,6 +1305,50 @@
           {
             "amount": "000",
             "unit": "ml"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Magnesium Sulphate 2.5g, no repeat. Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Magnesium Sulphate 50mg/kg (max. 2.5g), no repeat.  Adrenaline 0.01mg/kg, repeat 0.01mg/kg @4/60, no max. repeat.",
+        "dose_values": [
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.01",
+            "unit": "mg"
           }
         ],
         "qualifications_required": [
@@ -1351,7 +1419,7 @@
         ]
       },
       {
-        "text": "##### Type\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n2.5g in 5 ml (50% solution) – glass ampoule\n\n##### Actions\nMagnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.\n\n#### Uses\n\n- Torsades de pointes / polymorphic VT **- ICP only**\n\n- Refractory VF (3rd drug) **- ICP only**\n\n- Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation\n\n- Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**\n\n#### Adverse Effects\nRare – more common if serum magnesium is normal:\n\n- Respiratory depression\n\n- Nausea and vomiting\n\n- Hypotension\n\n- Confusion\n\n- Bradycardia\n\n#### Contraindications\n\n- AV block\n\n- Renal failure\n\n- Hepatic failure\n\n#### Precautions\nMyasthenia gravis\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **ICP: ****With cardiac output: **2.5g IV/IO \n- Diluted up to 10ml with normal saline\n- Given over 5 minutes. \n\n- **ICP: ****Refractory VF: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Torsades de pointes: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).##### Paediatric\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.\n#### Special Notes\n- Prolonged hypotension post-magnesium administration – if unresponsive to fluids, patient may be treated with IV calcium.",
+        "text": "##### Type\n\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n\n2.5g in 5 ml (50% solution) – glass ampoule\n\n##### Actions\n\nMagnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is involved in the processes regulating sodium and potassium movement across cell membranes and, as such, it may promote myocardial cell membrane stability.\n\n#### Uses\n\n- Torsades de pointes / polymorphic VT **- ICP only**\n\n- Any seizure activity, or acute history of seizure activity, in patients with >20/40 gestation\n\n- Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual disturbances, etc.) **- ICP only**\n\n#### Adverse Effects\n\nRare – more common if serum magnesium is normal:\n\n- Respiratory depression\n\n- Nausea and vomiting\n\n- Hypotension\n\n- Confusion\n\n- Bradycardia\n\n#### Contraindications\n\n- AV block\n\n- Renal failure\n\n- Hepatic failure\n\n#### Precautions\n\nMyasthenia gravis\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- **ICP: ****With cardiac output: **2.5g IV/IO \n- Diluted up to 10ml with normal saline\n- Given over 5 minutes. \n\n- **ICP: ****Torsades de pointes: **2.5g IV/IO \n- Over 30-60 seconds \n- **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor \n- Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n- **Seizures due to eclampsia: **\n- 2.5g IV/IO over 30-60 seconds\n- Followed by 2.5g IV/IO via Springfusor - Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).\n##### Paediatric\n\n- Dose is 50mg/kg (to max of 2.5g)\n- Dilute entire ampoule up to 10ml = 250mg/ml. Discard excess.\n- **With cardiac output: **Give calculated dose IV/IO over 3 – 5 minutes.\n- **No cardiac output: **Give calculated dose IV/IO over 30 – 60 seconds.\n\n#### Special Notes\n\n- Prolonged hypotension post-magnesium administration – if unresponsive to fluids, patient may be treated with IV calcium.",
         "dose_values": [
           {
             "amount": "2.5",
@@ -1368,10 +1436,6 @@
           {
             "amount": "10",
             "unit": "ml"
-          },
-          {
-            "amount": "2.5",
-            "unit": "g"
           },
           {
             "amount": "2.5",
@@ -1449,7 +1513,7 @@
         ]
       },
       {
-        "text": "##### Type\nEndogenous purine nucleoside, found in all body cells [S4]\n\n##### Presentations\n6mg in 2ml – vial\n\n##### Actions\n- Causes transient inhibition of conduction in the heart, especially in the AV node.\n- Onset: 5-10 seconds\n- Duration: approximately 10 seconds\n\n#### Uses\n\n- Treatment of supraventricular tachycardia.\n\n- Not for the treatment of atrial flutter or fibrillation; however, if mistakenly administered to patients in these arrhythmias, the decrease in AV conduction may unmask atrial activity. \n\n#### Adverse Effects\nCommon, although transient and generally minor:\n\n- Arrhythmias at the time of conversion are common (up to 55% patients) – including PVCs, PACs, sinus bradycardia, AV blocks\n\n- Transient flushing of the skin\n\n- Mild dyspnoea\n\n- Chest tightness\n\n- Nausea\n\n- Headache\n\n- Feelings of apprehension and fear\n\n#### Contraindications\n\n- 2\\xb0 or 3\\xb0 heart block\n\n- Known hypersensitivity\n\n#### Precautions\n\n- Asthma – may exacerbate bronchospasm\n\n- Antagonised by: theophylline (Nuelin)\n\n- Potentiated by: \n- dipyridamole (Persantin, Asasantin)\n- carbamazepine (Tegretol, Teril)\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult (symptomatic adults only)\n- **ICP: **6mg IV - rapid bolus (over 1 - 2 seconds) \n- Give into a fast flowing pump set.\n\n- **ICP: **If first is unsuccessful: \n- Give second dose (2 minutes between doses)\n- 12mg IV - rapid bolus (over 1 - 2 seconds).##### Paediatric\n- **ICP:** First dose: 0.05mg/kg – given as above \n- **ICP:** Second dose: 0.1mg/kg\n#### Special Notes\n- Use only after Valsalva manoeuvre x 2.\n- Record a 12 lead ECG prior to use of adenosine.\n- Rapid injection with a pump set increases likelihood of success.\n- Elevate limb if possible.\n- Even if the arrhythmia is successfully converted, the patient should still be transported to hospital as the incidence of recurrent arrhythmias is quite high (10 – 15%).\n- If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
+        "text": "##### Type\n\nEndogenous purine nucleoside, found in all body cells [S4]\n\n##### Presentations\n\n6mg in 2ml – vial\n\n##### Actions\n\n- Causes transient inhibition of conduction in the heart, especially in the AV node.\n- Onset: 5-10 seconds\n- Duration: approximately 10 seconds\n\n#### Uses\n\n- Treatment of supraventricular tachycardia.\n\n- Not for the treatment of atrial flutter or fibrillation; however, if mistakenly administered to patients in these arrhythmias, the decrease in AV conduction may unmask atrial activity. \n\n#### Adverse Effects\n\nCommon, although transient and generally minor:\n\n- Arrhythmias at the time of conversion are common (up to 55% patients) – including PVCs, PACs, sinus bradycardia, AV blocks\n\n- Transient flushing of the skin\n\n- Mild dyspnoea\n\n- Chest tightness\n\n- Nausea\n\n- Headache\n\n- Feelings of apprehension and fear\n\n#### Contraindications\n\n- 2\\xb0 or 3\\xb0 heart block\n\n- Known hypersensitivity\n\n#### Precautions\n\n- Asthma – may exacerbate bronchospasm\n\n- Antagonised by: theophylline (Nuelin)\n\n- Potentiated by: \n- dipyridamole (Persantin, Asasantin)\n- carbamazepine (Tegretol, Teril)\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult (symptomatic adults only)\n\n- **ICP: **6mg IV - rapid bolus (over 1 - 2 seconds) \n- Give into a fast flowing pump set.\n\n- **ICP: **If first is unsuccessful: \n- Give second dose (2 minutes between doses)\n- 12mg IV - rapid bolus (over 1 - 2 seconds).\n##### Paediatric\n\n- **ICP:** First dose: 0.05mg/kg – given as above \n- **ICP:** Second dose: 0.1mg/kg\n\n#### Special Notes\n\n- Use only after Valsalva manoeuvre x 2.\n- Record a 12 lead ECG prior to use of adenosine.\n- Rapid injection with a pump set increases likelihood of success.\n- Elevate limb if possible.\n- Even if the arrhythmia is successfully converted, the patient should still be transported to hospital as the incidence of recurrent arrhythmias is quite high (10 – 15%).\n- If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.5mg IV.",
         "dose_values": [
           {
             "amount": "6",
@@ -1571,7 +1635,7 @@
         ]
       },
       {
-        "text": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses#### Local anaesthesia##### Adult and Paediatric\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output##### Adult and Paediatric\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient##### Adult\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine##### Paediatric\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n#### Solvent for IM Ceftriaxone\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
+        "text": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n50mg in 5ml – plastic ampoule\n\n##### Actions\n\n- Local anaesthetic effects\n\n- Suppresses ventricular arrhythmias\n\n- Onset SCI: 1 – 4 mins. Max effect: 5 – 10 minutes.\n\n- Onset IV: 1 – 3 minutes.\n\n#### Uses\n\n- Local anaesthesia prior to invasive procedures\n\n- VT with cardiac output, in patients who cannot have amiodarone\n\n- Flushing of a painful IO in an aware patient\n\n- Solvent for IM ceftriaxone administration\n\n#### Adverse Effects\n\nThese effects are extremely unlikely in usual subcutaneous doses, especially if the syringe is continually aspirated. More likely if given IV.\n\n- CNS effects: \n stimulation followed by depression, drowsiness, agitation, muscle twitching, seizures, coma \n\n- Cardiac effects: \n hypotension, bradycardia, heart block, asystole \n\n#### Contraindications\n\nKnown hypersensitivity \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### Local anaesthesia\n\n##### Adult and Paediatric\n\n- **ICP:** Up to 5ml subcutaneously \n\n#### VT with cardiac output\n\n##### Adult and Paediatric\n\n- **ICP:** 1mg/kg – slow IV / IO over 2 minutes \n\n#### IO in an aware patient\n\n##### Adult\n\n- **ICP:** 40mg through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: 20mg over 60 seconds (max. 2 x repeats)\n- Total max. dose 80mg\n- Consider systemic pain relief for patients not responding to IO lignocaine\n##### Paediatric\n\n- **ICP:** 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes \n- Allow lignocaine to dwell in IO space for 60 seconds, then flush with 5-10ml of normal saline\n- Repeat after 5 minutes if needed: half of initial dose over 60 seconds (max. 2 x repeats)\n- Consider systemic pain relief for patients not responding to IO lignocaine\n\n#### Solvent for IM Ceftriaxone\n\n- AP and ICP refer to the medicine calculator for ceftriaxone for dose",
         "dose_values": [
           {
             "amount": "50",
@@ -1628,7 +1692,7 @@
   "flowchart": null,
   "checksum": "f64d5e65143488072fbaaee3297a464d78be0f12d4ab7c322646e19e02326169",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.495104+00:00",
+    "timestamp": "2026-11-01T07:43:15.727526+00:00",
     "source_type": "cmg",
     "agent_version": "2.0",
     "content_flag": null

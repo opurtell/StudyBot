@@ -49,7 +49,7 @@
 **Clinical skills**
 
 - ICP-only: CSM.A10 AirTraq (Endotracheal Intubation); CSM.A11 AirTraq Camera; CSM.A12 Laryngoscope and Bougie (Endotracheal Intubation); CSM.A13 Laryngoscope and Bougie Railroad Technique (Endotracheal Intubation); CSM.A14 BURP Manoeuvre; CSM.A15 Extubation; CSM.A16 Cricothyroid Pressure; CSM.A20 Front of Neck (Surgical Airway); CSM.A21 Needle Cricothyroidotomy; CSM.B10 Tension Pneumothorax Needle Decompression; CSM.C05 External Cardiac Pacing (Zoll X Series); CSM.DF07 External Jugular Cannulation; CSM.DF16 Adrenaline Infusion
-- Tagged line by line: 86
+- Tagged line by line: 90
 
 ## Lines hidden from AP users
 
@@ -139,11 +139,14 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | ICP | - Maintenance of sedation **- ICP only** | labelled ICP |
 | ICP | - Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only** | labelled ICP |
 | ICP | - Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only** | labelled ICP |
+| ICP | - Management of cardiac arrest patients with CPR-IC **- ICP only** | labelled ICP |
 | ICP | - **ICP: ****When used as the first line agent:** Up to 4mg/kg IM injection | labelled ICP |
 | ICP | - **ICP: ****When used as the second line agent:** Up to 2mg/kg IM/IV/IO | labelled ICP |
 | ICP | - For all regimes: repeat as required. | continues ICP-labelled item |
 | ICP | - All IV doses are to be given slowly, over 30 seconds. | continues ICP-labelled item |
 | ICP | - Reduce dose by half following droperidol use (i.e. up to 1mg/kg IM/IV/IO). | continues ICP-labelled item |
+| ICP | - **ICP:** 0.5mg/kg IV/IO | labelled ICP |
+| ICP | - Repeat @4/60 if required | continues ICP-labelled item |
 | ICP | #### For intubation induction with Suxamethonium | heading |
 | ICP | ##### Adult only | heading |
 | ICP | - **ICP:** 1mg/kg IV/IO over 30-60 seconds | labelled ICP |
@@ -173,13 +176,10 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | Shown to | Line | Why |
 |---|---|---|
 | ICP | - Torsades de pointes / polymorphic VT **- ICP only** | labelled ICP |
-| ICP | - Refractory VF (3rd drug) **- ICP only** | labelled ICP |
 | ICP | - Symptomatic pre-eclampsia – hypertensive pregnant patient (20/40 to 6/52 post partum) presenting as unwell (altered LOC, headache, abdominal pain, visual dis… | labelled ICP |
 | ICP | - **ICP: ****With cardiac output: **2.5g IV/IO | labelled ICP |
 | ICP | - Diluted up to 10ml with normal saline | continues ICP-labelled item |
 | ICP | - Given over 5 minutes. | continues ICP-labelled item |
-| ICP | - **ICP: ****Refractory VF: **2.5g IV/IO | labelled ICP |
-| ICP | - Over 30-60 seconds | continues ICP-labelled item |
 | ICP | - **ICP: ****Torsades de pointes: **2.5g IV/IO | labelled ICP |
 | ICP | - Over 30-60 seconds | continues ICP-labelled item |
 | ICP | - **ICP: ****Pre-eclampsia: **2.5g IV/IO via Springfusor | labelled ICP |
@@ -417,14 +417,14 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | ICP | - **If bradycardic:** consider external pacing (preferred over adrenaline for ROSC bradycardia). | names an ICP-only skill (CSM.C05 external pacing) |
 | ICP | - **ICP:** Consider adrenaline infusion. | labelled ICP |
 
-### CMG 4 Cardiac Arrest: Adult
+### CMG 4 Cardiac Arrest: Adult (≥12yo)
 
 | Shown to | Line | Why |
 |---|---|---|
-| ICP | - **ICP: Amiodarone** 300mg after 3rd shock. | labelled ICP |
-| ICP | - **ICP: Magnesium sulphate** | labelled ICP |
-| ICP | - **ICP: Sodium bicarbonate** | labelled ICP |
-| ICP | - **ICP: Sodium bicarbonate** | labelled ICP |
+| ICP | - **ICP:** Amiodarone 300mg, repeat 150mg @5/60 if required, max. one repeat. | labelled ICP |
+| ICP | - **ICP:** Magnesium Sulphate 2.5g, no repeat. | labelled ICP |
+| ICP | - Amiodarone contraindicated | names an ICP-only medicine |
+| ICP | - **ICP:** Ketamine 0.5mg/kg IV, repeat @4/60 if required. | labelled ICP |
 
 ### CMG 5A ROSC: Paediatric (Return of Spontaneous Circulation)
 
@@ -434,16 +434,14 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | ICP | - **ICP:** In a ROSC patient who is responsive and breathing, yet still bradycardic, consider adrenaline infusion. | labelled ICP |
 | ICP | - **ICP:** Consider adrenaline infusion. | labelled ICP |
 
-### CMG 5 Cardiac Arrest: Paediatric (<12 years old)
+### CMG 5 Cardiac Arrest: Paediatric (>24h, <12yo)
 
 | Shown to | Line | Why |
 |---|---|---|
-| ICP | - **ICP:** Consider intraosseous access. | labelled ICP |
-| ICP | - **ICP: Amiodarone 5mg/kg **(max 150mg) | labelled ICP |
-| ICP | - **ICP: Magnesium sulphate 50mg/kg (max 2.5kg)** | labelled ICP |
-| ICP | - **ICP: Sodium bicarbonate 1mMol/kg** | labelled ICP |
-| ICP | - **ICP:** Consider intraosseous access. | labelled ICP |
-| ICP | - **ICP: Sodium bicarbonate 1mMol/kg** | labelled ICP |
+| ICP | - **ICP:** Amiodarone 5mg/kg (max. 300mg), repeat 2.5mg/kg @5/60 if required, max. one repeat (max. total dose 450mg) | labelled ICP |
+| ICP | - **ICP:** Magnesium Sulphate 50mg/kg (max. 2.5g), no repeat. | labelled ICP |
+| ICP | - Amiodarone contraindicated | names an ICP-only medicine |
+| ICP | - **ICP:** Ketamine 0.5mg/kg IV, repeat @4/60 if required. | labelled ICP |
 
 ### CMG 7 Bradyarrhythmias
 
@@ -482,49 +480,17 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | ICP | - **ICP:** Consider hydrocortisone. | labelled ICP |
 | ICP | - **ICP:** Consider hydrocortisone. | labelled ICP |
 
-### CSM.A01 Manual Clearance (Airway Management)
-
-| Shown to | Line | Why |
-|---|---|---|
-| ICP | - **ICP:** Mild sedation to permit **basic** airway management (midazolam). | labelled ICP |
-| ICP | - **ICP: Assess need to intubate:** | labelled ICP |
-| ICP | - **ICP:** Mild sedation to permit **basic** airway management (midazolam). | labelled ICP |
-| ICP | - **ICP: Assess need to intubate:** | labelled ICP |
-
-### CSM.A03 Suction (Airway Management)
-
-| Shown to | Line | Why |
-|---|---|---|
-| ICP | - **ICP:** Mild sedation to permit **basic** airway management (midazolam). | labelled ICP |
-| ICP | - **ICP: Assess need to intubate:** | labelled ICP |
-| ICP | - **ICP:** Mild sedation to permit **basic** airway management (midazolam). | labelled ICP |
-| ICP | - **ICP: Assess need to intubate:** | labelled ICP |
-
-### CSM.A05 Back Blows (Airway Obstruction)
-
-| Shown to | Line | Why |
-|---|---|---|
-| ICP | - **ICP:** If fails: | labelled ICP |
-| ICP | - **ICP:** Consider the need for advanced airway management early (e.g. RSI). | labelled ICP |
-| ICP | - **ICP:** Consider IV adrenaline infusion. | labelled ICP |
-| ICP | - **ICP:** Implement Intubation Algorithm. | labelled ICP |
-| ICP | - **ICP:** If not resolved (and continuing signs of hypoxia): | labelled ICP |
-
-### CSM.A06 Magill Forceps (Airway Obstruction)
-
-| Shown to | Line | Why |
-|---|---|---|
-| ICP | - **ICP:** If fails: | labelled ICP |
-| ICP | - **ICP:** Consider the need for advanced airway management early (e.g. RSI). | labelled ICP |
-| ICP | - **ICP:** Consider IV adrenaline infusion. | labelled ICP |
-| ICP | - **ICP:** Implement Intubation Algorithm. | labelled ICP |
-| ICP | - **ICP:** If not resolved (and continuing signs of hypoxia): | labelled ICP |
-
 ### CSM.A19 Intragastric Tube (IGT) Insertion
 
 | Shown to | Line | Why |
 |---|---|---|
 | ICP | - **Intubated patients:** use laryngoscope and Magill forceps. | override: Oscar: IGT note for intubated patients is ICP |
+
+### CSM.C07 Mechanical Chest Compression Device (Corpuls cpr®)
+
+| Shown to | Line | Why |
+|---|---|---|
+| ICP | - ICP: While holding onto Corpuls Arm, slides recboard under the thorax. | labelled ICP |
 
 ### CSM.DF01 Drawing Up Drugs
 
@@ -567,13 +533,13 @@ Weight-band and selector rows from `dose_lookup`. Rows for mixed-scope medicines
 | Medicine | AP and ICP | ICP only | PACER | Kept ICP because route unclear |
 |---|---|---|---|---|
 | Adenosine | 0 | 3 | 0 | 0 |
-| Adrenaline | 364 | 392 | 0 | 238 |
+| Adrenaline | 364 | 420 | 0 | 266 |
 | Amiodarone | 0 | 84 | 0 | 0 |
 | Aspirin | 2 | 0 | 0 | 0 |
 | Atropine | 3 | 9 | 0 | 3 |
 | Calcium Chloride | 0 | 1 | 0 | 0 |
 | Ceftriaxone | 5 | 1 | 0 | 0 |
-| Fentanyl | 1 | 0 | 0 | 0 |
+| Fentanyl | 2 | 0 | 0 | 0 |
 | Glucagon | 4 | 0 | 0 | 0 |
 | Glucose | 30 | 0 | 0 | 0 |
 | Glyceryl Trinitrate | 2 | 0 | 0 | 0 |
@@ -581,23 +547,23 @@ Weight-band and selector rows from `dose_lookup`. Rows for mixed-scope medicines
 | Heparin | 0 | 10 | 0 | 0 |
 | Hydrocortisone | 0 | 4 | 0 | 0 |
 | Ibuprofen | 8 | 0 | 0 | 0 |
-| Ipratropium | 1 | 0 | 0 | 0 |
-| Ketamine | 3 | 56 | 0 | 30 |
+| Ipratropium | 2 | 0 | 0 | 0 |
+| Ketamine | 8 | 132 | 0 | 84 |
 | Levetiracetam | 0 | 2 | 0 | 0 |
 | Lignocaine | 0 | 6 | 0 | 0 |
-| Magnesium | 0 | 124 | 0 | 112 |
+| Magnesium | 0 | 128 | 0 | 116 |
 | Methoxyflurane | 6 | 0 | 0 | 0 |
-| Midazolam | 12 | 88 | 0 | 60 |
-| Morphine | 6 | 36 | 0 | 16 |
+| Midazolam | 12 | 98 | 0 | 60 |
+| Morphine | 6 | 42 | 0 | 20 |
 | Naloxone | 0 | 1 | 0 | 0 |
-| Normal Saline | 99 | 33 | 0 | 0 |
+| Normal Saline | 64 | 32 | 0 | 0 |
 | Ondansetron | 4 | 0 | 0 | 0 |
-| Oxygen | 1248 | 96 | 0 | 0 |
+| Oxygen | 1200 | 100 | 0 | 0 |
 | Paracetamol | 6 | 0 | 0 | 0 |
 | Prochlorperazine | 3 | 0 | 0 | 0 |
 | Salbutamol | 2 | 0 | 0 | 0 |
-| Sodium Bicarbonate | 0 | 120 | 0 | 0 |
-| Suxamethonium | 0 | 18 | 0 | 0 |
+| Sodium Bicarbonate | 0 | 56 | 0 | 0 |
+| Suxamethonium | 0 | 20 | 0 | 0 |
 
 Rows of mixed-scope medicines shown to AP users:
 
@@ -620,6 +586,7 @@ Rows of mixed-scope medicines shown to AP users:
 - Adrenaline: Weight >10kg: nebulise 5ml adrenaline 1:1,000 Weight <10kg: nebulise 0.5ml/kg adrenaline 1:1,000 Make volume up to 5ml …
 - Atropine: In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.
 - Fentanyl: ##### Type Synthetic narcotic analgesic [S8] ##### Presentations 100mcg in 2mL (5mcg/0.1mL) glass ampoule ##### Actions…
+- Fentanyl: 1.5mcg/kg IN, up to 100mcg.
 - Ketamine: 0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor
 - Ketamine: Up to 4mg/kg IM injection
 - Midazolam: 0.2mg/kg IM (max. 10mg)

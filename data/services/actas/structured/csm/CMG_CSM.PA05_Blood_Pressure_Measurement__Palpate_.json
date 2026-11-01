@@ -4,13 +4,13 @@
   "title": "Blood Pressure Measurement (Palpate)",
   "version_date": null,
   "section": "Clinical Skill",
-  "content_markdown": "#### Indications\n\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n\n- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+  "content_markdown": "#### Indications\n\n- As part of a normal patient assessment.\n\n#### Procedure\n\n- Explain the procedure to the patient and ensure they are positioned at rest.\n\n- Expose the patient’s arm.\n\n- Select an appropriate sized blood pressure cuff (covering approx 2/3 upper arm).\n\n- Apply the blood pressure cuff, ensuring that the “Artery Line” is positioned approximately over the brachial artery and that the cuff is above the elbow.\n\n- Locate the patient’s radial pulse.\n\n- Inflate the cuff slowly until the radial pulse can no longer be palpated.\n\n- Slowly release the pressure and record the reading at which the radial pulse returns.\n\n#### Contraindications\n\n- Mastectomies. Do not take a BP on the arm same side as the surgery (lymphoedema).\n\n#### Complications\n\n- Taking a BP over clothing or on a patient that is moving around may cause an inaccurate reading.\n\n#### Specific Notes\n\n- A radial pulse may not be palpable when the blood pressure is below approximately 80-90mm/Hg. A femoral pulse indicates a blood pressure of approx 70-80. A carotid only pulse is indicative of a blood pressure of 60-70.\n- Avoid taking a BP on a dialysis patient on the same arm as the fistula, unless absolutely necessary. This also applies to a patient with a cannula in-situ.",
   "is_icp_only": false,
   "dose_lookup": null,
   "flowchart": null,
-  "checksum": "d3a6fc43cb8187c9c48a45fc7cce7758a05f35f8f4fa959e684decf94ed90fb8",
+  "checksum": "3b2a3a31169a8d6aab269d5fbf01605e9f643b78f39097c04280eb2412e789d2",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.606249+00:00",
+    "timestamp": "2026-11-01T07:43:15.741958+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

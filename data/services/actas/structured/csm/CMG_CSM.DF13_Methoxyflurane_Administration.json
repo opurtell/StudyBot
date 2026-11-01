@@ -9,7 +9,44 @@
   "dose_lookup": {
     "Oxygen": [
       {
+        "text": "Pre-oxygenation for at least 3 mins",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "20mL or 50mL luer-lock syringe",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
         "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Treat with 100% oxygen.",
         "dose_values": [],
         "qualifications_required": [
           "AP"
@@ -23,7 +60,14 @@
         ]
       },
       {
-        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
         "dose_values": [],
         "qualifications_required": [
           "AP"
@@ -42,21 +86,7 @@
         ]
       },
       {
-        "text": "Pre-oxygenation for at least 3 mins",
-        "dose_values": [],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
-        "dose_values": [],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
+        "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
         "dose_values": [],
         "qualifications_required": [
           "AP"
@@ -290,18 +320,6 @@
         ]
       },
       {
-        "text": "< 5ml",
-        "dose_values": [
-          {
-            "amount": "5",
-            "unit": "ml"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
         "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
         "dose_values": [],
         "qualifications_required": [
@@ -358,6 +376,18 @@
         ]
       },
       {
+        "text": "Antepartum/postpartum bleed >500mL",
+        "dose_values": [
+          {
+            "amount": "500",
+            "unit": "mL"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
         "text": "High flow, high concentration mask; consider 100% oxygen.",
         "dose_values": [],
         "qualifications_required": [
@@ -395,14 +425,7 @@
         ]
       },
       {
-        "text": "Treat with 100% oxygen.",
-        "dose_values": [],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "##### Type\nA naturally occurring gas \n\n##### Presentations\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult and Paediatric\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n#### Conditions with specific oxygen requirement\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+        "text": "##### Type\n\nA naturally occurring gas \n\n##### Presentations\n\nCompressed gas in all-white cylinders of various sizes, to be fitted with an appropriate pressure-reducing device \n\n##### Actions\n\nEssential element for aerobic metabolic needs and sustaining life. \n Oxygen administration improves, or prevents a reduction in, the oxygen content of blood leaving the lungs. \n\n#### Uses\n\nA wide range of situations, for the treatment or prevention of hypoxaemia\n\n#### Adverse Effects\n\n- Increased risk of fire / explosion – oxygen strongly supports combustion \n\n- Mucosal dryness and irritation\n\n- Hypoventilation in some COPD patients with CO2 retention (titrate oxygen to maintain SpO2 88 – 92%)\n\n#### Contraindications\n\n- Known paraquat poisoning with SpO2 ≥88%\n\n- History of bleomycin therapy with SpO2 ≥88%\n\n#### Precautions\n\nNeonates (especially pre-term infants) are particularly susceptible to the toxic effects of oxygen. When absolutely required, the lowest effective concentration, for the shortest possible time, should be used to achieve adequate oxygenation.\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\nWith the exception of conditions listed below, oxygen should generally be titrated to maintain SpO2 ≥94% (i.e, unless otherwise required, there is no need to push saturations to 100%). \n\nDeliver oxygen through a device appropriate to the required inspired concentration of oxygen.\n\n- **Nasal cannulae: **1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements\n- **Oxygen (‘Hudson’) mask: **6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements\n- **Nebuliser: **8 litres/min for moderate oxygen requirements with need for aerosolised medications- **Non-rebreather mask (NRBM): **15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements- **Bag-valve-mask (BVM): **15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements- **Continuous positive airway pressure (CPAP): **8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.\n\n#### Conditions with specific oxygen requirement\n\n- Conditions requiring 100% oxygen delivery (NRBM, BVM) \n- Obstetric emergencies\n- Carbon monoxide poisoning\n- Unrelieved upper airway obstruction\n- Diving emergencies.\n- COPD patients with possible CO2 retention – titrate oxygen delivery to maintain SpO2 of 88 – 92%.\n- Rapid sequence intubation (RSI) – aim for highest SpO2 possible \n- High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
         "dose_values": [],
         "source": "app-oxygen",
         "qualifications_required": [
@@ -410,7 +433,7 @@
         ]
       },
       {
-        "text": "#### Indications\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
+        "text": "#### Indications\n\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minimal oxygen requirements – approx 24-40%)\n\n- Attach nasal prong tubing to the oxygen port.\n\n- Select oxygen flow rate. \n- **Note: 15 Lpm continuous during intubation.**\n\n- Place one nasal prong in each nostril and tubing tucked behind each ear.\n\n- Position the slide adjuster underneath the patient’s chin.\n\n- Reassess respiratory and perfusion status.\n\nFigure 2\n\n##### Hudson Mask (moderate oxygen requirements – approx 30-65%)\n\n- Attach the oxygen tubing to the Hudson mask.\n\n- Connect the oxygen tubing to the oxygen port.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the metal nose piece if required.\n\n- Reassess respiratory and perfusion status.\n\nFigure 3\n\n##### Non-Rebreather Mask (high oxygen requirements - approx 60-97%)\n\n- Prepare as for Hudson mask.\n\n- Select oxygen flow rate of >10 Lpm.\n\n- Ensure reservoir bag is inflated.\n\n- Place elastic banding over patients head and adjust as required.\n\n- Position the mask over the patient’s nose and mouth, moulding the nose piece if required.\n\n- Reassess respiratory and perfusion status.",
         "dose_values": [],
         "source": "app-oxygen-administration",
         "qualifications_required": [
@@ -432,7 +455,7 @@
         ]
       },
       {
-        "text": "##### Type\nVolatile inhalation anaesthetic and analgesic agent [S4]\n\n- **High-risk medication**\n\n##### Presentations\n3ml bottle\n\n##### Actions\nCentral nervous system depressant\n\nOnset: 3 – 5 mins. Offset: 3 – 5 mins.\n\n#### Uses\nFor relief of pain of all origins\n\n#### Adverse Effects\n\n- Altered consciousness\n\n- Renal dysfunction (rare with once only ambulance use)\n\n- Jaundice (rare with once only ambulance use)\n\n- Uterine atonia\n\n#### Contraindications\n\n- Depressed level of consciousness\n\n- Known hypersensitivity\n\n- Malignant hyperthermia\n\n- Concurrent doxycycline use (e.g. Doryx, Doxsig, Doxylin, Frakas, etc.) \n\n#### Precautions\n\n- Renal disease\n\n- Diabetes\n\n- Caution if patient unable to self-administer\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting\n\n#### Doses##### Adult and Paediatric \n- Up to 3ml – self administered via Penthrox inhaler \n- Repeat once if required\n- Dose should not exceed 6ml/day or 15ml/week\n- If used during labour, discontinue use post-delivery, and if PPH is suspected.",
+        "text": "##### Type\n\nVolatile inhalation anaesthetic and analgesic agent [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n3ml bottle\n\n##### Actions\n\nCentral nervous system depressant\n\nOnset: 3 – 5 mins. Offset: 3 – 5 mins.\n\n#### Uses\n\nFor relief of pain of all origins\n\n#### Adverse Effects\n\n- Altered consciousness\n\n- Renal dysfunction (rare with once only ambulance use)\n\n- Jaundice (rare with once only ambulance use)\n\n- Uterine atonia\n\n#### Contraindications\n\n- Depressed level of consciousness\n\n- Known hypersensitivity\n\n- Malignant hyperthermia\n\n- Concurrent doxycycline use (e.g. Doryx, Doxsig, Doxylin, Frakas, etc.) \n\n#### Precautions\n\n- Renal disease\n\n- Diabetes\n\n- Caution if patient unable to self-administer\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting\n\n#### Doses\n\n##### Adult and Paediatric \n\n- Up to 3ml – self administered via Penthrox inhaler \n- Repeat once if required\n- Dose should not exceed 6ml/day or 15ml/week\n- If used during labour, discontinue use post-delivery, and if PPH is suspected.",
         "dose_values": [
           {
             "amount": "3",
@@ -457,7 +480,7 @@
         ]
       },
       {
-        "text": "#### Indications\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+        "text": "#### Indications\n\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n\n#### Specific Notes\n\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
         "dose_values": [
           {
             "amount": "3",
@@ -474,7 +497,7 @@
   "flowchart": null,
   "checksum": "98ca08cb47ec0605d9b948e71d4e5ca6a4b5cd0516c66b97d58ecd3f735c6886",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.626502+00:00",
+    "timestamp": "2026-11-01T07:43:15.744505+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

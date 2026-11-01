@@ -2,109 +2,17 @@
   "id": "CMG_2_Pain_Management",
   "cmg_number": "2",
   "title": "Pain Management",
-  "version_date": null,
+  "version_date": "22/03/2024 Version 1.0.2.1",
   "section": "Pain Management",
   "content_markdown": "#### Stepwise Approach\n\n1\n\n**Step 1: Non-pharmacological options**\n- e.g. reassurance, posture, splinting, cooling of burns, occlusive dressing, temperature control, gentle handling, etc.\n\n2\n\n**Step 2: Inhalation/ enteral medication**\n**Mild – moderate pain**\n- e.g. methoxyflurane, ibuprofen, paracetamol, GTN (for ischaemic chest pain) \n- Provide advice and assistance for the patient to take their own prescribed analgesia\n\n3\n\n**Step 3: Parenteral medication**\n**Moderate – severe pain**\n- e.g. morphine, fentanyl, ketamine, IV paracetamol.\n\n**Aim to control all pain to a comfortable level.**\n\n#### Management\n\n**Relief of pain and suffering is a primary goal of Ambulance care.**\n\n- Pain is what the patient says it is. Always offer pain relief to the patient.\n- Pain assessment (PQRST) \n- Quantitate if possible (scale and description)\n- Document on case sheet.\n- If possible, pharmacology should be directed at the apparent underlying cause of the pain. - Generally, pain management should be initiated with a single agent (depending on the patient’s need, and preference) \n- If ineffective, consider adding a second agent (noting that incremental doses should be smaller when using multiple agents)\n- There is an increased likelihood of side effects with multiple agents – always consider the risks/benefits of using this method.",
   "is_icp_only": false,
   "dose_lookup": {
-    "Morphine": [
+    "Ketamine": [
       {
-        "text": "Morphine: 2.5mg – 5mg SC",
+        "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
         "dose_values": [
           {
-            "amount": "2.5",
-            "unit": "mg"
-          },
-          {
-            "amount": "5",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
-        "dose_values": [
-          {
-            "amount": "10",
-            "unit": "mg"
-          },
-          {
-            "amount": "5",
-            "unit": "mg"
-          },
-          {
-            "amount": "10",
-            "unit": "mg"
-          },
-          {
-            "amount": "60",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Calculated dose of morphine above 10 mg Doses above 10 mg are rarely required.",
-        "dose_values": [
-          {
-            "amount": "10",
-            "unit": "mg"
-          },
-          {
-            "amount": "10",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": "Calculated dose of morphine above 20 mg",
-        "dose_values": [
-          {
-            "amount": "20",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": "0.05mg/kg IV/IO over 60 seconds. ",
-        "dose_values": [
-          {
-            "amount": "0.05",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": "IV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg) 0.025mg/kg IV/IO over 60 seconds. ",
-        "dose_values": [
-          {
-            "amount": "0.025",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
-        "dose_values": [
-          {
-            "amount": "29",
+            "amount": "14",
             "unit": "mL"
           },
           {
@@ -112,31 +20,19 @@
             "unit": "mL"
           },
           {
-            "amount": "3",
+            "amount": "4",
             "unit": "mL"
           },
           {
-            "amount": "30",
+            "amount": "400",
             "unit": "mg"
           },
           {
-            "amount": "6",
-            "unit": "mL"
-          },
-          {
-            "amount": "30",
+            "amount": "400",
             "unit": "mg"
           },
           {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
+            "amount": "40",
             "unit": "mL"
           }
         ],
@@ -145,227 +41,36 @@
         ]
       },
       {
-        "text": "Morphine: IM (Max 2 Doses)",
+        "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
         "dose_values": [],
         "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
+        "dose_values": [
+          {
+            "amount": "0.3",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.15",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mL"
+          }
+        ],
+        "qualifications_required": [
           "AP"
         ]
       },
-      {
-        "text": "Morphine: IV (To a total of 20mg)",
-        "dose_values": [
-          {
-            "amount": "20",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia. ",
-        "dose_values": [
-          {
-            "amount": "0.05",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
-        "dose_values": [
-          {
-            "amount": "29",
-            "unit": "mL"
-          },
-          {
-            "amount": "50",
-            "unit": "mL"
-          },
-          {
-            "amount": "6",
-            "unit": "mL"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "3",
-            "unit": "mL"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mL"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": "Repeat @10/60 if requires (max. 60mg)",
-        "dose_values": [
-          {
-            "amount": "60",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
-        "dose_values": [
-          {
-            "amount": "1",
-            "unit": "ml"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
-        "text": "##### Type\nOpioid analgesic [S8]\n\n##### Presentations\n10mg in 1ml – glass ampoule\n\n##### Actions\n\n- Analgesia\n\n- Anxiolytic\n\n- Vasodilation\n\n##### Pharmacokinetics\n**IV**\n Onset: 5 - 10 minutes\n Max Effect: 20 minutes\n Duration: 4 - 5 hours\n\n**IM**\n Onset: 10 - 30 minutes\n Max Effect: 30 minutes\n Duration: 4 - 5 hours\n\n#### Uses\n\n- Analgesia for moderate to severe pain\n\n- Maintain analgosedation in intubated patients in conjunction with midazolam.\n\n- Reduce dyspnoea in palliative care patients.\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment).\n\n#### Adverse Effects\n\n- Nausea and vomiting\n\n- Altered level of consciousness\n\n- Respiratory depression\n\n- Hypotension\n\n- Bradycardia\n\n#### Contraindications\n\n- Respiratory depression\n\n- Systolic blood pressure Disregard contraindications when managing palliative care emergencies (no active treatment) patients.\n\n#### Precautions\n\n- GCS ≤13\n\n- Known hypersensitivity\n\n- Frail patients\n\n- COPD patients\n\n- Hypovolaemic patients\n\n- Systolic BP 70 – 90mmHg (see below)\n\n- Children **AP:** max. total dose 20mg\n- **ICP:** no max. total dose\n- Consider IM: \n- IV/IO unobtainable\n- Little risk of hypotension- Patient contact estimated >20/60- No ischaemic chest pain- 0.1mg/kg IM \n- Repeat once @30/60 if required\n- **AP:** max. total dose 20mg##### Adults only\nIV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg)\n\n- 0.025mg/kg IV/IO over 60 seconds. \n- Repeat @10/60 as required.\n- Do not repeat if sBP drops ≥10mmHg, even if it remains above 70mmHg. \n- **AP:** max. total dose 20mg- **ICP:** no max. total dose#### Post-intubation analgosedation (as adjunct to midazolam)##### Adult (infusion pump)\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL\n\n- **ICP: **Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP: **Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)#### Palliative care\n**Note:** Always refer to and follow patient specific treatment plan when available.\n##### Adult with dyspnoea\n- 2.5 - 5mg SC/IM/IV\nConsider patient weight when selecting dose\n##### Adult with distressing pain\n- Refer to Palliative Care Medication Calculator\n##### Adult with terminal palliative care emergency\n- SC/IM/IV: 10mg\nIn conjunction with midazolam\n##### Paediatric\nRefer to patient specific treatment plan for all palliative care presentations.",
-        "dose_values": [
-          {
-            "amount": "10",
-            "unit": "mg"
-          },
-          {
-            "amount": "1",
-            "unit": "ml"
-          },
-          {
-            "amount": "20",
-            "unit": "mg"
-          },
-          {
-            "amount": "0.1",
-            "unit": "mg"
-          },
-          {
-            "amount": "20",
-            "unit": "mg"
-          },
-          {
-            "amount": "0.025",
-            "unit": "mg"
-          },
-          {
-            "amount": "20",
-            "unit": "mg"
-          },
-          {
-            "amount": "29",
-            "unit": "mL"
-          },
-          {
-            "amount": "50",
-            "unit": "mL"
-          },
-          {
-            "amount": "3",
-            "unit": "mL"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "6",
-            "unit": "mL"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mL"
-          },
-          {
-            "amount": "5",
-            "unit": "mg"
-          },
-          {
-            "amount": "1",
-            "unit": "mg"
-          },
-          {
-            "amount": "30",
-            "unit": "mg"
-          },
-          {
-            "amount": "50",
-            "unit": "mg"
-          },
-          {
-            "amount": "2",
-            "unit": "mg"
-          },
-          {
-            "amount": "2",
-            "unit": "mL"
-          },
-          {
-            "amount": "0.5",
-            "unit": "mg"
-          },
-          {
-            "amount": "0.5",
-            "unit": "mL"
-          },
-          {
-            "amount": "5",
-            "unit": "mg"
-          },
-          {
-            "amount": "5",
-            "unit": "mL"
-          },
-          {
-            "amount": "5",
-            "unit": "mg"
-          },
-          {
-            "amount": "10",
-            "unit": "mg"
-          }
-        ],
-        "source": "app-morphine-sulphate",
-        "qualifications_required": [
-          "ICP"
-        ]
-      }
-    ],
-    "Ketamine": [
       {
         "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 35mg Volume: 3.5ml",
         "dose_values": [
@@ -675,31 +380,11 @@
         ]
       },
       {
-        "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
+        "text": "Ketamine: 1mg/kg fast push",
         "dose_values": [
           {
-            "amount": "14",
-            "unit": "mL"
-          },
-          {
-            "amount": "50",
-            "unit": "mL"
-          },
-          {
-            "amount": "4",
-            "unit": "mL"
-          },
-          {
-            "amount": "400",
+            "amount": "1",
             "unit": "mg"
-          },
-          {
-            "amount": "400",
-            "unit": "mg"
-          },
-          {
-            "amount": "40",
-            "unit": "mL"
           }
         ],
         "qualifications_required": [
@@ -707,34 +392,27 @@
         ]
       },
       {
-        "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.",
-        "dose_values": [],
+        "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ],
         "qualifications_required": [
           "ICP"
         ]
       },
       {
-        "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
+        "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
         "dose_values": [
           {
-            "amount": "0.3",
+            "amount": "2",
             "unit": "mg"
-          },
-          {
-            "amount": "10",
-            "unit": "mL"
-          },
-          {
-            "amount": "0.15",
-            "unit": "mg"
-          },
-          {
-            "amount": "10",
-            "unit": "mL"
           }
         ],
         "qualifications_required": [
-          "AP"
+          "ICP"
         ]
       },
       {
@@ -774,6 +452,66 @@
         ]
       },
       {
+        "text": "Ketamine: 1mg/kg fast push",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
+        "dose_values": [
+          {
+            "amount": "2",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Ketamine 0.5mg/kg IV, repeat @4/60 if required. ",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Ketamine 0.5mg/kg IV, repeat @4/60 if required.",
+        "dose_values": [
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
         "text": " 0.05mg/kg IV/IO push over 60 sec. ",
         "dose_values": [
           {
@@ -786,7 +524,7 @@
         ]
       },
       {
-        "text": "##### Type\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n200mg in 2ml – vial \n\n50mg in 5ml - vial\n\n##### Actions\nComplex, multiple actions:\n\n- Analgesic at low doses\n\n- Sedative\n\n- Amnestic/dissociative properties\n\n- Has bronchodilating properties\n\nOnset of action is rapid: IV = 1 – 2 min; IM = 4 – 8 min.\n\n#### Uses\n\n- Sedation of combative/agitated patients, who are an immediate danger to themselves or others\n\n- Induction agent for intubation **- ICP only**\n\n- Maintenance of sedation **- ICP only**\n\n- Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**\n\n- Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**\n\n- Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose\n\n- Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids\n\n#### Adverse Effects\n\n- Laryngospasm\n\n- Hypersalivation\n\n- Dysphoria/emergence reactions\n\n- Muscle twitching and purposeless movements\n\n- Respiratory depression → apnoea (seen in extreme doses or fast administration)\n\n- Hypotension (generally seen in hypovolaemic/cardiac depressed patients)\n\n#### Contraindications\n\n- Known sensitivity\n\n- Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT) \n\n- Children 65 years, or with general debility.\n- Repeat 1mg/kg IM injection after 5 minutes (if required).\n\n#### For intubation induction with Suxamethonium##### Adult only\n- **ICP:** 1mg/kg IV/IO over 30-60 seconds \n\n#### For intubation when suxamethonium is contraindiated ##### Adult only\n- **ICP:** 2mg/kg IV/IO over 30-60 seconds \n\n#### Post intubation analgosedation##### Adult and Paediatric (Syringe bolus)\n- **ICP:** Up to 1mg/kg IV or IO \n- 1-5 minute intervals as required.\n\n##### Adult (Infusion pump)\n**Note:** Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL \n\n- **ICP:** Initial infusion rate: 100mg/hr \n- Lower soft infusion limit: 10mg/hr \n- Upper soft infusion limit: 400mg/hr \n- Upper hard infusion limit: 800mg/hr \n- **ICP:** Default bolus: 20mg (2mL) \n- Lower hard bolus limit: 5mg (0.5mL)\n- Upper hard bolus limit: 100mg (10mL)\n\n#### Ketamine Analgesia Dose Chart\n- Following mild-moderate analgesic options opioids should be considered prior to ketamine.\n- Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.\n- Ketamine is a first line analgesic only in the setting of current or foreseen hypoperfusion; and in the patient unable to receive opioids due to either allergy, hypersensitivity, or tolerance.**Dose:******≥65 years old**\nINITIAL IV\n\n(ICP/AP)\n\n0.3mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\n0.15mg/kg\n\nDilute to 10mL. Administer via Springfusor\n\nREPEAT IV\n\n(ICP/AP)\n\nAs initial\n\n15 mins post end of initial infusion.\n\nAs initial\n\n15 mins post end of initial infusion.\n\nINITIAL IM\n\n(ICP/AP)\n\n0.5mg/kg\n\n0.25mg/kg\n\nREPEAT IM\n\n(ICP/AP)\n\nAfter 30 minutes:\n\n0.5mg/kg\n\nAfter 30 minutes:\n\n0.25mg/kg\n\nHYPOPERFUSED PATIENT\n\n(ICP)\n\nHalve above doses\n\nHalve above doses\n\n#### Special Notes\n- Patients who have received ketamine may still have a significant awareness, despite an appearance of unconsciousness. They may be able to hear and have some recall. Patients should be advised that they will experience strange / unusual sensations.\n- Ketamine is a Controlled Medicine. Use must be checked by both crew members. Under CL207 – Controlled Medicines Procedure, recording and accounting for its use is a legal requirement.\n- The unused portion of the dose must be appropriately disposed of, and the disposal recorded.",
+        "text": "##### Type\n\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n\n200mg in 2ml – vial \n\n50mg in 5ml - vial\n\n##### Actions\n\nComplex, multiple actions:\n\n- Analgesic at low doses\n\n- Sedative\n\n- Amnestic/dissociative properties\n\n- Has bronchodilating properties\n\nOnset of action is rapid: IV = 1 – 2 min; IM = 4 – 8 min.\n\n#### Uses\n\n- Sedation of combative/agitated patients, who are an immediate danger to themselves or others\n\n- Induction agent for intubation **- ICP only**\n\n- Maintenance of sedation **- ICP only**\n\n- Procedural dissociation to facilitate painful interventions (e.g., straightening long bones, extrication) **- ICP only**\n\n- Analgesia for severe pain in the patient with signs of shock, or is at risk of shock **- ICP only**\n\n- Analgesia adjunct for severe unremitting pain 10 minutes post second opioid dose\n\n- Analgesia for severe pain in patients who are unable to have, or have developed a significant tolerance to opioids\n\n- Management of cardiac arrest patients with CPR-IC **- ICP only**\n\n#### Adverse Effects\n\n- Laryngospasm\n\n- Hypersalivation\n\n- Dysphoria/emergence reactions\n\n- Muscle twitching and purposeless movements\n\n- Respiratory depression → apnoea (seen in extreme doses or fast administration)\n\n- Hypotension (generally seen in hypovolaemic/cardiac depressed patients)\n\n#### Contraindications\n\n- Known sensitivity\n\n- Active myocardial ischaemia or LVF or symptomatic hypertension (not applicable when used for RSI or to maintain sedation for ETT) \n\n- Children < 1 year old\n\n#### Precautions\n\n- Shocked patient (delayed onset of action and increased risk of hypotension)\n\n- Previously administered sedatives e.g., midazolam, prescription medication (increased risk of hypotension, respiratory depression, and airway compromise) \n\n- Elderly patients (≥65 years old) (increased risk of adverse effects)\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Approved for administration in ACTAS setting, avoid dissociative/sedative doses during labour\n\n##### Breastfeeding\n\n- Approved for use in ACTAS setting, use conservative doses, encourage feeding/expressing prior to administration if feasible, transport of the child is recommended for monitoring\n\n#### Doses\n\n#### Combative / agitated patients\n\n##### Adult/Paediatric\n\n- **ICP: ****When used as the first line agent:** Up to 4mg/kg IM injection\n- **ICP: ****When used as the second line agent:** Up to 2mg/kg IM/IV/IO \n- For all regimes: repeat as required.\n- All IV doses are to be given slowly, over 30 seconds.\n- Reduce dose by half following droperidol use (i.e. up to 1mg/kg IM/IV/IO).\n\n##### Adult\n\nInitial treatment of combative / agitated patients who are an immediate danger to themselves or others. \n\n- 200mg IM injection \n- Reduce dose to 100mg IM injection with age >65 years, or with general debility.\n- Repeat 1mg/kg IM injection after 5 minutes (if required).\n\n#### CPR-IC\n\n##### Adult/Paediatric\n\n- **ICP:** 0.5mg/kg IV/IO \n- Repeat @4/60 if required\n\n#### For intubation induction with Suxamethonium\n\n##### Adult only\n\n- **ICP:** 1mg/kg IV/IO over 30-60 seconds \n\n#### For intubation when suxamethonium is contraindiated \n\n##### Adult only\n\n- **ICP:** 2mg/kg IV/IO over 30-60 seconds \n\n#### Post intubation analgosedation\n\n##### Adult and Paediatric (Syringe bolus)\n\n- **ICP:** Up to 1mg/kg IV or IO \n- 1-5 minute intervals as required.\n\n##### Adult (Infusion pump)\n\n**Note:** Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL \n\n- **ICP:** Initial infusion rate: 100mg/hr \n- Lower soft infusion limit: 10mg/hr \n- Upper soft infusion limit: 400mg/hr \n- Upper hard infusion limit: 800mg/hr \n- **ICP:** Default bolus: 20mg (2mL) \n- Lower hard bolus limit: 5mg (0.5mL)\n- Upper hard bolus limit: 100mg (10mL)\n\n#### Ketamine Analgesia Dose Chart\n\n- Following mild-moderate analgesic options opioids should be considered prior to ketamine.\n- Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based opioid dose.\n- Ketamine is a first line analgesic only in the setting of current or foreseen hypoperfusion; and in the patient unable to receive opioids due to either allergy, hypersensitivity, or tolerance.\n **Dose:**  **<65 years old**  **≥65 years old** \n \nINITIAL IV\n\n(ICP/AP)\n  \n0.3mg/kg\n\nDilute to 10mL. Administer via Springfusor\n  \n0.15mg/kg\n\nDilute to 10mL. Administer via Springfusor\n \n \nREPEAT IV\n\n(ICP/AP)\n  \nAs initial\n\n15 mins post end of initial infusion.\n  \nAs initial\n\n15 mins post end of initial infusion.\n \n \nINITIAL IM\n\n(ICP/AP)\n  \n0.5mg/kg\n  \n0.25mg/kg\n \n \nREPEAT IM\n\n(ICP/AP)\n  \nAfter 30 minutes:\n\n0.5mg/kg\n  \nAfter 30 minutes:\n\n0.25mg/kg\n \n \nHYPOPERFUSED PATIENT\n\n(ICP)\n  \nHalve above doses\n  \nHalve above doses\n \n\n#### Special Notes\n\n- Patients who have received ketamine may still have a significant awareness, despite an appearance of unconsciousness. They may be able to hear and have some recall. Patients should be advised that they will experience strange / unusual sensations.\n- Ketamine is a Controlled Medicine. Use must be checked by both crew members. Under CL207 – Controlled Medicines Procedure, recording and accounting for its use is a legal requirement.\n- The unused portion of the dose must be appropriately disposed of, and the disposal recorded.",
         "dose_values": [
           {
             "amount": "200",
@@ -805,7 +543,31 @@
             "unit": "ml"
           },
           {
+            "amount": "4",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
             "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "200",
+            "unit": "mg"
+          },
+          {
+            "amount": "100",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
             "unit": "mg"
           },
           {
@@ -921,6 +683,404 @@
         "qualifications_required": [
           "ICP"
         ]
+      },
+      {
+        "text": " Up to 4mg/kg IM injection",
+        "dose_values": [
+          {
+            "amount": "4",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      }
+    ],
+    "Morphine": [
+      {
+        "text": "Morphine: 2.5mg – 5mg SC",
+        "dose_values": [
+          {
+            "amount": "2.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Morphine: IM (Max 2 Doses)",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Morphine: IV (To a total of 20mg)",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "0.05mg/kg IV/IO over 60 seconds. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "IV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg) 0.025mg/kg IV/IO over 60 seconds. ",
+        "dose_values": [
+          {
+            "amount": "0.025",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "Calculated dose of morphine above 10 mg Doses above 10 mg are rarely required.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "Calculated dose of morphine above 20 mg",
+        "dose_values": [
+          {
+            "amount": "20",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia. ",
+        "dose_values": [
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+        "dose_values": [
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "Repeat @10/60 if requires (max. 60mg)",
+        "dose_values": [
+          {
+            "amount": "60",
+            "unit": "mg"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injection port of a bag of saline. Draw back on the syringe and draw up the required amount of fluid for dilution of the drug (i.e. 9mls of normal saline with 1ml of Morphine Sulphate for a total volume of 10mls).",
+        "dose_values": [
+          {
+            "amount": "1",
+            "unit": "ml"
+          }
+        ],
+        "qualifications_required": [
+          "ICP"
+        ]
+      },
+      {
+        "text": "##### Type\n\nOpioid analgesic [S8]\n\n##### Presentations\n\n10mg in 1ml – glass ampoule\n\n##### Actions\n\n- Analgesia\n\n- Anxiolytic\n\n- Vasodilation\n\n##### Pharmacokinetics\n\n**IV**\n Onset: 5 - 10 minutes\n Max Effect: 20 minutes\n Duration: 4 - 5 hours\n\n**IM**\n Onset: 10 - 30 minutes\n Max Effect: 30 minutes\n Duration: 4 - 5 hours\n\n#### Uses\n\n- Analgesia for moderate to severe pain\n\n- Maintain analgosedation in intubated patients in conjunction with midazolam.\n\n- Reduce dyspnoea in palliative care patients.\n\n- Relieve suffering due to terminal palliative care emergencies (no active treatment).\n\n#### Adverse Effects\n\n- Nausea and vomiting\n\n- Altered level of consciousness\n\n- Respiratory depression\n\n- Hypotension\n\n- Bradycardia\n\n#### Contraindications\n\n- Respiratory depression\n\n- Systolic blood pressure <70mmHg\n\n- Acute asthma\nDisregard contraindications when managing palliative care emergencies (no active treatment) patients.\n\n#### Precautions\n\n- GCS ≤13\n\n- Known hypersensitivity\n\n- Frail patients\n\n- COPD patients\n\n- Hypovolaemic patients\n\n- Systolic BP 70 – 90mmHg (see below)\n\n- Children <1yo\n\n- Previous opiates\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Refrain from use if labour suspected. Prepare for neonatal respiratory support and naloxone administration.\n\n##### Breastfeeding\n\n- Safe to use, use conservative doses, encourage feeding/expressing prior to administration if feasible. \n- Infant must also be transported for monitoring if breastfed post morphine administration. \n\n#### Doses\n\n#### Analgesia\n\n##### Adult and Paediatric\n\n- 0.05mg/kg IV/IO over 60 seconds. \n- Repeat @5/60 as required.\n- **AP:** max. total dose 20mg\n- **ICP:** no max. total dose\n- Consider IM: \n- IV/IO unobtainable\n- Little risk of hypotension- Patient contact estimated >20/60- No ischaemic chest pain- 0.1mg/kg IM \n- Repeat once @30/60 if required\n- **AP:** max. total dose 20mg\n##### Adults only\n\nIV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg)\n\n- 0.025mg/kg IV/IO over 60 seconds. \n- Repeat @10/60 as required.\n- Do not repeat if sBP drops ≥10mmHg, even if it remains above 70mmHg. \n- **AP:** max. total dose 20mg- **ICP:** no max. total dose\n#### Post-intubation analgosedation (as adjunct to midazolam)\n\n##### Adult (infusion pump)\n\n**Note:** Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL\n\n- **ICP: **Initial infusion rate: 5mg/hr \n- Lower soft infusion limit: 1mg/hr\n- Upper soft infusion limit: 30mg/hr\n- Upper hard infusion limit: 50mg/hr- **ICP: **Default bolus: 2mg (2mL) \n- Lower hard bolus limit: 0.5mg (0.5mL)\n- Upper hard bolus limit: 5mg (5mL)\n#### Palliative care\n\n**Note:** Always refer to and follow patient specific treatment plan when available.\n\n##### Adult with dyspnoea\n\n- 2.5 - 5mg SC/IM/IV\nConsider patient weight when selecting dose\n\n##### Adult with distressing pain\n\n- Refer to Palliative Care Medication Calculator\n\n##### Adult with terminal palliative care emergency\n\n- SC/IM/IV: 10mg\nIn conjunction with midazolam\n\n##### Paediatric\n\nRefer to patient specific treatment plan for all palliative care presentations.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.05",
+            "unit": "mg"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.1",
+            "unit": "mg"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.025",
+            "unit": "mg"
+          },
+          {
+            "amount": "20",
+            "unit": "mg"
+          },
+          {
+            "amount": "29",
+            "unit": "mL"
+          },
+          {
+            "amount": "50",
+            "unit": "mL"
+          },
+          {
+            "amount": "3",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "6",
+            "unit": "mL"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "mg"
+          },
+          {
+            "amount": "30",
+            "unit": "mg"
+          },
+          {
+            "amount": "50",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mg"
+          },
+          {
+            "amount": "2",
+            "unit": "mL"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mg"
+          },
+          {
+            "amount": "0.5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "5",
+            "unit": "mL"
+          },
+          {
+            "amount": "5",
+            "unit": "mg"
+          },
+          {
+            "amount": "10",
+            "unit": "mg"
+          }
+        ],
+        "source": "app-morphine-sulphate",
+        "qualifications_required": [
+          "ICP"
+        ]
       }
     ],
     "Gtn": [
@@ -1019,7 +1179,7 @@
         ]
       },
       {
-        "text": "##### Type\nNon-steroidal anti-inflammatory\n\n##### Presentations\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated**\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n##### Paediatric\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+        "text": "##### Type\n\nNon-steroidal anti-inflammatory\n\n##### Presentations\n\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\n\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Contraindicated**\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n\n##### Paediatric\n\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
         "dose_values": [
           {
             "amount": "200",
@@ -1113,7 +1273,7 @@
         ]
       },
       {
-        "text": "##### Type\nSimple analgesic / antipyretic \n\n##### Presentations\n**PO:** 48mg/ml colour free liquid (oral) \n**IV:** 1g in 100ml in collapsible plastic flask (IV) \n**PO:** 500mg tablet (oral) \n\n##### Actions\n\n- Antipyretic\n\n- Mild—moderate analgesic\n\nOnset Oral: 30 minutes \n IV: 5-10 minutes \n\n#### Uses\n\n- Pyrexia in children who have had or may have a febrile convulsion (for ACTAS treatment, pyrexia is generally >38\\xb0C)\n\n- Mild to moderate pain (oral)\n\n- Moderate to severe pain (IV)\n\n#### Adverse Effects\nRare – none of these side effects have been confirmed or refuted as being linked to the casual use of paracetamol:\n\n- Dyspepsia\n\n- Nausea\n\n- Allergic reactions\n\n- Haematological reactions\n\n- Dizziness\n\n- Pain at injection site\n\n#### Contraindications\n\n- Known or suspected allergy to paracetamol\n\n- Previous paracetamol dose in last 4 hours (oral doses only)\n\n- Previous paracetamol dose in last 6 hours (IV doses only)\n\n- Children who do not have a sufficient gag reflex to swallow the measured dose \n\n- Not to be given to children",
+        "text": "##### Type\n\nSimple analgesic / antipyretic \n\n##### Presentations\n\n**PO:** 48mg/ml colour free liquid (oral) \n**IV:** 1g in 100ml in collapsible plastic flask (IV) \n**PO:** 500mg tablet (oral) \n\n##### Actions\n\n- Antipyretic\n\n- Mild—moderate analgesic\n\nOnset Oral: 30 minutes \n IV: 5-10 minutes \n\n#### Uses\n\n- Pyrexia in children who have had or may have a febrile convulsion (for ACTAS treatment, pyrexia is generally >38\\xb0C)\n\n- Mild to moderate pain (oral)\n\n- Moderate to severe pain (IV)\n\n#### Adverse Effects\n\nRare – none of these side effects have been confirmed or refuted as being linked to the casual use of paracetamol:\n\n- Dyspepsia\n\n- Nausea\n\n- Allergic reactions\n\n- Haematological reactions\n\n- Dizziness\n\n- Pain at injection site\n\n#### Contraindications\n\n- Known or suspected allergy to paracetamol\n\n- Previous paracetamol dose in last 4 hours (oral doses only)\n\n- Previous paracetamol dose in last 6 hours (IV doses only)\n\n- Children who do not have a sufficient gag reflex to swallow the measured dose \n\n- Not to be given to children < 1 month old\n\n- Diagnosed liver failure\n\n#### Precautions\n\n- Impaired hepatic function\n\n- Impaired renal function\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n#### Pyrexia in children\n\n##### Paediatric only\n\n- 15mg/kg – oral liquid given (via syringe)\n\n#### Analgesia \n\n##### Adult ≥ 12 years\n\n- ≥ 50kg: \n- 2 tablets (1g) PO, or\n- 1g IV over 15/60 via burette\n\n- < 50kg: \n- 1 tablet (500mg) PO, or\n- 15mg/kg IV over 15/60 via burette\n##### Paediatric \n\n- 15mg/kg PO (liquid), or\n- 15mg/kg IV over 15/60 via burette\n\n#### Special Notes\n\n- It is envisaged that the administration of Panadol Liquid will be for children that are post-ictal / post febrile convulsion, or who are likely to have a febrile convulsion and are not responding to non-medical treatment.\n- Paracetamol does not necessarily prevent febrile convulsions.\n- Active cooling measures should still be carried out, as well as checking for the reason for pyrexia (URTI, meningococcal disease, etc).\n- As a general rule, if children are administered paracetamol, they should not be left at home. - Do not exceed 60mg/kg/24hours.\n- Children aged 10-12 may take a 500mg tablet if preferred.",
         "dose_values": [
           {
             "amount": "48",
@@ -1126,6 +1286,42 @@
           {
             "amount": "100",
             "unit": "ml"
+          },
+          {
+            "amount": "500",
+            "unit": "mg"
+          },
+          {
+            "amount": "15",
+            "unit": "mg"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          },
+          {
+            "amount": "500",
+            "unit": "mg"
+          },
+          {
+            "amount": "15",
+            "unit": "mg"
+          },
+          {
+            "amount": "15",
+            "unit": "mg"
+          },
+          {
+            "amount": "15",
+            "unit": "mg"
+          },
+          {
+            "amount": "60",
+            "unit": "mg"
           },
           {
             "amount": "500",
@@ -1152,7 +1348,7 @@
         ]
       },
       {
-        "text": "##### Type\nVolatile inhalation anaesthetic and analgesic agent [S4]\n\n- **High-risk medication**\n\n##### Presentations\n3ml bottle\n\n##### Actions\nCentral nervous system depressant\n\nOnset: 3 – 5 mins. Offset: 3 – 5 mins.\n\n#### Uses\nFor relief of pain of all origins\n\n#### Adverse Effects\n\n- Altered consciousness\n\n- Renal dysfunction (rare with once only ambulance use)\n\n- Jaundice (rare with once only ambulance use)\n\n- Uterine atonia\n\n#### Contraindications\n\n- Depressed level of consciousness\n\n- Known hypersensitivity\n\n- Malignant hyperthermia\n\n- Concurrent doxycycline use (e.g. Doryx, Doxsig, Doxylin, Frakas, etc.) \n\n#### Precautions\n\n- Renal disease\n\n- Diabetes\n\n- Caution if patient unable to self-administer\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.\n\n##### Breastfeeding\n- Approved for administration in ACTAS setting\n\n#### Doses##### Adult and Paediatric \n- Up to 3ml – self administered via Penthrox inhaler \n- Repeat once if required\n- Dose should not exceed 6ml/day or 15ml/week\n- If used during labour, discontinue use post-delivery, and if PPH is suspected.",
+        "text": "##### Type\n\nVolatile inhalation anaesthetic and analgesic agent [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n3ml bottle\n\n##### Actions\n\nCentral nervous system depressant\n\nOnset: 3 – 5 mins. Offset: 3 – 5 mins.\n\n#### Uses\n\nFor relief of pain of all origins\n\n#### Adverse Effects\n\n- Altered consciousness\n\n- Renal dysfunction (rare with once only ambulance use)\n\n- Jaundice (rare with once only ambulance use)\n\n- Uterine atonia\n\n#### Contraindications\n\n- Depressed level of consciousness\n\n- Known hypersensitivity\n\n- Malignant hyperthermia\n\n- Concurrent doxycycline use (e.g. Doryx, Doxsig, Doxylin, Frakas, etc.) \n\n#### Precautions\n\n- Renal disease\n\n- Diabetes\n\n- Caution if patient unable to self-administer\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Contraindicated** if pre-eclampsia is suspected, otherwise, safe to use. If used during labour, discontinue use post-delivery, and if PPH is suspected.\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting\n\n#### Doses\n\n##### Adult and Paediatric \n\n- Up to 3ml – self administered via Penthrox inhaler \n- Repeat once if required\n- Dose should not exceed 6ml/day or 15ml/week\n- If used during labour, discontinue use post-delivery, and if PPH is suspected.",
         "dose_values": [
           {
             "amount": "3",
@@ -1177,7 +1373,7 @@
         ]
       },
       {
-        "text": "#### Indications\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n#### Specific Notes\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
+        "text": "#### Indications\n\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain the procedure to the patient.\n\n- Confirm “5 rights” with paramedic partner, **the right**: \n- Patient\n- Drug\n- Dose\n- Time\n- Route\n- Hold the Methoxyflurane bottle upright, use the base of the Penthrox\\xae Inhaler to loosen the cap. Remove and discard the cap.\n\n- Tilt the Penthrox\\xae Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.\n\n- Place wrist loop over patient’s wrist. Instruct the patient to inhale through the mouthpiece and exhale normally. The first few breaths should be gentle.\n\n- If stronger analgesia is required, patient may cover the dilution hole with their finger.\n\n- Approximately 8-10 breaths are required to achieve any effect of the drug.\n\n#### Considerations\n\n- Do not put more than 3mls in the inhaler at any time, as there is an increased risk of droplet inhalation.\n- 3mls should remain active in the inhaler for approximately 30 minutes.\n- A resuscitation mask or an oxygen therapy line can be placed on the end of the inhaler if required.\n\n#### Specific Notes\n\n- Always ensure medication pre administration checks are completed prior to any drug administration.",
         "dose_values": [
           {
             "amount": "3",
@@ -1192,7 +1388,7 @@
     ],
     "Fentanyl": [
       {
-        "text": "##### Type\nSynthetic narcotic analgesic [S8]\n\n##### Presentations\n100mcg in 2mL (5mcg/0.1mL) glass ampoule\n\n##### Actions\n\n- Precipitates CNS effects by binding to opioid receptors.\n\n##### Pharmacokinetics\nIN\n Onset: ~ 5 minutes\n Max Effect: 5 – 15 minutes\n Duration: ~ 60 minutes\n\n#### Uses\n\n- Analgesic for moderate to severe pain.\n\n- Safe alternative analgesic in patients with known morphine allergy.\n\n#### Adverse Effects\n\n- Reduced conscious state\n\n- Respiratory depression\n\n- Nausea/vomiting\n\n- Bradycardia (rare)\n\n- Rigidity of the diaphragm, intercostals and jaw (rare)\n\n#### Contraindications\n\n- Known allergy or hypersensitivity\n\n- Bilateral bleeding or occluded nostrils\n\n- Age Increased risk of adverse effects. Consider reducing dose. \n\n- Frail or elderly\nIncreased risk of adverse effects. Consider reducing dose. \n\n- Reduced level of consciousness\nPotential difficulty correctly administering via IN route. \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Refrain from use if labour suspected. If administered, prepare for neonatal respiratory support and naloxone administration. \n\n##### Breastfeeding\n- May be used in conservative doses. Encourage feeding/expressing prior to administration.\n\n#### Doses#### Analgesia – Intranasal##### Adult and Paediatric\n- 1.5mcg/kg IN, up to 100mcg. \n- Repeat @5/60 intervals as required.\n\n#### Further Information\n- The atomiser dead space is 0.1mL. To account for this, an additional 0.1mL must be drawn up with the first administration. Pragmatically, this is not required when delivering the full 100mcg dose\n- Ideally volume administered should be limited to 0.3mL – 0.5mL per nostril to a maximum of 1mL.\n- Alternate nostrils until total dose has been delivered.\n- Where possible, IN Fentanyl should be used in addition to paracetamol and an NSAID. - All patients receiving Fentanyl should be on continuous monitoring. - Fentanyl should not be administered if the maximum dose of Morphine has already been administered.\n- Antiemetics should only be administered if the patient has nausea / vomiting prior to or post administration of Fentanyl.",
+        "text": "##### Type\n\nSynthetic narcotic analgesic [S8]\n\n##### Presentations\n\n100mcg in 2mL (5mcg/0.1mL) glass ampoule\n\n##### Actions\n\n- Precipitates CNS effects by binding to opioid receptors.\n\n##### Pharmacokinetics\n\nIN\n Onset: ~ 5 minutes\n Max Effect: 5 – 15 minutes\n Duration: ~ 60 minutes\n\n#### Uses\n\n- Analgesic for moderate to severe pain.\n\n- Safe alternative analgesic in patients with known morphine allergy.\n\n#### Adverse Effects\n\n- Reduced conscious state\n\n- Respiratory depression\n\n- Nausea/vomiting\n\n- Bradycardia (rare)\n\n- Rigidity of the diaphragm, intercostals and jaw (rare)\n\n#### Contraindications\n\n- Known allergy or hypersensitivity\n\n- Bilateral bleeding or occluded nostrils\n\n- Age <1yo\n\n#### Precautions\n\n- Previous opioids\nIncreased risk of adverse effects. Consider reducing dose. \n\n- Frail or elderly\nIncreased risk of adverse effects. Consider reducing dose. \n\n- Reduced level of consciousness\nPotential difficulty correctly administering via IN route. \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Refrain from use if labour suspected. If administered, prepare for neonatal respiratory support and naloxone administration. \n\n##### Breastfeeding\n\n- May be used in conservative doses. Encourage feeding/expressing prior to administration.\n\n#### Doses\n\n#### Analgesia – Intranasal\n\n##### Adult and Paediatric\n\n- 1.5mcg/kg IN, up to 100mcg. \n- Repeat @5/60 intervals as required.\n\n#### Further Information\n\n- The atomiser dead space is 0.1mL. To account for this, an additional 0.1mL must be drawn up with the first administration. Pragmatically, this is not required when delivering the full 100mcg dose\n- Ideally volume administered should be limited to 0.3mL – 0.5mL per nostril to a maximum of 1mL.\n- Alternate nostrils until total dose has been delivered.\n- Where possible, IN Fentanyl should be used in addition to paracetamol and an NSAID. - All patients receiving Fentanyl should be on continuous monitoring. - Fentanyl should not be administered if the maximum dose of Morphine has already been administered.\n- Antiemetics should only be administered if the patient has nausea / vomiting prior to or post administration of Fentanyl.",
         "dose_values": [
           {
             "amount": "100",
@@ -1247,13 +1443,29 @@
         "qualifications_required": [
           "AP"
         ]
+      },
+      {
+        "text": "1.5mcg/kg IN, up to 100mcg. ",
+        "dose_values": [
+          {
+            "amount": "1.5",
+            "unit": "mcg"
+          },
+          {
+            "amount": "100",
+            "unit": "mcg"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
       }
     ]
   },
   "flowchart": null,
   "checksum": "93467e80bc70fee11544dfe9ec48c50592ca52f5ddc5800dc3fabfb377521812",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.476627+00:00",
+    "timestamp": "2026-11-01T07:43:15.724577+00:00",
     "source_type": "cmg",
     "agent_version": "2.0",
     "content_flag": null

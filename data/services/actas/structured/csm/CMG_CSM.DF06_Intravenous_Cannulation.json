@@ -9,18 +9,6 @@
   "dose_lookup": {
     "Normal Saline": [
       {
-        "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
-        "dose_values": [
-          {
-            "amount": "20",
-            "unit": "mL"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
         "text": "Dose: 10ml/kg Volume: 30ml",
         "dose_values": [
           {
@@ -241,10 +229,26 @@
         ]
       },
       {
-        "text": " up to 20ml/kg.",
+        "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
         "dose_values": [
           {
             "amount": "20",
+            "unit": "mL"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
+        "dose_values": [
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
             "unit": "ml"
           }
         ],
@@ -253,10 +257,34 @@
         ]
       },
       {
-        "text": "Normal saline 20ml/kg.",
+        "text": "Flush the line after each dose with 10ml of normal saline.",
         "dose_values": [
           {
-            "amount": "20",
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "10ml/kg normal saline unless in pulmonary oedema.",
+        "dose_values": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
+        "text": "10ml/kg normal saline unless in pulmonary oedema.",
+        "dose_values": [
+          {
+            "amount": "10",
             "unit": "ml"
           }
         ],
@@ -313,26 +341,6 @@
           },
           {
             "amount": "7",
-            "unit": "ml"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "50mg/kg, to a total of 2g – IV preferred  Make up to 10ml with normal saline",
-        "dose_values": [
-          {
-            "amount": "50",
-            "unit": "mg"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
-          },
-          {
-            "amount": "10",
             "unit": "ml"
           }
         ],
@@ -496,35 +504,7 @@
         ]
       },
       {
-        "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal saline.",
-        "dose_values": [
-          {
-            "amount": "5",
-            "unit": "ml"
-          },
-          {
-            "amount": "10",
-            "unit": "ml"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Flush the line after each dose with 10ml of normal saline.",
-        "dose_values": [
-          {
-            "amount": "10",
-            "unit": "ml"
-          }
-        ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "##### Type\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\nFluid overload \n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Safe to use\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)##### Paediatric\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
+        "text": "##### Type\n\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per litre [no schedule] \n\n##### Presentations\n\n500 or 1000ml of 0.9% sodium chloride solution\n\n##### Actions\n\n- Short acting plasma volume expander\n\n- Also expands interstitial fluid volume\n\n#### Uses\n\n- Initial replacement of fluid, in volume depleted or dehydrated patients. (Volume depletion may be due to loss of blood, plasma or fluid and electrolytes)\n\n- Maintenance of hydration during prolonged patient contact time\n\n- To keep vein open, as IV route for drugs\n\n#### Adverse Effects\n\nFluid overload \n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- **In general, aim to maintain sBP ≥90mmHg: **rate and volume infused is dependent on patient condition. Give 250-500mL boluses, reassess after each bolus.\n- **Haemorrhagic hypovolaemia: **aggressive warm fluids. \n- Max. dose: 20ml/kg\n\n- **Traumatic brain injury: **aim for sBP ≥100mmHg \n- No limit on amount - dependent on condition of patient. \n- **TKVO: **10 drops per minute (30ml/h with standard drip set)\n##### Paediatric\n\n- **Refer to paediatric reference charts for BP goals: **rate and volume infused is dependent on patient condition. Give weight appropriate boluses, reassess after each bolus.\n- **Paediatric cardiac arrest: **20ml/kg- **Haemorrhagic hypovolaemia: **aggressive warm fluids \n- Max dose: 20ml/kg\n- **TKVO: **10 drops per minute (30ml/h with standard drip set)",
         "dose_values": [
           {
             "amount": "151",
@@ -573,7 +553,7 @@
   "flowchart": null,
   "checksum": "f88ad9dd7d6cc716bd06b1246276dd89250262105a8d7d7238cb1b746d5e37b7",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.622369+00:00",
+    "timestamp": "2026-11-01T07:43:15.743697+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

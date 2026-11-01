@@ -380,7 +380,7 @@ def strip_boilerplate(html: str) -> str:
 
 def strip_boilerplate_md(md: str) -> str:
     lines = md.split("\n")
-    cleaned = [l for l in lines if l.strip() not in _BOILERPLATE_MD_LINES]
+    cleaned = [l for l in lines if " ".join(l.split()) not in _BOILERPLATE_MD_LINES]
     result = "\n".join(cleaned)
     result = re.sub(r"\n{3,}", "\n\n", result)
     return result.strip()
