@@ -60,8 +60,8 @@ app.get("/health", (c) => c.json({ ok: true, environment: c.env.ENVIRONMENT }));
 
 app.get("/config", (c) =>
   c.json({
-    turnstileSiteKey: c.env.TURNSTILE_SITE_KEY,
     environment: c.env.ENVIRONMENT,
+    devSignIn: c.env.ENVIRONMENT === "development" && ["localhost", "127.0.0.1"].includes(new URL(c.req.url).hostname),
   }),
 );
 

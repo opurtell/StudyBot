@@ -62,7 +62,7 @@ Every question is generated fresh. Nothing is reused.
 - **Content rights.** *Resolved by Oscar 2026-10-31:* the ACTAS guidelines are publicly available, so public use is accepted. Still keep source attribution. Personal Notability notes and uni coursework (`CAA306` etc.) must **not** be published (deferred anyway).
 - **Clinical safety / liability.** A cached wrong question is served to many users. Needs a report-an-error loop, a "study aid, not clinical guidance" disclaimer, and a way to pull a question instantly. (`InfoERRORS.md` is the desktop version of this.)
 - **Privacy.** Accounts + study history = personal information (Australian Privacy Act). Keep data minimal, pick an AU/near region if practical, publish a short privacy policy.
-- **Cost abuse.** A free LLM quota invites multi-accounting. Needs email verification and bot protection (Turnstile).
+- **Cost abuse.** A free LLM quota invites multi-accounting. Google sign-in requires a verified Google account (checked via `email_verified`); add Turnstile later if abuse appears.
 
 ---
 
@@ -78,10 +78,10 @@ and `wrangler` skills; do not rely on memory for limits or pricing):
 | API | Workers (TypeScript, Hono or similar), one Worker for the API, cron/Queue consumers for background jobs |
 | Front end | Existing React/Vite SPA, served from Workers static assets (or Pages); Tailwind design system carried over |
 | Relational data | D1 (users, question bank, attempts, mastery, ledger, reports). Fall back to Postgres via Hyperdrive only if D1 limits bite in the review |
-| Vector search | Vectorize for guideline chunks and question near-dup checks; embeddings via Workers AI |
+| Vector search | Vectorize for guideline chunks and question near-dup checks; embeddings via Workers AI. **Stays on the Workers Free plan** (2026-11-01): ~500 chunks × 768 dims ≈ 0.4M of the free 5M stored dimensions; 30M free queried dimensions ≈ 39k searches a month. Keep it optional: generation can pick chunks by guideline ID and near-dup checks can run offline in the bank build |
 | LLM calls | **Gemini or GLM (Z.ai)**, chosen by Phase 1 benchmark; routed through AI Gateway if it supports the chosen provider (verify), for spend logs, rate limits and response caching. Keep the provider behind one small interface so switching is a config change |
 | Per-user quota counters | Durable Object (or D1 with atomic update) so concurrent requests cannot overshoot quota |
-| Auth | Email magic link only (OAuth later), Turnstile on sign-up |
+| Auth | **Google sign-in only** (OpenID Connect with PKCE; Oscar, 2026-11-01). No email sending, so no Workers Paid or sending domain needed |
 | Rate limiting / abuse | Workers rate limiting binding + per-IP caps for anonymous traffic |
 | Bulk pre-generation | Offline job (Queue/Workflow or local script) using the provider batch API, writes to the question bank |
 | Corpus build | **Stays Python, offline**: existing scrape/extract/chunk pipeline outputs structured JSON, a build script loads D1 + Vectorize. No Python runs in production |
@@ -164,7 +164,8 @@ Gate: Oscar reviews the findings and signs off on scope, hosting option, quota n
 
 ### Phase 2: Foundations
 New repo with Workers project (`wrangler` config, dev/staging/prod environments), CI/CD, D1 migrations, secrets via Workers secrets, auth (email magic link only) with Turnstile, rate limiting, AI Gateway set up with a spend cap, React shell on static assets, structured logging and error tracking. Deliverable: a deployed "hello world" with working sign-in and an anonymous/signed-in distinction in the API.
-- *2026-11-01:* built in `web/` in this repo rather than a new repo (cloud threads can't create repositories; it can be split out later with `git subtree split`). Done: Workers + Hono API and React shell on one Worker, dev/staging/production config, D1 migration for users/link tokens/sessions, magic-link sign-in with Turnstile, rate-limit bindings, CSRF/origin guard, structured JSON logs with Workers Logs, Gemini-through-AI-Gateway client that returns token usage (H-8 for the web code), Web CI (typecheck, Worker + client tests, axe checks, build) and a deploy workflow. **Not yet deployed:** needs the one-time Cloudflare setup in `web/README.md` (Workers Paid, a sending domain, D1 in `oc`, Turnstile, AI Gateway spend limit, secrets).
+- *2026-11-01 (later the same day):* sign-in switched to **Google only** at Oscar's request; email links, Email Service and Turnstile removed. Nothing in Phase 2 now needs Workers Paid.
+- *2026-11-01:* built in `web/` in this repo rather than a new repo (cloud threads can't create repositories; it can be split out later with `git subtree split`). Done: Workers + Hono API and React shell on one Worker, dev/staging/production config, D1 migration for users/link tokens/sessions, magic-link sign-in with Turnstile, rate-limit bindings, CSRF/origin guard, structured JSON logs with Workers Logs, Gemini-through-AI-Gateway client that returns token usage (H-8 for the web code), Web CI (typecheck, Worker + client tests, axe checks, build) and a deploy workflow. **Not yet deployed:** needs the one-time setup in `web/README.md` (Google OAuth client, D1 in `oc`, AI Gateway spend limit, secrets).
 
 ### Phase 3: Data layer and corpus (ACTAS only)
 Offline Python build step turns `data/services/actas/structured/` (guidelines, `csm/`, `med/`) into `corpus_chunks` rows in D1 plus embeddings in Vectorize, with `corpus_version`. Guidelines and medication read APIs served from D1/static JSON (the current pre-built `guidelines-index.json` / `medications-index.json` approach suits this). Admin-only refresh job replaces `/settings/cmg-refresh`, `/cmg-rebuild`, `/pipeline/rerun`. **Excluded from the web version:** all of Oscar's personal material (Notability notes, uni coursework, CPD docs, REF docs), enforced by a `source_type = "guideline"` allowlist in the build script plus a test that fails the build if any other type appears. **Deferred:** Ambulance Tasmania data and user uploads. Each corpus chunk and each question carries `source_type`, `licence` and `attribution` fields now, so a second source can be added later without a schema change.
@@ -222,4 +223,5 @@ Resolved at Phase 1 sign-off (Oscar, 2026-11-01; see `docs/review/web-port-revie
 - **Models:** Gemini 3.8 Flash for question generation and bank pre-seeding (batch API); Gemini 3.5 Flash-Lite for live marking. GLM isn't used: it credited wholly wrong answers in the benchmark (`docs/review/model-bench/README.md`). Because only Google receives user answers, the privacy policy names Google.
 - **Database:** D1 (the review found the data volumes are tiny against D1's limits).
 - **Quota:** keep the placeholders (20 generations and 30 marks per signed-in user per month). Oscar sets provider spend caps as the backstop, alongside the global circuit breaker.
-- **Auth:** email magic link only for now (Oscar, 2026-11-01). Google sign-in can be added later.
+- **Auth:** ~~email magic link only~~ **Google sign-in only** (Oscar, 2026-11-01, changed the same day). Accounts are keyed on Google's `sub`.
+- **Cost:** stay on free tiers where possible (Oscar, 2026-11-01). Vectorize's free tier covers the ACTAS corpus.

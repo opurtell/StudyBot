@@ -4,9 +4,6 @@ import type { AppEnv } from "../types";
 
 export type ErrorCode =
   | "bad_request"
-  | "invalid_email"
-  | "turnstile_failed"
-  | "invalid_or_expired_link"
   | "unauthorised"
   | "forbidden_origin"
   | "unsupported_media_type"

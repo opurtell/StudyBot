@@ -1,51 +1,36 @@
-import { useEffect, useState, type FormEvent } from "react";
-import { Turnstile } from "../components/Turnstile";
-import { api, ApiError } from "../lib/api";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router";
+import { api } from "../lib/api";
+import { useSession } from "../lib/session";
+
+export const SIGN_IN_ERRORS: Record<string, string> = {
+  cancelled: "Sign-in was cancelled. Try again when you're ready.",
+  expired: "That sign-in took too long or was started in another tab. Try again.",
+  unverified_email: "Your Google account's email address isn't verified. Verify it with Google, then try again.",
+  rate_limited: "Too many sign-in attempts. Wait a minute and try again.",
+  unavailable: "Sign-in isn't available right now. Try again later.",
+  failed: "Google sign-in didn't work. Try again.",
+};
 
 export function SignIn() {
-  const [siteKey, setSiteKey] = useState<string | null>(null);
-  const [email, setEmail] = useState("");
-  const [token, setToken] = useState<string | null>(null);
-  const [resetKey, setResetKey] = useState(0);
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
-  const [error, setError] = useState<string | null>(null);
+  const [params] = useSearchParams();
+  const errorCode = params.get("error");
+  const error = errorCode ? (SIGN_IN_ERRORS[errorCode] ?? SIGN_IN_ERRORS.failed) : null;
+  const [devSignIn, setDevSignIn] = useState(false);
+  const { refresh } = useSession();
+  const navigate = useNavigate();
 
   useEffect(() => {
     api
       .config()
-      .then((cfg) => setSiteKey(cfg.turnstileSiteKey))
-      .catch(() => setError("Couldn't reach the server. Check your connection and reload."));
+      .then((cfg) => setDevSignIn(cfg.devSignIn))
+      .catch(() => setDevSignIn(false));
   }, []);
 
-  async function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    if (!token) {
-      setError("Wait for the human check to finish, then try again.");
-      return;
-    }
-    setStatus("sending");
-    setError(null);
-    try {
-      await api.requestMagicLink(email, token);
-      setStatus("sent");
-    } catch (err) {
-      setStatus("idle");
-      setToken(null);
-      setResetKey((k) => k + 1);
-      setError(err instanceof ApiError ? err.message : "Something went wrong. Try again shortly.");
-    }
-  }
-
-  if (status === "sent") {
-    return (
-      <section className="space-y-3" aria-live="polite">
-        <h1 className="font-headline text-3xl font-semibold">Check your email</h1>
-        <p className="text-on-surface-variant">
-          If <strong>{email}</strong> can receive mail, a sign-in link is on its way. It works once and expires in 15
-          minutes. Open it on this device.
-        </p>
-      </section>
-    );
+  async function onDevSignIn() {
+    await api.devSignIn();
+    await refresh();
+    navigate("/", { replace: true });
   }
 
   return (
@@ -53,46 +38,30 @@ export function SignIn() {
       <div className="space-y-2">
         <h1 className="font-headline text-3xl font-semibold">Sign in</h1>
         <p className="text-sm text-on-surface-variant">
-          We'll email you a sign-in link. No password needed. A new account is created the first time you sign in.
+          Sign in with your Google account. We only receive your email address. An account is created the first time
+          you sign in.
         </p>
       </div>
-      <form onSubmit={onSubmit} className="space-y-4" noValidate>
-        <div className="space-y-1">
-          <label htmlFor="email" className="block text-xs font-medium uppercase tracking-widest text-on-surface-variant">
-            Email
-          </label>
-          <input
-            id="email"
-            type="email"
-            autoComplete="email"
-            inputMode="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full border-0 border-b-2 border-outline-variant bg-transparent px-0 py-2 text-base focus:border-primary focus:outline-none"
-          />
-        </div>
-        {siteKey && (
-          <Turnstile
-            siteKey={siteKey}
-            resetKey={resetKey}
-            onToken={setToken}
-            onError={(message) => setError(message)}
-          />
-        )}
-        {error && (
-          <p role="alert" className="rounded-sm bg-error-container p-3 text-sm text-error">
-            {error}
-          </p>
-        )}
+      {error && (
+        <p role="alert" className="rounded-sm bg-error-container p-3 text-sm text-error">
+          {error}
+        </p>
+      )}
+      <a
+        href="/api/auth/google/start"
+        className="inline-flex w-full items-center justify-center gap-3 rounded-sm bg-primary px-4 py-3 text-sm font-semibold text-on-primary hover:opacity-90 sm:w-auto"
+      >
+        Continue with Google
+      </a>
+      {devSignIn && (
         <button
-          type="submit"
-          disabled={status === "sending" || !email}
-          className="w-full rounded-sm bg-primary px-4 py-3 text-sm font-semibold text-on-primary hover:opacity-90 disabled:opacity-50 sm:w-auto"
+          type="button"
+          onClick={onDevSignIn}
+          className="block rounded-sm bg-surface-container-high px-4 py-2 text-sm font-semibold"
         >
-          {status === "sending" ? "Sending…" : "Email me a sign-in link"}
+          Dev sign-in (local only)
         </button>
-      </form>
+      )}
     </section>
   );
 }

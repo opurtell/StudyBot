@@ -10,10 +10,10 @@ AI Gateway client are built and tested. No quiz yet (Phases 3 to 5). Not deploye
 
 | Path | What it is |
 |---|---|
-| `src/worker/` | Hono API on Workers. `app.ts` holds the middleware chain; `auth/` holds magic-link sign-in and sessions |
+| `src/worker/` | Hono API on Workers. `app.ts` holds the middleware chain; `auth/` holds Google sign-in and sessions |
 | `src/worker/llm/gemini.ts` | Gemini through AI Gateway. Returns text **and token usage** for the future `usage_ledger` (review H-8) |
 | `src/client/` | React shell (React Router, Tailwind 4, Archival Protocol tokens, self-hosted fonts) |
-| `migrations/` | D1 migrations (`users`, `login_tokens`, `sessions`) |
+| `migrations/` | D1 migrations (`users`, `sessions`) |
 | `test/worker/` | API tests run inside workerd with a real local D1 and the rate-limit bindings |
 | `test/client/` | jsdom tests for the pages, each with an axe accessibility check |
 | `wrangler.jsonc` | Dev defaults at the top level; `staging` and `production` under `env` |
@@ -22,57 +22,65 @@ AI Gateway client are built and tested. No quiz yet (Phases 3 to 5). Not deploye
 
 1. `cd web && npm ci`
 2. `cp .dev.vars.example .dev.vars`
-   *Uses Turnstile's always-pass test keys. Add a Gemini key only if you are testing the LLM client.*
+   *Leave it empty to use dev sign-in. Add a Google client secret only to test real Google sign-in locally, and a Gemini key only to test the LLM client.*
 3. `npm run db:migrate:local`
 4. `npm run dev`
-   *Vite on :5173 with the Worker running in workerd. Sign-in emails aren't sent locally: the link is printed in the terminal as `dev_email_captured`.*
+   *Vite on :5173 with the Worker running in workerd. The sign-in page shows a "Dev sign-in" button on localhost, so you don't need Google set up to work locally.*
 
 Checks before pushing: `npm run check` (typecheck, tests, build).
 
 ## How sign-in works
 
-1. The user enters an email and passes Turnstile. `POST /api/auth/magic-link` rate-limits by IP and by email, verifies
-   Turnstile, caps links at 5 per email per hour, and emails a one-time link. It always answers 202, so it doesn't reveal
-   whether an account exists.
-2. The link is `/auth/verify#token=…`. The token is in the fragment, so it never reaches server logs or `Referer`.
-   The page needs a click to sign in, so email scanners that prefetch links can't use it up.
-3. `POST /api/auth/verify` claims the token atomically (single use, 15 minutes), creates the account on first use,
-   and sets an `HttpOnly`, `Secure`, `SameSite=Lax` session cookie (30 days, sliding).
-4. Only SHA-256 hashes of link tokens and session tokens are stored.
+Sign-in is **Google only** (OpenID Connect, authorisation code flow with PKCE). No emails are sent and no passwords are stored.
 
-Every state-changing request must come from the same origin and send JSON (CSRF guard). A daily cron removes expired
-sessions and old link tokens. `DELETE /api/me` deletes the account.
+1. "Continue with Google" opens `GET /api/auth/google/start`. It rate-limits by IP, creates a random `state`, `nonce`
+   and PKCE verifier, keeps them in a short-lived `HttpOnly` cookie scoped to `/api/auth/google`, and redirects to Google.
+   Only `openid email` is requested.
+2. Google redirects back to `GET /api/auth/google/callback`. The Worker checks `state` against the cookie, swaps the code
+   (with the PKCE verifier and client secret) for an ID token directly with Google, and checks the token's issuer,
+   audience, expiry, nonce and `email_verified`.
+   *The token comes straight from Google's token endpoint over TLS, so OpenID Connect allows skipping the signature check.*
+3. Accounts are keyed on Google's stable user ID (`sub`), not the email, so a changed Gmail address keeps the same account.
+4. The Worker sets an `HttpOnly`, `Secure`, `SameSite=Lax` session cookie (30 days, sliding). Only a SHA-256 hash of the
+   session token is stored.
+5. Failures go back to `/sign-in?error=<reason>` with a plain-language message.
+
+Every state-changing API request must come from the same origin and send JSON (CSRF guard). A daily cron removes expired
+sessions. `DELETE /api/me` deletes the account. `POST /api/auth/dev-sign-in` exists only when `ENVIRONMENT` is
+`development` **and** the host is `localhost`; everywhere else it returns 404.
 
 ## One-time Cloudflare setup (Oscar)
 
 Do these once per environment (`staging` first, then `production`). Commands run from `web/` after `npx wrangler login`.
 
-1. **Move the account to Workers Paid.**
-   *Email Service needs it to send to any address. Vectorize (Phase 3) needs it too.*
-2. **Add a domain to Cloudflare and onboard it for sending** in the dashboard's Email Service section.
-   *The sign-in email's From address must be on an onboarded domain. Email sending is in beta.*
-3. **Create the D1 databases in Oceania:**
+None of this needs Workers Paid: email sending was the only part that did, and sign-in is now Google only.
+
+1. **Create a Google OAuth client** in Google Cloud Console (APIs & Services).
+   - OAuth consent screen: External, app name "Clinical Recall Assistant", scopes `openid` and `email` only.
+   - Credentials > Create credentials > OAuth client ID > Web application.
+   - Authorised redirect URIs: `https://<staging host>/api/auth/google/callback`, the production equivalent, and
+     `http://localhost:5173/api/auth/google/callback` for local testing.
+   *Put the client ID in `GOOGLE_CLIENT_ID` for each environment. The secret goes in step 5. One client can serve all environments.*
+2. **Create the D1 databases in Oceania:**
    - `npx wrangler d1 create studybot-staging --location=oc`
    - `npx wrangler d1 create studybot-production --location=oc`
    *Paste each `database_id` over `REPLACE_WITH_STAGING_D1_ID` / `REPLACE_WITH_PRODUCTION_D1_ID` in `wrangler.jsonc`.*
-4. **Create a Turnstile widget** (dashboard > Turnstile > Add widget, mode Managed).
-   *Hostnames: the staging `workers.dev` host and the production domain. Paste the site key into `TURNSTILE_SITE_KEY`.*
-5. **Create the AI Gateways** `studybot-staging` and `studybot-production`.
+3. **Create the AI Gateways** `studybot-staging` and `studybot-production`.
    - Turn on **Authenticated Gateway** and create a gateway token.
    - Set a **spend limit** under Settings > Spend limits (for example US$50 a month at launch, review §8).
    *Put your account ID in `AI_GATEWAY_ACCOUNT_ID`. Over the limit the gateway answers 429 and the client raises `spend_limit`.*
-6. **Fill in the remaining placeholders** in `wrangler.jsonc`: `EMAIL_FROM` (`signin@<your domain>`).
-7. **Set the Worker secrets** for each environment:
-   - `npx wrangler secret put TURNSTILE_SECRET_KEY --env staging`
+4. **Check no `REPLACE_WITH` placeholders remain** in `wrangler.jsonc` for the environment.
+5. **Set the Worker secrets** for each environment:
+   - `npx wrangler secret put GOOGLE_CLIENT_SECRET --env staging`
    - `npx wrangler secret put GEMINI_API_KEY --env staging`
      *Paid-tier key only. Free-tier data is used by Google to improve its products (review §7).*
    - `npx wrangler secret put AI_GATEWAY_TOKEN --env staging`
-8. **Add GitHub settings** (repo > Settings):
+6. **Add GitHub settings** (repo > Settings):
    - Secrets: `CLOUDFLARE_API_TOKEN` (template "Edit Cloudflare Workers" plus D1 Edit) and `CLOUDFLARE_ACCOUNT_ID`.
    - Environments: `staging` and `production`. Give `production` a required reviewer.
    - Environment variable `WEB_BASE_URL` per environment, for the post-deploy smoke test.
-9. **Deploy.** Merging to `main` deploys staging. Production: Actions > Web Deploy > Run workflow > `production`.
-   *Until steps 3 to 8 are done the deploy job skips itself with a notice, so CI stays green.*
+7. **Deploy.** Merging to `main` deploys staging. Production: Actions > Web Deploy > Run workflow > `production`.
+   *Until steps 2 to 6 are done the deploy job skips itself with a notice, so CI stays green.*
 
 ## Deploying by hand
 

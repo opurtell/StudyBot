@@ -5,6 +5,5 @@ import { afterEach, vi } from "vitest";
 afterEach(() => {
   cleanup();
   vi.restoreAllMocks();
-  delete window.turnstile;
   window.history.replaceState(null, "", "/");
 });

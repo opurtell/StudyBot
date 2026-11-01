@@ -13,7 +13,8 @@ export default defineConfig({
             miniflare: {
               bindings: {
                 TEST_MIGRATIONS: await readD1Migrations(path.join(__dirname, "migrations")),
-                TURNSTILE_SECRET_KEY: "test-secret",
+                GOOGLE_CLIENT_ID: "test-client.apps.googleusercontent.com",
+                GOOGLE_CLIENT_SECRET: "test-google-secret",
                 GEMINI_API_KEY: "test-gemini-key",
                 AI_GATEWAY_TOKEN: "",
               },

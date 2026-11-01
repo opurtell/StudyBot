@@ -50,14 +50,3 @@ export async function axeViolations(container: Element) {
   const results = await axe.run(container, { rules: { "color-contrast": { enabled: false } } });
   return results.violations.map((v) => `${v.id}: ${v.help} (${v.nodes.length})`);
 }
-
-export function stubTurnstile(token = "turnstile-ok") {
-  window.turnstile = {
-    render: (_el, opts) => {
-      setTimeout(() => (opts.callback as (t: string) => void)(token), 0);
-      return "widget-1";
-    },
-    remove: () => {},
-    reset: () => {},
-  };
-}

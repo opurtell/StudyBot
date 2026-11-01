@@ -1,152 +1,187 @@
 import { env } from "cloudflare:workers";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { MAX_LINKS_PER_EMAIL_PER_HOUR, normaliseEmail } from "../../src/worker/auth/routes";
-import { sha256Hex } from "../../src/worker/lib/crypto";
-import { call, freshIp, lastLinkToken, mockTurnstile, postJson, sessionCookie, signIn, uniqueEmail } from "./helpers";
+import { validateIdTokenClaims } from "../../src/worker/auth/google";
+import { sha256Base64Url } from "../../src/worker/lib/crypto";
+import { call, completeGoogle, cookieFrom, mockGoogleToken, signIn, startGoogle, TEST_CLIENT_ID, validClaims } from "./helpers";
 
 afterEach(() => vi.restoreAllMocks());
 
-describe("normaliseEmail", () => {
-  it("trims and lower-cases", () => {
-    expect(normaliseEmail("  Paramedic@Example.COM ")).toBe("paramedic@example.com");
+const errorOf = (res: Response) => new URL(res.headers.get("location") ?? "", "https://x").searchParams.get("error");
+
+describe("Google sign-in start", () => {
+  it("redirects to Google with PKCE, state and nonce", async () => {
+    const { res, location, oauthCookie } = await startGoogle();
+    expect(res.status).toBe(302);
+    expect(location.origin + location.pathname).toBe("https://accounts.google.com/o/oauth2/v2/auth");
+    expect(location.searchParams.get("client_id")).toBe(TEST_CLIENT_ID);
+    expect(location.searchParams.get("redirect_uri")).toBe("https://studybot.test/api/auth/google/callback");
+    expect(location.searchParams.get("scope")).toBe("openid email");
+    expect(location.searchParams.get("code_challenge_method")).toBe("S256");
+    expect(location.searchParams.get("state")).toMatch(/^[A-Za-z0-9_-]{40,}$/);
+    expect(location.searchParams.get("nonce")).toMatch(/^[A-Za-z0-9_-]{40,}$/);
+    expect(oauthCookie).toBeTruthy();
   });
-  it.each([undefined, 42, "", "no-at-sign", "a@b", "a b@example.com", `${"x".repeat(250)}@example.com`])(
-    "rejects %s",
-    (value) => {
-      expect(normaliseEmail(value)).toBeNull();
-    },
-  );
+
+  it("keeps the PKCE verifier server-side in an HttpOnly cookie scoped to the callback", async () => {
+    const { res, location } = await startGoogle();
+    const raw = res.headers.getSetCookie().find((c) => c.startsWith("sb_oauth=")) ?? "";
+    expect(raw).toMatch(/HttpOnly/i);
+    expect(raw).toMatch(/Path=\/api\/auth\/google/);
+    expect(raw).toMatch(/SameSite=Lax/i);
+    const stored = JSON.parse(decodeURIComponent(raw.split(";")[0].slice("sb_oauth=".length)));
+    expect(await sha256Base64Url(stored.v)).toBe(location.searchParams.get("code_challenge"));
+    expect(location.search).not.toContain(stored.v);
+  });
+
+  it("rate limits repeated starts from one IP", async () => {
+    const statuses: (string | null)[] = [];
+    for (let i = 0; i < 12; i += 1) statuses.push(errorOf((await startGoogle("198.51.100.9")).res));
+    expect(statuses).toContain("rate_limited");
+  });
 });
 
-describe("magic-link sign-in", () => {
-  it("rejects an invalid email before checking Turnstile", async () => {
-    const fetchSpy = mockTurnstile(true);
-    const res = await postJson("/api/auth/magic-link", { email: "nope", turnstileToken: "ok" });
-    expect(res.status).toBe(400);
-    expect(await res.json()).toMatchObject({ error: "invalid_email" });
-    expect(fetchSpy).not.toHaveBeenCalled();
+describe("Google sign-in callback", () => {
+  it("creates an account and session from a valid ID token", async () => {
+    const { res, session } = await completeGoogle((nonce) => validClaims(nonce, { sub: "sub-create" , email: "Create@Example.com" }));
+    expect(res.status).toBe(302);
+    expect(res.headers.get("location")).toBe("/");
+    expect(session).toBeTruthy();
+    const me = (await (await call("/api/me", { cookie: session! })).json()) as Record<string, unknown>;
+    expect(me).toMatchObject({ signedIn: true, tier: "free", email: "create@example.com" });
   });
 
-  it("refuses to send a link when Turnstile fails", async () => {
-    mockTurnstile(false);
-    const email = uniqueEmail();
-    const res = await postJson("/api/auth/magic-link", { email, turnstileToken: "bad" });
-    expect(res.status).toBe(400);
-    expect(await res.json()).toMatchObject({ error: "turnstile_failed" });
-    const row = await env.DB.prepare("SELECT COUNT(*) AS n FROM login_tokens WHERE email = ?").bind(email).first<{ n: number }>();
-    expect(row?.n).toBe(0);
+  it("sends the code, verifier and secret to Google's token endpoint", async () => {
+    const started = await startGoogle();
+    const spy = mockGoogleToken(() => validClaims(started.nonce, { sub: "sub-body" }));
+    await call(`/api/auth/google/callback?code=abc&state=${started.state}`, { cookie: started.oauthCookie ?? "" });
+    const body = new URLSearchParams(String(spy.mock.calls[0][1]?.body));
+    expect(body.get("code")).toBe("abc");
+    expect(body.get("grant_type")).toBe("authorization_code");
+    expect(body.get("client_secret")).toBe("test-google-secret");
+    expect(await sha256Base64Url(body.get("code_verifier") ?? "")).toBe(started.location.searchParams.get("code_challenge"));
   });
 
-  it("treats an unreachable Turnstile service as a failed check, not a crash", async () => {
-    vi.spyOn(globalThis, "fetch").mockRejectedValue(new TypeError("network down"));
-    const res = await postJson("/api/auth/magic-link", { email: uniqueEmail(), turnstileToken: "ok" });
-    expect(res.status).toBe(400);
-    expect(await res.json()).toMatchObject({ error: "turnstile_failed" });
+  it("clears the one-time OAuth cookie", async () => {
+    const { res } = await completeGoogle((nonce) => validClaims(nonce, { sub: "sub-clear" }));
+    const cleared = res.headers.getSetCookie().find((c) => c.startsWith("sb_oauth="));
+    expect(cleared).toMatch(/Max-Age=0/i);
   });
 
-  it("stores only a hash of the login token", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" });
-    const token = lastLinkToken(email);
-    const row = await env.DB.prepare("SELECT token_hash FROM login_tokens WHERE email = ?").bind(email).first<{ token_hash: string }>();
-    expect(row?.token_hash).toBe(await sha256Hex(token));
-    expect(row?.token_hash).not.toContain(token);
+  it("rejects a state that doesn't match the cookie", async () => {
+    const started = await startGoogle();
+    const spy = mockGoogleToken(() => ({}));
+    const res = await call(`/api/auth/google/callback?code=abc&state=forged`, { cookie: started.oauthCookie ?? "" });
+    expect(errorOf(res)).toBe("expired");
+    expect(spy).not.toHaveBeenCalled();
+    expect(cookieFrom(res, "sb_session")).toBeNull();
   });
 
-  it("signs in with a valid link and shows the free tier quota", async () => {
-    const { email, cookie } = await signIn();
-    const res = await call("/api/me", { cookie });
-    const body = (await res.json()) as { signedIn: boolean; tier: string; email: string; quota: { generations: { limit: number; remaining: number }; marking: { limit: number } } };
-    expect(body).toMatchObject({ signedIn: true, tier: "free", email });
+  it("rejects a callback with no OAuth cookie", async () => {
+    const started = await startGoogle();
+    const res = await call(`/api/auth/google/callback?code=abc&state=${started.state}`);
+    expect(errorOf(res)).toBe("expired");
+  });
+
+  it("reports a cancelled sign-in", async () => {
+    const started = await startGoogle();
+    const res = await call(`/api/auth/google/callback?error=access_denied&state=${started.state}`, { cookie: started.oauthCookie ?? "" });
+    expect(errorOf(res)).toBe("cancelled");
+  });
+
+  it.each([
+    ["wrong audience", { aud: "someone-else" }, "failed"],
+    ["wrong issuer", { iss: "https://evil.example" }, "failed"],
+    ["expired token", { exp: Math.floor(Date.now() / 1000) - 3600 }, "failed"],
+    ["unverified email", { email_verified: false }, "unverified_email"],
+    ["missing email", { email: undefined }, "failed"],
+  ])("rejects an ID token with %s", async (_label, overrides, expected) => {
+    const { res, session } = await completeGoogle((nonce) => validClaims(nonce, { sub: `sub-${crypto.randomUUID()}`, ...overrides }));
+    expect(errorOf(res)).toBe(expected);
+    expect(session).toBeNull();
+  });
+
+  it("rejects an ID token minted for a different sign-in attempt", async () => {
+    const { res, session } = await completeGoogle(() => validClaims("some-other-nonce"));
+    expect(errorOf(res)).toBe("failed");
+    expect(session).toBeNull();
+  });
+
+  it("fails cleanly when Google's token endpoint errors", async () => {
+    const started = await startGoogle();
+    mockGoogleToken(() => ({}), 500);
+    const res = await call(`/api/auth/google/callback?code=abc&state=${started.state}`, { cookie: started.oauthCookie ?? "" });
+    expect(errorOf(res)).toBe("failed");
+  });
+
+  it("reuses the account for the same Google user and follows email changes", async () => {
+    await signIn("sub-stable", "old@example.com");
+    const { cookie } = await signIn("sub-stable", "new@example.com");
+    const rows = await env.DB.prepare("SELECT email FROM users WHERE google_sub = 'sub-stable'").all<{ email: string }>();
+    expect(rows.results).toEqual([{ email: "new@example.com" }]);
+    expect(await (await call("/api/me", { cookie })).json()).toMatchObject({ email: "new@example.com" });
+  });
+
+  it("shows the free tier quota once signed in", async () => {
+    const { cookie } = await signIn();
+    const body = (await (await call("/api/me", { cookie })).json()) as { quota: { generations: { limit: number; remaining: number }; marking: { limit: number } } };
     expect(body.quota.generations).toMatchObject({ limit: 20, remaining: 20 });
     expect(body.quota.marking.limit).toBe(30);
   });
 
-  it("sets an HttpOnly, SameSite=Lax, Secure cookie on HTTPS", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" });
-    const res = await postJson("/api/auth/verify", { token: lastLinkToken(email) });
-    const cookie = res.headers.get("set-cookie") ?? "";
-    expect(cookie).toMatch(/HttpOnly/i);
-    expect(cookie).toMatch(/SameSite=Lax/i);
-    expect(cookie).toMatch(/Secure/i);
-    expect(sessionCookie(res)).toMatch(/^sb_session=/);
+  it("sets an HttpOnly, SameSite=Lax, Secure session cookie on HTTPS", async () => {
+    const { res } = await completeGoogle((nonce) => validClaims(nonce, { sub: "sub-cookie" }));
+    const raw = res.headers.getSetCookie().find((c) => c.startsWith("sb_session=")) ?? "";
+    expect(raw).toMatch(/HttpOnly/i);
+    expect(raw).toMatch(/SameSite=Lax/i);
+    expect(raw).toMatch(/Secure/i);
+  });
+});
+
+describe("validateIdTokenClaims", () => {
+  const expected = { clientId: TEST_CLIENT_ID, nonce: "n", nowSeconds: 1_000_000 };
+  const base = { iss: "accounts.google.com", aud: TEST_CLIENT_ID, sub: "s", email: " A@B.com ", email_verified: "true", exp: 1_000_100, nonce: "n" };
+
+  it("accepts Google's string form of email_verified and normalises the email", () => {
+    expect(validateIdTokenClaims(base, expected)).toEqual({ sub: "s", email: "a@b.com" });
   });
 
-  it("accepts each link only once", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" });
-    const token = lastLinkToken(email);
-    expect((await postJson("/api/auth/verify", { token })).status).toBe(200);
-    const again = await postJson("/api/auth/verify", { token });
-    expect(again.status).toBe(400);
-    expect(await again.json()).toMatchObject({ error: "invalid_or_expired_link" });
+  it("accepts an audience list that includes the client", () => {
+    expect(validateIdTokenClaims({ ...base, aud: ["other", TEST_CLIENT_ID] }, expected).sub).toBe("s");
   });
+});
 
-  it("rejects an expired link", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" });
-    const token = lastLinkToken(email);
-    await env.DB.prepare("UPDATE login_tokens SET expires_at = ? WHERE email = ?").bind(Date.now() - 1, email).run();
-    expect((await postJson("/api/auth/verify", { token })).status).toBe(400);
-  });
-
-  it("does not create an account until the link is used", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" });
-    const row = await env.DB.prepare("SELECT COUNT(*) AS n FROM users WHERE email = ?").bind(email).first<{ n: number }>();
-    expect(row?.n).toBe(0);
-  });
-
-  it("reuses the same account on a second sign-in", async () => {
-    const first = await signIn();
-    await signIn(first.email.toUpperCase());
-    const row = await env.DB.prepare("SELECT COUNT(*) AS n FROM users WHERE email = ?").bind(first.email).first<{ n: number }>();
-    expect(row?.n).toBe(1);
-  });
-
-  it("caps links per email per hour without revealing it", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    const now = Date.now();
-    for (let i = 0; i < MAX_LINKS_PER_EMAIL_PER_HOUR; i += 1) {
-      await env.DB.prepare("INSERT INTO login_tokens (token_hash, email, created_at, expires_at) VALUES (?, ?, ?, ?)")
-        .bind(`seed-${i}-${email}`, email, now - 1000, now + 60_000)
-        .run();
-    }
-    const res = await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" }, { ip: freshIp() });
-    expect(res.status).toBe(202);
-    expect(() => lastLinkToken(email)).toThrow();
-  });
-
-  it("rate limits repeated requests for one email", async () => {
-    mockTurnstile(true);
-    const email = uniqueEmail();
-    const statuses: number[] = [];
-    for (let i = 0; i < 6; i += 1) {
-      statuses.push((await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" }, { ip: freshIp() })).status);
-    }
-    expect(statuses).toContain(429);
-  });
-
+describe("sessions", () => {
   it("signs out and invalidates the session server-side", async () => {
     const { cookie } = await signIn();
-    const out = await postJson("/api/auth/sign-out", {}, { cookie });
+    const out = await call("/api/auth/sign-out", {
+      method: "POST",
+      headers: { origin: "https://studybot.test", "content-type": "application/json" },
+      body: "{}",
+      cookie,
+    });
     expect(out.status).toBe(200);
-    const me = await call("/api/me", { cookie });
-    expect(await me.json()).toEqual({ signedIn: false, tier: "anonymous" });
+    expect(await (await call("/api/me", { cookie })).json()).toEqual({ signedIn: false, tier: "anonymous" });
   });
 
   it("rejects an expired session", async () => {
     const { cookie } = await signIn();
     await env.DB.prepare("UPDATE sessions SET expires_at = ?").bind(Date.now() - 1).run();
-    const me = await call("/api/me", { cookie });
-    expect(await me.json()).toEqual({ signedIn: false, tier: "anonymous" });
+    expect(await (await call("/api/me", { cookie })).json()).toEqual({ signedIn: false, tier: "anonymous" });
+  });
+});
+
+describe("dev sign-in", () => {
+  it("is hidden off localhost even in development", async () => {
+    const res = await call("/api/auth/dev-sign-in", {
+      method: "POST",
+      headers: { origin: "https://studybot.test", "content-type": "application/json" },
+      body: "{}",
+    });
+    expect(res.status).toBe(404);
+  });
+
+  it("is not advertised off localhost", async () => {
+    expect(await (await call("/api/config")).json()).toMatchObject({ devSignIn: false });
   });
 });
 
@@ -156,16 +191,12 @@ describe("account deletion", () => {
     expect(res.status).toBe(401);
   });
 
-  it("removes the user, sessions and login tokens", async () => {
-    const { email, cookie } = await signIn();
+  it("removes the user and their sessions", async () => {
+    const { cookie } = await signIn("sub-delete", "delete@example.com");
     const res = await call("/api/me", { method: "DELETE", headers: { origin: "https://studybot.test" }, cookie });
     expect(res.status).toBe(200);
-    const counts = await env.DB.prepare(
-      "SELECT (SELECT COUNT(*) FROM users WHERE email = ?1) AS users, (SELECT COUNT(*) FROM login_tokens WHERE email = ?1) AS tokens",
-    )
-      .bind(email)
-      .first<{ users: number; tokens: number }>();
-    expect(counts).toEqual({ users: 0, tokens: 0 });
+    const row = await env.DB.prepare("SELECT COUNT(*) AS n FROM users WHERE google_sub = 'sub-delete'").first<{ n: number }>();
+    expect(row?.n).toBe(0);
     expect(await (await call("/api/me", { cookie })).json()).toEqual({ signedIn: false, tier: "anonymous" });
   });
 });

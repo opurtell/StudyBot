@@ -1,16 +1,16 @@
-import { screen, waitFor } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
-import { anonymous, axeViolations, mockApi, renderAt, signedIn, stubTurnstile } from "./helpers";
+import { anonymous, axeViolations, mockApi, renderAt, signedIn } from "./helpers";
 
-const config = { turnstileSiteKey: "1x00000000000000000000AA", environment: "test" };
+const config = { environment: "test", devSignIn: false };
 
 describe("home", () => {
   it("shows the guest view to anonymous visitors", async () => {
     mockApi({ "GET /api/me": anonymous });
     renderAt("/");
     expect(await screen.findByRole("heading", { name: /studying as a guest/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /sign in with email/i })).toHaveAttribute("href", "/sign-in");
+    expect(screen.getByRole("link", { name: /sign in with google/i })).toHaveAttribute("href", "/sign-in");
     expect(screen.getByText(/study aid only\. not clinical guidance/i)).toBeInTheDocument();
   });
 
@@ -32,95 +32,50 @@ describe("home", () => {
 });
 
 describe("sign-in", () => {
-  it("sends the email and Turnstile token, then asks the user to check their email", async () => {
-    stubTurnstile("ts-token");
-    let sent: unknown;
-    mockApi({
-      "GET /api/me": anonymous,
-      "GET /api/config": config,
-      "POST /api/auth/magic-link": (init: RequestInit | undefined) => {
-        sent = JSON.parse(String(init?.body));
-        return { status: 202, body: { ok: true } };
-      },
-    });
-    renderAt("/sign-in");
-    const user = userEvent.setup();
-    await user.type(await screen.findByLabelText("Email"), "medic@example.com");
-    await waitFor(() => expect(screen.getByTestId("turnstile")).toBeInTheDocument());
-    await new Promise((r) => setTimeout(r, 5));
-    await user.click(screen.getByRole("button", { name: /email me a sign-in link/i }));
-    expect(await screen.findByRole("heading", { name: /check your email/i })).toBeInTheDocument();
-    expect(sent).toEqual({ email: "medic@example.com", turnstileToken: "ts-token" });
-  });
-
-  it("shows the server's error message", async () => {
-    stubTurnstile();
-    mockApi({
-      "GET /api/me": anonymous,
-      "GET /api/config": config,
-      "POST /api/auth/magic-link": { status: 429, body: { error: "rate_limited", message: "Too many sign-in requests. Wait a minute and try again." } },
-    });
-    renderAt("/sign-in");
-    const user = userEvent.setup();
-    await user.type(await screen.findByLabelText("Email"), "medic@example.com");
-    await new Promise((r) => setTimeout(r, 5));
-    await user.click(screen.getByRole("button", { name: /email me a sign-in link/i }));
-    expect(await screen.findByRole("alert")).toHaveTextContent(/too many sign-in requests/i);
-  });
-
-  it("has no detectable accessibility violations", async () => {
-    stubTurnstile();
+  it("sends the user to Google", async () => {
     mockApi({ "GET /api/me": anonymous, "GET /api/config": config });
-    const { container } = renderAt("/sign-in");
-    await screen.findByLabelText("Email");
-    expect(await axeViolations(container)).toEqual([]);
+    renderAt("/sign-in");
+    expect(await screen.findByRole("link", { name: /continue with google/i })).toHaveAttribute("href", "/api/auth/google/start");
+    expect(screen.queryByRole("button", { name: /dev sign-in/i })).not.toBeInTheDocument();
   });
-});
 
-describe("verify", () => {
-  it("signs in only after the user confirms, and strips the token from the URL", async () => {
-    window.history.replaceState(null, "", "/auth/verify#token=abc123");
-    let verifyBody: unknown;
+  it.each([
+    ["cancelled", /cancelled/i],
+    ["expired", /took too long/i],
+    ["unverified_email", /isn't verified/i],
+    ["something-new", /didn't work/i],
+  ])("explains the %s error from the callback", async (code, message) => {
+    mockApi({ "GET /api/me": anonymous, "GET /api/config": config });
+    renderAt(`/sign-in?error=${code}`);
+    expect(await screen.findByRole("alert")).toHaveTextContent(message);
+  });
+
+  it("offers dev sign-in only when the server allows it", async () => {
     let signedInNow = false;
     mockApi({
       "GET /api/me": () => ({ body: signedInNow ? signedIn : anonymous }),
-      "POST /api/auth/verify": (init: RequestInit | undefined) => {
-        verifyBody = JSON.parse(String(init?.body));
+      "GET /api/config": { environment: "development", devSignIn: true },
+      "POST /api/auth/dev-sign-in": () => {
         signedInNow = true;
         return { body: { ok: true } };
       },
     });
-    renderAt("/auth/verify");
-    const button = await screen.findByRole("button", { name: "Sign in" });
-    expect(verifyBody).toBeUndefined();
-    expect(window.location.hash).toBe("");
-    await userEvent.setup().click(button);
+    renderAt("/sign-in");
+    await userEvent.setup().click(await screen.findByRole("button", { name: /dev sign-in/i }));
     expect(await screen.findByRole("heading", { name: /signed in as medic@example.com/i })).toBeInTheDocument();
-    expect(verifyBody).toEqual({ token: "abc123" });
   });
 
-  it("explains an expired link", async () => {
-    window.history.replaceState(null, "", "/auth/verify#token=old");
-    mockApi({
-      "GET /api/me": anonymous,
-      "POST /api/auth/verify": { status: 400, body: { error: "invalid_or_expired_link", message: "This sign-in link is invalid or has expired." } },
-    });
-    renderAt("/auth/verify");
-    await userEvent.setup().click(await screen.findByRole("button", { name: "Sign in" }));
-    expect(await screen.findByRole("alert")).toHaveTextContent(/invalid or has expired/i);
-  });
-
-  it("handles a missing token", async () => {
-    mockApi({ "GET /api/me": anonymous });
-    renderAt("/auth/verify");
-    expect(await screen.findByRole("heading", { name: /link not recognised/i })).toBeInTheDocument();
+  it("has no detectable accessibility violations", async () => {
+    mockApi({ "GET /api/me": anonymous, "GET /api/config": config });
+    const { container } = renderAt("/sign-in?error=cancelled");
+    await screen.findByRole("alert");
+    expect(await axeViolations(container)).toEqual([]);
   });
 });
 
 describe("account", () => {
   it("sends anonymous visitors to sign-in", async () => {
     mockApi({ "GET /api/me": anonymous, "GET /api/config": config });
-    stubTurnstile();
     renderAt("/account");
     expect(await screen.findByRole("heading", { name: "Sign in" })).toBeInTheDocument();
   });
