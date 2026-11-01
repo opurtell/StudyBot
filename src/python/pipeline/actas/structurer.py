@@ -11,6 +11,8 @@ import re
 from datetime import datetime, timezone
 from typing import Dict, Any, List
 
+from paths import service_structured_dir
+
 from .models import CMGGuideline, ExtractionMetadata, FlowchartEntry
 from .dose_tables import correct_misfiled_doses
 
@@ -118,7 +120,7 @@ def structure_guidelines(
     guidelines_path: str = "data/cmgs/raw/guidelines.json",
     dose_tables_path: str = "data/cmgs/raw/dose_tables.json",
     flowcharts_dir: str = "data/cmgs/flowcharts/",
-    output_dir: str = "data/cmgs/structured/",
+    output_dir: str = str(service_structured_dir("actas")),
 ) -> None:
     if not os.path.exists(guidelines_path):
         logger.error(f"Guidelines not found at {guidelines_path}")

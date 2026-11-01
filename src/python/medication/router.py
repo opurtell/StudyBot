@@ -8,7 +8,7 @@ from fastapi import APIRouter
 
 from guidelines import actas_scope
 from guidelines.markdown import normalise_markdown_payload, normalise_markdown_syntax
-from paths import resolve_service_structured_dir, CMG_STRUCTURED_DIR
+from paths import resolve_service_structured_dir
 from services.active import active_service
 
 from .models import MedicationDose
@@ -19,21 +19,11 @@ _medication_cache: list[dict] | None = None
 
 
 def _resolve_med_dir() -> Path:
-    """Resolve the med subdirectory, falling back to legacy if not yet migrated."""
-    svc_dir = resolve_service_structured_dir(active_service().id)
-    med_dir = svc_dir / "med"
-    if med_dir.exists():
-        return med_dir
-    return CMG_STRUCTURED_DIR / "med"
+    return resolve_service_structured_dir(active_service().id) / "med"
 
 
 def _resolve_medication_index_path() -> Path:
-    """Resolve the medications-index.json, falling back to legacy if not yet migrated."""
-    svc_dir = resolve_service_structured_dir(active_service().id)
-    index_path = svc_dir / "medications-index.json"
-    if index_path.exists():
-        return index_path
-    return CMG_STRUCTURED_DIR / "medications-index.json"
+    return resolve_service_structured_dir(active_service().id) / "medications-index.json"
 
 
 def _extract_section(content: str, heading: str) -> str:

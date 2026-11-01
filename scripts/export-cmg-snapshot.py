@@ -4,7 +4,7 @@ Regenerates:
   - ../ACTAS CMGs/            (JSON pool: guidelines/, medications/, skills/ + indexes)
   - ../ACTAS CMGs Markdown/   (flat .md files with YAML frontmatter)
 
-Reads from StudyBot/data/cmgs/structured/ (produced by the ACTAS pipeline).
+Reads from StudyBot/data/services/actas/structured/ (produced by the ACTAS pipeline).
 """
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-STRUCTURED = REPO / "data" / "cmgs" / "structured"
+STRUCTURED = REPO / "data" / "services" / "actas" / "structured"
 PARENT = REPO.parent
 JSON_OUT = PARENT / "ACTAS CMGs"
 MD_OUT = PARENT / "ACTAS CMGs Markdown"

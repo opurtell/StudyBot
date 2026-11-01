@@ -11,7 +11,7 @@ from typing import Dict, Any, List
 import chromadb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from paths import CHROMA_DB_DIR
+from paths import CHROMA_DB_DIR, service_structured_dir
 
 from .models import CMGGuideline
 from guidelines import actas_scope as scope
@@ -89,7 +89,7 @@ def _dose_lookup_to_chunks(
 
 
 def chunk_and_ingest(
-    structured_dir: str = "data/cmgs/structured/",
+    structured_dir: str = str(service_structured_dir("actas")),
     db_path: str = str(CHROMA_DB_DIR),
     collection_name: str = "guidelines_actas",
 ):

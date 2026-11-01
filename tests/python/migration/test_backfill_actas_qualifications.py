@@ -113,3 +113,16 @@ class TestIcpDrugList:
             "lignocaine", "sodium bicarbonate", "suxamethonium", "levetiracetam",
         }
         assert expected == {d for d, s in DRUG_SCOPE.items() if s == ICP_DRUG}
+
+
+class TestSubfolders:
+    def test_skills_and_monographs_are_tagged(self, tmp_actas_dir: Path) -> None:
+        skill = {"id": "CMG_CSM.A10_X", "cmg_number": "CSM.A10", "title": "X", "section": "Clinical Skill"}
+        med = {"id": "MED_X", "cmg_number": "MED01", "title": "Adenosine", "section": "Medicine"}
+        for sub, name, doc in (("csm", "skill.json", skill), ("med", "med.json", med)):
+            (tmp_actas_dir / sub).mkdir()
+            (tmp_actas_dir / sub / name).write_text(json.dumps(doc))
+        results = backfill_directory(tmp_actas_dir)
+        assert results["csm/skill.json"] and results["med/med.json"]
+        assert json.loads((tmp_actas_dir / "csm" / "skill.json").read_text())["qualifications_required"] == ["ICP"]
+        assert json.loads((tmp_actas_dir / "med" / "med.json").read_text())["qualifications_required"] == ["ICP"]

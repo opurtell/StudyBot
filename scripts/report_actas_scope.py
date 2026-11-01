@@ -41,8 +41,8 @@ def _clip(text: str, limit: int = 160) -> str:
 
 def build_report() -> str:
     cmgs = _docs("data/services/actas/structured/CMG*.json")
-    meds = _docs("data/cmgs/structured/med/*.json")
-    csms = _docs("data/cmgs/structured/csm/*.json")
+    meds = _docs("data/services/actas/structured/med/*.json")
+    csms = _docs("data/services/actas/structured/csm/*.json")
 
     out: list[str] = []
     out.append("## Whole-document scope\n")

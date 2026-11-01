@@ -5,7 +5,7 @@ from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
 
-from paths import resolve_service_structured_dir, CMG_STRUCTURED_DIR
+from paths import resolve_service_structured_dir
 from . import actas_scope as scope
 from services.active import active_service
 
@@ -25,12 +25,7 @@ def _get_type_dirs() -> dict[str, Path]:
         "cmg": structured_dir,
     }
     for sub in ("med", "csm"):
-        svc_subdir = structured_dir / sub
-        # Prefer service-aware subdir; fall back to legacy for partially-migrated data
-        if svc_subdir.exists():
-            type_dirs[sub] = svc_subdir
-        else:
-            type_dirs[sub] = CMG_STRUCTURED_DIR / sub
+        type_dirs[sub] = structured_dir / sub
     return type_dirs
 
 

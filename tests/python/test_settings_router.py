@@ -222,7 +222,7 @@ def test_get_cmg_manifest(monkeypatch, tmp_path):
     structured_dir.mkdir()
     (structured_dir / ".manifest.json").write_text(json.dumps(manifest))
 
-    monkeypatch.setattr(settings_router, "resolve_cmg_structured_dir", lambda: structured_dir)
+    monkeypatch.setattr(settings_router, "_actas_structured_dir", lambda: structured_dir)
 
     response = client.get("/settings/cmg-manifest")
     assert response.status_code == 200
@@ -233,7 +233,7 @@ def test_get_cmg_manifest(monkeypatch, tmp_path):
 def test_get_cmg_manifest_returns_404_when_missing(monkeypatch, tmp_path):
     structured_dir = tmp_path / "structured"
     structured_dir.mkdir()
-    monkeypatch.setattr(settings_router, "resolve_cmg_structured_dir", lambda: structured_dir)
+    monkeypatch.setattr(settings_router, "_actas_structured_dir", lambda: structured_dir)
 
     response = client.get("/settings/cmg-manifest")
     assert response.status_code == 404

@@ -7,6 +7,8 @@ import os
 import re
 from typing import Any
 
+from paths import service_structured_dir
+
 try:
     from playwright.sync_api import sync_playwright
 except ImportError:  # pragma: no cover — playwright not installed in test env
@@ -66,7 +68,7 @@ def _load_existing_versions(structured_dir: str) -> dict[str, str]:
 def discover_metadata(
     url: str = _URL,
     output_dir: str = "data/cmgs/raw",
-    structured_dir: str = "data/cmgs/structured",
+    structured_dir: str = str(service_structured_dir("actas")),
 ) -> dict[str, Any]:
     os.makedirs(output_dir, exist_ok=True)
     guidelines: list[dict[str, str]] = []

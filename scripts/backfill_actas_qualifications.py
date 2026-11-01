@@ -1,5 +1,7 @@
 """Idempotent backfill script: add ``qualifications_required`` to every
-structured JSON file in ``data/services/actas/structured/``.
+structured JSON file in ``data/services/actas/structured/``
+(guidelines at the top level, clinical skills in ``csm/``, medicine monographs
+in ``med/``).
 
 Two levels are tagged:
 
@@ -83,10 +85,14 @@ def backfill_directory(
     """
     directory = Path(directory)
     results: dict[str, bool] = {}
-    for json_file in sorted(directory.glob("*.json")):
+    files = sorted(directory.glob("*.json"))
+    for sub in ("csm", "med"):
+        files.extend(sorted((directory / sub).glob("*.json")))
+    for json_file in files:
         if "index" in json_file.name:
             continue
-        results[json_file.name] = backfill_file(json_file, dry_run=dry_run)
+        name = json_file.relative_to(directory).as_posix()
+        results[name] = backfill_file(json_file, dry_run=dry_run)
     return results
 
 
