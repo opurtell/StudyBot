@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -15,7 +15,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -45,7 +45,5 @@
     }
   ],
   "total_entries": 2,
-  "sources": [
-    "CMG_22"
-  ]
+  "sources": []
 }

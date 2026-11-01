@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_41",
+      "guideline_id": "",
       "cmg_number": "41",
       "source_file": "CMG_41_Nausea_and_Vomiting.json",
       "source_title": "Nausea and Vomiting",
@@ -15,7 +15,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_41",
+      "guideline_id": "",
       "cmg_number": "41",
       "source_file": "CMG_41_Nausea_and_Vomiting.json",
       "source_title": "Nausea and Vomiting",
@@ -32,7 +32,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_41",
+      "guideline_id": "",
       "cmg_number": "41",
       "source_file": "CMG_41_Nausea_and_Vomiting.json",
       "source_title": "Nausea and Vomiting",
@@ -54,7 +54,5 @@
     }
   ],
   "total_entries": 3,
-  "sources": [
-    "CMG_41"
-  ]
+  "sources": []
 }

@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -32,7 +32,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -61,7 +61,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -90,7 +90,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -119,7 +119,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -148,7 +148,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -177,7 +177,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -206,7 +206,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -235,7 +235,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -264,7 +264,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -293,7 +293,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -322,7 +322,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -351,7 +351,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -380,7 +380,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -409,7 +409,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -438,7 +438,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -487,7 +487,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -516,7 +516,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -545,7 +545,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -574,7 +574,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -603,7 +603,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -632,7 +632,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -661,7 +661,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -686,7 +686,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -715,7 +715,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -736,7 +736,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -753,7 +753,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -774,7 +774,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_4",
+      "guideline_id": "",
       "cmg_number": "4",
       "source_file": "CMG_4_Cardiac_Arrest__Adult.json",
       "source_title": "Cardiac Arrest: Adult",
@@ -835,7 +835,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -864,7 +864,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -893,7 +893,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -922,7 +922,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -951,7 +951,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -980,7 +980,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1009,7 +1009,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1038,7 +1038,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1067,7 +1067,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1096,7 +1096,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1125,7 +1125,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1154,7 +1154,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1183,7 +1183,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1212,7 +1212,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1241,7 +1241,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1270,7 +1270,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1319,7 +1319,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1348,7 +1348,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1377,7 +1377,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1406,7 +1406,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1435,7 +1435,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1464,7 +1464,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1493,7 +1493,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1518,7 +1518,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1547,7 +1547,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1568,7 +1568,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1585,7 +1585,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1606,7 +1606,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_5",
+      "guideline_id": "",
       "cmg_number": "5",
       "source_file": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_.json",
       "source_title": "Cardiac Arrest: Paediatric (<12 years old)",
@@ -1667,7 +1667,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1696,7 +1696,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1725,7 +1725,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1754,7 +1754,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1783,7 +1783,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1812,7 +1812,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1841,7 +1841,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1870,7 +1870,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1899,7 +1899,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1928,7 +1928,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1957,7 +1957,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -1986,7 +1986,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2015,7 +2015,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2044,7 +2044,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2073,7 +2073,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2102,7 +2102,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2151,7 +2151,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2180,7 +2180,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2209,7 +2209,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2238,7 +2238,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2267,7 +2267,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2296,7 +2296,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2325,7 +2325,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2350,7 +2350,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2379,7 +2379,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2400,7 +2400,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2417,7 +2417,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2438,7 +2438,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_8",
+      "guideline_id": "",
       "cmg_number": "8",
       "source_file": "CMG_8_Tachyarrhythmias.json",
       "source_title": "Tachyarrhythmias",
@@ -2500,9 +2500,5 @@
     }
   ],
   "total_entries": 84,
-  "sources": [
-    "CMG_4",
-    "CMG_5",
-    "CMG_8"
-  ]
+  "sources": []
 }

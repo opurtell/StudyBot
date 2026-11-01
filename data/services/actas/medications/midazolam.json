@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -24,7 +24,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -53,7 +53,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -97,12 +97,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -142,12 +142,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -191,12 +191,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -240,12 +240,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -289,12 +289,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -338,12 +338,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -387,12 +387,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -436,12 +436,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -485,12 +485,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -534,12 +534,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -583,12 +583,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -632,29 +632,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
-      "cmg_number": "22",
-      "source_file": "CMG_22_Seizures.json",
-      "source_title": "Seizures",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "AP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -666,24 +649,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
       "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -695,12 +678,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -721,7 +704,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -765,12 +748,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_22",
+      "guideline_id": "",
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
@@ -894,12 +877,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -920,7 +903,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -949,7 +932,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -993,12 +976,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1038,12 +1021,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1087,12 +1070,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1136,12 +1119,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1185,12 +1168,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1234,12 +1217,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1283,12 +1266,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1332,12 +1315,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1381,12 +1364,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1430,12 +1413,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1479,12 +1462,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1528,29 +1511,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
-      "cmg_number": "37",
-      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
-      "source_title": "Combative and Agitated Patients",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "AP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1562,24 +1528,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
       "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1591,12 +1557,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1617,7 +1583,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1661,12 +1627,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_37",
+      "guideline_id": "",
       "cmg_number": "37",
       "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
       "source_title": "Combative and Agitated Patients",
@@ -1790,12 +1756,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1811,12 +1777,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1840,12 +1806,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1889,12 +1855,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1934,12 +1900,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -1983,12 +1949,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2032,12 +1998,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2081,12 +2047,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2130,12 +2096,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2179,12 +2145,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2228,12 +2194,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2277,12 +2243,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2326,12 +2292,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2375,12 +2341,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2424,29 +2390,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
-      "cmg_number": "3A",
-      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
-      "source_title": "RSI (Rapid Sequence Intubation)",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "AP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2458,24 +2407,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2487,12 +2436,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2508,12 +2457,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2557,12 +2506,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -2686,12 +2635,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2712,7 +2661,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2741,7 +2690,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2785,12 +2734,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2830,12 +2779,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2879,12 +2828,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2928,12 +2877,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -2977,12 +2926,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3026,12 +2975,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3075,12 +3024,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3124,12 +3073,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3173,12 +3122,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3222,12 +3171,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3271,12 +3220,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3320,29 +3269,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
-      "cmg_number": "3",
-      "source_file": "CMG_3_Airway_Management.json",
-      "source_title": "Airway Management",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "AP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3354,24 +3286,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
       "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3383,12 +3315,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3409,7 +3341,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3453,12 +3385,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
@@ -3582,12 +3514,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3608,7 +3540,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3637,7 +3569,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3681,12 +3613,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3726,12 +3658,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3775,12 +3707,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3824,12 +3756,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3873,12 +3805,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3922,12 +3854,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -3971,12 +3903,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4020,12 +3952,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4069,12 +4001,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4118,12 +4050,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4167,12 +4099,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4216,29 +4148,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
-      "cmg_number": "45",
-      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
-      "source_title": "Palliative Care and VAD",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "AP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4250,24 +4165,24 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
       "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any pharmacological management prior to ACTAS arrival.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4279,12 +4194,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4305,7 +4220,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4349,12 +4264,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_45",
+      "guideline_id": "",
       "cmg_number": "45",
       "source_file": "CMG_45_Palliative_Care_and_VAD.json",
       "source_title": "Palliative Care and VAD",
@@ -4478,16 +4393,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
-  "total_entries": 105,
-  "sources": [
-    "CMG_22",
-    "CMG_3",
-    "CMG_37",
-    "CMG_45"
-  ]
+  "total_entries": 100,
+  "sources": []
 }

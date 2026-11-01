@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from typing import Dict, Any, List
 
 from .models import CMGGuideline, ExtractionMetadata, FlowchartEntry
+from .dose_tables import correct_misfiled_doses
 
 logger = logging.getLogger(__name__)
 
@@ -137,7 +138,7 @@ def structure_guidelines(
         try:
             with open(dose_tables_path, "r", encoding="utf-8") as f:
                 dose_data = json.load(f)
-                dose_lookup = dose_data.get("medicine_index", {})
+                dose_lookup = correct_misfiled_doses(dose_data.get("medicine_index", {}))
         except Exception as e:
             logger.warning(f"Could not load dose tables: {e}")
 

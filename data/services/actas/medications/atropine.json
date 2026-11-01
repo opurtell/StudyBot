@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35A",
       "source_file": "CMG_35A_Poisoning_and_Overdose.json",
       "source_title": "Poisoning and Overdose",
@@ -15,19 +15,19 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35A",
       "source_file": "CMG_35A_Poisoning_and_Overdose.json",
       "source_title": "Poisoning and Overdose",
       "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35A",
       "source_file": "CMG_35A_Poisoning_and_Overdose.json",
       "source_title": "Poisoning and Overdose",
@@ -107,12 +107,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35B",
       "source_file": "CMG_35B_Bites_and_Stings.json",
       "source_title": "Bites and Stings",
@@ -124,19 +124,19 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35B",
       "source_file": "CMG_35B_Bites_and_Stings.json",
       "source_title": "Bites and Stings",
       "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_35",
+      "guideline_id": "",
       "cmg_number": "35B",
       "source_file": "CMG_35B_Bites_and_Stings.json",
       "source_title": "Bites and Stings",
@@ -216,36 +216,36 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
       "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_3",
+      "guideline_id": "",
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
@@ -325,12 +325,12 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_7",
+      "guideline_id": "",
       "cmg_number": "7",
       "source_file": "CMG_7_Bradyarrhythmias.json",
       "source_title": "Bradyarrhythmias",
@@ -342,19 +342,19 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_7",
+      "guideline_id": "",
       "cmg_number": "7",
       "source_file": "CMG_7_Bradyarrhythmias.json",
       "source_title": "Bradyarrhythmias",
       "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
       "dose_values": [],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_7",
+      "guideline_id": "",
       "cmg_number": "7",
       "source_file": "CMG_7_Bradyarrhythmias.json",
       "source_title": "Bradyarrhythmias",
@@ -434,15 +434,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
   "total_entries": 12,
-  "sources": [
-    "CMG_3",
-    "CMG_35",
-    "CMG_7"
-  ]
+  "sources": []
 }

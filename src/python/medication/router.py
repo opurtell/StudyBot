@@ -6,6 +6,7 @@ from pathlib import Path
 
 from fastapi import APIRouter
 
+from guidelines import actas_scope
 from guidelines.markdown import normalise_markdown_payload, normalise_markdown_syntax
 from paths import resolve_service_structured_dir, CMG_STRUCTURED_DIR
 from services.active import active_service
@@ -116,7 +117,11 @@ def load_medications() -> list[MedicationDose]:
                 precautions=precautions or "See clinical management guideline",
                 dose=dose_text or "See CMG for dose details",
                 cmg_reference=cmg_reference,
-                is_icp_only=data.get("is_icp_only", False),
+                is_icp_only=(
+                    actas_scope.document_scope(data) == actas_scope.ICP
+                    if active_service().id == "actas"
+                    else data.get("is_icp_only", False)
+                ),
             )
         )
 

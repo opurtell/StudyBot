@@ -3,7 +3,7 @@
   "service": "actas",
   "dose_entries": [
     {
-      "guideline_id": "CMG_38",
+      "guideline_id": "",
       "cmg_number": "38A",
       "source_file": "CMG_38A_Meningococcal_Disease.json",
       "source_title": "Meningococcal Disease",
@@ -20,7 +20,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_38",
+      "guideline_id": "",
       "cmg_number": "38A",
       "source_file": "CMG_38A_Meningococcal_Disease.json",
       "source_title": "Meningococcal Disease",
@@ -32,7 +32,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_38",
+      "guideline_id": "",
       "cmg_number": "38A",
       "source_file": "CMG_38A_Meningococcal_Disease.json",
       "source_title": "Meningococcal Disease",
@@ -53,7 +53,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_38",
+      "guideline_id": "",
       "cmg_number": "38A",
       "source_file": "CMG_38A_Meningococcal_Disease.json",
       "source_title": "Meningococcal Disease",
@@ -70,7 +70,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_38",
+      "guideline_id": "",
       "cmg_number": "38A",
       "source_file": "CMG_38A_Meningococcal_Disease.json",
       "source_title": "Meningococcal Disease",
@@ -91,7 +91,7 @@
       "service": "actas"
     },
     {
-      "guideline_id": "CMG_38",
+      "guideline_id": "",
       "cmg_number": "38A",
       "source_file": "CMG_38A_Meningococcal_Disease.json",
       "source_title": "Meningococcal Disease",
@@ -123,13 +123,11 @@
         }
       ],
       "qualifications_required": [
-        "AP"
+        "ICP"
       ],
       "service": "actas"
     }
   ],
   "total_entries": 6,
-  "sources": [
-    "CMG_38"
-  ]
+  "sources": []
 }
