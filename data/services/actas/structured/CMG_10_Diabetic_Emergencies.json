@@ -9,6 +9,13 @@
   "dose_lookup": {
     "Glucose": [
       {
+        "text": "Glucose 10%",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
         "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
         "dose_values": [
           {
@@ -32,13 +39,6 @@
             "unit": "ml"
           }
         ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Glucose 10%",
-        "dose_values": [],
         "qualifications_required": [
           "AP"
         ]
@@ -166,7 +166,7 @@
         ]
       },
       {
-        "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
+        "text": "##### Type\n\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\n\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\n\nTreat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)\n\n#### Adverse Effects\n\n- Tissue necrosis if allowed to escape from the vein\n\n- Hyperglycaemia / hyperosmolality\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\n- Up to 2.5ml/kg (0.25g/kg) slowly over 5 minutes \n- Continue to check patency of vein\n- May repeat dose once, if LOC or BGL has not improved.\n\n#### Special Notes\n\n- Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
         "dose_values": [
           {
             "amount": "0.1",
@@ -175,6 +175,18 @@
           {
             "amount": "250",
             "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.25",
+            "unit": "g"
           }
         ],
         "source": "app-glucose-ten-pct",
@@ -183,7 +195,7 @@
         ]
       },
       {
-        "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
+        "text": "##### Type\n\nOral glucose gel [no schedule]\n\n##### Presentations\n\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\n\nTreatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow\n\n#### Contraindications\n\nImpaired or absent swallow / gag reflex\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\n- 1 x tube of 15g glucose orally \n- May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered\n- Total maximum dose 30g glucose\n- Not to be given IV or IM.\n\n#### Special Notes\n\n- Patients should swallow the entire contents of the tube (where possible) to maximise the rise in BGL.\n- Patients who respond to oral glucose gel should eat to prevent later development of further hypoglycaemia.\n- Re-check BGL following treatment.\n- Gel liquefies when over 30\\xb0C (it is still useable). Re-cool if possible.",
         "dose_values": [
           {
             "amount": "37.5",
@@ -191,6 +203,22 @@
           },
           {
             "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "30",
             "unit": "g"
           }
         ],
@@ -200,8 +228,12 @@
         ]
       },
       {
-        "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+        "text": "#### Indications\n\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n\n- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
         "dose_values": [
+          {
+            "amount": "1.1",
+            "unit": "mmol"
+          },
           {
             "amount": "27.8",
             "unit": "mmol"
@@ -267,11 +299,19 @@
         ]
       },
       {
-        "text": "##### Type\nPancreatic hormone [S4]\n\n##### Presentations\nVial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution\n\n##### Actions\nCauses the liver to metabolise stores of glycogen to glucose, resulting in a rise in the blood glucose level. \n Only effective if liver glycogen is available. \n Onset IM: 5 – 20 minutes \n\n#### Uses\nTreatment of hypoglycaemia (BGL 20kg: 1 IU – IM \n- Single dose only.\n\n#### Special Notes\n- Patients who respond to glucagon should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
+        "text": "##### Type\n\nPancreatic hormone [S4]\n\n##### Presentations\n\nVial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution\n\n##### Actions\n\nCauses the liver to metabolise stores of glycogen to glucose, resulting in a rise in the blood glucose level. \n Only effective if liver glycogen is available. \n Onset IM: 5 – 20 minutes \n\n#### Uses\n\nTreatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.\n\n#### Adverse Effects\n\nVery rare\n\n- Nausea and vomiting\n\n- Very occasionally, hypersensitivity\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adults\n\n- 1 International Unit (IU) – IM \n- Single dose only.\n\n##### Paediatric\n\n- Weight <20kg (approx. 5yrs): 0.5 IU – IM \n- Single dose only.\n\n- Weight >20kg: 1 IU – IM \n- Single dose only.\n\n#### Special Notes\n\n- Patients who respond to glucagon should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
         "dose_values": [
           {
             "amount": "1",
             "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "0.5",
+            "unit": "IU"
           },
           {
             "amount": "1",
@@ -288,7 +328,7 @@
   "flowchart": null,
   "checksum": "1dd7ccb1224439839fba3fecfbdde27302ce9c32e8823ceee65d2109302b256e",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.501072+00:00",
+    "timestamp": "2026-11-01T07:43:15.728421+00:00",
     "source_type": "cmg",
     "agent_version": "2.0",
     "content_flag": null

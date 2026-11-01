@@ -96,7 +96,7 @@ def run_pipeline(
     if "dates" in stages_to_run:
         logger.info("=== Stage 6b: Version Dates ===")
         discover_metadata()
-        result["version_dates"] = apply_version_dates()
+        result["version_dates"] = apply_version_dates(investigation_dir=inv_dir)
 
     if "chunk" in stages_to_run:
         logger.info("=== Stage 7: Chunking & Ingestion ===")

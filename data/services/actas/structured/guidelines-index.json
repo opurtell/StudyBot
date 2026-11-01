@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T03:17:43.645826+00:00",
+  "generated_at": "2026-11-01T07:43:15.748221+00:00",
   "items": [
     {
       "id": "CMG_1_General_Care",
@@ -18,9 +18,9 @@
       "is_icp_only": false
     },
     {
-      "id": "CMG_4_Cardiac_Arrest__Adult",
+      "id": "CMG_4_Cardiac_Arrest__Adult___12yo_",
       "cmg_number": "4",
-      "title": "Cardiac Arrest: Adult",
+      "title": "Cardiac Arrest: Adult (\u226512yo)",
       "section": "Cardiac",
       "source_type": "cmg",
       "is_icp_only": false
@@ -34,9 +34,9 @@
       "is_icp_only": false
     },
     {
-      "id": "CMG_5_Cardiac_Arrest__Paediatric___12_years_old_",
+      "id": "CMG_5_Cardiac_Arrest__Paediatric___24h___12yo_",
       "cmg_number": "5",
-      "title": "Cardiac Arrest: Paediatric (<12 years old)",
+      "title": "Cardiac Arrest: Paediatric (>24h, <12yo)",
       "section": "Cardiac",
       "source_type": "cmg",
       "is_icp_only": false
@@ -1026,6 +1026,14 @@
       "is_icp_only": true
     },
     {
+      "id": "CMG_CSM.C07_Mechanical_Chest_Compression_Device__Corpuls_cpr__",
+      "cmg_number": "CSM.C07",
+      "title": "Mechanical Chest Compression Device (Corpuls cpr\u00ae)",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
       "id": "CMG_CSM.C06_Valsalva_Manoeuvre",
       "cmg_number": "CSM.C06",
       "title": "Valsalva Manoeuvre",
@@ -1157,6 +1165,14 @@
       "id": "CMG_CSM.P04_Supine",
       "cmg_number": "CSM.P04",
       "title": "Supine",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.P05_Supine_with_10__Head_Elevation",
+      "cmg_number": "CSM.P05",
+      "title": "Supine with 10\u00b0 Head Elevation",
       "section": "Clinical Skill",
       "source_type": "csm",
       "is_icp_only": false
@@ -1370,9 +1386,9 @@
       "is_icp_only": false
     },
     {
-      "id": "CMG_CSM.IDH07_Traction_Splint",
+      "id": "CMG_CSM.IDH07_STS_Femoral_Traction_Splint",
       "cmg_number": "CSM.IDH07",
-      "title": "Traction Splint",
+      "title": "STS Femoral Traction Splint",
       "section": "Clinical Skill",
       "source_type": "csm",
       "is_icp_only": false
@@ -1397,6 +1413,14 @@
       "id": "CMG_CSM.IDH10_Pelvic_Fracture_Management_in_the_Absence_of_Commercial_Pelvic_Splint",
       "cmg_number": "CSM.IDH10",
       "title": "Pelvic Fracture Management in the Absence of Commercial Pelvic Splint",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.IDH11_Kendrick_Extrication_Device__KED_",
+      "cmg_number": "CSM.IDH11",
+      "title": "Kendrick Extrication Device (KED)",
       "section": "Clinical Skill",
       "source_type": "csm",
       "is_icp_only": false
@@ -1482,9 +1506,9 @@
       "is_icp_only": false
     },
     {
-      "id": "CMG_CSM.M04_Patient_Restraints",
+      "id": "CMG_CSM.M04_HEMCO_Patient_Restraint",
       "cmg_number": "CSM.M04",
-      "title": "Patient Restraints",
+      "title": "HEMCO Patient Restraint",
       "section": "Clinical Skill",
       "source_type": "csm",
       "is_icp_only": false
@@ -1517,6 +1541,14 @@
       "id": "CMG_CSM.M08_Post_Partum_Haemorrhage__Fundal_Massage",
       "cmg_number": "CSM.M08",
       "title": "Post Partum Haemorrhage: Fundal Massage",
+      "section": "Clinical Skill",
+      "source_type": "csm",
+      "is_icp_only": false
+    },
+    {
+      "id": "CMG_CSM.M09_Securing_Baby_Capsule",
+      "cmg_number": "CSM.M09",
+      "title": "Securing Baby Capsule",
       "section": "Clinical Skill",
       "source_type": "csm",
       "is_icp_only": false

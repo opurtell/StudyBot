@@ -27,6 +27,11 @@ _ROUTE_PATTERN = re.compile(
     r"\.then\(t\.bind\(t,(\d+)\)\)\.then\(r\s*=>\s*r\.(\w+)\)"
 )
 _CHUNK_ID_RE = re.compile(r"t\.e\((\d+)\)")
+_JS_HEX_ESCAPE_RE = re.compile(r"(?<!\\)((?:\\\\)*)\\x([0-9a-fA-F]{2})")
+
+
+def js_json_loads(raw: str) -> Any:
+    return json.loads(_JS_HEX_ESCAPE_RE.sub(r"\1\\u00\2", raw))
 
 
 def _find_bundle(directory: str, pattern: re.Pattern) -> Optional[str]:
@@ -70,7 +75,7 @@ def _extract_flat_pages(content: str) -> List[Dict[str, Any]]:
     for match in _PAGE_OBJECT_RE.finditer(content):
         raw = match.group(0)
         try:
-            obj = json.loads(raw)
+            obj = js_json_loads(raw)
             sid = obj.get("spotlightId", "")
             if sid and sid not in seen:
                 seen.add(sid)
@@ -89,7 +94,7 @@ def _extract_sections(content: str) -> List[Dict[str, Any]]:
         if not pages_json:
             continue
         try:
-            pages = json.loads(pages_json)
+            pages = js_json_loads(pages_json)
             sections.append({"title": title, "pages": pages})
         except json.JSONDecodeError:
             continue

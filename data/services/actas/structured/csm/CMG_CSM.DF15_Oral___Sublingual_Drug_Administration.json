@@ -9,6 +9,13 @@
   "dose_lookup": {
     "Glucose": [
       {
+        "text": "Glucose 10%",
+        "dose_values": [],
+        "qualifications_required": [
+          "AP"
+        ]
+      },
+      {
         "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
         "dose_values": [
           {
@@ -32,13 +39,6 @@
             "unit": "ml"
           }
         ],
-        "qualifications_required": [
-          "AP"
-        ]
-      },
-      {
-        "text": "Glucose 10%",
-        "dose_values": [],
         "qualifications_required": [
           "AP"
         ]
@@ -166,7 +166,7 @@
         ]
       },
       {
-        "text": "##### Type\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\nTreat hypoglycaemia (BGL",
+        "text": "##### Type\n\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n\n10% glucose – in 250ml in collapsible plastic flask\n\n##### Actions\n\nGlucose is the main energy source for the body cells, especially the brain. \n Onset: 30 – 60 seconds. \n\n#### Uses\n\nTreat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)\n\n#### Adverse Effects\n\n- Tissue necrosis if allowed to escape from the vein\n\n- Hyperglycaemia / hyperosmolality\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\n- Up to 2.5ml/kg (0.25g/kg) slowly over 5 minutes \n- Continue to check patency of vein\n- May repeat dose once, if LOC or BGL has not improved.\n\n#### Special Notes\n\n- Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.\n- Recheck BGL following treatment.",
         "dose_values": [
           {
             "amount": "0.1",
@@ -175,6 +175,18 @@
           {
             "amount": "250",
             "unit": "ml"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.25",
+            "unit": "g"
           }
         ],
         "source": "app-glucose-ten-pct",
@@ -183,7 +195,7 @@
         ]
       },
       {
-        "text": "##### Type\nOral glucose gel [no schedule]\n\n##### Presentations\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\nTreatment of hypoglycaemia (BGL",
+        "text": "##### Type\n\nOral glucose gel [no schedule]\n\n##### Presentations\n\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glucose is the main energy source for the body’s cells, especially the brain \n\n- Glucose preparation is rapidly absorbed from oral / buccal mucosa \n\n- Causes an increase in blood glucose concentration\n\nOnset: approximately 10 minutes.\n\n#### Uses\n\nTreatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow\n\n#### Contraindications\n\nImpaired or absent swallow / gag reflex\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Safe to use\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult and Paediatric\n\n- 1 x tube of 15g glucose orally \n- May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousness still altered\n- Total maximum dose 30g glucose\n- Not to be given IV or IM.\n\n#### Special Notes\n\n- Patients should swallow the entire contents of the tube (where possible) to maximise the rise in BGL.\n- Patients who respond to oral glucose gel should eat to prevent later development of further hypoglycaemia.\n- Re-check BGL following treatment.\n- Gel liquefies when over 30\\xb0C (it is still useable). Re-cool if possible.",
         "dose_values": [
           {
             "amount": "37.5",
@@ -191,6 +203,22 @@
           },
           {
             "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "mmol"
+          },
+          {
+            "amount": "30",
             "unit": "g"
           }
         ],
@@ -200,8 +228,12 @@
         ]
       },
       {
-        "text": "#### Indications\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n- A “LO” or “HI” reading indicates a BGL 27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
+        "text": "#### Indications\n\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n\n#### Procedure\n\n- Place strip into monitor. The glucometer will auto turn on.\n\n- Select a finger and clean with an alcohol swab, allow finger to dry.\n\n- Using a lancet, pierce the skin and squeeze a small amount of blood from the wound.\n\n- Dispose of the used lancet appropriately.\n\n- Place a sample of blood on the test strip until the BGL device beeps and a countdown appears.\n\n- Apply a Band-Aid to the wound.\n\n- Wait for the test result and record the BGL measurement.\n\n- Dispose of the used test strip appropriately.\n\n#### Specific Notes\n\n- A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.\n- Presence of ^ arrow does not indicate ketones, this signals a high BGL reading. Ketone testing requires a different testing strip, this testing method will not give any indication of ketones.",
         "dose_values": [
+          {
+            "amount": "1.1",
+            "unit": "mmol"
+          },
           {
             "amount": "27.8",
             "unit": "mmol"
@@ -235,7 +267,7 @@
         ]
       },
       {
-        "text": "##### Type\nNitrate smooth muscle relaxant and vasodilator [S3]\n\n##### Presentations\n\n- White 300mcg or 600mcg sublingual tablets\n\n- Metered dose pump spray – multiple patient use 400mcg/dose – 200 dose bottle \n\n##### Actions\n\n- Arterial and venous vasodilation\n\n- Dilation of collateral coronary vessels\n\n#### Uses\n\n- Relieve cardiac pain of ischaemic origin\n\n- Relieve acute pulmonary oedema\n\n- Management of autonomic dysreflexia\n\n#### Adverse Effects\n\n- Hypotension\n\n- Headache\n\n- Flushing of skin\n\n- Occasionally – bradycardia\n\n#### Contraindications\n\n- Do not administer if systolic BP is",
+        "text": "##### Type\n\nNitrate smooth muscle relaxant and vasodilator [S3]\n\n##### Presentations\n\n- White 300mcg or 600mcg sublingual tablets\n\n- Metered dose pump spray – multiple patient use 400mcg/dose – 200 dose bottle \n\n##### Actions\n\n- Arterial and venous vasodilation\n\n- Dilation of collateral coronary vessels\n\n#### Uses\n\n- Relieve cardiac pain of ischaemic origin\n\n- Relieve acute pulmonary oedema\n\n- Management of autonomic dysreflexia\n\n#### Adverse Effects\n\n- Hypotension\n\n- Headache\n\n- Flushing of skin\n\n- Occasionally – bradycardia\n\n#### Contraindications\n\n- Do not administer if systolic BP is <90mmHg\n\n- Do not administer if heart rate is <50/min (this does not apply to patients with autonomic dysreflexia)\n\n- Noting that patients of all genders are prescribed the following medications for a range of conditions: \n\n- do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the past 24 hours\n\n- following the last dose of tadalafil (Cialis), do not administer GTN within 4 to 5 days in the elderly and those with renal impairment, or 3 to 4 days in all other patients \n\n- History of Aortic Stenosis and systolic BP <150mHg\n\n- Known hypersensitivity\n\n#### Precautions\n\nBe cautious in the event of suspected right ventricular ischaemia/infarct – have fluids running, and use nitrates with caution.\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Approved for administration in ACTAS setting\n\n##### Breastfeeding\n\n- Approved for administration in ACTAS setting, caution against breastfeeding in the pre-hospital setting\n\n#### Doses\n\n#### Chest pain\n\n##### Adult\n\n- 1 tablet (600mcg) or 1 metered dose (400mcg) sublingually \n- Repeat every 5 minutes if pain persists, up to a total of 3 doses.\n\n- If patient has not previously used nitrates or if systolic BP is between 90-110mmHg, give 300mcg tablet \n- Repeat 300mcg tablet once, if necessary.\n\n##### Paediatric\n\nNot used.\n\n#### Autonomic dysreflexia\n\n##### Adult\n\n- 300mcg tablet sublingually or 1 metered dose (400mcg) sublingually \n- If little or no effect – repeat up to two times (total 3 doses), with 5 minutes between doses, monitoring BP.\n\n##### Paediatric (12-16 years): Tablet use only\n\n- Half adult dose (150mcg) sublingually. \n- If little or no effect – repeat up to two times (total 3 doses), with 5 minutes between doses, monitoring BP.\n\n#### Acute pulmonary oedema\n\n##### Adult\n\n- 1 tablet (300mcg or 600mcg) sublingually \n- Repeat every 5 minutes if in severe respiratory distress (max. 1800mcg)\n\n- 1 metered dose (400mcg) sublingually \n- Repeat every 5 minutes if in severe respiratory distress (max. 1600mcg)\n- If patient has not previously used nitrates or if systolic BP is between 90-100mmHg, give 300mcg tablet \n- Repeat 300mcg tablet once if in severe respiratory distress (max. 600mcg)\n\n##### Paediatric\n\nNot used.\n\n#### Special Notes\n\n- Tablet should fizz under tongue if it is still potent\n- Use tablets within 3 months of opening bottle\n- The container **MUST** be dated when first opened.\n##### Pumpspray administration\n\n- Prior to use for the first time (i.e. when the bottle is first opened), prime the pumpspray by pressing the nozzle 5 times, directing away from any person/animal.\n- Prior to subsequent uses, prime the pumpspray by pressing the nozzle once.\n- During administration, the patient should be sitting, so that the bottle stays vertical. - **Prior to each use,** prime the pumpspray as appropriate.\n- Hold the nozzle head as close to the open mouth as possible, and spray sublingually.\n- Instruct the patient to close mouth immediately after each dose – do not inhale or swallow. - **Following each use,** wipe down the pumpspray with an alcohol wipe (discard if significantly contaminated). Pumpspray may be used for multiple patients when maintained in this way.",
         "dose_values": [
           {
             "amount": "300",
@@ -247,6 +279,66 @@
           },
           {
             "amount": "400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "150",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "1800",
+            "unit": "mcg"
+          },
+          {
+            "amount": "400",
+            "unit": "mcg"
+          },
+          {
+            "amount": "1600",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "300",
+            "unit": "mcg"
+          },
+          {
+            "amount": "600",
             "unit": "mcg"
           }
         ],
@@ -265,7 +357,7 @@
         ]
       },
       {
-        "text": "##### Type\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n4mg in 2ml – plastic or glass ampoule \n 4mg – orally disintegrating tablet (ODT) \n\n##### Actions\n\n- Potent, highly specific and selective serotonin 5-HT receptor antagonist. \n\n- Precise mode of action in control of nausea and vomiting is not known. Likely to have actions peripherally and in the central nervous system.\n\n- Maximum effect is approximately 10 minutes following IV administration. \n\n- Hepatic metabolism.\n\n#### Uses\nFor the prevention or treatment of nausea and vomiting\n\n#### Adverse Effects\n\n- Headache\n\n- Flushing of skin\n\n- Occasional reaction at the site of IV injection\n\n- Drowsiness\n\n- Anxiety and agitation\n\n- Transient visual disturbances\n\n#### Contraindications\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- Use only for hyperemesis\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- IV: 8mg slowly over 2 minutes \n- May be administered IM if necessary\n- Single dose only.\n\n- ODT: 8mg sublingually \n- Single dose only.\n##### Paediatric\n- IV: 0.1mg/kg (max. 4mg) \n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT: \n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
+        "text": "##### Type\n\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n\n4mg in 2ml – plastic or glass ampoule \n 4mg – orally disintegrating tablet (ODT) \n\n##### Actions\n\n- Potent, highly specific and selective serotonin 5-HT receptor antagonist. \n\n- Precise mode of action in control of nausea and vomiting is not known. Likely to have actions peripherally and in the central nervous system.\n\n- Maximum effect is approximately 10 minutes following IV administration. \n\n- Hepatic metabolism.\n\n#### Uses\n\nFor the prevention or treatment of nausea and vomiting\n\n#### Adverse Effects\n\n- Headache\n\n- Flushing of skin\n\n- Occasional reaction at the site of IV injection\n\n- Drowsiness\n\n- Anxiety and agitation\n\n- Transient visual disturbances\n\n#### Contraindications\n\nKnown hypersensitivity\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- Use only for hyperemesis\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- IV: 8mg slowly over 2 minutes \n- May be administered IM if necessary\n- Single dose only.\n\n- ODT: 8mg sublingually \n- Single dose only.\n\n##### Paediatric\n\n- IV: 0.1mg/kg (max. 4mg) \n- Slowly over 2 minutes\n- May be administered IM if necessary\n- Repeat once if required, after approximately 10 minutes. - ODT: \n- ≥6mths – 3yrs = 2mg (single dose only)\n- 4 – 9yrs = 4mg (single dose only)- ≥10yrs = 8mg (single dose only).",
         "dose_values": [
           {
             "amount": "4",
@@ -332,7 +424,7 @@
         ]
       },
       {
-        "text": "##### Type\nNon – steroidal anti-inflammatory drug [S2]\n\n##### Presentation\n300mg tablet\n\n##### Actions\n\n- Inhibits platelet function (for up to 7 days)\n\n- Suppresses inflammation, reduces fever, relieves pain (rapidly absorbed from the stomach and small bowel)\n\n#### Uses\nSuspected myocardial ischaemia\n\n#### Adverse Effects\n\n- Allergic reactions\n\n- Aggravation of bleeding tendencies\n\n- Gastric irritation (unlikely after single dose)\n\n#### Contraindications\n\n- Known or suspected allergy to salicylates\n\n- Known or suspected active bleeding\n\n- Known bleeding tendency\n\n- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) \n\n#### Precautions\n\n- Peptic ulcer\n\n- Patients on anticoagulants\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- 300mg until 32 weeks, then reduce to 75mg\n\n##### Breastfeeding\n- 150mg when breastfeeding\n\n#### Doses##### Adult\n- 1 tablet (300mg) \n- Chewed and swallowed, or dissolved in a small amount of water. \n\n- \\xbd tablet (150mg) if on warfarin.\n#### Special Notes\n- Single dose only.\n- Administer even when patient is on slow release aspirin.",
+        "text": "##### Type\n\nNon – steroidal anti-inflammatory drug [S2]\n\n##### Presentation\n\n300mg tablet\n\n##### Actions\n\n- Inhibits platelet function (for up to 7 days)\n\n- Suppresses inflammation, reduces fever, relieves pain (rapidly absorbed from the stomach and small bowel)\n\n#### Uses\n\nSuspected myocardial ischaemia\n\n#### Adverse Effects\n\n- Allergic reactions\n\n- Aggravation of bleeding tendencies\n\n- Gastric irritation (unlikely after single dose)\n\n#### Contraindications\n\n- Known or suspected allergy to salicylates\n\n- Known or suspected active bleeding\n\n- Known bleeding tendency\n\n- Current psychostimulant overdose (due to an increased risk of cerebral haemorrhage) \n\n#### Precautions\n\n- Peptic ulcer\n\n- Patients on anticoagulants\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- 300mg until 32 weeks, then reduce to 75mg\n\n##### Breastfeeding\n\n- 150mg when breastfeeding\n\n#### Doses\n\n##### Adult\n\n- 1 tablet (300mg) \n- Chewed and swallowed, or dissolved in a small amount of water. \n\n- \\xbd tablet (150mg) if on warfarin.\n\n#### Special Notes\n\n- Single dose only.\n- Administer even when patient is on slow release aspirin.",
         "dose_values": [
           {
             "amount": "300",
@@ -438,7 +530,7 @@
         ]
       },
       {
-        "text": "##### Type\nNon-steroidal anti-inflammatory\n\n##### Presentations\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding##### Pregnancy\n- **Contraindicated**\n\n##### Breastfeeding\n- Safe to use\n\n#### Doses##### Adult\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n##### Paediatric\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
+        "text": "##### Type\n\nNon-steroidal anti-inflammatory\n\n##### Presentations\n\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Analgesic\n\n- Anti-pyretic\n\n- Anti-inflammatory\n\n- Inhibits prostaglandin synthesis via inhibition of COX-1 and COX-2\n\n#### Uses\n\nAnalgesia for mild-moderate pain due to inflammation\n\n#### Adverse Effects\n\n- Nausea\n\n- Dyspepsia \n\n- GI ulceration or bleeding\n\n- Diarrhoea\n\n- Headache\n\n- Dizziness\n\n#### Contraindications\n\n- Known hypersensitivity to NSAIDs\n\n- Acute asthma\n\n- Dehydration\n\n- Current peptic ulcers\n\n- Known or suspected active bleeding\n\n- Inability to swallow/impaired gag reflex\n\n- End stage renal or hepatic failure\n\n- Acute heart failure\n\n- Previous ibuprofen administration within 4 hours\n\n#### Precautions\n\n- History of peptic ulcers or GI bleeding\n\n- Hepatic impairment\n\n- Asthma\n\n- Cardiovascular disease\n\n#### Pregnancy and Breastfeeding\n\n##### Pregnancy\n\n- **Contraindicated**\n\n##### Breastfeeding\n\n- Safe to use\n\n#### Doses\n\n##### Adult\n\n- ≥40kg: 400mg\n- ≤40kg: 200mg\n\n##### Paediatric\n\n- Tablets: 20-40kg: 200mg\n- PO (liquid): Ibuprofen 100mg/5ml \n- 3-6 months (6-8 kg): 3 - 4ml\n- 6-12 months (8-10 kg): 4 - 5ml- 1-3 years (10-14 kg): 5 - 7ml- 3-5 years (14-18 kg): 7 - 9ml- 5-7 years (18-22 kg): 9 - 11ml- 7-9 years (22-28 kg): 11 - 14ml- 9-12 years (28-40 kg): 14 - 20ml",
         "dose_values": [
           {
             "amount": "200",
@@ -511,7 +603,7 @@
   "flowchart": null,
   "checksum": "20d4657fb0542fed8bae56d337ca50470d2f570b279b89c13c5806c5860498b1",
   "extraction_metadata": {
-    "timestamp": "2026-04-24T03:17:43.628032+00:00",
+    "timestamp": "2026-11-01T07:43:15.744799+00:00",
     "source_type": "csm",
     "agent_version": "2.0",
     "content_flag": null

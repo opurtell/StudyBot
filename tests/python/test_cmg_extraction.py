@@ -41,6 +41,24 @@ template:function(h,v){1&v&&(h.j41(0,"section")(1,"p"),h.EFF(2,"Some text"),h.k0
 
 
 class TestNavigationExtraction:
+    def test_extract_navigation_decodes_js_hex_escapes(self, tmp_path):
+        bundle_path = tmp_path / "2_main.test123.js"
+        bundle_path.write_text(
+            r'{"title":"Mechanical Chest Compression Device (Corpuls cpr\xae)",'
+            r'"url":"corpuls-cpr","section":"CSM.C07","spotlightId":"abc"}'
+        )
+
+        result = extract_navigation(
+            js_bundle_path=str(bundle_path),
+            output_path=str(tmp_path / "nav.json"),
+        )
+
+        with open(result) as f:
+            data = json.load(f)
+
+        titles = {e["section"]: e["title"] for e in data["all_pages"]}
+        assert titles["CSM.C07"] == "Mechanical Chest Compression Device (Corpuls cpr®)"
+
     def test_extract_navigation_finds_cmg_entries(self, tmp_path):
         bundle_path = tmp_path / "2_main.test123.js"
         bundle_path.write_text(SAMPLE_MAIN_BUNDLE)
@@ -265,6 +283,13 @@ class TestBoilerplateStripping:
         result = strip_boilerplate(html)
         assert "My Notes" not in result
         assert "Clinical text" in result
+
+    def test_strip_my_notes_heading_with_extra_spaces(self):
+        from pipeline.actas.template_parser import strip_boilerplate_md
+
+        result = strip_boilerplate_md("####  My Notes \n\n##### Type\n\nAnaesthetic Agent")
+        assert "My Notes" not in result
+        assert "Anaesthetic Agent" in result
 
     def test_strip_tap_to_zoom(self):
         from pipeline.actas.template_parser import strip_boilerplate

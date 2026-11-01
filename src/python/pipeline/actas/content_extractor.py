@@ -15,6 +15,7 @@ from .template_parser import (
     html_to_markdown,
     extract_text_from_file,
 )
+from .extractor import js_json_loads
 
 logger = logging.getLogger(__name__)
 
@@ -141,6 +142,15 @@ def _find_route_for_title(title: str, route_map: Dict[str, Any]) -> Optional[str
     return None
 
 
+def _selector_for_slug_prefix(
+    slug: str, selector_map: Dict[str, Dict[str, Any]]
+) -> Optional[Dict[str, Any]]:
+    prefixes = [r for r in selector_map if slug.startswith(r + "-")]
+    if not prefixes:
+        return None
+    return selector_map[max(prefixes, key=len)]
+
+
 def _extract_navigation_titles(investigation_dir: str) -> List[Dict[str, str]]:
     main_path = _find_bundle(investigation_dir, MAIN_BUNDLE_RE)
     if not main_path:
@@ -153,7 +163,7 @@ def _extract_navigation_titles(investigation_dir: str) -> List[Dict[str, str]]:
     seen = set()
     for match in _PAGE_OBJECT_RE.finditer(content):
         try:
-            obj = json.loads(match.group(0))
+            obj = js_json_loads(match.group(0))
             section = obj.get("section", "")
             title = obj.get("title", "")
             sid = obj.get("spotlightId", "")
@@ -174,6 +184,7 @@ def _extract_navigation_titles(investigation_dir: str) -> List[Dict[str, str]]:
                     "section": section,
                     "spotlightId": sid,
                     "route_path": _title_to_path(title),
+                    "url": obj.get("url", ""),
                     "entry_type": entry_type,
                 }
             )
@@ -276,11 +287,20 @@ def extract_content(
             route_info = route_map[path]
             route_blocks = _find_content_for_route(path, route_info, all_files)
 
+        route_md = ""
         if route_blocks:
             combined_html = "\n".join(b["html"] for b in route_blocks)
-        else:
+            route_md = strip_boilerplate_md(
+                html_to_markdown(strip_boilerplate(combined_html))
+            )
+        if len(route_md.strip()) <= 50:
             route_slug = _title_to_path(entry["title"])
+            url = entry.get("url", "")
             sel_entry = selector_map.get(route_slug)
+            if not sel_entry and url and _distinctive_overlap_score(route_slug, url) > 0:
+                sel_entry = selector_map.get(url)
+            if not sel_entry:
+                sel_entry = _selector_for_slug_prefix(route_slug, selector_map)
             if not sel_entry:
                 best_sel_score = 0
                 for sel_route, sel_data in selector_map.items():
@@ -292,7 +312,8 @@ def extract_content(
                     sel_entry = None
             if sel_entry:
                 combined_html = sel_entry["html"]
-            else:
+                route_blocks = []
+            elif not route_blocks:
                 combined_html = ""
 
         if not combined_html:
