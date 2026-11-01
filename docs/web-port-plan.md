@@ -160,7 +160,7 @@ Output: `docs/review/web-port-review.md` with severity-ranked findings and a go/
 7. **Disclaimer and privacy:** disclaimer wording, source attribution, privacy policy basics including which LLM provider receives user answers. (Content publication is already decided: public ACTAS guidelines are fine to use.)
 8. **Cost model:** estimate tokens per generation/evaluation from real logs, project monthly spend at 100 / 1,000 / 10,000 users with expected cache-hit ratio, set the free quota from the numbers rather than guessing.
 
-Gate: Oscar reviews the findings and signs off on scope, hosting option, quota numbers and the content-rights position. Nothing in Phases 2+ starts before this.
+Gate: Oscar reviews the findings and signs off on scope, hosting option, quota numbers and the content-rights position. Nothing in Phases 2+ starts before this. **Signed off 2026-11-01.**
 
 ### Phase 2: Foundations
 New repo with Workers project (`wrangler` config, dev/staging/prod environments), CI/CD, D1 migrations, secrets via Workers secrets, auth (magic link/OAuth) with email verification and Turnstile, rate limiting, AI Gateway set up with a spend cap, React shell on static assets, structured logging and error tracking. Deliverable: a deployed "hello world" with working sign-in and an anonymous/signed-in distinction in the API.
@@ -217,7 +217,10 @@ Also resolved (Oscar, 2026-10-31):
 - **Content rights:** the ACTAS guidelines are publicly available, so public use of the content is accepted. Keep clear source attribution and the "study aid, not clinical guidance" disclaimer; no further permission work planned. (Phase 1 slice 7 shrinks to disclaimer wording and privacy basics.)
 - **Model family:** Gemini or GLM (Z.ai) for generation and marking, not Claude.
 
-Still open, to settle in Phase 1:
-1. **Gemini vs GLM, and which tier of each, separately for generation and for marking.** Marking quality is the binding constraint (per the existing local-model findings). Reuse the `scripts/bench-local-models.py` approach and its labelled grading set: strict JSON rate, grading accuracy on held-out guidelines, fabricated credit, verbatim-quote grounding, latency, cost per call. Run it against current Gemini Flash / Flash-Lite and GLM tiers. Also check: Workers/AI Gateway compatibility with each provider, free-tier or batch-API availability for bulk pre-seeding (the 50%-off batch assumption is Gemini-specific until verified; confirm whether GLM offers one), rate limits under load, and where each provider processes data (GLM is hosted by Zhipu; user answers are sent to it, so the privacy policy must say so, and this may favour Gemini).
-2. D1 vs Postgres via Hyperdrive, once D1 limits are checked against the real data volume.
-3. Auth method (magic link only vs also Google sign-in).
+Resolved at Phase 1 sign-off (Oscar, 2026-11-01; see `docs/review/web-port-review.md` §10):
+- **Models:** Gemini 3.8 Flash for question generation and bank pre-seeding (batch API); Gemini 3.5 Flash-Lite for live marking. GLM isn't used: it credited wholly wrong answers in the benchmark (`docs/review/model-bench/README.md`). Because only Google receives user answers, the privacy policy names Google.
+- **Database:** D1 (the review found the data volumes are tiny against D1's limits).
+- **Quota:** keep the placeholders (20 generations and 30 marks per signed-in user per month). Oscar sets provider spend caps as the backstop, alongside the global circuit breaker.
+
+Still open, to settle in Phase 2:
+1. Auth method (magic link only vs also Google sign-in).

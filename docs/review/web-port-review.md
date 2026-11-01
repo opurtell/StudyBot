@@ -38,7 +38,7 @@ is not tagged. No keys or `settings.json`/`.env` files appear anywhere in this r
 | Reusing the React renderer | **Go, with a mobile rebuild of the shell** | Pages are cleanly layered, but there is effectively no responsive layout (9 breakpoint classes in the whole renderer). |
 | Corpus as-is | **No-go until C-3 / C-4 fixed** | Clinical skills and monographs missing from the service path; no version dates. |
 | Prompts as-is | **No-go until C-5 and H-5 fixed** | Literal f-string leaking into the generation prompt; parse failures recorded as "incorrect". |
-| Model choice | **Blocked** | Needs the benchmark (H-7). Prices are gathered in §8. |
+| Model choice | **Go** | Gemini 3.8 Flash for generation, 3.5 Flash-Lite for marking (benchmark, 2026-11-01). |
 | Test suite as safety net | **Go after triage** | 92% line coverage on `quiz/` and `services/`, but heavy mocking let two real bugs through (C-2, C-5). |
 
 ---
@@ -300,6 +300,20 @@ numbers. Revisit after the marking benchmark picks a model.
 3. Push `feature/lmstudio-local-models` (or confirm the benchmark should be rebuilt).
 4. Rotate the three local API keys (Phase 0).
 5. Confirm the quota numbers (§8) or set a launch spend cap.
+
+### Sign-off (Oscar, 2026-11-01)
+
+Phase 1 is signed off. Phase 2 may start.
+
+1. **Go/no-go table accepted.** The rewrite (Option B), D1 and Vectorize are go. The corpus and prompt no-gos stay as
+   preconditions for Phases 3 and 4. Model choice is unblocked (below).
+2. **AP/ICP tags:** clinically reviewed and fixed (PRs #5 and #10, `docs/review/actas-scope-tagging.md`).
+3. **Benchmark:** done (PR #8, `docs/review/model-bench/README.md`).
+4. **API keys:** rotated, and the old keys are revoked.
+5. **Quota:** keep the placeholder numbers (20 generations and 30 marks per signed-in user per month). Oscar sets
+   provider spend caps to prevent overspend.
+6. **Models:** Gemini 3.8 Flash for question generation and bank pre-seeding (batch); Gemini 3.5 Flash-Lite for live
+   marking. GLM isn't used.
 
 ---
 
