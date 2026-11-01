@@ -34,9 +34,11 @@ describe("guidelines", () => {
     const rsi = screen.getByRole("link", { name: /rapid sequence intubation/i });
     expect(rsi).toHaveAttribute("href", "/guidelines/CMG_3A_RSI");
     expect(within(rsi).getByText("ICP only")).toBeInTheDocument();
+    expect(within(screen.getByRole("link", { name: /cardiac arrest/i })).getByText("AP + ICP")).toBeInTheDocument();
     expect(screen.queryByText("Manual Clearance")).not.toBeInTheDocument();
     await userEvent.click(screen.getByRole("tab", { name: "Clinical skills" }));
     expect(await screen.findByText("Manual Clearance")).toBeInTheDocument();
+    expect(within(screen.getByRole("link", { name: /manual clearance/i })).getByText("AP")).toBeInTheDocument();
     expect(screen.queryByText("Cardiac Arrest")).not.toBeInTheDocument();
   });
 
