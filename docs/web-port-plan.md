@@ -221,6 +221,4 @@ Resolved at Phase 1 sign-off (Oscar, 2026-11-01; see `docs/review/web-port-revie
 - **Models:** Gemini 3.8 Flash for question generation and bank pre-seeding (batch API); Gemini 3.5 Flash-Lite for live marking. GLM isn't used: it credited wholly wrong answers in the benchmark (`docs/review/model-bench/README.md`). Because only Google receives user answers, the privacy policy names Google.
 - **Database:** D1 (the review found the data volumes are tiny against D1's limits).
 - **Quota:** keep the placeholders (20 generations and 30 marks per signed-in user per month). Oscar sets provider spend caps as the backstop, alongside the global circuit breaker.
-
-Still open, to settle in Phase 2:
-1. Auth method (magic link only vs also Google sign-in).
+- **Auth:** email magic link only for now (Oscar, 2026-11-01). Google sign-in can be added later.
