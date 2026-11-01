@@ -162,6 +162,7 @@ StudyBot/
 │   │   └── llm/                       # Provider abstraction (multi-provider)
 │   │       ├── models.py              # Model registry (.env backed)
 │   │       ├── factory.py             # Provider factory
+│   │       ├── lmstudio_provider.py   # Local models via LM Studio (OpenAI-compatible)
 │   │       └── ...                    # Provider implementations
 │   └── renderer/                      # React renderer (TypeScript + Tailwind)
 │       ├── App.tsx                    # Root: ThemeProvider + BrowserRouter + AppShell
@@ -345,6 +346,117 @@ All LLM calls in the app route through a provider abstraction layer (`src/python
 | Google | `gemini-3.1-flash-lite-preview` (low), `gemini-3-flash-preview` (medium), `gemini-2.5-pro` (high) | Fast / alternative |
 | Z.ai (Zhipu) | `glm-4.7-flash` (low), `glm-4.7` (medium), `glm-5` (high) | Cost-effective alternative |
 | OpenAI | `gpt-5.4-nano` (low), `gpt-5.4-mini` (medium), `gpt-5.4` (high) | Alternative |
+| LM Studio (local) | `openai/gpt-oss-20b` (low), `qwen/qwen3.6-35b-a3b` (medium), `qwen/qwen3.8-27b` (high) | Offline / no API key / no data leaves the device |
+
+**LM Studio (local models):**
+
+- Runs against LM Studio's OpenAI-compatible server, default `http://127.0.0.1:1234/v1`
+  (configurable in Settings > Local Model). No API key is required.
+- The server must be running (LM Studio > Developer > Start Server) before the app can
+  use a local model. Requests fail with a plain-language "start the server" message otherwise.
+- `GET /settings/lmstudio/status` reports reachability and the chat-capable models the
+  server can serve; Settings uses it for the "Detect Models" button. Embedding models are
+  filtered out. Model discovery prefers LM Studio's native `/api/v0/models` (which reports
+  model type and load state) and falls back to the OpenAI-compatible `/v1/models`.
+- Local model IDs must match what LM Studio reports exactly — they are namespaced
+  (`qwen/qwen3.8-27b`), not bare names.
+- Vision is not offered for local models. Some LM Studio models are VLMs, but `vision.py`
+  has no implementation for them, so `lmstudio` is deliberately absent from
+  `VISION_CAPABLE_PROVIDERS`.
+- Local generation uses a 600 s client timeout — a cold model load plus a long answer
+  vastly exceeds hosted-provider latencies.
+- **Reasoning models are handled explicitly.** LM Studio returns chain of thought either in
+  a separate `reasoning_content` field or inline in `<think>` tags. The provider strips
+  inline blocks and raises a clear error when a model burns its whole token budget thinking
+  without answering. The local token cap is 4096 (not 1024) to leave room for reasoning.
+- **The provider sends `reasoning_effort: "none"` by default** (`DEFAULT_REASONING_EFFORT`).
+  Every LM Studio model tested accepted it, and it is the single biggest latency win
+  available: gemma-4-e4b went from 38 s to ~8 s per evaluation and qwen3.6-35b-a3b from
+  39 s to ~11 s, with no loss of marking accuracy. The app never displays chain of thought,
+  so paying for it buys nothing. A server that rejects the parameter is detected once and
+  the provider stops sending it. Set `reasoning_effort` in the `lmstudio` provider config to
+  `"low"`/`"medium"`/`"high"` to opt back in.
+**Local model evaluation (M5 MacBook Air, 32 GB)**
+
+Re-run with `scripts/bench-local-models.py` when new models appear. It scores the four
+things this app actually needs, using the real `EVALUATION_SYSTEM_PROMPT` and real CMG
+text: strict JSON, conservative marking, verbatim source quotes, and latency. General
+leaderboards do **not** predict these — the two models that top sub-7B instruction-following
+charts both failed here.
+
+| Model | Size | Median | JSON | Grading | Fabricated | Grounded | Verdict |
+|-------|------|--------|------|---------|-----------|----------|---------|
+| `openai/gpt-oss-20b` | 12.1 GB | 8-14 s | 20/20 | **10/10** | **0** | 5-9/10 | **Default - the only model good at everything** |
+| `medgemma-1.5-4b-it` | 3.4 GB | **3.6 s** | 17/20 | **3/10** | 2 | 7-9/10 | Rejected: collapses onto one grade (see below) |
+| `google/gemma-4-e4b` | 6.9 GB | 7.9 s | 7/10 | 5/5 strict* | 0 | **2/10** | Rejected: invents source quotes, drops JSON |
+| `phi-4-mini-instruct` | 2.2 GB | ~5 s | 8/10 | 4/5 strict* | **3** | 5/10 | Rejected: fabricates credit, unreliable JSON |
+| `qwen/qwen3.6-35b-a3b` | 20.4 GB | ~11 s | 9/10 | 5/5 strict* | 1 | 4/10 | Usable but larger and weaker at quoting |
+| `qwen/qwen3.8-27b` | 16.1 GB | ~120 s | - | - | - | - | Too slow (measured before reasoning was disabled) |
+| `mlx-community/Qwen3.5-4B` | 3.1 GB | 60-80 s | - | - | - | - | Rejected: ignores `reasoning_effort`, reasons forever |
+
+Columns: **Grading** = answers matching their known grade across all ten labelled cases;
+**Fabricated** = answers credited with `correct_elements` the student never wrote;
+**Grounded** = `source_quote` values found verbatim in the source.
+
+*Screened before the graded set existed, using the weaker "did it mark flatly-wrong answers
+incorrect" check. That metric flatters a model that marks everything incorrect - re-run them
+with the current script for a comparable number.
+
+Latency and **Grounded** vary run to run (gpt-oss-20b has scored 5/10, 7/10 and 9/10 on
+grounding across runs). Treat single-run differences of a point or two as noise; the verdicts
+above rest on the large, repeated gaps.
+
+Three findings worth keeping:
+
+1. **Small does not mean worse — it means worse at the *rubric*.** `medgemma-1.5-4b-it` is
+   fast, small and quotes sources well, but out of the box it collapses onto a single grade
+   (it marked 8 of 10 answers "partial", including two perfect ones). Obedience to the
+   marking rubric, not medical knowledge, is the binding constraint for this app.
+2. **Benchmark on a quiet machine.** Wall-clock latency is meaningless if the Mac sleeps or
+   another inference job runs — a sleep mid-run produced apparent medians of 300 s+ and
+   single calls of 2600 s+. Take the median of ≥5 warm calls, model already loaded, nothing
+   else running.
+3. **Validate prompt changes on held-out guidelines.** Tuning the rubric took gpt-oss-20b
+   from 9/10 to a perfect 10/10 on the cases used for tuning — and to 6/8 on unseen
+   guidelines, exactly matching the untouched prompt. The gain was overfitting. The prompt
+   was left alone as a result.
+
+**Both benchmarked models are offered (`llm/local_tuning.py`)**
+
+The LM Studio tiers are speed/size, not capability:
+
+| Tier | Model | Size | Median | Held-out grading | When to pick it |
+|------|-------|------|--------|------------------|-----------------|
+| low | `medgemma-1.5-4b-it` | 3.4 GB | 3.6 s | 6/8 | Fastest; fits alongside other apps |
+| medium | `openai/gpt-oss-20b` | 12.1 GB | 8-14 s | 6/8 | **Default** — safest failure mode |
+| high | `qwen/qwen3.6-35b-a3b` | 20.4 GB | ~11 s | not run | Largest local option |
+
+medgemma only works with two adjustments that **must not** reach other models, so they are
+keyed by model id in `llm/local_tuning.py` rather than baked into the shared prompt:
+
+1. **A calibration supplement** appended to `EVALUATION_SYSTEM_PROMPT`. Untuned, medgemma
+   marks almost everything "partial" — including perfect answers. Spelling out the rule and
+   showing one worked example per grade takes it from 3/10 to 6/10 on the labelled set and
+   from 3/8 to 6/8 held out.
+2. **A JSON schema** via `response_format`, which removes its parse failures entirely
+   (3/8 -> 0/8). `quiz/agent.py` always *offers* `EVALUATION_SCHEMA`; the provider decides
+   whether to use it. Do not widen `_NEEDS_STRUCTURED_OUTPUT` without measuring —
+   constrained decoding costs `gpt-oss-20b` four grading points.
+
+Hosted providers (Anthropic, Google, Z.ai, OpenAI) accept `response_schema` and ignore it,
+and never receive the supplement, so their behaviour is byte-for-byte unchanged.
+
+**Why gpt-oss-20b is still the default.** On held-out guidelines the two models tie at 6/8,
+so medgemma's 6x speed advantage is real but buys no accuracy. They fail differently:
+gpt-oss-20b's errors are all "marked a correct answer partial" (the student re-reads the
+source — harmless), whereas medgemma also over-credits an incomplete answer as "correct",
+leaving a knowledge gap the student cannot see. For exam preparation, erring strict is the
+safer failure mode.
+
+**What did not work**, so nobody retries it: `temperature: 0` (no effect at all), moving the
+rubric out of the system role into the user turn (no effect — Gemma has no native system
+turn, but LM Studio's template handles it), and generic `{"type": "json_object"}` mode
+(LM Studio rejects it outright with a 400; it requires a full `json_schema`).
 
 **Task defaults (overridable in settings):**
 

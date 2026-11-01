@@ -3,7 +3,12 @@
     "anthropic": { "api_key": "", "default_model": "claude-haiku-4-5-20251001" },
     "google": { "api_key": "", "default_model": "gemini-3.1-flash-lite-preview" },
     "zai": { "api_key": "", "default_model": "glm-4.7-flash" },
-    "openai": { "api_key": "", "default_model": "gpt-5.4-nano" }
+    "openai": { "api_key": "", "default_model": "gpt-5.4-nano" },
+    "lmstudio": {
+      "api_key": "",
+      "default_model": "openai/gpt-oss-20b",
+      "base_url": "http://127.0.0.1:1234/v1"
+    }
   },
   "active_provider": "anthropic",
   "quiz_model": "gemini-3.1-flash-lite-preview",

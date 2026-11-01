@@ -47,7 +47,14 @@ class GoogleProvider:
             self._client = _create_google_client(self._api_key)
         return self._client
 
-    def complete(self, messages: list[dict], model: str | None = None) -> str:
+    def complete(
+        self,
+        messages: list[dict],
+        model: str | None = None,
+        response_schema: dict | None = None,
+    ) -> str:
+        # response_schema is ignored: this provider's models return reliable JSON
+        # from the prompt alone.
         model_name = model or self._default_model
         try:
             client_wrapper = self._ensure_client()

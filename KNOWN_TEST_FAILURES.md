@@ -1,84 +1,81 @@
 # Known Test Failures
 
-**Date:** 2026-04-06 (post repo migration)
+**Date:** 2026-09-09 (verified on macOS arm64, Node 26.8.1, Python 3.12.14)
 
 ## Summary
 
 | Suite | Total | Pass | Fail | Skip |
 |-------|-------|------|------|------|
-| Frontend (vitest) | 125 tests / 29 files | 108 | 17 | 0 |
-| Python (pytest) | 257 tests | 242 | 4 | 17 |
+| Frontend (vitest) | 156 tests / 33 files | 147 | 9 | 0 |
+| Python (pytest) | 784 tests | 758 | 11 | 15 |
+
+All failures below are stale test code that has drifted behind the source it
+exercises. None indicate a broken app path — the backend serves every route and
+the dev app launches cleanly.
 
 ---
 
-## Frontend Failures (17)
-
-All 17 failures are in `tests/renderer/` and fall into two categories:
-
-### 1. Stale text matcher — app renamed (6 tests)
-
-Tests look for `Clinical Registry` but the Sidebar component now renders `Study Assistant` / `Clinical Recall`.
+## Frontend Failures (9)
 
 | Test file | Test name |
 |-----------|-----------|
-| `App.test.tsx` | `App > renders the sidebar with app title` |
-| `AppShell.test.tsx` | `AppShell > renders the sidebar` |
-| `Sidebar.test.tsx` | `Sidebar > renders the app title` |
-| `Sidebar.test.tsx` | `Sidebar > renders the version label` |
-| `Sidebar.test.tsx` | `Sidebar > renders the settings link` |
-| `Feedback.test.tsx` | `Feedback page shortcuts > returns to quiz with ctrl+arrowleft` |
+| `Feedback.test.tsx` | `continues quiz with ctrl+arrowright when session exists` |
+| `Feedback.test.tsx` | `returns to archive with escape` |
+| `Feedback.test.tsx` | `returns to quiz with ctrl+arrowright` |
+| `Quiz.test.tsx` | `advances to the next question with ctrl+arrowright from inline feedback` |
+| `Quiz.test.tsx` | `reveals the reference with ctrl+shift+r` |
+| `Quiz.test.tsx` | `Skip button advances to the next question without exiting` |
+| `Quiz.test.tsx` | `submits with ctrl+enter from outside the textarea` |
+| `ServiceSetupModal.test.tsx` | `calls save on confirm with selected values` |
+| `Settings.test.tsx` | `saves updated API keys and selected models` |
 
-**Fix:** Update test assertions to match current text (`Study Assistant`, `Clinical Recall`).
-
-### 2. Component mock / provider issues (11 tests)
-
-Tests fail because wrapped components (Quiz, Feedback, ResourceCache) don't render expected content. Likely caused by stale mocks or missing provider wrappers after component refactors.
-
-| Test file | Test name |
-|-----------|-----------|
-| `Quiz.test.tsx` | `Quiz page > renders session setup initially` |
-| `Quiz.test.tsx` | `Quiz page > starts a random session with the 1 shortcut` |
-| `Quiz.test.tsx` | `Quiz page > submits with ctrl+enter from outside the textarea` |
-| `Quiz.test.tsx` | `Quiz page > opens full analysis with ctrl+shift+a from inline feedback` |
-| `Quiz.test.tsx` | `Quiz page > advances to the next question with ctrl+arrowright from inline feedback` |
-| `QuizQuestion.test.tsx` | `QuizQuestion > renders question badge and text` |
-| `FeedbackSplitView.test.tsx` | `FeedbackSplitView > renders practitioner response section` |
-| `FeedbackSplitView.test.tsx` | `FeedbackSplitView > renders AI analysis section` |
-| `ResourceCacheProvider.test.tsx` | `ResourceCacheProvider persistence > hydrates safe persisted cache entries on first render` |
-| `focusMode.test.tsx` | `Focus mode routing > renders sidebar on dashboard route` |
-| `focusMode.test.tsx` | `Focus mode routing > hides sidebar on quiz route` |
-
-**Fix:** Update mocks and provider wrappers to match current component interfaces.
+**Cause:** keyboard-shortcut and mock/payload expectations that no longer match
+the current components. `Settings.test.tsx` asserts a request body that predates
+the `active_service` field.
 
 ---
 
-## Python Failures (4)
+## Python Failures (11)
 
-### 1. Stale mock target — `NOTABILITY_DIR` removed (2 tests)
+### 1. Google provider message shape (3)
 
-| Test file | Test name |
-|-----------|-----------|
-| `test_sources_router.py` | `test_get_sources_returns_repository_cards` |
-| `test_sources_router.py` | `test_get_sources_handles_missing_directories` |
+`tests/llm/test_google_provider.py` — three tests assert `generate_content` is
+called with a raw `[{"role": ..., "parts": [...]}]` dict. The provider now wraps
+messages in `types.Content(...)` objects.
 
-**Error:** `AttributeError: module 'sources.router' has no attribute 'NOTABILITY_DIR'`
+### 2. Provider factory (1)
 
-The `NOTABILITY_DIR` constant was removed from `src/python/sources/router.py` but the tests still monkeypatch it. Remove the `NOTABILITY_DIR` mock line from both tests.
+`tests/llm/test_factory.py::test_create_client_unknown_provider_raises` — the
+test uses `"openai"` as the unknown provider, but OpenAI is now a registered
+provider, so it fails with `KeyError: 'openai'` instead of the expected
+`ValueError`. Pick a genuinely unregistered name.
 
-### 2. Stale mock target — `capture_all_assets` removed (2 tests)
+### 3. Ambulance Tasmania chunker (4)
 
-| Test file | Test name |
-|-----------|-----------|
-| `test_cmg_refresh.py` | `test_run_refresh_persists_success_status_and_history` |
-| `test_cmg_refresh.py` | `test_run_refresh_preserves_last_successful_time_on_failure` |
+`tests/python/pipeline/at/test_chunker.py` — all four fail with
+`chromadb.errors.NotFoundError: Collection [guidelines_at] does not exist`. The
+tests read the collection without creating it first.
 
-**Error:** `AttributeError: module 'pipeline.cmg.refresh' has no attribute 'capture_all_assets'`
+### 4. CMG dose accuracy (2)
 
-The `capture_all_assets` function was removed from the refresh module during standalone packaging refactoring, but the tests still monkeypatch it. Update tests to match current module exports.
+`tests/python/test_cmg_dose_accuracy.py` — `dose_lookup` is `None` in the
+current structured medication data, so the tests raise `AttributeError` instead
+of skipping. The skip guard checks the wrong key.
+
+### 5. Settings router (1)
+
+`tests/python/test_settings_router.py::test_save_settings_persists_api_keys_and_model_selection`
+— the persisted file now also carries `active_service`, which the equality
+assertion does not expect.
 
 ---
 
 ## Notes
 
-- `tests/quiz/test_router.py` (11 tests) failed when run as part of the full suite but **pass in isolation**. This is a test isolation issue (shared state between test modules), not a real failure.
-- All failures are pre-existing — none were introduced by the repo migration.
+- `pyproject.toml` sets `testpaths = ["tests"]`. Without it pytest walks into
+  `release/` and collects the vendored third-party tests inside a previously
+  built `.app`, producing ~85 spurious collection errors.
+- `tests/renderer/setup.ts` shims `window.localStorage`. Node 26 defines its own
+  non-configurable `localStorage` global, which prevents vitest's jsdom
+  environment from attaching jsdom's implementation; without the shim all 156
+  frontend tests fail in `beforeEach`.

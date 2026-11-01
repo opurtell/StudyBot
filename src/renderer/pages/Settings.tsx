@@ -8,18 +8,25 @@ import ModelSelector from "../components/ModelSelector";
 import ApiKeyInput from "../components/ApiKeyInput";
 import Button from "../components/Button";
 import Modal from "../components/Modal";
-import type { ProviderKey, ModelRegistry } from "../types/api";
+import type { ProviderKey, ModelRegistry, LmStudioStatus } from "../types/api";
+import { apiGet, getApiErrorMessage } from "../lib/apiClient";
 import PageStateNotice from "../components/PageStateNotice";
 import { useBackendStatus, useBackendStatusActions } from "../hooks/useBackendStatus";
 import { getErrorStateCopy } from "../lib/loadingState";
 
-const PROVIDER_KEYS: ProviderKey[] = ["anthropic", "google", "zai", "openai"];
+const PROVIDER_KEYS: ProviderKey[] = ["anthropic", "google", "zai", "openai", "lmstudio"];
+
+// LM Studio runs locally and needs no key — it gets its own settings section instead.
+const API_KEY_PROVIDER_KEYS: ProviderKey[] = PROVIDER_KEYS.filter((k) => k !== "lmstudio");
+
+const LMSTUDIO_DEFAULT_BASE_URL = "http://127.0.0.1:1234/v1";
 
 const PROVIDER_LABELS: Record<ProviderKey, string> = {
   anthropic: "Anthropic",
   google: "Google",
   zai: "Z.ai",
   openai: "OpenAI",
+  lmstudio: "LM Studio (Local)",
 };
 
 const TIER_ORDER: Array<"low" | "medium" | "high"> = ["low", "medium", "high"];
@@ -50,6 +57,11 @@ const FALLBACK_REGISTRY: ModelRegistry = {
     medium: "gpt-5.4-mini",
     high: "gpt-5.4",
   },
+  lmstudio: {
+    low: "medgemma-1.5-4b-it",
+    medium: "openai/gpt-oss-20b",
+    high: "qwen/qwen3.6-35b-a3b",
+  },
 };
 
 function getProviderForModel(
@@ -57,7 +69,7 @@ function getProviderForModel(
   modelId: string
 ): ProviderKey | null {
   for (const provider of PROVIDER_KEYS) {
-    if (Object.values(registry[provider]).includes(modelId)) {
+    if (Object.values(registry[provider] ?? {}).includes(modelId)) {
       return provider;
     }
   }
@@ -112,7 +124,13 @@ export default function Settings() {
     google: config?.providers?.google?.api_key ?? "",
     zai: config?.providers?.zai?.api_key ?? "",
     openai: config?.providers?.openai?.api_key ?? "",
+    lmstudio: config?.providers?.lmstudio?.api_key ?? "",
   });
+  const [lmstudioBaseUrl, setLmstudioBaseUrl] = useState(
+    config?.providers?.lmstudio?.base_url ?? LMSTUDIO_DEFAULT_BASE_URL
+  );
+  const [lmstudioStatus, setLmstudioStatus] = useState<LmStudioStatus | null>(null);
+  const [lmstudioChecking, setLmstudioChecking] = useState(false);
   const [activeProvider] = useState<ProviderKey>(
     (config?.active_provider as ProviderKey) ?? "anthropic"
   );
@@ -135,7 +153,9 @@ export default function Settings() {
       google: config.providers?.google?.api_key ?? "",
       zai: config.providers?.zai?.api_key ?? "",
       openai: config.providers?.openai?.api_key ?? "",
+      lmstudio: config.providers?.lmstudio?.api_key ?? "",
     });
+    setLmstudioBaseUrl(config.providers?.lmstudio?.base_url ?? LMSTUDIO_DEFAULT_BASE_URL);
   }, [config]);
 
   useEffect(() => {
@@ -223,6 +243,11 @@ export default function Settings() {
         api_key: apiKeys.openai,
         default_model: config.providers?.openai?.default_model ?? "",
       },
+      lmstudio: {
+        api_key: apiKeys.lmstudio,
+        default_model: config.providers?.lmstudio?.default_model ?? "",
+        base_url: lmstudioBaseUrl.trim() || LMSTUDIO_DEFAULT_BASE_URL,
+      },
     };
     const quizProvider = getProviderForModel(activeRegistry, quizModel);
     if (quizProvider) {
@@ -244,6 +269,7 @@ export default function Settings() {
         google: nextProviders.google,
         zai: nextProviders.zai,
         openai: nextProviders.openai,
+        lmstudio: nextProviders.lmstudio,
       },
       active_provider: activeProvider,
       quiz_model: quizModel,
@@ -255,6 +281,34 @@ export default function Settings() {
     if (saved) {
       setSaveMessage("Settings Saved");
     }
+  };
+
+  const handleDetectLocalModels = async () => {
+    setLmstudioChecking(true);
+    setSaveMessage(null);
+    try {
+      const url = lmstudioBaseUrl.trim() || LMSTUDIO_DEFAULT_BASE_URL;
+      const status = await apiGet<LmStudioStatus>(
+        `/settings/lmstudio/status?base_url=${encodeURIComponent(url)}`
+      );
+      setLmstudioStatus(status);
+    } catch (err) {
+      setLmstudioStatus({
+        available: false,
+        base_url: lmstudioBaseUrl,
+        models: [],
+        error: getApiErrorMessage(err, "Could not reach the backend to check LM Studio."),
+      });
+    } finally {
+      setLmstudioChecking(false);
+    }
+  };
+
+  const handleUseDetectedModel = (
+    tier: "low" | "medium" | "high",
+    modelId: string
+  ) => {
+    handleRegistryFieldChange("lmstudio", tier, modelId);
   };
 
   const handleRegistryFieldChange = (
@@ -416,7 +470,7 @@ export default function Settings() {
         <h3 className="font-label text-label-sm text-on-surface-variant uppercase pb-2 border-b border-outline-variant/10">
           API Keys
         </h3>
-        {PROVIDER_KEYS.map((key) => (
+        {API_KEY_PROVIDER_KEYS.map((key) => (
           <ApiKeyInput
             key={key}
             label={`${PROVIDER_LABELS[key]} API Key`}
@@ -427,6 +481,98 @@ export default function Settings() {
             }}
           />
         ))}
+      </section>
+
+      <section className="space-y-4">
+        <div className="pb-2 border-b border-outline-variant/10">
+          <h3 className="font-label text-label-sm text-on-surface-variant uppercase">
+            Local Model (LM Studio)
+          </h3>
+          <p className="font-mono text-[10px] text-on-surface-variant mt-1">
+            Runs entirely on this machine — no API key, no data leaves the device. Start
+            the server in LM Studio under Developer, then detect the models it serves.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="lmstudio-base-url"
+            className="font-label text-label-sm text-on-surface-variant uppercase"
+          >
+            Server Address
+          </label>
+          <div className="flex gap-3 items-end">
+            <input
+              id="lmstudio-base-url"
+              type="text"
+              value={lmstudioBaseUrl}
+              onChange={(e) => {
+                setSaveMessage(null);
+                setLmstudioStatus(null);
+                setLmstudioBaseUrl(e.target.value);
+              }}
+              placeholder={LMSTUDIO_DEFAULT_BASE_URL}
+              spellCheck={false}
+              className="flex-1 bg-transparent border-0 border-b border-outline-variant/20 text-on-surface font-mono text-[11px] py-2 focus:border-primary focus:outline-none"
+            />
+            <Button
+              variant="secondary"
+              onClick={handleDetectLocalModels}
+              disabled={lmstudioChecking}
+            >
+              {lmstudioChecking ? "Checking..." : "Detect Models"}
+            </Button>
+          </div>
+        </div>
+
+        {lmstudioStatus && (
+          <div className="space-y-3">
+            <p
+              className={`font-mono text-[10px] ${
+                lmstudioStatus.available ? "text-on-surface-variant" : "text-error"
+              }`}
+            >
+              {lmstudioStatus.available
+                ? `Connected — ${lmstudioStatus.models.length} model(s) available at ${lmstudioStatus.base_url}`
+                : lmstudioStatus.error}
+            </p>
+            {lmstudioStatus.available && lmstudioStatus.models.length > 0 && (
+              <div className="space-y-2">
+                {lmstudioStatus.models.map((model) => (
+                  <div
+                    key={model.id}
+                    className="flex items-center justify-between gap-4 bg-surface-container-low px-3 py-2"
+                  >
+                    <span className="font-mono text-[11px] text-on-surface truncate">
+                      {model.id}
+                      {model.loaded && (
+                        <span className="text-primary ml-2 text-[10px] uppercase tracking-widest">
+                          loaded
+                        </span>
+                      )}
+                    </span>
+                    <div className="flex gap-1 shrink-0">
+                      {TIER_ORDER.map((tier) => (
+                        <button
+                          key={tier}
+                          onClick={() => handleUseDetectedModel(tier, model.id)}
+                          className="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors px-2 py-1"
+                          title={`Assign ${model.id} to the ${TIER_LABELS[tier]} local tier`}
+                        >
+                          {TIER_LABELS[tier]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <p className="font-mono text-[10px] text-on-surface-variant">
+                  Assigning a tier edits the LM Studio rows under Model Configuration —
+                  press Save Models to persist, then pick it under Model Selection.
+                </p>
+              </div>
+            )}
+          </div>
+        )}
       </section>
 
       <section className="space-y-6">

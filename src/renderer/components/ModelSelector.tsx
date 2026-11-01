@@ -13,6 +13,7 @@ const PROVIDER_LABELS: Record<ProviderKey, string> = {
   google: "Google",
   zai: "Z.ai",
   openai: "OpenAI",
+  lmstudio: "LM Studio (Local)",
 };
 
 const TIER_LABELS: Record<"low" | "medium" | "high", string> = {
@@ -21,7 +22,7 @@ const TIER_LABELS: Record<"low" | "medium" | "high", string> = {
   high: "High",
 };
 
-const PROVIDER_ORDER: ProviderKey[] = ["anthropic", "google", "zai", "openai"];
+const PROVIDER_ORDER: ProviderKey[] = ["anthropic", "google", "zai", "openai", "lmstudio"];
 const TIER_ORDER: Array<"low" | "medium" | "high"> = ["low", "medium", "high"];
 
 export default function ModelSelector({ label, value, registry, onChange }: ModelSelectorProps) {
@@ -40,6 +41,7 @@ export default function ModelSelector({ label, value, registry, onChange }: Mode
       >
         {PROVIDER_ORDER.map((providerKey) => {
           const tiers = registry[providerKey];
+          if (!tiers) return null;
           return (
             <optgroup key={providerKey} label={PROVIDER_LABELS[providerKey]}>
               {TIER_ORDER.map((tier) => {

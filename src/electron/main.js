@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const { spawn } = require("child_process");
 const http = require("http");
 const path = require("path");
+const fs = require("fs");
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -96,11 +97,27 @@ function setBackendState(state, message = null) {
   resolveBackendReady();
 }
 
+function resolveDevPython() {
+  // Prefer a project-local virtualenv so the backend runs against the installed
+  // dependencies rather than whichever python3 happens to be on PATH.
+  const isWin = process.platform === "win32";
+  const venvPython = path.join(
+    app.getAppPath(),
+    ".venv",
+    isWin ? "Scripts" : "bin",
+    isWin ? "python.exe" : "python3"
+  );
+  if (fs.existsSync(venvPython)) {
+    return venvPython;
+  }
+  return isWin ? "python" : "python3";
+}
+
 function getBackendCommand() {
   if (isDev) {
     const scriptPath = path.join(app.getAppPath(), "src/python/main.py");
     return {
-      executable: "python3",
+      executable: resolveDevPython(),
       args: [scriptPath],
       cwd: app.getAppPath(),
       env: {

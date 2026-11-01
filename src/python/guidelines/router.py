@@ -49,6 +49,10 @@ def _load_all_raw() -> list[dict]:
                     data = json.load(f)
             except (json.JSONDecodeError, OSError):
                 continue
+            # Skip non-guideline payloads (index/tracker files sit alongside the
+            # per-guideline documents in the same directory).
+            if not isinstance(data, dict) or "id" not in data:
+                continue
             data["_source_type"] = source_type
             data["_file_path"] = fpath
             results.append(data)

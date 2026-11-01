@@ -88,7 +88,9 @@ cd StudyBot
 # 2. Install Node dependencies
 npm install
 
-# 3. Install Python dependencies
+# 3. Install Python dependencies into a project-local virtualenv
+python3 -m venv .venv
+source .venv/bin/activate            # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 
 # 4. Create your local settings file
@@ -99,6 +101,7 @@ cp .env.example .env
 
 # 6. Start the Python backend
 python3 src/python/main.py          # Runs on http://127.0.0.1:7777
+                                    # (npm run dev starts this for you as well)
 
 # 7. In a separate terminal, start the Electron + Vite dev server
 npm run dev                          # Vite on :5173, Electron connects automatically
