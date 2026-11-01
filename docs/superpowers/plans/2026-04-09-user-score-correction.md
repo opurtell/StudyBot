@@ -77,7 +77,7 @@ def test_correct_answer_updates_streak(tracker):
 
 - [ ] **Step 2: Run tests to verify they fail**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/quiz/test_tracker.py::test_correct_answer_updates_score tests/quiz/test_tracker.py::test_correct_answer_updates_mastery_percent tests/quiz/test_tracker.py::test_correct_answer_no_history_row tests/quiz/test_tracker.py::test_correct_answer_updates_latest_only tests/quiz/test_tracker.py::test_correct_answer_updates_streak -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/quiz/test_tracker.py::test_correct_answer_updates_score tests/quiz/test_tracker.py::test_correct_answer_updates_mastery_percent tests/quiz/test_tracker.py::test_correct_answer_no_history_row tests/quiz/test_tracker.py::test_correct_answer_updates_latest_only tests/quiz/test_tracker.py::test_correct_answer_updates_streak -v`
 Expected: FAIL — `Tracker` has no `correct_answer` method.
 
 - [ ] **Step 3: Implement `correct_answer()`**
@@ -101,7 +101,7 @@ Add this method to the `Tracker` class in `src/python/quiz/tracker.py`, after th
 
 - [ ] **Step 4: Run tests to verify they pass**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/quiz/test_tracker.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/quiz/test_tracker.py -v`
 Expected: All PASS.
 
 - [ ] **Step 5: Commit**
@@ -142,7 +142,7 @@ def correct_score(req: CorrectScoreRequest) -> dict:
 
 - [ ] **Step 2: Verify the endpoint starts without errors**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -c "from quiz.router import router; print('OK')"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -c "from quiz.router import router; print('OK')"`
 Expected: prints `OK`
 
 - [ ] **Step 3: Commit**
@@ -188,7 +188,7 @@ export interface FeedbackNavigationState {
 
 - [ ] **Step 2: Verify TypeScript compiles**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json 2>&1 | head -30`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json 2>&1 | head -30`
 Expected: May show errors in files that construct `FeedbackNavigationState` without `questionId` — that's expected, fixed in Task 4.
 
 - [ ] **Step 3: Commit**
@@ -227,7 +227,7 @@ In `src/renderer/pages/Quiz.tsx`, update the `handleViewFullAnalysis` function's
 
 - [ ] **Step 2: Verify TypeScript compiles**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json 2>&1 | head -30`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json 2>&1 | head -30`
 Expected: Fewer errors than Task 3 — `Quiz.tsx` should now compile cleanly.
 
 - [ ] **Step 3: Commit**
@@ -448,7 +448,7 @@ export default function Feedback() {
 
 - [ ] **Step 2: Verify TypeScript compiles**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json 2>&1 | head -30`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json 2>&1 | head -30`
 Expected: No errors related to `Feedback.tsx`, `Quiz.tsx`, or `api.ts`.
 
 - [ ] **Step 3: Commit**
@@ -464,12 +464,12 @@ git commit -m "feat: add user score correction buttons to Feedback page"
 
 - [ ] **Step 1: Run Python tests**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/quiz/test_tracker.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/quiz/test_tracker.py -v`
 Expected: All PASS.
 
 - [ ] **Step 2: Run TypeScript check**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx tsc --noEmit --project src/renderer/tsconfig.json`
 Expected: Clean — no errors.
 
 - [ ] **Step 3: Manual smoke test**

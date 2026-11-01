@@ -114,7 +114,7 @@ def test_get_retriever_after_reset_uses_new_service(tmp_path, monkeypatch):
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_retriever_reset.py::test_reset_clears_singleton -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_retriever_reset.py::test_reset_clears_singleton -v`
 Expected: FAIL — `reset_retriever` does not exist
 
 - [ ] **Step 3: Write minimal implementation**
@@ -135,7 +135,7 @@ def reset_retriever() -> None:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_retriever_reset.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_retriever_reset.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -280,7 +280,7 @@ def test_save_with_same_service_does_not_reset_retriever(settings_file, monkeypa
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
 Expected: FAIL — retriever singleton is not cleared on service change
 
 - [ ] **Step 3: Implement service-change detection in save_settings**
@@ -344,7 +344,7 @@ def _invalidate_service_caches() -> None:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
@@ -394,7 +394,7 @@ def test_vector_store_status_checks_all_services(tmp_path, monkeypatch):
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py::test_vector_store_status_checks_all_services -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py::test_vector_store_status_checks_all_services -v`
 Expected: FAIL — returns 0 because it only checks `guidelines_actas`
 
 - [ ] **Step 3: Implement service-aware vector_store_status**
@@ -434,7 +434,7 @@ def vector_store_status() -> dict:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
 Expected: ALL PASS
 
 - [ ] **Step 5: Commit**
@@ -488,7 +488,7 @@ def test_clear_cmg_deletes_active_service_collection(tmp_path, monkeypatch):
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py::test_clear_cmg_deletes_active_service_collection -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py::test_clear_cmg_deletes_active_service_collection -v`
 Expected: FAIL — deletes `guidelines_actas` instead of `guidelines_at`
 
 - [ ] **Step 3: Implement service-aware clear_vector_store**
@@ -538,7 +538,7 @@ def clear_vector_store(source_type: str | None = None) -> dict:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/services/test_settings_invalidation.py -v`
 Expected: ALL PASS
 
 - [ ] **Step 5: Commit**
@@ -631,7 +631,7 @@ def test_custom_collection_name():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/pipeline/test_actas_chunker_collection_name.py::test_custom_collection_name -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/pipeline/test_actas_chunker_collection_name.py::test_custom_collection_name -v`
 Expected: FAIL — `chunk_and_ingest()` doesn't accept `collection_name`
 
 - [ ] **Step 3: Update ACTAS chunker signature**
@@ -713,12 +713,12 @@ def _run_adapter_seed(service) -> None:
 
 - [ ] **Step 5: Run all new tests to verify they pass**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/pipeline/test_actas_chunker_collection_name.py tests/python/services/test_retriever_reset.py tests/python/services/test_settings_invalidation.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/pipeline/test_actas_chunker_collection_name.py tests/python/services/test_retriever_reset.py tests/python/services/test_settings_invalidation.py -v`
 Expected: ALL PASS
 
 - [ ] **Step 6: Run existing seed and isolation tests to verify no regressions**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/test_auto_seed.py tests/python/services/test_isolation.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/test_auto_seed.py tests/python/services/test_isolation.py -v`
 Expected: ALL PASS
 
 - [ ] **Step 7: Commit**
@@ -762,7 +762,7 @@ Note: `@property` works on frozen dataclasses — `frozen=True` only prevents se
 
 - [ ] **Step 2: Verify no regressions in quiz tests**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/quiz/ -v -k "not known_failure"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/quiz/ -v -k "not known_failure"`
 Expected: ALL PASS
 
 - [ ] **Step 3: Commit**
@@ -780,12 +780,12 @@ git commit -m "fix: use dynamic service name in quiz prompt instead of hardcoded
 
 - [ ] **Step 1: Run all Python tests**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/ tests/quiz/ -v --tb=short 2>&1 | tail -40`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && PYTHONPATH=src/python pytest tests/python/ tests/quiz/ -v --tb=short 2>&1 | tail -40`
 Expected: All tests pass or match pre-existing failures in `KNOWN_TEST_FAILURES.md`
 
 - [ ] **Step 2: Check for any other hardcoded ACTAS references that should be service-aware**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && grep -rn "guidelines_actas\|cmg_guidelines\|paramedic_notes" src/python/ --include="*.py" | grep -v "__pycache__" | grep -v "test_" | grep -v ".pyc"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && grep -rn "guidelines_actas\|cmg_guidelines\|paramedic_notes" src/python/ --include="*.py" | grep -v "__pycache__" | grep -v "test_" | grep -v ".pyc"`
 
 Verify that the only remaining hardcoded `"guidelines_actas"` references are:
 - `actas/chunker.py` — the default parameter value (correct, backwards-compatible)

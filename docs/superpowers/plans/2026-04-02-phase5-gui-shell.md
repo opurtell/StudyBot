@@ -56,7 +56,7 @@
 - [ ] **Step 1: Install react-router-dom and @testing-library/user-event**
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot
 npm install react-router-dom
 npm install -D @testing-library/user-event
 ```

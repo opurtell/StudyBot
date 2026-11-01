@@ -122,7 +122,7 @@ def test_difficulty_medium_adds_no_extra_instructions(self):
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_easy_adds_easy_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_hard_adds_hard_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_medium_adds_no_extra_instructions -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_easy_adds_easy_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_hard_adds_hard_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_medium_adds_no_extra_instructions -v`
 Expected: FAIL — the current `user_content` only appends `"Difficulty: {difficulty}"`, not the instruction strings.
 
 - [ ] **Step 3: Write minimal implementation**
@@ -164,12 +164,12 @@ With:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_easy_adds_easy_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_hard_adds_hard_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_medium_adds_no_extra_instructions -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_easy_adds_easy_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_hard_adds_hard_instructions tests/quiz/test_agent.py::TestGenerateQuestion::test_difficulty_medium_adds_no_extra_instructions -v`
 Expected: PASS
 
 - [ ] **Step 5: Run full quiz test suite**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/quiz/ -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/quiz/ -v`
 Expected: All existing tests still pass (difficulty default is "medium" which now appends empty string).
 
 - [ ] **Step 6: Commit**
@@ -248,7 +248,7 @@ it("sends selected difficulty when starting a session", async () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx vitest run tests/renderer/Quiz.test.tsx -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx vitest run tests/renderer/Quiz.test.tsx -v`
 Expected: FAIL — no difficulty selector rendered.
 
 - [ ] **Step 3: Write minimal implementation**
@@ -324,12 +324,12 @@ if (state.scope === "all") {
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx vitest run tests/renderer/Quiz.test.tsx -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx vitest run tests/renderer/Quiz.test.tsx -v`
 Expected: PASS
 
 - [ ] **Step 5: Run full renderer test suite**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx vitest run tests/renderer/ -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx vitest run tests/renderer/ -v`
 Expected: All tests pass. (Consult `KNOWN_TEST_FAILURES.md` for pre-existing failures — 17 frontend failures are documented there and should not be treated as regressions.)
 
 - [ ] **Step 6: Commit**
@@ -345,17 +345,17 @@ git commit -m "feat: add difficulty selector to quiz start screen"
 
 - [ ] **Step 1: Run full Python test suite**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/ -v --ignore=tests/renderer`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/ -v --ignore=tests/renderer`
 Expected: All pass (4 known failures in `KNOWN_TEST_FAILURES.md` excluded).
 
 - [ ] **Step 2: Run full renderer test suite**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npx vitest run -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npx vitest run -v`
 Expected: Pass (known failures per `KNOWN_TEST_FAILURES.md` excluded).
 
 - [ ] **Step 3: Verify manually in dev mode**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && npm run dev`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && npm run dev`
 - Confirm difficulty toggle appears between "Session Variety Mode" and the mode buttons
 - Confirm Medium is active by default
 - Confirm `D` cycles through Easy → Medium → Hard → Easy

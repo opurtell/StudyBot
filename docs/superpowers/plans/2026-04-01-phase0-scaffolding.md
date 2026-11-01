@@ -56,7 +56,7 @@
 - [ ] **Step 1: Run git init**
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot
 git init
 ```
 

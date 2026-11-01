@@ -570,7 +570,7 @@ if __name__ == "__main__":
 
 - [ ] **Step 2: Run the scraper**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python3 scripts/at_scrape_all.py`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python3 scripts/at_scrape_all.py`
 
 Expected: The scraper will iterate through qualification levels, discover leaf guideline URLs by clicking through category pages, and scrape each one. Watch the console output for:
 - Discovery phase showing leaf pages found per section
