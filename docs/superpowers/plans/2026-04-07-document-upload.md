@@ -49,7 +49,7 @@ UPLOADS_STRUCTURED_DIR = DATA_DIR / "uploads" / "structured"
 
 - [ ] **Step 2: Verify the file loads**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -c "from paths import UPLOADS_DIR, UPLOADS_STRUCTURED_DIR; print(UPLOADS_DIR, UPLOADS_STRUCTURED_DIR)"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -c "from paths import UPLOADS_DIR, UPLOADS_STRUCTURED_DIR; print(UPLOADS_DIR, UPLOADS_STRUCTURED_DIR)"`
 Expected: prints two paths ending in `data/uploads` and `data/uploads/structured`
 
 - [ ] **Step 3: Commit**
@@ -131,7 +131,7 @@ def test_supported_extensions_includes_key_formats():
 
 - [ ] **Step 3: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v -k "test_extract"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v -k "test_extract"`
 Expected: FAIL — module `upload.extractor` not found
 
 - [ ] **Step 4: Install pypdf**
@@ -186,7 +186,7 @@ def _extract_pdf(file_path: Path) -> str:
 
 - [ ] **Step 6: Run tests to verify they pass**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v -k "test_extract"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v -k "test_extract"`
 Expected: all PASS
 
 - [ ] **Step 7: Commit**
@@ -330,7 +330,7 @@ def test_get_accepted_formats():
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v -k "test_upload or test_get_accepted"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v -k "test_upload or test_get_accepted"`
 Expected: FAIL — router not found
 
 - [ ] **Step 3: Implement the upload router**
@@ -508,7 +508,7 @@ app.include_router(upload_router)
 
 - [ ] **Step 5: Run tests to verify they pass**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -m pytest tests/python/test_upload_router.py -v`
 Expected: all PASS
 
 - [ ] **Step 6: Commit**
@@ -992,12 +992,12 @@ git commit -m "feat: wire New Documentation button to upload dialog"
 
 - [ ] **Step 1: Start the backend and verify the upload endpoint exists**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -c "from main import app; routes = [r.path for r in app.routes]; print([r for r in routes if 'upload' in r])"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -c "from main import app; routes = [r.path for r in app.routes]; print([r for r in routes if 'upload' in r])"`
 Expected: `['/upload', '/upload/formats']`
 
 - [ ] **Step 2: Run the full backend test suite**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/python && python3 -m pytest tests/python/ -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/python && python3 -m pytest tests/python/ -v`
 Expected: all PASS
 
 - [ ] **Step 3: Run the full renderer test suite**

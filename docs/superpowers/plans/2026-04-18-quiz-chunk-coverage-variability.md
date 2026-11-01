@@ -66,7 +66,7 @@ def test_retrieved_chunk_content_key_short_content():
 - [ ] **Step 2: Run tests to confirm they fail**
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot
 python -m pytest tests/quiz/test_retriever.py::test_retrieved_chunk_content_key_is_first_200_chars tests/quiz/test_retriever.py::test_retrieved_chunk_content_key_short_content -v
 ```
 
@@ -947,7 +947,7 @@ If `data/mastery.db` already exists with a `used_chunks` table, run the backend 
 3. `chunk_coverage` table exists with the migrated rows
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot
 python -c "
 from src.python.quiz.tracker import Tracker
 t = Tracker()

@@ -38,7 +38,7 @@ dependencies = [
 
 - [ ] **Step 2: Install the dependency**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && pip install openai`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && pip install openai`
 Expected: `Successfully installed openai-...`
 
 - [ ] **Step 3: Commit**
@@ -139,7 +139,7 @@ def test_list_models():
 
 - [ ] **Step 2: Run tests to verify they fail**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/llm/test_openai_provider.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/llm/test_openai_provider.py -v`
 Expected: FAIL — `ModuleNotFoundError: No module named 'llm.openai_provider'`
 
 - [ ] **Step 3: Write the provider implementation**
@@ -186,7 +186,7 @@ class OpenAIProvider:
 
 - [ ] **Step 4: Run tests to verify they pass**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/llm/test_openai_provider.py -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/llm/test_openai_provider.py -v`
 Expected: All 5 tests PASS
 
 - [ ] **Step 5: Commit**
@@ -263,7 +263,7 @@ OPENAI_MODEL_HIGH=gpt-5.4
 
 - [ ] **Step 6: Verify existing tests still pass**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/llm/ -v`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/llm/ -v`
 Expected: All tests PASS (existing + new OpenAI tests)
 
 - [ ] **Step 7: Commit**
@@ -303,7 +303,7 @@ The `__init__.py` only exports `base`, `factory`, and `models` symbols. `OpenAIP
 
 - [ ] **Step 3: Verify factory resolves OpenAI models**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -c "from llm.models import resolve_provider_for_model; print(resolve_provider_for_model('gpt-5.4-nano'))"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -c "from llm.models import resolve_provider_for_model; print(resolve_provider_for_model('gpt-5.4-nano'))"`
 Expected: `openai`
 
 - [ ] **Step 4: Commit**
@@ -369,7 +369,7 @@ c) In `ModelRegistry` interface (line 111), add `openai`:
 
 - [ ] **Step 3: Verify TypeScript compiles**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer && npx tsc --noEmit`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/renderer && npx tsc --noEmit`
 Expected: No errors related to `openai` type additions
 
 - [ ] **Step 4: Commit**
@@ -385,19 +385,19 @@ git commit -m "feat: add OpenAI to settings config and frontend types"
 
 - [ ] **Step 1: Run the full Python test suite**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -m pytest tests/llm/ tests/python/ -v --tb=short`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -m pytest tests/llm/ tests/python/ -v --tb=short`
 Expected: All tests PASS (excluding known failures documented in `KNOWN_TEST_FAILURES.md`)
 
 - [ ] **Step 2: Verify frontend builds**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot/src/renderer && npx tsc --noEmit`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot/src/renderer && npx tsc --noEmit`
 Expected: No type errors
 
 - [ ] **Step 3: Verify provider round-trip in Python**
 
 Run:
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python -c "
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python -c "
 from llm.models import load_model_registry, all_model_ids, resolve_provider_for_model
 reg = load_model_registry()
 assert 'openai' in reg

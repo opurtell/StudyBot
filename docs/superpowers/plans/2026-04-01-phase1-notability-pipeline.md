@@ -150,7 +150,7 @@ def build_note(tmp_path):
 
 - [ ] **Step 3: Install deps and verify pytest runs**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && pip install -e ".[dev]"`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && pip install -e ".[dev]"`
 Then: `python -m pytest tests/ -v --co`
 Expected: conftest collected, no errors
 
@@ -1564,7 +1564,7 @@ git commit -m "test: add end-to-end pipeline integration test"
 
 - [ ] **Step 1: Run extraction with --limit 20**
 
-Run: `cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot && python src/python/pipeline/run.py extract --limit 20`
+Run: `cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot && python src/python/pipeline/run.py extract --limit 20`
 Expected: "Extracted N/20 notes (M failures)" — verify output files appear in `data/notes_md/raw/`
 
 - [ ] **Step 2: Inspect a few extracted files**

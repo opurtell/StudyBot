@@ -96,7 +96,7 @@ Append inside the existing `describe("Quiz page", () => { ... })` block in `test
 - [ ] **Step 2: Run the new tests and confirm they all fail**
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot
 npx vitest run tests/renderer/Quiz.test.tsx 2>&1 | tail -40
 ```
 
@@ -280,7 +280,7 @@ Note: `KNOWN_TEST_FAILURES.md` documents 17 pre-existing frontend failures. Do n
 - [ ] **Step 1: Stage and commit**
 
 ```bash
-cd /Users/oscarpurtell/claudeCode/studyBot/StudyBot
+cd /Users/oscarpurtell/claudeCode/apps/studyBot/StudyBot
 git add src/renderer/pages/Quiz.tsx tests/renderer/Quiz.test.tsx
 git commit -m "feat: continuous quiz with skip and end session buttons"
 ```
