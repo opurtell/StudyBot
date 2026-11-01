@@ -1,6 +1,6 @@
 # Clinical Recall Assistant: web
 
-The Cloudflare-native web version (plan: `docs/web-port-plan.md`, review: `docs/review/web-port-review.md`).
+The Cloudflare-native web version (plan: `docs/web-port-plan.md`, review: `docs/review/web-port-review.md`). Generation and marking behaviour to port: `web/docs/prompts.md`.
 One Worker serves the React app as static assets and the API under `/api/*`, so the API is same-origin and needs no CORS.
 
 **Live:** https://study.paramedtools.com (production).

@@ -172,6 +172,7 @@ Offline Python build step turns `data/services/actas/structured/` (guidelines, `
 
 ### Phase 4: Question bank and quota (the core feature)
 Schema above; serve-from-bank flow; dedup (hash + embedding); `usage_ledger`; tier enforcement (anonymous = bank only, signed-in = bank then quota); atomic quota counters; clear UI messaging ("served from library" vs "generated new", remaining quota); report-a-question flow with auto-flag threshold; **bulk pre-seeding with the batch API and a sampled clinical review, which must be done before launch because anonymous users depend on it entirely**; cache invalidation by `corpus_version`/guideline change (retire or regenerate affected questions). Bank coverage target: every ACTAS guideline and AP/ICP scope has enough questions across difficulties that an anonymous user does not run dry in a normal session (size from the Phase 1 analysis).
+- *2026-11-01:* prompt fixes C-5, H-5 and H-11 done in the Python reference code. The behaviour to port (store the primary chunk, mark against it only, treat unreadable marks as refunded errors) is in `web/docs/prompts.md`.
 
 ### Phase 5: Port the product surface
 Per-user mastery/history/blacklist; per-user service + qualification settings (replacing the global `active_service`); Dashboard, Quiz, Feedback, Guidelines, Medication, Library (trimmed), Settings (stripped of keys/admin). Responsive/mobile pass. Remove Electron IPC, boot gate, packaging.
