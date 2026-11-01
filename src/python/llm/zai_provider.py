@@ -4,9 +4,12 @@ from .base import LLMError, ErrorCategory
 from .models import load_model_registry
 
 
+ZAI_BASE_URL = "https://api.z.ai/api/paas/v4"
+
+
 class ZaiProvider:
     def __init__(self, api_key: str, default_model: str = "glm-4.7-flash"):
-        self._client = ZhipuAI(api_key=api_key)
+        self._client = ZhipuAI(api_key=api_key, base_url=ZAI_BASE_URL)
         self._default_model = default_model
 
     def complete(self, messages: list[dict], model: str | None = None) -> str:
