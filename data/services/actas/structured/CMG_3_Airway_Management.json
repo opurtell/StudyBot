@@ -573,18 +573,6 @@
         ]
       },
       {
-        "text": " Up to 4mg/kg IM injection",
-        "dose_values": [
-          {
-            "amount": "4",
-            "unit": "mg"
-          }
-        ],
-        "qualifications_required": [
-          "ICP"
-        ]
-      },
-      {
         "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
         "dose_values": [
           {

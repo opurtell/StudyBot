@@ -44,8 +44,8 @@ mixed, and is tagged line by line from its ICP labels.
 
 | Medicine | AP | ICP only |
 |----------|----|----------|
-| Adrenaline | Nebulised (upper airway obstruction); IM (asthma/anaphylaxis); IV/IO in cardiac arrest only | IV/IO with cardiac output; infusion; newborn ETT; paediatric IO |
-| Atropine | IM (organophosphate, cholinergic symptoms) | IV/IO (the CMG labels IM/IV as AP: see review) |
+| Adrenaline | Nebulised (upper airway obstruction); IM (asthma/anaphylaxis); IV in cardiac arrest (adult and paediatric) | IV/IO with cardiac output; infusion; newborn ETT; paediatric IO |
+| Atropine | IM/IV/IO for organophosphate or nerve agent poisoning and big black spider bite with cholinergic symptoms (Oscar, overrides the PDF) | Bradyarrhythmias |
 | Fentanyl | Intranasal | IV (flight) |
 | Ketamine | Low dose via Springfusor; IM and IV/IO for analgesia and sedation | RSI, procedural sedation, induction, post-tube sedation; infusion pump |
 | Magnesium sulphate | IV/IO for eclamptic seizure | All other IV/IO (VF, torsades, pre-eclampsia, paediatric) |

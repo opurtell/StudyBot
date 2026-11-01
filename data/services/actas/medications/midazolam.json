@@ -641,23 +641,6 @@
       "cmg_number": "22",
       "source_file": "CMG_22_Seizures.json",
       "source_title": "Seizures",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "ICP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "",
-      "cmg_number": "22",
-      "source_file": "CMG_22_Seizures.json",
-      "source_title": "Seizures",
       "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
       "dose_values": [
         {
@@ -1525,23 +1508,6 @@
         {
           "amount": "30",
           "unit": "mL"
-        }
-      ],
-      "qualifications_required": [
-        "ICP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "",
-      "cmg_number": "37",
-      "source_file": "CMG_37_Combative_and_Agitated_Patients.json",
-      "source_title": "Combative and Agitated Patients",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
         }
       ],
       "qualifications_required": [
@@ -2433,23 +2399,6 @@
       "cmg_number": "3A",
       "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
       "source_title": "RSI (Rapid Sequence Intubation)",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "ICP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "",
-      "cmg_number": "3A",
-      "source_file": "CMG_3A_RSI__Rapid_Sequence_Intubation_.json",
-      "source_title": "RSI (Rapid Sequence Intubation)",
       "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
       "dose_values": [
         {
@@ -3329,23 +3278,6 @@
       "cmg_number": "3",
       "source_file": "CMG_3_Airway_Management.json",
       "source_title": "Airway Management",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
-        }
-      ],
-      "qualifications_required": [
-        "ICP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "",
-      "cmg_number": "3",
-      "source_file": "CMG_3_Airway_Management.json",
-      "source_title": "Airway Management",
       "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
       "dose_values": [
         {
@@ -4213,23 +4145,6 @@
         {
           "amount": "30",
           "unit": "mL"
-        }
-      ],
-      "qualifications_required": [
-        "ICP"
-      ],
-      "service": "actas"
-    },
-    {
-      "guideline_id": "",
-      "cmg_number": "45",
-      "source_file": "CMG_45_Palliative_Care_and_VAD.json",
-      "source_title": "Palliative Care and VAD",
-      "text": " Up to 4mg/kg IM injection",
-      "dose_values": [
-        {
-          "amount": "4",
-          "unit": "mg"
         }
       ],
       "qualifications_required": [
@@ -4483,6 +4398,6 @@
       "service": "actas"
     }
   ],
-  "total_entries": 105,
+  "total_entries": 100,
   "sources": []
 }

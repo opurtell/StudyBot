@@ -81,11 +81,12 @@ def test_icp_text_keeps_everything():
         assert marker in icp
 
 
-def test_atropine_ap_keeps_ap_labelled_doses_only():
+def test_atropine_ap_keeps_poisoning_doses_and_drops_bradycardia():
     ap = scope.ap_text(_med("MED_05"))
     assert "**AP: ** IM/IV: initial dose 2400mcg" in ap
-    assert "IV / IO / IM: initial dose 2400mcg" not in ap
-    assert "600mcg – fast push \n- Repeat once" not in ap
+    assert "IV / IO / IM: initial dose 2400mcg" in ap
+    assert "IV / IO / IM: 600mcg" in ap
+    assert "IV / IO: 600mcg" not in ap
 
 
 def test_magnesium_ap_keeps_eclampsia_only():
@@ -153,7 +154,11 @@ def test_dialysis_heparin_background_stays_visible():
         ("Adrenaline", "Formula: 0.01mg/kg", False, scope.ICP),
         ("Ceftriaxone", "May also be given IO", False, scope.ICP),
         ("Ceftriaxone", "50mg/kg IV", False, scope.BOTH),
-        ("Midazolam", "Up to 4mg/kg IM injection", False, scope.ICP),
+        ("Adrenaline", "Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Dose: 0.05mg", False, scope.BOTH),
+        ("Adrenaline", "Adrenaline (1:10,000): Formula: 0.01mg/kg Adrenaline (1:10,000) ETT: Formula: 0.02mg/kg", False, scope.ICP),
+        ("Adrenaline", "1mg IV or IO – fast push ", False, scope.BOTH),
+        ("Atropine", "In an MCI situation, repeat the initial atropine dose", False, scope.BOTH),
+        ("Atropine", "If heart rate less than 50/minute, consider atropine", False, scope.ICP),
         ("Oxygen", "Titrate to SpO2", True, scope.ICP),
     ],
 )
@@ -167,3 +172,31 @@ def test_pacer_endorsement_for_actas():
     assert eff == frozenset({"AP", "PACER"})
     assert "pacer" in _visibility_values(eff)
     assert "pacer" not in _visibility_values(frozenset({"AP", "ICP"}))
+
+
+def test_misfiled_doses_are_moved_to_their_medicine():
+    from pipeline.actas.dose_tables import correct_misfiled_doses
+
+    index = {
+        "Midazolam": [{"text": " Up to 4mg/kg IM injection"}, {"text": "0.1mg/kg IV"}],
+        "Naloxone": [{"text": "1.5mcg/kg IN, up to 100mcg. "}],
+        "Ketamine": [],
+    }
+    fixed = correct_misfiled_doses(index, create_missing=False)
+    assert fixed["Midazolam"] == [{"text": "0.1mg/kg IV"}]
+    assert fixed["Ketamine"] == [{"text": " Up to 4mg/kg IM injection"}]
+    assert fixed["Naloxone"] == []
+    assert "Fentanyl" not in fixed
+    assert "Fentanyl" in correct_misfiled_doses(
+        {"Naloxone": [{"text": "1.5mcg/kg IN, up to 100mcg. "}]}
+    )
+
+
+def test_structured_data_has_no_misfiled_doses():
+    for path in glob.glob("data/services/actas/structured/CMG*.json"):
+        with open(path, encoding="utf-8") as f:
+            lookup = json.load(f).get("dose_lookup") or {}
+        for entry in lookup.get("Midazolam", []):
+            assert "4mg/kg IM" not in entry["text"], path
+        for entry in lookup.get("Naloxone", []):
+            assert "1.5mcg/kg IN" not in entry["text"], path

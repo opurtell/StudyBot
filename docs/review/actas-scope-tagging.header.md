@@ -22,14 +22,14 @@
 3. **Several AP-scope monographs were hidden from AP users entirely:** adrenaline, atropine, ketamine and magnesium.
 4. **Dose table tags were whole-medicine,** so every dose of a drug got the same tag whatever its route or indication.
 
-## Please check
+## Oscar's decisions (2026-11-01)
 
-1. **Atropine IV.** The monograph labels "**AP:** IM/IV" for organophosphate and spider bite. The 2024 scope PDF lists atropine IV/IO as ICP only, with AP limited to IM. I followed the CMG (source hierarchy), so AP users see the IM/IV doses.
-2. **Morphine IV/IO.** The shared analgesia line reads "0.05mg/kg IV/IO" with "**AP:** max. total dose 20mg". It is shown to AP users as written, including the IO route.
-3. **Palliative care midazolam and morphine** (SC/IM/IV) are shown to AP users. This follows your note that subcutaneous injection is AP since the palliative care guideline was introduced.
-4. **Adrenaline paediatric cardiac arrest calculator rows** ("1:10,000 IV/IO 0.01mg/kg") are kept ICP-only because the row names IO. AP users still get the IV dose from the monograph text. Say if you want these rows shown to AP.
-5. **CSM.DF08 IO insertion** is shown to both. The text doesn't separate tibial from humeral sites or cardiac arrest from other indications, so there is nothing to split. The lignocaine priming lines are ICP.
-6. **CSM.A20 and A21** (surgical airway, needle cricothyroidotomy). Your list was cut off there. I kept them ICP, as the source data has them.
-7. **CSM.C07** is on your list, but there is no C07 file in the scraped data. The skill is missing from the corpus.
-8. **Dose data errors found while checking:** a ketamine dose ("Up to 4mg/kg IM injection") is filed under midazolam, and the fentanyl intranasal dose ("1.5mcg/kg IN") is filed under naloxone. Both come from the scraper. The midazolam row is forced to ICP; the naloxone row is harmless scope-wise but wrong content.
+1. **Atropine:** AP may give IM/IV/IO for organophosphate or nerve agent poisoning and big black spider bite with cholinergic symptoms. Bradyarrhythmia doses stay ICP.
+2. **Morphine IV/IO** shared analgesia line shown to AP as written: confirmed.
+3. **Palliative midazolam and morphine** (SC/IM/IV) shown to AP: confirmed.
+4. **Adrenaline paediatric cardiac arrest:** AP may give IV, IO stays ICP. The calculator rows ("1:10,000 IV/IO 0.01mg/kg") are now shown to AP because the dose is the same. Rows that also carry the newborn ETT dose stay ICP. The adult "1mg IV or IO – fast push" row is shown to AP to match the monograph.
+5. **CSM.DF08** shown to both: confirmed.
+6. **CSM.A20 and A21** stay ICP.
+7. **CSM.C07** is missing from the scraped data. A rescrape is added to Phase 0 of `docs/web-port-plan.md`.
+8. **Misfiled doses fixed:** the ketamine "Up to 4mg/kg IM" dose is moved from midazolam to ketamine, and the fentanyl "1.5mcg/kg IN" dose is removed from naloxone. The fix is in `pipeline/actas/dose_tables.py` (`correct_misfiled_doses`), so a rescrape keeps it.
 

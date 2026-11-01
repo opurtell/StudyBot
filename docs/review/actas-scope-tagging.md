@@ -22,16 +22,16 @@
 3. **Several AP-scope monographs were hidden from AP users entirely:** adrenaline, atropine, ketamine and magnesium.
 4. **Dose table tags were whole-medicine,** so every dose of a drug got the same tag whatever its route or indication.
 
-## Please check
+## Oscar's decisions (2026-11-01)
 
-1. **Atropine IV.** The monograph labels "**AP:** IM/IV" for organophosphate and spider bite. The 2024 scope PDF lists atropine IV/IO as ICP only, with AP limited to IM. I followed the CMG (source hierarchy), so AP users see the IM/IV doses.
-2. **Morphine IV/IO.** The shared analgesia line reads "0.05mg/kg IV/IO" with "**AP:** max. total dose 20mg". It is shown to AP users as written, including the IO route.
-3. **Palliative care midazolam and morphine** (SC/IM/IV) are shown to AP users. This follows your note that subcutaneous injection is AP since the palliative care guideline was introduced.
-4. **Adrenaline paediatric cardiac arrest calculator rows** ("1:10,000 IV/IO 0.01mg/kg") are kept ICP-only because the row names IO. AP users still get the IV dose from the monograph text. Say if you want these rows shown to AP.
-5. **CSM.DF08 IO insertion** is shown to both. The text doesn't separate tibial from humeral sites or cardiac arrest from other indications, so there is nothing to split. The lignocaine priming lines are ICP.
-6. **CSM.A20 and A21** (surgical airway, needle cricothyroidotomy). Your list was cut off there. I kept them ICP, as the source data has them.
-7. **CSM.C07** is on your list, but there is no C07 file in the scraped data. The skill is missing from the corpus.
-8. **Dose data errors found while checking:** a ketamine dose ("Up to 4mg/kg IM injection") is filed under midazolam, and the fentanyl intranasal dose ("1.5mcg/kg IN") is filed under naloxone. Both come from the scraper. The midazolam row is forced to ICP; the naloxone row is harmless scope-wise but wrong content.
+1. **Atropine:** AP may give IM/IV/IO for organophosphate or nerve agent poisoning and big black spider bite with cholinergic symptoms. Bradyarrhythmia doses stay ICP.
+2. **Morphine IV/IO** shared analgesia line shown to AP as written: confirmed.
+3. **Palliative midazolam and morphine** (SC/IM/IV) shown to AP: confirmed.
+4. **Adrenaline paediatric cardiac arrest:** AP may give IV, IO stays ICP. The calculator rows ("1:10,000 IV/IO 0.01mg/kg") are now shown to AP because the dose is the same. Rows that also carry the newborn ETT dose stay ICP. The adult "1mg IV or IO – fast push" row is shown to AP to match the monograph.
+5. **CSM.DF08** shown to both: confirmed.
+6. **CSM.A20 and A21** stay ICP.
+7. **CSM.C07** is missing from the scraped data. A rescrape is added to Phase 0 of `docs/web-port-plan.md`.
+8. **Misfiled doses fixed:** the ketamine "Up to 4mg/kg IM" dose is moved from midazolam to ketamine, and the fentanyl "1.5mcg/kg IN" dose is removed from naloxone. The fix is in `pipeline/actas/dose_tables.py` (`correct_misfiled_doses`), so a rescrape keeps it.
 
 ## Whole-document scope
 
@@ -120,10 +120,10 @@ Every line an AP-only user does not see, with the rule that hid it. Documents th
 | ICP | - Bradyarrhythmias with poor perfusion **- ICP only** | labelled ICP |
 | ICP | - **ICP:** IV / IO: 600mcg – fast push | labelled ICP |
 | ICP | - Repeat once after 3-5 minutes, if required. | continues ICP-labelled item |
-| ICP | - IV / IO / IM: initial dose 2400mcg – fast push | override: Scope PDF: atropine IV/IO is ICP; AP has IM only |
-| ICP | - IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push | override: Scope PDF: atropine IV/IO is ICP; AP has IM only |
-| ICP | - IV / IO / IM: 600mcg – fast push | override: Scope PDF: atropine IV/IO is ICP; AP has IM only |
-| ICP | - IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push | override: Scope PDF: atropine IV/IO is ICP; AP has IM only |
+| AP and ICP | - IV / IO / IM: initial dose 2400mcg – fast push | override: Oscar: AP may give atropine IM/IV/IO for organophosphate and spider bite |
+| AP and ICP | - IV / IO / IM: initial dose 50mcg/kg (max. initial dose 2400mcg) – fast push | override: Oscar: AP may give atropine IM/IV/IO for organophosphate and spider bite |
+| AP and ICP | - IV / IO / IM: 600mcg – fast push | override: Oscar: AP may give atropine IM/IV/IO for organophosphate and spider bite |
+| AP and ICP | - IV / IO / IM: 20mcg/kg (max. 600mcg) – fast push | override: Oscar: AP may give atropine IM/IV/IO for organophosphate and spider bite |
 
 ### MED 07 Ceftriaxone (Rocephin)
 
@@ -564,10 +564,10 @@ Weight-band and selector rows from `dose_lookup`. Rows for mixed-scope medicines
 | Medicine | AP and ICP | ICP only | PACER | Kept ICP because route unclear |
 |---|---|---|---|---|
 | Adenosine | 0 | 3 | 0 | 0 |
-| Adrenaline | 28 | 728 | 0 | 518 |
+| Adrenaline | 364 | 392 | 0 | 238 |
 | Amiodarone | 0 | 84 | 0 | 0 |
 | Aspirin | 2 | 0 | 0 | 0 |
-| Atropine | 0 | 12 | 0 | 6 |
+| Atropine | 3 | 9 | 0 | 3 |
 | Calcium Chloride | 0 | 1 | 0 | 0 |
 | Ceftriaxone | 5 | 1 | 0 | 0 |
 | Fentanyl | 1 | 0 | 0 | 0 |
@@ -579,14 +579,14 @@ Weight-band and selector rows from `dose_lookup`. Rows for mixed-scope medicines
 | Hydrocortisone | 0 | 4 | 0 | 0 |
 | Ibuprofen | 8 | 0 | 0 | 0 |
 | Ipratropium | 1 | 0 | 0 | 0 |
-| Ketamine | 2 | 55 | 0 | 30 |
+| Ketamine | 3 | 56 | 0 | 30 |
 | Levetiracetam | 0 | 2 | 0 | 0 |
 | Lignocaine | 0 | 6 | 0 | 0 |
 | Magnesium | 0 | 124 | 0 | 112 |
 | Methoxyflurane | 6 | 0 | 0 | 0 |
-| Midazolam | 12 | 93 | 0 | 60 |
+| Midazolam | 12 | 88 | 0 | 60 |
 | Morphine | 6 | 36 | 0 | 16 |
-| Naloxone | 1 | 1 | 0 | 0 |
+| Naloxone | 0 | 1 | 0 | 0 |
 | Normal Saline | 99 | 33 | 0 | 0 |
 | Ondansetron | 4 | 0 | 0 | 0 |
 | Oxygen | 1248 | 96 | 0 | 0 |
@@ -598,14 +598,30 @@ Weight-band and selector rows from `dose_lookup`. Rows for mixed-scope medicines
 
 Rows of mixed-scope medicines shown to AP users:
 
+- Adrenaline: 1mg IV or IO – fast push
+- Adrenaline: Adrenaline (1:10,000) IV/ IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.05mg Volume: 0.5ml
+- Adrenaline: Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.07mg Volume: 0.7ml
+- Adrenaline: Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.11 Volume: 1.1mls
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.13mg Volume: 1.3ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.15mg Volume: 1.5mls
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.17mg Volume: 1.7ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.19mg Volume: 1.9ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.21mg Volume: 2.1ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.23mg Volume: 2.3ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.25mg Volume: 2.5ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.27mg Volume: 2.7ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.33mg Volume: 3.3ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.3mg Volume: 3ml
+- Adrenaline: Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml
 - Adrenaline: IM: 0.01mg/kg (up to 50kg)
 - Adrenaline: Weight >10kg: nebulise 5ml adrenaline 1:1,000 Weight <10kg: nebulise 0.5ml/kg adrenaline 1:1,000 Make volume up to 5ml …
+- Atropine: In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.
 - Fentanyl: ##### Type Synthetic narcotic analgesic [S8] ##### Presentations 100mcg in 2mL (5mcg/0.1mL) glass ampoule ##### Actions…
 - Ketamine: 0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor
+- Ketamine: Up to 4mg/kg IM injection
 - Midazolam: 0.2mg/kg IM (max. 10mg)
 - Midazolam: Midazolam: 2.5mg – 5mg SC
 - Midazolam: Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg)
 - Morphine: Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg)
 - Morphine: Morphine: 2.5mg – 5mg SC
 - Morphine: Morphine: IM (Max 2 Doses)
-- Naloxone: 1.5mcg/kg IN, up to 100mcg.

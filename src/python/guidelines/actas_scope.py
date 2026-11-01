@@ -146,7 +146,7 @@ class Override:
 OVERRIDES: tuple[Override, ...] = (
     Override("med:03", ICP, "Scope PDF: adrenaline IV/IO with cardiac output is ICP",
              heading=r"Critically ill shocked"),
-    Override("med:05", ICP, "Scope PDF: atropine IV/IO is ICP; AP has IM only",
+    Override("med:05", BOTH, "Oscar: AP may give atropine IM/IV/IO for organophosphate and spider bite",
              heading=r"Organophosphate|spider", line=r"^\s*-\s*IV\s*/\s*IO\s*/\s*IM"),
     Override("med:20", BOTH, "Scope PDF: magnesium IV/IO for eclamptic seizure is AP",
              line=r"Seizures due to eclampsia"),
@@ -344,7 +344,7 @@ def icp_text(doc: dict, text: str | None = None) -> str:
 
 _DOSE_AP_ROUTE: dict[str, re.Pattern[str]] = {
     "adrenaline": re.compile(r"\bIM\b|nebuli[sz]|EpiPen", re.IGNORECASE),
-    "atropine": re.compile(r"\bIM\b"),
+    "atropine": re.compile(r"\bIM\b|\bMCI\b|organophosph|nerve agent|spider", re.IGNORECASE),
     "fentanyl": re.compile(r"\bIN\b|intranasal", re.IGNORECASE),
     "ketamine": re.compile(r"\bIM\b|springfus", re.IGNORECASE),
     "magnesium sulphate": re.compile(r"eclamp", re.IGNORECASE),
@@ -353,8 +353,10 @@ _DOSE_AP_ROUTE: dict[str, re.Pattern[str]] = {
     "naloxone": re.compile(r"\bIM\b|\bIN\b"),
 }
 _DOSE_TEXT_OVERRIDES: tuple[tuple[str, re.Pattern[str], str, str], ...] = (
-    ("midazolam", re.compile(r"4mg/kg IM"), ICP,
-     "ICP ketamine first-line dose misfiled under midazolam"),
+    ("adrenaline", re.compile(r"^(?![\s\S]*\b(?:ETT|infusion)\b)[\s\S]*1:10,?000\)?[^\n]*?Formula: 0\.01mg/kg"),
+     BOTH, "Oscar: AP may give IV adrenaline in paediatric cardiac arrest; IO is ICP at the same dose"),
+    ("adrenaline", re.compile(r"^\s*1mg IV or IO – fast push\s*$"), BOTH,
+     "Adult cardiac arrest dose; the monograph shows it to AP"),
 )
 _DOSE_ICP_ROUTE = re.compile(r"\bETT\b|infusion|\bIO\b", re.IGNORECASE)
 

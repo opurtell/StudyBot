@@ -229,6 +229,40 @@ def _extract_medicine_from_selectors(
     return results
 
 
+_MISFILED_DOSES: tuple[tuple[str, re.Pattern[str], str], ...] = (
+    ("Midazolam", re.compile(r"^\s*Up to 4mg/kg IM injection"), "Ketamine"),
+    ("Naloxone", re.compile(r"^\s*1\.5mcg/kg IN, up to 100mcg"), "Fentanyl"),
+)
+
+
+def correct_misfiled_doses(
+    medicine_index: Dict[str, List[Dict[str, Any]]], create_missing: bool = True
+) -> Dict[str, List[Dict[str, Any]]]:
+    """Move dose texts that name no medicine back to the medicine they belong to.
+
+    Orphan lines are grouped with the last medicine named in the bundle, so a
+    ketamine IM dose lands under midazolam and the fentanyl IN dose under
+    naloxone. Without ``create_missing`` a misfiled entry whose medicine is not
+    already present is dropped.
+    """
+    for source, pattern, target in _MISFILED_DOSES:
+        entries = medicine_index.get(source)
+        if not entries:
+            continue
+        moved = [e for e in entries if pattern.search(e.get("text", ""))]
+        if not moved:
+            continue
+        medicine_index[source] = [e for e in entries if e not in moved]
+        if target not in medicine_index and not create_missing:
+            continue
+        existing = medicine_index.setdefault(target, [])
+        texts = {e.get("text", "").strip() for e in existing}
+        for entry in moved:
+            if entry.get("text", "").strip() not in texts:
+                existing.append(entry)
+    return medicine_index
+
+
 def extract_dose_tables(
     investigation_dir: str = "data/cmgs/investigation/",
     output_path: str = "data/cmgs/raw/dose_tables.json",
@@ -277,6 +311,8 @@ def extract_dose_tables(
                 "source": entry["source"],
             }
         )
+
+    medicine_index = correct_misfiled_doses(medicine_index)
 
     result = {
         "total_dose_groups": len(all_groups),
