@@ -109,6 +109,7 @@ meRoutes.get("/", (c) => {
     signedIn: true,
     tier: user.plan,
     email: user.email,
+    isAdmin: user.isAdmin,
     quota: summariseQuota(c.env, user),
   });
 });

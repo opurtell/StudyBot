@@ -54,6 +54,8 @@
           "migrations_dir": "migrations"
         }
       ],
+      "ai": { "binding": "AI" },
+      "vectorize": [{ "binding": "VECTORIZE", "index_name": "studybot-corpus-staging" }],
       "ratelimits": [
         { "name": "RL_API", "namespace_id": "2101", "simple": { "limit": 120, "period": 60 } },
         { "name": "RL_SIGNIN_IP", "namespace_id": "2102", "simple": { "limit": 10, "period": 60 } }
@@ -80,6 +82,8 @@
           "migrations_dir": "migrations"
         }
       ],
+      "ai": { "binding": "AI" },
+      "vectorize": [{ "binding": "VECTORIZE", "index_name": "studybot-corpus-production" }],
       "ratelimits": [
         { "name": "RL_API", "namespace_id": "3101", "simple": { "limit": 120, "period": 60 } },
         { "name": "RL_SIGNIN_IP", "namespace_id": "3102", "simple": { "limit": 10, "period": 60 } }

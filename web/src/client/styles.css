@@ -39,3 +39,51 @@
     outline-offset: 2px;
   }
 }
+
+@layer components {
+  .guideline-body {
+    line-height: 1.6;
+  }
+  .guideline-body > * + * {
+    margin-top: 0.75rem;
+  }
+  .guideline-body h2,
+  .guideline-body h3 {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    margin-top: 1.75rem;
+  }
+  .guideline-body h2 {
+    font-size: 1.5rem;
+  }
+  .guideline-body h3 {
+    font-size: 1.25rem;
+  }
+  .guideline-body h4,
+  .guideline-body h5,
+  .guideline-body h6 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+  }
+  .guideline-body ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .guideline-body ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+  .guideline-body li + li {
+    margin-top: 0.25rem;
+  }
+  .guideline-body strong {
+    font-weight: 600;
+  }
+  .guideline-body a {
+    text-decoration: underline;
+  }
+}

@@ -65,7 +65,22 @@ export function Home() {
         </section>
       )}
 
-      <p className="text-sm text-on-surface-variant">The quiz is on its way. This build sets up accounts and sign-in.</p>
+      <section aria-labelledby="browse-heading" className="space-y-3">
+        <h2 id="browse-heading" className="font-headline text-xl font-semibold">
+          Read the source
+        </h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link to="/guidelines" className="rounded-sm bg-surface-container-lowest p-4 hover:bg-surface-container">
+            <span className="block font-semibold">Clinical guidelines</span>
+            <span className="text-sm text-on-surface-variant">CMGs and clinical skills, filtered to AP or ICP scope.</span>
+          </Link>
+          <Link to="/medications" className="rounded-sm bg-surface-container-lowest p-4 hover:bg-surface-container">
+            <span className="block font-semibold">Medications</span>
+            <span className="text-sm text-on-surface-variant">Medicine monographs with doses.</span>
+          </Link>
+        </div>
+        <p className="text-sm text-on-surface-variant">The quiz is on its way.</p>
+      </section>
     </div>
   );
 }

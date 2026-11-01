@@ -13,6 +13,9 @@
     "db:migrate:local": "wrangler d1 migrations apply DB --local",
     "deploy:staging": "CLOUDFLARE_ENV=staging vite build && CLOUDFLARE_ENV=staging wrangler d1 migrations apply DB --remote && wrangler deploy",
     "deploy:production": "CLOUDFLARE_ENV=production vite build && CLOUDFLARE_ENV=production wrangler d1 migrations apply DB --remote && wrangler deploy",
+    "corpus:build": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.build",
+    "corpus:load:local": "wrangler d1 execute DB --local --file corpus-build/corpus.sql",
+    "corpus:load:production": "CLOUDFLARE_ENV=production wrangler d1 execute DB --remote --file corpus-build/corpus.sql",
     "check": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
@@ -22,6 +25,7 @@
     "hono": "^4.13.16",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
     "react-router": "^8.5.1"
   },
   "devDependencies": {

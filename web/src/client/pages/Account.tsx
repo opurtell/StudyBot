@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navigate } from "react-router";
+import { CorpusAdmin } from "../components/CorpusAdmin";
 import { api } from "../lib/api";
 import { useSession } from "../lib/session";
 
@@ -38,6 +39,8 @@ export function Account() {
           Sign out
         </button>
       </section>
+
+      {me.isAdmin && <CorpusAdmin />}
 
       <section aria-labelledby="delete-heading" className="space-y-3 rounded-sm bg-surface-container-low p-5">
         <h2 id="delete-heading" className="font-headline text-xl font-semibold">

@@ -5,10 +5,12 @@ import type { AppEnv } from "../types";
 export type ErrorCode =
   | "bad_request"
   | "unauthorised"
+  | "forbidden"
   | "forbidden_origin"
   | "unsupported_media_type"
   | "rate_limited"
   | "not_found"
+  | "unavailable"
   | "internal_error";
 
 export function apiError(c: Context<AppEnv>, status: ContentfulStatusCode, code: ErrorCode, message: string) {
