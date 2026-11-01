@@ -3,8 +3,10 @@
 The Cloudflare-native web version (plan: `docs/web-port-plan.md`, review: `docs/review/web-port-review.md`).
 One Worker serves the React app as static assets and the API under `/api/*`, so the API is same-origin and needs no CORS.
 
+**Live:** https://study.paramedtools.com (production).
+
 **Status:** Phase 2 (foundations). Sign-in, accounts, the anonymous/signed-in split, rate limiting, logging and the
-AI Gateway client are built and tested. No quiz yet (Phases 3 to 5). Not deployed until the Cloudflare setup below is done.
+AI Gateway client are built and tested. No quiz yet (Phases 3 to 5).
 
 ## Layout
 
