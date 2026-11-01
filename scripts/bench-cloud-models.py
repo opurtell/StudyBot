@@ -188,7 +188,7 @@ def bench_marking(spec: str) -> dict:
     meter = Meter()
     result: dict = {"model": spec, "errors": []}
     try:
-        client.complete([{"role": "user", "content": "Reply: ready"}])
+        Meter().call(client, [{"role": "user", "content": "Reply: ready"}])
     except LLMError as exc:
         return {"model": spec, "fatal": str(exc)[:200]}
 
