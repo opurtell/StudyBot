@@ -11,6 +11,9 @@ export type ErrorCode =
   | "rate_limited"
   | "not_found"
   | "unavailable"
+  | "quota_exhausted"
+  | "unreadable_response"
+  | "upstream_error"
   | "internal_error";
 
 export function apiError(c: Context<AppEnv>, status: ContentfulStatusCode, code: ErrorCode, message: string) {

@@ -5,6 +5,17 @@ export const MODELS = {
 
 export type ModelRole = keyof typeof MODELS;
 
+export const PRICES_USD_PER_MILLION: Record<string, { input: number; output: number }> = {
+  "gemini-3.8-flash": { input: 1.5, output: 7.5 },
+  "gemini-3.5-flash-lite": { input: 0.3, output: 2.5 },
+};
+
+export function costMicros(modelId: string, usage: LlmUsage): number {
+  const price = PRICES_USD_PER_MILLION[modelId];
+  if (!price) return 0;
+  return Math.round(usage.inputTokens * price.input + (usage.outputTokens + usage.thinkingTokens) * price.output);
+}
+
 export interface LlmRequest {
   role: ModelRole;
   system: string;

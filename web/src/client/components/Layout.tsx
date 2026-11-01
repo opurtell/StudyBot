@@ -25,6 +25,9 @@ export function Layout() {
             <NavLink to="/" end className={(state) => `hidden sm:inline-block ${navClass(state)}`}>
               Home
             </NavLink>
+            <NavLink to="/quiz" className={navClass}>
+              Quiz
+            </NavLink>
             <NavLink to="/guidelines" className={navClass}>
               Guidelines
             </NavLink>

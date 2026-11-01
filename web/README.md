@@ -5,8 +5,10 @@ One Worker serves the React app as static assets and the API under `/api/*`, so 
 
 **Live:** https://study.paramedtools.com (production).
 
-**Status:** Phase 3 (corpus). Sign-in, accounts, rate limiting, logging and the AI Gateway client (Phase 2), plus the
-ACTAS guideline corpus in D1 and Vectorize with guideline, skill and medication pages (Phase 3). No quiz yet (Phases 4 and 5).
+**Status:** Phase 4 (question bank and quotas). Sign-in, accounts, rate limiting, logging and the AI Gateway client
+(Phase 2); the ACTAS guideline corpus with guideline, skill and medication pages (Phase 3); the quiz with a pre-generated
+question bank, AI marking and fresh generation within a monthly allowance, and question reporting (Phase 4). Mastery,
+history and the rest of the product surface are Phase 5.
 
 ## Layout
 
@@ -14,10 +16,11 @@ ACTAS guideline corpus in D1 and Vectorize with guideline, skill and medication 
 |---|---|
 | `src/worker/` | Hono API on Workers. `app.ts` holds the middleware chain; `auth/` holds Google sign-in and sessions |
 | `src/worker/corpus/` | Guideline and medication read APIs (`/api/guidelines`, `/api/medications`), the admin corpus API, and the Workers AI → Vectorize sync |
+| `src/worker/quiz/` | Quiz API (`/api/quiz/*`), admin question API, bank queries, quota and usage ledger. `prompts.json` holds the generation and marking prompts shared with the offline generator |
 | `src/worker/llm/gemini.ts` | Gemini through AI Gateway. Returns text **and token usage** for the future `usage_ledger` (review H-8) |
 | `src/client/` | React shell (React Router, Tailwind 4, Archival Protocol tokens, self-hosted fonts) |
 | `migrations/` | D1 migrations (`users`, `sessions`, corpus tables) |
-| `../src/python/web_corpus/` | Offline Python build that turns `data/services/actas/structured/` into `corpus-build/corpus.sql` |
+| `../src/python/web_corpus/` | Offline Python builds: `build.py` turns `data/services/actas/structured/` into `corpus-build/corpus.sql`; `questions.py` generates the question bank into `corpus-build/questions/` |
 | `test/worker/` | API tests run inside workerd with a real local D1 and the rate-limit bindings |
 | `test/client/` | jsdom tests for the pages, each with an axe accessibility check |
 | `wrangler.jsonc` | Dev defaults at the top level; `staging` and `production` under `env` |
@@ -75,6 +78,47 @@ Run from the repo root on an up-to-date `main`, with `wrangler` logged in.
 
 After a rescrape, repeat steps 3, 4 and 6.
 
+## The quiz
+
+**Who gets what**
+
+| | Questions | Marking |
+|---|---|---|
+| Guest | Library questions only. Seen questions are remembered in the browser | Reveal the reference and check your own answer |
+| Signed in | Library questions, unlimited. When none are left for the chosen filters, a freshly generated one (uses the monthly allowance) | AI marking (uses the monthly allowance), or reveal for free |
+
+- **Scope:** every question carries `vis_*` flags like the corpus chunks. A question is served only when both the question
+  and its source chunk are visible in the chosen view, so AP users never get ICP-only questions. A question that names an
+  ICP-only medicine or procedure (pattern in `prompts.json`) is hidden from AP views even if its chunk is shared.
+- **Marking** uses the question's stored source chunk only (`web/docs/prompts.md`). An unreadable reply is not scored,
+  the allowance is refunded, and it is logged as `marking_unreadable`.
+- **Allowance:** `QUOTA_GENERATIONS_PER_MONTH` / `QUOTA_MARKS_PER_MONTH`, reset each calendar month (UTC). Taken with a
+  single conditional `UPDATE`, so concurrent requests can't overshoot; refunded on any failure or duplicate.
+- **Circuit breakers:** site-wide daily caps (`DAILY_GENERATIONS_CAP`, `DAILY_MARKS_CAP`), the AI Gateway spend limit, and an
+  admin switch (**Account > Question bank > Switch off**) that stops all live AI at once. Everyone falls back to the
+  library and self-checking.
+- **Usage ledger:** every model call (including failures) writes tokens and estimated cost to `usage_ledger`.
+- **Reports:** anyone can report a question. Two different reporters (`REPORT_FLAG_THRESHOLD`), or one admin, withdraw it
+  straight away. Admins retire or restore it from **Account > Question bank**.
+- **Corpus changes:** the daily cron retires questions whose source chunk changed or disappeared, and stale questions are
+  never served even before the cron runs.
+
+### Generating the question bank (Oscar's Mac)
+
+Run from the repo root on an up-to-date `main`, after the corpus is loaded. Needs a paid-tier Gemini key in
+`config/settings.json` (`providers.google.api_key`).
+
+1. **Check the plan and cost** *(no API calls)*: `cd web && npm run bank:plan`
+2. **Trial run** *(about 20 chunks)*:
+   `PYTHONPATH=src/python python3 -m web_corpus.questions generate --yes --limit 20`
+3. **Full run:** `PYTHONPATH=src/python python3 -m web_corpus.questions generate --yes --max-usd 15`
+   *Resumable: re-running skips questions already made. Stops at the `--max-usd` cap.*
+4. **Export:** `cd web && npm run bank:export`
+   *Writes `questions.sql`, `review-sample.csv` (60 rows across scope and difficulty) and `report.json` to `corpus-build/questions/`.*
+5. **Clinical review:** Oscar rates `review-sample.csv` before anything is loaded.
+6. **Load:** `npm run bank:load:production`
+   *Rows whose source chunk doesn't match the loaded corpus are skipped, so a bank built against an old corpus can't load stale questions.*
+
 ## How sign-in works
 
 Sign-in is **Google only** (OpenID Connect, authorisation code flow with PKCE). No emails are sent and no passwords are stored.
@@ -121,6 +165,7 @@ None of this needs Workers Paid: email sending was the only part that did, and s
    - `npx wrangler secret put GEMINI_API_KEY --env staging`
      *Paid-tier key only. Free-tier data is used by Google to improve its products (review §7).*
    - `npx wrangler secret put AI_GATEWAY_TOKEN --env staging`
+   *Until `GEMINI_API_KEY` is set, AI marking and generation report themselves as switched off and the quiz runs on the library alone.*
 6. **Add GitHub settings** (repo > Settings):
    - Secrets: `CLOUDFLARE_API_TOKEN` (template "Edit Cloudflare Workers" plus D1 Edit) and `CLOUDFLARE_ACCOUNT_ID`.
    - Environments: `staging` and `production`. Give `production` a required reviewer.

@@ -16,6 +16,7 @@ export default defineConfig({
                 GOOGLE_CLIENT_ID: "test-client.apps.googleusercontent.com",
                 GOOGLE_CLIENT_SECRET: "test-google-secret",
                 GEMINI_API_KEY: "test-gemini-key",
+                AI_GATEWAY_ACCOUNT_ID: "test-account",
                 AI_GATEWAY_TOKEN: "",
               },
             },

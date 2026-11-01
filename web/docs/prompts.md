@@ -21,6 +21,11 @@ with patch('services.active.active_service', return_value=get_service('actas')):
 
 Store a `prompt_version` with every banked question and every mark, and bump it whenever either prompt changes.
 
+**In the web port the prompts live in `web/src/worker/quiz/prompts.json`** (`promptVersion` `web-1`). The Worker and the
+offline bank generator (`src/python/web_corpus/questions.py`) both read it, and `tests/web_corpus/test_questions.py`
+fails if it drifts from `agent.py`. One deliberate difference: the hard-difficulty instruction adds "Keep the question
+itself under 60 words", because Oscar's rating found hard questions too wordy (`docs/review/model-bench/README.md`).
+
 ## Generation (Gemini 3.8 Flash)
 
 1. **Send up to five candidate chunks**, labelled `[Source 1: <source_type>]` to `[Source 5: ...]`. Each chunk
@@ -62,6 +67,10 @@ The desktop app returns HTTP 502 with "The marking model returned an unreadable 
 not scored. Please try again." for case 3.
 
 ## Structured output
+
+**Web port setting:** generation always sends the schema. Marking sends `EVALUATION_SCHEMA` only when the
+`MARKING_SCHEMA` var is `on`; it ships `off`, matching the benchmarked configuration, until the benchmark is re-run
+with the schema.
 
 `complete()` in `web/src/worker/llm/gemini.ts` already accepts `responseSchema`, which sets
 `responseMimeType: application/json` and `responseJsonSchema`. Use `EVALUATION_SCHEMA` from `agent.py` for

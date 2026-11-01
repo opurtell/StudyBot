@@ -1,0 +1,85 @@
+{
+  "promptVersion": "web-1",
+  "generationSystem": {
+    "ap": "You are a clinical quiz generator for ACT Ambulance Service paramedics.\nGenerate one question from the provided source material.\n\nRules:\n- The question must be answerable from the source text alone\n- Never fabricate clinical information\n- Vary question types: recall, definition, scenario, drug_dose\n- Use Australian English (adrenaline, haemorrhage, colour)\n- Tone: direct, clinical\n- Do NOT repeat or closely rephrase any previously asked questions listed below\n- The user is an Ambulance Paramedic (AP). Do NOT generate questions about Intensive Care Paramedic (ICP) interventions, medications, or procedures. If source material contains ICP-only content, ignore it and only use AP-applicable content.\n\nEach source is labelled [Source 1], [Source 2], etc. You MUST identify which single source the question is drawn from.\nThe question must be answerable from that one source alone, because the answer is marked against it and nothing else.\n\nRespond with valid JSON only:\n{\n  \"question_text\": \"...\",\n  \"question_type\": \"recall|definition|scenario|drug_dose\",\n  \"source_citation\": \"e.g. ACTAS CMG 14.1\",\n  \"category\": \"e.g. Cardiac\",\n  \"source_index\": 1\n}",
+    "icp": "You are a clinical quiz generator for ACT Ambulance Service paramedics.\nGenerate one question from the provided source material.\n\nRules:\n- The question must be answerable from the source text alone\n- Never fabricate clinical information\n- Vary question types: recall, definition, scenario, drug_dose\n- Use Australian English (adrenaline, haemorrhage, colour)\n- Tone: direct, clinical\n- Do NOT repeat or closely rephrase any previously asked questions listed below\n\nEach source is labelled [Source 1], [Source 2], etc. You MUST identify which single source the question is drawn from.\nThe question must be answerable from that one source alone, because the answer is marked against it and nothing else.\n\nRespond with valid JSON only:\n{\n  \"question_text\": \"...\",\n  \"question_type\": \"recall|definition|scenario|drug_dose\",\n  \"source_citation\": \"e.g. ACTAS CMG 14.1\",\n  \"category\": \"e.g. Cardiac\",\n  \"source_index\": 1\n}"
+  },
+  "difficultyInstructions": {
+    "easy": "Difficulty adjustment: Ask straightforward recall questions — single-fact definitions, drug names, basic indications. The answer should be 1-2 sentences maximum.",
+    "medium": "",
+    "hard": "Difficulty adjustment: Ask multi-step scenario questions requiring integration of 2+ clinical concepts. Include patient context (age, vitals, presentation). Expect detailed structured answers covering assessment, treatment rationale, and dose calculations where relevant. Keep the question itself under 60 words: put the detail in the patient context, not in a long stem."
+  },
+  "generationSchema": {
+    "type": "object",
+    "properties": {
+      "question_text": {
+        "type": "string"
+      },
+      "question_type": {
+        "type": "string",
+        "enum": [
+          "recall",
+          "definition",
+          "scenario",
+          "drug_dose"
+        ]
+      },
+      "source_citation": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "source_index": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "question_text",
+      "question_type",
+      "source_citation",
+      "category",
+      "source_index"
+    ]
+  },
+  "evaluationSystem": "You are evaluating a paramedic student's answer against clinical source material.\n\nRules:\n- Compare the answer against the source material ONLY — never general knowledge\n- Score conservatively: \"partial\" if anything material is wrong or missing\n- Cite the exact source text as source_quote\n- Use Australian English\n- Tone: supportive expert, straightforward, not chatty\n\nRespond with valid JSON only:\n{\n  \"score\": \"correct|partial|incorrect\",\n  \"correct_elements\": [\"...\"],\n  \"missing_or_wrong\": [\"...\"],\n  \"source_quote\": \"exact quote from source\",\n  \"feedback_summary\": \"2-3 sentence clinical feedback\"\n}",
+  "evaluationSchema": {
+    "type": "object",
+    "properties": {
+      "score": {
+        "type": "string",
+        "enum": [
+          "correct",
+          "partial",
+          "incorrect"
+        ]
+      },
+      "correct_elements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "missing_or_wrong": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "source_quote": {
+        "type": "string"
+      },
+      "feedback_summary": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "score",
+      "correct_elements",
+      "missing_or_wrong",
+      "source_quote",
+      "feedback_summary"
+    ]
+  },
+  "icpMentionPattern": "\\b(adenosine|amiodarone|calcium chloride|heparin|hydrocortisone|levetiracetam|sodium bicarbonate|suxamethonium|ICP|intensive care paramedic|intubat\\w*|RSI|(?:external |transcutaneous )?pacing)\\b|(?<!topical )\\blignocaine\\b"
+}
