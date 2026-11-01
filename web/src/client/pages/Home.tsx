@@ -60,7 +60,7 @@ export function Home() {
             to="/sign-in"
             className="inline-block rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-on-primary hover:opacity-90"
           >
-            Sign in with email
+            Sign in with Google
           </Link>
         </section>
       )}

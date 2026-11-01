@@ -1,7 +1,6 @@
 import { env } from "cloudflare:workers";
 import { vi } from "vitest";
 import { app } from "../../src/worker/app";
-import { devOutbox } from "../../src/worker/auth/email";
 
 export const ORIGIN = "https://studybot.test";
 let ipCounter = 0;
@@ -24,42 +23,70 @@ export function postJson(path: string, body: unknown, opts: { ip?: string; cooki
   return call(path, { method: "POST", headers, body: JSON.stringify(body), ip: opts.ip, cookie: opts.cookie });
 }
 
-export function mockTurnstile(success = true) {
-  return vi.spyOn(globalThis, "fetch").mockImplementation(async (input) => {
+export const TEST_CLIENT_ID = "test-client.apps.googleusercontent.com";
+
+function b64url(value: string): string {
+  return btoa(value).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+export function fakeIdToken(claims: Record<string, unknown>): string {
+  return `${b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }))}.${b64url(JSON.stringify(claims))}.sig`;
+}
+
+export function mockGoogleToken(claimsFor: (nonce: string) => Record<string, unknown>, status = 200) {
+  return vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
-    if (url.startsWith("https://challenges.cloudflare.com/")) {
-      return Response.json({ success, "error-codes": success ? [] : ["invalid-input-response"] });
+    if (url === "https://oauth2.googleapis.com/token") {
+      if (status !== 200) return new Response("nope", { status });
+      const body = new URLSearchParams(String(init?.body));
+      const nonce = pendingNonces.get(body.get("code") ?? "") ?? "";
+      return Response.json({ id_token: fakeIdToken(claimsFor(nonce)) });
     }
     throw new Error(`Unexpected outbound fetch in test: ${url}`);
   });
 }
 
-export function lastLinkToken(to: string): string {
-  const message = [...devOutbox].reverse().find((m) => m.to === to.toLowerCase());
-  if (!message) throw new Error(`No email captured for ${to}`);
-  const match = message.text.match(/#token=([A-Za-z0-9_-]+)/);
-  if (!match) throw new Error("No token in email");
-  return match[1];
+const pendingNonces = new Map<string, string>();
+
+export function cookieFrom(res: Response, name: string): string | null {
+  for (const part of res.headers.getSetCookie()) {
+    const match = part.match(new RegExp(`^${name}=([^;]*)`));
+    if (match && match[1]) return `${name}=${match[1]}`;
+  }
+  return null;
 }
 
-export function sessionCookie(res: Response): string {
-  const raw = res.headers.get("set-cookie") ?? "";
-  const match = raw.match(/sb_session=([^;]+)/);
-  if (!match) throw new Error("No session cookie set");
-  return `sb_session=${match[1]}`;
+export async function startGoogle(ip?: string) {
+  const res = await call("/api/auth/google/start", { ip });
+  const location = new URL(res.headers.get("location") ?? "", ORIGIN);
+  const oauthCookie = cookieFrom(res, "sb_oauth");
+  return { res, location, oauthCookie, state: location.searchParams.get("state") ?? "", nonce: location.searchParams.get("nonce") ?? "" };
 }
 
-let emailCounter = 0;
-export function uniqueEmail(): string {
-  emailCounter += 1;
-  return `paramedic${emailCounter}-${crypto.randomUUID().slice(0, 8)}@example.com`;
+export function validClaims(nonce: string, overrides: Record<string, unknown> = {}) {
+  return {
+    iss: "https://accounts.google.com",
+    aud: TEST_CLIENT_ID,
+    sub: "google-sub-1",
+    email: "Medic@Example.com",
+    email_verified: true,
+    exp: Math.floor(Date.now() / 1000) + 3600,
+    nonce,
+    ...overrides,
+  };
 }
 
-export async function signIn(email = uniqueEmail()): Promise<{ email: string; cookie: string }> {
-  mockTurnstile(true);
-  const req = await postJson("/api/auth/magic-link", { email, turnstileToken: "ok" });
-  if (req.status !== 202) throw new Error(`magic-link returned ${req.status}`);
-  const res = await postJson("/api/auth/verify", { token: lastLinkToken(email) });
-  if (res.status !== 200) throw new Error(`verify returned ${res.status}`);
-  return { email, cookie: sessionCookie(res) };
+export async function completeGoogle(claims: (nonce: string) => Record<string, unknown>, opts: { code?: string } = {}) {
+  const started = await startGoogle();
+  const code = opts.code ?? `code-${crypto.randomUUID()}`;
+  pendingNonces.set(code, started.nonce);
+  mockGoogleToken(claims);
+  const res = await call(`/api/auth/google/callback?code=${code}&state=${started.state}`, { cookie: started.oauthCookie ?? "" });
+  return { res, session: cookieFrom(res, "sb_session") };
+}
+
+export async function signIn(sub = `sub-${crypto.randomUUID()}`, email = `${sub}@example.com`) {
+  const { res, session } = await completeGoogle((nonce) => validClaims(nonce, { sub, email }));
+  if (!session) throw new Error(`Google callback did not sign in: ${res.headers.get("location")}`);
+  return { email, cookie: session };
 }

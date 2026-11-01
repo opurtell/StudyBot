@@ -14,8 +14,8 @@ export type Me =
     };
 
 export interface PublicConfig {
-  turnstileSiteKey: string;
   environment: string;
+  devSignIn: boolean;
 }
 
 export class ApiError extends Error {
@@ -43,9 +43,7 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
 export const api = {
   config: () => request<PublicConfig>("/config"),
   me: () => request<Me>("/me"),
-  requestMagicLink: (email: string, turnstileToken: string) =>
-    request<{ ok: true }>("/auth/magic-link", { method: "POST", body: JSON.stringify({ email, turnstileToken }) }),
-  verify: (token: string) => request<{ ok: true }>("/auth/verify", { method: "POST", body: JSON.stringify({ token }) }),
+  devSignIn: () => request<{ ok: true }>("/auth/dev-sign-in", { method: "POST", body: "{}" }),
   signOut: () => request<{ ok: true }>("/auth/sign-out", { method: "POST", body: "{}" }),
   deleteAccount: () => request<{ ok: true }>("/me", { method: "DELETE" }),
 };

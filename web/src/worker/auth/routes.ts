@@ -1,106 +1,98 @@
-import { Hono } from "hono";
+import { Hono, type Context } from "hono";
+import { deleteCookie, getCookie, setCookie } from "hono/cookie";
 import { apiError, clientIp } from "../lib/http";
-import { randomToken, sha256Hex } from "../lib/crypto";
 import { summariseQuota } from "../lib/quota";
 import type { AppEnv } from "../types";
-import { buildMagicLinkEmail, sendEmail } from "./email";
-import { createSession, destroySession, upsertUserByEmail } from "./sessions";
-import { verifyTurnstile } from "./turnstile";
+import { buildAuthorisationUrl, exchangeCode, GoogleAuthError } from "./google";
+import { createSession, destroySession, secureCookies, upsertGoogleUser } from "./sessions";
 
-export const LOGIN_TOKEN_TTL_MINUTES = 15;
-export const MAX_LINKS_PER_EMAIL_PER_HOUR = 5;
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const OAUTH_COOKIE = "sb_oauth";
+const OAUTH_TTL_SECONDS = 10 * 60;
 
-export function normaliseEmail(raw: unknown): string | null {
-  if (typeof raw !== "string") return null;
-  const email = raw.trim().toLowerCase();
-  if (email.length < 3 || email.length > 254 || !EMAIL_PATTERN.test(email)) return null;
-  return email;
+function redirectUri(c: Context<AppEnv>): string {
+  return `${new URL(c.req.url).origin}/api/auth/google/callback`;
 }
 
-async function readJson(req: Request): Promise<Record<string, unknown> | null> {
-  try {
-    const body = await req.json();
-    return body && typeof body === "object" && !Array.isArray(body) ? (body as Record<string, unknown>) : null;
-  } catch {
-    return null;
-  }
+function signInFailed(c: Context<AppEnv>, reason: string) {
+  return c.redirect(`/sign-in?error=${encodeURIComponent(reason)}`, 302);
 }
 
 export const authRoutes = new Hono<AppEnv>();
 
-authRoutes.post("/magic-link", async (c) => {
-  const log = c.get("log");
-  const body = await readJson(c.req.raw);
-  if (!body) return apiError(c, 400, "bad_request", "Send a JSON body.");
-  const email = normaliseEmail(body.email);
-  if (!email) return apiError(c, 400, "invalid_email", "Enter a valid email address.");
-
-  const ip = clientIp(c);
-  const [ipLimit, emailLimit] = await Promise.all([
-    c.env.RL_SIGNIN_IP.limit({ key: `ip:${ip}` }),
-    c.env.RL_SIGNIN_EMAIL.limit({ key: `email:${await sha256Hex(email)}` }),
-  ]);
-  if (!ipLimit.success || !emailLimit.success) {
-    log.warn("signin_rate_limited", { byIp: !ipLimit.success, byEmail: !emailLimit.success });
-    return apiError(c, 429, "rate_limited", "Too many sign-in requests. Wait a minute and try again.");
+authRoutes.get("/google/start", async (c) => {
+  const { success } = await c.env.RL_SIGNIN_IP.limit({ key: `ip:${clientIp(c)}` });
+  if (!success) return signInFailed(c, "rate_limited");
+  if (!c.env.GOOGLE_CLIENT_ID) {
+    c.get("log").error("google_oauth_not_configured");
+    return signInFailed(c, "unavailable");
   }
-
-  const turnstileToken = typeof body.turnstileToken === "string" ? body.turnstileToken : "";
-  const turnstile = await verifyTurnstile(c.env.TURNSTILE_SECRET_KEY, turnstileToken, ip, c.get("requestId"));
-  if (!turnstile.success) {
-    log.warn("turnstile_failed", { codes: turnstile.errorCodes.join(",") });
-    return apiError(c, 400, "turnstile_failed", "The human check failed. Reload the page and try again.");
-  }
-
-  const now = Date.now();
-  const recent = await c.env.DB.prepare(
-    `SELECT COUNT(*) AS n FROM login_tokens WHERE email = ?1 AND created_at > ?2`,
-  )
-    .bind(email, now - 60 * 60 * 1000)
-    .first<{ n: number }>();
-  if ((recent?.n ?? 0) >= MAX_LINKS_PER_EMAIL_PER_HOUR) {
-    log.warn("signin_hourly_cap_reached");
-    return c.json({ ok: true }, 202);
-  }
-
-  const token = randomToken();
-  await c.env.DB.prepare(
-    `INSERT INTO login_tokens (token_hash, email, created_at, expires_at) VALUES (?1, ?2, ?3, ?4)`,
-  )
-    .bind(await sha256Hex(token), email, now, now + LOGIN_TOKEN_TTL_MINUTES * 60 * 1000)
-    .run();
-
-  const origin = new URL(c.req.url).origin;
-  const link = `${origin}/auth/verify#token=${token}`;
-  await sendEmail(c.env, log, buildMagicLinkEmail(email, link, LOGIN_TOKEN_TTL_MINUTES));
-  log.info("magic_link_sent");
-  return c.json({ ok: true }, 202);
+  const start = await buildAuthorisationUrl(c.env.GOOGLE_CLIENT_ID, redirectUri(c));
+  setCookie(c, OAUTH_COOKIE, JSON.stringify({ s: start.state, v: start.codeVerifier, n: start.nonce }), {
+    path: "/api/auth/google",
+    httpOnly: true,
+    secure: secureCookies(c),
+    sameSite: "Lax",
+    maxAge: OAUTH_TTL_SECONDS,
+  });
+  return c.redirect(start.url, 302);
 });
 
-authRoutes.post("/verify", async (c) => {
-  const body = await readJson(c.req.raw);
-  const token = typeof body?.token === "string" ? body.token : "";
-  if (!token || token.length > 128) {
-    return apiError(c, 400, "invalid_or_expired_link", "This sign-in link is invalid or has expired.");
+authRoutes.get("/google/callback", async (c) => {
+  const log = c.get("log");
+  const raw = getCookie(c, OAUTH_COOKIE);
+  deleteCookie(c, OAUTH_COOKIE, { path: "/api/auth/google", secure: secureCookies(c), httpOnly: true, sameSite: "Lax" });
+
+  if (c.req.query("error")) {
+    log.info("google_sign_in_cancelled", { googleError: c.req.query("error") });
+    return signInFailed(c, "cancelled");
+  }
+  let pending: { s: string; v: string; n: string } | null = null;
+  try {
+    pending = raw ? JSON.parse(raw) : null;
+  } catch {
+    pending = null;
+  }
+  const code = c.req.query("code");
+  const state = c.req.query("state");
+  if (!pending || !code || !state || state !== pending.s) {
+    log.warn("google_state_mismatch");
+    return signInFailed(c, "expired");
+  }
+
+  try {
+    const identity = await exchangeCode({
+      clientId: c.env.GOOGLE_CLIENT_ID,
+      clientSecret: c.env.GOOGLE_CLIENT_SECRET,
+      code,
+      codeVerifier: pending.v,
+      redirectUri: redirectUri(c),
+      nonce: pending.n,
+    });
+    const now = Date.now();
+    const user = await upsertGoogleUser(c.env.DB, identity, now);
+    await destroySession(c, c.get("sessionHash"));
+    await createSession(c, user.id, now);
+    log.info("signed_in", { userId: user.id, method: "google" });
+    return c.redirect("/", 302);
+  } catch (err) {
+    if (err instanceof GoogleAuthError) {
+      log.warn("google_sign_in_rejected", { reason: err.reason });
+      return signInFailed(c, err.reason === "email_not_verified" ? "unverified_email" : "failed");
+    }
+    throw err;
+  }
+});
+
+authRoutes.post("/dev-sign-in", async (c) => {
+  const host = new URL(c.req.url).hostname;
+  if (c.env.ENVIRONMENT !== "development" || (host !== "localhost" && host !== "127.0.0.1")) {
+    return apiError(c, 404, "not_found", "No such endpoint.");
   }
   const now = Date.now();
-  const claimed = await c.env.DB.prepare(
-    `UPDATE login_tokens SET used_at = ?2
-      WHERE token_hash = ?1 AND used_at IS NULL AND expires_at > ?2
-      RETURNING email`,
-  )
-    .bind(await sha256Hex(token), now)
-    .first<{ email: string }>();
-  if (!claimed) {
-    c.get("log").info("magic_link_rejected");
-    return apiError(c, 400, "invalid_or_expired_link", "This sign-in link is invalid or has expired.");
-  }
-  const user = await upsertUserByEmail(c.env.DB, claimed.email, now);
+  const user = await upsertGoogleUser(c.env.DB, { sub: "dev-user", email: "dev@localhost" }, now);
   await destroySession(c, c.get("sessionHash"));
   await createSession(c, user.id, now);
-  c.get("log").info("signed_in", { userId: user.id });
-  return c.json({ ok: true, user: { email: user.email, plan: user.plan } });
+  return c.json({ ok: true });
 });
 
 authRoutes.post("/sign-out", async (c) => {
@@ -126,7 +118,6 @@ meRoutes.delete("/", async (c) => {
   if (!user) return apiError(c, 401, "unauthorised", "Sign in first.");
   await c.env.DB.batch([
     c.env.DB.prepare(`DELETE FROM sessions WHERE user_id = ?1`).bind(user.id),
-    c.env.DB.prepare(`DELETE FROM login_tokens WHERE email = ?1`).bind(user.email),
     c.env.DB.prepare(`DELETE FROM users WHERE id = ?1`).bind(user.id),
   ]);
   await destroySession(c, null);

@@ -30,19 +30,23 @@ function toSessionUser(row: UserRow): SessionUser {
   };
 }
 
-function secureCookies(c: Context<AppEnv>): boolean {
+export function secureCookies(c: Context<AppEnv>): boolean {
   return new URL(c.req.url).protocol === "https:";
 }
 
-export async function upsertUserByEmail(db: D1Database, email: string, now: number): Promise<SessionUser> {
+export async function upsertGoogleUser(
+  db: D1Database,
+  identity: { sub: string; email: string },
+  now: number,
+): Promise<SessionUser> {
   const row = await db
     .prepare(
-      `INSERT INTO users (id, email, quota_period, created_at, last_sign_in_at)
-       VALUES (?1, ?2, ?3, ?4, ?4)
-       ON CONFLICT (email) DO UPDATE SET last_sign_in_at = excluded.last_sign_in_at
+      `INSERT INTO users (id, email, google_sub, quota_period, created_at, last_sign_in_at)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?5)
+       ON CONFLICT (google_sub) DO UPDATE SET email = excluded.email, last_sign_in_at = excluded.last_sign_in_at
        RETURNING id, email, plan, is_admin, quota_period, free_gen_used, free_eval_used`,
     )
-    .bind(crypto.randomUUID(), email, currentQuotaPeriod(new Date(now)), now)
+    .bind(crypto.randomUUID(), identity.email, identity.sub, currentQuotaPeriod(new Date(now)), now)
     .first<UserRow>();
   if (!row) throw new Error("user upsert returned no row");
   return toSessionUser(row);
@@ -96,10 +100,7 @@ export async function destroySession(c: Context<AppEnv>, idHash: string | null):
   deleteCookie(c, SESSION_COOKIE, { path: "/", secure: secureCookies(c), httpOnly: true, sameSite: "Lax" });
 }
 
-export async function purgeExpired(db: D1Database, now: number): Promise<{ sessions: number; tokens: number }> {
-  const [sessions, tokens] = await db.batch([
-    db.prepare(`DELETE FROM sessions WHERE expires_at <= ?1`).bind(now),
-    db.prepare(`DELETE FROM login_tokens WHERE expires_at <= ?1`).bind(now - 24 * 60 * 60 * 1000),
-  ]);
-  return { sessions: sessions.meta.changes ?? 0, tokens: tokens.meta.changes ?? 0 };
+export async function purgeExpired(db: D1Database, now: number): Promise<{ sessions: number }> {
+  const result = await db.prepare(`DELETE FROM sessions WHERE expires_at <= ?1`).bind(now).run();
+  return { sessions: result.meta.changes ?? 0 };
 }

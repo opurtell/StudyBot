@@ -51,20 +51,16 @@ describe("structured logger", () => {
 });
 
 describe("purgeExpired", () => {
-  it("removes expired sessions and old login tokens only", async () => {
+  it("removes expired sessions only", async () => {
     const now = Date.now();
     const userId = crypto.randomUUID();
     await env.DB.batch([
-      env.DB.prepare("INSERT INTO users (id, email, quota_period, created_at) VALUES (?, ?, '2026-11', ?)").bind(userId, `${userId}@example.com`, now),
+      env.DB.prepare("INSERT INTO users (id, google_sub, email, quota_period, created_at) VALUES (?, ?, ?, '2026-11', ?)").bind(userId, userId, `${userId}@example.com`, now),
       env.DB.prepare("INSERT INTO sessions VALUES ('old', ?, ?, ?, ?)").bind(userId, now, now - 1, now),
       env.DB.prepare("INSERT INTO sessions VALUES ('live', ?, ?, ?, ?)").bind(userId, now, now + 60_000, now),
-      env.DB.prepare("INSERT INTO login_tokens VALUES ('stale', 'x@example.com', ?, ?, NULL)").bind(now, now - 2 * 86_400_000),
-      env.DB.prepare("INSERT INTO login_tokens VALUES ('recent', 'x@example.com', ?, ?, NULL)").bind(now, now - 1000),
     ]);
     await purgeExpired(env.DB, now);
     const sessions = await env.DB.prepare("SELECT id_hash FROM sessions WHERE user_id = ?").bind(userId).all<{ id_hash: string }>();
     expect(sessions.results.map((r) => r.id_hash)).toEqual(["live"]);
-    const tokens = await env.DB.prepare("SELECT token_hash FROM login_tokens WHERE email = 'x@example.com'").all<{ token_hash: string }>();
-    expect(tokens.results.map((r) => r.token_hash)).toEqual(["recent"]);
   });
 });

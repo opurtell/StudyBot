@@ -15,7 +15,7 @@ describe("API basics", () => {
   it("exposes only public config", async () => {
     const res = await call("/api/config");
     const body = (await res.json()) as Record<string, unknown>;
-    expect(Object.keys(body).sort()).toEqual(["environment", "turnstileSiteKey"]);
+    expect(Object.keys(body).sort()).toEqual(["devSignIn", "environment"]);
   });
 
   it("returns a JSON 404 for unknown API paths", async () => {
@@ -35,20 +35,20 @@ describe("API basics", () => {
   });
 
   it("rejects state-changing requests from another origin", async () => {
-    const res = await postJson("/api/auth/magic-link", { email: "a@example.com" }, { origin: "https://evil.example" });
+    const res = await postJson("/api/auth/sign-out", {}, { origin: "https://evil.example" });
     expect(res.status).toBe(403);
   });
 
   it("rejects state-changing requests with no Origin header", async () => {
-    const res = await postJson("/api/auth/magic-link", { email: "a@example.com" }, { origin: null });
+    const res = await postJson("/api/auth/sign-out", {}, { origin: null });
     expect(res.status).toBe(403);
   });
 
   it("rejects non-JSON bodies", async () => {
-    const res = await call("/api/auth/magic-link", {
+    const res = await call("/api/auth/sign-out", {
       method: "POST",
       headers: { origin: "https://studybot.test", "content-type": "application/x-www-form-urlencoded" },
-      body: "email=a@example.com",
+      body: "x=1",
     });
     expect(res.status).toBe(415);
   });

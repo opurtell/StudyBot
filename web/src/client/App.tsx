@@ -5,7 +5,6 @@ import { Account } from "./pages/Account";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { SignIn } from "./pages/SignIn";
-import { Verify } from "./pages/Verify";
 
 export function App() {
   return (
@@ -14,7 +13,6 @@ export function App() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="sign-in" element={<SignIn />} />
-          <Route path="auth/verify" element={<Verify />} />
           <Route path="account" element={<Account />} />
           <Route path="*" element={<NotFound />} />
         </Route>
