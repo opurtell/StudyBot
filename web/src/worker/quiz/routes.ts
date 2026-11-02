@@ -411,11 +411,11 @@ quizRoutes.post("/attempts/:id/self-grade", async (c) => {
   const body = await readBody(c);
   if (!body || !isScore(body.score)) return apiError(c, 400, "bad_request", "Score must be correct, partial or incorrect.");
   const row = await c.env.DB.prepare(
-    `UPDATE attempts SET score = ?3 WHERE id = ?1 AND user_id = ?2 AND kind = 'revealed' RETURNING id`,
+    `UPDATE attempts SET score = ?3 WHERE id = ?1 AND user_id = ?2 AND kind IN ('revealed', 'marked') RETURNING id`,
   )
     .bind(c.req.param("id"), user.id, body.score)
     .first<{ id: string }>();
-  if (!row) return apiError(c, 404, "not_found", "No such revealed answer in your history.");
+  if (!row) return apiError(c, 404, "not_found", "No such answer in your history.");
   return c.json({ ok: true, score: body.score });
 });
 
