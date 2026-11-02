@@ -254,3 +254,14 @@ def test_export_names_documents_and_drops_where_questions(corpus):
 def test_generation_prompts_ask_for_titles():
     for view in ("ap", "icp"):
         assert "use its title" in qb.PROMPTS["generationSystem"][view]
+
+
+def test_icp_chunks_mostly_repeating_ap_text_across_chunk_boundaries_get_one_focus_question():
+    first = "\n".join(f"- Shared monograph line {i} about actions and uses." for i in range(8))
+    second = "\n".join(f"- Shared precaution line {i} such as myasthenia gravis." for i in range(8))
+    ap1 = _chunk("ap1", first, {"ap", "ap_pacer"}, heading="")
+    ap2 = _chunk("ap2", second, {"ap", "ap_pacer"}, heading="")
+    straddle = "\n".join(first.splitlines()[4:] + second.splitlines()[:4] + ["- Torsades de pointes **- ICP only**"])
+    icp = _chunk("icp1", straddle, {"icp", "icp_pacer"}, heading="")
+    tasks = {t.chunk.id: t for t in qb.plan(corpus_build.Corpus("v", "t", None, [], [ap1, ap2, icp]))}
+    assert tasks["icp1"].focus == ("- Torsades de pointes **- ICP only**",)

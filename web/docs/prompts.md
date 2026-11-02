@@ -33,6 +33,10 @@ Because models still slip, both paths also rewrite codes deterministically: `nam
 (CMG 31)" using the corpus titles. The export also drops "which guideline contains…" questions. Shared cases:
 `web/test/fixtures/naming-cases.json`.
 
+Also from that review: a magnesium precaution APs study was shown only to ICPs, because the ICP view of MED 20 packs
+its chunks at different boundaries, so the ICP chunk straddled two AP chunks and wasn't recognised as a twin. An ICP-only
+chunk whose text is at least half found in the document's AP chunks now gets one question on its ICP-only lines.
+
 ## Generation (Gemini 3.8 Flash)
 
 1. **Send up to five candidate chunks**, labelled `[Source 1: <source_type>]` to `[Source 5: ...]`. Each chunk

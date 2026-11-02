@@ -48,6 +48,7 @@ MIN_CHARS = 150
 FULL_SET_CHARS = 400
 NEAR_DUPLICATE = 0.8
 TWIN_SIMILARITY = 0.85
+SHARED_SHARE = 0.5
 MIN_FOCUS_CHARS = 30
 EST_INPUT_TOKENS = 750
 EST_OUTPUT_TOKENS = 450
@@ -97,30 +98,38 @@ def _is_twin(chunk: Chunk, sibling: Chunk) -> bool:
     return bool(theirs) and all(line in own for line in theirs)
 
 
-def icp_focus(chunk: Chunk, siblings: list[Chunk]) -> tuple[str, ...] | None:
-    """For an ICP-only chunk that repeats an AP chunk of the same section, the lines only ICPs see.
+def icp_focus(chunk: Chunk, siblings: list[Chunk], doc_lines: frozenset[str] = frozenset()) -> tuple[str, ...] | None:
+    """For an ICP-only chunk that mostly repeats text APs also see, the lines only ICPs see.
 
-    Returns None when the chunk has no AP twin, so it is planned normally.
+    A chunk counts as a repeat when it nearly matches or contains an AP chunk of the same section, or when at least
+    half its text appears in the document's AP chunks (the ICP view packs chunks at different boundaries, so a twin
+    can straddle two AP chunks). Questions on the shared text would otherwise be hidden from APs who study it too.
+    Returns None when the chunk is mostly ICP-only, so it is planned normally.
     """
-    twins = [s for s in siblings if _is_twin(chunk, s)]
-    if not twins:
+    lines = _lines(chunk.text)
+    shared = set(doc_lines) | {line for s in siblings for line in _lines(s.text)}
+    total = sum(len(line) for line in lines)
+    repeated = sum(len(line) for line in lines if line in doc_lines)
+    if not any(_is_twin(chunk, s) for s in siblings) and (not total or repeated / total < SHARED_SHARE):
         return None
-    shared = {line.strip() for twin in twins for line in twin.text.splitlines()}
-    return tuple(line.strip() for line in chunk.text.splitlines() if line.strip() and line.strip() not in shared)
+    return tuple(line for line in lines if line not in shared)
 
 
 def plan(corpus: Corpus) -> list[Task]:
     ap_sections: dict[tuple[str, str], list[Chunk]] = {}
+    ap_lines: dict[str, set[str]] = {}
     for chunk in corpus.chunks:
         if _ap_visible(chunk):
             ap_sections.setdefault((chunk.document_id, chunk.heading), []).append(chunk)
+            ap_lines.setdefault(chunk.document_id, set()).update(_lines(chunk.text))
     tasks = []
     for chunk in corpus.chunks:
         diffs = difficulties_for(chunk)
         if not diffs:
             continue
         if not _ap_visible(chunk):
-            focus = icp_focus(chunk, ap_sections.get((chunk.document_id, chunk.heading), []))
+            focus = icp_focus(chunk, ap_sections.get((chunk.document_id, chunk.heading), []),
+                              frozenset(ap_lines.get(chunk.document_id, ())))
             if focus is not None:
                 if sum(len(line) for line in focus) >= MIN_FOCUS_CHARS:
                     tasks.append(Task(chunk, gen_view_for(chunk), ("medium",), focus))
