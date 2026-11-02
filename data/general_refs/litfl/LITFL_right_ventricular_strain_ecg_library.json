@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_right_ventricular_strain_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Right Ventricular Strain",
+  "section": "ECGs",
+  "url": "https://litfl.com/right-ventricular-strain-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Right Ventricular Strain\" by Ed Burns, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/right-ventricular-strain-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "86de07b7b9d87b0a2d33d7fd8045d75a1ac6fac7c45b662529bcff845659fa0c",
+  "content_markdown": "Right ventricular strain is a repolarisation abnormality due to right ventricular hypertrophy (RVH) or dilatation.\n\n##### ECG Features\n\nST depression and T wave inversion in leads corresponding to the right ventricle:\n\n- Right precordial leads V1-3 +/- V4\n\n- Inferior leads II, III, aVF, often most pronounced in lead III as this is the most rightward facing lead\n\nAssociated features often include those seen in RVH:\n\n- Right axis deviation\n\n- Dominant R wave in V1\n\n- Dominant S wave in V5 or V6\n\nCompare this to the left ventricular strain pattern, where ST/T-wave changes are present in the left ventricular leads (I, aVL, V5-6).\n\n##### Causes\n\nAssociated with increased pulmonary artery pressures in the setting of acute or chronic right ventricular hypertrophy or dilatation:\n\n- Pulmonary hypertension\n\n- Mitral stenosis\n\n- Pulmonary embolism\n\n- Chronic lung disease (cor pulmonale)\n\n- Congenital heart disease (e.g. Tetralogy of Fallot, pulmonary stenosis)\n\n- Arrhythmogenic right ventricular dysplasia (ARVD)\n\n##### ECG Examples\n\n###### Example 1\n\nRight ventricular strain pattern due to RVH:\n\n- ST depression and T-wave inversion in V1-4 and lead III\n\n- Other features of RVH are present, including right axis deviation, and a dominant R wave in V1\n\n###### Example 2\n\nRight ventricular strain pattern due to acute right ventricular dilatation:\n\n- T-wave inversions are seen in the right precordial (V1-4) and inferior leads (III, aVF)\n\n- This patient had a massive pulmonary embolism\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_biatrial_enlargement_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Biatrial Enlargement",
+  "section": "ECGs",
+  "url": "https://litfl.com/biatrial-enlargement-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Biatrial Enlargement\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/biatrial-enlargement-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "bb52ba003c2fc47b4b07dc30bd3d7f9c63b58e7fe6e0c59530a74e74fbd67f19",
+  "content_markdown": "To best understand ECG features of biatrial enlargement, it is recommended that you first review ECG changes seen in left atrial enlargement and right atrial enlargement.\n\n##### Biatrial Enlargement Definition\n\n- Biatrial enlargement is diagnosed when criteria for both right and left atrial enlargement are present on the same ECG.\n- The diagnosis of biatrial enlargement requires criteria for LAE and RAE to be met in either lead II, lead V1 or a combination of leads\n\n##### ECG Criteria for Biatrial Enlargement\n\nThe spectrum of P-wave changes in leads II and V1 with right, left, and biatrial enlargement is summarised below:\n\n##### In lead II\n\nBifid P wave with\n\n- Amplitude ≥ 2.5mm AND\n- Duration ≥ 120 ms\n\n##### In V1/V2\n\nBiphasic P waves with\n\n- Initial positive deflection ≥ 1.5mm tall AND\n- Terminal negative deflection ≥ 1mm deep AND\n- Terminal negative deflection ≥ 40 ms duration\n\n##### Combination criteria\n\n- P wave positive deflection ≥ 1.5 mm in leads V1 or V2 AND\n- Notched P waves with duration >120 ms in limb leads, V5 or V6\n\n#### Causes of Biatrial Enlargement\n\n###### Combination of both left and right atrial enlargement.\n\nRight atrial enlargement\n\n- Pulmonary hypertension due to:\n- Chronic lung disease (cor pulmonale)\n- Tricuspid stenosis\n- Congenital heart disease (pulmonary stenosis, Tetralogy of Fallot)\n- Primary pulmonary hypertension\n\nLeft Atrial Enlargement\n\n- Mitral valve disease\n- Aortic valve disease\n- Hypertension\n- Aortic stenosis\n- Mitral incompetence\n- Hypertrophic cardiomyopathy (HOCM)\n\n#### ECG Examples\n\n###### Biatrial enlargement:\n\n- Lead II: Bifid P wave with Amplitude ≥ 2.5mm AND Duration ≥ 120 ms\n- P wave positive deflection ≥ 1.5 mm in lead V2\n- Leads V5 and V6: Notched P waves with duration >120 ms in limb leads\n\n###### Example 2\n\nBiatrial enlargement due to idiopathic cardiomyopathy:\n\n- Biphasic P waves in V1 with a very tall positive deflection (almost 3 mm in height!) and a negative deflection that is both deep (> 1 mm) and wide (> 40 ms).\n\n###### Biatrial enlargement:\n\n- P waves in lead II are tall (> 2.5mm) and wide (> 120 ms).\n- P waves in V2 are tall (> 1.5 mm), while the terminal negative portion of V1 is deep (> 1mm) and wide (> 40 ms).\n"
+}

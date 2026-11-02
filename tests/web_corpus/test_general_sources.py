@@ -45,6 +45,44 @@ def test_litfl_links_skip_indexes_quizzes_and_duplicates():
                                     "https://litfl.com/wellens-syndrome-ecg-library/"]
 
 
+LITFL_INDEX = """<div class="entry-content"><h2>ECG Waves</h2><a href="https://litfl.com/p-wave-ecg-library/">P</a>
+<a href="https://litfl.com/ecg-exam-template/">t</a><a href="https://litfl.com/paediatric-ecg-basics/">p</a>
+<h2>Search the ECG Library (with Ninja hidden keywords)</h2><a href="https://litfl.com/john-hay/">eponym</a>
+""" + "x" * 600 + """<aside class="litfl-cc"><a href="https://litfl.com/course/">course</a></aside></div>"""
+
+
+def test_litfl_index_links_stop_at_the_hidden_keyword_block():
+    assert gs.litfl_links(LITFL_INDEX) == ["https://litfl.com/p-wave-ecg-library/"]
+
+
+def test_litfl_pages_end_before_course_and_author_boxes_and_bold_paragraphs_become_headings():
+    html = """<div class="entry-content"><h5>ECG features</h5><p>Peaked T waves are an early sign of raised potassium,
+    followed by PR prolongation, P wave flattening and QRS widening as the level rises further.</p>
+    <p>Look at aVR. [PMID 18180024]</p><p>ECG 1</p>
+    <p class="wp-block-paragraph"><strong>Related Topics</strong></p><ul><li>Hypokalaemia</li></ul>
+    <p><strong>References</strong></p><ul><li>Smith. A paper. PMID 1</li></ul>
+<h5>Clinical Cases</h5><ul><li>ECG Top 100 – Case 010</li></ul>
+    <h5>Advanced Reading</h5><ul><li>A textbook</li></ul><h2>Critical Care</h2><p>Compendium</p><p>…more CCC</p>
+    <p>Thanks to Dr Someone, FACEM, for providing this ECG.</p><p>Image Credit: a blog</p>""" + " " * 600 + """
+    <aside class="litfl-cc"><span>Start learning for free</span></aside><div class="m-a-box">MBBS FACEM bio</div></div>
+    <footer><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC</a></footer>"""
+    md = gs.clean(gs.html_to_markdown(gs.promote_bold_paragraphs(gs.extract_main_html(html))))
+    assert "Peaked T waves" in md
+    assert "Look at aVR.\n" in md
+    for gone in ("Related", "Hypokalaemia", "PMID", "ECG 1", "Case 010", "textbook", "Compendium", "more CCC", "Thanks to", "Image Credit",
+                 "Start learning", "MBBS"):
+        assert gone not in md
+    assert gs.litfl_licensed(html)
+    assert not gs.litfl_licensed(html.replace("by-nc-sa", "by-nc-nd"))
+    assert not gs.litfl_licensed(html.split("<footer>")[0] + '<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">')
+
+
+def test_page_authors_are_deduplicated_across_meta_tags():
+    html = ('<meta name="author" content="Ed Burns"><meta name="author" content="Robert Buttner">'
+            '<meta name="author" content="Ed Burns and Robert Buttner" />')
+    assert gs.page_authors(html) == "Ed Burns and Robert Buttner"
+
+
 def _general_doc(source="litfl", doc_id="LITFL_atrial_flutter", **overrides):
     md = gs.clean(gs.html_to_markdown(gs.extract_main_html(PAGE)))
     src = gs.SOURCES[source]

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_beta_blocker_and_calcium_channel_blocker_toxicity",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Beta-blocker and Calcium-channel blocker toxicity",
+  "section": "ECGs",
+  "url": "https://litfl.com/beta-blocker-and-calcium-channel-blocker-toxicity/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Beta-blocker and Calcium-channel blocker toxicity\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/beta-blocker-and-calcium-channel-blocker-toxicity/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "65ccf3d4e8c3af06c8b88c83d76bec2b6541d0459e4256352af3df6c6cbe6cd5",
+  "content_markdown": "##### Relevant agents\n\n- Beta-blockers: Atenolol, metoprolol, propranolol, sotalol\n\n- Cardioselective calcium-channel blockers: Verapamil and diltiazem\n\n##### Effects on the ECG\n\n- Sinus bradycardia\n\n- 1st degree, 2nd degree and 3rd degree AV block\n\n- Junctional bradycardia\n\n- Ventricular bradycardia\n\nA prolonged PR interval is an early sign of beta-blocker or calcium-channel blocker toxicity — even in the absence of significant bradycardia.\n\n##### Specific Agents\n\nTwo beta-blockers have additional important toxic effects:\n\n###### Propanolol:\n\n- Propranolol behaves more like a tricyclic antidepressant in overdose than a beta-blocker, due to its blockade of myocardial and CNS fast sodium channels\n\n- Propranolol toxicity is associated with QRS widening and a positive R’ wave in aVR (signs of sodium channel blockade), which portend the onset of coma, seizures, hypotension and ventricular arrhythmias\n\n###### Sotalol\n\n- Sotalol blocks myocardial potassium channels, causing QT prolongation and Torsades de Pointes in overdose\n\n##### ECG Examples\n\n###### Sinus bradycardia with 1st-degree AV block:\n\n- Heart rate 45 bpm\n\n- PR interval 240 ms\n\nThis type of ECG pattern is commonly seen in the early stages of beta-blocker / calcium-channel blocker poisoning.\n\n###### Slow junctional rhythm:\n\n- Regular rhythm at 30 bpm\n\n- Narrow QRS complexes\n\n- No visible P waves\n\n###### Complete heart block:\n\n- Sinus rhythm – P waves occur at a rate of around 90 bpm\n\n- 3rd degree AV block – there is no relationship between the P waves and QRS complexes\n\n- Slow escape rhythm (30 bpm) with a RBBB morphology – this could be either a ventricular escape rhythm or a slow junctional rhythm with RBBB\n\n###### Example 4\n\nThis ECG demonstrates the key features of sotalol overdose:\n\n- Sinus bradycardia\n\n- Very long QT interval (~600ms)\n\nNB. This patient is at significant risk of Torsades de Pointes.\n\n###### Example 5\n\nThis ECG demonstrates some of the key features of propranolol overdose:\n\n- 1st degree AV block\n\n- Signs of sodium-channel blockade: QRS broadening (> 100 ms) and positive R’ wave in aVR (> 3mm)\n\nNB. Normally the heart rate would be slower than this in a propranolol overdose (this is actually an ECG of flecainide poisoning — another sodium-channel blocking agent).\n"
+}

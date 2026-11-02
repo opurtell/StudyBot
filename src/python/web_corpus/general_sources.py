@@ -32,6 +32,7 @@ from paths import GENERAL_REFS_DIR
 SOURCE_TYPE = "general_reference"
 USER_AGENT = "StudyBot-corpus-fetch/1.0 (free non-commercial paramedic study app; https://study.paramedtools.com)"
 REQUEST_DELAY = 1.0
+RETRY_AFTER = 15.0
 MIN_DOC_CHARS = 300
 
 
@@ -82,15 +83,15 @@ OPENRN_BOOKS = (
 )
 PRESSBOOKS_ROOT = "https://wtcs.pressbooks.pub"
 LITFL_ROOT = "https://litfl.com"
-LITFL_INDEXES = ("/ecg-library/", "/ecg-library/basics/", "/ecg-library/diagnosis/")
+LITFL_INDEXES = ("/ecg-library/basics/", "/ecg-library/diagnosis/")
 
 EXCLUDED_HEADING = re.compile(
     r"\b(medications?|medicines?|pharmacolog\w*|drugs?|doses?|dosing|treatments?|management|managing|interventions?"
-    r"|nursing|nclex|learning activit\w*|learning objectives?|glossary|references?|further reading|bibliography"
+    r"|nursing|nclex|learning activit\w*|learning objectives?|glossary|references?|(?:advanced|further) reading|bibliography"
     r"|patient education|health teaching|care plans?|planning|implementation|evaluation|outcome identification"
     r"|expected outcomes|critical thinking|case stud\w*|clinical judg\w*|checklists?|procedures?|therap\w*|surg\w*"
     r"|related|see also|acknowledg\w*|authors?|credits?|resources|attributions?|licen[cs]e|quiz\w*|prevention"
-    r"|precautions|documentation|delegation|safety considerations)\b",
+    r"|precautions|documentation|delegation|safety considerations|associated persons|(?:clinical |ecg )?cases?$|critical care)\b",
     re.IGNORECASE,
 )
 EXCLUDED_CHAPTER = re.compile(
@@ -98,7 +99,10 @@ EXCLUDED_CHAPTER = re.compile(
     r"|references|acknowledg\w*|index|licen[cs]e|version history|review)\b",
     re.IGNORECASE,
 )
-EXCLUDED_LITFL_SLUG = re.compile(r"(^ecg-library|^top-\d+|quiz|^ecg-case|^ecg-exigency|^category|^tag|^author|^about)")
+EXCLUDED_LITFL_SLUG = re.compile(r"(^ecg-library|^top-\d+|quiz|^ecg-case|^ecg-exigency|^category|^tag|^author|^about"
+                                 r"|^ecg-exam-template|video-lectures|online-ecg-courses|^super-axis-man|^omi-replacing|^paediatric-ecg-basics)")
+LITFL_INDEX_END = re.compile(r"<h[1-6][^>]*>(?:(?!</h).)*?(?:Search the ECG Library|Advanced Reading|Further Reading)", re.S)
+LITFL_LICENCE = re.compile(r"<a href=\"https://creativecommons\.org/licenses/by-nc-sa/4\.0/?\"[^>]*rel=\"license\"")
 
 _SKIP_TAGS = {"script", "style", "figure", "figcaption", "img", "iframe", "nav", "aside", "footer", "form", "button",
               "svg", "noscript", "video", "audio", "picture", "header", "select", "math"}
@@ -189,6 +193,9 @@ def html_to_markdown(html: str) -> str:
 
 
 _MD_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+_JUNK_LINE = re.compile(r"^(?:image credit|ecg courtesy|(?:many |with )?thanks to\b.*\b(?:ecg|image|tracing)|…\s*more\b|\.\.\.\s*more\b"
+                        r"|ecg \d+[a-z]?$)", re.IGNORECASE)
+_PMID = re.compile(r"\s*\[PMID:? \d+\]")
 
 
 def keep_recognition_sections(markdown: str) -> str:
@@ -202,8 +209,8 @@ def keep_recognition_sections(markdown: str) -> str:
                 dropping = None
             if dropping is None and EXCLUDED_HEADING.search(match.group(2)):
                 dropping = level
-        if dropping is None:
-            out.append(line)
+        if dropping is None and not _JUNK_LINE.match(line.strip()):
+            out.append(_PMID.sub("", line))
     return re.sub(r"\n{3,}", "\n\n", "\n".join(out)).strip() + "\n"
 
 
@@ -273,7 +280,7 @@ class Fetcher:
         self.delay = delay
         self.last = 0.0
 
-    def get(self, url: str) -> str:
+    def get(self, url: str, retry_after: float = RETRY_AFTER) -> str:
         wait = self.last + self.delay - time.monotonic()
         if wait > 0:
             time.sleep(wait)
@@ -281,8 +288,13 @@ class Fetcher:
         try:
             with urllib.request.urlopen(req, timeout=60) as res:
                 return res.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (403, 429) or not retry_after:
+                raise
         finally:
             self.last = time.monotonic()
+        time.sleep(retry_after)
+        return self.get(url, retry_after=0)
 
     def get_json(self, url: str):
         return json.loads(self.get(url))
@@ -350,7 +362,8 @@ def fetch_openrn(fetcher: Fetcher, out_dir: Path, limit: int | None, fetched_at:
 
 
 _MAIN_PATTERNS = (
-    re.compile(r"<div[^>]+class=\"[^\"]*\bentry-content\b[^\"]*\"[^>]*>(.*?)<(?:footer|div[^>]+class=\"[^\"]*\b(?:sharedaddy|post-tags|entry-footer|jp-relatedposts)\b)", re.S),
+    re.compile(r"<div[^>]+class=\"[^\"]*\bentry-content\b[^\"]*\"[^>]*>(.*?)<(?:footer|aside[^>]+class=\"[^\"]*\blitfl-cc\b"
+               r"|div[^>]+class=\"[^\"]*\b(?:sharedaddy|post-tags|entry-footer|jp-relatedposts|molongui-clearfix|m-a-box)\b)", re.S),
     re.compile(r"<section[^>]+data-type=\"chapter\"[^>]*>(.*?)</section>\s*(?:</div>|<nav)", re.S),
     re.compile(r"<article\b[^>]*>(.*?)</article>", re.S),
     re.compile(r"<main\b[^>]*>(.*?)</main>", re.S),
@@ -376,14 +389,29 @@ def page_title(html: str) -> str:
 
 
 def page_authors(html: str) -> str | None:
-    names = [unescape(n).strip() for n in re.findall(r"<meta name=\"author\" content=\"([^\"]+)\"", html, re.I)]
-    names = [n for n in names if n and n.lower() not in ("litfl", "admin")]
-    return ", ".join(dict.fromkeys(names)) or None
+    names: list[str] = []
+    for content in re.findall(r"<meta name=\"author\" content=\"([^\"]+)\"", html, re.I):
+        names.extend(n.strip() for n in re.split(r",|\band\b", unescape(content)))
+    names = list(dict.fromkeys(n for n in names if n and n.lower() not in ("litfl", "admin")))
+    if len(names) < 2:
+        return names[0] if names else None
+    return f"{', '.join(names[:-1])} and {names[-1]}"
+
+
+def promote_bold_paragraphs(html: str) -> str:
+    return re.sub(r"<p\b[^>]*>\s*<strong>([^<]{1,80})</strong>\s*</p>", r"<h6>\1</h6>", html)
+
+
+def litfl_licensed(html: str) -> bool:
+    footer = re.search(r"<footer\b", html)
+    return bool(footer and LITFL_LICENCE.search(html, footer.start()))
 
 
 def litfl_links(html: str) -> list[str]:
     links: list[str] = []
-    for href in re.findall(r"href=\"(https://litfl\.com/[a-z0-9-]+/)\"", extract_main_html(html)):
+    main = extract_main_html(html)
+    end = LITFL_INDEX_END.search(main)
+    for href in re.findall(r"href=\"(https://litfl\.com/[a-z0-9-]+/)\"", main[:end.start()] if end else main):
         slug = href.rstrip("/").rsplit("/", 1)[-1]
         if EXCLUDED_LITFL_SLUG.search(slug) or href in links:
             continue
@@ -410,7 +438,8 @@ def fetch_litfl(fetcher: Fetcher, out_dir: Path, limit: int | None, fetched_at: 
         except urllib.error.URLError as exc:
             print(f"skip {url}: {exc}", file=sys.stderr)
             continue
-        if "ECG" not in html or "creativecommons.org/licenses/by-nc-sa" not in html.lower():
+        if "ECG" not in html or not litfl_licensed(html):
+            print(f"skip {url}: no ECG content or no CC BY-NC-SA footer", file=sys.stderr)
             continue
         title = page_title(html)
         slug = url.rstrip("/").rsplit("/", 1)[-1]
@@ -424,7 +453,7 @@ def fetch_litfl(fetcher: Fetcher, out_dir: Path, limit: int | None, fetched_at: 
             section="ECGs",
             url=url,
             attribution=litfl_attribution(title, page_authors(html), url),
-            markdown=html_to_markdown(extract_main_html(html)),
+            markdown=html_to_markdown(promote_bold_paragraphs(extract_main_html(html))),
             fetched_at=fetched_at,
         )
         if doc:

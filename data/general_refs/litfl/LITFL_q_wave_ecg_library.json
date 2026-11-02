@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_q_wave_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Q Wave",
+  "section": "ECGs",
+  "url": "https://litfl.com/q-wave-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Q Wave\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/q-wave-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "c098a86330f214b77f0a325666643f03cce9ab2102b183e0690369a05e9f911e",
+  "content_markdown": "#### The Q Wave\n\nA Q wave is any negative deflection that precedes an R wave\n\n- The Q wave represents the normal left-to-right depolarisation of the interventricular septum\n\n- Small ‘septal’ Q waves are typically seen in the left-sided leads (I, aVL, V5 and V6)\n\n#### Q waves in different leads\n\n- Small Q waves are normal in most leads\n\n- Deeper Q waves (>2 mm) may be seen in leads III and aVR as a normal variant\n\n- Under normal circumstances, Q waves are not seen in the right-sided leads (V1-3)\n\n#### Pathological Q Waves\n\nQ waves are considered pathological if:\n\n- > 40 ms (1 mm) wide\n\n- > 2 mm deep\n\n- > 25% of depth of QRS complex\n\n- Seen in leads V1-3\n\nPathological Q waves usually indicate current or prior myocardial infarction.\n\n#### Differential Diagnosis\n\n- Myocardial infarction\n\n- Cardiomyopathies — Hypertrophic (HCM), infiltrative myocardial disease\n\n- Rotation of the heart — Extreme clockwise or counter-clockwise rotation\n\n- Lead placement errors — e.g. upper limb leads placed on lower limbs\n\n#### Loss of normal Q waves\n\n- The absence of small septal Q waves in leads V5-6 should be considered abnormal.\n\n- Absent Q waves in V5-6 is most commonly due to LBBB.\n\n##### Example 1\n\n- Inferior Q waves (II, III, aVF) with ST elevation due to acute MI\n\n##### Example 2\n\n- Inferior Q waves (II, III, aVF) with T-wave inversion due to previous MI\n\n##### Example 3\n\n- Lateral Q waves (I, aVL) with ST elevation due to acute MI\n\n##### Example 4\n\n- Anterior Q waves (V1-4) with ST elevation due to acute MI\n\n###### Example 5\n\n- Anterior Q waves (V1-4) with T-wave inversion due to recent MI\n\n##### ECG Library Basics\n\n- P Wave\n\n- PR Interval\n\n- PR Segment\n\n- Q Wave\n\n- QRS Segment\n\n- QT Interval\n\n- J Point\n\n- ST Segment\n\n- R Wave\n\n- T Wave\n\n- U Wave\n\n- Osborn Wave\n\n- Epsilon Wave\n\n- Delta Wave\n"
+}

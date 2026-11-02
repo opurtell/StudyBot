@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_low_qrs_voltage_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Low QRS Voltage",
+  "section": "ECGs",
+  "url": "https://litfl.com/low-qrs-voltage-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Low QRS Voltage\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/low-qrs-voltage-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "881328ea9973cebed75fd3c26c3701410aafaa4a4799159edfe6ef9753ca144a",
+  "content_markdown": "##### Diagnostic criteria\n\n###### The QRS is said to be low voltage when:\n\n- The amplitudes of all the QRS complexes in the limb leads are < 5 mm; or\n\n- The amplitudes of all the QRS complexes in the precordial leads are < 10 mm\n\n##### Mechanisms\n\nLow voltage is produced by:\n\n- The “damping” effect of increased layers of fluid, fat or air between the heart and the recording electrode\n\n- Loss of viable myocardium\n\n- Diffuse infiltration or myxoedematous involvement of the heart\n\n##### Causes\n\nThe most important cause is massive pericardial effusion, which produces a triad of:\n\n- Low voltage\n\n- Tachycardia\n\n- Electrical alternans\n\nPatients with this triad need to be immediately assessed for clinical or echocardiographic evidence of tamponade.\n\n##### Other causes of low voltage include:\n\n- Fluid: Pericardial effusion; Pleural effusion\n\n- Fat: Obesity\n\n- Air: Emphysema; Pneumothorax\n\n- Infiltrative / Connective Tissue Disorders\n\n  - Myxoedema\n\n  - Infiltrative myocardial diseases — i.e. restrictive cardiomyopathy due to amyloidosis, sarcoidosis, haemochromatosis\n\n  - Constrictive pericarditis\n\n  - Scleroderma\n\n- Loss of viable myocardium:\n\n  - Previous massive MI\n\n  - End-stage dilated cardiomyopathy\n\n##### ECG Examples\n\n###### Massive Pericardial Effusion:\n\n- Characteristc triad of tachycardia, low voltage QRS and electrical alternans\n\n###### Prior Massive Anterior MI:\n\n- Low QRS voltage in V1-6. This diffuse loss of R wave height suggests extensive myocardial loss from a prior anterior MI.\n\n- There is also biphasic anterior T waves (Wellens syndrome) indicating new critical occlusion of the LAD artery\n\n###### Emphysema:\n\n- Low voltages in the limb leads is classically seen in patients with emphysema.\n\n- Other assocaited ECG features of emphysema include:\n\n  - Right axis deivation\n\n  - Peaked P waves (P pulmonale)\n\n  - Clockwise rotation (persistent S wave in V6)\n"
+}

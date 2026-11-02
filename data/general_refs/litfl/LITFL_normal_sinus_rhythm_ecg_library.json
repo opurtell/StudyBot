@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_normal_sinus_rhythm_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Normal Sinus Rhythm",
+  "section": "ECGs",
+  "url": "https://litfl.com/normal-sinus-rhythm-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Normal Sinus Rhythm\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/normal-sinus-rhythm-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "d09f5fdb052b68600efecc8c1133d64ed956f8480a5ae4fa22b9d2cd5ac2b927",
+  "content_markdown": "##### Overview of normal sinus rhythm (NSR)\n\n- The default heart rhythm\n\n- Pacemaking impulses arise from the sino-atrial node and are transmitted to the ventricles via the AV-node and His-Purkinje system\n\n- This results in a regular, narrow-complex heart rhythm at 60-100 bpm\n\n##### ECG features of normal sinus rhythm\n\n- Regular rhythm at a rate of 60-100 bpm (or age-appropriate rate in children)\n\n- Each QRS complex is preceded by a normal P wave\n\n- Normal P wave axis: P waves upright in leads I and II, inverted in aVR\n\n- The PR interval remains constant\n\n- QRS complexes < 100 ms wide (unless co-existent interventricular conduction delay present)\n\n##### Normal heart rates in children\n\n- Newborn: 110 – 150 bpm\n\n- 2 years: 85 – 125 bpm\n\n- 4 years: 75 – 115 bpm\n\n- 6 years+: 60 – 100 bpm\n\n##### Variations on sinus rhythm\n\n- Sinus tachycardia = sinus rhythm with resting heart rate > 100 bpm in adults, or above the normal range for age in children\n\n- Sinus bradycardia = sinus rhythm with resting heart rate < 60 bpm in adults, or below the normal range for age in children\n\n- Sinus arrhythmia = sinus rhythm with a beat-to-beat variation in the P-P interval (the time between successive P waves), producing an irregular ventricular rate\n\n##### Example ECG\n\n###### Normal sinus rhythm in a healthy 18-year old male:\n\n- Regular rhythm at 84 bpm.\n\n- Normal P wave morphology and axis (upright in I and II, inverted in aVR)\n\n- Narrow QRS complexes (< 100 ms wide)\n\n- Each P wave is followed by a QRS complex\n\n- The PR interval is constant\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_carbamazepine_cardiotoxicity_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Carbamazepine Cardiotoxicity",
+  "section": "ECGs",
+  "url": "https://litfl.com/carbamazepine-cardiotoxicity-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Carbamazepine Cardiotoxicity\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/carbamazepine-cardiotoxicity-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "7e25f6caf3bee199d26528fcbd57786cad7f0c6d3c73ad9e0b129cd35ba8fe95",
+  "content_markdown": "Massive carbamazepine overdose (> 50mg/kg) is associated with cardiotoxicity due to fast sodium channel blockade. ECG changes are not usually as dramatic as those seen in TCA overdose.\n\n##### ECG features of Carbamazepine Cardiotoxicity\n\n- Subtle QRS widening\n\n- 1st degree AV block\n\n- Dominant secondary R wave in aVR is less common than in TCA overdose\n\n##### ECG Examples\n\n###### Example 1a\n\n- This first ECG was taken several hours after massive carbamazepine overdose (150-200 mg/kg), by which time the patient was beginning to manifest clinical signs of cardiotoxicity (hypotension requiring noradrenaline).\n\n- Carbamazepine level around that time was 33 mg/L.\n\n- There is subtle ECG evidence of fast sodium channel blockade: Note the QRS widening (135 ms), 1st degree heart block (PR 240ms) and small secondary R wave in aVR.\n\n###### Example 1b\n\n- This second ECG was taken several hours after intubation and treatment with hyperventilation (to pH 7.50) and haemofiltration.\n\n- Carbamazepine level is now down to 17 mg/L and haemodynamic instability has resolved.\n\n- Note the QRS duration and PR interval have now normalised, while the secondary R wave in aVR has reduced in amplitude.\n\n###### Example 2\n\n- This ECG demonstrates more obvious cardiotoxicity following a massive carbamazepine overdose.\n\n- QRS complexes are broad and there is a large R’ wave in aVR.\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_high_lateral_stemi_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "High Lateral STEMI",
+  "section": "ECGs",
+  "url": "https://litfl.com/high-lateral-stemi-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"High Lateral STEMI\" by Mike Cadogan and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/high-lateral-stemi-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "b5fd4c6e56eb225eab3ba61340923cf161d96597c4bb217eb5b0e64a18d50121",
+  "content_markdown": "#### ECG Features\n\n- ST elevation primarily localised to leads I, aVL +/- V2\n\n- Reciprocal ST depression and/or T wave inversion in inferior leads, most pronounced in lead III\n\n##### Culprit vessels\n\n- Occlusion of the first diagonal branch (D1) of the left anterior descending artery (LAD) may produce isolated ST elevation in I and aVL\n\n- Occlusion of the left circumflex artery may cause ST elevation in I, aVL along with leads V5-6.\n\n##### South African Flag sign\n\nHigh lateral STEMI is associated with a pattern of ST elevation caused by acute occlusion of the first diagonal branch of the left anterior descending coronary artery (LAD-D1).\n\nWith the 4×3 display of the 12-lead ECG, the location of the most impressive ST deviations resemble the shape of the South African flag:\n\n- ST Elevation: Lead I, aVL, V2\n\n- ST Depression: Lead III (and inferior leads)\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_lead_reversal_left_arm_right_arm_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Lead reversal: Left arm/right arm",
+  "section": "ECGs",
+  "url": "https://litfl.com/lead-reversal-left-arm-right-arm-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Lead reversal: Left arm/right arm\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/lead-reversal-left-arm-right-arm-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "2be3792c61a5478fb53d8e99ed6d025a8f9306dee834baa1d4a11324df53808c",
+  "content_markdown": "#### LA/RA reversal\n\nWith reversal of the LA and RA electrodes, Einthoven’s triangle flips 180 degrees horizontally around an axis formed by lead aVF.\n\n###### This has the following effects on the ECG:\n\n- Lead I becomes inverted.\n\n- Leads II and III switch places.\n\n- Leads aVL and aVR switch places.\n\n- Lead aVF remains unchanged.\n\n###### Quick guide to spotting LA/RA reversal\n\n- Lead I is completely inverted (P wave, QRS complex and T wave).\n\n- Lead aVR often becomes positive.\n\n- There may be marked right axis deviation.\n\nLA/RA reversal may simulate dextrocardia. However, in contrast to dextrocardia there is normal R wave progression in the precordial leads.\n"
+}

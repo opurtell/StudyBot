@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_poor_r_wave_progression_prwp_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Poor R Wave Progression (PRWP)",
+  "section": "ECGs",
+  "url": "https://litfl.com/poor-r-wave-progression-prwp-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Poor R Wave Progression (PRWP)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/poor-r-wave-progression-prwp-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "efab4574346d50e66548c3b35b29b96b488e2b5317b442e097dd60b472a7ec77",
+  "content_markdown": "##### Poor R Wave Progression Overview\n\nPoor R-wave progression (PRWP) is a common ECG finding that is often inconclusively interpreted as suggestive, but not diagnostic, of anterior myocardial infarction (AMI). PRWP is defined by R wave height ≤ 3 mm in V3\n\n##### Causes of PRWP\n\nThe major causes associated with PRWP include:\n\n- Prior anteroseptal MI\n\n- Left Ventricular Hypertrophy (LVH)\n\n- Right Ventricular Hypertrophy (RVH)\n\n- Inaccurate lead placement (e.g. transposition of V1 and V3)\n\n- Dilated cardiomyopathy\n\n- May be a normal variant\n\n##### ECG Examples\n\n###### Example 1\n\nPoor R wave progression secondary to prior anteroseptal MI\n\n###### Example 2\n\nPoor R wave progression due to electrode misplacement (leads V1 and V3 reversed)\n"
+}

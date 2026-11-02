@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_r_wave_peak_time_rwpt_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "R Wave Peak Time RWPT",
+  "section": "ECGs",
+  "url": "https://litfl.com/r-wave-peak-time-rwpt-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"R Wave Peak Time RWPT\" by Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/r-wave-peak-time-rwpt-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "b22523fcce89aac5418468c8237865b3ce7e69c837979e6c444cfbee26056515",
+  "content_markdown": "R wave peak time is the time from onset of earliest Q wave or R wave to the peak of the R wave in the lateral leads (aVL, V5-6)\n\n- Represents the time taken for excitation to spread from the endocardial to the epicardial surface of the left ventricle\n\n- R-wave peak time is said to be prolonged if > 45ms\n\n- Additionally used in Lead II in the differentiation of Ventricular Tachycardia (VT) and Supraventricular Tachycardia (SVT) with aberrancy\n\n##### Causes of Prolonged RWPT\n\n- Left anterior fascicular block\n\n- Left ventricular hypertrophy\n\n- Left bundle branch block\n\n##### RWPT in wide QRS complex tachycardia\n\nR-wave peak time (RWPT) may be useful in differentiating ventricular tachycardia (VT) from supraventricular tachycardia (SVT) in patients with wide QRS complex tachycardia:\n\n- RWPT duration is measured in lead II from the onset of QRS depolarization until the first change of polarity (with both positive or negative QRS deflection)\n\n- Studies in 2010 and 2013 demonstrated RWPT ≥ 50 ms in lead II to be a simple, reproducible, sensitive and specific for ventricular tachycardia\n\n- However, more recent studies suggest RWPT of 50 ms may be optimal to differentiate between VT and SVT with RBBB and LAFB, but not with LBBB\n\n###### Example 1\n\n- Ventricular tachycardia\n\n- Positive deflection wide QRS\n\n- R-wave peak time (RWPT) >50 ms\n\n###### Example 2\n\n- Ventricular tachycardia\n\n- Negative deflection wide QRS\n\n- R-wave peak time (RWPT) >50 ms\n\n###### Example 3\n\n- Supraventricular tachycardia with aberrancy\n\n- Negative deflection wide QRS\n\n- R-wave peak time (RWPT) <50 ms\n"
+}

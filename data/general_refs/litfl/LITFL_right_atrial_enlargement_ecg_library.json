@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_right_atrial_enlargement_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Right Atrial Enlargement",
+  "section": "ECGs",
+  "url": "https://litfl.com/right-atrial-enlargement-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Right Atrial Enlargement\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/right-atrial-enlargement-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "fb49190e4343e63547f5d9059836b135c014348d030efb2019e65ace75e039ba",
+  "content_markdown": "###### ECG Criteria of Right Atrial Enlargement\n\nRight atrial enlargement produces a peaked P wave (P pulmonale) with amplitude:\n\n- > 2.5 mm in the inferior leads (II, III and AVF)\n\n- > 1.5 mm in V1 and V2\n\nAlso known as: Right Atrial Enlargement (RAE), Right atrial hypertrophy (RAH), right atrial abnormality\n\n#### Causes of Right Atrial Enlargement\n\nThe principal cause is pulmonary hypertension due to:\n\n- Chronic lung disease (cor pulmonale)\n\n- Tricuspid stenosis\n\n- Congenital heart disease (pulmonary stenosis, Tetralogy of Fallot)\n\n- Primary pulmonary hypertension\n\n#### ECG Examples\n\n##### Example 1\n\n- Right atrial enlargement: P pulmonale\n\n- P wave amplitude > 2.5mm in leads II, III and aVF\n\n##### Example 2\n\n- Right atrial enlargement: P wave amplitude > 1.5 mm in V1 and V2\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_hyperthyroidism_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Hyperthyroidism",
+  "section": "ECGs",
+  "url": "https://litfl.com/hyperthyroidism-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Hyperthyroidism\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/hyperthyroidism-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "06927b7985349ecdd059322c2372bcdb98a22708d62a23c1003273ae6ba589aa",
+  "content_markdown": "##### ECG Abnormalities in Hyperthyroidism\n\nThe most common ECG changes seen with thyrotoxicosis are:\n\n- Sinus tachycardia\n\n- Atrial fibrillation with rapid ventricular response\n\n- High left-ventricular voltage — i.e “voltage criteria” for LVH without evidence of LV strain\n\nOther ECG abnormalities include:\n\n- Supraventricular arrhythmias (premature atrial beats, paroxysmal supraventricular tachycardia, multifocal atrial tachycardia, atrial flutter)\n\n- Non-specific ST and T wave changes\n\n- Ventricular extrasystoles\n\nAround 50% of patients with thyrotoxicosis will have a resting heart rate > 100 bpm. Atrial fibrillation is seen in up to 20% of patients. Severe thyrotoxicosis (thyroid storm) may present with atrial tachycardias at rates > 200 bpm.\n\n##### Mechanism\n\n- The ECG changes in thyrotoxicosis are principally related to increased activity of the sympathetic nervous system and the stimulatory effects of thyroid hormone on the myocardium.\n\n- Atrial tissue is very sensitive to the effects of thyroid hormone, hence the preponderance of atrial tachydysrhythmias.\n\n##### Useful Tips\n\n- Patients with unexplained sinus tachycardia or atrial fibrillation should have their TSH and T4 checked to look for evidence of thyrotoxicosis.\n\n- Thyrotoxic atrial tachydysrhythmias are treated with intravenous beta-blockers (e.g. titrated IV boluses of propranolol or an esmolol infusion).\n"
+}

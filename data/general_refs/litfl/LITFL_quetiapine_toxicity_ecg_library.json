@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_quetiapine_toxicity_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Quetiapine Toxicity",
+  "section": "ECGs",
+  "url": "https://litfl.com/quetiapine-toxicity-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Quetiapine Toxicity\" by Ed Burns, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/quetiapine-toxicity-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "0e634ab170a789dec32d98ce232e3ee4810ccf1054eee479b459235d95d49550",
+  "content_markdown": "##### Quetiapine Toxicity Overview\n\n- Brisk sinus tachycardia (HR = 120 bpm)\n- Prolonged QTc interval (QTc = 560ms; the absolute QT interval is more than half the R-R interval)\n\n##### Clinical Features\n\n- Quetiapine (a second-generation atypical antipsychotic) is a leading cause of toxic coma in Australia.\n- Main toxic effects in overdose include coma, anticholinergic delirium, prolonged QTc and a brisk sinus tachycardia.\n- Doses > 3g are associated with coma.\n- Despite the prolonged QTc, Torsades de Pointes does not occur (see below).\n- A similar pattern of clinical and ECG features is seen with other atypical antipsychotics, such as olanzapine or clozapine.\n\n#### ECG Example\n\nThis ECG (taken following a 6g quetiapine overdose) with characteristic features of quetiapine toxicity\n"
+}

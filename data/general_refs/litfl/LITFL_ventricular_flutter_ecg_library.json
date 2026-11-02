@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_ventricular_flutter_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Ventricular Flutter",
+  "section": "ECGs",
+  "url": "https://litfl.com/ventricular-flutter-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Ventricular Flutter\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/ventricular-flutter-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "61c25f632152b19d8966e473b76601a1931d2e7a2f733495859ac06d7e62ea4e",
+  "content_markdown": "##### Clinical Significance of Ventricular flutter\n\nExtreme form of ventricular tachycardia (VT) with loss of organised electrical activity\n\n- Associated with rapid and profound hemodynamic compromise\n\n- Usually short lived due to progression to ventricular fibrillation\n\n- As with ventricular fibrillation rapid initiation of advanced life support is required\n\n##### How to Recognise Ventricular Flutter\n\n- Continuous Sine Wave\n\n- No identifiable P waves, QRS complexes, or T waves\n\n- Rate usually > 200 beats / min\n\n##### Clinical Pearl\n\nThe ECG looks identical when viewed upside down!\n\n##### ECG Examples\n\n###### Example 1\n\nTypical appearance of ventricular flutter:\n\n- Monomorphic sine wave at >200bpm.\n\n- ECG looks identical when turned upside down.\n\n###### Example 2\n\n12-lead ECG example of ventricular flutter:\n\n- Extremely rapid monomorphic sine wave at around 300 bpm.\n\n###### Example 3\n\nVentricular flutter following a bolus of intravenous verapamil\n\n- A supraventricular tachycardia converts to ventricular flutter after administration of verapamil. The rhythm subsequently degenerates into ventricular fibrillation.\n\n- The rapid deterioration with verapamil suggests that the patient may have underlying Wolff-Parkinson White syndrome.\n\n- In WPW, administration of verapamil or diltiazem during a supraventricular tachycardia may produce a paradoxical increase in ventricular rate by increasing conduction through the accessory pathway. With rapid atrial rhythms such as AF or flutter, the sudden onset of 1:1 AV conduction may produce ventricular rates of >300 beats per minute (i.e. ventricular flutter), which rapidly deteriorates to VF.\n"
+}

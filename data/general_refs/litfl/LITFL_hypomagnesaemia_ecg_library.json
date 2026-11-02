@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_hypomagnesaemia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Hypomagnesaemia",
+  "section": "ECGs",
+  "url": "https://litfl.com/hypomagnesaemia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Hypomagnesaemia\" by Robert Buttner and John Larkin, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/hypomagnesaemia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "a1a0689386dddf1025d56a5d1716c7c3c01b073ddb34ac7dbddfeaedf89260c4",
+  "content_markdown": "Normal serum magnesium levels are generally considered to be 0.8 – 1.0 mmol/L. Hypomagnesaemia, defined as a level < 0.8 mmol/L, is associated with QT interval prolongation and an increased risk of ventricular arrhythmias.\n\n##### ECG changes in isolated hypomagnesaemia\n\n- Prolonged PR interval\n- Prolonged QT interval\n- Atrial and ventricular ectopy\n- Predisposition to ventricular tachycardia and torsades de pointes\n\nPatients with hypomagnesaemia often have concurrent hypokalaemia and/or hypocalcaemia and associated ECG features of these conditions.\n\nMost literature on the ECG in hypomagnesaemia has not excluded patients with these other electrolyte disturbances, making exact changes difficult to ascertain. The only identifiable study examining patients with isolated hypomagnesaemia found no significant differences in QRS duration or ST segments compared to baseline ECGs.\n\n##### Clinical relevance\n\n- Correction of serum magnesium to > 1.0 mmol/L, with concurrent correction of serum potassium to > 4.0 mmol/L, is often effective in suppressing ectopy and supraventricular tachyarrhythmias\n- A rapid IV bolus of magnesium 2g is a standard emergency treatment for torsades de pointes\n- Further information regarding the causes and other clinical manifestations of hypomagnesaemia can be found here\n\n##### ECG examples\n\n###### Example 1\n\nThe following ECGs were taken from a 76-year-old man presenting with palpitations. He was found to have a serum Magnesium level of 0.28 mmol/L.\n\n###### Example 2a\n\n- There are runs of nonsustained ventricular tachycardia (NSVT), as well as ventricular ectopics\n- QTC during normal rhythm is 465ms\n\n###### Example 2b\n\n- Repeat ECG 30 minutes later, when the patient entered conscious sustained VT\n"
+}

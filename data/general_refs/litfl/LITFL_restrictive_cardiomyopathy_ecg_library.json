@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_restrictive_cardiomyopathy_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Restrictive Cardiomyopathy",
+  "section": "ECGs",
+  "url": "https://litfl.com/restrictive-cardiomyopathy-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Restrictive Cardiomyopathy\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/restrictive-cardiomyopathy-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "fac3714bfb7da67715118d8eddaa1df375a16ff066739f96e54bd0417eb147af",
+  "content_markdown": "##### ECG Features of Restrictive Cardiomyopathy\n\n- Low voltage QRS complexes\n\n- Non-specific ST segment / T wave changes\n\n- Bundle branch blocks\n\n- Atrioventricular block (3rd degree AV block may occur in sarcoidosis)\n\n- Pathological “pseudo-infarction” Q waves\n\n- Atrial and ventricular dysrhythmias\n\n##### Pathophysiology\n\nRestrictive cardiomyopathy is the least common form of cardiomyopathy. It occurs in the advanced stages of myocardial infiltrative disease — e.g. due to haemochromatosis, amyloidosis or sarcoidosis.\n\n- Diffuse myocardial infiltration leads to low voltage QRS complexes.\n\n- Atrial fibrillation may occur due to atrial enlargement; ventricular arrhythmias are also common\n\n- Infiltration of the cardiac conducting system (e.g. due to septal granuloma formation in sarcoidosis) may lead to conduction disturbance — e.g. bundle branch blocks and AV block.\n\n- Healing granulomas in sarcoidosis may produce “pseudo-infarction” Q waves\n\n##### Example ECG\n\n###### ECG of a patient with restrictive cardiomyopathy, demonstrating:\n\n- Low voltage QRS complexes\n\n- Widespread flattening of T waves\n"
+}

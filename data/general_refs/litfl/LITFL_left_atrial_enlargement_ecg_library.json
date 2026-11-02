@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_left_atrial_enlargement_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Left Atrial Enlargement",
+  "section": "ECGs",
+  "url": "https://litfl.com/left-atrial-enlargement-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Left Atrial Enlargement\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/left-atrial-enlargement-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "e26b7d9a29ea8c944278f9e69b1583307625ea7b5313460bd4bd40270de119f0",
+  "content_markdown": "###### Left Atrial Enlargement\n\nLeft atrial enlargement (LAE) is due to pressure or volume overload of the left atrium. LAE is often a precursor to atrial fibrillation.\n\nAlso known as: Left Atrial Enlargement (LAE), Left atrial hypertrophy (LAH), left atrial abnormality.\n\n##### P wave changes with Left Atrial Enlargement\n\n###### ECG Criteria for Left Atrial Enlargement\n\nLAE produces a broad, bifid P wave in lead II (P mitrale) and enlarges the terminal negative portion of the P wave in V1.\n\nIn lead II\n\n- Bifid P wave with > 40 ms between the two peaks\n\n- Total P wave duration > 110 ms\n\nIn V1\n\n- Biphasic P wave with terminal negative portion > 40 ms duration\n\n- Biphasic P wave with terminal negative portion > 1mm deep\n\n###### In isolation:\n\n- Classically seen with mitral stenosis\n\nIn association with left ventricular hypertrophy:\n\n- Systemic hypertension\n\n- Aortic stenosis\n\n- Mitral incompetence\n\n- Hypertrophic cardiomyopathy\n\n#### ECG Examples\n\n##### Example 1\n\n- Broad (>110ms), bifid P wave in lead II (P mitrale) with > 40ms between the peaks\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_bidirectional_ventricular_tachycardia_bvt_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Bidirectional Ventricular Tachycardia (BVT)",
+  "section": "ECGs",
+  "url": "https://litfl.com/bidirectional-ventricular-tachycardia-bvt-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Bidirectional Ventricular Tachycardia (BVT)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/bidirectional-ventricular-tachycardia-bvt-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "f34eff63ad77d1c12d4762fb9e03b0281e9c1f78ac199783c634a4252f952d75",
+  "content_markdown": "Bidirectional ventricular tachycardia (BVT) is a rare ventricular dysrhythmia characterised by a beat-to-beat alternation of the frontal QRS axis. It is most commonly associated with severe digoxin toxicity\n\n- In the example below, you can see the QRS axis shifts 180 degrees from left to right with each alternate beat\n\n- Another possible pattern is alternating left and right bundle-branch block (see Figure 2 in the paper by Smith et al)\n\n##### Causes\n\n- This rhythm is most commonly associated with severe digoxin toxicity\n\n- It may be the presenting rhythm in patients with familial catecholaminergic polymorphic ventricular tachycardia (CPVT)\n\n- BVT has also been reported with herbal aconite poisoning\n\n##### ECG Examples\n\n###### Example 1\n\n- Multifocal ectopy and bidirectional VT secondary to digoxin poisoning\n\n###### Example 2\n\n- Bidirectional VT due to digoxin toxicity\n\n###### Exercise stress test in a patient with CPVT:\n\n- Progressively worsening ventricular arrhythmias are observed during exercise\n\n- Typical bidirectional VT develops after 1 minute of exercise with a sinus heart rate of approximately 120 beats per minute\n\n- Arrhythmias rapidly recede during recovery\n"
+}

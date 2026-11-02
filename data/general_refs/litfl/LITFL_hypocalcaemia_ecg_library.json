@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_hypocalcaemia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Hypocalcaemia",
+  "section": "ECGs",
+  "url": "https://litfl.com/hypocalcaemia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Hypocalcaemia\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/hypocalcaemia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "05ad4f0f7f245921bef72a724bcd4b1772a461d3d78aae95b03911db4ac35f00",
+  "content_markdown": "##### ECG changes in Hypocalcaemia\n\n- Hypocalcaemia causes QTc prolongation primarily by prolonging the ST segment\n\n- The T wave is typically left unchanged\n\n- Dysrhythmias are uncommon, although atrial fibrillation has been reported\n\n- Torsades de pointes may occur, but is much less common than with hypokalaemia or hypomagnesaemia\n\n##### Hypocalcaemia Overview\n\n- Normal serum corrected calcium = 2.2 – 2.6 mmol/L.\n\n- Mild-moderate hypocalcaemia = 1.9 – 2.2 mmol/L.\n\n- Severe hypocalcaemia = < 1.9 mmol/L.\n\n##### Causes of Hypocalcaemia\n\n- Hypoparathyroidism\n\n- Vitamin D deficiency\n\n- Acute pancreatitis\n\n- Hyperphosphataemia\n\n- Hypomagnesaemia\n\n- Diuretics (frusemide)\n\n- Pseudohypoparathyroidism\n\n- Congenital disorders (e.g. DiGeorge syndrome)\n\n- Critical illness (e.g. sepsis)\n\n- Factitious (e.g. EDTA blood tube contamination)\n\n##### Symptoms of Hypocalcaemia\n\n- Neuromuscular excitability\n\n- Carpopedal spasm\n\n- Tetany\n\n- Chvostek sign\n\n- Trousseau sign\n\n- Seizures\n\n##### ECG Examples\n\n###### Hypocalcaemia:\n\n- QTc 500ms in a patient with hypoparathyroidism (post thyroidectomy) and serum corrected calcium of 1.40 mmol/L\n\n- Reproduced from Nijjer et al. (2010)\n\n###### Hypocalcaemia:\n\n- QT prolongation in a patient with DiGeorge’s syndrome and serum calcium of 1.32 mmol/L\n\n- Reproduced from Kar et al. (2005)\n\n###### Example 3\n\n- Hypocalcaemia causing a long QTc (510ms)\n"
+}

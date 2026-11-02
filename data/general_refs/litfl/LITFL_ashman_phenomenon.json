@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_ashman_phenomenon",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Ashman Phenomenon",
+  "section": "ECGs",
+  "url": "https://litfl.com/ashman-phenomenon/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Ashman Phenomenon\" by Mike Cadogan and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/ashman-phenomenon/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "1038e4ebcc063706c0f0824f02b44bf34c38ebbdff77c59e1157d08a77bc345a",
+  "content_markdown": "##### Description\n\nAshman phenomenon describes an aberrant ventricular conduction, usually of RBBB morphology, which follows a short R-R interval and preceding relatively prolonged R-R interval\n\n- Typically seen with atrial fibrillation but can also occur with other supraventricular arrhythmias\n\n- Clinically on its own is asymptomatic and does not require any specific treatment\n\nAshman phenomenon. Occurs when a long RR interval is followed by a short RR interval and terminated by the aberrant QRS complex\n\n##### History of the Ashman Phenomenon\n\n1947 – Gouaux and Ashman reported that in atrial fibrillation, when a relatively long cycle was followed by a relatively short cycle, the beat with a short cycle often has Right Bundle Branch Block morphology.\n\n1983 – Fisch criteria for the diagnosis of Ashman phenomenon\n\n- Relatively long cycle immediately preceding the cycle terminated by the aberrant QRS complex;\n\n- RBBB-form aberrancy with normal orientation of the initial QRS vector, a series of wide QRS supraventricular beats is possible;\n\n- Irregular coupling of aberrant QRS complexes;\n\n- A short-long-short RR interval is even more likely to initiate aberration; and\n\n- Lack of fully compensatory pause.\n\n##### Mechanism\n\nThe refractory period of the His-Purkinje system is proportional to the RR interval of the preceding beat. So, when two beats are separated by a long RR interval, the subsequent refractory period will be relatively long.\n\nIf a premature supraventricular stimulus (short RR interval) follows a long RR interval whilst the His-Purkinje system is still refractory, then the conducted beat will appear abnormal. As the refractory period of the right bundle is slightly longer than the left, the aberrantly-conducted beat typically demonstrates a right bundle branch (RBBB) morphology.\n\n##### Example\n\n- Richard Ashman (1890-1970)\n\n##### Alternate Names\n\n- Ashman beat\n\n- Ashman aberrancy\n\n## eponymictionary\n\nthe names behind the name\n\nmore eponyms…\n"
+}
