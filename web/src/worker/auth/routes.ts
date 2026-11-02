@@ -4,6 +4,7 @@ import { apiError, clientIp } from "../lib/http";
 import { summariseQuota } from "../lib/quota";
 import type { AppEnv } from "../types";
 import { buildAuthorisationUrl, exchangeCode, GoogleAuthError } from "./google";
+import { parseSettings, readSettings, writeSettings } from "../progress/settings";
 import { createSession, destroySession, secureCookies, upsertGoogleUser } from "./sessions";
 
 export const OAUTH_COOKIE = "sb_oauth";
@@ -102,7 +103,7 @@ authRoutes.post("/sign-out", async (c) => {
 
 export const meRoutes = new Hono<AppEnv>();
 
-meRoutes.get("/", (c) => {
+meRoutes.get("/", async (c) => {
   const user = c.get("user");
   if (!user) return c.json({ signedIn: false, tier: "anonymous" as const });
   return c.json({
@@ -111,7 +112,18 @@ meRoutes.get("/", (c) => {
     email: user.email,
     isAdmin: user.isAdmin,
     quota: summariseQuota(c.env, user),
+    settings: await readSettings(c.env.DB, user.id),
   });
+});
+
+meRoutes.put("/settings", async (c) => {
+  const user = c.get("user");
+  if (!user) return apiError(c, 401, "unauthorised", "Sign in to save settings to your account.");
+  const body = await c.req.json<unknown>().catch(() => null);
+  const settings = body && typeof body === "object" && !Array.isArray(body) ? parseSettings(body as Record<string, unknown>) : null;
+  if (!settings) return apiError(c, 400, "bad_request", "Send qualification (ap, icp or null), pacer, excludedSections and excludedDocuments.");
+  await writeSettings(c.env.DB, user.id, settings, Date.now());
+  return c.json({ settings: { ...settings, saved: true } });
 });
 
 meRoutes.delete("/", async (c) => {
@@ -119,6 +131,9 @@ meRoutes.delete("/", async (c) => {
   if (!user) return apiError(c, 401, "unauthorised", "Sign in first.");
   await c.env.DB.batch([
     c.env.DB.prepare(`DELETE FROM sessions WHERE user_id = ?1`).bind(user.id),
+    c.env.DB.prepare(`DELETE FROM user_settings WHERE user_id = ?1`).bind(user.id),
+    c.env.DB.prepare(`DELETE FROM attempts WHERE user_id = ?1`).bind(user.id),
+    c.env.DB.prepare(`DELETE FROM user_question_seen WHERE user_id = ?1`).bind(user.id),
     c.env.DB.prepare(`DELETE FROM users WHERE id = ?1`).bind(user.id),
   ]);
   await destroySession(c, null);
