@@ -7,6 +7,7 @@ import { AttemptView, History } from "./pages/History";
 import { Home } from "./pages/Home";
 import { MedicationDetail, Medications } from "./pages/Medications";
 import { NotFound } from "./pages/NotFound";
+import { Privacy } from "./pages/Privacy";
 import { Quiz } from "./pages/Quiz";
 import { Settings } from "./pages/Settings";
 import { SignIn } from "./pages/SignIn";
@@ -27,6 +28,7 @@ export function App() {
             <Route path="medications" element={<Medications />} />
             <Route path="medications/:id" element={<MedicationDetail />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="privacy" element={<Privacy />} />
             <Route path="account" element={<Navigate to="/settings" replace />} />
             <Route path="*" element={<NotFound />} />
           </Route>

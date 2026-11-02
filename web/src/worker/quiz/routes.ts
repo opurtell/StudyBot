@@ -20,6 +20,7 @@ import {
   REPORT_REASONS,
   reportedQuestions,
   reportQuestion,
+  reportsToday,
   retireStaleQuestions,
   setQuestionStatus,
   type QuestionFilters,
@@ -50,6 +51,7 @@ import {
   readQuota,
   refundCredit,
   setLiveAi,
+  startOfUtcDay,
   takeCredit,
   usedToday,
   type Availability,
@@ -59,6 +61,7 @@ import {
 const MAX_ANSWER_CHARS = 4000;
 const MAX_DETAIL_CHARS = 1000;
 const MAX_EXCLUDE = 400;
+const MAX_REPORTS_PER_DAY = 20;
 const ID_PATTERN = /^[a-f0-9]{16}$/;
 
 export const UNREADABLE_MARK_MESSAGE =
@@ -402,6 +405,9 @@ quizRoutes.post("/questions/:id/report", async (c) => {
   if (!ID_PATTERN.test(id) || !(await questionExists(c.env.DB, id))) return apiError(c, 404, "not_found", "No such question.");
   const user = c.get("user");
   const reporterKey = user ? `user:${user.id}` : `ip:${await sha256Hex(`report:${clientIp(c)}`)}`;
+  if (!user?.isAdmin && (await reportsToday(c.env.DB, reporterKey, startOfUtcDay(Date.now()))) >= MAX_REPORTS_PER_DAY) {
+    return apiError(c, 429, "rate_limited", "You've sent a lot of reports today. Thanks — try again tomorrow.");
+  }
   const { flagged } = await reportQuestion(
     c.env.DB,
     {

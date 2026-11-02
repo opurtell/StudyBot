@@ -11,6 +11,7 @@ export async function seed() {
   const stmts = [
     "DELETE FROM question_reports",
     "DELETE FROM usage_ledger",
+    "DELETE FROM daily_usage",
     "DELETE FROM attempts",
     "DELETE FROM user_question_seen",
     "DELETE FROM question_bank",

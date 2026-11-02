@@ -94,6 +94,10 @@ export function Feedback({ data, answer }: { data: FeedbackData; answer?: string
         assessment
       )}
       {(assessment || !yours) && <Source data={data} />}
+      <p className="text-xs text-on-surface-variant">
+        {data.marked ? "AI marking can be wrong. " : ""}Study aid, not clinical guidance: check the current CMG before you
+        rely on anything here.
+      </p>
     </section>
   );
 }

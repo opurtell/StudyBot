@@ -5,7 +5,7 @@ One Worker serves the React app as static assets and the API under `/api/*`, so 
 
 **Live:** https://study.paramedtools.com (production).
 
-**Status:** Phase 5 (product surface). Sign-in, accounts, rate limiting, logging and the AI Gateway client
+**Status:** Phase 6 (hardening and launch, `docs/launch.md`): security review, load test (`npm run test:load`), abuse tests, backup drill, privacy page and soft-launch checklist. Earlier phases: Sign-in, accounts, rate limiting, logging and the AI Gateway client
 (Phase 2); the ACTAS guideline corpus with guideline, skill and medication pages (Phase 3); the quiz with a pre-generated
 question bank, AI marking and fresh generation within a monthly allowance, and question reporting (Phase 4); per-user
 progress, settings and the dashboard (Phase 5, below).
@@ -121,6 +121,9 @@ After a rescrape, repeat steps 3, 4 and 6.
 - **Circuit breakers:** site-wide daily caps (`DAILY_GENERATIONS_CAP`, `DAILY_MARKS_CAP`), the AI Gateway spend limit, and an
   admin switch (**Account > Question bank > Switch off**) that stops all live AI at once. Everyone falls back to the
   library and self-checking.
+- **Picking a question** starts at a random point on an indexed `rand_key`, so each pick reads about ten D1 rows instead
+  of the whole bank (`docs/launch.md` §2). Only signed-in reports count towards automatic withdrawal, and each reporter
+  can send 20 reports a day.
 - **Usage ledger:** every model call (including failures) writes tokens and estimated cost to `usage_ledger`.
 - **Reports:** anyone can report a question. Two different reporters (`REPORT_FLAG_THRESHOLD`), or one admin, withdraw it
   straight away. Admins retire or restore it from **Account > Question bank**.

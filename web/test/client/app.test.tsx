@@ -121,3 +121,28 @@ describe("settings", () => {
     expect(await axeViolations(container)).toEqual([]);
   });
 });
+
+describe("disclaimer and privacy", () => {
+  it("shows the study-aid notice on the first visit until it is acknowledged", async () => {
+    window.localStorage.removeItem("disclaimer-ack-v1");
+    mockApi({ "GET /api/me": anonymous, ...topics });
+    const first = renderAt("/");
+    const notice = await screen.findByRole("region", { name: /before you start/i });
+    expect(notice).toHaveTextContent(/study aid, not clinical guidance/i);
+    await userEvent.click(screen.getByRole("button", { name: /i understand/i }));
+    expect(screen.queryByRole("region", { name: /before you start/i })).not.toBeInTheDocument();
+    first.unmount();
+    renderAt("/");
+    await screen.findByRole("heading", { name: /studying as a guest/i });
+    expect(screen.queryByRole("region", { name: /before you start/i })).not.toBeInTheDocument();
+  });
+
+  it("publishes the privacy policy, linked from every page", async () => {
+    mockApi({ "GET /api/me": anonymous });
+    const { container } = renderAt("/privacy");
+    expect(await screen.findByRole("heading", { name: /privacy and disclaimer/i })).toBeInTheDocument();
+    expect(screen.getByText(/sent to google's gemini api/i)).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /privacy and disclaimer/i }).length).toBeGreaterThan(0);
+    expect(await axeViolations(container)).toEqual([]);
+  });
+});
