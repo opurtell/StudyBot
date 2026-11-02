@@ -43,7 +43,7 @@ def _write(directory: Path, data: dict) -> None:
 
 def test_only_guideline_content_enters_the_corpus(corpus):
     assert {d.source_type for d in corpus.documents} == {"guideline"}
-    assert corpus_build.manifest(corpus)["documents_by_kind"] == {"cmg": 56, "csm": 103, "med": 35}
+    assert corpus_build.manifest(corpus)["documents_by_kind"] == {"cmg": 56, "csm": 104, "med": 35}
     structured = service_structured_dir("actas").resolve()
     for path in corpus_build.input_files(structured):
         assert structured in path.resolve().parents or path.resolve().parent == structured
@@ -75,6 +75,8 @@ def test_cli_exits_non_zero_without_writing_output(tmp_path):
 def test_bodies_match_the_desktop_scope_rules(corpus):
     files = {p.stem: p for p in corpus_build.input_files(service_structured_dir("actas"))}
     for doc in corpus.documents:
+        if doc.id == corpus_build.REFERENCE_CARDS_ID:
+            continue
         data = json.loads(files[doc.id].read_text(encoding="utf-8"))
         content = normalise_markdown_syntax(corpus_build.decode_literal_escapes(data["content_markdown"]))
         if doc.scope in ("all", "mixed"):
@@ -156,7 +158,7 @@ def test_reload_with_changed_content_retires_old_chunks(tmp_path):
 def test_real_corpus_loads_into_the_d1_schema(corpus):
     db = _db()
     db.executescript(corpus_build.to_sql(corpus))
-    assert db.execute("SELECT COUNT(*) FROM corpus_documents").fetchone() == (194,)
+    assert db.execute("SELECT COUNT(*) FROM corpus_documents").fetchone() == (195,)
     assert db.execute("SELECT COUNT(*) FROM corpus_chunks").fetchone() == (len(corpus.chunks),)
     assert db.execute("SELECT DISTINCT source_type FROM corpus_chunks").fetchall() == [("guideline",)]
 
@@ -173,3 +175,36 @@ def test_pooled_dose_lookups_never_become_chunks(tmp_path, corpus):
     built = corpus_build.build(tmp_path)
     assert all("Pre-oxygenation" not in c.text for c in built.chunks)
     assert not [c for c in corpus.chunks if c.heading.startswith("Dose lookup")]
+
+
+def _cards(corpus):
+    return [c for c in corpus.chunks if c.document_id == corpus_build.REFERENCE_CARDS_ID]
+
+
+def test_reference_cards_are_one_document_with_one_chunk_per_band_and_view(corpus):
+    bands = json.loads(corpus_build.REFERENCE_CARDS_PATH.read_text(encoding="utf-8"))
+    doc = next(d for d in corpus.documents if d.id == corpus_build.REFERENCE_CARDS_ID)
+    assert (doc.kind, doc.number, doc.scope) == ("csm", "REF", "mixed")
+    chunks = _cards(corpus)
+    for view in ("ap", "icp"):
+        headings = [c.heading for c in chunks if view in c.views]
+        assert headings == [b["band"] for b in bands]
+    for chunk in chunks:
+        assert chunk.embed_text.startswith(f"[ACTAS {corpus_build.REFERENCE_CARDS_TITLE}]\n{chunk.heading}\n")
+
+
+def test_reference_card_lines_follow_the_scope_rules(corpus):
+    ap = "\n".join(c.text for c in _cards(corpus) if "ap" in c.views)
+    icp = "\n".join(c.text for c in _cards(corpus) if "icp" in c.views)
+    for hidden in ("Amiodarone", "Sodium Bicarbonate", "Magnesium", "Ketamine", "Suxamethonium", "Midazolam",
+                   "ETT size", "Airtraq", "FONA", "down the ETT"):
+        assert hidden not in ap and hidden in icp
+    for shown in ("Adrenaline (1:10,000): Formula: 0.01mg/kg", "Normal Saline", "Glucose 10% IV", "Glucagon IM",
+                  "LMA size", "IGT size", "Shock: 200 joules", "Systolic BP", "Sepsis / Anaphylaxis"):
+        assert shown in ap
+    assert "Adrenaline (1:10,000) ETT" not in ap
+    assert "Volume: 6ml:" not in icp  # the 45 kg magnesium row has a garbled label and is left out
+
+
+def test_reference_cards_are_optional(tmp_path):
+    assert corpus_build.reference_card_document(tmp_path / "missing.json") is None

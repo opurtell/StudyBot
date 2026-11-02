@@ -24,7 +24,7 @@ from guidelines import actas_scope as scope
 from guidelines.markdown import normalise_markdown_syntax
 from paths import APP_ROOT, service_structured_dir
 
-BUILDER_VERSION = "2"
+BUILDER_VERSION = "3"
 SERVICE_ID = "actas"
 SOURCE_TYPE = "guideline"
 ALLOWED_SOURCE_TYPES = frozenset({SOURCE_TYPE})
@@ -241,16 +241,18 @@ def _document_scope(data: dict, bodies: dict[str, str]) -> str:
     return "all" if len(set(bodies.values())) == 1 else "mixed"
 
 
-def build_document(data: dict) -> tuple[Document, list[Chunk]]:
+def build_document(
+    data: dict, kind: str | None = None, context: str | None = None, merge: bool = True
+) -> tuple[Document, list[Chunk]]:
     content = normalise_markdown_syntax(decode_literal_escapes(data.get("content_markdown") or ""))
     segments = scope.classify(data, content)
     whole = scope.document_scope(data)
     visible = SCOPE_VIEWS[whole] if whole else tuple(VIEWS)
     bodies = {view: scope.render(segments, quals) if view in visible else "" for view, quals in VIEWS.items()}
-    context = scope.context_header(data)
+    context = context or scope.context_header(data)
     doc = Document(
         id=data["id"],
-        kind=scope.doc_kind(data),
+        kind=kind or scope.doc_kind(data),
         number=str(data.get("cmg_number", "")),
         title=data.get("title", ""),
         section=data.get("section") or "Other",
@@ -271,11 +273,90 @@ def build_document(data: dict) -> tuple[Document, list[Chunk]]:
         chunks[chunk_id].views.update(views)
 
     for view in ("icp_pacer", "icp", "ap_pacer", "ap"):
-        for heading, section_text in merge_sections(sections(bodies[view])):
+        parts = sections(bodies[view])
+        for heading, section_text in merge_sections(parts) if merge else parts:
             for piece in pack(section_text):
                 add(heading, piece, [view])
 
     return doc, list(chunks.values())
+
+
+REFERENCE_CARDS_PATH = Path(__file__).with_name("reference_cards.json")
+REFERENCE_CARDS_ID = "ACTAS_Critical_Care_Reference_Cards"
+REFERENCE_CARDS_TITLE = "Critical Care Reference Cards"
+# Card fields that belong to ICP-only skills: intubation (CSM.A10-A13) and front of neck access (CSM.A20/A21).
+ICP_CARD_FIELDS = frozenset({"ETT size", "ETT length", "Airtraq", "FONA"})
+_ICP_TAG = "**ICP:** "
+_ICP_CARD_NOTE = re.compile(r"\bETT\b")  # adrenaline down the ETT is ICP (scope PDF)
+
+
+def _card_value(value: object) -> str:
+    return "; ".join(str(v) for v in value) if isinstance(value, list) else str(value)
+
+
+def _card_dose_line(row: dict) -> str | None:
+    """One dose row as written on the card. Rows whose drug label is garbled in the source are left out."""
+    if row.get("label_quirk") or not row.get("drug"):
+        return None
+    parts = [f"{name}: {row[key]}" for key, name in (
+        ("formula", "Formula"), ("preparation", "Preparation"), ("dose", "Dose"), ("volume", "Volume")) if row.get(key)]
+    parts.extend(_card_value(o) for o in row.get("other") or [] if str(o).rstrip(": ") != row["drug"])
+    return f"{row['drug']}: " + "; ".join(parts)
+
+
+def reference_card_markdown(bands: list[dict]) -> str:
+    """The ACTAS critical care reference cards as one guideline-style document, one heading per weight band.
+
+    Each band stays under a single heading, and is never merged with its neighbours, so every chunk names the
+    weight and age its doses are for.
+    Lines outside AP scope carry an ICP label, decided by the same rules the guideline dose tables use.
+    """
+    out: list[str] = []
+    for band in bands:
+        out.append(f"\n## {band['band']}")
+        for section in band.get("sections") or []:
+            for group in section.get("groups") or []:
+                name = group.get("name") or section.get("heading") or ""
+                label = section["heading"] if name == section.get("heading") else f"{section['heading']}: {name}"
+                lines: list[str] = []
+                for key, value in (group.get("fields") or {}).items():
+                    tag = _ICP_TAG if key in ICP_CARD_FIELDS else ""
+                    lines.append(f"- {tag}{key}: {_card_value(value)}")
+                for row in group.get("drugs") or []:
+                    line = _card_dose_line(row)
+                    if line is None:
+                        continue
+                    medicine = row["drug"]
+                    drug_scope = scope.drug_scope(medicine)
+                    if section.get("heading") == "Advanced Airway Medications":
+                        icp = True
+                    elif drug_scope is None:
+                        icp = False
+                    else:
+                        icp = scope.dose_entry_scope(medicine, line, False)[0] == scope.ICP
+                    lines.append(f"- {_ICP_TAG if icp else ''}{line}")
+                for note in group.get("notes") or []:
+                    tag = _ICP_TAG if _ICP_CARD_NOTE.search(note) else ""
+                    lines.append(f"- {tag}{note}")
+                if lines:
+                    out.append(f"**{label}**")
+                    out.extend(lines)
+    return "\n".join(out).strip() + "\n"
+
+
+def reference_card_document(path: Path = REFERENCE_CARDS_PATH) -> dict | None:
+    if not path.is_file():
+        return None
+    content = reference_card_markdown(json.loads(path.read_text(encoding="utf-8")))
+    return {
+        "id": REFERENCE_CARDS_ID,
+        "cmg_number": "REF",
+        "title": REFERENCE_CARDS_TITLE,
+        "section": "Reference",
+        "version_date": None,
+        "checksum": hashlib.sha256(content.encode("utf-8")).hexdigest(),
+        "content_markdown": content,
+    }
 
 
 def _source_commit() -> str | None:
@@ -311,6 +392,8 @@ def check_allowlist(corpus: Corpus) -> None:
 
 
 def build(structured_dir: Path | None = None, built_at: str | None = None) -> Corpus:
+    """Build from ``structured_dir``; the default ACTAS data also brings in the critical care reference cards."""
+    with_cards = structured_dir is None
     structured_dir = structured_dir or service_structured_dir(SERVICE_ID)
     files = input_files(structured_dir)
     if not files:
@@ -324,6 +407,14 @@ def build(structured_dir: Path | None = None, built_at: str | None = None) -> Co
             raise CorpusBuildError(f"{path.name}: duplicate document id {data['id']}")
         seen.add(data["id"])
         doc, doc_chunks = build_document(data)
+        documents.append(doc)
+        chunks.extend(doc_chunks)
+    cards = reference_card_document() if with_cards else None
+    if cards is not None:
+        # Listed with the clinical skills: a reference tool, not a guideline with a CMG number.
+        doc, doc_chunks = build_document(
+            cards, kind="csm", context=f"[ACTAS {REFERENCE_CARDS_TITLE}]", merge=False
+        )
         documents.append(doc)
         chunks.extend(doc_chunks)
     corpus = Corpus(

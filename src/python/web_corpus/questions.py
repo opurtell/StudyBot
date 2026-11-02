@@ -84,12 +84,25 @@ def _ap_visible(chunk: Chunk) -> bool:
     return "ap" in chunk.views or "ap_pacer" in chunk.views
 
 
+def _lines(text: str) -> list[str]:
+    return [line.strip() for line in text.splitlines() if line.strip()]
+
+
+def _is_twin(chunk: Chunk, sibling: Chunk) -> bool:
+    """The ICP chunk nearly repeats the AP one, or holds every AP line plus ICP-only additions."""
+    if difflib.SequenceMatcher(None, chunk.text, sibling.text).ratio() >= TWIN_SIMILARITY:
+        return True
+    own = set(_lines(chunk.text))
+    theirs = _lines(sibling.text)
+    return bool(theirs) and all(line in own for line in theirs)
+
+
 def icp_focus(chunk: Chunk, siblings: list[Chunk]) -> tuple[str, ...] | None:
-    """For an ICP-only chunk that nearly repeats an AP chunk of the same section, the lines only ICPs see.
+    """For an ICP-only chunk that repeats an AP chunk of the same section, the lines only ICPs see.
 
     Returns None when the chunk has no AP twin, so it is planned normally.
     """
-    twins = [s for s in siblings if difflib.SequenceMatcher(None, chunk.text, s.text).ratio() >= TWIN_SIMILARITY]
+    twins = [s for s in siblings if _is_twin(chunk, s)]
     if not twins:
         return None
     shared = {line.strip() for twin in twins for line in twin.text.splitlines()}

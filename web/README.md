@@ -56,6 +56,13 @@ and attach the whole pool to any guideline that mentions the medicine, so the ox
 all) appeared under 45 unrelated guidelines. The web build leaves them out (Oscar's bank review, 2026-11-02). Doses are
 still in each guideline's own text and in the medicine monographs.
 
+**Critical care reference cards:** `src/python/web_corpus/dose_provenance.py` traced each pooled dose line to the app
+page that holds it (`dose_provenance.json`). Only 42 of 394 belong to a single guideline; 145 come from the critical care
+reference cards, which it also parses into `reference_cards.json` (25 age and weight bands). The build adds the cards as
+one document (`ACTAS_Critical_Care_Reference_Cards`, listed with the clinical skills as "REF"), one chunk per band so
+every question names the weight. Lines outside AP scope (amiodarone, sodium bicarbonate, magnesium, RSI drugs, ETT,
+AirTraq, FONA) carry an ICP label, decided with the same `dose_entry_scope` rules as the desktop dose tables.
+
 **Versions:** `corpus_version` is a hash of the build output, so an unchanged corpus gives the same version. Loading is
 an upsert: unchanged chunks keep their embeddings, changed ones are re-embedded, and chunks that disappear are marked
 retired and then removed from Vectorize and D1 by the next sync.
