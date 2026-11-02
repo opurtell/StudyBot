@@ -135,6 +135,7 @@ meRoutes.delete("/", async (c) => {
       `UPDATE question_reports SET reporter_key = 'deleted:' || id, detail = NULL, user_id = NULL WHERE user_id = ?1`,
     ).bind(user.id),
     c.env.DB.prepare(`DELETE FROM user_settings WHERE user_id = ?1`).bind(user.id),
+    c.env.DB.prepare(`DELETE FROM marking_overrides WHERE user_id = ?1`).bind(user.id),
     c.env.DB.prepare(`DELETE FROM attempts WHERE user_id = ?1`).bind(user.id),
     c.env.DB.prepare(`DELETE FROM user_question_seen WHERE user_id = ?1`).bind(user.id),
     c.env.DB.prepare(`DELETE FROM users WHERE id = ?1`).bind(user.id),

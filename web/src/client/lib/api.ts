@@ -162,6 +162,7 @@ export interface QuestionAdminStatus {
   liveAi: boolean;
   today: { generations: number; marks: number; caps: { gen: number; eval: number } };
   month: { costUsd: number; calls: number; unreadable: number };
+  overrides: { total: number; modelTooHarsh: number; modelTooLenient: number };
 }
 
 export interface HistoryItem {
@@ -259,10 +260,10 @@ export const api = {
     }),
   reveal: (id: string, view: CorpusView, answer = "") =>
     request<Reveal>(`/quiz/questions/${id}/reveal`, { method: "POST", body: JSON.stringify({ view, answer }) }),
-  selfGrade: (attemptId: string, score: Score) =>
+  selfGrade: (attemptId: string, score: Score, view?: CorpusView) =>
     request<{ ok: true; score: Score }>(`/quiz/attempts/${encodeURIComponent(attemptId)}/self-grade`, {
       method: "POST",
-      body: JSON.stringify({ score }),
+      body: JSON.stringify(view ? { score, view } : { score }),
     }),
   saveSettings: (settings: UserSettings) =>
     request<{ settings: UserSettings }>("/me/settings", {

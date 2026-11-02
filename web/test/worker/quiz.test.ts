@@ -189,6 +189,67 @@ describe("AI marking", () => {
     expect(user?.free_eval_used).toBe(1);
   });
 
+  it("logs a marking override in either direction and exports it to admins", async () => {
+    const { cookie, email } = await signIn();
+    geminiReply(GOOD_MARK);
+    const first = (await (await postJson(`/api/quiz/questions/${Q_AP}/mark`, { view: "ap", answer: "Give oral glucose" }, { cookie })).json()) as {
+      attemptId: string;
+    };
+    const second = (await (await postJson(`/api/quiz/questions/${Q_AP}/mark`, { view: "ap", answer: "Nothing" }, { cookie })).json()) as {
+      attemptId: string;
+    };
+    expect((await postJson(`/api/quiz/attempts/${first.attemptId}/self-grade`, { score: "correct", view: "ap" }, { cookie })).status).toBe(200);
+    expect((await postJson(`/api/quiz/attempts/${second.attemptId}/self-grade`, { score: "incorrect" }, { cookie })).status).toBe(200);
+    expect((await postJson(`/api/quiz/attempts/${second.attemptId}/self-grade`, { score: "correct", view: "nope" }, { cookie })).status).toBe(400);
+
+    const rows = await env.DB.prepare(
+      `SELECT attempt_id, question_id, model_score, user_score, direction, view, user_answer, question_text, source_text, citation
+       FROM marking_overrides ORDER BY user_answer`,
+    ).all();
+    expect(rows.results).toEqual([
+      {
+        attempt_id: first.attemptId,
+        question_id: Q_AP,
+        model_score: "partial",
+        user_score: "correct",
+        direction: "model_too_harsh",
+        view: "ap",
+        user_answer: "Give oral glucose",
+        question_text: `Question ${Q_AP}`,
+        source_text: `[ACTAS] ch_ap ${CHUNK_TEXT}`,
+        citation: "ACTAS CMG 10",
+      },
+      expect.objectContaining({ attempt_id: second.attemptId, user_score: "incorrect", direction: "model_too_lenient", view: null }),
+    ]);
+
+    expect((await call("/api/admin/questions/overrides", { cookie })).status).toBe(403);
+    await env.DB.prepare(`UPDATE users SET is_admin = 1 WHERE email = ?1`).bind(email).run();
+    const json = (await (await call("/api/admin/questions/overrides", { cookie })).json()) as {
+      overrides: { direction: string; feedbackSummary: string; correctElements: string[] }[];
+    };
+    expect(json.overrides).toHaveLength(2);
+    expect(json.overrides[0]).toMatchObject({ feedbackSummary: "Mostly there.", correctElements: ["oral glucose"] });
+    const csv = await call("/api/admin/questions/overrides?format=csv", { cookie });
+    expect(csv.headers.get("content-type")).toContain("text/csv");
+    const lines = (await csv.text()).trim().split("\r\n");
+    expect(lines[0]?.startsWith("overriddenAt,markedAt,direction,modelScore,userScore")).toBe(true);
+    expect(lines).toHaveLength(3);
+    const admin = (await (await call("/api/admin/questions", { cookie })).json()) as { overrides: unknown };
+    expect(admin.overrides).toEqual({ total: 2, modelTooHarsh: 1, modelTooLenient: 1 });
+
+    expect((await postJson(`/api/quiz/attempts/${first.attemptId}/self-grade`, { score: "partial" }, { cookie })).status).toBe(200);
+    const left = await env.DB.prepare(`SELECT COUNT(*) AS n FROM marking_overrides`).first<{ n: number }>();
+    expect(left?.n).toBe(1);
+  });
+
+  it("does not log self-marks on revealed answers as overrides", async () => {
+    const { cookie } = await signIn();
+    const reveal = (await (await postJson(`/api/quiz/questions/${Q_AP}/reveal`, { view: "ap", answer: "x" }, { cookie })).json()) as { attemptId: string };
+    expect((await postJson(`/api/quiz/attempts/${reveal.attemptId}/self-grade`, { score: "correct" }, { cookie })).status).toBe(200);
+    const n = await env.DB.prepare(`SELECT COUNT(*) AS n FROM marking_overrides`).first<{ n: number }>();
+    expect(n?.n).toBe(0);
+  });
+
   it("does not score or charge for an unreadable reply", async () => {
     const { cookie, email } = await signIn();
     for (const reply of ["Looks good to me!", JSON.stringify({ score: "great" }), JSON.stringify([{ score: "correct" }])]) {

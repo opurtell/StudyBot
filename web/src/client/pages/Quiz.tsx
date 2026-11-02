@@ -246,7 +246,7 @@ export function Quiz() {
   const correct = (score: Score) =>
     run("grade", async () => {
       if (!result?.attemptId) return;
-      await api.selfGrade(result.attemptId, score);
+      await api.selfGrade(result.attemptId, score, questionView);
       setCorrected(score);
     });
 

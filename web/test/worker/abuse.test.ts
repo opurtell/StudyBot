@@ -139,6 +139,19 @@ describe("report abuse", () => {
     expect(statuses[20]).toBe(429);
   });
 
+  it("deletes a deleted account's marking overrides", async () => {
+    const { cookie, email } = await signIn();
+    const user = await env.DB.prepare(`SELECT id FROM users WHERE email = ?1`).bind(email).first<{ id: string }>();
+    await env.DB.prepare(
+      `INSERT INTO marking_overrides (id, attempt_id, user_id, question_id, model_score, user_score, direction, evaluation_json, marked_at, created_at, updated_at)
+       VALUES ('o1', 'a1', ?1, ?2, 'partial', 'correct', 'model_too_harsh', '{}', 1, 1, 1)`,
+    )
+      .bind(user!.id, Q_AP)
+      .run();
+    expect((await call("/api/me", { method: "DELETE", headers: { origin: "https://studybot.test" }, cookie })).status).toBe(200);
+    expect(await env.DB.prepare(`SELECT COUNT(*) AS n FROM marking_overrides`).first()).toEqual({ n: 0 });
+  });
+
   it("drops a deleted account's link to its reports", async () => {
     const { cookie } = await signIn();
     await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "other", detail: "My name is in here" }, { cookie });
