@@ -9,6 +9,13 @@ export interface QuestionFilters {
   difficulty: Difficulty | null;
 }
 
+export interface Exclusions {
+  sections: string[];
+  documents: string[];
+}
+
+export const NO_EXCLUSIONS: Exclusions = { sections: [], documents: [] };
+
 export interface PublicQuestion {
   id: string;
   text: string;
@@ -19,6 +26,7 @@ export interface PublicQuestion {
   documentId: string;
   documentNumber: string;
   documentTitle: string;
+  section: string;
   origin: "bank" | "live";
 }
 
@@ -39,6 +47,7 @@ interface QuestionRow {
   document_id: string;
   number: string;
   title: string;
+  section: string;
   origin: "bank" | "live";
   status: StoredQuestion["status"];
   source_text: string;
@@ -47,7 +56,7 @@ interface QuestionRow {
 }
 
 const SELECT_QUESTION = `SELECT q.id, q.question_text, q.question_type, q.difficulty, q.category, q.source_citation, q.document_id,
-  d.number, d.title, q.origin, q.status, q.source_text, q.attribution, q.licence
+  d.number, d.title, d.section, q.origin, q.status, q.source_text, q.attribution, q.licence
   FROM question_bank q
   JOIN corpus_documents d ON d.id = q.document_id
   JOIN corpus_chunks c ON c.id = q.chunk_id AND c.retired_at IS NULL AND c.embed_text = q.source_text`;
@@ -63,12 +72,23 @@ function toPublic(row: QuestionRow): PublicQuestion {
     documentId: row.document_id,
     documentNumber: row.number,
     documentTitle: row.title,
+    section: row.section,
     origin: row.origin,
   };
 }
 
 function toStored(row: QuestionRow): StoredQuestion {
   return { ...toPublic(row), status: row.status, sourceText: row.source_text, attribution: row.attribution, licence: row.licence };
+}
+
+function exclusionSql(sections: string, documents: string): string {
+  return `AND d.section NOT IN (SELECT value FROM json_each(${sections}))
+         AND d.id NOT IN (SELECT value FROM json_each(${documents}))`;
+}
+
+function exclusionParams(filters: Pick<QuestionFilters, "documentId" | "section">, exclusions?: Exclusions): [string, string] {
+  if (!exclusions || filters.documentId) return ["[]", "[]"];
+  return [JSON.stringify(filters.section ? [] : exclusions.sections), JSON.stringify(exclusions.documents)];
 }
 
 function visColumn(view: CorpusView): string {
@@ -78,7 +98,14 @@ function visColumn(view: CorpusView): string {
 
 export async function nextQuestion(
   db: D1Database,
-  opts: { view: CorpusView; filters: QuestionFilters; userId: string | null; exclude: string[]; repeat: boolean },
+  opts: {
+    view: CorpusView;
+    filters: QuestionFilters;
+    userId: string | null;
+    exclude: string[];
+    repeat: boolean;
+    exclusions?: Exclusions;
+  },
 ): Promise<PublicQuestion | null> {
   const vis = visColumn(opts.view);
   const unseen = opts.repeat
@@ -96,6 +123,7 @@ export async function nextQuestion(
          AND (?2 IS NULL OR q.document_id = ?2)
          AND (?3 IS NULL OR d.section = ?3)
          AND (?4 IS NULL OR q.difficulty = ?4)
+         ${exclusionSql("?7", "?8")}
          ${unseen}
        ${order} LIMIT 1`,
     )
@@ -106,6 +134,7 @@ export async function nextQuestion(
       opts.filters.difficulty,
       opts.userId,
       JSON.stringify(opts.exclude),
+      ...exclusionParams(opts.filters, opts.exclusions),
     )
     .first<QuestionRow>();
   return row ? toPublic(row) : null;
@@ -160,6 +189,7 @@ export async function candidateChunks(
   view: CorpusView,
   filters: Pick<QuestionFilters, "documentId" | "section">,
   limit = 5,
+  exclusions?: Exclusions,
 ): Promise<CandidateChunk[]> {
   const vis = visColumn(view);
   const { results } = await db
@@ -169,10 +199,11 @@ export async function candidateChunks(
        WHERE c.retired_at IS NULL AND c.${vis} = 1 AND length(c.text) >= 200 AND d.service = ?1
          AND (?2 IS NULL OR c.document_id = ?2)
          AND (?3 IS NULL OR d.section = ?3)
+         ${exclusionSql("?5", "?6")}
        ORDER BY (SELECT COUNT(*) FROM question_bank q WHERE q.chunk_id = c.id AND q.status = 'active'), random()
        LIMIT ?4`,
     )
-    .bind(CORPUS_SERVICE, filters.documentId, filters.section, limit)
+    .bind(CORPUS_SERVICE, filters.documentId, filters.section, limit, ...exclusionParams(filters, exclusions))
     .all<{
       id: string;
       document_id: string;

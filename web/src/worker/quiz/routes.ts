@@ -40,6 +40,8 @@ import {
 } from "./prompts";
 import { loadDocumentTitles, nameDocuments } from "./naming";
 import { questionVisibility } from "./scope";
+import { parseExclusions } from "../progress/settings";
+import { isScore } from "../progress/routes";
 import {
   dailyCaps,
   ledgerStatement,
@@ -118,7 +120,9 @@ quizRoutes.post("/next", async (c) => {
   if (!body) return apiError(c, 400, "bad_request", "Send a JSON object.");
   const view = viewFrom(body);
   const filters = parseFilters(body);
+  const exclusions = parseExclusions(body);
   if (!view || !filters) return apiError(c, 400, "bad_request", "Unknown scope, guideline or difficulty.");
+  if (!exclusions) return apiError(c, 400, "bad_request", "Excluded topics must be lists of names.");
   const rawExclude = body.exclude ?? [];
   if (!Array.isArray(rawExclude) || rawExclude.some((id) => typeof id !== "string" || !ID_PATTERN.test(id))) {
     return apiError(c, 400, "bad_request", "exclude must be a list of question ids.");
@@ -128,7 +132,7 @@ quizRoutes.post("/next", async (c) => {
   const now = Date.now();
   const repeat = body.repeat === true;
 
-  const question = await nextQuestion(c.env.DB, { view, filters, userId: user?.id ?? null, exclude, repeat });
+  const question = await nextQuestion(c.env.DB, { view, filters, userId: user?.id ?? null, exclude, repeat, exclusions });
   if (question) await recordServed(c.env.DB, question.id, user?.id ?? null, now);
   const quota = await quotaFor(c);
   const live = user ? await liveAiAvailability(c.env, "gen", now) : null;
@@ -147,7 +151,8 @@ quizRoutes.post("/generate", async (c) => {
   if (!body) return apiError(c, 400, "bad_request", "Send a JSON object.");
   const view = viewFrom(body);
   const filters = parseFilters(body);
-  if (!view || !filters) return apiError(c, 400, "bad_request", "Unknown scope, guideline or difficulty.");
+  const exclusions = parseExclusions(body);
+  if (!view || !filters || !exclusions) return apiError(c, 400, "bad_request", "Unknown scope, guideline, difficulty or excluded topics.");
   const difficulty: Difficulty = filters.difficulty ?? "medium";
   const now = Date.now();
   const log = c.get("log");
@@ -155,7 +160,7 @@ quizRoutes.post("/generate", async (c) => {
   const availability = await liveAiAvailability(c.env, "gen", now);
   if (!availability.ok) return apiError(c, 503, "unavailable", unavailableMessage("gen", availability));
 
-  const chunks = await candidateChunks(c.env.DB, view, filters);
+  const chunks = await candidateChunks(c.env.DB, view, filters, 5, exclusions);
   if (chunks.length === 0) return apiError(c, 404, "not_found", "There's no guideline text in this scope to write a question from.");
 
   if (!(await takeCredit(c.env.DB, c.env, user.id, "gen", new Date(now)))) {
@@ -256,15 +261,19 @@ quizRoutes.post("/questions/:id/reveal", async (c) => {
   const question = await getQuestion(c.env.DB, c.req.param("id"), view);
   if (!question) return apiError(c, 404, "not_found", "No such question in this scope.");
   const user = c.get("user");
+  const attemptId = user ? crypto.randomUUID() : null;
+  const typed = typeof body?.answer === "string" ? body.answer.trim().slice(0, MAX_ANSWER_CHARS) : "";
   if (user) {
     await c.env.DB.prepare(
-      `INSERT INTO attempts (id, user_id, question_id, kind, created_at) VALUES (?1, ?2, ?3, 'revealed', ?4)`,
+      `INSERT INTO attempts (id, user_id, question_id, kind, user_answer, created_at) VALUES (?1, ?2, ?3, 'revealed', ?4, ?5)`,
     )
-      .bind(crypto.randomUUID(), user.id, question.id, Date.now())
+      .bind(attemptId, user.id, question.id, typed || null, Date.now())
       .run();
   }
   return c.json({
+    attemptId,
     questionId: question.id,
+    section: question.section,
     score: null,
     sourceQuote: question.sourceText,
     sourceText: question.sourceText,
@@ -327,13 +336,14 @@ quizRoutes.post("/questions/:id/mark", async (c) => {
     return apiError(c, 502, "unreadable_response", UNREADABLE_MARK_MESSAGE);
   }
 
+  const attemptId = crypto.randomUUID();
   await c.env.DB.batch([
     ledgerStatement(c.env.DB, { userId: user.id, kind: "eval", outcome: "ok", modelId: result.modelId, questionId: question.id, result, now }),
     c.env.DB.prepare(
       `INSERT INTO attempts (id, user_id, question_id, kind, score, user_answer, evaluation_json, elapsed_ms, prompt_version, model_id, created_at)
        VALUES (?1, ?2, ?3, 'marked', ?4, ?5, ?6, ?7, ?8, ?9, ?10)`,
     ).bind(
-      crypto.randomUUID(),
+      attemptId,
       user.id,
       question.id,
       evaluation.score,
@@ -347,7 +357,9 @@ quizRoutes.post("/questions/:id/mark", async (c) => {
   ]);
 
   return c.json({
+    attemptId,
     questionId: question.id,
+    section: question.section,
     ...evaluation,
     sourceText: question.sourceText,
     citation: question.citation,
@@ -356,6 +368,20 @@ quizRoutes.post("/questions/:id/mark", async (c) => {
     attribution: question.attribution,
     quota: await quotaFor(c),
   });
+});
+
+quizRoutes.post("/attempts/:id/self-grade", async (c) => {
+  const user = c.get("user");
+  if (!user) return apiError(c, 401, "unauthorised", "Sign in to keep your self-marked answers on your account.");
+  const body = await readBody(c);
+  if (!body || !isScore(body.score)) return apiError(c, 400, "bad_request", "Score must be correct, partial or incorrect.");
+  const row = await c.env.DB.prepare(
+    `UPDATE attempts SET score = ?3 WHERE id = ?1 AND user_id = ?2 AND kind = 'revealed' RETURNING id`,
+  )
+    .bind(c.req.param("id"), user.id, body.score)
+    .first<{ id: string }>();
+  if (!row) return apiError(c, 404, "not_found", "No such revealed answer in your history.");
+  return c.json({ ok: true, score: body.score });
 });
 
 function reportThreshold(env: Env): number {

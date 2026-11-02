@@ -4,6 +4,7 @@ import { loadSession } from "./auth/sessions";
 import { adminCorpusRoutes, guidelineRoutes, medicationRoutes } from "./corpus/routes";
 import { apiError, clientIp } from "./lib/http";
 import { adminQuestionRoutes, quizRoutes } from "./quiz/routes";
+import { progressRoutes, topicRoutes } from "./progress/routes";
 import { createLogger } from "./lib/log";
 import type { AppEnv } from "./types";
 
@@ -74,6 +75,8 @@ app.route("/medications", medicationRoutes);
 app.route("/admin/corpus", adminCorpusRoutes);
 app.route("/quiz", quizRoutes);
 app.route("/admin/questions", adminQuestionRoutes);
+app.route("/topics", topicRoutes);
+app.route("/progress", progressRoutes);
 
 app.notFound((c) => apiError(c, 404, "not_found", "No such endpoint."));
 

@@ -31,7 +31,7 @@ export function ScopePicker({
             role="radio"
             aria-checked={choice.level === level.value}
             onClick={() => onChange({ ...choice, level: level.value })}
-            className={`rounded-sm px-3 py-1 text-sm font-medium ${
+            className={`min-h-10 rounded-sm px-3 py-2 text-sm font-medium ${
               choice.level === level.value ? "bg-primary text-on-primary" : "hover:bg-surface-container"
             }`}
           >

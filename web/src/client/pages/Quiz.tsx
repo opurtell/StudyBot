@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
+import { Feedback, SelfGrade } from "../components/Feedback";
 import { ScopePicker } from "../components/ScopePicker";
 import {
   api,
@@ -12,19 +13,15 @@ import {
   type QuizQuestion,
   type ReportReason,
   type Reveal,
+  type Score,
 } from "../lib/api";
+import { gradeGuestAttempt, recordGuestAttempt } from "../lib/guestProgress";
+import { usePreferences } from "../lib/preferences";
 import { useScopeChoice, viewFor } from "../lib/scopeView";
 import { useSession } from "../lib/session";
 
 const SEEN_KEY = "quiz-seen";
 const MAX_SEEN = 400;
-
-const SCORE_LABEL: Record<Mark["score"], string> = { correct: "Correct", partial: "Partly correct", incorrect: "Incorrect" };
-const SCORE_CLASS: Record<Mark["score"], string> = {
-  correct: "bg-primary text-on-primary",
-  partial: "bg-highlight text-on-highlight",
-  incorrect: "bg-error text-white",
-};
 
 const REASONS: { value: ReportReason; label: string }[] = [
   { value: "incorrect", label: "Clinically wrong" },
@@ -61,9 +58,12 @@ export function Quiz() {
   const { me, refresh } = useSession();
   const signedIn = Boolean(me?.signedIn);
   const [choice, setChoice] = useScopeChoice();
+  const { prefs } = usePreferences();
   const view = viewFor(choice);
+  const [params] = useSearchParams();
   const [documents, setDocuments] = useState<DocumentSummary[]>([]);
-  const [documentId, setDocumentId] = useState("");
+  const [documentId, setDocumentId] = useState(params.get("document") ?? "");
+  const [section, setSection] = useState(params.get("document") ? "" : (params.get("section") ?? ""));
   const [difficulty, setDifficulty] = useState<Difficulty | "">("");
 
   const [question, setQuestion] = useState<QuizQuestion | null>(null);
@@ -73,6 +73,9 @@ export function Quiz() {
   const [quota, setQuota] = useState<Quota | null>(null);
   const [answer, setAnswer] = useState("");
   const [result, setResult] = useState<Mark | Reveal | null>(null);
+  const [submitted, setSubmitted] = useState("");
+  const [selfScore, setSelfScore] = useState<Score | null>(null);
+  const guestAttempt = useRef<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const started = useRef(Date.now());
@@ -93,13 +96,24 @@ export function Quiz() {
     if (me?.signedIn) setQuota(me.quota);
   }, [me]);
 
-  const filters: QuizFilters = { view, documentId: documentId || null, difficulty: difficulty || null };
+  const sections = [...new Set(documents.map((d) => d.section))].sort((a, b) => a.localeCompare(b));
+  const filters: QuizFilters = {
+    view,
+    documentId: documentId || null,
+    section: documentId ? null : section || null,
+    difficulty: difficulty || null,
+    excludedSections: prefs.excludedSections,
+    excludedDocuments: prefs.excludedDocuments,
+  };
 
   function show(next: QuizQuestion | null) {
     setQuestion(next);
     setQuestionView(view);
     setAnswer("");
     setResult(null);
+    setSubmitted("");
+    setSelfScore(null);
+    guestAttempt.current = null;
     started.current = Date.now();
     if (next && !signedIn) rememberSeen(next.id);
   }
@@ -136,7 +150,32 @@ export function Quiz() {
 
   const reveal = () =>
     run("reveal", async () => {
-      if (question) setResult(await api.reveal(question.id, questionView));
+      if (!question) return;
+      const typed = answer.trim();
+      const res = await api.reveal(question.id, questionView, typed);
+      setSubmitted(typed);
+      setResult(res);
+      if (!signedIn) {
+        guestAttempt.current = recordGuestAttempt({
+          questionId: question.id,
+          questionText: question.text,
+          documentId: question.documentId,
+          documentTitle: question.documentTitle,
+          section: res.section ?? question.section ?? "Other",
+          score: null,
+        });
+      }
+    });
+
+  const grade = (score: Score) =>
+    run("grade", async () => {
+      if (signedIn) {
+        if (!result?.attemptId) return;
+        await api.selfGrade(result.attemptId, score);
+      } else if (guestAttempt.current) {
+        gradeGuestAttempt(guestAttempt.current, score);
+      }
+      setSelfScore(score);
     });
 
   const mark = (e: FormEvent) => {
@@ -145,6 +184,7 @@ export function Quiz() {
       if (!question) return;
       try {
         const res = await api.mark(question.id, questionView, answer, Date.now() - started.current);
+        setSubmitted(answer.trim());
         setResult(res);
         setQuota(res.quota);
         void refresh();
@@ -168,7 +208,25 @@ export function Quiz() {
 
       <section aria-label="Quiz settings" className="space-y-3">
         <ScopePicker choice={choice} onChange={setChoice} legend="Questions for" label="Scope" />
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-3">
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium">Topic</span>
+            <select
+              value={section}
+              onChange={(e) => {
+                setSection(e.target.value);
+                setDocumentId("");
+              }}
+              className="w-full rounded-sm bg-surface-container-lowest p-2"
+            >
+              <option value="">Any topic</option>
+              {(section && !sections.includes(section) ? [section, ...sections] : sections).map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
           <label className="block text-sm">
             <span className="mb-1 block font-medium">Guideline</span>
             <select
@@ -177,7 +235,9 @@ export function Quiz() {
               className="w-full rounded-sm bg-surface-container-lowest p-2"
             >
               <option value="">Any guideline</option>
-              {documents.map((d) => (
+              {documents
+                .filter((d) => !section || d.section === section || d.id === documentId)
+                .map((d) => (
                 <option key={d.id} value={d.id}>
                   {d.kind === "csm" ? d.number : `${d.kind === "med" ? "MED" : "CMG"} ${d.number}`} {d.title}
                 </option>
@@ -302,64 +362,35 @@ export function Quiz() {
             </form>
           )}
 
-          {result && <Feedback result={result} />}
+          {result && (
+            <Feedback
+              answer={submitted}
+              data={{
+                marked: "correctElements" in result,
+                score: "correctElements" in result ? result.score : null,
+                ...("correctElements" in result
+                  ? {
+                      feedbackSummary: result.feedbackSummary,
+                      correctElements: result.correctElements,
+                      missingOrWrong: result.missingOrWrong,
+                      sourceQuote: result.sourceQuote,
+                    }
+                  : {}),
+                sourceText: result.sourceText,
+                citation: result.citation,
+                documentId: result.documentId,
+                documentTitle: result.documentTitle,
+              }}
+            />
+          )}
+          {result && !("correctElements" in result) && (signedIn ? Boolean(result.attemptId) : true) && (
+            <SelfGrade value={selfScore} onChoose={(s) => void grade(s)} disabled={busy !== null} />
+          )}
 
           <ReportQuestion key={question.id} questionId={question.id} />
         </article>
       )}
     </div>
-  );
-}
-
-function Feedback({ result }: { result: Mark | Reveal }) {
-  const marked = "score" in result;
-  return (
-    <section aria-label="Feedback" className="space-y-4">
-      {marked && (
-        <div className="space-y-3">
-          <p>
-            <span className={`rounded-sm px-2 py-1 text-sm font-semibold ${SCORE_CLASS[result.score]}`}>{SCORE_LABEL[result.score]}</span>
-          </p>
-          {result.feedbackSummary && <p>{result.feedbackSummary}</p>}
-          {result.correctElements.length > 0 && (
-            <div>
-              <h3 className="text-sm font-semibold">What you got right</h3>
-              <ul className="list-disc pl-5 text-sm">
-                {result.correctElements.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {result.missingOrWrong.length > 0 && (
-            <div>
-              <h3 className="text-sm font-semibold">Missing or wrong</h3>
-              <ul className="list-disc pl-5 text-sm">
-                {result.missingOrWrong.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {result.sourceQuote && (
-            <blockquote className="border-l-4 border-highlight pl-3 text-sm italic">{result.sourceQuote}</blockquote>
-          )}
-        </div>
-      )}
-      <div className="space-y-2 rounded-sm bg-surface-container-low p-4">
-        <h3 className="text-sm font-semibold">From the source</h3>
-        <p className="whitespace-pre-wrap text-sm">{result.sourceText}</p>
-        <p className="text-xs text-on-surface-variant">
-          Ref: {result.citation} ·{" "}
-          <Link
-            to={`/${result.documentId.startsWith("MED_") ? "medications" : "guidelines"}/${encodeURIComponent(result.documentId)}`}
-            className="underline"
-          >
-            Read {result.documentTitle}
-          </Link>
-        </p>
-      </div>
-    </section>
   );
 }
 

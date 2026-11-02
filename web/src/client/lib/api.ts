@@ -1,3 +1,15 @@
+import type { ProgressSummary, Score, Topic } from "../../shared/progress";
+
+export type { MasteryStatus, ProgressSummary, Score, SectionMastery, Topic } from "../../shared/progress";
+
+export interface UserSettings {
+  qualification: "ap" | "icp" | null;
+  pacer: boolean;
+  excludedSections: string[];
+  excludedDocuments: string[];
+  saved?: boolean;
+}
+
 export interface QuotaBucket {
   used: number;
   limit: number;
@@ -12,6 +24,7 @@ export type Me =
       email: string;
       isAdmin?: boolean;
       quota: Quota;
+      settings?: UserSettings;
     };
 
 export type CorpusView = "ap" | "ap_pacer" | "icp" | "icp_pacer";
@@ -62,7 +75,6 @@ export interface SyncResult {
 }
 
 export type Difficulty = "easy" | "medium" | "hard";
-export type Score = "correct" | "partial" | "incorrect";
 export type ReportReason = "incorrect" | "out_of_scope" | "unclear" | "not_in_source" | "other";
 
 export interface Quota {
@@ -81,13 +93,17 @@ export interface QuizQuestion {
   documentId: string;
   documentNumber: string;
   documentTitle: string;
+  section?: string;
   origin: "bank" | "live";
 }
 
 export interface QuizFilters {
   view: CorpusView;
   documentId?: string | null;
+  section?: string | null;
   difficulty?: Difficulty | null;
+  excludedSections?: string[];
+  excludedDocuments?: string[];
 }
 
 export interface NextResult {
@@ -98,7 +114,9 @@ export interface NextResult {
 }
 
 export interface Reveal {
+  attemptId?: string | null;
   questionId: string;
+  section?: string;
   sourceText: string;
   citation: string;
   documentId: string;
@@ -138,6 +156,50 @@ export interface QuestionAdminStatus {
   liveAi: boolean;
   today: { generations: number; marks: number; caps: { gen: number; eval: number } };
   month: { costUsd: number; calls: number; unreadable: number };
+}
+
+export interface HistoryItem {
+  id: string;
+  questionId: string;
+  questionText: string;
+  documentId: string;
+  documentTitle: string;
+  section: string;
+  kind: "marked" | "revealed";
+  score: Score | null;
+  at: number;
+}
+
+export interface Progress extends ProgressSummary {
+  recent: HistoryItem[];
+}
+
+export interface AttemptDetail {
+  id: string;
+  kind: "marked" | "revealed";
+  score: Score | null;
+  answer: string | null;
+  elapsedMs: number | null;
+  at: number;
+  evaluation: {
+    correctElements?: string[];
+    missingOrWrong?: string[];
+    sourceQuote?: string;
+    feedbackSummary?: string;
+  } | null;
+  question: { id: string; text: string; difficulty: string; withdrawn: boolean };
+  sourceText: string;
+  citation: string;
+  documentId: string;
+  documentTitle: string;
+  section: string;
+  attribution: string;
+}
+
+export interface ImportAttempt {
+  questionId: string;
+  score: Score | null;
+  at: number;
 }
 
 export interface PublicConfig {
@@ -188,8 +250,32 @@ export const api = {
       method: "POST",
       body: JSON.stringify(filters),
     }),
-  reveal: (id: string, view: CorpusView) =>
-    request<Reveal>(`/quiz/questions/${id}/reveal`, { method: "POST", body: JSON.stringify({ view }) }),
+  reveal: (id: string, view: CorpusView, answer = "") =>
+    request<Reveal>(`/quiz/questions/${id}/reveal`, { method: "POST", body: JSON.stringify({ view, answer }) }),
+  selfGrade: (attemptId: string, score: Score) =>
+    request<{ ok: true; score: Score }>(`/quiz/attempts/${encodeURIComponent(attemptId)}/self-grade`, {
+      method: "POST",
+      body: JSON.stringify({ score }),
+    }),
+  saveSettings: (settings: UserSettings) =>
+    request<{ settings: UserSettings }>("/me/settings", {
+      method: "PUT",
+      body: JSON.stringify({
+        qualification: settings.qualification,
+        pacer: settings.pacer,
+        excludedSections: settings.excludedSections,
+        excludedDocuments: settings.excludedDocuments,
+      }),
+    }),
+  topics: (view: CorpusView) => request<{ view: CorpusView; topics: Topic[] }>(`/topics?view=${view}`),
+  progress: (view: CorpusView) =>
+    request<Progress>(`/progress?view=${view}&tz=${new Date().getTimezoneOffset()}`),
+  history: (before?: number) =>
+    request<{ items: HistoryItem[]; more: boolean }>(`/progress/history${before ? `?before=${before}` : ""}`),
+  attempt: (id: string) => request<AttemptDetail>(`/progress/attempts/${encodeURIComponent(id)}`),
+  resetProgress: () => request<{ ok: true }>("/progress", { method: "DELETE" }),
+  importProgress: (attempts: ImportAttempt[]) =>
+    request<{ imported: number; skipped: number }>("/progress/import", { method: "POST", body: JSON.stringify({ attempts }) }),
   mark: (id: string, view: CorpusView, answer: string, elapsedMs: number) =>
     request<Mark>(`/quiz/questions/${id}/mark`, { method: "POST", body: JSON.stringify({ view, answer, elapsedMs }) }),
   report: (id: string, reason: ReportReason, detail: string) =>

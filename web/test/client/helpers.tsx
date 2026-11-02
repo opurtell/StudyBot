@@ -11,7 +11,7 @@ export function mockApi(routes: Record<string, Handler | unknown>) {
     const url = typeof input === "string" ? input : input instanceof URL ? input.pathname : input.url;
     const method = (init?.method ?? "GET").toUpperCase();
     const key = `${method} ${url}`;
-    const route = routes[key];
+    const route = routes[key] ?? routes[key.split("?")[0]!] ?? (key.startsWith("GET /api/topics?") ? { view: "icp_pacer", topics: [] } : undefined);
     if (route === undefined) throw new Error(`Unmocked API call: ${key}`);
     const result =
       typeof route === "function"

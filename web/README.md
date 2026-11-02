@@ -5,10 +5,22 @@ One Worker serves the React app as static assets and the API under `/api/*`, so 
 
 **Live:** https://study.paramedtools.com (production).
 
-**Status:** Phase 4 (question bank and quotas). Sign-in, accounts, rate limiting, logging and the AI Gateway client
+**Status:** Phase 5 (product surface). Sign-in, accounts, rate limiting, logging and the AI Gateway client
 (Phase 2); the ACTAS guideline corpus with guideline, skill and medication pages (Phase 3); the quiz with a pre-generated
-question bank, AI marking and fresh generation within a monthly allowance, and question reporting (Phase 4). Mastery,
-history and the rest of the product surface are Phase 5.
+question bank, AI marking and fresh generation within a monthly allowance, and question reporting (Phase 4); per-user
+progress, settings and the dashboard (Phase 5, below).
+
+## Progress and settings (Phase 5)
+
+- **Mastery** is per guideline section (the document's `section`, never the model's category, review H-4). It uses each
+  question's latest scored answer, so re-marking can't inflate it (H-3). AI marks and self-marks both count. One summary
+  function, `src/shared/progress.ts`, serves the API (`GET /api/progress`) and the guest dashboard.
+- **Guests** keep progress in the browser (`guest-progress` in localStorage, last 1,000 answers). After sign-in the
+  dashboard offers to add it to the account (`POST /api/progress/import`, idempotent) or discard it.
+- **Settings** (qualification AP/ICP, PACER, excluded topics) live in `user_settings` for signed-in users and in
+  localStorage for guests. A guest's settings are copied to a new account on first sign-in.
+- **History and feedback:** `/history` lists answers; `/history/:id` shows your answer beside the assessment and source.
+- **Phones:** below 640 px the navigation is a bottom tab bar and form fields use 16 px text so iOS doesn't zoom.
 
 ## Layout
 
