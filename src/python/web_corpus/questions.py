@@ -54,6 +54,7 @@ EST_OUTPUT_TOKENS = 450
 
 PROMPTS = json.loads(PROMPTS_PATH.read_text(encoding="utf-8"))
 ICP_MENTION = re.compile(PROMPTS["icpMentionPattern"], re.IGNORECASE)
+GUIDELINE_CODE = re.compile(r"\b(?:ACTAS\s+)?(?:(CMG|MED)\s?(\d+[A-Z]?)|CSM\.\s?([A-Z]{1,2}\d+))\b(?![.\d])")
 
 
 class GenerationError(Exception):
@@ -351,6 +352,39 @@ def _doc_label(doc) -> str:
     return f"ACTAS {'MED' if doc.kind == 'med' else 'CMG'} {doc.number}"
 
 
+def _code_key(kind: str, number: str) -> tuple[str, str]:
+    return kind, number.upper().lstrip("0") or "0"
+
+
+def guideline_titles(corpus: Corpus) -> dict[tuple[str, str], str]:
+    titles = {}
+    for doc in corpus.documents:
+        if doc.kind == "csm" and doc.number.startswith("CSM."):
+            titles[_code_key("CSM", doc.number[4:])] = doc.title
+        elif doc.kind in ("cmg", "med"):
+            titles[_code_key(doc.kind.upper(), doc.number)] = doc.title
+    return titles
+
+
+def name_guidelines(text: str, titles: dict[tuple[str, str], str]) -> str:
+    """Add the title after any guideline code the question names on its own, since users know guidelines by title."""
+
+    def named(match: re.Match) -> str:
+        kind, number, csm = match.groups()
+        title = titles.get(_code_key("CSM", csm) if csm else _code_key(kind, number))
+        if not title:
+            return match.group(0)
+        core = re.sub(r"\s*\([^)]*\)", "", title).strip().lower()
+        after = text[match.end():match.end() + len(title) + 4].lstrip(" (:-\u2013").lower()
+        before = text[max(0, match.start() - len(core) - 30):match.start()].lower()
+        if after.startswith(core) or core in before:
+            return match.group(0)
+        flat = re.sub(r"\s*\(([^)]*)\)", r", \1", title)
+        return f"{match.group(0)} ({flat})"
+
+    return GUIDELINE_CODE.sub(named, text)
+
+
 def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], dict]:
     chunks = {c.id: c for c in corpus.chunks}
     docs = {d.id: d for d in corpus.documents}
@@ -361,9 +395,11 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
     kept: list[dict] = []
     hashes: set[str] = set()
     by_chunk: dict[str, list[str]] = {}
+    titles = guideline_titles(corpus)
     for r in records:
         if not r.get("ok"):
             continue
+        r = {**r, "question_text": name_guidelines(r["question_text"], titles)}
         chunk = chunks.get(r["chunk_id"])
         if chunk is None or chunk.embed_text != r["source_text"]:
             stats["stale"] += 1

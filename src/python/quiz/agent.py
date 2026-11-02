@@ -36,6 +36,7 @@ Rules:
 - Vary question types: recall, definition, scenario, drug_dose
 - Use Australian English (adrenaline, haemorrhage, colour)
 - Tone: direct, clinical
+- When the question names a guideline or skill, use its title (e.g. "{svc.short_name} CMG 22 (Seizures)" or "the Seizures guideline"), never its code or number alone
 - Do NOT repeat or closely rephrase any previously asked questions listed below"""
 
     if "ICP" not in effective_qualifications:

@@ -221,3 +221,18 @@ def test_icp_chunks_holding_every_ap_line_are_twins_even_when_much_longer():
     tasks = {t.chunk.id: t for t in qb.plan(corpus_build.Corpus("v", "t", None, [], [ap, icp]))}
     assert tasks["icp1"].difficulties == ("medium",)
     assert len(tasks["icp1"].focus) == 8 and all("ICP" in line for line in tasks["icp1"].focus)
+
+
+def test_name_guidelines_adds_titles_to_bare_codes():
+    titles = {("CMG", "35A"): "Poisoning and Overdose", ("MED", "3"): "Adrenaline",
+              ("CSM", "A13"): "Laryngoscope and Bougie Railroad Technique (Endotracheal Intubation)",
+              ("CMG", "22"): "Seizures"}
+    assert qb.name_guidelines("According to ACTAS CMG 35A, what is first?", titles) == (
+        "According to ACTAS CMG 35A (Poisoning and Overdose), what is first?")
+    assert qb.name_guidelines("Per ACTAS MED 03, the dose", titles) == "Per ACTAS MED 03 (Adrenaline), the dose"
+    assert qb.name_guidelines("Using CSM.A13, how deep?", titles) == (
+        "Using CSM.A13 (Laryngoscope and Bougie Railroad Technique, Endotracheal Intubation), how deep?")
+    assert qb.name_guidelines("ACTAS CMG 22 (Seizures) says", titles) == "ACTAS CMG 22 (Seizures) says"
+    assert qb.name_guidelines("the Seizures guideline (CMG 22) says", titles) == "the Seizures guideline (CMG 22) says"
+    assert qb.name_guidelines("Per CMG 14.1 the dose", titles) == "Per CMG 14.1 the dose"
+    assert qb.name_guidelines("Per CMG 99, the dose", titles) == "Per CMG 99, the dose"
