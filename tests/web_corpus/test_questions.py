@@ -211,3 +211,13 @@ def test_icp_twins_with_trivial_differences_are_skipped():
     icp = _chunk("icp1", shared + "\n- ICP.", {"icp", "icp_pacer"})
     tasks = qb.plan(corpus_build.Corpus("v", "t", None, [], [ap, icp]))
     assert [t.chunk.id for t in tasks] == ["ap1"]
+
+
+def test_icp_chunks_holding_every_ap_line_are_twins_even_when_much_longer():
+    shared = "- LMA size: 2\n- Shock: 70 joules\n- Adrenaline (1:10,000): Dose: 0.13mg"
+    extra = "\n".join(f"- **ICP:** Drug {i}: Dose: {i}mg; Volume: {i}ml with a long preparation note" for i in range(8))
+    ap = _chunk("ap1", shared, {"ap", "ap_pacer"}, heading="2 Years - 13kg")
+    icp = _chunk("icp1", shared + "\n" + extra, {"icp", "icp_pacer"}, heading="2 Years - 13kg")
+    tasks = {t.chunk.id: t for t in qb.plan(corpus_build.Corpus("v", "t", None, [], [ap, icp]))}
+    assert tasks["icp1"].difficulties == ("medium",)
+    assert len(tasks["icp1"].focus) == 8 and all("ICP" in line for line in tasks["icp1"].focus)

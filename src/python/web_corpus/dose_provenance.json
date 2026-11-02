@@ -1,0 +1,6019 @@
+{
+ "summary": {
+  "lines": 394,
+  "ambiguous": 27,
+  "clean": 42,
+  "monograph": 41,
+  "page_without_document": 3,
+  "reference_card": 145,
+  "shared_calculator": 136
+ },
+ "clean_by_document": {
+  "MED_03_Adrenaline": 11,
+  "MED_18_Ketamine_Hydrochloride__Ketalar_": 7,
+  "CMG_28_Home_Dialysis_Emergencies": 4,
+  "CMG_45_Palliative_Care_and_VAD": 4,
+  "MED_23_Morphine": 4,
+  "CMG_CSM.M07_Skills_Matrix": 3,
+  "CMG_22_Seizures": 3,
+  "CMG_35A_Poisoning_and_Overdose": 1,
+  "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies": 1,
+  "CMG_39_Major_Trauma": 1,
+  "CMG_3B_Intubation_Algorithm": 1,
+  "CMG_CSM.A09_Laryngeal_Mask_Airway__LMA_Supreme_": 1,
+  "CMG_CSM.DF14_Mucosal_Atomising_Device__MAD_": 1
+ },
+ "ambiguous": [
+  {
+   "medicine": "Ketamine",
+   "owners": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "owners": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "owners": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "owners": [
+    "page:calculators/palliative-care-medication-calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "owners": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "owners": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "owners": [
+    "CMG_CSM.A10_AirTraq__Endotracheal_Intubation_",
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "owners": [
+    "page:reference/radio-test"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "owners": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "medicine": "Adenosine",
+   "hash": "de58165b948d2206",
+   "text": "Record a 12 lead ECG prior to use of adenosine.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adenosine",
+   "hash": "6d8c7fc8bbe75163",
+   "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adenosine",
+   "hash": "5adb4a4238aadce1",
+   "text": "##### Type\n\nEndogenous purine nucleoside, found in all body cells [S4]\n\n##### Presentations\n\n6mg in 2ml – vial\n\n##### Ac",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-adenosine-adenocor",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "bfbfc90668faad40",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.03mg Volume: 0.3ml Adrenaline (1:10,000) ETT",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "045b1a07466e5b36",
+   "text": "Adrenaline (1:10,000) IV/ IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.05mg Volume: 0.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "05f19d3dcf10c3ba",
+   "text": "Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.07mg Volume: 0.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "096e4de407a9d494",
+   "text": "Adrenaline (1:10,000) IV/IO: Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.11 Volume: 1.1mls",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "e2b04e4c48c29b8f",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.13mg Volume: 1.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "086a1c835de02d20",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.15mg Volume: 1.5mls",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "6cf720a43d0fdaf4",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.17mg Volume: 1.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "cd22ff43eba74a88",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.19mg Volume: 1.9ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "7d847a123026b468",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.21mg Volume: 2.1ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "ec80788795ae6e28",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.23mg Volume: 2.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "b9e079173e149a1a",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.25mg  Volume: 2.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "2f38841ea7915201",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.27mg Volume: 2.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "da4d7817d8bd2510",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.3mg Volume: 3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "22684443e05096c0",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 0.33mg Volume: 3.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "8061ac3a835a7d3c",
+   "text": "Adrenaline (1:10,000): Adrenaline (1:10,000): Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "00447a21e1fef535",
+   "text": "Adrenaline (1:10,000): Formula: 0.01mg/kg Preparation: 1mg in 10mls Dose: 1mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "a7cb2a6aa3cb60cf",
+   "text": "1mg IV or IO – fast push ",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "8162ab625a0a43b5",
+   "text": "IM: 0.01mg/kg (up to 50kg) ",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "ba65674e925984bd",
+   "text": " 0.5mg ",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "45dbf0b0c5a2e194",
+   "text": "Weight >10kg: nebulise 5ml adrenaline 1:1,000 Weight <10kg: nebulise 0.5ml/kg adrenaline 1:1,000  Make volume up to 5ml ",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "9fb72d27c315fe5d",
+   "text": " Add 1mL (1mg) 1:1000 adrenaline to 500mL NaCl.",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "2e4332ba4b9293c5",
+   "text": "Adult (≥40kg) Adrenaline infusion (infusion pump)",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "03aed9607471cd72",
+   "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (3mg) 1:1000 adrenaline to make 3mg/50mL",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "50fd59f29abf3a0f",
+   "text": "Default bolus: 12mcg (0.2mL)  Lower soft bolus limit: 1.2mcg (0.02mL) Upper soft bolus limit: 24mcg (0.4mL) Upper hard b",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "03aed9607471cd72",
+   "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (3mg) 1:1000 adrenaline to make 3mg/50mL",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "cace1293c3f993b4",
+   "text": "Default bolus: 6mcg (0.1mL)  Lower soft bolus limit: 0.6mcg (0.01mL) Upper soft bolus limit: 12mcg (0.2mL) Upper hard bo",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "2da905125cc13ebf",
+   "text": " Withdraw 3mL from 50mL NaCl bag, then add 3mL (300mcg) 1:10,000 adrenaline to make 300mcg/50mL",
+   "source_files": [
+    "259_44171.88f0a9b63e7b6ecc.js"
+   ],
+   "pages": [
+    "medicines/adrenaline"
+   ],
+   "owner": "MED_03_Adrenaline",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "f018112b5206509a",
+   "text": " Amiodarone 300mg, repeat 150mg @5/60 if required, max. one repeat. Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "d97c9bce14a3af46",
+   "text": "Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "f4cd4b2a32979052",
+   "text": " Magnesium Sulphate 2.5g, no repeat. Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "b04f583384c668be",
+   "text": " Amiodarone 5mg/kg (max. 300mg), repeat 2.5mg/kg @5/60 if required, max. one repeat (max. total dose 450mg) Adrenaline 0",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "d4007e44ea4ca767",
+   "text": "Adrenaline 0.01mg/kg, repeat 0.01mg/kg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "c564ee170040bdd8",
+   "text": " Magnesium Sulphate 50mg/kg (max. 2.5g), no repeat.  Adrenaline 0.01mg/kg, repeat 0.01mg/kg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "42253a9a3c30dbb7",
+   "text": "No more than 3 doses of adrenaline.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "4627b5756d759422",
+   "text": " 0.01mg/kg",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "5a9847b176716fda",
+   "text": " 0.02mg/kg Repeat adrenaline every 3 minutes while heart rate remains < 60/minute despite effective ventilations and che",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "4e0f66015c2b3ec6",
+   "text": "Aggressive fluid therapy up to sBP of 90mmHg, maintenance fluid thereafter (max 20ml/kg). ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "c88d41c2c02fdcf7",
+   "text": " Adrenaline infusion if critically unwell or refractory shock post 20ml/kg fluid. ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "842d2349799e720c",
+   "text": " Adrenaline infusion to maintain sBP of ≥ 90mmHg ICP.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "0fe255eb1294d083",
+   "text": " Consider adrenaline infusion if sBP < 90mmHg with clinical signs of shock, refractory to fluids.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "2d9e9bdd9b3ebfac",
+   "text": " Adrenaline infusion if sBP < 90mmHg with clinical signs of shock. ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "d6d42f636a6ac214",
+   "text": "200mg tablet  100mg/5ml liquid ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "197e9833e5ba3368",
+   "text": "1mMol/kg IV or IO ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "f3b9e04007c54ad3",
+   "text": "1mg of adrenaline into a 500ml",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "176becef9130f46e",
+   "text": "A “LO” or “HI” reading indicates a BGL <1.1mmol /L or >27.8 mmol/L.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "f76d80e62ec78437",
+   "text": "##### Type\n\nA naturally occurring catecholamine [S3]\n\n##### Presentations\n\n1:10,000 – 1mg in 10ml – glass ampoule \n 1:1,",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-adrenaline",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Adrenaline",
+   "hash": "f12d91c3de044732",
+   "text": "#### Indications\n\n- Patients requiring an adrenaline infusion.\n\n#### Procedure\n\n- Medication checks are to be done by tw",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-adrenaline-infusion",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "c17d2d42ee158d3d",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 25mg Volume: 0.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "c23d12f58e27ca57",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 35mg Volume: 0.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "380d885d545ea3e5",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 55mg Volume: 1.1ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "6ddbf0f48fad3578",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 65mg Volume: 1.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "1c756b726ef70dc5",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "3b19a9c5a0c39752",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 85mg Volume: 1.7ml ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "fd78fd1fc9bde84c",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 95mg Volume: 1.9ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "09e6e8c9eff96b10",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "6bd7675e5ec342b5",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 115mg Volume: 2.3ml ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "f88c95c590342487",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 125mg Volume: 2.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "64346f111ea0a47d",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "08ea67546a07f5fd",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "bc5b72471d2b0721",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 165mg Volume: 3.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "7c5e18b98ba8e219",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml Volume: 6ml Formula: 50mg/kg Preparation: 2.5g in 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "fab1ea8c38961a48",
+   "text": "Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "03efed4f89a2a09b",
+   "text": "Formula: 5mg/kg Preparation: 150mg in 3mls Dose: 300mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "f018112b5206509a",
+   "text": " Amiodarone 300mg, repeat 150mg @5/60 if required, max. one repeat. Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "b04f583384c668be",
+   "text": " Amiodarone 5mg/kg (max. 300mg), repeat 2.5mg/kg @5/60 if required, max. one repeat (max. total dose 450mg) Adrenaline 0",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "7281337e8e55938e",
+   "text": "1200mcg in 1ml – plastic ampoule ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Amiodarone",
+   "hash": "646861be2ab6a553",
+   "text": "##### Type\n\nPotent anti-arrhythmic agent [S4]\n\n##### Presentations\n\n150mg in 3ml – glass ampoule\n\n##### Actions\n\nComplex",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-amiodarone-cordarone",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Aspirin",
+   "hash": "205981ea9cf8ec17",
+   "text": "6mg in 2ml – vial",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Aspirin",
+   "hash": "ba30840790647436",
+   "text": "##### Type\n\nNon – steroidal anti-inflammatory drug [S2]\n\n##### Presentation\n\n300mg tablet\n\n##### Actions\n\n- Inhibits pla",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-acetylsalicylic-acid-aspirin",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Atropine",
+   "hash": "5b0d693b86138604",
+   "text": "In an MCI situation, it’s permissible to simply repeat the initial atropine dose every 5/60.",
+   "source_files": [
+    "178_31077.f468e1aa673386bd.js"
+   ],
+   "pages": [
+    "guidelines/poisoning-and-overdose"
+   ],
+   "owner": "CMG_35A_Poisoning_and_Overdose",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Atropine",
+   "hash": "70c03b6b34999c4b",
+   "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Atropine",
+   "hash": "47398a04245a8d69",
+   "text": "##### Type\n\nParasympathetic blocking agent [S4]\n\n##### Presentations\n\n1200mcg in 1ml – plastic ampoule \n\n##### Actions\n\n",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-atropine-sulphate",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Calcium Chloride",
+   "hash": "35e8997eb059a45b",
+   "text": "##### Type\n\nElectrolyte – utilised in both electrical and mechanical actions of the myocardium [no schedule]\n\n- **High-r",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-calcium-chloride",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Ceftriaxone",
+   "hash": "01744f2ea58d3e82",
+   "text": "1g ceftriaxone powder for reconstitution – vial",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ceftriaxone",
+   "hash": "4e88c3b86b2426f5",
+   "text": "It is possible that 20% of patients with a penicillin allergy may be sensitive to ceftriaxone",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ceftriaxone",
+   "hash": "b0b8cea29ebb00fc",
+   "text": "10mg in 2ml – vial ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ceftriaxone",
+   "hash": "e6bca0ce11f9f9fc",
+   "text": " Up to 5ml subcutaneously ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ceftriaxone",
+   "hash": "472f00028b032ec2",
+   "text": "2.5g in 5 ml (50% solution) – glass ampoule",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ceftriaxone",
+   "hash": "da046960d2d53dbd",
+   "text": "##### Type\n\n3rd generation cephalosporin antibiotic [S4]\n\n##### Presentations\n\n1g ceftriaxone powder for reconstitution ",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-ceftriaxone-rocephin",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Droperidol",
+   "hash": "60b65864b7f90728",
+   "text": "Reduce dose by half following droperidol use (i.e. up to 1mg/kg IM/IV/IO).",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Droperidol",
+   "hash": "a25fa5539e923535",
+   "text": "10mg via IM injection only (no IV/IO use) ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Droperidol",
+   "hash": "44489b51efb0d8a3",
+   "text": "##### Type\n\nAntipsychotic\n\n- **High-risk medication**\n\n##### Presentations\n\n10mg in 2ml – vial \n\n##### Actions\n\n- Droper",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-droperidol-dorm",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Fentanyl",
+   "hash": "10c7da41e0d3fa8e",
+   "text": "##### Type\n\nSynthetic narcotic analgesic [S8]\n\n##### Presentations\n\n100mcg in 2mL (5mcg/0.1mL) glass ampoule\n\n##### Acti",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-fentanyl-intra-nasal",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Fentanyl",
+   "hash": "1ad08cd9b03fd68e",
+   "text": "1.5mcg/kg IN, up to 100mcg. ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucagon",
+   "hash": "97854ce8023338b9",
+   "text": "Formula: weight <20kg = 0.5 IU Preparation: 1IU in 1ml Dose: 0.5 IU Volume: 0.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Glucagon",
+   "hash": "db87130621bb8453",
+   "text": "BGL > 15 mmol/L",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucagon",
+   "hash": "f2b05aa9579d71df",
+   "text": "Vial containing 1 International Unit of glucagon as a dry powder, with a syringe containing 1ml of diluting solution",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucagon",
+   "hash": "3cd1edbd3ba9704a",
+   "text": "##### Type\n\nPancreatic hormone [S4]\n\n##### Presentations\n\nVial containing 1 International Unit of glucagon as a dry powd",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-glucagon",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "a7cc570ee29793e5",
+   "text": "Glucose 10%",
+   "source_files": [
+    "192_33493.e9e968fcd4ca6fa6.js"
+   ],
+   "pages": [
+    "reference/skills-matrix"
+   ],
+   "owner": "CMG_CSM.M07_Skills_Matrix",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "bca99e95cb18cd2d",
+   "text": "Glucose 10% IV: Formula: 0.25 (2.5ml)/kg Preparation: 50g in 500ml Dose: 0.75ml/kg Volume: 7.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "45fa0e5f5ff1c655",
+   "text": "BGL < 4 mmol/L",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "5aaa43027c5fd0e4",
+   "text": "Glucose 10% IV (repeat once if required).",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "06693f04627fe54b",
+   "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is unable to eat or drink.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "4d9a858a7e45d6eb",
+   "text": "Hypertonic glucose solution – containing 0.1g dextrose per ml",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "7f19f0302678d7a5",
+   "text": "10% glucose – in 250ml in collapsible plastic flask",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "a932ca7ea0b5c267",
+   "text": "Treat hypoglycaemia (BGL <4mmol/L, and patient unable to eat/drink)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "3a0dd22ef725b76a",
+   "text": "Patients who respond to glucose 10% should eat, to prevent later development of further hypoglycaemia.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "03da1ba282d56338",
+   "text": "37.5g tube containing 15g glucose",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "b490308880a325ea",
+   "text": "Treatment of hypoglycaemia (BGL <4mmol/L) when patient is conscious and able to swallow",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "214016d8f2fabceb",
+   "text": "1 x tube of 15g glucose orally  May be repeated once after 15 minutes if BGL still < 4 mmol/L, and level of consciousnes",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "0168e91912184b3c",
+   "text": "##### Type\n\nHypertonic glucose solution – containing 0.1g dextrose per ml\n\n##### Presentations\n\n10% glucose – in 250ml i",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-glucose-ten-pct",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "aa3c9def34213b3b",
+   "text": "##### Type\n\nOral glucose gel [no schedule]\n\n##### Presentations\n\n37.5g tube containing 15g glucose\n\n##### Actions\n\n- Glu",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-oral-glucose-gel",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Glucose",
+   "hash": "9202d231f9952a84",
+   "text": "#### Indications\n\n- Altered level of consciousness.\n- Suspected stroke.\n- Post seizure.\n- Diabetic.\n\n#### Procedure\n\n- P",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-blood-glucose-measurement",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Glyceryl Trinitrate",
+   "hash": "54a1aa1d90ce8330",
+   "text": "Glyceryl trinitrate:  Adult: 400mcg spray or 300mcg tablet – sublingually.  Paediatric (12-16yrs): 150mcg tablet – subli",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Glyceryl Trinitrate",
+   "hash": "8e04b20287a75aa0",
+   "text": "##### Type\n\nNitrate smooth muscle relaxant and vasodilator [S3]\n\n##### Presentations\n\n- White 300mcg or 600mcg sublingua",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-glyceryl-trinitrate-anginine-or-nitrolingual-pumpspray",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Gtn",
+   "hash": "e8ff035743f7faf1",
+   "text": "Repeat GTN up to twice (total 3 doses) with 5 minutes between doses and monitoring BP. ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Gtn",
+   "hash": "d53c520630238fe4",
+   "text": "Respiratory rate: ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Gtn",
+   "hash": "ccfc6d1caddaa47d",
+   "text": "do not administer GTN if patient has taken sildenafil (Viagra), vardenafil (Levitra) or avanafil (Spedra) within the pas",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Heparin",
+   "hash": "4ae13f3a8ad34b89",
+   "text": "Remember that these patients are often on fluid restrictions. 100-200ml IV fluids will often resolve a hypotensive episo",
+   "source_files": [
+    "292_49868.d84e81ac06b2bc27.js"
+   ],
+   "pages": [
+    "guidelines/home-dialysis-emergencies"
+   ],
+   "owner": "CMG_28_Home_Dialysis_Emergencies",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Heparin",
+   "hash": "14feec314211f174",
+   "text": "5000u heparin in 1 ml – glass ampoule",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Heparin",
+   "hash": "11dea88c30dbdc8e",
+   "text": "Heparin 5000u IV",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Heparin",
+   "hash": "3fd80760e9792b01",
+   "text": "##### Type\n\nUnfractioned heparin anticoagulant\n\n- **High-risk medication**\n\n##### Presentations\n\n5000u heparin in 1 ml –",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-heparin",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Heparin",
+   "hash": "a2444861538de8f0",
+   "text": "Patient is symptomatic of STEMI?\n\n Yes  No / unsure \n\n- Treat as per normal ACTAS guidelines\n\nAre ALL of the following c",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-heparin-checklist",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Hydrocortisone",
+   "hash": "d6d42f636a6ac214",
+   "text": "200mg tablet  100mg/5ml liquid ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Hydrocortisone",
+   "hash": "543fb9bf62e387cf",
+   "text": "##### Type\n\nAdrenocorticosteroid [S4]\n\n##### Presentations\n\n100mg powder in 2ml vial (reconstitute with 2ml normal salin",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-hydrocortisone",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Ibuprofen",
+   "hash": "13fa580059a1c2a4",
+   "text": "Previous ibuprofen administration within 4 hours",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ibuprofen",
+   "hash": "1044ffba6c35b9bf",
+   "text": "Tablets: 20-40kg: 200mg PO (liquid): Ibuprofen 100mg/5ml  3-6 months (6-8 kg): 3 - 4ml 6-12 months (8-10 kg): 4 - 5ml 1-",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ibuprofen",
+   "hash": "1ca18e16b7e927d5",
+   "text": "≤ 50kg = 1g (100mls) over 5 minutes. ≥50kg = 15mg/kg over 15 minutes (via burette).",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ibuprofen",
+   "hash": "1d2d01cc1533bd03",
+   "text": "##### Type\n\nNon-steroidal anti-inflammatory\n\n##### Presentations\n\n200mg tablet\n 100mg/5ml liquid \n\n##### Actions\n\n- Anal",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-ibuprofen",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Ipratropium",
+   "hash": "a3687ec0cd242216",
+   "text": "500mg/5mL",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ipratropium",
+   "hash": "1681086aeef55f20",
+   "text": "##### Type\n\nAnticholinergic bronchodilators [S4]\n\n##### Presentations\n\nPressurised metered dose inhaler (pMDI) – 21mcg p",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-ipratropium-bromide-atrovent",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "3e90880679aa6cb7",
+   "text": " Withdraw 14mL from 50mL NaCl bag, then add 4mL (400mg) ketamine to make 400mg/40mL ",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "2f4b61f68bc32a8a",
+   "text": "Ketamine should only be used as an analgesia adjunct if severe pain is unremitting 10 minutes post a second weight-based",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "009f306434bbbebe",
+   "text": "0.3mg/kg Dilute to 10mL. Administer via Springfusor 0.15mg/kg Dilute to 10mL. Administer via Springfusor",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "7bf01555a0547c56",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 35mg Volume: 3.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "862c92ba0ee7cac3",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 40mg Volume: 4ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "89a2fbc78fd77f70",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 45mg Volume: 4.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "9d4ff54b7c9d724f",
+   "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 50mg Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "9edd8353edfc49b4",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 60mg Volume: 6ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "dce84b59e51301af",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 70mg Volume: 7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "1e17997350412303",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 80mg Volume: 8ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "5870ef14f0f37edd",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 90mg Volume: 9ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "9da491465e27162e",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 100mg Volume: 10ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "d1b26f2e0b7e6a5f",
+   "text": "Ketamine (diluted in 20ml):  Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 110mg Volume: 11ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "0c9cf827b79fedec",
+   "text": "Ketamine (diluted in 20ml): Formula: 1mg/kg Preparation: 200mg in 20mls Dose: 120mg Volume: 12ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "ed64493aeb870661",
+   "text": "Ketamine: 1mg/kg fast push",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "22bfa86e15ee87a9",
+   "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "a61ccf52c8b690d1",
+   "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "ed64493aeb870661",
+   "text": "Ketamine: 1mg/kg fast push",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "22bfa86e15ee87a9",
+   "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "a61ccf52c8b690d1",
+   "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "ed64493aeb870661",
+   "text": "Ketamine: 1mg/kg fast push",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "22bfa86e15ee87a9",
+   "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "a61ccf52c8b690d1",
+   "text": "If intubation is required, administer 2mg/ kg ketamine IV and attempt intubation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "e1f626ebec608195",
+   "text": " Ketamine 0.5mg/kg IV, repeat @4/60 if required. ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "e1f626ebec608195",
+   "text": " Ketamine 0.5mg/kg IV, repeat @4/60 if required.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "c56c49caba74e6f8",
+   "text": " 0.05mg/kg IV/IO push over 60 sec. ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "05893316f5eb0531",
+   "text": "##### Type\n\nAnaesthetic Agent\n\n- **High-risk medication**\n\n##### Presentations\n\n200mg in 2ml – vial \n\n50mg in 5ml - vial",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-ketamine-hydrochloride-ketalar",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Ketamine",
+   "hash": "0b693d9e2148658c",
+   "text": " Up to 4mg/kg IM injection",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Levetiracetam",
+   "hash": "b53e4bc64e457b21",
+   "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any p",
+   "source_files": [
+    "279_48224.e6847c74153921f8.js"
+   ],
+   "pages": [
+    "guidelines/seizures"
+   ],
+   "owner": "CMG_22_Seizures",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Levetiracetam",
+   "hash": "7bca133297e901e2",
+   "text": "##### Type\n\nAntiepileptic\n\n##### Presentations\n\n500mg/5mL\n\n##### Pharmacokinetics\n\nIV/IO \n Onset: Rapid \n Max Effect: 30",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-levetiracetam",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Lignocaine",
+   "hash": "9fb1463cb27cc4ef",
+   "text": "May be administered IM: Reconstitute each 1g vial with 3.5ml lignocaine. Draw up dose into two syringes and administer i",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Lignocaine",
+   "hash": "23e262c54ad061df",
+   "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, t",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Lignocaine",
+   "hash": "18373b46dead8c4e",
+   "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO spac",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Lignocaine",
+   "hash": "3897b6d8c0dfb722",
+   "text": "5g tube of cream containing lignocaine 40mg/g",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Lignocaine",
+   "hash": "e721275db0efd480",
+   "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Lignocaine",
+   "hash": "24729539bb36cce5",
+   "text": "##### Type\n\n- Local anaesthetic\n\n- Anti-arrhythmic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n50mg in 5ml – ",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-lignocaine",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "881e8a0f3aaad6e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 250mg Volume: 0.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "4cc7bd3b1e3927ec",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 350mg Volume: 1.4ml (when diluted to 10ml)",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "0bad9f832911eeb1",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 550mg Volume: 1.1ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "da5dfdfc389f1235",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 650mg Volume: 1.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "084bf16ed7175b5f",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 750mg Volume: 1.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "b1c250c5859c0250",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 850mg Volume: 1.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "8d38ffbde1ad8999",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 950mg  Volume: 1.9ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "661f5e06c05912c4",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.05g Volume: 2.1ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "2b9ac322caa51160",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.15g Volume: 2.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "b58c4e2e03d24c42",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.25g Volume: 2.5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "4c43403acb2db574",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.35g Volume: 2.7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "439262d651f4d03e",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.5g Volume: 3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "d6a3892eb5ce9df8",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 1.65g Volume: 3.3ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "12feb287e99d789d",
+   "text": "Formula: 50mg/kg Formula: 50mg/kg Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "a78eb372571754e0",
+   "text": "Formula: 50mg/kg Preparation: 2.5g in 5mls Dose: 2.5g Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "588552854d71413b",
+   "text": "Postpartum haemorrhage is generally defined as an acute haemorrhage with blood loss of ≥ 500ml occurring within 12 weeks",
+   "source_files": [
+    "71_11924.2ebb5145becf86dd.js"
+   ],
+   "pages": [
+    "guidelines/other-obstetric-and-gynaecological-emergencies"
+   ],
+   "owner": "CMG_26C_Other_Obstetric_and_Gynaecological_Emergencies",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "f4cd4b2a32979052",
+   "text": " Magnesium Sulphate 2.5g, no repeat. Adrenaline 1mg, repeat 1mg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "c564ee170040bdd8",
+   "text": " Magnesium Sulphate 50mg/kg (max. 2.5g), no repeat.  Adrenaline 0.01mg/kg, repeat 0.01mg/kg @4/60, no max. repeat.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "25314405dd54f614",
+   "text": " 10mg/kg (up to 1g) IV/IO ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "7319f8380f34ba7f",
+   "text": "Magnesium is the second most abundant intracellular cation. Less than 1% is present in extracellular fluid. Magnesium is",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "8d9541bbcf93b374",
+   "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "0911a6c7f6e06649",
+   "text": "3ml bottle",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "15d1efc58bd90b54",
+   "text": "Using a 10ml syringe, dilute the medication with the required volume of NaCl to give a total volume of 7mls.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Magnesium",
+   "hash": "ecba0d125509b257",
+   "text": "##### Type\n\nElectrolyte solution [no schedule]\n\n- **High-risk medication**\n\n##### Presentations\n\n2.5g in 5 ml (50% solut",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-magnesium-sulphate",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Methoxyflurane",
+   "hash": "70dc16bfdebeffe0",
+   "text": " Inhaler to 45\\xb0 and carefully pour contents of a single 3ml Methoxyflurane bottle onto the base whilst rotating.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Methoxyflurane",
+   "hash": "f30d6d9d1231a4c5",
+   "text": "##### Type\n\nVolatile inhalation anaesthetic and analgesic agent [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n3",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-methoxyflurane",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Methoxyflurane",
+   "hash": "6ae18da1abaf7935",
+   "text": "#### Indications\n\n- Patients requiring administration of Methoxyflurane for pain management. \n\n#### Procedure\n\n- Explain",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-methoxyflurane-administration",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "1ca68bd9d692926b",
+   "text": "Midazolam: 2.5mg – 5mg SC",
+   "source_files": [
+    "172_30259.fb3c448ee94d6585.js"
+   ],
+   "pages": [
+    "guidelines/palliative-care-and-vad"
+   ],
+   "owner": "CMG_45_Palliative_Care_and_VAD",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "f55e4f3c6b7e114c",
+   "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+   "source_files": [
+    "172_30259.fb3c448ee94d6585.js"
+   ],
+   "pages": [
+    "guidelines/palliative-care-and-vad"
+   ],
+   "owner": "CMG_45_Palliative_Care_and_VAD",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "0b1dab62e101a20e",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg P",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "12d0bd26192cf787",
+   "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "3869ecc185d3bbf3",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "3720f8b3af7cfceb",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg P",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "b351cd4236f1fecb",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg P",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "9ad55626764f9280",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "d6887e370dad17fe",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "fa41fa394d9109fd",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "8205e921e735f1b0",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Pr",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "868063820acfe047",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Pr",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "f98b17df28508804",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Pr",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "b53e4bc64e457b21",
+   "text": "It is permissible to concurrently administer Midazolam and Levetiracetam if a seizure has persisted ≥20/60 without any p",
+   "source_files": [
+    "279_48224.e6847c74153921f8.js"
+   ],
+   "pages": [
+    "guidelines/seizures"
+   ],
+   "owner": "CMG_22_Seizures",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "940f242e8434230a",
+   "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+   "source_files": [
+    "341_59439.63f9adf0fbaaa97c.js"
+   ],
+   "pages": [
+    "medicines/morphine-sulphate"
+   ],
+   "owner": "MED_23_Morphine",
+   "status": "clean",
+   "matched_by": [
+    "url"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "22bfa86e15ee87a9",
+   "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "22bfa86e15ee87a9",
+   "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "22bfa86e15ee87a9",
+   "text": " Consider: Adjunct 0.05mg/kg boluses of midazolam with ketamine infusions/boluses to achieve adequate sedation.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "6d8c7fc8bbe75163",
+   "text": "If patient has previously had an unpleasant (fearful) experience with adenosine, consider a pre-dose of midazolam 1 – 1.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "b7cd347d87967fd7",
+   "text": "0.2mg/kg IM (max. 10mg) ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "bf198e06ba83ca09",
+   "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Midazolam",
+   "hash": "b6792342a747fe64",
+   "text": "##### Type\n\nBenzodiazepine \n\n##### Presentations\n\n15mg in 3mL ampoule\n\n##### Actions\n\n- Antiepileptic\n\n- Sedative\n\n- Anx",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-midazolam",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "9bfae1aa9e8f6877",
+   "text": "Morphine: 2.5mg – 5mg SC",
+   "source_files": [
+    "172_30259.fb3c448ee94d6585.js"
+   ],
+   "pages": [
+    "guidelines/palliative-care-and-vad"
+   ],
+   "owner": "CMG_45_Palliative_Care_and_VAD",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "f55e4f3c6b7e114c",
+   "text": "Morphine: 10mg IV or SC Midazolam: 5mg IV or 10mg SC. Repeat @10/60 (max. dose 60mg) ",
+   "source_files": [
+    "172_30259.fb3c448ee94d6585.js"
+   ],
+   "pages": [
+    "guidelines/palliative-care-and-vad"
+   ],
+   "owner": "CMG_45_Palliative_Care_and_VAD",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "1152c8a88824a344",
+   "text": "Morphine: IM (Max 2 Doses)",
+   "source_files": [
+    "192_33493.e9e968fcd4ca6fa6.js"
+   ],
+   "pages": [
+    "reference/skills-matrix"
+   ],
+   "owner": "CMG_CSM.M07_Skills_Matrix",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "a0a2a7e58d9b8e4b",
+   "text": "Morphine: IV (To a total of 20mg)",
+   "source_files": [
+    "192_33493.e9e968fcd4ca6fa6.js"
+   ],
+   "pages": [
+    "reference/skills-matrix"
+   ],
+   "owner": "CMG_CSM.M07_Skills_Matrix",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "17e21007e4f40461",
+   "text": "0.05mg/kg IV/IO over 60 seconds. ",
+   "source_files": [
+    "341_59439.63f9adf0fbaaa97c.js"
+   ],
+   "pages": [
+    "medicines/morphine-sulphate"
+   ],
+   "owner": "MED_23_Morphine",
+   "status": "clean",
+   "matched_by": [
+    "url"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "83a2875f5a065b3b",
+   "text": "IV/IO morphine may be administered to patients with mild-moderate hypotension (sBP 70 – 90mmHg) 0.025mg/kg IV/IO over 60",
+   "source_files": [
+    "341_59439.63f9adf0fbaaa97c.js"
+   ],
+   "pages": [
+    "medicines/morphine-sulphate"
+   ],
+   "owner": "MED_23_Morphine",
+   "status": "clean",
+   "matched_by": [
+    "url"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "940f242e8434230a",
+   "text": " Withdraw 29mL from 50mL NaCl bag, then add 3mL (30mg) morphine and 6mL (30mg) midazolam to make 30mg:30mg/30mL",
+   "source_files": [
+    "341_59439.63f9adf0fbaaa97c.js"
+   ],
+   "pages": [
+    "medicines/morphine-sulphate"
+   ],
+   "owner": "MED_23_Morphine",
+   "status": "clean",
+   "matched_by": [
+    "url"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "06042b11ca22a42f",
+   "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "06042b11ca22a42f",
+   "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "71062c3350bedf97",
+   "text": "Calculated dose of morphine above 10 mg Doses above 10 mg are rarely required.",
+   "source_files": [
+    "461_79459.3ebc04f5346ca68a.js"
+   ],
+   "pages": [
+    "calculators/palliative-care-medication-calculator"
+   ],
+   "owner": "page:calculators/palliative-care-medication-calculator",
+   "status": "page_without_document",
+   "matched_by": [
+    "no_document"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "081f69fd821532d8",
+   "text": "Calculated dose of morphine above 20 mg",
+   "source_files": [
+    "461_79459.3ebc04f5346ca68a.js"
+   ],
+   "pages": [
+    "calculators/palliative-care-medication-calculator"
+   ],
+   "owner": "page:calculators/palliative-care-medication-calculator",
+   "status": "page_without_document",
+   "matched_by": [
+    "no_document"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "06042b11ca22a42f",
+   "text": " Consider: Adjunct 0.05mg/kg bolus of morphine for patients with severely painful injuries to achieve adequate analgesia",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "bf198e06ba83ca09",
+   "text": " Withdraw 29mL from 50mL NaCl bag, then add 6mL (30mg) midazolam and 3mL (30mg) morphine to make 30mg:30mg/30mL",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "d8eaf9593fe52dbf",
+   "text": "Repeat @10/60 if requires (max. 60mg)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "860d46cb7af808bd",
+   "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injectio",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Morphine",
+   "hash": "0027e4043c4048aa",
+   "text": "##### Type\n\nOpioid analgesic [S8]\n\n##### Presentations\n\n10mg in 1ml – glass ampoule\n\n##### Actions\n\n- Analgesia\n\n- Anxio",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-morphine-sulphate",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Naloxone",
+   "hash": "be1f1ab87fba6890",
+   "text": "##### Type\n\nNarcotic antagonist [S4]\n\n##### Presentations\n\nVaries frequently – check before use\n\n##### Actions\n\nReverses",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-naloxone-narcan",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "d144b523ca37c439",
+   "text": "Dose: 10ml/kg Volume: 30ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "5d6614abb0b1bf94",
+   "text": "Dose: 20ml/kg Volume: 100ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "1623e03b953dfb83",
+   "text": "Dose: 20ml/kg Volume: 140ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "d018d62ccba15237",
+   "text": "Dose: 20ml/kg Volume: 220ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "0a56c4c784b89cd9",
+   "text": "Dose: 20ml/kg Volume: 260ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "f7cc78bd10d1a7d3",
+   "text": "Dose: 20ml/kg Volume: 300ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "35130dded3cdbc92",
+   "text": "Dose: 20ml/kg Volume: 340ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "53792b754bffe878",
+   "text": "Dose: 20ml/kg Volume: 380ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "336ecb75fad8b9fb",
+   "text": "Dose: 20ml/kg Volume: 420ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "5f8da9c1ef4e1bd4",
+   "text": "Dose: 20ml/kg Volume: 460ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "8eace678e3aedc48",
+   "text": "Dose: 20ml/kg Volume: 500ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "716e70d60e4e820b",
+   "text": "Dose: 20ml/kg Volume: 540ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "9447020195983101",
+   "text": "Dose: 20ml/kg Volume: 600ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "5cbc619d735d1e8d",
+   "text": "Volume: 660ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "31dda6f8a36935cc",
+   "text": "Normal Saline IV/IO: 20mL/kg via two – four IV/IO sites.",
+   "source_files": [
+    "281_48376.e43d702c853e75ac.js"
+   ],
+   "pages": [
+    "guidelines/major-trauma"
+   ],
+   "owner": "CMG_39_Major_Trauma",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "bfe0ffe1f0cfee7a",
+   "text": "Always aspirate 5ml from the line and discard prior to first use. Flush the line after each dose with 10ml of normal sal",
+   "source_files": [
+    "292_49868.d84e81ac06b2bc27.js"
+   ],
+   "pages": [
+    "guidelines/home-dialysis-emergencies"
+   ],
+   "owner": "CMG_28_Home_Dialysis_Emergencies",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "157a04abc9e13e36",
+   "text": "Flush the line after each dose with 10ml of normal saline.",
+   "source_files": [
+    "292_49868.d84e81ac06b2bc27.js"
+   ],
+   "pages": [
+    "guidelines/home-dialysis-emergencies"
+   ],
+   "owner": "CMG_28_Home_Dialysis_Emergencies",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "a63ad2aee1852fc6",
+   "text": "10ml/kg normal saline unless in pulmonary oedema.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "a63ad2aee1852fc6",
+   "text": "10ml/kg normal saline unless in pulmonary oedema.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "a63ad2aee1852fc6",
+   "text": "10ml/kg normal saline unless in pulmonary oedema.",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "30a3bc8867394315",
+   "text": " 150mg IV via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "73dbbe57a6f60ffe",
+   "text": " 5mg/kg IV (to maximum 150mg) via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minu",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "4176b95ee7409259",
+   "text": "100mg powder in 2ml vial (reconstitute with 2ml normal saline)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "23e262c54ad061df",
+   "text": " 40mg through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO space for 60 seconds, t",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "18373b46dead8c4e",
+   "text": " 0.5mg/kg (to max. 40mg) through primed IO extension tubing, slowly over 2 minutes  Allow lignocaine to dwell in IO spac",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "8d9541bbcf93b374",
+   "text": "2.5g IV/IO  Diluted up to 10ml with normal saline",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "f1e95b95cc61a9c1",
+   "text": "2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7ml will run over 10 minutes).",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "8c7e70864c91723e",
+   "text": "2.5g IV/IO over 30-60 seconds Followed by 2.5g IV/IO via Springfusor  Made up to 7ml total volume with normal saline (7m",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "860d46cb7af808bd",
+   "text": ". If dilution of the drug is required, open the normal saline ampoule or insert the needle and syringe into the injectio",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "f0369b9666a75b2c",
+   "text": "Cannula (minimum 18G), bung, normal saline flush, tegaderm, ambulance cannula sticker and sharps container.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "e721275db0efd480",
+   "text": "In the conscious/semi conscious patient, the port line should be primed with the approved designated dose of Lignocaine.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Normal Saline",
+   "hash": "a6dcc6b3ba729e0b",
+   "text": "##### Type\n\nIsotonic crystalloid solution of 0.9% sodium chloride. \n Contains 151mMol sodium and 151mMol chloride per li",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-normal-saline",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Olanzapine",
+   "hash": "506736428046ec02",
+   "text": "10mg wafer ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Olanzapine",
+   "hash": "f8b2feabc8980b05",
+   "text": "##### Type\n\nAntipsychotic\n\n- **High-risk medication**\n\n##### Presentations\n\n5mg and 10mg wafer \n\n##### Actions\n\nOlanzapi",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-olanzapine",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Ondansetron",
+   "hash": "4555abe41f2bdaef",
+   "text": "Ondansetron may be given in exceptional circumstances, but is not recommended (category B1). ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Ondansetron",
+   "hash": "15297c9cb42068a8",
+   "text": "##### Type\n\nPotent anti-nauseant and antiemetic [S4]\n\n##### Presentations\n\n4mg in 2ml – plastic or glass ampoule \n 4mg –",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-ondansetron-zofran",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "cc6bc1b88ef80630",
+   "text": "Pre-oxygenation for at least 3 mins",
+   "source_files": [
+    "120_21365.471026e5120d7468.js"
+   ],
+   "pages": [
+    "guidelines/intubation-algorithm"
+   ],
+   "owner": "CMG_3B_Intubation_Algorithm",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "926a33c9d8b2e8b5",
+   "text": "20mL or 50mL luer-lock syringe",
+   "source_files": [
+    "121_21493.e9d1d821178e27e5.js"
+   ],
+   "pages": [
+    "reference/laryngeal-mask-airway"
+   ],
+   "owner": "CMG_CSM.A09_Laryngeal_Mask_Airway__LMA_Supreme_",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "c7f888a39d2a6c50",
+   "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+   "source_files": [
+    "222_37829.8c49c0d661293daf.js",
+    "348_60210.1ef082183b4afaf1.js",
+    "402_67997.5c5e39c40b860eb9.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "reference/rsi-checklist"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "eaff4617604d2eb6",
+   "text": "Oxygen therapy 15L via NRB minimum, may escalate to 100% O",
+   "source_files": [
+    "279_48224.e6847c74153921f8.js"
+   ],
+   "pages": [
+    "guidelines/seizures"
+   ],
+   "owner": "CMG_22_Seizures",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "b86482efa10964b2",
+   "text": "Treat with 100% oxygen.",
+   "source_files": [
+    "292_49868.d84e81ac06b2bc27.js"
+   ],
+   "pages": [
+    "guidelines/home-dialysis-emergencies"
+   ],
+   "owner": "CMG_28_Home_Dialysis_Emergencies",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "15f6505dfc732bbc",
+   "text": "93 – 94 % on oxygen 95 - 96 % on oxygen ≥ 97 % on oxygen",
+   "source_files": [
+    "328_57148.4f38d81a0c7759c0.js"
+   ],
+   "pages": [
+    "reference/radio-test"
+   ],
+   "owner": "page:reference/radio-test",
+   "status": "page_without_document",
+   "matched_by": [
+    "no_document"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "c7f888a39d2a6c50",
+   "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+   "source_files": [
+    "222_37829.8c49c0d661293daf.js",
+    "348_60210.1ef082183b4afaf1.js",
+    "402_67997.5c5e39c40b860eb9.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "reference/rsi-checklist"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "c7f888a39d2a6c50",
+   "text": "Pre-oxygenate: nasal prongs with 15L/minute. ",
+   "source_files": [
+    "222_37829.8c49c0d661293daf.js",
+    "348_60210.1ef082183b4afaf1.js",
+    "402_67997.5c5e39c40b860eb9.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "reference/rsi-checklist"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "599bfa7448f3c345",
+   "text": "1ml Luer lock syringe",
+   "source_files": [
+    "51_7026.c6ad10bf4ff43e83.js"
+   ],
+   "pages": [
+    "reference/mucosal-atomising-device"
+   ],
+   "owner": "CMG_CSM.DF14_Mucosal_Atomising_Device__MAD_",
+   "status": "clean",
+   "matched_by": [
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "f49e7f0537ebc908",
+   "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+   "source_files": [
+    "77_13067.6cd407b036b450bc.js",
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [
+    "reference/airtraq"
+   ],
+   "owner": [
+    "CMG_CSM.A10_AirTraq__Endotracheal_Intubation_",
+    "shared_calculator"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "shared_calculator",
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "38b2bad0e02196f1",
+   "text": " drain 500ml initially, then a further 250ml every 15 minutes until bladder is empty.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "eafcaeab9b7a35a3",
+   "text": " High flow oxygen (aim for >94% SpO",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "10100eafedde86a7",
+   "text": " 100% oxygen with PEEP.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "85869d63aa72e5c8",
+   "text": " consider oxygen (aim for >94% SpO",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "e1a31dcc5b250638",
+   "text": "CPAP (or 100% oxygen with PEEP) for respiratory distress or hypoxia.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "569166b600c6a51d",
+   "text": "Add 100% oxygen.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "2289e212a89ee732",
+   "text": "100% oxygen",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "23be65e1bb31370c",
+   "text": " 88‐92% (utilise the lowest dosage of oxygen possible). ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "633addd027ea3756",
+   "text": "Notify hospital and urgent transport (100% oxygen).",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "3eebff52ffaf37b5",
+   "text": "100% oxygen.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "9d4697cd9eee066d",
+   "text": "Give 100% oxygen and attempt IPPV.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "3eebff52ffaf37b5",
+   "text": "100% oxygen.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "d6d42f636a6ac214",
+   "text": "200mg tablet  100mg/5ml liquid ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "d7e3e1c8fe2b96b4",
+   "text": "1 – 4 litres/min (approx. 24 – 40% oxygen) for low oxygen requirements",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "4d1b4fc693cfcd3e",
+   "text": "6 – 15 litres/min (approx. 30 – 65% oxygen) for moderate oxygen requirements",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "36dc9541a436c002",
+   "text": "8 litres/min for moderate oxygen requirements with need for aerosolised medications",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "5d0807283a1e4923",
+   "text": "15 litres/min (approx. 60 – 97% oxygen) for high oxygen requirements",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "e7846e5f0c513bfb",
+   "text": "15 litres/min or demand valve (up to 100% oxygen) for high oxygen requirements",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "60b905238cd8721e",
+   "text": "8 – 15 litres/min (titrated to achieve desired effect/pressure) for high oxygen requirements.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "0a6f0aadf635a65d",
+   "text": "Conditions requiring 100% oxygen delivery (NRBM, BVM) ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "73436d0420f0f22e",
+   "text": "High flow oxygen (15 litres/min) via nasal cannulae is mandatory during this procedure, in addition to IPPV.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "3fb93e586bc35d44",
+   "text": " syringe (either 1ml, 3ml or 5ml or syringe 1ml, 3ml or 10ml).",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "0d54bd09eafae109",
+   "text": "Ensure all drugs are administered in a minimum volume of 5 ml (for adults).",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "af225754780f5507",
+   "text": "For adult patients (age ≥12) with life threatening airway compromise where all other attempts to oxygenate and ventilate",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "42f693de9ae18163",
+   "text": "Attach Reservoir bag to the rear of the resus bag plus oxygen lead and select flow rate of 15 Lpm (see ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "f49e7f0537ebc908",
+   "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+   "source_files": [
+    "77_13067.6cd407b036b450bc.js",
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [
+    "reference/airtraq"
+   ],
+   "owner": [
+    "CMG_CSM.A10_AirTraq__Endotracheal_Intubation_",
+    "shared_calculator"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "shared_calculator",
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "f49e7f0537ebc908",
+   "text": "Apply continuous oxygen via nasal prongs at 15 Lpm.",
+   "source_files": [
+    "77_13067.6cd407b036b450bc.js",
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [
+    "reference/airtraq"
+   ],
+   "owner": [
+    "CMG_CSM.A10_AirTraq__Endotracheal_Intubation_",
+    "shared_calculator"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "shared_calculator",
+    "title"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "de3da3f69ca72320",
+   "text": "Select oxygen flow rate of 8 Lpm.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "2b5731c5bd5458b4",
+   "text": "For patients <12 years with life threatening airway compromise where all other attempts to oxygenate and ventilate have ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "c8f50fea3840727a",
+   "text": "Nasal Prongs (minimal oxygen requirements – approx 24-40%)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "3b62db92d541cb7f",
+   "text": "Hudson Mask (moderate oxygen requirements – approx 30-65%)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "3737196057976c9e",
+   "text": "Non-Rebreather Mask (high oxygen requirements - approx 60-97%)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "b08ea1d136096d4e",
+   "text": "Select oxygen flow rate of >10 Lpm.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "c531e451bc86e722",
+   "text": "Antepartum/postpartum bleed >500mL",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "61ecaa7a4c8ed35d",
+   "text": "High flow, high concentration mask; consider 100% oxygen.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "8f8f11c46f47255e",
+   "text": "100% oxygen; IPPV.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "2c9be4e9ba50102e",
+   "text": "Suctioning should be performed for <10 second’s. Re-oxygenation post suctioning.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "88ae29b22a6c4ec9",
+   "text": "Inform the patient to attempt to blow a 3ml or 10ml syringe plunger out in a “bearing down” motion for at least 10 secon",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "9785ba64ee864961",
+   "text": "##### Type\n\nA naturally occurring gas \n\n##### Presentations\n\nCompressed gas in all-white cylinders of various sizes, to ",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-oxygen",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Oxygen",
+   "hash": "995e0580117aa091",
+   "text": "#### Indications\n\n- For patients that require supplemental oxygen.\n\n#### Procedure\n\nFigure 1\n\n##### Nasal Prongs (minima",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-oxygen-administration",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Paracetamol",
+   "hash": "34fd6c75709eb07a",
+   "text": "Previous paracetamol dose in last 4 hours (oral doses only) Previous paracetamol dose in last 6 hours (IV doses only)",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Paracetamol",
+   "hash": "3f6f28b14b5a2ea2",
+   "text": "Do not exceed 60mg/kg/24hours. Children aged 10-12 may take a 500mg tablet if preferred.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Paracetamol",
+   "hash": "cf805f7594c8644d",
+   "text": "##### Type\n\nSimple analgesic / antipyretic \n\n##### Presentations\n\n**PO:** 48mg/ml colour free liquid (oral) \n**IV:** 1g ",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-paracetamol",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Prochlorperazine",
+   "hash": "a8745bd0e7015713",
+   "text": "Previous oral prochlorperazine within last 8 hours",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Prochlorperazine",
+   "hash": "a2506460a1ed8ff4",
+   "text": "Pressurised metered dose inhaler (pMDI) – 100mcg per activation",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Prochlorperazine",
+   "hash": "20a59b02b96d9311",
+   "text": "##### Type\n\nPhenothiazine antiemetic [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n12.5mg in 1ml – ampoule\n\n###",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-prochlorperazine-stemetil",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Salbutamol",
+   "hash": "4b58a743972c5291",
+   "text": "##### Type\n\nSynthetic \\u03b22 receptor stimulant [S4]\n\n##### Presentations\n\nPressurised metered dose inhaler (pMDI) – 10",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-salbutamol-ventolin",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "fc99a43b785fe6ab",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 5mMol Volume: 5ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "632f95a28081b2e7",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 7mMol Volume: 7ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "0e58ddc9253a80bc",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 11mMol Volume: 11ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "70075ded09417d6f",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 13mMol Volume: 13ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "3fe601e2c3cf7ae2",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 15mMol Volume: 15ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "e71aa45517fe029d",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 17mMol Volume: 17ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "8df06224c0eb3010",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 19mMol Volume: 19ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "a490425fe46dcca3",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 21mMol Volume: 21ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "961779db95c4e37f",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 23mMol Volume: 23ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "1d22d66a23851b3c",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 25mMol Volume: 25ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "6e0a4de91f5ec442",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 27mMol Volume: 27ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "27acce91683b484e",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 30 mMol Volume: 30ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "2ced83c1445b3550",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 33mMol Volume: 33ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "5c4f983c0894ea46",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 35mMol Volume: 35ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "2c893f8fa86fa208",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 40mMol Volume: 40ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "efad52acbcc76707",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 45mMol Volume: 45ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "04dc43afd93f2438",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 50mMol Volume: 50ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "2a3899731bfec00a",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 60mMol Volume: 60ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "4c911e79ba5e6082",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 70mMol Volume: 70ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "75a350d64352d4a0",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 80mMol Volume: 80ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "ac525addc4cc0feb",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 90mMol Volume: 90ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "5b1e9535f1793ab3",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 100mMol Volume: 100ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "5657b0bce4f95d77",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 110mMol Volume: 110ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "f56bbbabc591bc8e",
+   "text": "Formula: 1mMol/kg Preparation: 100mMol/kg in 100mls Dose: 120mMol Volume: 120ml",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "fc74bb59d6c94cc8",
+   "text": "Hypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicarbonate [no s",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "2a55ec04ff2990e3",
+   "text": "50ml sodium bicarbonate solution – glass vial",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "971903bd3133f5c9",
+   "text": "100mg in 2ml – plastic ampoule",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Sodium Bicarbonate",
+   "hash": "8a88520a5aa80917",
+   "text": "##### Type\n\nHypertonic alkaline solution – 8.4% sodium bicarbonate solution. Contains 1mMol/ml sodium and 1mMol/ml bicar",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-sodium-bicarbonate",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "b7cec96c46f63f47",
+   "text": " 1mg/kg IV/IO over 30-60 seconds ",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "f80fbbf95fb0428d",
+   "text": " 2mg/kg IV/IO over 30-60 seconds ",
+   "source_files": [
+    "137_24154.b63dbf345c32bce1.js"
+   ],
+   "pages": [
+    "medicines/ketamine-hydrochloride-ketalar"
+   ],
+   "owner": "MED_18_Ketamine_Hydrochloride__Ketalar_",
+   "status": "clean",
+   "matched_by": [
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "0b1dab62e101a20e",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 52.5mg Volume: 1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg P",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "12d0bd26192cf787",
+   "text": "Preparation: 150mg in 3mls Dose: 60mg Volume: 1.2ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Preparation: 5mg in",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "3869ecc185d3bbf3",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 67.5mg Volume: 1.3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "3720f8b3af7cfceb",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 75mg Volume: 1.5ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg P",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "b351cd4236f1fecb",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 90mg Volume: 1.8ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg P",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "9ad55626764f9280",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 105mg Volume: 2.1ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "d6887e370dad17fe",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 120mg Volume: 2.4ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "fa41fa394d9109fd",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 135mg Volume: 2.7ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg ",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "8205e921e735f1b0",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Pr",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "868063820acfe047",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Pr",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "f98b17df28508804",
+   "text": "Formula: 1.5mg/kg Preparation: 150mg in 3mls Dose: 150mg Volume: 3ml Midazolam (dilute to 1mg/ml): Formula: 0.05mg/kg Pr",
+   "source_files": [
+    "227_38576.f4c02555ddc44785.js"
+   ],
+   "pages": [
+    "calculators/critical-care-reference-cards"
+   ],
+   "owner": "reference_card",
+   "status": "reference_card",
+   "matched_by": [
+    "reference_card"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "f5e0a4b8f7621302",
+   "text": " 1.5mg/kg over 30-60 seconds. ",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "f5e0a4b8f7621302",
+   "text": " 1.5mg/kg over 30-60 seconds. ",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "f5e0a4b8f7621302",
+   "text": " 1.5mg/kg over 30-60 seconds. ",
+   "source_files": [
+    "390_66779.e7f7c0a20412aca6.js",
+    "402_67997.5c5e39c40b860eb9.js",
+    "531_89160.5d8588dacbad9044.js"
+   ],
+   "pages": [
+    "guidelines/multi-rsi-rapid-sequence-intubation",
+    "guidelines/rsi-rapid-sequence-intubation"
+   ],
+   "owner": [
+    "CMG_3A_RSI__Rapid_Sequence_Intubation_",
+    "page:guidelines/multi-rsi-rapid-sequence-intubation"
+   ],
+   "status": "ambiguous",
+   "matched_by": [
+    "no_document",
+    "title_prefix"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "1694086a071706e3",
+   "text": "1.5mg/kg IV ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "da7b6a5cb39b429e",
+   "text": "Suxamethonium 100mg in 2ml Suxamethonium (applies to 100mg in 2ml):  40kg = 60 mg (1.2 ml) 50kg = 75 mg (1.5 ml) 60kg = ",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "70c03b6b34999c4b",
+   "text": "If heart rate less than 50/minute, consider atropine prior to suxamethonium.",
+   "source_files": [
+    "7_common.ecd3ea9c6ba03a70.js"
+   ],
+   "pages": [],
+   "owner": "shared_calculator",
+   "status": "shared_calculator",
+   "matched_by": [
+    "shared_calculator"
+   ]
+  },
+  {
+   "medicine": "Suxamethonium",
+   "hash": "c6b3902e21cf588d",
+   "text": "##### Type\n\nDepolarising muscle relaxant [S4]\n\n- **High-risk medication**\n\n##### Presentations\n\n100mg in 2ml – plastic a",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-suxamethonium",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Topical Anaesthetic",
+   "hash": "433904192cf65262",
+   "text": "##### Type\n\nTopical anaesthetic\n\n##### Presentations\n\n5g tube of cream containing lignocaine 40mg/g\n\n##### Actions\n\nLoca",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-topical-anaesthetic-cream-lmx4",
+   "status": "monograph"
+  },
+  {
+   "medicine": "Topical Anaesthetic",
+   "hash": "c38b8c55d7284046",
+   "text": "#### Indications\n\n- Topical anaesthesia of intact skin to reduce pain and minimise distress prior to anticipated (non-ur",
+   "source_files": [],
+   "pages": [],
+   "owner": "monograph:app-topical-anaesthetic-cream",
+   "status": "monograph"
+  }
+ ]
+}

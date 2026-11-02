@@ -1,0 +1,294 @@
+"""Trace each pooled ACTAS dose line back to the app page whose JavaScript bundle holds it.
+
+Run from the repo root (needs the gitignored scrape artefacts in data/cmgs/raw and data/cmgs/investigation):
+
+    PYTHONPATH=src/python python3 -m web_corpus.dose_provenance
+
+The scrape pools dose lines by medicine (dose_tables.json) with no record of where each line came from.
+dose_tables_segmented.json keeps the source bundle per line, and the app's webpack module map
+(the bundle holding "./guidelines/<slug>/<slug>.module": [chunk ids]) says which pages load each bundle.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+from paths import APP_ROOT, service_structured_dir
+
+RAW_DIR = APP_ROOT / "data" / "cmgs" / "raw"
+BUNDLE_DIR = APP_ROOT / "data" / "cmgs" / "investigation"
+OUT_PATH = Path(__file__).with_name("dose_provenance.json")
+
+REFERENCE_CARD = "reference_card"
+SHARED_CALCULATOR = "shared_calculator"
+REFERENCE_CARD_SLUGS = {"critical-care-reference-cards"}
+SHARED_CHUNKS = {"7"}
+MODULE_RE = re.compile(r'"\./([a-z-]+)/([a-z0-9-]+)/[a-z0-9-]+\.module":\[([\d,]+)\]')
+CATEGORIES = {"guidelines", "medicines", "reference", "calculators", "extra-content"}
+
+
+def chunk_id(source_file: str) -> str:
+    prefix, rest = source_file.split(".", 1)[0].split("_", 1)
+    return rest if rest.isdigit() else prefix
+
+
+def normalise(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def line_hash(text: str) -> str:
+    return hashlib.sha256(normalise(text).encode("utf-8")).hexdigest()[:16]
+
+
+def slugify(text: str) -> str:
+    text = re.sub(r"\([^)]*\)", " ", text.lower()).replace("&", "and")
+    return re.sub(r"[^a-z0-9]+", "-", text).strip("-")
+
+
+def module_map(bundle_dir: Path) -> dict[str, set[str]]:
+    """chunk id -> page slugs ("category/slug") that load it."""
+    pages: dict[str, set[str]] = defaultdict(set)
+    for path in sorted(bundle_dir.glob("*.js")):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if ".module\":[" not in text:
+            continue
+        for category, slug, ids in MODULE_RE.findall(text):
+            if category not in CATEGORIES:
+                continue
+            for cid in ids.split(","):
+                pages[cid].add(f"{category}/{slug}")
+    return pages
+
+
+def documents(raw_dir: Path) -> tuple[dict[str, str], dict[str, str]]:
+    """Page slug -> document id, from the navigation URL where the app gives one, else the title."""
+    structured = service_structured_dir("actas")
+    ids = {}
+    for path in [*structured.glob("*.json"), *(structured / "csm").glob("*.json"), *(structured / "med").glob("*.json")]:
+        if path.name.endswith("-index.json"):
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        ids[(str(data.get("cmg_number")), data.get("title"))] = data["id"]
+    nav = {p["spotlightId"]: p for p in json.loads((raw_dir / "cmg_navigation.json").read_text(encoding="utf-8"))["all_pages"]}
+    by_url: dict[str, list[str]] = defaultdict(list)
+    by_title: dict[str, list[str]] = defaultdict(list)
+    for g in json.loads((raw_dir / "guidelines.json").read_text(encoding="utf-8")):
+        doc_id = ids.get((str(g["cmg_number"]), g["title"]))
+        if not doc_id:
+            continue
+        url = nav.get(g.get("spotlightId"), {}).get("url")
+        if url:
+            by_url[url].append(doc_id)
+        by_title[slugify(g["title"])].append(doc_id)
+    return by_url, by_title
+
+
+def resolve(page: str, by_url: dict[str, list[str]], by_title: dict[str, list[str]]) -> tuple[list[str], str]:
+    slug = page.split("/", 1)[1]
+    if slug in REFERENCE_CARD_SLUGS:
+        return [REFERENCE_CARD], "reference_card"
+    if slug in by_title:
+        return sorted(set(by_title[slug])), "title"
+    if slug in by_url:
+        return sorted(set(by_url[slug])), "url"
+    prefix = [d for t, docs in by_title.items() if t.startswith(slug + "-") or slug.startswith(t + "-") for d in docs]
+    if prefix:
+        return sorted(set(prefix)), "title_prefix"
+    return [f"page:{page}"], "no_document"
+
+
+def build_mapping(raw_dir: Path = RAW_DIR, bundle_dir: Path = BUNDLE_DIR) -> dict:
+    pages = module_map(bundle_dir)
+    by_url, by_title = documents(raw_dir)
+    segmented = json.loads((raw_dir / "dose_tables_segmented.json").read_text(encoding="utf-8"))
+    pooled = json.loads((raw_dir / "dose_tables.json").read_text(encoding="utf-8"))["medicine_index"]
+
+    origin: dict[str, set[str]] = defaultdict(set)
+    for entry in segmented["per_file"]:
+        for group in entry["dose_groups"]:
+            for text in (group["combined_text"], *group["lines"]):
+                origin[normalise(text)].add(entry["source_file"])
+
+    records = []
+    for medicine, entries in sorted(pooled.items()):
+        for entry in entries:
+            text = entry.get("text") or ""
+            if entry.get("source"):
+                records.append({"medicine": medicine, "hash": line_hash(text), "text": text[:120],
+                                "source_files": [], "pages": [], "owner": f"monograph:{entry['source']}",
+                                "status": "monograph"})
+                continue
+            files = sorted(origin.get(normalise(text), set()))
+            owners, owner_pages, how = set(), set(), set()
+            for source_file in files:
+                cid = chunk_id(source_file)
+                if cid in SHARED_CHUNKS:
+                    owners.add(SHARED_CALCULATOR)
+                    how.add("shared_calculator")
+                    continue
+                for page in sorted(pages.get(cid, ())):
+                    owner_pages.add(page)
+                    docs, method = resolve(page, by_url, by_title)
+                    owners.update(docs)
+                    how.add(method)
+            if not files:
+                status = "unmatched_text"
+            elif not owners:
+                status = "unmapped"
+            elif owners == {SHARED_CALCULATOR}:
+                status = "shared_calculator"
+            elif owners == {REFERENCE_CARD}:
+                status = "reference_card"
+            elif len(owners) == 1 and not any(o.startswith("page:") for o in owners):
+                status = "clean"
+            elif all(o.startswith("page:") for o in owners):
+                status = "page_without_document"
+            else:
+                status = "ambiguous"
+            records.append({
+                "medicine": medicine,
+                "hash": line_hash(text),
+                "text": text[:120],
+                "source_files": files,
+                "pages": sorted(owner_pages),
+                "owner": sorted(owners)[0] if len(owners) == 1 else sorted(owners),
+                "status": status,
+                "matched_by": sorted(how),
+            })
+
+    summary = Counter(r["status"] for r in records)
+    by_owner = Counter(r["owner"] for r in records if r["status"] == "clean")
+    ambiguous = sorted({(r["medicine"], tuple(r["owner"]) if isinstance(r["owner"], list) else (r["owner"],))
+                        for r in records if r["status"] in ("ambiguous", "page_without_document")})
+    return {
+        "summary": {"lines": len(records), **dict(sorted(summary.items()))},
+        "clean_by_document": dict(by_owner.most_common()),
+        "ambiguous": [{"medicine": m, "owners": list(o)} for m, o in ambiguous],
+        "lines": records,
+    }
+
+
+CARDS_BUNDLE = "227_38576.f4c02555ddc44785.js"
+CARDS_OUT_PATH = Path(__file__).with_name("reference_cards.json")
+TOKEN_RE = re.compile(
+    r'F\.EFF\(\d+,"((?:[^"\\]|\\.)*)"\)'
+    r'|F\.nrm\(\d+,"[\w-]+"(?:,\d+)?\)'
+    r'|(?:F\.j41)?\(\d+,"([\w-]+)"(?:,(\d+))?\)'
+    r'|F\.k0s\(\)((?:\(\))*)'
+)
+BAND_RE = re.compile(r"^(?P<age>.+?)\s*-\s*(?P<kg>\d+)kg$")
+ROUTE_RE = re.compile(r"\b(IV|IO|IM|IN|ETT|SC|PO|NEB)\b")
+ITEM_KEYS = ("Formula", "Preparation", "Dose", "Volume")
+
+
+def _unescape(text: str) -> str:
+    return json.loads(f'"{text}"')
+
+
+def _tokens(segment: str):
+    for text, tag, cls, extra in TOKEN_RE.findall(segment):
+        if text:
+            yield "text", _unescape(text), None
+        elif tag:
+            yield "open", tag, cls or None
+        elif extra is not None and segment:
+            for _ in range(1 + extra.count("()")):
+                yield "close", None, None
+
+
+def parse_band(segment: str) -> dict:
+    stack: list[tuple[str, str | None]] = []
+    band: dict = {"band": None, "age": None, "weight_kg": None, "sections": []}
+    section = group = drug = label = None
+    for kind, value, cls in _tokens(segment):
+        if kind == "open":
+            stack.append((value, cls))
+            continue
+        if kind == "close":
+            if stack:
+                stack.pop()
+            continue
+        text = value.strip()
+        if not text or not stack:
+            continue
+        tag, cls = stack[-1]
+        if tag == "h4" and cls == "12":
+            band["band"] = text
+            m = BAND_RE.match(text)
+            if m:
+                band["age"], band["weight_kg"] = m.group("age").strip(), int(m.group("kg"))
+        elif tag == "h4":
+            section = {"heading": text, "groups": []}
+            band["sections"].append(section)
+            group = drug = label = None
+        elif tag == "h5" and section is not None:
+            group = {"name": text, "fields": {}, "drugs": []}
+            section["groups"].append(group)
+            drug = label = None
+        elif tag == "strong" and section is not None:
+            label = text.rstrip(":").strip()
+            if group is None:
+                group = {"name": section["heading"], "fields": {}, "drugs": []}
+                section["groups"].append(group)
+            mislabelled = label.partition(":")[0] in ITEM_KEYS
+            drug = {"drug": None if mislabelled else label, "route": "/".join(ROUTE_RE.findall(label)) or None,
+                    **{k.lower(): None for k in ITEM_KEYS}, "other": [text] if mislabelled else [],
+                    "label_quirk": mislabelled}
+            group["drugs"].append(drug)
+        elif tag == "p" and drug is not None and label is not None:
+            group["drugs"].remove(drug)
+            group["fields"][label] = text
+            drug = None
+        elif tag == "fa-li":
+            key, _, rest = text.partition(":")
+            if drug is not None and key in ITEM_KEYS and rest.strip():
+                drug[key.lower()] = rest.strip()
+            elif drug is not None:
+                drug["other"].append(text)
+            elif group is not None and label is not None:
+                group["fields"].setdefault(f"{label} notes", []).append(text)
+    return band
+
+
+def reference_cards(bundle_dir: Path = BUNDLE_DIR) -> list[dict]:
+    source = (bundle_dir / CARDS_BUNDLE).read_text(encoding="utf-8")
+    bands = []
+    for segment in source.split("function ")[1:]:
+        if '"h4",12)' in segment:
+            band = parse_band(segment)
+            if band["band"]:
+                for section in band["sections"]:
+                    for group in section["groups"]:
+                        notes = [d for d in group["drugs"] if not any(d[k.lower()] for k in ITEM_KEYS)]
+                        group["drugs"] = [d for d in group["drugs"] if d not in notes]
+                        group["notes"] = [" ".join([d["drug"] or "", *d["other"]]).strip() for d in notes]
+                bands.append(band)
+    return bands
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--out", type=Path, default=OUT_PATH)
+    parser.add_argument("--cards-out", type=Path, default=CARDS_OUT_PATH)
+    args = parser.parse_args(argv)
+    if (BUNDLE_DIR / CARDS_BUNDLE).exists():
+        cards = reference_cards()
+        args.cards_out.write_text(json.dumps(cards, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    for needed in (RAW_DIR / "dose_tables_segmented.json", RAW_DIR / "dose_tables.json", BUNDLE_DIR):
+        if not needed.exists():
+            print(f"Missing scrape artefact: {needed}", file=sys.stderr)
+            return 1
+    mapping = build_mapping()
+    args.out.write_text(json.dumps(mapping, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(json.dumps({k: mapping[k] for k in ("summary", "clean_by_document", "ambiguous")}, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
