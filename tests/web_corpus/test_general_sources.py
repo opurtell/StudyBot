@@ -253,3 +253,19 @@ def test_estimate_counts_the_conflict_check(mixed):
     general = qb.plan(corpus, "general")
     calls = sum(len(t.difficulties) for t in general)
     assert qb.estimate_cost(general) > calls * (qb.EST_INPUT_TOKENS * 1.5 + qb.EST_OUTPUT_TOKENS * 7.5) / 1_000_000
+
+
+def test_device_criteria_and_literature_reviews_are_dropped():
+    md = "## ECG features\n\nPacing spikes precede the QRS.\n\n## Criteria for Pacemaker Insertion\n\nClass I indications.\n\n## Deep Dive into the literature of aVR\n\n95% specific in one study.\n"
+    out = gs.clean(md)
+    assert "Pacing spikes" in out and "Class I" not in out and "95% specific" not in out
+
+
+def test_spend_cap_counts_only_this_run(tmp_path, mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    (tmp_path / "raw.jsonl").write_text(json.dumps({"ok": False, "cost_usd": 50.0, "chunk_id": "x", "difficulty": "easy"}) + "\n")
+    fake = FakeGemini()
+    runner = qb.Runner(corpus, tmp_path, "key", fake, max_usd=1)
+    runner.run(qb.plan(corpus, "general"), workers=1, progress=lambda _: None)
+    assert fake.calls and runner.spent < 1 and runner.spent_before == 50.0

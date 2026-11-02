@@ -297,7 +297,7 @@ def build_general_document(data: dict) -> tuple[Document, list[Chunk]]:
         raise CorpusBuildError(f"{data.get('id')}: not an approved general reference")
     if data.get("licence") != source.licence:
         raise CorpusBuildError(f"{data['id']}: licence {data.get('licence')!r} does not match {source.name}")
-    content = normalise_markdown_syntax(data.get("content_markdown") or "")
+    content = normalise_markdown_syntax(general_sources.clean(data.get("content_markdown") or ""))
     doc = Document(
         id=data["id"],
         kind=GENERAL_KIND,

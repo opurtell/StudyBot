@@ -91,7 +91,7 @@ EXCLUDED_HEADING = re.compile(
     r"|patient education|health teaching|care plans?|planning|implementation|evaluation|outcome identification"
     r"|expected outcomes|critical thinking|case stud\w*|clinical judg\w*|checklists?|procedures?|therap\w*|surg\w*"
     r"|related|see also|acknowledg\w*|authors?|credits?|resources|attributions?|licen[cs]e|quiz\w*|prevention"
-    r"|precautions|documentation|delegation|safety considerations|associated persons|(?:clinical |ecg )?cases?$|critical care)\b",
+    r"|precautions|documentation|delegation|safety considerations|associated persons|(?:clinical |ecg )?cases?$|critical care|criteria for \w+ insertion|indications for \w+|deep dive|literature)\b",
     re.IGNORECASE,
 )
 EXCLUDED_CHAPTER = re.compile(

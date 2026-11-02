@@ -125,11 +125,14 @@ source hierarchy, below the CMGs, and cover pathophysiology, physiology and ECG 
    *Polite (one request a second). Check with `... general_sources list`, then commit `data/general_refs/`.*
 2. **Plan:** `PYTHONPATH=src/python python3 -m web_corpus.questions plan --only general`
 3. **Trial:** `PYTHONPATH=src/python python3 -m web_corpus.questions generate --only general --yes --limit 20 --max-usd 1`
+   *`--max-usd` caps this run's spend only, not earlier runs in `raw.jsonl`.*
 4. **Export for review:** `PYTHONPATH=src/python python3 -m web_corpus.questions export --only general`
-   *Review `review-sample-general.csv` and `dropped-general.csv` in `web/corpus-build/questions/`.*
+   *Writes `questions-general.sql`, `report-general.json`, `review-sample-general.csv` and `dropped-general.csv` in
+   `web/corpus-build/questions/`, leaving the CMG `questions.sql` alone.*
 5. **Full run:** step 3 without `--limit`, with `--max-usd 10`, then step 4 again.
 6. **Production** (Oscar runs): `cd web && npm run deploy:production` (applies migration 0007), `npm run corpus:build`,
-   `npm run corpus:load:production`, `npm run bank:load:production`, then Account > Guideline corpus > Sync search index.
+   `npm run corpus:load:production`, `npm run bank:load:general:production`, then Account > Guideline corpus > Sync
+   search index.
 
 ## The quiz
 

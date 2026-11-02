@@ -393,7 +393,8 @@ class Runner:
         for r in existing:
             if r.get("ok"):
                 self.previous.setdefault(r["chunk_id"], []).append(r["question_text"])
-        self.spent = sum(r.get("cost_usd", 0.0) for r in existing)
+        self.spent = 0.0
+        self.spent_before = sum(r.get("cost_usd", 0.0) for r in existing)
         self.made = 0
         self.failed = 0
         self._index: GuidelineIndex | None = None
@@ -768,7 +769,7 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
     parser.add_argument("--out", type=Path, default=OUT_DIR)
     parser.add_argument("--yes", action="store_true", help="confirm spending money on generation")
     parser.add_argument("--limit", type=int, default=None, help="only the first N chunks (for a trial run)")
-    parser.add_argument("--max-usd", type=float, default=15.0)
+    parser.add_argument("--max-usd", type=float, default=15.0, help="spending cap for this run only")
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--sample", type=int, default=60)
     parser.add_argument("--api-key", default=None)
@@ -804,8 +805,9 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
             return 1
         runner = Runner(corpus, args.out, args.api_key or api_key_from_settings(), transport, args.max_usd)
         runner.run(tasks, args.workers)
+        print(f"Spent US${runner.spent:.2f} this run (US${runner.spent_before + runner.spent:.2f} in raw.jsonl overall).")
         if runner.spent >= args.max_usd:
-            print(f"Stopped at the US${args.max_usd:.2f} cap. Re-run with a higher --max-usd to continue.")
+            print(f"Stopped at the US${args.max_usd:.2f} cap for this run. Re-run to continue; finished work is skipped.")
         return 0
 
     records = load_raw(args.out / "raw.jsonl")
@@ -815,13 +817,14 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
     questions, stats = select_questions(corpus, records)
     if args.only:
         questions = [q for q in questions if (q.get("source_type") == GENERAL_SOURCE_TYPE) == (args.only == "general")]
-    (args.out / "questions.sql").write_text(to_sql(questions), encoding="utf-8")
-    write_sample(args.out / "review-sample.csv", review_sample(questions, args.sample))
+    suffix = f"-{args.only}" if args.only else ""
+    (args.out / f"questions{suffix}.sql").write_text(to_sql(questions), encoding="utf-8")
+    write_sample(args.out / f"review-sample{suffix}.csv", review_sample(questions, args.sample))
     if any(q.get("source_type") == GENERAL_SOURCE_TYPE for q in questions) or stats["dropped"]:
         write_general_review(args.out / "review-sample-general.csv", questions, args.sample)
         write_dropped(args.out / "dropped-general.csv", stats["dropped"])
     info = report(questions, records, stats)
-    (args.out / "report.json").write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
+    (args.out / f"report{suffix}.json").write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(info, indent=2))
     return 0
 
