@@ -40,7 +40,7 @@ import {
   type Difficulty,
 } from "./prompts";
 import { loadDocumentTitles, nameDocuments } from "./naming";
-import { questionVisibility } from "./scope";
+import { apViewFor, questionVisibility } from "./scope";
 import { parseExclusions } from "../progress/settings";
 import { isScore } from "../progress/routes";
 import {
@@ -107,7 +107,18 @@ function parseFilters(body: Body): QuestionFilters | null {
   if (documentId === undefined || section === undefined || difficulty === undefined) return null;
   if (kinds === undefined || documentIds === undefined || excludeDocumentIds === undefined) return null;
   if (difficulty !== null && !(DIFFICULTIES as readonly string[]).includes(difficulty)) return null;
-  return { documentId, section, difficulty: difficulty as Difficulty | null, kinds, documentIds, excludeDocumentIds: excludeDocumentIds ?? [] };
+  if (body.icpOnly !== undefined && typeof body.icpOnly !== "boolean") return null;
+  const icpOnly = body.icpOnly === true;
+  if (icpOnly && !apViewFor(viewFrom(body) ?? "ap")) return null;
+  return {
+    documentId,
+    section,
+    difficulty: difficulty as Difficulty | null,
+    kinds,
+    documentIds,
+    excludeDocumentIds: excludeDocumentIds ?? [],
+    icpOnly,
+  };
 }
 
 function viewFrom(body: Body): CorpusView | null {

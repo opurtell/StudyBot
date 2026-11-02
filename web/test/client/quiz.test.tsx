@@ -89,7 +89,49 @@ describe("quiz", () => {
     await userEvent.click(await screen.findByRole("radio", { name: "AP" }));
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
     await screen.findByRole("heading", { name: question.text });
-    expect(sent[0]).toMatchObject({ view: "ap" });
+    expect(sent[0]).toMatchObject({ view: "ap_pacer", icpOnly: false });
+  });
+
+  it("offers AP, ICP and ICP only, defaulting to the qualification in Settings", async () => {
+    localStorage.setItem("scope-view", JSON.stringify({ level: "icp", pacer: false }));
+    const sent: Record<string, unknown>[] = [];
+    const topicCalls: string[] = [];
+    mockApi({
+      "GET /api/me": anonymous,
+      ...lists,
+      "GET /api/topics?view=icp&icpOnly=1": () => {
+        topicCalls.push("icp_only");
+        return { body: { view: "icp", topics: [] } };
+      },
+      "POST /api/quiz/next": (init: RequestInit | undefined) => {
+        sent.push(body(init));
+        return { body: { question, exhausted: false, canGenerate: false, quota: null } };
+      },
+    });
+    renderAt("/quiz");
+    expect(await screen.findByRole("radio", { name: "ICP" })).toHaveAttribute("aria-checked", "true");
+    expect(screen.queryByRole("radio", { name: "Everything" })).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole("radio", { name: "ICP only" }));
+    expect(screen.getByText(/Only questions on ICP-specific content/)).toBeInTheDocument();
+    expect(await screen.findAllByText("ICP only")).not.toHaveLength(0);
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    await screen.findByRole("heading", { name: question.text });
+    expect(sent[0]).toMatchObject({ view: "icp", icpOnly: true });
+    expect(topicCalls).toContain("icp_only");
+    expect(JSON.parse(localStorage.getItem("scope-view") ?? "{}")).toEqual({ level: "icp", pacer: false });
+  });
+
+  it("asks only for AP or ICP in Settings", async () => {
+    mockApi({ "GET /api/me": anonymous, ...lists });
+    renderAt("/settings");
+    expect(await screen.findByRole("radio", { name: "AP" })).toHaveAttribute("aria-checked", "false");
+    expect(screen.getByRole("radio", { name: "ICP" })).toHaveAttribute("aria-checked", "false");
+    expect(screen.queryByRole("radio", { name: "Everything" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("radio", { name: "ICP only" })).not.toBeInTheDocument();
+    expect(screen.getByText(/Not set yet/)).toBeInTheDocument();
+    await userEvent.click(screen.getByRole("radio", { name: "ICP" }));
+    expect(screen.getByRole("checkbox", { name: "PACER" })).not.toBeChecked();
+    expect(screen.queryByText(/Not set yet/)).not.toBeInTheDocument();
   });
 
   it("marks a signed-in user's answer and shows the remaining allowance", async () => {

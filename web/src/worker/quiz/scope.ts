@@ -10,6 +10,12 @@ const COVERED_BY: Record<CorpusView, CorpusView[]> = {
   icp_pacer: ["icp_pacer"],
 };
 
+export function apViewFor(view: CorpusView): CorpusView | null {
+  if (view === "icp") return "ap";
+  if (view === "icp_pacer") return "ap_pacer";
+  return null;
+}
+
 const ICP_MENTION = new RegExp(prompts.icpMentionPattern, "i");
 
 export function mentionsIcpOnly(text: string): boolean {

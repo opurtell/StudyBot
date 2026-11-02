@@ -7,7 +7,7 @@ import { ScopePicker } from "../components/ScopePicker";
 import { api } from "../lib/api";
 import { clearGuestAttempts } from "../lib/guestProgress";
 import { usePreferences } from "../lib/preferences";
-import { useScopeChoice } from "../lib/scopeView";
+import { QUALIFICATION_OPTIONS, useScopeChoice } from "../lib/scopeView";
 import { useSession } from "../lib/session";
 import { useLoad } from "../lib/useLoad";
 
@@ -225,9 +225,19 @@ export function Settings() {
 
       <Panel id="scope-heading" title="Scope of practice">
         <p className="text-sm text-on-surface-variant">
-          Sets which guideline content and questions you see. AP hides ICP-only content; PACER adds PACER content.
+          Sets which guideline content you see and your default quiz scope. AP hides ICP-only content; PACER adds PACER content.
         </p>
-        <ScopePicker choice={choice} onChange={setChoice} legend="Your qualification" label="I am" />
+        <ScopePicker
+          level={choice.level}
+          pacer={choice.pacer}
+          options={QUALIFICATION_OPTIONS}
+          onChange={setChoice}
+          legend="Your qualification"
+          label="I am"
+        />
+        {choice.level === null && (
+          <p className="text-sm text-on-surface-variant">Not set yet, so you see all content, including ICP and PACER.</p>
+        )}
       </Panel>
 
       <ExcludedTopics />

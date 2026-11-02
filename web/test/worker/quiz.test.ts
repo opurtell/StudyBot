@@ -72,6 +72,14 @@ describe("serving from the bank", () => {
     expect((await next({ view: "icp", excludeDocumentIds: ["CMG_10_Diabetic"] })).body.question?.id).toBe(Q_ICP);
   });
 
+  it("serves only ICP-specific questions in ICP only mode", async () => {
+    expect((await next({ view: "icp", icpOnly: true })).body.question?.id).toBe(Q_ICP);
+    expect((await next({ view: "icp_pacer", icpOnly: true, exclude: [Q_ICP] })).body.question).toBeNull();
+    expect((await next({ view: "icp", icpOnly: false, exclude: [Q_ICP] })).body.question).not.toBeNull();
+    expect((await next({ view: "ap", icpOnly: true })).res.status).toBe(400);
+    expect((await next({ view: "icp", icpOnly: "yes" })).res.status).toBe(400);
+  });
+
   it("lets picked guidelines override topics excluded in Settings", async () => {
     const excluded = { excludedSections: ["Airway"], excludedDocuments: ["CMG_3A_RSI"] };
     expect((await next({ view: "icp", ...excluded, exclude: [Q_AP, Q_AP2] })).body.question).toBeNull();
@@ -259,6 +267,16 @@ describe("live generation", () => {
     expect(body.question.id).toBe((await questionHash(named)).slice(0, 16));
     const stored = await env.DB.prepare(`SELECT question_text FROM question_bank WHERE id = ?1`).bind(body.question.id).first();
     expect(stored).toEqual({ question_text: named });
+  });
+
+  it("writes ICP only questions from ICP-specific text", async () => {
+    const { cookie } = await signIn();
+    const spy = geminiReply(reply("What is the RSI induction dose of ketamine?", 1));
+    const res = await postJson("/api/quiz/generate", { view: "icp", icpOnly: true }, { cookie });
+    expect(res.status).toBe(200);
+    const sent = JSON.parse(String(spy.mock.calls[0]?.[1]?.body)) as { contents: { parts: { text: string }[] }[] };
+    const order = [...(sent.contents[0]?.parts[0]?.text ?? "").matchAll(/\[ACTAS\] (ch_\w+)/g)].map((m) => m[1]);
+    expect(order).toEqual(["ch_icp"]);
   });
 
   it("keeps a question that names ICP-only care away from AP users", async () => {

@@ -1,7 +1,7 @@
 import Markdown, { type Components } from "react-markdown";
 import { Link } from "react-router";
 import type { CorpusView, DocumentDetail } from "../lib/api";
-import { useScopeChoice, viewFor } from "../lib/scopeView";
+import { QUALIFICATION_OPTIONS, useScopeChoice, viewFor } from "../lib/scopeView";
 import { useLoad } from "../lib/useLoad";
 import { documentLabel } from "./DocumentList";
 import { ScopeBadge } from "./ScopeBadge";
@@ -76,7 +76,7 @@ export function DocumentView({
         </header>
       )}
 
-      <ScopePicker choice={choice} onChange={setChoice} />
+      <ScopePicker level={choice.level} pacer={choice.pacer} options={QUALIFICATION_OPTIONS} onChange={setChoice} legend="Your qualification" />
 
       {loading && !doc && <p className="text-on-surface-variant">Loading…</p>}
 

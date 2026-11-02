@@ -79,6 +79,12 @@ describe("topics", () => {
       ["Medical", 2],
     ]);
   });
+
+  it("lists only topics with ICP-specific questions in ICP only mode", async () => {
+    const only = await json<{ topics: { section: string; questions: number }[] }>(await call("/api/topics?view=icp&icpOnly=1"));
+    expect(only.topics.map((t) => [t.section, t.questions])).toEqual([["Airway", 1]]);
+    expect((await call("/api/topics?view=ap&icpOnly=1")).status).toBe(400);
+  });
 });
 
 describe("progress", () => {

@@ -101,6 +101,7 @@ export interface QuizQuestion {
 
 export interface QuizFilters {
   view: CorpusView;
+  icpOnly?: boolean;
   documentId?: string | null;
   section?: string | null;
   difficulty?: Difficulty | null;
@@ -272,7 +273,8 @@ export const api = {
         excludedDocuments: settings.excludedDocuments,
       }),
     }),
-  topics: (view: CorpusView) => request<{ view: CorpusView; topics: Topic[] }>(`/topics?view=${view}`),
+  topics: (view: CorpusView, icpOnly = false) =>
+    request<{ view: CorpusView; topics: Topic[] }>(`/topics?view=${view}${icpOnly ? "&icpOnly=1" : ""}`),
   progress: (view: CorpusView) =>
     request<Progress>(`/progress?view=${view}&tz=${new Date().getTimezoneOffset()}`),
   history: (before?: number) =>

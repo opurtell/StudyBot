@@ -19,7 +19,7 @@ import {
 import { gradeGuestAttempt, recordGuestAttempt } from "../lib/guestProgress";
 import { usePreferences } from "../lib/preferences";
 import { buildGroups, EVERYTHING, poolsLabel, resolveSelection, selectionFromLink, type Selection } from "../lib/quizSelection";
-import { useScopeChoice, viewFor } from "../lib/scopeView";
+import { QUIZ_SCOPE_OPTIONS, quizScopeName, useQuizScope, viewFor } from "../lib/scopeView";
 import { useSession } from "../lib/session";
 
 const SEEN_KEY = "quiz-seen";
@@ -31,11 +31,6 @@ const DIFFICULTIES: { value: Difficulty | ""; label: string }[] = [
   { value: "medium", label: "Medium" },
   { value: "hard", label: "Hard" },
 ];
-
-function scopeName(level: string, pacer: boolean): string {
-  if (level === "all") return "Everything";
-  return `${level === "ap" ? "AP" : "ICP"}${pacer ? " + PACER" : ""}`;
-}
 
 const REASONS: { value: ReportReason; label: string }[] = [
   { value: "incorrect", label: "Clinically wrong" },
@@ -71,9 +66,10 @@ function message(err: unknown): string {
 export function Quiz() {
   const { me, refresh } = useSession();
   const signedIn = Boolean(me?.signedIn);
-  const [choice, setChoice] = useScopeChoice();
+  const [choice, setChoice] = useQuizScope();
   const { prefs } = usePreferences();
   const view = viewFor(choice);
+  const icpOnly = choice.level === "icp_only";
   const [params] = useSearchParams();
   const linkDocument = params.get("document");
   const linkSection = linkDocument ? null : params.get("section");
@@ -82,6 +78,7 @@ export function Quiz() {
   const [pickerOpen, setPickerOpen] = useState(true);
   const [difficulty, setDifficulty] = useState<Difficulty | "">("");
   const [topics, setTopics] = useState<{ view: string; current: Topic[]; all: Topic[] } | null>(null);
+  const topicsKey = `${view}:${icpOnly ? "icp_only" : "all"}`;
   const [topicsError, setTopicsError] = useState<string | null>(null);
 
   const [question, setQuestion] = useState<QuizQuestion | null>(null);
@@ -101,9 +98,9 @@ export function Quiz() {
   useEffect(() => {
     let live = true;
     setTopicsError(null);
-    Promise.all([api.topics(view), view === "icp_pacer" ? null : api.topics("icp_pacer")])
+    Promise.all([api.topics(view, icpOnly), view === "icp_pacer" && !icpOnly ? null : api.topics("icp_pacer")])
       .then(([current, all]) => {
-        if (live) setTopics({ view, current: current.topics, all: (all ?? current).topics });
+        if (live) setTopics({ view: topicsKey, current: current.topics, all: (all ?? current).topics });
       })
       .catch(() => {
         if (live) setTopicsError("Couldn't load the topic list.");
@@ -111,9 +108,9 @@ export function Quiz() {
     return () => {
       live = false;
     };
-  }, [view]);
+  }, [view, icpOnly, topicsKey]);
 
-  const groups = useMemo(() => (topics?.view === view ? buildGroups(topics.current) : []), [topics, view]);
+  const groups = useMemo(() => (topics?.view === topicsKey ? buildGroups(topics.current) : []), [topics, topicsKey]);
   const allGroups = useMemo(() => (topics ? buildGroups(topics.all) : []), [topics]);
 
   useEffect(() => {
@@ -132,6 +129,7 @@ export function Quiz() {
   const filters: QuizFilters = legacyLink
     ? {
         view,
+        icpOnly,
         documentId: linkDocument,
         section: linkSection,
         difficulty: difficulty || null,
@@ -140,12 +138,13 @@ export function Quiz() {
       }
     : {
         view,
+        icpOnly,
         difficulty: difficulty || null,
         ...resolved.filters,
         excludedSections: resolved.useSettings ? prefs.excludedSections : [],
         excludedDocuments: resolved.useSettings ? prefs.excludedDocuments : [],
       };
-  const scopeLabel = scopeName(choice.level, choice.pacer);
+  const scopeLabel = quizScopeName(choice);
   const difficultyLabel = DIFFICULTIES.find((d) => d.value === difficulty)?.label ?? "Any";
   const pickCount = resolved.picked.length;
 
@@ -271,7 +270,8 @@ export function Quiz() {
           ]}
           controls={
             <section aria-label="Quiz settings" className="flex flex-col gap-3 rounded-sm bg-surface-container-low p-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8">
-              <ScopePicker choice={choice} onChange={setChoice} legend="Questions for" label="Scope" />
+              <ScopePicker level={choice.level} pacer={choice.pacer} options={QUIZ_SCOPE_OPTIONS} onChange={setChoice} legend="Questions for" label="Scope" />
+              {icpOnly && <p className="px-3 text-sm text-on-surface-variant sm:px-0">Only questions on ICP-specific content, without the AP material.</p>}
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 sm:px-0">
                 <span className="text-xs font-medium uppercase tracking-widest text-on-surface-variant" aria-hidden="true">
                   Difficulty
