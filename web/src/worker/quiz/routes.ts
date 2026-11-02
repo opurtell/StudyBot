@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import type { Context } from "hono";
-import { currentCorpusVersion, parseView, type CorpusView } from "../corpus/repo";
+import { currentCorpusVersion, parseView, type CorpusView, type DocumentKind } from "../corpus/repo";
 import { complete, LlmError, MODELS, type LlmResult } from "../llm/gemini";
 import { sha256Hex } from "../lib/crypto";
 import { apiError, clientIp } from "../lib/http";
@@ -80,13 +80,34 @@ function optionalString(value: unknown, max = 200): string | null | undefined {
   return value;
 }
 
+const KINDS: readonly DocumentKind[] = ["cmg", "csm", "med"];
+const MAX_DOCUMENT_IDS = 400;
+
+function optionalIdList(value: unknown): string[] | null | undefined {
+  if (value === undefined || value === null) return null;
+  if (!Array.isArray(value) || value.length > MAX_DOCUMENT_IDS) return undefined;
+  if (value.some((id) => typeof id !== "string" || id.length === 0 || id.length > 200)) return undefined;
+  return [...new Set(value as string[])];
+}
+
+function optionalKinds(value: unknown): DocumentKind[] | null | undefined {
+  if (value === undefined || value === null) return null;
+  if (!Array.isArray(value) || value.length === 0) return undefined;
+  if (value.some((k) => !(KINDS as readonly unknown[]).includes(k))) return undefined;
+  return [...new Set(value as DocumentKind[])];
+}
+
 function parseFilters(body: Body): QuestionFilters | null {
   const documentId = optionalString(body.documentId);
   const section = optionalString(body.section);
   const difficulty = optionalString(body.difficulty, 10);
+  const kinds = optionalKinds(body.kinds);
+  const documentIds = optionalIdList(body.documentIds);
+  const excludeDocumentIds = optionalIdList(body.excludeDocumentIds);
   if (documentId === undefined || section === undefined || difficulty === undefined) return null;
+  if (kinds === undefined || documentIds === undefined || excludeDocumentIds === undefined) return null;
   if (difficulty !== null && !(DIFFICULTIES as readonly string[]).includes(difficulty)) return null;
-  return { documentId, section, difficulty: difficulty as Difficulty | null };
+  return { documentId, section, difficulty: difficulty as Difficulty | null, kinds, documentIds, excludeDocumentIds: excludeDocumentIds ?? [] };
 }
 
 function viewFrom(body: Body): CorpusView | null {
@@ -124,7 +145,7 @@ quizRoutes.post("/next", async (c) => {
   const view = viewFrom(body);
   const filters = parseFilters(body);
   const exclusions = parseExclusions(body);
-  if (!view || !filters) return apiError(c, 400, "bad_request", "Unknown scope, guideline or difficulty.");
+  if (!view || !filters) return apiError(c, 400, "bad_request", "Unknown scope, topics or difficulty.");
   if (!exclusions) return apiError(c, 400, "bad_request", "Excluded topics must be lists of names.");
   const rawExclude = body.exclude ?? [];
   if (!Array.isArray(rawExclude) || rawExclude.some((id) => typeof id !== "string" || !ID_PATTERN.test(id))) {

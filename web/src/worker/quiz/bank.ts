@@ -1,5 +1,5 @@
 import { sha256Hex } from "../lib/crypto";
-import { CORPUS_SERVICE, VIEWS, type CorpusView } from "../corpus/repo";
+import { CORPUS_SERVICE, VIEWS, type CorpusView, type DocumentKind } from "../corpus/repo";
 import type { Difficulty, QuestionType } from "./prompts";
 import type { Visibility } from "./scope";
 
@@ -7,7 +7,12 @@ export interface QuestionFilters {
   documentId: string | null;
   section: string | null;
   difficulty: Difficulty | null;
+  kinds?: DocumentKind[] | null;
+  documentIds?: string[] | null;
+  excludeDocumentIds?: string[];
 }
+
+export const SMALL_DOCUMENT_LIST = 20;
 
 export interface Exclusions {
   sections: string[];
@@ -86,8 +91,24 @@ function exclusionSql(sections: string, documents: string): string {
          AND d.id NOT IN (SELECT value FROM json_each(${documents}))`;
 }
 
-function exclusionParams(filters: Pick<QuestionFilters, "documentId" | "section">, exclusions?: Exclusions): [string, string] {
-  if (!exclusions || filters.documentId) return ["[]", "[]"];
+type ChunkFilters = Omit<QuestionFilters, "difficulty">;
+
+function selectionSql(kinds: string, documents: string, excluded: string): string {
+  return `AND (${kinds} IS NULL OR d.kind IN (SELECT value FROM json_each(${kinds})))
+         AND (${documents} IS NULL OR d.id IN (SELECT value FROM json_each(${documents})))
+         AND d.id NOT IN (SELECT value FROM json_each(${excluded}))`;
+}
+
+function selectionParams(filters: ChunkFilters): [string | null, string | null, string] {
+  return [
+    filters.kinds ? JSON.stringify(filters.kinds) : null,
+    filters.documentIds ? JSON.stringify(filters.documentIds) : null,
+    JSON.stringify(filters.excludeDocumentIds ?? []),
+  ];
+}
+
+function exclusionParams(filters: ChunkFilters, exclusions?: Exclusions): [string, string] {
+  if (!exclusions || filters.documentId || filters.documentIds) return ["[]", "[]"];
   return [JSON.stringify(filters.section ? [] : exclusions.sections), JSON.stringify(exclusions.documents)];
 }
 
@@ -112,7 +133,8 @@ export async function nextQuestion(
          AND (?2 IS NULL OR q.document_id = ?2)
          AND (?3 IS NULL OR d.section = ?3)
          AND (?4 IS NULL OR q.difficulty = ?4)
-         ${exclusionSql("?7", "?8")}`;
+         ${exclusionSql("?7", "?8")}
+         ${selectionSql("?9", "?10", "?11")}`;
   const params = [
     CORPUS_SERVICE,
     opts.filters.documentId,
@@ -121,6 +143,7 @@ export async function nextQuestion(
     opts.userId,
     JSON.stringify(opts.exclude),
     ...exclusionParams(opts.filters, opts.exclusions),
+    ...selectionParams(opts.filters),
   ];
 
   if (opts.repeat) {
@@ -137,7 +160,8 @@ export async function nextQuestion(
     return row ? toPublic(row) : null;
   }
 
-  const fromSql = opts.filters.documentId
+  const narrow = opts.filters.documentId || (opts.filters.documentIds && opts.filters.documentIds.length <= SMALL_DOCUMENT_LIST);
+  const fromSql = narrow
     ? SELECT_QUESTION
     : SELECT_QUESTION.replace("FROM question_bank q", "FROM question_bank q INDEXED BY question_bank_rand");
   const unseen = `AND (?5 IS NULL OR NOT EXISTS (SELECT 1 FROM user_question_seen s WHERE s.user_id = ?5 AND s.question_id = q.id))
@@ -148,7 +172,7 @@ export async function nextQuestion(
       .prepare(`${fromSql} ${where} ${unseen} AND ${bound} ORDER BY q.rand_key LIMIT 1`)
       .bind(...params, start)
       .first<QuestionRow>();
-  const row = (await pick("q.rand_key >= ?9")) ?? (await pick("q.rand_key < ?9"));
+  const row = (await pick("q.rand_key >= ?12")) ?? (await pick("q.rand_key < ?12"));
   return row ? toPublic(row) : null;
 }
 
@@ -203,7 +227,7 @@ export interface CandidateChunk {
 export async function candidateChunks(
   db: D1Database,
   view: CorpusView,
-  filters: Pick<QuestionFilters, "documentId" | "section">,
+  filters: ChunkFilters,
   limit = 5,
   exclusions?: Exclusions,
 ): Promise<CandidateChunk[]> {
@@ -216,10 +240,11 @@ export async function candidateChunks(
          AND (?2 IS NULL OR c.document_id = ?2)
          AND (?3 IS NULL OR d.section = ?3)
          ${exclusionSql("?5", "?6")}
+         ${selectionSql("?7", "?8", "?9")}
        ORDER BY (SELECT COUNT(*) FROM question_bank q WHERE q.chunk_id = c.id AND q.status = 'active'), random()
        LIMIT ?4`,
     )
-    .bind(CORPUS_SERVICE, filters.documentId, filters.section, limit, ...exclusionParams(filters, exclusions))
+    .bind(CORPUS_SERVICE, filters.documentId, filters.section, limit, ...exclusionParams(filters, exclusions), ...selectionParams(filters))
     .all<{
       id: string;
       document_id: string;

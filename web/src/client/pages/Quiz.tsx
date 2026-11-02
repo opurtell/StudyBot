@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Feedback, SelfGrade } from "../components/Feedback";
 import { ScopePicker } from "../components/ScopePicker";
+import { TopicPicker } from "../components/TopicPicker";
 import {
   api,
   ApiError,
   type Difficulty,
-  type DocumentSummary,
   type Mark,
   type Quota,
   type QuizFilters,
@@ -14,14 +14,28 @@ import {
   type ReportReason,
   type Reveal,
   type Score,
+  type Topic,
 } from "../lib/api";
 import { gradeGuestAttempt, recordGuestAttempt } from "../lib/guestProgress";
 import { usePreferences } from "../lib/preferences";
+import { buildGroups, EVERYTHING, poolsLabel, resolveSelection, selectionFromLink, type Selection } from "../lib/quizSelection";
 import { useScopeChoice, viewFor } from "../lib/scopeView";
 import { useSession } from "../lib/session";
 
 const SEEN_KEY = "quiz-seen";
 const MAX_SEEN = 400;
+
+const DIFFICULTIES: { value: Difficulty | ""; label: string }[] = [
+  { value: "", label: "Any" },
+  { value: "easy", label: "Easy" },
+  { value: "medium", label: "Medium" },
+  { value: "hard", label: "Hard" },
+];
+
+function scopeName(level: string, pacer: boolean): string {
+  if (level === "all") return "Everything";
+  return `${level === "ap" ? "AP" : "ICP"}${pacer ? " + PACER" : ""}`;
+}
 
 const REASONS: { value: ReportReason; label: string }[] = [
   { value: "incorrect", label: "Clinically wrong" },
@@ -61,10 +75,14 @@ export function Quiz() {
   const { prefs } = usePreferences();
   const view = viewFor(choice);
   const [params] = useSearchParams();
-  const [documents, setDocuments] = useState<DocumentSummary[]>([]);
-  const [documentId, setDocumentId] = useState(params.get("document") ?? "");
-  const [section, setSection] = useState(params.get("document") ? "" : (params.get("section") ?? ""));
+  const linkDocument = params.get("document");
+  const linkSection = linkDocument ? null : params.get("section");
+  const [selection, setSelection] = useState<Selection>(EVERYTHING);
+  const [linkApplied, setLinkApplied] = useState(!linkDocument && !linkSection);
+  const [pickerOpen, setPickerOpen] = useState(true);
   const [difficulty, setDifficulty] = useState<Difficulty | "">("");
+  const [topics, setTopics] = useState<{ view: string; current: Topic[]; all: Topic[] } | null>(null);
+  const [topicsError, setTopicsError] = useState<string | null>(null);
 
   const [question, setQuestion] = useState<QuizQuestion | null>(null);
   const [questionView, setQuestionView] = useState(view);
@@ -82,28 +100,58 @@ export function Quiz() {
 
   useEffect(() => {
     let live = true;
-    Promise.all([api.guidelines(), api.medications()])
-      .then(([g, m]) => {
-        if (live) setDocuments([...g.items, ...m.items]);
+    setTopicsError(null);
+    Promise.all([api.topics(view), view === "icp_pacer" ? null : api.topics("icp_pacer")])
+      .then(([current, all]) => {
+        if (live) setTopics({ view, current: current.topics, all: (all ?? current).topics });
       })
-      .catch(() => undefined);
+      .catch(() => {
+        if (live) setTopicsError("Couldn't load the topic list.");
+      });
     return () => {
       live = false;
     };
-  }, []);
+  }, [view]);
+
+  const groups = useMemo(() => (topics?.view === view ? buildGroups(topics.current) : []), [topics, view]);
+  const allGroups = useMemo(() => (topics ? buildGroups(topics.all) : []), [topics]);
+
+  useEffect(() => {
+    if (linkApplied || groups.length === 0) return;
+    const linked = selectionFromLink(groups, { document: linkDocument, section: linkSection });
+    if (linked) setSelection(linked);
+    setLinkApplied(true);
+  }, [groups, linkApplied, linkDocument, linkSection]);
 
   useEffect(() => {
     if (me?.signedIn) setQuota(me.quota);
   }, [me]);
 
-  const sections = [...new Set(documents.map((d) => d.section))].sort((a, b) => a.localeCompare(b));
-  const filters: QuizFilters = {
-    view,
-    documentId: documentId || null,
-    section: documentId ? null : section || null,
-    difficulty: difficulty || null,
-    excludedSections: prefs.excludedSections,
-    excludedDocuments: prefs.excludedDocuments,
+  const resolved = resolveSelection(selection, groups, prefs);
+  const legacyLink = !linkApplied;
+  const filters: QuizFilters = legacyLink
+    ? {
+        view,
+        documentId: linkDocument,
+        section: linkSection,
+        difficulty: difficulty || null,
+        excludedSections: prefs.excludedSections,
+        excludedDocuments: prefs.excludedDocuments,
+      }
+    : {
+        view,
+        difficulty: difficulty || null,
+        ...resolved.filters,
+        excludedSections: resolved.useSettings ? prefs.excludedSections : [],
+        excludedDocuments: resolved.useSettings ? prefs.excludedDocuments : [],
+      };
+  const scopeLabel = scopeName(choice.level, choice.pacer);
+  const difficultyLabel = DIFFICULTIES.find((d) => d.value === difficulty)?.label ?? "Any";
+  const pickCount = resolved.picked.length;
+
+  const choose = (next: Selection) => {
+    setSelection(next);
+    setLinkApplied(true);
   };
 
   function show(next: QuizQuestion | null) {
@@ -132,6 +180,7 @@ export function Quiz() {
 
   const nextQuestion = (repeat = false) =>
     run("next", async () => {
+      setPickerOpen(false);
       const res = await api.nextQuestion(filters, signedIn ? [] : loadSeen(), repeat);
       show(res.question);
       setExhausted(res.exhausted);
@@ -206,67 +255,80 @@ export function Quiz() {
         </p>
       </header>
 
-      <section aria-label="Quiz settings" className="space-y-3">
-        <ScopePicker choice={choice} onChange={setChoice} legend="Questions for" label="Scope" />
-        <div className="grid gap-3 sm:grid-cols-3">
-          <label className="block text-sm">
-            <span className="mb-1 block font-medium">Topic</span>
-            <select
-              value={section}
-              onChange={(e) => {
-                setSection(e.target.value);
-                setDocumentId("");
-              }}
-              className="w-full rounded-sm bg-surface-container-lowest p-2"
-            >
-              <option value="">Any topic</option>
-              {(section && !sections.includes(section) ? [section, ...sections] : sections).map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="block text-sm">
-            <span className="mb-1 block font-medium">Guideline</span>
-            <select
-              value={documentId}
-              onChange={(e) => setDocumentId(e.target.value)}
-              className="w-full rounded-sm bg-surface-container-lowest p-2"
-            >
-              <option value="">Any guideline</option>
-              {documents
-                .filter((d) => !section || d.section === section || d.id === documentId)
-                .map((d) => (
-                <option key={d.id} value={d.id}>
-                  {d.kind === "csm" ? d.number : `${d.kind === "med" ? "MED" : "CMG"} ${d.number}`} {d.title}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="block text-sm">
-            <span className="mb-1 block font-medium">Difficulty</span>
-            <select
-              value={difficulty}
-              onChange={(e) => setDifficulty(e.target.value as Difficulty | "")}
-              className="w-full rounded-sm bg-surface-container-lowest p-2"
-            >
-              <option value="">Any difficulty</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </label>
-        </div>
-        <button
-          type="button"
-          onClick={() => void nextQuestion()}
-          disabled={busy !== null}
-          className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-on-primary disabled:opacity-50"
-        >
-          {busy === "next" ? "Finding a question…" : question || result ? "Next question" : "Start"}
-        </button>
-      </section>
+      {pickerOpen ? (
+        <TopicPicker
+          groups={groups}
+          allGroups={allGroups}
+          loading={!topics && !topicsError}
+          error={topicsError}
+          selection={selection}
+          onChange={choose}
+          prefs={prefs}
+          scopeName={scopeLabel}
+          details={[
+            { label: "Scope", value: scopeLabel },
+            { label: "Difficulty", value: difficultyLabel },
+          ]}
+          controls={
+            <section aria-label="Quiz settings" className="flex flex-col gap-3 rounded-sm bg-surface-container-low p-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8">
+              <ScopePicker choice={choice} onChange={setChoice} legend="Questions for" label="Scope" />
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 sm:px-0">
+                <span className="text-xs font-medium uppercase tracking-widest text-on-surface-variant" aria-hidden="true">
+                  Difficulty
+                </span>
+                <div className="flex gap-1" role="radiogroup" aria-label="Difficulty">
+                  {DIFFICULTIES.map((d) => (
+                    <button
+                      key={d.label}
+                      type="button"
+                      role="radio"
+                      aria-checked={difficulty === d.value}
+                      onClick={() => setDifficulty(d.value)}
+                      className={`min-h-10 rounded-sm px-3 py-2 text-sm font-medium ${difficulty === d.value ? "bg-primary text-on-primary" : "hover:bg-surface-container"}`}
+                    >
+                      {d.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </section>
+          }
+          start={{
+            resolved,
+            button: (
+              <button
+                type="button"
+                onClick={() => void nextQuestion()}
+                disabled={busy !== null || (linkApplied && groups.length > 0 && resolved.inPlay.length === 0)}
+                className="min-h-12 w-full rounded-sm bg-primary px-5 text-base font-semibold text-on-primary disabled:opacity-50"
+              >
+                {busy === "next" ? "Finding a question…" : "Start"}
+              </button>
+            ),
+          }}
+        />
+      ) : (
+        <section aria-label="Quiz topics" className="flex flex-wrap items-center gap-3 rounded-sm bg-surface-container-low p-3">
+          <div className="min-w-0 flex-1">
+            <p className="font-headline text-lg font-semibold text-primary">{poolsLabel(selection)}</p>
+            <p className="text-xs text-on-surface-variant">
+              {scopeLabel} · {difficultyLabel}
+              {pickCount > 0 && ` · ${pickCount} ${selection.mode === "only" ? "picked" : "left out"}`}
+            </p>
+          </div>
+          <button type="button" onClick={() => setPickerOpen(true)} className="min-h-10 rounded-sm px-3 text-sm font-semibold text-primary underline">
+            Change topics
+          </button>
+          <button
+            type="button"
+            onClick={() => void nextQuestion()}
+            disabled={busy !== null}
+            className="min-h-10 rounded-sm bg-primary px-4 text-sm font-semibold text-on-primary disabled:opacity-50"
+          >
+            {busy === "next" ? "Finding a question…" : "Next question"}
+          </button>
+        </section>
+      )}
 
       {error && (
         <p role="alert" className="rounded-sm bg-error-container p-3 text-sm text-error">
