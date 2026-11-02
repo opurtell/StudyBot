@@ -9,6 +9,7 @@ export const CHUNK_TEXT = "x".repeat(250);
 export async function seed() {
   const db = env.DB;
   const stmts = [
+    "DELETE FROM marking_overrides",
     "DELETE FROM question_reports",
     "DELETE FROM usage_ledger",
     "DELETE FROM daily_usage",

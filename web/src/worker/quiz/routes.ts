@@ -40,6 +40,7 @@ import {
   type Difficulty,
 } from "./prompts";
 import { loadDocumentTitles, nameDocuments } from "./naming";
+import { listOverrides, overrideSummary, overridesCsv, recordOverride } from "./overrides";
 import { apViewFor, questionVisibility } from "./scope";
 import { parseExclusions } from "../progress/settings";
 import { isScore } from "../progress/routes";
@@ -410,12 +411,18 @@ quizRoutes.post("/attempts/:id/self-grade", async (c) => {
   if (!user) return apiError(c, 401, "unauthorised", "Sign in to keep your self-marked answers on your account.");
   const body = await readBody(c);
   if (!body || !isScore(body.score)) return apiError(c, 400, "bad_request", "Score must be correct, partial or incorrect.");
+  const view = body.view === undefined ? null : viewFrom(body);
+  if (body.view !== undefined && !view) return apiError(c, 400, "bad_request", "Unknown scope.");
   const row = await c.env.DB.prepare(
-    `UPDATE attempts SET score = ?3 WHERE id = ?1 AND user_id = ?2 AND kind IN ('revealed', 'marked') RETURNING id`,
+    `UPDATE attempts SET score = ?3 WHERE id = ?1 AND user_id = ?2 AND kind IN ('revealed', 'marked') RETURNING id, kind`,
   )
     .bind(c.req.param("id"), user.id, body.score)
-    .first<{ id: string }>();
+    .first<{ id: string; kind: string }>();
   if (!row) return apiError(c, 404, "not_found", "No such answer in your history.");
+  if (row.kind === "marked") {
+    const direction = await recordOverride(c.env.DB, { attemptId: row.id, userId: user.id, userScore: body.score, view }, Date.now());
+    if (direction) c.get("log").info("marking_overridden", { attemptId: row.id, direction });
+  }
   return c.json({ ok: true, score: body.score });
 });
 
@@ -469,7 +476,7 @@ adminQuestionRoutes.use("*", async (c, next) => {
 adminQuestionRoutes.get("/", async (c) => {
   const now = Date.now();
   const db = c.env.DB;
-  const [summary, reported, liveAi, gensToday, marksToday, spend] = await Promise.all([
+  const [summary, reported, liveAi, gensToday, marksToday, spend, overrides] = await Promise.all([
     bankSummary(db),
     reportedQuestions(db),
     liveAiEnabled(db),
@@ -483,6 +490,7 @@ adminQuestionRoutes.get("/", async (c) => {
       )
       .bind(Date.UTC(new Date(now).getUTCFullYear(), new Date(now).getUTCMonth(), 1))
       .first<{ micros: number; calls: number; unreadable: number }>(),
+    overrideSummary(db),
   ]);
   return c.json({
     summary,
@@ -490,7 +498,25 @@ adminQuestionRoutes.get("/", async (c) => {
     liveAi,
     today: { generations: gensToday, marks: marksToday, caps: dailyCaps(c.env) },
     month: { costUsd: (spend?.micros ?? 0) / 1_000_000, calls: spend?.calls ?? 0, unreadable: spend?.unreadable ?? 0 },
+    overrides,
   });
+});
+
+const MAX_EXPORT_ROWS = 5000;
+
+adminQuestionRoutes.get("/overrides", async (c) => {
+  const sinceParam = c.req.query("since");
+  const since = sinceParam ? Date.parse(sinceParam) : 0;
+  if (Number.isNaN(since)) return apiError(c, 400, "bad_request", "since must be an ISO date.");
+  const records = await listOverrides(c.env.DB, since, MAX_EXPORT_ROWS);
+  if (c.req.query("format") === "csv") {
+    const stamp = new Date().toISOString().slice(0, 10);
+    return c.body(overridesCsv(records), 200, {
+      "content-type": "text/csv; charset=utf-8",
+      "content-disposition": `attachment; filename="marking-overrides-${stamp}.csv"`,
+    });
+  }
+  return c.json({ overrides: records, truncated: records.length === MAX_EXPORT_ROWS });
 });
 
 adminQuestionRoutes.post("/live-ai", async (c) => {

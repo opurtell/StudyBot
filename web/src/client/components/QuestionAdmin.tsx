@@ -62,7 +62,20 @@ export function QuestionAdmin() {
             <dd>
               US${status.month.costUsd.toFixed(2)}, {status.month.calls} calls, {status.month.unreadable} unreadable
             </dd>
+            <dt>Marks changed by users</dt>
+            <dd>
+              {status.overrides.total} ({status.overrides.modelTooHarsh} too harsh, {status.overrides.modelTooLenient} too lenient)
+            </dd>
           </dl>
+          <p className="text-sm">
+            <a href="/api/admin/questions/overrides?format=csv" download className="font-semibold text-primary underline">
+              Download marking changes (CSV)
+            </a>
+            <span className="text-on-surface-variant"> · </span>
+            <a href="/api/admin/questions/overrides" target="_blank" rel="noopener" className="font-semibold text-primary underline">
+              JSON
+            </a>
+          </p>
           <div className="flex flex-wrap items-center gap-3">
             <p className="text-sm">
               AI marking and generation: <strong>{status.liveAi ? "on" : "off"}</strong>

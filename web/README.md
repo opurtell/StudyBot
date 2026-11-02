@@ -127,6 +127,12 @@ After a rescrape, repeat steps 3, 4 and 6.
 - **Usage ledger:** every model call (including failures) writes tokens and estimated cost to `usage_ledger`.
 - **Reports:** anyone can report a question. Two different reporters (`REPORT_FLAG_THRESHOLD`), or one admin, withdraw it
   straight away. Admins retire or restore it from **Account > Question bank**.
+- **Marking changes:** when a signed-in user changes the AI's mark ("I was correct", "I was incorrect" and so on), the
+  change is logged to `marking_overrides` with a snapshot of the question, source chunk, scope, answer, the model's full
+  evaluation, the user's mark and a `direction` (`model_too_harsh` or `model_too_lenient`). One row per attempt; changing
+  the mark back to the model's deletes it. Self-marks on revealed answers are not logged. Deleting an account deletes its
+  rows; resetting progress keeps them. Export from **Account > Question bank > Download marking changes (CSV)**, or
+  `GET /api/admin/questions/overrides` (JSON, `?format=csv`, `?since=<ISO date>`, 5,000 rows per call).
 - **Corpus changes:** the daily cron retires questions whose source chunk changed or disappeared, and stale questions are
   never served even before the cron runs.
 

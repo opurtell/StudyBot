@@ -53,6 +53,10 @@ export function Privacy() {
             <strong>Reports:</strong> the reason and any detail you give when you report a question.
           </li>
           <li>
+            <strong>Marking changes:</strong> when you change the AI's mark, a copy of the question, your answer, the AI's
+            marking and the mark you chose, so the site's maintainer can improve the marking and the questions.
+          </li>
+          <li>
             <strong>A sign-in cookie</strong> that keeps you signed in for up to 30 days. We use no advertising or
             analytics cookies.
           </li>
@@ -80,7 +84,10 @@ export function Privacy() {
             <strong>Google sign-in:</strong> Google knows you signed in to this site.
           </li>
         </ul>
-        <p>We don't sell your data or share it with anyone else, and nobody else can see your answers or scores.</p>
+        <p>
+          We don't sell your data or share it with anyone else. Apart from the site's maintainer reviewing marking changes,
+          nobody else can see your answers or scores.
+        </p>
       </Section>
 
       <Section title="Your choices">
@@ -90,10 +97,10 @@ export function Privacy() {
             <Link to="/settings" className="underline">
               Settings
             </Link>{" "}
-            deletes your answers and scores.
+            deletes your answers and scores. Marking changes are kept.
           </li>
           <li>
-            <strong>Delete account</strong> in Settings deletes your account, settings, answers and scores straight away.
+            <strong>Delete account</strong> in Settings deletes your account, settings, answers, scores and marking changes straight away.
             Usage records are kept without any link to you, and your question reports are kept without their detail.
           </li>
           <li>Database backups roll off within 30 days.</li>

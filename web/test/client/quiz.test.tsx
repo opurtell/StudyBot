@@ -195,7 +195,7 @@ describe("quiz", () => {
     expect(screen.queryByRole("button", { name: "I was partly correct" })).not.toBeInTheDocument();
     await userEvent.click(screen.getByRole("button", { name: "I was correct" }));
     expect(await screen.findByText(/Mark changed to Correct/)).toBeInTheDocument();
-    expect(graded).toEqual([{ score: "correct" }]);
+    expect(graded).toEqual([{ score: "correct", view: "icp_pacer" }]);
     expect(await axeViolations(container)).toEqual([]);
   });
 
@@ -305,6 +305,7 @@ describe("question admin", () => {
           liveAi: true,
           today: { generations: 0, marks: 2, caps: { gen: 200, eval: 1000 } },
           month: { costUsd: 0.0123, calls: 2, unreadable: 0 },
+          overrides: { total: 3, modelTooHarsh: 2, modelTooLenient: 1 },
         },
       }),
       [`POST /api/admin/questions/${question.id}/status`]: (init: RequestInit | undefined) => {
@@ -315,6 +316,8 @@ describe("question admin", () => {
     });
     renderAt("/account");
     expect(await screen.findByText(/incorrect: Wrong dose/)).toBeInTheDocument();
+    expect(screen.getByText("3 (2 too harsh, 1 too lenient)")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Download marking changes (CSV)" })).toHaveAttribute("href", "/api/admin/questions/overrides?format=csv");
     await userEvent.click(screen.getByRole("button", { name: "Retire" }));
     expect(await screen.findByText("Nothing reported.")).toBeInTheDocument();
   });
