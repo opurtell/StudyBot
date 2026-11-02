@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import type { Context } from "hono";
 import { CORPUS_SERVICE, parseView, VIEWS, type CorpusView } from "../corpus/repo";
 import { sha256Hex } from "../lib/crypto";
+import { apViewFor } from "../quiz/scope";
 import { apiError } from "../lib/http";
 import type { AppEnv, SessionUser } from "../types";
 import { summariseProgress, type ProgressRow, type Score, type Topic, type TopicDocument } from "../../shared/progress";
@@ -23,26 +24,35 @@ function tzOffset(raw: string | undefined): number {
 }
 
 const TOPIC_CACHE_MS = 5 * 60 * 1000;
-const topicCache = new Map<CorpusView, { at: number; topics: Promise<Topic[]> }>();
+const topicCache = new Map<string, { at: number; topics: Promise<Topic[]> }>();
 
-export function cachedTopics(env: Pick<Env, "DB" | "ENVIRONMENT">, view: CorpusView, now = Date.now()): Promise<Topic[]> {
-  if (env.ENVIRONMENT === "development") return loadTopics(env.DB, view);
-  const hit = topicCache.get(view);
+export function cachedTopics(
+  env: Pick<Env, "DB" | "ENVIRONMENT">,
+  view: CorpusView,
+  now = Date.now(),
+  icpOnly = false,
+): Promise<Topic[]> {
+  if (env.ENVIRONMENT === "development") return loadTopics(env.DB, view, icpOnly);
+  const key = `${view}:${icpOnly ? "icp_only" : "all"}`;
+  const hit = topicCache.get(key);
   if (hit && now - hit.at < TOPIC_CACHE_MS) return hit.topics;
-  const topics = loadTopics(env.DB, view);
-  topicCache.set(view, { at: now, topics });
-  topics.catch(() => topicCache.delete(view));
+  const topics = loadTopics(env.DB, view, icpOnly);
+  topicCache.set(key, { at: now, topics });
+  topics.catch(() => topicCache.delete(key));
   return topics;
 }
 
-export async function loadTopics(db: D1Database, view: CorpusView): Promise<Topic[]> {
+export async function loadTopics(db: D1Database, view: CorpusView, icpOnly = false): Promise<Topic[]> {
   if (!(VIEWS as readonly string[]).includes(view)) throw new Error(`bad view ${view}`);
   const vis = `vis_${view}`;
+  const ap = apViewFor(view);
+  if (icpOnly && !ap) throw new Error(`icpOnly needs an ICP view, got ${view}`);
+  const onlyIcp = icpOnly ? `AND q.vis_${ap} = 0` : "";
   const { results } = await db
     .prepare(
       `SELECT d.id, d.kind, d.number, d.title, d.section, COUNT(q.id) AS questions
        FROM corpus_documents d
-       JOIN question_bank q ON q.document_id = d.id AND q.status = 'active' AND q.${vis} = 1
+       JOIN question_bank q ON q.document_id = d.id AND q.status = 'active' AND q.${vis} = 1 ${onlyIcp}
        JOIN corpus_chunks c ON c.id = q.chunk_id AND c.retired_at IS NULL AND c.embed_text = q.source_text AND c.${vis} = 1
        WHERE d.service = ?1
        GROUP BY d.id
@@ -140,8 +150,10 @@ export const topicRoutes = new Hono<AppEnv>();
 topicRoutes.get("/", async (c) => {
   const view = parseView(c.req.query("view"));
   if (!view) return apiError(c, 400, "bad_request", "Unknown view. Use ap, ap_pacer, icp or icp_pacer.");
+  const icpOnly = c.req.query("icpOnly") === "1";
+  if (icpOnly && !apViewFor(view)) return apiError(c, 400, "bad_request", "ICP only needs an ICP view.");
   c.header("Cache-Control", "public, max-age=300");
-  return c.json({ view, topics: await cachedTopics(c.env, view) });
+  return c.json({ view, icpOnly, topics: await cachedTopics(c.env, view, Date.now(), icpOnly) });
 });
 
 export const progressRoutes = new Hono<AppEnv>();

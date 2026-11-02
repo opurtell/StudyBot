@@ -1,7 +1,7 @@
 import { sha256Hex } from "../lib/crypto";
 import { CORPUS_SERVICE, VIEWS, type CorpusView, type DocumentKind } from "../corpus/repo";
 import type { Difficulty, QuestionType } from "./prompts";
-import type { Visibility } from "./scope";
+import { apViewFor, type Visibility } from "./scope";
 
 export interface QuestionFilters {
   documentId: string | null;
@@ -10,6 +10,7 @@ export interface QuestionFilters {
   kinds?: DocumentKind[] | null;
   documentIds?: string[] | null;
   excludeDocumentIds?: string[];
+  icpOnly?: boolean;
 }
 
 export const SMALL_DOCUMENT_LIST = 20;
@@ -117,6 +118,13 @@ function visColumn(view: CorpusView): string {
   return `vis_${view}`;
 }
 
+function icpOnlySql(table: "q" | "c", view: CorpusView, icpOnly: boolean | undefined): string {
+  if (!icpOnly) return "";
+  const ap = apViewFor(view);
+  if (!ap) throw new Error(`icpOnly needs an ICP view, got ${view}`);
+  return `AND ${table}.${visColumn(ap)} = 0`;
+}
+
 export async function nextQuestion(
   db: D1Database,
   opts: {
@@ -134,7 +142,8 @@ export async function nextQuestion(
          AND (?3 IS NULL OR d.section = ?3)
          AND (?4 IS NULL OR q.difficulty = ?4)
          ${exclusionSql("?7", "?8")}
-         ${selectionSql("?9", "?10", "?11")}`;
+         ${selectionSql("?9", "?10", "?11")}
+         ${icpOnlySql("q", opts.view, opts.filters.icpOnly)}`;
   const params = [
     CORPUS_SERVICE,
     opts.filters.documentId,
@@ -241,6 +250,7 @@ export async function candidateChunks(
          AND (?3 IS NULL OR d.section = ?3)
          ${exclusionSql("?5", "?6")}
          ${selectionSql("?7", "?8", "?9")}
+         ${icpOnlySql("c", view, filters.icpOnly)}
        ORDER BY (SELECT COUNT(*) FROM question_bank q WHERE q.chunk_id = c.id AND q.status = 'active'), random()
        LIMIT ?4`,
     )

@@ -140,6 +140,7 @@ describe("quiz topic picker", () => {
     const sent = setup();
     renderAt("/quiz");
     await userEvent.click(await screen.findByRole("radio", { name: "AP" }));
+    await userEvent.click(screen.getByRole("checkbox", { name: "PACER" }));
     await userEvent.click(screen.getByRole("button", { name: "Everything except these" }));
     await userEvent.click(await screen.findByRole("checkbox", { name: "Leave out all of Cardiac" }));
     await userEvent.click(screen.getByRole("button", { name: /Skills/ }));
