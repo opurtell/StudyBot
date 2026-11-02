@@ -22,6 +22,19 @@ function tzOffset(raw: string | undefined): number {
   return Number.isFinite(n) && Math.abs(n) <= 14 * 60 ? n : 0;
 }
 
+const TOPIC_CACHE_MS = 5 * 60 * 1000;
+const topicCache = new Map<CorpusView, { at: number; topics: Promise<Topic[]> }>();
+
+export function cachedTopics(env: Pick<Env, "DB" | "ENVIRONMENT">, view: CorpusView, now = Date.now()): Promise<Topic[]> {
+  if (env.ENVIRONMENT === "development") return loadTopics(env.DB, view);
+  const hit = topicCache.get(view);
+  if (hit && now - hit.at < TOPIC_CACHE_MS) return hit.topics;
+  const topics = loadTopics(env.DB, view);
+  topicCache.set(view, { at: now, topics });
+  topics.catch(() => topicCache.delete(view));
+  return topics;
+}
+
 export async function loadTopics(db: D1Database, view: CorpusView): Promise<Topic[]> {
   if (!(VIEWS as readonly string[]).includes(view)) throw new Error(`bad view ${view}`);
   const vis = `vis_${view}`;
@@ -128,7 +141,7 @@ topicRoutes.get("/", async (c) => {
   const view = parseView(c.req.query("view"));
   if (!view) return apiError(c, 400, "bad_request", "Unknown view. Use ap, ap_pacer, icp or icp_pacer.");
   c.header("Cache-Control", "public, max-age=300");
-  return c.json({ view, topics: await loadTopics(c.env.DB, view) });
+  return c.json({ view, topics: await cachedTopics(c.env, view) });
 });
 
 export const progressRoutes = new Hono<AppEnv>();
@@ -144,7 +157,7 @@ progressRoutes.get("/", async (c) => {
   if (!view) return apiError(c, 400, "bad_request", "Unknown view.");
   const [rows, topics, recent] = await Promise.all([
     progressRows(c.env.DB, user.id),
-    loadTopics(c.env.DB, view),
+    cachedTopics(c.env, view),
     history(c.env.DB, user.id, null, 5),
   ]);
   const summary = summariseProgress(rows, topics, { now: Date.now(), tzOffsetMinutes: tzOffset(c.req.query("tz")) });

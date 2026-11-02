@@ -270,11 +270,14 @@ describe("live generation", () => {
 });
 
 describe("reporting a question", () => {
-  it("withdraws a question after two different people report it", async () => {
-    const first = await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "incorrect", detail: "Wrong dose" }, { ip: "198.51.100.1" });
-    expect(await first.json()).toEqual({ ok: true, withdrawn: false });
-    const repeat = await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "unclear" }, { ip: "198.51.100.1" });
+  it("withdraws a question after two different signed-in people report it", async () => {
+    const guest = await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "incorrect", detail: "Wrong dose" }, { ip: "198.51.100.1" });
+    expect(await guest.json()).toEqual({ ok: true, withdrawn: false });
+    const first = await signIn();
+    const repeat = await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "unclear" }, { cookie: first.cookie });
     expect(await repeat.json()).toEqual({ ok: true, withdrawn: false });
+    const again = await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "incorrect" }, { cookie: first.cookie });
+    expect(await again.json()).toEqual({ ok: true, withdrawn: false });
     const { cookie } = await signIn();
     const second = await postJson(`/api/quiz/questions/${Q_AP}/report`, { reason: "not_in_source" }, { cookie });
     expect(await second.json()).toEqual({ ok: true, withdrawn: true });

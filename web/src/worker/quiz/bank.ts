@@ -108,35 +108,47 @@ export async function nextQuestion(
   },
 ): Promise<PublicQuestion | null> {
   const vis = visColumn(opts.view);
-  const unseen = opts.repeat
-    ? ""
-    : `AND (?5 IS NULL OR NOT EXISTS (SELECT 1 FROM user_question_seen s WHERE s.user_id = ?5 AND s.question_id = q.id))
-       AND q.id NOT IN (SELECT value FROM json_each(?6))`;
-  const order = opts.repeat
-    ? `AND ?6 IS NOT NULL
-       ORDER BY (SELECT s.last_seen_at FROM user_question_seen s WHERE s.user_id = ?5 AND s.question_id = q.id) NULLS FIRST, random()`
-    : `ORDER BY random()`;
-  const row = await db
-    .prepare(
-      `${SELECT_QUESTION}
-       WHERE q.service = ?1 AND q.status = 'active' AND q.${vis} = 1 AND c.${vis} = 1
+  const where = `WHERE q.service = ?1 AND q.status = 'active' AND q.${vis} = 1 AND c.${vis} = 1
          AND (?2 IS NULL OR q.document_id = ?2)
          AND (?3 IS NULL OR d.section = ?3)
          AND (?4 IS NULL OR q.difficulty = ?4)
-         ${exclusionSql("?7", "?8")}
-         ${unseen}
-       ${order} LIMIT 1`,
-    )
-    .bind(
-      CORPUS_SERVICE,
-      opts.filters.documentId,
-      opts.filters.section,
-      opts.filters.difficulty,
-      opts.userId,
-      JSON.stringify(opts.exclude),
-      ...exclusionParams(opts.filters, opts.exclusions),
-    )
-    .first<QuestionRow>();
+         ${exclusionSql("?7", "?8")}`;
+  const params = [
+    CORPUS_SERVICE,
+    opts.filters.documentId,
+    opts.filters.section,
+    opts.filters.difficulty,
+    opts.userId,
+    JSON.stringify(opts.exclude),
+    ...exclusionParams(opts.filters, opts.exclusions),
+  ];
+
+  if (opts.repeat) {
+    const row = await db
+      .prepare(
+        `${SELECT_QUESTION}
+         ${where}
+           AND ?6 IS NOT NULL
+         ORDER BY (SELECT s.last_seen_at FROM user_question_seen s WHERE s.user_id = ?5 AND s.question_id = q.id) NULLS FIRST, random()
+         LIMIT 1`,
+      )
+      .bind(...params)
+      .first<QuestionRow>();
+    return row ? toPublic(row) : null;
+  }
+
+  const fromSql = opts.filters.documentId
+    ? SELECT_QUESTION
+    : SELECT_QUESTION.replace("FROM question_bank q", "FROM question_bank q INDEXED BY question_bank_rand");
+  const unseen = `AND (?5 IS NULL OR NOT EXISTS (SELECT 1 FROM user_question_seen s WHERE s.user_id = ?5 AND s.question_id = q.id))
+         AND q.id NOT IN (SELECT value FROM json_each(?6))`;
+  const start = Math.random();
+  const pick = (bound: string) =>
+    db
+      .prepare(`${fromSql} ${where} ${unseen} AND ${bound} ORDER BY q.rand_key LIMIT 1`)
+      .bind(...params, start)
+      .first<QuestionRow>();
+  const row = (await pick("q.rand_key >= ?9")) ?? (await pick("q.rand_key < ?9"));
   return row ? toPublic(row) : null;
 }
 
@@ -150,7 +162,11 @@ export async function getQuestion(db: D1Database, id: string, view: CorpusView):
 }
 
 export async function recordServed(db: D1Database, questionId: string, userId: string | null, now: number): Promise<void> {
-  const stmts = [db.prepare(`UPDATE question_bank SET times_served = times_served + 1 WHERE id = ?1`).bind(questionId)];
+  const stmts = [
+    db
+      .prepare(`UPDATE question_bank SET times_served = times_served + 1, rand_key = ?2 WHERE id = ?1`)
+      .bind(questionId, Math.random() * 0.999999 + 0.000001),
+  ];
   if (userId) {
     stmts.push(
       db
@@ -325,10 +341,10 @@ export async function reportQuestion(
       `UPDATE question_bank SET
          times_reported = (SELECT COUNT(*) FROM question_reports r WHERE r.question_id = ?1 AND r.resolved_at IS NULL),
          status = CASE WHEN status = 'active' AND (?2 = 1 OR
-           (SELECT COUNT(*) FROM question_reports r WHERE r.question_id = ?1 AND r.resolved_at IS NULL) >= ?3)
+           (SELECT COUNT(*) FROM question_reports r WHERE r.question_id = ?1 AND r.resolved_at IS NULL AND r.user_id IS NOT NULL) >= ?3)
            THEN 'flagged' ELSE status END,
          status_reason = CASE WHEN status = 'active' AND (?2 = 1 OR
-           (SELECT COUNT(*) FROM question_reports r WHERE r.question_id = ?1 AND r.resolved_at IS NULL) >= ?3)
+           (SELECT COUNT(*) FROM question_reports r WHERE r.question_id = ?1 AND r.resolved_at IS NULL AND r.user_id IS NOT NULL) >= ?3)
            THEN 'reported' ELSE status_reason END,
          updated_at = ?4
        WHERE id = ?1
@@ -337,6 +353,14 @@ export async function reportQuestion(
     .bind(report.questionId, report.flagNow ? 1 : 0, report.threshold, now)
     .first<{ status: string }>();
   return { flagged: row?.status === "flagged" };
+}
+
+export async function reportsToday(db: D1Database, reporterKey: string, startOfDay: number): Promise<number> {
+  const row = await db
+    .prepare(`SELECT COUNT(*) AS n FROM question_reports WHERE reporter_key = ?1 AND created_at >= ?2`)
+    .bind(reporterKey, startOfDay)
+    .first<{ n: number }>();
+  return row?.n ?? 0;
 }
 
 export async function questionExists(db: D1Database, id: string): Promise<boolean> {

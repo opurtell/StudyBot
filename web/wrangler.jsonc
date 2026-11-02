@@ -81,8 +81,8 @@
         "AI_GATEWAY_ID": "studybot-production",
         "QUOTA_GENERATIONS_PER_MONTH": "20",
         "QUOTA_MARKS_PER_MONTH": "30",
-    "DAILY_GENERATIONS_CAP": "200",
-    "DAILY_MARKS_CAP": "1000",
+    "DAILY_GENERATIONS_CAP": "60",
+    "DAILY_MARKS_CAP": "400",
     "REPORT_FLAG_THRESHOLD": "2",
     "MARKING_SCHEMA": "off"
       },

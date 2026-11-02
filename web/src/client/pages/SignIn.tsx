@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import { api } from "../lib/api";
 import { useSession } from "../lib/session";
 
@@ -40,6 +40,13 @@ export function SignIn() {
         <p className="text-sm text-on-surface-variant">
           Sign in with your Google account. We only receive your email address. An account is created the first time
           you sign in.
+        </p>
+        <p className="text-sm text-on-surface-variant">
+          Signing in lets AI mark your answers, which sends them to Google's Gemini service. Read the{" "}
+          <Link to="/privacy" className="underline">
+            privacy policy
+          </Link>
+          .
         </p>
       </div>
       {error && (

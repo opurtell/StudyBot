@@ -110,10 +110,10 @@ export function dailyCaps(env: Pick<Env, "DAILY_GENERATIONS_CAP" | "DAILY_MARKS_
 
 export async function usedToday(db: D1Database, kind: CreditKind, now: number): Promise<number> {
   const row = await db
-    .prepare(`SELECT COUNT(*) AS n FROM usage_ledger WHERE kind = ?1 AND created_at >= ?2`)
-    .bind(kind, startOfUtcDay(now))
-    .first<{ n: number }>();
-  return row?.n ?? 0;
+    .prepare(`SELECT calls FROM daily_usage WHERE day = ?1 AND kind = ?2`)
+    .bind(startOfUtcDay(now), kind)
+    .first<{ calls: number }>();
+  return row?.calls ?? 0;
 }
 
 export const LIVE_AI_FLAG = "live_ai";

@@ -131,6 +131,9 @@ meRoutes.delete("/", async (c) => {
   if (!user) return apiError(c, 401, "unauthorised", "Sign in first.");
   await c.env.DB.batch([
     c.env.DB.prepare(`DELETE FROM sessions WHERE user_id = ?1`).bind(user.id),
+    c.env.DB.prepare(
+      `UPDATE question_reports SET reporter_key = 'deleted:' || id, detail = NULL, user_id = NULL WHERE user_id = ?1`,
+    ).bind(user.id),
     c.env.DB.prepare(`DELETE FROM user_settings WHERE user_id = ?1`).bind(user.id),
     c.env.DB.prepare(`DELETE FROM attempts WHERE user_id = ?1`).bind(user.id),
     c.env.DB.prepare(`DELETE FROM user_question_seen WHERE user_id = ?1`).bind(user.id),
