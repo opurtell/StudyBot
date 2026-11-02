@@ -62,6 +62,23 @@ describe("serving from the bank", () => {
     expect((await next({ view: "ap", section: "Airway" })).body.question).toBeNull();
   });
 
+  it("filters by pool, picked guidelines and left-out guidelines", async () => {
+    expect((await next({ view: "icp", kinds: ["med", "csm"] })).body.question).toBeNull();
+    expect((await next({ view: "icp", kinds: ["cmg"], exclude: [Q_AP, Q_AP2] })).body.question?.id).toBe(Q_ICP);
+    expect((await next({ view: "icp", documentIds: ["CMG_3A_RSI"] })).body.question?.id).toBe(Q_ICP);
+    const many = ["CMG_3A_RSI", ...Array.from({ length: 30 }, (_, i) => `CMG_X_${i}`)];
+    expect((await next({ view: "icp", documentIds: many })).body.question?.id).toBe(Q_ICP);
+    expect((await next({ view: "icp", documentIds: [] })).body.question).toBeNull();
+    expect((await next({ view: "icp", excludeDocumentIds: ["CMG_10_Diabetic"] })).body.question?.id).toBe(Q_ICP);
+  });
+
+  it("lets picked guidelines override topics excluded in Settings", async () => {
+    const excluded = { excludedSections: ["Airway"], excludedDocuments: ["CMG_3A_RSI"] };
+    expect((await next({ view: "icp", ...excluded, exclude: [Q_AP, Q_AP2] })).body.question).toBeNull();
+    expect((await next({ view: "icp", ...excluded, documentIds: ["CMG_3A_RSI"] })).body.question?.id).toBe(Q_ICP);
+    expect((await next({ view: "icp", ...excluded, excludeDocumentIds: ["CMG_10_Diabetic"] })).body.question).toBeNull();
+  });
+
   it("remembers what a signed-in user has seen and repeats only when asked", async () => {
     const { cookie } = await signIn();
     const first = await next({ view: "ap" }, cookie);
@@ -91,6 +108,10 @@ describe("serving from the bank", () => {
     expect((await postJson("/api/quiz/next", { view: "paramedic" })).status).toBe(400);
     expect((await postJson("/api/quiz/next", { difficulty: "brutal" })).status).toBe(400);
     expect((await postJson("/api/quiz/next", { exclude: ["not-an-id"] })).status).toBe(400);
+    expect((await postJson("/api/quiz/next", { kinds: ["notes"] })).status).toBe(400);
+    expect((await postJson("/api/quiz/next", { kinds: [] })).status).toBe(400);
+    expect((await postJson("/api/quiz/next", { documentIds: "CMG_10_Diabetic" })).status).toBe(400);
+    expect((await postJson("/api/quiz/next", { excludeDocumentIds: Array.from({ length: 401 }, (_, i) => `D${i}`) })).status).toBe(400);
   });
 });
 

@@ -30,6 +30,8 @@ export type Me =
 export type CorpusView = "ap" | "ap_pacer" | "icp" | "icp_pacer";
 export type DocumentScope = "all" | "mixed" | "icp" | "pacer";
 
+export type DocumentKind = "cmg" | "csm" | "med";
+
 export interface DocumentSummary {
   id: string;
   kind: "cmg" | "csm" | "med";
@@ -102,6 +104,9 @@ export interface QuizFilters {
   documentId?: string | null;
   section?: string | null;
   difficulty?: Difficulty | null;
+  kinds?: DocumentKind[] | null;
+  documentIds?: string[] | null;
+  excludeDocumentIds?: string[];
   excludedSections?: string[];
   excludedDocuments?: string[];
 }
