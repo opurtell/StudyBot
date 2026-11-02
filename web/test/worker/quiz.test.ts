@@ -302,7 +302,11 @@ describe("live generation", () => {
       .first();
     expect(row).toEqual({ chunk_id: order[1], vis_ap: 1, vis_icp: 1, origin: "live", gen_view: "ap" });
     expect((await userRow(email))?.free_gen_used).toBe(1);
-    expect(body.question.id).toBe((await questionHash("What BGL defines hypoglycaemia in CMG 10?")).slice(0, 16));
+    // The model named the guideline by number only, so the title is added before banking.
+    const named = "What BGL defines hypoglycaemia in the Diabetic Emergencies guideline (CMG 10)?";
+    expect(body.question.id).toBe((await questionHash(named)).slice(0, 16));
+    const stored = await env.DB.prepare(`SELECT question_text FROM question_bank WHERE id = ?1`).bind(body.question.id).first();
+    expect(stored).toEqual({ question_text: named });
   });
 
   it("keeps a question that names ICP-only care away from AP users", async () => {

@@ -351,25 +351,87 @@ def _doc_label(doc) -> str:
     return f"ACTAS {'MED' if doc.kind == 'med' else 'CMG'} {doc.number}"
 
 
+_DOC_CODE = re.compile(
+    r"(?P<the>\b[Tt]he\s+)?(?P<actas>ACTAS\s+)?"
+    r"(?:(?P<kind>CMG|MED)\s*(?P<num>\d{1,2}[A-Za-z]?)|(?P<csm>CSM\.[A-Z]{1,2}\d{2}))(?!\.\d|\w)"
+)
+# "Which guideline holds X?" tests where things live, not clinical knowledge (Oscar's review, 2026-11-02).
+_WHERE_QUESTION = re.compile(
+    r"\bwhich (?:\w+ ){0,3}(?:guideline|CMG|skill|document)s? (?:contains?|holds?|covers?|details?|outlines?|includes?)\b",
+    re.IGNORECASE,
+)
+_NOUN = {"cmg": "guideline", "med": "medicine guideline", "csm": "skill"}
+_TITLE_WINDOW = 80
+
+
+def document_titles(documents) -> dict[str, tuple[str, str]]:
+    """Map each guideline code as written in a question (CMG 31, MED 03, CSM.A20) to (kind, title)."""
+    titles: dict[str, tuple[str, str]] = {}
+    for doc in documents:
+        if doc.kind == "csm" and doc.number.upper().startswith("CSM."):
+            titles[doc.number.upper()] = ("csm", doc.title)
+        elif doc.kind in ("cmg", "med"):
+            titles[f"{doc.kind.upper()} {doc.number.upper()}"] = (doc.kind, doc.title)
+    return titles
+
+
+def name_documents(text: str, titles: dict[str, tuple[str, str]]) -> str:
+    """Add the title wherever a question names a guideline, skill or monograph only by its code.
+
+    Users know "the Electric Shock guideline", not "CMG 31" (Oscar's review, 2026-11-02). Codes whose title is
+    already written next to them, and codes that aren't in the corpus, are left as they are.
+    """
+    def repl(match: re.Match[str]) -> str:
+        if match.group("csm"):
+            code = match.group("csm").upper()
+        else:
+            num = match.group("num").upper()
+            if match.group("kind") == "MED" and len(num) == 1:
+                num = f"0{num}"
+            code = f"{match.group('kind')} {num}"
+        found = titles.get(code)
+        if found is None:
+            return match.group(0)
+        kind, title = found
+        nearby = text[max(0, match.start() - _TITLE_WINDOW):match.end() + _TITLE_WINDOW].lower()
+        if title.lower() in nearby:
+            return match.group(0)
+        the = match.group("the")
+        if the is None:
+            before = text[:match.start()].rstrip()
+            the = "The " if not before or before[-1] in ".?!:" else "the "
+        actas = "ACTAS " if match.group("actas") else ""
+        written = match.group("csm") or f"{match.group('kind')} {match.group('num')}"
+        return f"{the}{actas}{title} {_NOUN[kind]} ({written})"
+
+    return _DOC_CODE.sub(repl, text)
+
+
 def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], dict]:
     chunks = {c.id: c for c in corpus.chunks}
     docs = {d.id: d for d in corpus.documents}
+    titles = document_titles(corpus.documents)
     tasks = plan(corpus)
     planned = {t.chunk.id for t in tasks}
     focused = focus_chunk_ids(tasks)
-    stats = {"stale": 0, "unplanned": 0, "exact_duplicates": 0, "near_duplicates": 0, "ap_restricted": 0}
+    stats = {"stale": 0, "unplanned": 0, "where_questions": 0, "exact_duplicates": 0, "near_duplicates": 0,
+             "ap_restricted": 0}
     kept: list[dict] = []
     hashes: set[str] = set()
     by_chunk: dict[str, list[str]] = {}
     for r in records:
         if not r.get("ok"):
             continue
+        r = {**r, "question_text": name_documents(r["question_text"], titles)}
         chunk = chunks.get(r["chunk_id"])
         if chunk is None or chunk.embed_text != r["source_text"]:
             stats["stale"] += 1
             continue
         if chunk.id not in planned or (chunk.id in focused) != bool(r.get("focus")):
             stats["unplanned"] += 1
+            continue
+        if _WHERE_QUESTION.search(r["question_text"]):
+            stats["where_questions"] += 1
             continue
         h = content_hash(r["question_text"])
         if h in hashes:
