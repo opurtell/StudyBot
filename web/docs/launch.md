@@ -160,7 +160,7 @@ than 30 days (the privacy policy says backups roll off within 30 days).
 
 | Date | Result |
 |---|---|
-| | *(not yet run)* |
+| 2026-11-02 | **Passed.** Restore point `00000014-00000000-00005117-057ace38649549ee8e62d1310a5d0422`. Export 5.9 MB (`~/studybot-backups/prod-2026-11-02.sql`, delete by 2 December 2026). Loaded into `studybot-restore-drill` in ~1 s of SQL time. Row counts matched: users 1, attempts 1, question_bank 1,171, corpus_chunks 501. Scratch database deleted. About 1 minute end to end (16:19–16:20 AEDT); the export briefly blocked queries, as expected. |
 
 ## 5. Soft-launch checklist
 
@@ -169,7 +169,7 @@ Before telling the wider ACTAS group:
 1. **Deploy this change** (applies migration `0005_serving.sql`): `cd web && npm run deploy:production`
 2. **Smoke test** on the live site: guest quiz, sign in, AI mark one answer, dashboard, history, `/privacy`, the
    first-visit notice.
-3. **Run the backup drill** (§4) and log it.
+3. ~~**Run the backup drill** (§4) and log it.~~ Done 2026-11-02.
 4. **Set up `privacy@paramedtools.com`** (or give me another contact) and check the AI Gateway log setting (§1).
 5. **Send the announcement** (Oscar). Say plainly: a study aid built on the public CMGs, AI-marked, may be wrong, report
    anything odd.
