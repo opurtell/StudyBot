@@ -12,7 +12,7 @@ export interface ProgressRow {
 
 export interface TopicDocument {
   id: string;
-  kind: "cmg" | "csm" | "med";
+  kind: "cmg" | "csm" | "med" | "ref";
   number: string;
   title: string;
   questions: number;

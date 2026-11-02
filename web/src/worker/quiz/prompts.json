@@ -82,5 +82,31 @@
     ]
   },
   "icpMentionPattern": "\\b(adenosine|amiodarone|calcium chloride|heparin|hydrocortisone|levetiracetam|sodium bicarbonate|suxamethonium|ICP|intensive care paramedic|intubat\\w*|RSI|(?:external |transcutaneous )?pacing)\\b|(?<!topical )\\blignocaine\\b",
-  "icpFocusInstruction": "This source is the ICP version of a section that AP paramedics also study. The question must test the ICP-only content below, not material both levels share:"
+  "icpFocusInstruction": "This source is the ICP version of a section that AP paramedics also study. The question must test the ICP-only content below, not material both levels share:",
+  "generalPromptVersion": "general-1",
+  "generalGenerationSystem": "You are a quiz generator for Australian ambulance paramedics studying general clinical knowledge.\nGenerate one question from the provided general reference text (an open textbook or the LITFL ECG Library).\n\nRules:\n- The question must be answerable from the source text alone\n- Never fabricate clinical information\n- Only ask about pathophysiology, physiology, anatomy or ECG recognition and interpretation\n- Never ask about treatment, management, medicines, doses, procedures or nursing care, even if the source mentions them. ACT Ambulance Service guidelines govern those\n- Question types: recall, definition or scenario. Never drug_dose\n- A scenario may describe a patient's presentation or ECG findings, but must ask what is happening or why, not what to do\n- The question must stand on its own: never refer to \"the source\", \"the text\", \"the figure\" or \"the image\" (no images are shown)\n- Use Australian English and Australian terminology (adrenaline, haemorrhage, colour, paramedic), without changing the clinical facts\n- Tone: direct, clinical\n- Do NOT repeat or closely rephrase any previously asked questions listed below\n\nRespond with valid JSON only:\n{\n  \"question_text\": \"...\",\n  \"question_type\": \"recall|definition|scenario\",\n  \"source_citation\": \"leave empty\",\n  \"category\": \"e.g. Cardiovascular\",\n  \"source_index\": 1\n}",
+  "conflictSystem": "You check a quiz question written from a general reference (an open textbook or the LITFL ECG Library) against excerpts from the ACT Ambulance Service Clinical Management Guidelines (CMGs). The CMGs always take precedence over the general reference.\n\nDecide:\n- conflict: true if the question, or the answer the general reference text supports, contradicts any CMG excerpt. That includes different thresholds, criteria, definitions, classifications, terminology for the same condition, or anything that would lead a paramedic to act against the CMGs.\n- out_of_scope: true if the question asks about treatment, management, medicines, doses, procedures or nursing care, rather than pathophysiology, physiology, anatomy or ECG recognition and interpretation.\n\nDifferences only in wording, spelling or level of detail are not conflicts. If the CMG excerpts do not cover the topic, there is no conflict.\n\nRespond with valid JSON only:\n{\n  \"conflict\": false,\n  \"out_of_scope\": false,\n  \"reason\": \"one sentence\",\n  \"cmg_quote\": \"the exact CMG text that conflicts, or empty\"\n}",
+  "conflictSchema": {
+    "type": "object",
+    "properties": {
+      "conflict": {
+        "type": "boolean"
+      },
+      "out_of_scope": {
+        "type": "boolean"
+      },
+      "reason": {
+        "type": "string"
+      },
+      "cmg_quote": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "conflict",
+      "out_of_scope",
+      "reason",
+      "cmg_quote"
+    ]
+  }
 }

@@ -189,7 +189,7 @@ progressRoutes.get("/attempts/:id", async (c) => {
   const user = requireUser(c)!;
   const row = await c.env.DB.prepare(
     `SELECT a.id, a.kind, a.score, a.user_answer, a.evaluation_json, a.elapsed_ms, a.created_at,
-       q.id AS question_id, q.question_text, q.difficulty, q.source_citation, q.source_text, q.attribution, q.status,
+       q.id AS question_id, q.question_text, q.difficulty, q.source_citation, q.source_text, q.attribution, q.licence, q.source_type, q.status,
        q.document_id, d.title, d.number, d.section
      FROM attempts a
      JOIN question_bank q ON q.id = a.question_id
@@ -211,6 +211,8 @@ progressRoutes.get("/attempts/:id", async (c) => {
       source_citation: string;
       source_text: string;
       attribution: string;
+      licence: string;
+      source_type: string;
       status: string;
       document_id: string;
       title: string;
@@ -244,6 +246,8 @@ progressRoutes.get("/attempts/:id", async (c) => {
     documentTitle: row.title,
     section: row.section,
     attribution: row.attribution,
+    licence: row.licence,
+    sourceType: row.source_type,
   });
 });
 

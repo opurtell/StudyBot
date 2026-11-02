@@ -4,7 +4,10 @@ Run from the repo root:
 
     PYTHONPATH=src/python python3 -m web_corpus.build --out web/corpus-build
 
-Only ACTAS guideline content (CMGs, clinical skills, medicine monographs) is allowed in. Anything else stops the build.
+Only ACTAS guideline content (CMGs, clinical skills, medicine monographs) and the approved general open references
+(Open RN, LITFL ECG Library, from ``data/general_refs/``) are allowed in. Anything else stops the build.
+
+``--exclude-source litfl`` leaves a general source out; loading that build removes its documents, chunks and questions.
 """
 
 from __future__ import annotations
@@ -22,12 +25,15 @@ from typing import Iterable
 
 from guidelines import actas_scope as scope
 from guidelines.markdown import normalise_markdown_syntax
-from paths import APP_ROOT, service_structured_dir
+from paths import APP_ROOT, GENERAL_REFS_DIR, service_structured_dir
+from web_corpus import general_sources
 
-BUILDER_VERSION = "3"
+BUILDER_VERSION = "4"
 SERVICE_ID = "actas"
 SOURCE_TYPE = "guideline"
-ALLOWED_SOURCE_TYPES = frozenset({SOURCE_TYPE})
+GENERAL_SOURCE_TYPE = general_sources.SOURCE_TYPE
+GENERAL_KIND = "ref"
+ALLOWED_SOURCE_TYPES = frozenset({SOURCE_TYPE, GENERAL_SOURCE_TYPE})
 ALLOWED_INPUT_TYPES = {"cmg": "cmg", "csm": "csm", "med": "med"}
 LICENCE = "ACTAS public guidelines"
 ATTRIBUTION = "ACT Ambulance Service Clinical Management Guidelines"
@@ -63,6 +69,9 @@ class Chunk:
     text: str
     embed_text: str
     views: set[str] = field(default_factory=set)
+    source_type: str = SOURCE_TYPE
+    licence: str = LICENCE
+    attribution: str = ATTRIBUTION
 
 
 @dataclass
@@ -81,6 +90,7 @@ class Document:
     licence: str = LICENCE
     attribution: str = ATTRIBUTION
     source_url: str = SOURCE_URL
+    general_source: str | None = None
 
 
 @dataclass
@@ -281,6 +291,41 @@ def build_document(
     return doc, list(chunks.values())
 
 
+def build_general_document(data: dict) -> tuple[Document, list[Chunk]]:
+    source = general_sources.SOURCES.get(data.get("source"))
+    if source is None or data.get("source_type") != GENERAL_SOURCE_TYPE:
+        raise CorpusBuildError(f"{data.get('id')}: not an approved general reference")
+    if data.get("licence") != source.licence:
+        raise CorpusBuildError(f"{data['id']}: licence {data.get('licence')!r} does not match {source.name}")
+    content = normalise_markdown_syntax(data.get("content_markdown") or "")
+    doc = Document(
+        id=data["id"],
+        kind=GENERAL_KIND,
+        number=str(data.get("number") or source.name),
+        title=data.get("title", ""),
+        section=data.get("section") or "General",
+        scope="all",
+        version_date=(data.get("fetched_at") or "")[:10] or None,
+        checksum=data.get("checksum") or hashlib.sha256(content.encode("utf-8")).hexdigest(),
+        bodies={view: content for view in VIEWS},
+        context=f"[{source.name}: {data.get('title', '')}]",
+        source_type=GENERAL_SOURCE_TYPE,
+        licence=source.licence,
+        attribution=data["attribution"],
+        source_url=data["url"],
+        general_source=source.id,
+    )
+    chunks: dict[str, Chunk] = {}
+    for heading, section_text in merge_sections(sections(content)):
+        for piece in pack(section_text):
+            chunk_id = _chunk_id(doc.id, heading, piece)
+            if chunk_id not in chunks:
+                embed_text = "\n".join(part for part in (doc.context, heading, piece) if part)
+                chunks[chunk_id] = Chunk(chunk_id, doc.id, len(chunks), heading, piece, embed_text, set(VIEWS),
+                                         GENERAL_SOURCE_TYPE, doc.licence, doc.attribution)
+    return doc, list(chunks.values())
+
+
 REFERENCE_CARDS_PATH = Path(__file__).with_name("reference_cards.json")
 REFERENCE_CARDS_ID = "ACTAS_Critical_Care_Reference_Cards"
 REFERENCE_CARDS_TITLE = "Critical Care Reference Cards"
@@ -373,7 +418,8 @@ def _version(documents: list[Document], chunks: list[Chunk]) -> str:
     digest = hashlib.sha256(f"builder:{BUILDER_VERSION}\n".encode("utf-8"))
     for doc in documents:
         digest.update(json.dumps([doc.id, doc.kind, doc.number, doc.title, doc.section, doc.scope,
-                                  doc.version_date, doc.checksum, doc.bodies], sort_keys=True).encode("utf-8"))
+                                  doc.version_date, doc.checksum, doc.bodies, doc.source_type, doc.licence,
+                                  doc.attribution, doc.source_url], sort_keys=True).encode("utf-8"))
     for chunk in chunks:
         digest.update(f"{chunk.id}:{','.join(sorted(chunk.views))}\n".encode("utf-8"))
     return digest.hexdigest()[:16]
@@ -389,11 +435,25 @@ def check_allowlist(corpus: Corpus) -> None:
             raise CorpusBuildError(f"chunk {chunk.id} belongs to no allowed document")
         if not chunk.views:
             raise CorpusBuildError(f"chunk {chunk.id} is visible to no qualification")
+    by_id = {doc.id: doc for doc in corpus.documents}
+    for chunk in corpus.chunks:
+        if chunk.source_type != by_id[chunk.document_id].source_type:
+            raise CorpusBuildError(f"chunk {chunk.id} is labelled differently from its document")
 
 
-def build(structured_dir: Path | None = None, built_at: str | None = None) -> Corpus:
-    """Build from ``structured_dir``; the default ACTAS data also brings in the critical care reference cards."""
+def build(
+    structured_dir: Path | None = None,
+    built_at: str | None = None,
+    general_dir: Path | None = None,
+    exclude_sources: frozenset[str] = frozenset(),
+) -> Corpus:
+    """Build from ``structured_dir``; the default ACTAS data also brings in the reference cards and general references."""
     with_cards = structured_dir is None
+    if general_dir is None and structured_dir is None:
+        general_dir = GENERAL_REFS_DIR
+    unknown = set(exclude_sources) - set(general_sources.SOURCES)
+    if unknown:
+        raise CorpusBuildError(f"unknown general source(s): {sorted(unknown)}")
     structured_dir = structured_dir or service_structured_dir(SERVICE_ID)
     files = input_files(structured_dir)
     if not files:
@@ -417,6 +477,18 @@ def build(structured_dir: Path | None = None, built_at: str | None = None) -> Co
         )
         documents.append(doc)
         chunks.extend(doc_chunks)
+    if general_dir is not None:
+        try:
+            general = general_sources.load_documents(general_dir, frozenset(exclude_sources))
+        except (ValueError, json.JSONDecodeError) as exc:
+            raise CorpusBuildError(str(exc)) from exc
+        for data in general:
+            if data["id"] in seen:
+                raise CorpusBuildError(f"duplicate document id {data['id']}")
+            seen.add(data["id"])
+            doc, doc_chunks = build_general_document(data)
+            documents.append(doc)
+            chunks.extend(doc_chunks)
     corpus = Corpus(
         version=_version(documents, chunks),
         built_at=built_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
@@ -477,7 +549,7 @@ def to_sql(corpus: Corpus) -> str:
             "INSERT INTO corpus_chunks (id, document_id, ordinal, heading, text, embed_text, vis_ap, vis_ap_pacer, "
             "vis_icp, vis_icp_pacer, source_type, licence, attribution, corpus_version) VALUES "
             + _row([chunk.id, chunk.document_id, chunk.ordinal, chunk.heading, chunk.text, chunk.embed_text, *flags,
-                    SOURCE_TYPE, LICENCE, ATTRIBUTION, corpus.version])
+                    chunk.source_type, chunk.licence, chunk.attribution, corpus.version])
             + " ON CONFLICT (id) DO UPDATE SET document_id = excluded.document_id, ordinal = excluded.ordinal, "
             "heading = excluded.heading, text = excluded.text, embed_text = excluded.embed_text, "
             "vis_ap = excluded.vis_ap, vis_ap_pacer = excluded.vis_ap_pacer, vis_icp = excluded.vis_icp, "
@@ -509,6 +581,10 @@ def manifest(corpus: Corpus) -> dict:
         "chunks": len(corpus.chunks),
         "chunk_chars": sum(len(c.embed_text) for c in corpus.chunks),
         "source_types": sorted({d.source_type for d in corpus.documents}),
+        "general_sources": {
+            source: sum(1 for d in corpus.documents if d.general_source == source)
+            for source in sorted({d.general_source for d in corpus.documents if d.general_source})
+        },
     }
 
 
@@ -516,9 +592,11 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--structured-dir", type=Path, default=None)
     parser.add_argument("--out", type=Path, default=APP_ROOT / "web" / "corpus-build")
+    parser.add_argument("--exclude-source", action="append", default=[], choices=sorted(general_sources.SOURCES),
+                        help="leave a general source out (e.g. litfl if the app ever becomes paid)")
     args = parser.parse_args(argv)
     try:
-        corpus = build(args.structured_dir)
+        corpus = build(args.structured_dir, exclude_sources=frozenset(args.exclude_source))
     except CorpusBuildError as exc:
         print(f"Corpus build failed: {exc}", file=sys.stderr)
         return 1

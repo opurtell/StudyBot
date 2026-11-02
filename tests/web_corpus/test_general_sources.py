@@ -1,0 +1,217 @@
+import json
+import sqlite3
+
+import pytest
+
+from paths import APP_ROOT
+from web_corpus import build as corpus_build
+from web_corpus import general_sources as gs
+from web_corpus import questions as qb
+
+MIGRATIONS = sorted((APP_ROOT / "web" / "migrations").glob("*.sql"))
+FETCHED = "2026-11-02T00:00:00+00:00"
+
+PAGE = """<html><head><title>Atrial Flutter • LITFL • ECG Library Diagnosis</title>
+<meta name="author" content="Ed Burns"></head><body><nav>menu</nav>
+<div class="entry-content"><h1>Atrial Flutter</h1>
+<h2>Overview</h2><p>Atrial flutter is a macro-reentrant  atrial tachyarrhythmia with atrial rates around 300 bpm.</p>
+<figure><img src="x.png"><figcaption>Image credit someone</figcaption></figure>
+<h2>ECG features</h2><ul><li>Saw-tooth flutter waves, best seen in II, III and aVF</li>
+<li>Ventricular rate is a fraction of the atrial rate<ul><li>2:1 block gives a rate near 150 bpm</li></ul></li></ul>
+<p>Flutter waves are inverted in the inferior leads in typical counter-clockwise flutter, and the isoelectric baseline
+is absent between flutter waves. Variable block produces an irregular ventricular rhythm.</p>
+<h2>Management</h2><p>Give a medicine at a dose.</p><h3>Cardioversion</h3><p>Shock it.</p>
+<h2>Clinical significance</h2><table><tr><th>Block</th><th>Rate</th></tr><tr><td>2:1</td><td>150</td></tr></table>
+<h2>References</h2><p>Some reference.</p><h2>Empty heading</h2>
+</div><div class="sharedaddy">share</div><footer>creativecommons.org/licenses/by-nc-sa/4.0</footer></body></html>"""
+
+
+def test_pages_keep_recognition_text_and_drop_treatment_images_and_references():
+    md = gs.clean(gs.html_to_markdown(gs.extract_main_html(PAGE)))
+    assert "## ECG features" in md and "- Saw-tooth flutter waves" in md and "  - 2:1 block" in md
+    assert "Block | Rate\n2:1 | 150" in md
+    for gone in ("Management", "medicine", "Cardioversion", "References", "Image credit", "menu", "share", "Empty heading"):
+        assert gone not in md
+    assert gs.page_title(PAGE) == "Atrial Flutter"
+    assert gs.page_authors(PAGE) == "Ed Burns"
+
+
+def test_litfl_links_skip_indexes_quizzes_and_duplicates():
+    html = """<div class="entry-content"><a href="https://litfl.com/atrial-flutter-ecg-library/">a</a>
+    <a href="https://litfl.com/atrial-flutter-ecg-library/">again</a><a href="https://litfl.com/ecg-library/basics/">i</a>
+    <a href="https://litfl.com/top-150-ecg-series/">t</a><a href="https://litfl.com/wellens-syndrome-ecg-library/">w</a>
+    """ + "x" * 600 + "</div><footer></footer>"
+    assert gs.litfl_links(html) == ["https://litfl.com/atrial-flutter-ecg-library/",
+                                    "https://litfl.com/wellens-syndrome-ecg-library/"]
+
+
+def _general_doc(source="litfl", doc_id="LITFL_atrial_flutter", **overrides):
+    md = gs.clean(gs.html_to_markdown(gs.extract_main_html(PAGE)))
+    src = gs.SOURCES[source]
+    doc = gs.make_document(src, doc_id=doc_id, number="LITFL" if source == "litfl" else "HA 5.4",
+                           title="Atrial Flutter", section="ECGs", url="https://litfl.com/atrial-flutter-ecg-library/",
+                           attribution=gs.litfl_attribution("Atrial Flutter", "Ed Burns", "https://litfl.com/x/"),
+                           markdown=md, fetched_at=FETCHED)
+    doc.update(overrides)
+    return doc
+
+
+def _write_general(root, doc):
+    gs.write_document(root / doc["source"], doc)
+
+
+def _cmg(tmp_path):
+    from tests.web_corpus.test_build import _doc, _write
+
+    _write(tmp_path / "cmg", _doc(content_markdown="# Arrhythmia\n\n## Recognition\n\nAtrial flutter shows saw-tooth "
+                                  "flutter waves at about 300 per minute and is managed per the cardiac guideline.\n"))
+    return tmp_path / "cmg"
+
+
+@pytest.fixture()
+def mixed(tmp_path):
+    root = tmp_path / "general"
+    _write_general(root, _general_doc())
+    _write_general(root, _general_doc("openrn", "OPENRN_HA_heart_failure", licence="CC BY 4.0", title="Heart Failure",
+                                      section="Pathophysiology"))
+    return _cmg(tmp_path), root
+
+
+def test_general_references_build_as_their_own_kind_with_their_own_licence(mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    general = [d for d in corpus.documents if d.source_type == "general_reference"]
+    assert {(d.kind, d.general_source, d.licence) for d in general} == {
+        ("ref", "litfl", "CC BY-NC-SA 4.0"), ("ref", "openrn", "CC BY 4.0")}
+    chunks = [c for c in corpus.chunks if c.document_id == "LITFL_atrial_flutter"]
+    assert chunks and all(c.views == set(corpus_build.VIEWS) and c.licence == "CC BY-NC-SA 4.0" for c in chunks)
+    assert all(c.embed_text.startswith("[LITFL ECG Library: Atrial Flutter]") for c in chunks)
+
+    db = sqlite3.connect(":memory:")
+    db.execute("PRAGMA foreign_keys = ON")
+    for migration in MIGRATIONS:
+        db.executescript(migration.read_text(encoding="utf-8"))
+    db.executescript(corpus_build.to_sql(corpus))
+    assert db.execute("SELECT kind, source_type, licence FROM corpus_documents WHERE id = 'LITFL_atrial_flutter'").fetchone() == (
+        "ref", "general_reference", "CC BY-NC-SA 4.0")
+    assert db.execute("SELECT DISTINCT licence FROM corpus_chunks WHERE document_id = 'LITFL_atrial_flutter'").fetchall() == [
+        ("CC BY-NC-SA 4.0",)]
+
+    without = corpus_build.build(cmg, built_at=FETCHED, general_dir=root, exclude_sources=frozenset({"litfl"}))
+    db.executescript(corpus_build.to_sql(without))
+    assert db.execute("SELECT COUNT(*) FROM corpus_documents WHERE id LIKE 'LITFL%'").fetchone() == (0,)
+    assert db.execute("SELECT COUNT(*) FROM corpus_chunks WHERE document_id LIKE 'LITFL%' AND retired_at IS NULL").fetchone() == (0,)
+    assert db.execute("SELECT COUNT(*) FROM corpus_documents WHERE id LIKE 'OPENRN%'").fetchone() == (1,)
+
+
+def test_d1_rejects_a_guideline_kind_labelled_general():
+    db = sqlite3.connect(":memory:")
+    for migration in MIGRATIONS:
+        db.executescript(migration.read_text(encoding="utf-8"))
+    with pytest.raises(sqlite3.IntegrityError):
+        db.execute("INSERT INTO corpus_documents VALUES ('x','actas','cmg','1','t','s','all',NULL,'c','general_reference','l','a','u','v')")
+    with pytest.raises(sqlite3.IntegrityError):
+        db.execute("INSERT INTO corpus_documents VALUES ('x','actas','ref','1','t','s','all',NULL,'c','guideline','l','a','u','v')")
+
+
+@pytest.mark.parametrize("bad", [{"licence": "CC BY-NC-ND 4.0"}, {"source_type": "guideline"}, {"source": "openstax"}])
+def test_build_rejects_unapproved_or_mislabelled_general_documents(tmp_path, bad):
+    root = tmp_path / "general"
+    doc = {**_general_doc(), **bad}
+    (root / "litfl").mkdir(parents=True)
+    (root / "litfl" / "x.json").write_text(json.dumps(doc), encoding="utf-8")
+    with pytest.raises(corpus_build.CorpusBuildError):
+        corpus_build.build(_cmg(tmp_path), general_dir=root)
+
+
+def test_build_rejects_unknown_source_folders(tmp_path):
+    (tmp_path / "general" / "openstax").mkdir(parents=True)
+    with pytest.raises(corpus_build.CorpusBuildError):
+        corpus_build.build(_cmg(tmp_path), general_dir=tmp_path / "general")
+
+
+class FakeGemini:
+    def __init__(self, conflict=False, out_of_scope=False, qtype="recall"):
+        self.calls = []
+        self.conflict, self.out_of_scope, self.qtype = conflict, out_of_scope, qtype
+
+    def __call__(self, url, body, api_key):
+        self.calls.append(body)
+        system = body["systemInstruction"]["parts"][0]["text"]
+        if system == qb.PROMPTS["conflictSystem"]:
+            payload = {"conflict": self.conflict, "out_of_scope": self.out_of_scope, "reason": "checked",
+                       "cmg_quote": "flutter waves at about 300" if self.conflict else ""}
+        else:
+            n = len(self.calls)
+            payload = {"question_text": f"What ECG features define atrial flutter, case {n}?", "question_type": self.qtype,
+                       "source_citation": "", "category": "Cardiac", "source_index": 1}
+        return {"candidates": [{"content": {"parts": [{"text": json.dumps(payload)}]}}],
+                "usageMetadata": {"promptTokenCount": 900, "candidatesTokenCount": 80, "thoughtsTokenCount": 0}}
+
+
+def _run(tmp_path, mixed, fake):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+    assert tasks and all(t.general and t.gen_view == "ap" and "hard" not in t.difficulties for t in tasks)
+    runner = qb.Runner(corpus, tmp_path, "key", fake, max_usd=100)
+    runner.run(tasks, workers=1, progress=lambda _: None)
+    return corpus, qb.load_raw(tmp_path / "raw.jsonl")
+
+
+def test_general_questions_use_their_own_prompt_and_are_checked_against_the_cmgs(tmp_path, mixed):
+    fake = FakeGemini()
+    corpus, records = _run(tmp_path, mixed, fake)
+    gen = [c for c in fake.calls if c["systemInstruction"]["parts"][0]["text"] == qb.PROMPTS["generalGenerationSystem"]]
+    checks = [c for c in fake.calls if c["systemInstruction"]["parts"][0]["text"] == qb.PROMPTS["conflictSystem"]]
+    assert len(gen) == len(checks) == len(records)
+    assert "[Source 1: general_reference]" in gen[0]["contents"][0]["parts"][0]["text"]
+    assert "Atrial flutter shows saw-tooth" in checks[0]["contents"][0]["parts"][0]["text"]
+    assert all(r["prompt_version"] == qb.PROMPTS["generalPromptVersion"] and r["check"]["conflict"] is False for r in records)
+
+    questions, stats = qb.select_questions(corpus, records)
+    assert questions and stats["general_conflicts"] == 0
+    flutter = next(q for q in questions if q["document_id"] == "LITFL_atrial_flutter")
+    assert flutter["source_citation"] == "LITFL ECG Library: Atrial Flutter"
+    assert flutter["licence"] == "CC BY-NC-SA 4.0" and "LITFL ECG Library" in flutter["attribution"]
+    assert flutter["category"] == "ECGs" and all(flutter["vis"].values())
+    openrn = next(q for q in questions if q["document_id"] == "OPENRN_HA_heart_failure")
+    assert openrn["source_citation"] == "Open RN Health Alterations 5.4: Heart Failure"
+
+    db = sqlite3.connect(":memory:")
+    for migration in MIGRATIONS:
+        db.executescript(migration.read_text(encoding="utf-8"))
+    db.executescript(corpus_build.to_sql(corpus))
+    db.executescript(qb.to_sql(questions))
+    assert db.execute("SELECT DISTINCT source_type FROM question_bank").fetchall() == [("general_reference",)]
+    assert {r[0] for r in db.execute("SELECT licence FROM question_bank")} == {"CC BY 4.0", "CC BY-NC-SA 4.0"}
+
+
+@pytest.mark.parametrize("fake, reason", [
+    (FakeGemini(conflict=True), "general_conflicts"),
+    (FakeGemini(out_of_scope=True), "general_out_of_scope"),
+    (FakeGemini(qtype="drug_dose"), "general_out_of_scope"),
+])
+def test_conflicting_or_out_of_scope_general_questions_are_dropped(tmp_path, mixed, fake, reason):
+    corpus, records = _run(tmp_path, mixed, fake)
+    questions, stats = qb.select_questions(corpus, records)
+    assert questions == [] and stats[reason] == len(records)
+    path = tmp_path / "dropped.csv"
+    qb.write_dropped(path, stats["dropped"])
+    assert reason in path.read_text(encoding="utf-8")
+
+
+def test_unchecked_general_questions_are_dropped(tmp_path, mixed):
+    corpus, records = _run(tmp_path, mixed, FakeGemini())
+    for r in records:
+        r.pop("check")
+    questions, stats = qb.select_questions(corpus, records)
+    assert questions == [] and stats["general_unchecked"] == len(records)
+
+
+def test_estimate_counts_the_conflict_check(mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    general = qb.plan(corpus, "general")
+    calls = sum(len(t.difficulties) for t in general)
+    assert qb.estimate_cost(general) > calls * (qb.EST_INPUT_TOKENS * 1.5 + qb.EST_OUTPUT_TOKENS * 7.5) / 1_000_000

@@ -240,7 +240,7 @@ export function TopicPicker({
                   {poolGroups.map(({ group, shown, eligible, n, hidden, isOpen }) => {
                     const isAll = n > 0 && n === eligible.length;
                     const isSome = n > 0 && !isAll;
-                    const sectionOff = prefs.excludedSections.includes(group.docs[0]?.section ?? "") && group.kind === "cmg";
+                    const sectionOff = prefs.excludedSections.includes(group.docs[0]?.section ?? "") && (group.kind === "cmg" || group.kind === "ref");
                     const count = n > 0 ? `${n} of ${eligible.length} ${only ? "picked" : "left out"}` : sectionOff ? "Off in Settings" : plural(group.docs.length, "document");
                     return (
                       <div key={group.key} className="rounded-sm bg-surface-container-low">

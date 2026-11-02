@@ -43,6 +43,7 @@ import { loadDocumentTitles, nameDocuments } from "./naming";
 import { listOverrides, overrideSummary, overridesCsv, recordOverride } from "./overrides";
 import { apViewFor, questionVisibility } from "./scope";
 import { parseExclusions } from "../progress/settings";
+import { generalSourceFor } from "../../shared/sources";
 import { isScore } from "../progress/routes";
 import {
   dailyCaps,
@@ -81,7 +82,7 @@ function optionalString(value: unknown, max = 200): string | null | undefined {
   return value;
 }
 
-const KINDS: readonly DocumentKind[] = ["cmg", "csm", "med"];
+const KINDS: readonly DocumentKind[] = ["cmg", "csm", "med", "ref"];
 const MAX_DOCUMENT_IDS = 400;
 
 function optionalIdList(value: unknown): string[] | null | undefined {
@@ -120,6 +121,12 @@ function parseFilters(body: Body): QuestionFilters | null {
     excludeDocumentIds: excludeDocumentIds ?? [],
     icpOnly,
   };
+}
+
+function onlyGeneralReferences(filters: QuestionFilters): boolean {
+  if (filters.kinds && filters.kinds.every((k) => k === "ref")) return true;
+  const ids = filters.documentId ? [filters.documentId] : filters.documentIds;
+  return Boolean(ids && ids.length > 0 && ids.every((id) => generalSourceFor(id) !== null));
 }
 
 function viewFrom(body: Body): CorpusView | null {
@@ -175,7 +182,7 @@ quizRoutes.post("/next", async (c) => {
   return c.json({
     question,
     exhausted: question === null,
-    canGenerate: Boolean(user && live?.ok && quota && quota.generations.remaining > 0),
+    canGenerate: Boolean(user && live?.ok && quota && quota.generations.remaining > 0 && !onlyGeneralReferences(filters)),
     quota,
   });
 });
@@ -197,7 +204,12 @@ quizRoutes.post("/generate", async (c) => {
   if (!availability.ok) return apiError(c, 503, "unavailable", unavailableMessage("gen", availability));
 
   const chunks = await candidateChunks(c.env.DB, view, filters, 5, exclusions);
-  if (chunks.length === 0) return apiError(c, 404, "not_found", "There's no guideline text in this scope to write a question from.");
+  if (chunks.length === 0) {
+    const message = onlyGeneralReferences(filters)
+      ? "New questions are only written from the ACTAS guidelines. Pathophysiology and ECG questions come from the library."
+      : "There's no guideline text in this scope to write a question from.";
+    return apiError(c, 404, "not_found", message);
+  }
 
   if (!(await takeCredit(c.env.DB, c.env, user.id, "gen", new Date(now)))) {
     return apiError(c, 429, "quota_exhausted", "You've used this month's new questions. Library questions are still unlimited.");
@@ -286,7 +298,7 @@ quizRoutes.post("/generate", async (c) => {
     return apiError(c, 502, "unreadable_response", "The new question fell outside your scope, so it wasn't shown. Nothing was taken from your allowance. Try again.");
   }
   await recordServed(c.env.DB, question.id, user.id, now);
-  const { sourceText: _s, attribution: _a, licence: _l, status: _st, ...publicQuestion } = question;
+  const { sourceText: _s, attribution: _a, licence: _l, status: _st, sourceType: _t, ...publicQuestion } = question;
   return c.json({ question: publicQuestion, duplicate, quota: await quotaFor(c) });
 });
 
@@ -317,6 +329,8 @@ quizRoutes.post("/questions/:id/reveal", async (c) => {
     documentId: question.documentId,
     documentTitle: question.documentTitle,
     attribution: question.attribution,
+    licence: question.licence,
+    sourceType: question.sourceType,
   });
 });
 
@@ -402,6 +416,8 @@ quizRoutes.post("/questions/:id/mark", async (c) => {
     documentId: question.documentId,
     documentTitle: question.documentTitle,
     attribution: question.attribution,
+    licence: question.licence,
+    sourceType: question.sourceType,
     quota: await quotaFor(c),
   });
 });

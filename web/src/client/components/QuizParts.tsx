@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { api, type ReportReason, type Score } from "../lib/api";
-import { documentPath, SCORE_CLASS, SCORE_LABEL, SELF_LABEL } from "./Feedback";
+import { Attribution, documentPath, SCORE_CLASS, SCORE_LABEL, SELF_LABEL } from "./Feedback";
 
 export const SCORES: Score[] = ["correct", "partial", "incorrect"];
 
@@ -50,12 +50,14 @@ export function SourcePanel({
   citation,
   documentId,
   documentTitle,
+  attribution,
 }: {
   sourceText: string;
   sourceQuote?: string;
   citation: string;
   documentId: string;
   documentTitle: string;
+  attribution?: string;
 }) {
   const body = useRef<HTMLDivElement>(null);
   const mark = useRef<HTMLElement>(null);
@@ -93,6 +95,9 @@ export function SourcePanel({
           Read {documentTitle}
         </a>
       </p>
+      <div className="px-4 pb-2">
+        <Attribution documentId={documentId} attribution={attribution} />
+      </div>
     </section>
   );
 }

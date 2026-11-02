@@ -9,8 +9,10 @@ import { MedicationDetail, Medications } from "./pages/Medications";
 import { NotFound } from "./pages/NotFound";
 import { Privacy } from "./pages/Privacy";
 import { Quiz } from "./pages/Quiz";
+import { ReferenceDetail, References } from "./pages/References";
 import { Settings } from "./pages/Settings";
 import { SignIn } from "./pages/SignIn";
+import { Sources } from "./pages/Sources";
 
 export function App() {
   return (
@@ -27,6 +29,9 @@ export function App() {
             <Route path="guidelines/:id" element={<GuidelineDetail />} />
             <Route path="medications" element={<Medications />} />
             <Route path="medications/:id" element={<MedicationDetail />} />
+            <Route path="references" element={<References />} />
+            <Route path="references/:id" element={<ReferenceDetail />} />
+            <Route path="sources" element={<Sources />} />
             <Route path="settings" element={<Settings />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="account" element={<Navigate to="/settings" replace />} />

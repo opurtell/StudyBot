@@ -6,6 +6,10 @@ Run from the repo root with a Gemini key in config/settings.json (providers.goog
     PYTHONPATH=src/python python3 -m web_corpus.questions generate --yes [--limit N] [--max-usd 15]
     PYTHONPATH=src/python python3 -m web_corpus.questions export [--sample 60]
 
+``--only general`` limits a command to the general references (Open RN, LITFL), and ``--exclude-source litfl`` leaves a
+general source out. Every general-reference question is checked against the closest CMG text before it can be
+exported; a conflict, an out-of-scope question or a failed check drops it (the CMG wins).
+
 ``plan`` makes no API calls. ``generate`` appends to ``raw.jsonl`` and skips work already done, so it can be
 stopped and resumed. ``export`` writes ``questions.sql`` (load with ``npm run bank:load:<env>`` in ``web/``),
 ``review-sample.csv`` for clinical review and ``report.json``.
@@ -17,6 +21,7 @@ import csv
 import difflib
 import hashlib
 import json
+import math
 import random
 import re
 import sys
@@ -30,7 +35,8 @@ from pathlib import Path
 from typing import Callable
 
 from paths import APP_ROOT
-from web_corpus.build import ATTRIBUTION, LICENCE, SERVICE_ID, SOURCE_TYPE, Chunk, Corpus, build
+from web_corpus import general_sources
+from web_corpus.build import GENERAL_KIND, GENERAL_SOURCE_TYPE, SERVICE_ID, SOURCE_TYPE, Chunk, Corpus, build
 
 PROMPTS_PATH = APP_ROOT / "web" / "src" / "worker" / "quiz" / "prompts.json"
 OUT_DIR = APP_ROOT / "web" / "corpus-build" / "questions"
@@ -52,6 +58,10 @@ SHARED_SHARE = 0.5
 MIN_FOCUS_CHARS = 30
 EST_INPUT_TOKENS = 750
 EST_OUTPUT_TOKENS = 450
+EST_CHECK_INPUT_TOKENS = 1800
+EST_CHECK_OUTPUT_TOKENS = 250
+CONFLICT_CMG_CHUNKS = 4
+GENERAL_TYPES = ("recall", "definition", "scenario")
 
 PROMPTS = json.loads(PROMPTS_PATH.read_text(encoding="utf-8"))
 ICP_MENTION = re.compile(PROMPTS["icpMentionPattern"], re.IGNORECASE)
@@ -68,6 +78,14 @@ class Task:
     difficulties: tuple[str, ...]
     focus: tuple[str, ...] = ()
 
+    @property
+    def general(self) -> bool:
+        return self.chunk.source_type == GENERAL_SOURCE_TYPE
+
+
+def is_general(chunk: Chunk) -> bool:
+    return chunk.source_type == GENERAL_SOURCE_TYPE
+
 
 def gen_view_for(chunk: Chunk) -> str:
     return next(view for view in VIEW_ORDER if view in chunk.views)
@@ -78,6 +96,8 @@ def difficulties_for(chunk: Chunk) -> tuple[str, ...]:
         return ()
     if len(chunk.text) < FULL_SET_CHARS:
         return ("easy",)
+    if is_general(chunk):
+        return ("easy", "medium")
     return ("easy", "medium", "hard")
 
 
@@ -115,7 +135,16 @@ def icp_focus(chunk: Chunk, siblings: list[Chunk], doc_lines: frozenset[str] = f
     return tuple(line for line in lines if line not in shared)
 
 
-def plan(corpus: Corpus) -> list[Task]:
+def plan(corpus: Corpus, only: str | None = None) -> list[Task]:
+    tasks = _plan(corpus)
+    if only == "general":
+        return [t for t in tasks if t.general]
+    if only == "guidelines":
+        return [t for t in tasks if not t.general]
+    return tasks
+
+
+def _plan(corpus: Corpus) -> list[Task]:
     ap_sections: dict[tuple[str, str], list[Chunk]] = {}
     ap_lines: dict[str, set[str]] = {}
     for chunk in corpus.chunks:
@@ -142,12 +171,20 @@ def focus_chunk_ids(tasks: list[Task]) -> set[str]:
     return {t.chunk.id for t in tasks if t.focus}
 
 
-def system_prompt(gen_view: str) -> str:
+def system_prompt(gen_view: str, general: bool = False) -> str:
+    if general:
+        return PROMPTS["generalGenerationSystem"]
     return PROMPTS["generationSystem"]["icp" if gen_view.startswith("icp") else "ap"]
 
 
-def user_prompt(source: str, difficulty: str, previous: list[str], focus: tuple[str, ...] = ()) -> str:
-    user = f"Source material:\n\n[Source 1: {SOURCE_TYPE}]\n{source}\n\nDifficulty: {difficulty}"
+def prompt_version(general: bool) -> str:
+    return PROMPTS["generalPromptVersion"] if general else PROMPTS["promptVersion"]
+
+
+def user_prompt(source: str, difficulty: str, previous: list[str], focus: tuple[str, ...] = (),
+                general: bool = False) -> str:
+    label = GENERAL_SOURCE_TYPE if general else SOURCE_TYPE
+    user = f"Source material:\n\n[Source 1: {label}]\n{source}\n\nDifficulty: {difficulty}"
     extra = PROMPTS["difficultyInstructions"].get(difficulty, "")
     if extra:
         user += f"\n\n{extra}"
@@ -220,14 +257,15 @@ def http_transport(url: str, body: dict, api_key: str) -> dict:
         return json.loads(res.read().decode("utf-8"))
 
 
-def call_gemini(transport: Transport, api_key: str, system: str, user: str, retries: int = 4) -> tuple[str, dict]:
+def call_gemini(transport: Transport, api_key: str, system: str, user: str, retries: int = 4,
+                schema: dict | None = None) -> tuple[str, dict]:
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": user}]}],
         "generationConfig": {
             "maxOutputTokens": 2048,
             "responseMimeType": "application/json",
-            "responseJsonSchema": PROMPTS["generationSchema"],
+            "responseJsonSchema": schema or PROMPTS["generationSchema"],
         },
     }
     delay = 2.0
@@ -261,7 +299,78 @@ def usage_cost(usage: dict) -> float:
 
 def estimate_cost(tasks: list[Task]) -> float:
     calls = sum(len(t.difficulties) for t in tasks)
-    return calls * (EST_INPUT_TOKENS * PRICE_PER_MILLION[0] + EST_OUTPUT_TOKENS * PRICE_PER_MILLION[1]) / 1_000_000
+    checks = sum(len(t.difficulties) for t in tasks if t.general)
+    per_call = EST_INPUT_TOKENS * PRICE_PER_MILLION[0] + EST_OUTPUT_TOKENS * PRICE_PER_MILLION[1]
+    per_check = EST_CHECK_INPUT_TOKENS * PRICE_PER_MILLION[0] + EST_CHECK_OUTPUT_TOKENS * PRICE_PER_MILLION[1]
+    return (calls * per_call + checks * per_check) / 1_000_000
+
+
+_WORD = re.compile(r"[a-z0-9]+")
+_STOP = frozenset(
+    "a an and are as at be by can for from has have in is it its of on or that the this to was were which with "
+    "what when where who why how does do patient patients".split()
+)
+
+
+def _terms(text: str) -> list[str]:
+    return [w for w in _WORD.findall(text.lower()) if w not in _STOP and len(w) > 1]
+
+
+class GuidelineIndex:
+    """BM25 over the ACTAS guideline chunks, to find the CMG text a general-reference question could conflict with."""
+
+    def __init__(self, corpus: Corpus, k1: float = 1.5, b: float = 0.75):
+        self.docs = {d.id: d for d in corpus.documents}
+        self.chunks = [c for c in corpus.chunks if not is_general(c) and "icp_pacer" in c.views]
+        self.terms = [_terms(c.embed_text) for c in self.chunks]
+        self.k1, self.b = k1, b
+        self.avg = sum(len(t) for t in self.terms) / max(len(self.terms), 1)
+        df: dict[str, int] = {}
+        for terms in self.terms:
+            for term in set(terms):
+                df[term] = df.get(term, 0) + 1
+        n = len(self.terms)
+        self.idf = {t: math.log(1 + (n - f + 0.5) / (f + 0.5)) for t, f in df.items()}
+        self.tf = [self._counts(t) for t in self.terms]
+
+    @staticmethod
+    def _counts(terms: list[str]) -> dict[str, int]:
+        out: dict[str, int] = {}
+        for t in terms:
+            out[t] = out.get(t, 0) + 1
+        return out
+
+    def search(self, text: str, k: int = CONFLICT_CMG_CHUNKS) -> list[Chunk]:
+        query = set(_terms(text))
+        scores = []
+        for i, tf in enumerate(self.tf):
+            length = len(self.terms[i])
+            score = 0.0
+            for term in query:
+                f = tf.get(term)
+                if f:
+                    score += self.idf[term] * f * (self.k1 + 1) / (f + self.k1 * (1 - self.b + self.b * length / self.avg))
+            if score > 0:
+                scores.append((score, i))
+        scores.sort(reverse=True)
+        return [self.chunks[i] for _, i in scores[:k]]
+
+
+def conflict_user(question: str, source: str, cmg: list[tuple[str, str]]) -> str:
+    excerpts = "\n\n".join(f"[CMG {i + 1}: {label}]\n{text}" for i, (label, text) in enumerate(cmg)) or "(none found)"
+    return f"Question: {question}\n\nGeneral reference text:\n{source}\n\nCMG excerpts:\n{excerpts}"
+
+
+def parse_check(text: str) -> dict | None:
+    parsed = parse_json_object(text)
+    if not parsed or not isinstance(parsed.get("conflict"), bool) or not isinstance(parsed.get("out_of_scope"), bool):
+        return None
+    return {
+        "conflict": parsed["conflict"],
+        "out_of_scope": parsed["out_of_scope"],
+        "reason": str(parsed.get("reason") or "").strip(),
+        "cmg_quote": str(parsed.get("cmg_quote") or "").strip(),
+    }
 
 
 def load_raw(path: Path) -> list[dict]:
@@ -287,6 +396,35 @@ class Runner:
         self.spent = sum(r.get("cost_usd", 0.0) for r in existing)
         self.made = 0
         self.failed = 0
+        self._index: GuidelineIndex | None = None
+
+    @property
+    def index(self) -> GuidelineIndex:
+        with self.lock:
+            if self._index is None:
+                self._index = GuidelineIndex(self.corpus)
+            return self._index
+
+    def check(self, question: str, chunk: Chunk, record: dict) -> None:
+        docs = self.index.docs
+        hits = self.index.search(f"{question}\n{chunk.heading}\n{chunk.text}")
+        cmg = [(f"{_doc_label(docs[h.document_id])} {docs[h.document_id].title}", h.text) for h in hits]
+        record["check_chunks"] = [h.id for h in hits]
+        for _ in range(2):
+            try:
+                text, usage = call_gemini(self.transport, self.api_key, PROMPTS["conflictSystem"],
+                                          conflict_user(question, chunk.embed_text, cmg),
+                                          schema=PROMPTS["conflictSchema"])
+            except GenerationError as exc:
+                record["check_error"] = str(exc)
+                return
+            record["cost_usd"] += usage_cost(usage)
+            parsed = parse_check(text)
+            if parsed:
+                record["check"] = parsed
+                record.pop("check_error", None)
+                return
+            record["check_error"] = f"unparseable: {text[:200]}"
 
     def _write(self, record: dict) -> None:
         with self.lock:
@@ -312,7 +450,7 @@ class Runner:
                 "difficulty": difficulty,
                 "gen_view": task.gen_view,
                 "model_id": MODEL_ID,
-                "prompt_version": PROMPTS["promptVersion"],
+                "prompt_version": prompt_version(task.general),
                 "corpus_version": self.corpus.version,
                 "source_text": chunk.embed_text,
                 "focus": bool(task.focus),
@@ -323,8 +461,8 @@ class Runner:
             for _ in range(2):
                 try:
                     text, usage = call_gemini(
-                        self.transport, self.api_key, system_prompt(task.gen_view),
-                        user_prompt(chunk.embed_text, difficulty, previous, task.focus),
+                        self.transport, self.api_key, system_prompt(task.gen_view, task.general),
+                        user_prompt(chunk.embed_text, difficulty, previous, task.focus, task.general),
                     )
                 except GenerationError as exc:
                     record["error"] = str(exc)
@@ -338,6 +476,8 @@ class Runner:
                 record.update(parsed, ok=True)
                 record.pop("error", None)
                 previous.append(parsed["question_text"])
+                if task.general:
+                    self.check(parsed["question_text"], chunk, record)
             self._write(record)
 
     def run(self, tasks: list[Task], workers: int, progress: Callable[[str], None] = print) -> None:
@@ -354,7 +494,15 @@ def _jaccard(a: str, b: str) -> float:
     return len(sa & sb) / len(sa | sb) if sa and sb else 0.0
 
 
+_OPENRN_BOOK_TITLES = {book.code: book.title for book in general_sources.OPENRN_BOOKS}
+
+
 def _doc_label(doc) -> str:
+    if doc.kind == GENERAL_KIND:
+        if doc.general_source == "openrn":
+            code, _, number = doc.number.partition(" ")
+            return f"Open RN {_OPENRN_BOOK_TITLES.get(code, code)} {number}".strip()
+        return general_sources.SOURCES[doc.general_source].name
     if doc.kind == "csm":
         return f"ACTAS {doc.number}"
     return f"ACTAS {'MED' if doc.kind == 'med' else 'CMG'} {doc.number}"
@@ -424,7 +572,8 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
     planned = {t.chunk.id for t in tasks}
     focused = focus_chunk_ids(tasks)
     stats = {"stale": 0, "unplanned": 0, "where_questions": 0, "exact_duplicates": 0, "near_duplicates": 0,
-             "ap_restricted": 0}
+             "ap_restricted": 0, "general_unchecked": 0, "general_conflicts": 0, "general_out_of_scope": 0}
+    dropped: list[dict] = []
     kept: list[dict] = []
     hashes: set[str] = set()
     by_chunk: dict[str, list[str]] = {}
@@ -442,6 +591,15 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
         if _WHERE_QUESTION.search(r["question_text"]):
             stats["where_questions"] += 1
             continue
+        if is_general(chunk):
+            check = r.get("check")
+            reason = ("general_unchecked" if not check else "general_conflicts" if check["conflict"]
+                      else "general_out_of_scope" if check["out_of_scope"] or r["question_type"] not in GENERAL_TYPES
+                      else None)
+            if reason:
+                stats[reason] += 1
+                dropped.append({**r, "drop_reason": reason, "document_title": docs[chunk.document_id].title})
+                continue
         h = content_hash(r["question_text"])
         if h in hashes:
             stats["exact_duplicates"] += 1
@@ -457,16 +615,22 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
         doc = docs[chunk.document_id]
         hashes.add(h)
         by_chunk.setdefault(chunk.id, []).append(r["question_text"])
+        general = is_general(chunk)
         kept.append({
             **r,
             "id": h[:16],
             "content_hash": h,
             "vis": vis,
-            "category": r.get("category") or doc.section,
-            "source_citation": r.get("source_citation") or _doc_label(doc),
+            "category": doc.section if general else r.get("category") or doc.section,
+            "source_citation": f"{_doc_label(doc)}: {doc.title}" if general else r.get("source_citation") or _doc_label(doc),
             "document_title": doc.title,
             "document_label": _doc_label(doc),
+            "source_type": doc.source_type,
+            "licence": doc.licence,
+            "attribution": doc.attribution,
+            "general_source": doc.general_source,
         })
+    stats["dropped"] = dropped
     return kept, stats
 
 
@@ -494,7 +658,7 @@ def to_sql(questions: list[dict]) -> str:
         values = [
             q["id"], SERVICE_ID, q["document_id"], q["chunk_id"], q["source_text"], q["question_text"],
             q["question_type"], q["difficulty"], q["category"], q["source_citation"], q["gen_view"],
-            *(q["vis"][v] for v in VIEW_ORDER), SOURCE_TYPE, LICENCE, ATTRIBUTION, q["content_hash"],
+            *(q["vis"][v] for v in VIEW_ORDER), q["source_type"], q["licence"], q["attribution"], q["content_hash"],
             q["prompt_version"], q["model_id"], q["corpus_version"], "bank", "active",
         ]
         names = [c.strip() for c in COLUMNS.split(",")][:-2]
@@ -544,6 +708,29 @@ def write_sample(path: Path, sample: list[dict]) -> None:
                              "", "", "", ""])
 
 
+def write_general_review(path: Path, questions: list[dict], n: int, seed: int = 20261102) -> None:
+    general = [q for q in questions if q.get("source_type") == GENERAL_SOURCE_TYPE]
+    sample = random.Random(seed).sample(general, min(n, len(general)))
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["id", "source", "difficulty", "citation", "question", "source_text", "cmg_check",
+                         "accurate (Y/N)", "in_scope (Y/N)", "useful (1-5)", "notes"])
+        for q in sample:
+            writer.writerow([q["id"], q["general_source"], q["difficulty"], q["source_citation"], q["question_text"],
+                             q["source_text"], (q.get("check") or {}).get("reason", ""), "", "", "", ""])
+
+
+def write_dropped(path: Path, dropped: list[dict]) -> None:
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["reason", "document", "question", "check_reason", "cmg_quote", "source_text"])
+        for r in dropped:
+            check = r.get("check") or {}
+            writer.writerow([r["drop_reason"], r["document_title"], r["question_text"],
+                             check.get("reason", r.get("check_error", "")), check.get("cmg_quote", ""),
+                             r["source_text"]])
+
+
 def report(questions: list[dict], records: list[dict], stats: dict) -> dict:
     by_scope: dict[str, int] = {}
     by_difficulty: dict[str, int] = {}
@@ -558,7 +745,11 @@ def report(questions: list[dict], records: list[dict], stats: dict) -> dict:
         "documents": len({q["document_id"] for q in questions}),
         "failures": sum(1 for r in records if not r.get("ok")),
         "cost_usd": round(sum(r.get("cost_usd", 0.0) for r in records), 2),
-        **stats,
+        "general_by_source": {
+            source: sum(1 for q in questions if q.get("general_source") == source)
+            for source in sorted({q["general_source"] for q in questions if q.get("general_source")})
+        },
+        **{k: v for k, v in stats.items() if k != "dropped"},
     }
 
 
@@ -581,10 +772,12 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--sample", type=int, default=60)
     parser.add_argument("--api-key", default=None)
+    parser.add_argument("--only", choices=["general", "guidelines"], default=None)
+    parser.add_argument("--exclude-source", action="append", default=[], choices=sorted(general_sources.SOURCES))
     args = parser.parse_args(argv)
 
-    corpus = build()
-    tasks = plan(corpus)
+    corpus = build(exclude_sources=frozenset(args.exclude_source))
+    tasks = plan(corpus, args.only)
     if args.limit is not None:
         tasks = random.Random(7).sample(tasks, min(args.limit, len(tasks)))
     args.out.mkdir(parents=True, exist_ok=True)
@@ -620,8 +813,13 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
         print("Nothing generated yet. Run the generate command first.", file=sys.stderr)
         return 1
     questions, stats = select_questions(corpus, records)
+    if args.only:
+        questions = [q for q in questions if (q.get("source_type") == GENERAL_SOURCE_TYPE) == (args.only == "general")]
     (args.out / "questions.sql").write_text(to_sql(questions), encoding="utf-8")
     write_sample(args.out / "review-sample.csv", review_sample(questions, args.sample))
+    if any(q.get("source_type") == GENERAL_SOURCE_TYPE for q in questions) or stats["dropped"]:
+        write_general_review(args.out / "review-sample-general.csv", questions, args.sample)
+        write_dropped(args.out / "dropped-general.csv", stats["dropped"])
     info = report(questions, records, stats)
     (args.out / "report.json").write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(info, indent=2))

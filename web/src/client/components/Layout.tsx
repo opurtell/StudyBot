@@ -104,9 +104,13 @@ export function Layout() {
             <a className="underline" href="https://cmg.ambulance.act.gov.au" rel="noopener noreferrer" target="_blank">
               cmg.ambulance.act.gov.au
             </a>
-            .
+            . Pathophysiology and ECG questions: Open RN (CC BY 4.0) and the LITFL ECG Library (CC BY-NC-SA 4.0).
           </p>
           <p>
+            <Link to="/sources" className="underline">
+              Sources and licences
+            </Link>
+            {" · "}
             <Link to="/privacy" className="underline">
               Privacy and disclaimer
             </Link>

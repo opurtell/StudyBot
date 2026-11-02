@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { authRoutes, meRoutes } from "./auth/routes";
 import { loadSession } from "./auth/sessions";
-import { adminCorpusRoutes, guidelineRoutes, medicationRoutes } from "./corpus/routes";
+import { adminCorpusRoutes, guidelineRoutes, medicationRoutes, referenceRoutes } from "./corpus/routes";
 import { apiError, clientIp } from "./lib/http";
 import { adminQuestionRoutes, quizRoutes } from "./quiz/routes";
 import { progressRoutes, topicRoutes } from "./progress/routes";
@@ -72,6 +72,7 @@ app.route("/auth", authRoutes);
 app.route("/me", meRoutes);
 app.route("/guidelines", guidelineRoutes);
 app.route("/medications", medicationRoutes);
+app.route("/references", referenceRoutes);
 app.route("/admin/corpus", adminCorpusRoutes);
 app.route("/quiz", quizRoutes);
 app.route("/admin/questions", adminQuestionRoutes);
