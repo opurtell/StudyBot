@@ -21,10 +21,21 @@ with patch('services.active.active_service', return_value=get_service('actas')):
 
 Store a `prompt_version` with every banked question and every mark, and bump it whenever either prompt changes.
 
-**In the web port the prompts live in `web/src/worker/quiz/prompts.json`** (`promptVersion` `web-1`). The Worker and the
+**In the web port the prompts live in `web/src/worker/quiz/prompts.json`** (`promptVersion` `web-2`). The Worker and the
 offline bank generator (`src/python/web_corpus/questions.py`) both read it, and `tests/web_corpus/test_questions.py`
 fails if it drifts from `agent.py`. One deliberate difference: the hard-difficulty instruction adds "Keep the question
 itself under 60 words", because Oscar's rating found hard questions too wordy (`docs/review/model-bench/README.md`).
+
+`web-2` (2026-11-02, Oscar's bank review): questions must name a guideline, skill or medicine guideline by its title, not
+only its code ("users will not know guidelines or skills by code/number"), and must not ask which guideline holds a fact.
+Because models still slip, both paths also rewrite codes deterministically: `name_documents` in the offline export and
+`nameDocuments` (`web/src/worker/quiz/naming.ts`) for live questions turn "CMG 31" into "the Electric Shock guideline
+(CMG 31)" using the corpus titles. The export also drops "which guideline contains…" questions. Shared cases:
+`web/test/fixtures/naming-cases.json`.
+
+Also from that review: a magnesium precaution APs study was shown only to ICPs, because the ICP view of MED 20 packs
+its chunks at different boundaries, so the ICP chunk straddled two AP chunks and wasn't recognised as a twin. An ICP-only
+chunk whose text is at least half found in the document's AP chunks now gets one question on its ICP-only lines.
 
 ## Generation (Gemini 3.8 Flash)
 

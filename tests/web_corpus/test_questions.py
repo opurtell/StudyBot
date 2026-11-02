@@ -158,7 +158,7 @@ def test_export_dedupes_drops_stale_rows_and_loads_into_d1_schema(tmp_path, corp
     ]
     questions, stats = qb.select_questions(corpus, records)
     assert [q["question_text"] for q in questions] == ["What is the patient's first priority?", "Which adenosine dose is used?"]
-    assert stats == {"stale": 1, "unplanned": 0, "exact_duplicates": 1, "near_duplicates": 1, "ap_restricted": int("ap" in second.views)}
+    assert stats == {"stale": 1, "unplanned": 0, "where_questions": 0, "exact_duplicates": 1, "near_duplicates": 1, "ap_restricted": int("ap" in second.views)}
     assert questions[0]["source_citation"].startswith("ACTAS ")
     assert questions[0]["id"] == questions[0]["content_hash"][:16]
 
@@ -221,3 +221,47 @@ def test_icp_chunks_holding_every_ap_line_are_twins_even_when_much_longer():
     tasks = {t.chunk.id: t for t in qb.plan(corpus_build.Corpus("v", "t", None, [], [ap, icp]))}
     assert tasks["icp1"].difficulties == ("medium",)
     assert len(tasks["icp1"].focus) == 8 and all("ICP" in line for line in tasks["icp1"].focus)
+
+
+NAMING = json.loads((APP_ROOT / "web" / "test" / "fixtures" / "naming-cases.json").read_text(encoding="utf-8"))
+
+
+@pytest.mark.parametrize("text, expected", NAMING["cases"])
+def test_questions_name_guidelines_by_title_not_only_code(text, expected):
+    docs = [corpus_build.Document("x", d["kind"], d["number"], d["title"], "", "all", None, "", {}, "")
+            for d in NAMING["documents"]]
+    assert qb.name_documents(text, qb.document_titles(docs)) == expected
+
+
+def test_export_names_documents_and_drops_where_questions(corpus):
+    task = next(t for t in qb.plan(corpus) if len(t.difficulties) == 3 and not t.focus)
+    chunk = task.chunk
+    base = {"model_id": qb.MODEL_ID, "prompt_version": "web-2", "corpus_version": corpus.version, "ok": True,
+            "question_type": "recall", "source_citation": "", "category": "", "cost_usd": 0.001,
+            "chunk_id": chunk.id, "document_id": chunk.document_id, "source_text": chunk.embed_text,
+            "gen_view": task.gen_view}
+    records = [
+        {**base, "difficulty": "easy", "question_text": "According to ACTAS CMG 31, what voltage is high voltage?"},
+        {**base, "difficulty": "medium", "question_text": "Which clinical management guideline contains the intubation algorithm?"},
+    ]
+    questions, stats = qb.select_questions(corpus, records)
+    assert [q["question_text"] for q in questions] == [
+        "According to the ACTAS Electric Shock guideline (CMG 31), what voltage is high voltage?"]
+    assert stats["where_questions"] == 1
+    assert questions[0]["content_hash"] == qb.content_hash(questions[0]["question_text"])
+
+
+def test_generation_prompts_ask_for_titles():
+    for view in ("ap", "icp"):
+        assert "use its title" in qb.PROMPTS["generationSystem"][view]
+
+
+def test_icp_chunks_mostly_repeating_ap_text_across_chunk_boundaries_get_one_focus_question():
+    first = "\n".join(f"- Shared monograph line {i} about actions and uses." for i in range(8))
+    second = "\n".join(f"- Shared precaution line {i} such as myasthenia gravis." for i in range(8))
+    ap1 = _chunk("ap1", first, {"ap", "ap_pacer"}, heading="")
+    ap2 = _chunk("ap2", second, {"ap", "ap_pacer"}, heading="")
+    straddle = "\n".join(first.splitlines()[4:] + second.splitlines()[:4] + ["- Torsades de pointes **- ICP only**"])
+    icp = _chunk("icp1", straddle, {"icp", "icp_pacer"}, heading="")
+    tasks = {t.chunk.id: t for t in qb.plan(corpus_build.Corpus("v", "t", None, [], [ap1, ap2, icp]))}
+    assert tasks["icp1"].focus == ("- Torsades de pointes **- ICP only**",)

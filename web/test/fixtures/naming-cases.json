@@ -1,0 +1,21 @@
+{
+  "documents": [
+    { "kind": "cmg", "number": "31", "title": "Electric Shock" },
+    { "kind": "cmg", "number": "3C", "title": "Preexisting Tracheostomy Management" },
+    { "kind": "cmg", "number": "14", "title": "Shock and Hypoperfusion" },
+    { "kind": "med", "number": "03", "title": "Adrenaline" },
+    { "kind": "csm", "number": "CSM.A20", "title": "Front of Neck (Surgical Airway)" },
+    { "kind": "csm", "number": "REF", "title": "Critical Care Reference Cards" }
+  ],
+  "cases": [
+    ["According to ACTAS CMG 31, what should you do?", "According to the ACTAS Electric Shock guideline (CMG 31), what should you do?"],
+    ["Per CMG 3C, how far is the tube advanced?", "Per the Preexisting Tracheostomy Management guideline (CMG 3C), how far is the tube advanced?"],
+    ["ACTAS CMG 14 lists which signs?", "The ACTAS Shock and Hypoperfusion guideline (CMG 14) lists which signs?"],
+    ["According to the ACTAS MED 3, what is the dose?", "According to the ACTAS Adrenaline medicine guideline (MED 3), what is the dose?"],
+    ["What action follows the incision in CSM.A20.", "What action follows the incision in the Front of Neck (Surgical Airway) skill (CSM.A20)."],
+    ["In the Electric Shock guideline (CMG 31), what distance is safe?", "In the Electric Shock guideline (CMG 31), what distance is safe?"],
+    ["See CMG 14.1 for the dose.", "See CMG 14.1 for the dose."],
+    ["What does CMG 99 say?", "What does CMG 99 say?"],
+    ["According to the ACTAS Critical Care Reference Cards, what LMA size is used at 5 kg?", "According to the ACTAS Critical Care Reference Cards, what LMA size is used at 5 kg?"]
+  ]
+}

@@ -36,7 +36,9 @@ Rules:
 - Vary question types: recall, definition, scenario, drug_dose
 - Use Australian English (adrenaline, haemorrhage, colour)
 - Tone: direct, clinical
-- Do NOT repeat or closely rephrase any previously asked questions listed below"""
+- Do NOT repeat or closely rephrase any previously asked questions listed below
+- If the question names a guideline, skill or medicine guideline, use its title (e.g. "the Pain Management guideline"), never only its number or code
+- Test clinical knowledge, not which guideline or section holds a piece of information"""
 
     if "ICP" not in effective_qualifications:
         base += """

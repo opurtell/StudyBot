@@ -3,6 +3,8 @@ import { createLogger } from "../../src/worker/lib/log";
 import { currentQuotaPeriod, summariseQuota } from "../../src/worker/lib/quota";
 import { purgeExpired } from "../../src/worker/auth/sessions";
 import { env } from "cloudflare:workers";
+import { documentTitles, nameDocuments } from "../../src/worker/quiz/naming";
+import namingCases from "../fixtures/naming-cases.json";
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -62,5 +64,14 @@ describe("purgeExpired", () => {
     await purgeExpired(env.DB, now);
     const sessions = await env.DB.prepare("SELECT id_hash FROM sessions WHERE user_id = ?").bind(userId).all<{ id_hash: string }>();
     expect(sessions.results.map((r) => r.id_hash)).toEqual(["live"]);
+  });
+});
+
+describe("nameDocuments", () => {
+  it("adds titles to guideline codes, matching the Python export", () => {
+    const titles = documentTitles(namingCases.documents);
+    for (const [text, expected] of namingCases.cases as [string, string][]) {
+      expect(nameDocuments(text, titles)).toBe(expected);
+    }
   });
 });

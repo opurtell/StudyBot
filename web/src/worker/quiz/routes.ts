@@ -38,6 +38,7 @@ import {
   PROMPT_VERSION,
   type Difficulty,
 } from "./prompts";
+import { loadDocumentTitles, nameDocuments } from "./naming";
 import { questionVisibility } from "./scope";
 import {
   dailyCaps,
@@ -197,7 +198,8 @@ quizRoutes.post("/generate", async (c) => {
   }
 
   const chunk = chunks[parsed.sourceIndex] ?? chunks[0]!;
-  const hash = await questionHash(parsed.questionText);
+  const questionText = nameDocuments(parsed.questionText, await loadDocumentTitles(c.env.DB));
+  const hash = await questionHash(questionText);
   const existing = await findByHash(c.env.DB, hash);
   let questionId = existing?.id ?? null;
   let duplicate = existing !== null;
@@ -206,13 +208,13 @@ quizRoutes.post("/generate", async (c) => {
       c.env.DB,
       {
         chunk,
-        text: parsed.questionText,
+        text: questionText,
         type: parsed.questionType,
         difficulty,
         category: parsed.category ?? chunk.section,
         citation: parsed.sourceCitation ?? chunk.documentId,
         generatedFor: view,
-        visibility: questionVisibility(view, chunk.visibility, parsed.questionText),
+        visibility: questionVisibility(view, chunk.visibility, questionText),
         hash,
         modelId: result.modelId,
         promptVersion: PROMPT_VERSION,
