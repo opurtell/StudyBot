@@ -174,10 +174,112 @@ def build_mapping(raw_dir: Path = RAW_DIR, bundle_dir: Path = BUNDLE_DIR) -> dic
     }
 
 
+CARDS_BUNDLE = "227_38576.f4c02555ddc44785.js"
+CARDS_OUT_PATH = Path(__file__).with_name("reference_cards.json")
+TOKEN_RE = re.compile(
+    r'F\.EFF\(\d+,"((?:[^"\\]|\\.)*)"\)'
+    r'|F\.nrm\(\d+,"[\w-]+"(?:,\d+)?\)'
+    r'|(?:F\.j41)?\(\d+,"([\w-]+)"(?:,(\d+))?\)'
+    r'|F\.k0s\(\)((?:\(\))*)'
+)
+BAND_RE = re.compile(r"^(?P<age>.+?)\s*-\s*(?P<kg>\d+)kg$")
+ROUTE_RE = re.compile(r"\b(IV|IO|IM|IN|ETT|SC|PO|NEB)\b")
+ITEM_KEYS = ("Formula", "Preparation", "Dose", "Volume")
+
+
+def _unescape(text: str) -> str:
+    return json.loads(f'"{text}"')
+
+
+def _tokens(segment: str):
+    for text, tag, cls, extra in TOKEN_RE.findall(segment):
+        if text:
+            yield "text", _unescape(text), None
+        elif tag:
+            yield "open", tag, cls or None
+        elif extra is not None and segment:
+            for _ in range(1 + extra.count("()")):
+                yield "close", None, None
+
+
+def parse_band(segment: str) -> dict:
+    stack: list[tuple[str, str | None]] = []
+    band: dict = {"band": None, "age": None, "weight_kg": None, "sections": []}
+    section = group = drug = label = None
+    for kind, value, cls in _tokens(segment):
+        if kind == "open":
+            stack.append((value, cls))
+            continue
+        if kind == "close":
+            if stack:
+                stack.pop()
+            continue
+        text = value.strip()
+        if not text or not stack:
+            continue
+        tag, cls = stack[-1]
+        if tag == "h4" and cls == "12":
+            band["band"] = text
+            m = BAND_RE.match(text)
+            if m:
+                band["age"], band["weight_kg"] = m.group("age").strip(), int(m.group("kg"))
+        elif tag == "h4":
+            section = {"heading": text, "groups": []}
+            band["sections"].append(section)
+            group = drug = label = None
+        elif tag == "h5" and section is not None:
+            group = {"name": text, "fields": {}, "drugs": []}
+            section["groups"].append(group)
+            drug = label = None
+        elif tag == "strong" and section is not None:
+            label = text.rstrip(":").strip()
+            if group is None:
+                group = {"name": section["heading"], "fields": {}, "drugs": []}
+                section["groups"].append(group)
+            mislabelled = label.partition(":")[0] in ITEM_KEYS
+            drug = {"drug": None if mislabelled else label, "route": "/".join(ROUTE_RE.findall(label)) or None,
+                    **{k.lower(): None for k in ITEM_KEYS}, "other": [text] if mislabelled else [],
+                    "label_quirk": mislabelled}
+            group["drugs"].append(drug)
+        elif tag == "p" and drug is not None and label is not None:
+            group["drugs"].remove(drug)
+            group["fields"][label] = text
+            drug = None
+        elif tag == "fa-li":
+            key, _, rest = text.partition(":")
+            if drug is not None and key in ITEM_KEYS and rest.strip():
+                drug[key.lower()] = rest.strip()
+            elif drug is not None:
+                drug["other"].append(text)
+            elif group is not None and label is not None:
+                group["fields"].setdefault(f"{label} notes", []).append(text)
+    return band
+
+
+def reference_cards(bundle_dir: Path = BUNDLE_DIR) -> list[dict]:
+    source = (bundle_dir / CARDS_BUNDLE).read_text(encoding="utf-8")
+    bands = []
+    for segment in source.split("function ")[1:]:
+        if '"h4",12)' in segment:
+            band = parse_band(segment)
+            if band["band"]:
+                for section in band["sections"]:
+                    for group in section["groups"]:
+                        notes = [d for d in group["drugs"] if not any(d[k.lower()] for k in ITEM_KEYS)]
+                        group["drugs"] = [d for d in group["drugs"] if d not in notes]
+                        group["notes"] = [" ".join([d["drug"] or "", *d["other"]]).strip() for d in notes]
+                bands.append(band)
+    return bands
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", type=Path, default=OUT_PATH)
+    parser.add_argument("--cards-out", type=Path, default=CARDS_OUT_PATH)
     args = parser.parse_args(argv)
+    if (BUNDLE_DIR / CARDS_BUNDLE).exists():
+        cards = reference_cards()
+        args.cards_out.write_text(json.dumps(cards, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     for needed in (RAW_DIR / "dose_tables_segmented.json", RAW_DIR / "dose_tables.json", BUNDLE_DIR):
         if not needed.exists():
             print(f"Missing scrape artefact: {needed}", file=sys.stderr)

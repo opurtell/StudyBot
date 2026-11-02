@@ -1,0 +1,3478 @@
+[
+ {
+  "band": "Newborn (birth to 24 hours) - 3kg",
+  "age": "Newborn (birth to 24 hours)",
+  "weight_kg": 3,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "3mm",
+       "ETT length": "10cm at the lips",
+       "Airtraq": "Grey",
+       "LMA size": "1 or 1.5 (2-8ml inflation)",
+       "IGT size": "6FG"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Infant",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "15 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 3:1"
+       ]
+      },
+      "drugs": [],
+      "notes": [
+       "Tactile stimulation",
+       "Ventilation (with air, add 100% O2 with CPR)",
+       "Chest compressions",
+       "Prevent heat loss IV attempts unlikely to be successful Adrenaline (only) may be given down the ETT"
+      ]
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.03mg",
+        "volume": "0.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Adrenaline (1:10,000) ETT",
+        "route": "ETT",
+        "formula": "0.02mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.06mg",
+        "volume": "0.6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "30ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Glucose 10% IV",
+        "route": "IV",
+        "formula": "0.25 (2.5ml)/kg",
+        "preparation": "50g in 500ml",
+        "dose": "0.75ml/kg",
+        "volume": "7.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Glucagon IM",
+        "route": "IM",
+        "formula": "weight <20kg = 0.5 IU",
+        "preparation": "1IU in 1ml",
+        "dose": "0.5 IU",
+        "volume": "0.5ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "30-55min",
+       "Heart Rate": "110-160min",
+       "Systolic BP": "60-100mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "3 months - 5kg",
+  "age": "3 months",
+  "weight_kg": 5,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "3mm",
+       "ETT length": "10cm at the lips",
+       "Airtraq": "Grey",
+       "LMA size": "1.5 (4-8ml inflation)",
+       "IGT size": "6FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Infant",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "20 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000) IV/ IO",
+        "route": "IV/IO",
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.05mg",
+        "volume": "0.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "25mg",
+        "volume": "0.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "250mg",
+        "volume": "0.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "5mMol",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "100ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "30-45/min",
+       "Heart Rate": "100-160/min",
+       "Systolic BP": "70-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "50ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "100ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "6 Months - 7kg",
+  "age": "6 Months",
+  "weight_kg": 7,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "3mm",
+       "ETT length": "10cm at the lips",
+       "Airtraq": "Grey",
+       "LMA size": "1.5 (4-8ml inflation)",
+       "IGT size": "6FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Infant",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "30joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000) IV/IO",
+        "route": "IV/IO",
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.07mg",
+        "volume": "0.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "35mg",
+        "volume": "0.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "350mg",
+        "volume": "1.4ml (when diluted to 10ml)",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "7mMol",
+        "volume": "7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "140ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "30-45/min",
+       "Heart Rate": "100-160/min",
+       "Systolic BP": "70-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "70ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "140ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "12 Months (1 year) - 11kg",
+  "age": "12 Months (1 year)",
+  "weight_kg": 11,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "4mm",
+       "ETT length": "11cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2 (6-12ml inflation)",
+       "IGT size": "6FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Infant",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "50 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000) IV/IO",
+        "route": "IV/IO",
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.11",
+        "volume": "1.1mls",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "55mg",
+        "volume": "1.1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "550mg",
+        "volume": "1.1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "11mMol",
+        "volume": "11ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "220ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "30-45/min",
+       "Heart Rate": "100-160/min",
+       "Systolic BP": "70-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "110ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "220ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "2 Years - 13kg",
+  "age": "2 Years",
+  "weight_kg": 13,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "4mm",
+       "ETT length": "12cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2 (6-12ml inflation)",
+       "IGT size": "6FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Child",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "70 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.13mg",
+        "volume": "1.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "65mg",
+        "volume": "1.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "650mg",
+        "volume": "1.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "13mMol",
+        "volume": "13ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "260ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-40/min",
+       "Heart Rate": "90-140/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "130ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "260ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "3 Years - 15kg",
+  "age": "3 Years",
+  "weight_kg": 15,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "4mm",
+       "ETT length": "13cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2 (6-12ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Child",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "70 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.15mg",
+        "volume": "1.5mls",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "75mg",
+        "volume": "1.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "750mg",
+        "volume": "1.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "15mMol",
+        "volume": "15ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "300ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-40/min",
+       "Heart Rate": "90-140/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "150ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "300ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "4 Years - 17kg",
+  "age": "4 Years",
+  "weight_kg": 17,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "5mm",
+       "ETT length": "14cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2 (6-12ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Child",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "70 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.17mg",
+        "volume": "1.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "85mg",
+        "volume": "1.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "850mg",
+        "volume": "1.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "17mMol",
+        "volume": "17ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "340ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-40/min",
+       "Heart Rate": "90-140/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "170ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "340ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "5 Years - 19kg",
+  "age": "5 Years",
+  "weight_kg": 19,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "5mm",
+       "ETT length": "14.5cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2 (6-12ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Child",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "85 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.19mg",
+        "volume": "1.9ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "95mg",
+        "volume": "1.9ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "950mg",
+        "volume": "1.9ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "19mMol",
+        "volume": "19ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "380ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-40/min",
+       "Heart Rate": "90-140/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "190ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "380ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "6 Years - 21kg",
+  "age": "6 Years",
+  "weight_kg": 21,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "5mm",
+       "ETT length": "15cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2.5 (10-20ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Adult",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "85 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.21mg",
+        "volume": "2.1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "105mg",
+        "volume": "2.1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "1.05g",
+        "volume": "2.1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "21mMol",
+        "volume": "21ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "420ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-30/min",
+       "Heart Rate": "80-120/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "210ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "420ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "7 Years - 23kg",
+  "age": "7 Years",
+  "weight_kg": 23,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "5mm",
+       "ETT length": "15.5cm at the lips",
+       "Airtraq": "Purple",
+       "LMA size": "2.5 (10-20ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Adult",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "100 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.23mg",
+        "volume": "2.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "115mg",
+        "volume": "2.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "1.15g",
+        "volume": "2.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "23mMol",
+        "volume": "23ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "460ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-30/min",
+       "Heart Rate": "80-120/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "230ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "460ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "8 Years - 25kg",
+  "age": "8 Years",
+  "weight_kg": 25,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "6mm",
+       "ETT length": "16cm at the lips",
+       "Airtraq": "Green",
+       "LMA size": "2.5 (10-20ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Adult",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "100 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.25mg",
+        "volume": "2.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "125mg",
+        "volume": "2.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "1.25g",
+        "volume": "2.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "25mMol",
+        "volume": "25ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "500ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-30/min",
+       "Heart Rate": "80-120/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "250ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "500ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "9 Years - 27kg",
+  "age": "9 Years",
+  "weight_kg": 27,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "6mm",
+       "ETT length": "16.5cm at the lips",
+       "Airtraq": "Green",
+       "LMA size": "2.5 (10-20ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Adult",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "120 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 15:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.27mg",
+        "volume": "2.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "135mg",
+        "volume": "2.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "1.35g",
+        "volume": "2.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "27mMol",
+        "volume": "27ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "540ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-30/min",
+       "Heart Rate": "80-120/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "270ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "540ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "10 Years - 30kg",
+  "age": "10 Years",
+  "weight_kg": 30,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "6mm",
+       "ETT length": "17cm at the lips",
+       "Airtraq": "Green",
+       "LMA size": "2.5 (10-20ml inflation)",
+       "IGT size": "10FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Adult",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "120 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.3mg",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "150mg",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "1.5g",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "30 mMol",
+        "volume": "30ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "600ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-30/min",
+       "Heart Rate": "80-120/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "300ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "600ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "11 Years - 33kg",
+  "age": "11 Years",
+  "weight_kg": 33,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "6mm",
+       "ETT length": "17.5cm at the lips",
+       "Airtraq": "Green",
+       "LMA size": "3 (15-30ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Needle cricothyroidotomy"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Breathing",
+      "fields": {
+       "Resuscitation Bag": "Adult",
+       "Facemask Size": "Patient size dependent"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "150 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "0.33mg",
+        "volume": "3.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "165mg",
+        "volume": "3.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "1.65g",
+        "volume": "3.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "33mMol",
+        "volume": "33ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Normal Saline",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": null,
+        "volume": "660ml",
+        "other": [
+         "Normal Saline:"
+        ],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "20-30/min",
+       "Heart Rate": "80-120/min",
+       "Systolic BP": "90-110mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Fluid Resuscitation",
+    "groups": [
+     {
+      "name": "Fluid Resuscitation",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Standard / Burns",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "10ml/kg",
+        "volume": "330ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sepsis / Anaphylaxis",
+        "route": null,
+        "formula": null,
+        "preparation": null,
+        "dose": "20ml/kg",
+        "volume": "660ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "≥ 12 Years - 35kg",
+  "age": "≥ 12 Years",
+  "weight_kg": 35,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "ETT length": "18-21cm at the teeth",
+       "Airtraq": "Green",
+       "LMA size": "3 (15-30ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min - 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": [
+       "Shock: 200 joules"
+      ]
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "35mMol",
+        "volume": "35ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Normal Vital Signs",
+    "groups": [
+     {
+      "name": "Normal Vital Signs",
+      "fields": {
+       "Respiratory Rate": "15-20/min",
+       "Heart Rate": "60-100/min",
+       "Systolic BP": "90-120mmHg"
+      },
+      "drugs": [],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "35mg",
+        "volume": "3.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "52.5mg",
+        "volume": "1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "1.75mg",
+        "volume": "1.75ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 40kg",
+  "age": "Adult",
+  "weight_kg": 40,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "ETT length": "18-21cm at the teeth",
+       "Airtraq": "Green",
+       "LMA size": "3 (15-30ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "40mMol",
+        "volume": "40ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "40mg",
+        "volume": "4ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": null,
+        "preparation": "150mg in 3mls",
+        "dose": "60mg",
+        "volume": "1.2ml",
+        "other": [
+         "Suxamethonium:"
+        ],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "2mg",
+        "volume": "2ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 45kg",
+  "age": "Adult",
+  "weight_kg": 45,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "ETT length": "18-21cm at the teeth",
+       "Airtraq": "Green",
+       "LMA size": "3 (15-30ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "one third of chest depth"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": null,
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [
+         "Volume: 6ml"
+        ],
+        "label_quirk": true
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "45mMol",
+        "volume": "45ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "45mg",
+        "volume": "4.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "67.5mg",
+        "volume": "1.3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "2.25mg",
+        "volume": "2.25ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 50kg",
+  "age": "Adult",
+  "weight_kg": 50,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "3 (15-30ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "50mMol",
+        "volume": "50ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "50mg",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "75mg",
+        "volume": "1.5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "2.5mg",
+        "volume": "2.5ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 60kg",
+  "age": "Adult",
+  "weight_kg": 60,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "4 (30-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": null,
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "60mMol",
+        "volume": "60ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "60mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "90mg",
+        "volume": "1.8ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "3mg",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 70kg",
+  "age": "Adult",
+  "weight_kg": 70,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "4 (30-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": null,
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [
+         "Adrenaline (1:10,000):"
+        ],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "70mMol",
+        "volume": "70ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "70mg",
+        "volume": "7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "105mg",
+        "volume": "2.1ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "3.5mg",
+        "volume": "3.5ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 80kg",
+  "age": "Adult",
+  "weight_kg": 80,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "5 (30-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "80mMol",
+        "volume": "80ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "80mg",
+        "volume": "8ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "120mg",
+        "volume": "2.4ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "4mg",
+        "volume": "4ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 90kg",
+  "age": "Adult",
+  "weight_kg": 90,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "5 (3-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "90mMol",
+        "volume": "90ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "90mg",
+        "volume": "9ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "135mg",
+        "volume": "2.7ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "4.5mg",
+        "volume": "4.5ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 100kg",
+  "age": "Adult",
+  "weight_kg": 100,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "5 (30-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "100mMol",
+        "volume": "100ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "100mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "150mg",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "5mg",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 110kg",
+  "age": "Adult",
+  "weight_kg": 110,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "5 (30-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone",
+        "route": null,
+        "formula": null,
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [
+         "Amiodarone:"
+        ],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "110mMol",
+        "volume": "110ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "110mg",
+        "volume": "11ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "150mg",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "5.5mg",
+        "volume": "5.5ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "band": "Adult - 120kg",
+  "age": "Adult",
+  "weight_kg": 120,
+  "sections": [
+   {
+    "heading": "Cardiac Arrest",
+    "groups": [
+     {
+      "name": "Airway",
+      "fields": {
+       "ETT size": "7mm",
+       "Airtraq": "Green",
+       "LMA size": "5 (30-45ml inflation)",
+       "IGT size": "14FG",
+       "FONA": "Surgical airway"
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Circulation",
+      "fields": {
+       "Shock": "200 joules",
+       "CPR": "one third of chest depth",
+       "CPR notes": [
+        "Rate: 100/min – 30:2"
+       ]
+      },
+      "drugs": [],
+      "notes": []
+     },
+     {
+      "name": "Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Adrenaline (1:10,000)",
+        "route": null,
+        "formula": "0.01mg/kg",
+        "preparation": "1mg in 10mls",
+        "dose": "1mg",
+        "volume": "10ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Amiodarone (not diluted)",
+        "route": null,
+        "formula": "5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "300mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Magnesium (not diluted)",
+        "route": null,
+        "formula": "50mg/kg",
+        "preparation": "2.5g in 5mls",
+        "dose": "2.5g",
+        "volume": "5ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Sodium Bicarbonate",
+        "route": null,
+        "formula": "1mMol/kg",
+        "preparation": "100mMol/kg in 100mls",
+        "dose": "120mMol",
+        "volume": "120ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   },
+   {
+    "heading": "Advanced Airway Medications",
+    "groups": [
+     {
+      "name": "Advanced Airway Medications",
+      "fields": {},
+      "drugs": [
+       {
+        "drug": "Ketamine (diluted in 20ml)",
+        "route": null,
+        "formula": "1mg/kg",
+        "preparation": "200mg in 20mls",
+        "dose": "120mg",
+        "volume": "12ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Suxamethonium",
+        "route": null,
+        "formula": "1.5mg/kg",
+        "preparation": "150mg in 3mls",
+        "dose": "150mg",
+        "volume": "3ml",
+        "other": [],
+        "label_quirk": false
+       },
+       {
+        "drug": "Midazolam (dilute to 1mg/ml)",
+        "route": null,
+        "formula": "0.05mg/kg",
+        "preparation": "5mg in 5mls",
+        "dose": "6mg",
+        "volume": "6ml",
+        "other": [],
+        "label_quirk": false
+       }
+      ],
+      "notes": []
+     }
+    ]
+   }
+  ]
+ }
+]
