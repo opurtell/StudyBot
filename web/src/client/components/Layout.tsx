@@ -1,3 +1,4 @@
+import { createContext, useContext, useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router";
 import { useSession } from "../lib/session";
 import { FirstVisitNotice } from "./FirstVisitNotice";
@@ -18,15 +19,52 @@ const navClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? "bg-highlight text-on-highlight" : "text-on-surface-variant hover:bg-surface-container"
   }`;
 
+const FocusContext = createContext<(on: boolean) => void>(() => {});
+
+export function useFocusMode(on: boolean) {
+  const setFocus = useContext(FocusContext);
+  useEffect(() => {
+    setFocus(on);
+    return () => setFocus(false);
+  }, [on, setFocus]);
+}
+
+function useVisibleHeight(on: boolean) {
+  useEffect(() => {
+    const vv = window.visualViewport;
+    const root = document.documentElement;
+    if (!on || !vv) return;
+    const update = () => {
+      root.style.setProperty("--visible-height", `${vv.height}px`);
+      if (vv.height < window.innerHeight) window.scrollTo(0, 0);
+    };
+    update();
+    vv.addEventListener("resize", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      root.style.removeProperty("--visible-height");
+    };
+  }, [on]);
+}
+
 export function Layout() {
   const { me, loading } = useSession();
+  const [focus, setFocus] = useState(false);
+  useVisibleHeight(focus);
   return (
-    <div className="flex min-h-dvh flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] sm:pb-0">
+    <FocusContext.Provider value={setFocus}>
+    <div
+      className={
+        focus
+          ? "flex h-[var(--visible-height,100dvh)] flex-col overflow-hidden"
+          : "flex min-h-dvh flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] sm:pb-0"
+      }
+    >
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-30 focus:bg-surface-container-lowest focus:p-2">
         Skip to content
       </a>
-      <header className="sticky top-0 z-20 bg-surface sm:bg-surface/80 sm:backdrop-blur">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3">
+      <header className={`sticky top-0 z-20 bg-surface sm:bg-surface/80 sm:backdrop-blur ${focus ? "hidden flex-none lg:block" : ""}`}>
+        <div className={`mx-auto flex items-center ${focus ? "max-w-6xl lg:px-8" : "max-w-3xl"} justify-between gap-3 px-4 py-3`}>
           <Link to="/" className="font-headline text-xl font-semibold text-primary sm:text-2xl">
             Clinical Recall
           </Link>
@@ -47,11 +85,18 @@ export function Layout() {
           )}
         </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-3xl flex-1 px-4 py-6 sm:py-8">
+      <main
+        id="main"
+        className={
+          focus
+            ? "mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col lg:px-4 lg:pb-5"
+            : "mx-auto w-full max-w-3xl flex-1 px-4 py-6 sm:py-8"
+        }
+      >
         <FirstVisitNotice />
         <Outlet />
       </main>
-      <footer className="bg-surface-container-low">
+      <footer className={`bg-surface-container-low ${focus ? "hidden" : ""}`}>
         <div className="mx-auto max-w-3xl space-y-2 px-4 py-6 text-xs leading-relaxed text-on-surface-variant">
           <p>{DISCLAIMER}</p>
           <p>
@@ -69,5 +114,6 @@ export function Layout() {
         </div>
       </footer>
     </div>
+    </FocusContext.Provider>
   );
 }

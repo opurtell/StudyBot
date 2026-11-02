@@ -94,3 +94,21 @@
     text-decoration: underline;
   }
 }
+
+@layer components {
+  .ruled {
+    padding: 0.125rem 0.125rem 0;
+    font-size: 1.0625rem;
+    line-height: 2rem;
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0 calc(2rem - 1px),
+      color-mix(in srgb, var(--color-primary) 18%, transparent) calc(2rem - 1px) 2rem
+    );
+    background-attachment: local;
+  }
+  textarea.ruled:focus {
+    background-color: color-mix(in srgb, var(--color-highlight) 8%, transparent);
+  }
+}

@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Link, useSearchParams } from "react-router";
-import { Feedback, SelfGrade } from "../components/Feedback";
+import { documentPath } from "../components/Feedback";
+import { useFocusMode } from "../components/Layout";
+import { correctionOptions, Kbd, MarkPanel, QuizTimer, ReportDialog, SCORES, SelfMark, ShortcutHelp, SourcePanel } from "../components/QuizParts";
 import { ScopePicker } from "../components/ScopePicker";
 import { TopicPicker } from "../components/TopicPicker";
 import {
@@ -11,7 +13,6 @@ import {
   type Quota,
   type QuizFilters,
   type QuizQuestion,
-  type ReportReason,
   type Reveal,
   type Score,
   type Topic,
@@ -21,6 +22,7 @@ import { usePreferences } from "../lib/preferences";
 import { buildGroups, EVERYTHING, poolsLabel, resolveSelection, selectionFromLink, type Selection } from "../lib/quizSelection";
 import { QUIZ_SCOPE_OPTIONS, quizScopeName, useQuizScope, viewFor } from "../lib/scopeView";
 import { useSession } from "../lib/session";
+import { useShortcuts } from "../lib/useShortcuts";
 
 const SEEN_KEY = "quiz-seen";
 const MAX_SEEN = 400;
@@ -30,14 +32,6 @@ const DIFFICULTIES: { value: Difficulty | ""; label: string }[] = [
   { value: "easy", label: "Easy" },
   { value: "medium", label: "Medium" },
   { value: "hard", label: "Hard" },
-];
-
-const REASONS: { value: ReportReason; label: string }[] = [
-  { value: "incorrect", label: "Clinically wrong" },
-  { value: "not_in_source", label: "Answer isn't in the guideline" },
-  { value: "out_of_scope", label: "Outside my scope of practice" },
-  { value: "unclear", label: "Unclear or badly worded" },
-  { value: "other", label: "Something else" },
 ];
 
 function loadSeen(): string[] {
@@ -94,6 +88,20 @@ export function Quiz() {
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const started = useRef(Date.now());
+  const [startedAt, setStartedAt] = useState(() => Date.now());
+  const [stoppedAt, setStoppedAt] = useState<number | null>(null);
+  const [corrected, setCorrected] = useState<Score | null>(null);
+  const [reportOpen, setReportOpen] = useState(false);
+  const [reported, setReported] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [tab, setTab] = useState<"marking" | "source">("marking");
+  const [count, setCount] = useState(0);
+  const closeReport = useCallback(() => setReportOpen(false), []);
+  const closeHelp = useCallback(() => setHelpOpen(false), []);
+  const answerBox = useRef<HTMLTextAreaElement>(null);
+  const nextButton = useRef<HTMLButtonElement>(null);
+  useFocusMode(!pickerOpen);
 
   useEffect(() => {
     let live = true;
@@ -162,6 +170,14 @@ export function Quiz() {
     setSelfScore(null);
     guestAttempt.current = null;
     started.current = Date.now();
+    setStartedAt(started.current);
+    setStoppedAt(null);
+    setCorrected(null);
+    setReportOpen(false);
+    setReported(false);
+    setMenuOpen(false);
+    setTab("marking");
+    if (next) setCount((c) => c + 1);
     if (next && !signedIn) rememberSeen(next.id);
   }
 
@@ -203,6 +219,7 @@ export function Quiz() {
       const res = await api.reveal(question.id, questionView, typed);
       setSubmitted(typed);
       setResult(res);
+      setStoppedAt(Date.now());
       if (!signedIn) {
         guestAttempt.current = recordGuestAttempt({
           questionId: question.id,
@@ -226,14 +243,22 @@ export function Quiz() {
       setSelfScore(score);
     });
 
-  const mark = (e: FormEvent) => {
-    e.preventDefault();
+  const correct = (score: Score) =>
+    run("grade", async () => {
+      if (!result?.attemptId) return;
+      await api.selfGrade(result.attemptId, score);
+      setCorrected(score);
+    });
+
+  const mark = (e?: FormEvent) => {
+    e?.preventDefault();
     return run("mark", async () => {
       if (!question) return;
       try {
         const res = await api.mark(question.id, questionView, answer, Date.now() - started.current);
         setSubmitted(answer.trim());
         setResult(res);
+        setStoppedAt(Date.now());
         setQuota(res.quota);
         void refresh();
       } catch (err) {
@@ -244,17 +269,91 @@ export function Quiz() {
   };
 
   const marksLeft = quota?.marking.remaining ?? 0;
+  const marked = result && "correctElements" in result ? result : null;
+  const answered = result !== null;
+  const canSelfMark = result !== null && !marked && (signedIn ? Boolean(result.attemptId) : true);
+  const canCorrect = (score: Score) => Boolean(marked && signedIn && marked.attemptId && !corrected && correctionOptions(marked.score).includes(score));
+  const dialogOpen = reportOpen || helpOpen;
+  const inQuiz = !pickerOpen;
+  const answering = inQuiz && question !== null && !answered;
+  const startDisabled = busy !== null || (linkApplied && groups.length > 0 && resolved.inPlay.length === 0);
+  const pickLabel = pickCount > 0 ? `${pickCount} ${selection.mode === "only" ? "picked" : "left out"}` : "";
 
-  return (
-    <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="font-headline text-3xl font-semibold">Quiz</h1>
-        <p className="text-on-surface-variant">
-          Questions come from the ACTAS guidelines. Answer from memory, then check against the source.
-        </p>
-      </header>
+  function end() {
+    show(null);
+    setExhausted(false);
+    setError(null);
+    setHelpOpen(false);
+    setCount(0);
+    setPickerOpen(true);
+  }
 
-      {pickerOpen ? (
+  function openGuideline() {
+    if (!question) return;
+    window.open(documentPath(result?.documentId ?? question.documentId), "_blank", "noopener");
+  }
+
+  function submit() {
+    if (busy !== null || !question) return;
+    if (signedIn && answer.trim() && marksLeft > 0) void mark();
+    else void reveal();
+  }
+
+  function onAnswerKey(e: KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key !== "Enter" || e.shiftKey || e.nativeEvent.isComposing) return;
+    if (!window.matchMedia?.("(pointer: fine)").matches) return;
+    e.preventDefault();
+    submit();
+  }
+
+  useEffect(() => {
+    if (question && !result && window.matchMedia?.("(pointer: fine)").matches) answerBox.current?.focus({ preventScroll: true });
+  }, [question, result]);
+
+  useEffect(() => {
+    if (result) nextButton.current?.focus({ preventScroll: true });
+  }, [result]);
+
+  useShortcuts([
+    {
+      key: "Escape",
+      enabled: inQuiz && !dialogOpen,
+      allowInEditable: true,
+      action: () => (menuOpen ? setMenuOpen(false) : end()),
+    },
+    { key: "?", enabled: inQuiz && !dialogOpen, action: () => setHelpOpen(true) },
+    { key: "r", alt: true, enabled: answering && busy === null && !dialogOpen, allowInEditable: true, action: () => void reveal() },
+    { key: "s", alt: true, enabled: answering && busy === null && !dialogOpen, allowInEditable: true, action: () => void nextQuestion() },
+    { key: "Enter", enabled: inQuiz && answered && busy === null && !dialogOpen, action: () => void nextQuestion() },
+    {
+      key: "Enter",
+      enabled: inQuiz && exhausted && !question && busy === null && !dialogOpen,
+      action: () => (canGenerate && quota ? void generate() : void nextQuestion(true)),
+    },
+    { key: "Enter", enabled: pickerOpen && !startDisabled, action: () => void nextQuestion() },
+    { key: "g", enabled: inQuiz && answered && !dialogOpen, action: openGuideline },
+    { key: "f", enabled: inQuiz && answered && !reported && !dialogOpen, action: () => setReportOpen(true) },
+    ...SCORES.map((score, i) => ({
+      key: String(i + 1),
+      enabled: inQuiz && !dialogOpen && busy === null && (canSelfMark || canCorrect(score)),
+      action: () => (canSelfMark ? void grade(score) : void correct(score)),
+    })),
+  ]);
+
+  if (pickerOpen) {
+    return (
+      <div className="space-y-6">
+        <header className="space-y-2">
+          <h1 className="font-headline text-3xl font-semibold">Quiz</h1>
+          <p className="text-on-surface-variant">
+            Questions come from the ACTAS guidelines. Answer from memory, then check against the source.
+          </p>
+        </header>
+        {error && (
+          <p role="alert" className="rounded-sm bg-error-container p-3 text-sm text-error">
+            {error}
+          </p>
+        )}
         <TopicPicker
           groups={groups}
           allGroups={allGroups}
@@ -299,7 +398,8 @@ export function Quiz() {
               <button
                 type="button"
                 onClick={() => void nextQuestion()}
-                disabled={busy !== null || (linkApplied && groups.length > 0 && resolved.inPlay.length === 0)}
+                disabled={startDisabled}
+                aria-keyshortcuts="Enter"
                 className="min-h-12 w-full rounded-sm bg-primary px-5 text-base font-semibold text-on-primary disabled:opacity-50"
               >
                 {busy === "next" ? "Finding a question…" : "Start"}
@@ -307,37 +407,128 @@ export function Quiz() {
             ),
           }}
         />
-      ) : (
-        <section aria-label="Quiz topics" className="flex flex-wrap items-center gap-3 rounded-sm bg-surface-container-low p-3">
-          <div className="min-w-0 flex-1">
-            <p className="font-headline text-lg font-semibold text-primary">{poolsLabel(selection)}</p>
-            <p className="text-xs text-on-surface-variant">
-              {scopeLabel} · {difficultyLabel}
-              {pickCount > 0 && ` · ${pickCount} ${selection.mode === "only" ? "picked" : "left out"}`}
-            </p>
-          </div>
-          <button type="button" onClick={() => setPickerOpen(true)} className="min-h-10 rounded-sm px-3 text-sm font-semibold text-primary underline">
-            Change topics
-          </button>
-          <button
-            type="button"
-            onClick={() => void nextQuestion()}
-            disabled={busy !== null}
-            className="min-h-10 rounded-sm bg-primary px-4 text-sm font-semibold text-on-primary disabled:opacity-50"
-          >
-            {busy === "next" ? "Finding a question…" : "Next question"}
-          </button>
-        </section>
-      )}
+      </div>
+    );
+  }
+
+  const sidePhone = marked ? (tab === "marking" ? "flex [grid-area:work]" : "hidden") : canSelfMark ? "flex [grid-area:side]" : "hidden";
+  const workPhone = marked && tab === "marking" ? "hidden" : "flex";
+  const disclaimer = (
+    <p className="text-xs text-on-surface-variant">
+      {marked ? "AI marking can be wrong. " : ""}Study aid, not clinical guidance: check the current CMG before you rely on anything here.
+    </p>
+  );
+
+  return (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <h1 className="sr-only">Quiz</h1>
+
+      <div className="relative flex flex-none items-center gap-1 bg-surface-container-low px-2 pt-[calc(0.5rem+env(safe-area-inset-top))] pb-2 lg:hidden">
+        <button type="button" aria-label="End session" onClick={end} className="inline-flex size-11 items-center justify-center rounded-sm hover:bg-surface-container">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+        <div className="min-w-0 flex-1 text-center">
+          <p className="truncate font-headline text-lg font-semibold text-primary">
+            {poolsLabel(selection)}
+            {pickLabel && ` · ${pickLabel}`}
+          </p>
+          <p className="font-mono text-xs text-on-surface-variant">
+            {question && (
+              <>
+                Q{count} · <QuizTimer startedAt={startedAt} stoppedAt={stoppedAt} /> ·{" "}
+              </>
+            )}
+            {scopeLabel}
+          </p>
+        </div>
+        <button
+          type="button"
+          aria-label="More options"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+          className="inline-flex size-11 items-center justify-center rounded-sm hover:bg-surface-container"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <circle cx="5" cy="12" r="1.8" />
+            <circle cx="12" cy="12" r="1.8" />
+            <circle cx="19" cy="12" r="1.8" />
+          </svg>
+        </button>
+        {menuOpen && (
+          <>
+            <div className="fixed inset-0 z-20" onClick={() => setMenuOpen(false)} aria-hidden="true" />
+            <div className="absolute top-full right-2 z-30 grid min-w-52 rounded-sm bg-surface-container-lowest p-1 shadow-lg">
+              <button type="button" onClick={end} className="min-h-11 rounded-sm px-3 text-left hover:bg-surface-container">
+                Change topics
+              </button>
+              {answered && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    openGuideline();
+                  }}
+                  className="min-h-11 rounded-sm px-3 text-left hover:bg-surface-container"
+                >
+                  Read guideline
+                </button>
+              )}
+              {question && !reported && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setReportOpen(true);
+                  }}
+                  className="min-h-11 rounded-sm px-3 text-left hover:bg-surface-container"
+                >
+                  Report a problem with this question
+                </button>
+              )}
+            </div>
+          </>
+        )}
+      </div>
+
+      <div className="hidden flex-none items-center gap-4 rounded-sm bg-surface-container-low py-2 pr-2 pl-4 lg:flex">
+        <div className="min-w-0 flex-1">
+          <p className="font-headline text-lg font-semibold text-primary">
+            {poolsLabel(selection)}
+            {pickLabel && <span className="ml-2 font-body text-xs font-normal text-on-surface-variant">{pickLabel}</span>}
+          </p>
+          <p className="text-xs text-on-surface-variant">
+            {scopeLabel} · {difficultyLabel}
+          </p>
+        </div>
+        <button type="button" onClick={end} className="min-h-10 rounded-sm px-3 text-sm font-semibold text-primary underline">
+          Change topics
+        </button>
+        {question && (
+          <p className="flex gap-3 font-mono text-sm text-on-surface-variant">
+            <span>Question {count}</span>
+            <QuizTimer startedAt={startedAt} stoppedAt={stoppedAt} />
+          </p>
+        )}
+        <button type="button" onClick={end} aria-keyshortcuts="Escape" className="min-h-10 rounded-sm bg-surface-container-high px-4 text-sm font-semibold">
+          End
+          <Kbd>Esc</Kbd>
+        </button>
+      </div>
 
       {error && (
-        <p role="alert" className="rounded-sm bg-error-container p-3 text-sm text-error">
+        <p role="alert" className="mx-4 mt-3 flex-none rounded-sm bg-error-container p-3 text-sm text-error lg:mx-0">
           {error}
         </p>
       )}
 
-      {exhausted && !question && (
-        <section aria-labelledby="done-heading" className="space-y-3 rounded-sm bg-surface-container-low p-5">
+      {!question && !exhausted && (
+        <p className="m-auto text-on-surface-variant">{busy ? "Finding a question…" : "No question loaded."}</p>
+      )}
+
+      {!question && exhausted && (
+        <section aria-labelledby="done-heading" className="m-4 space-y-3 rounded-sm bg-surface-container-low p-5 lg:mx-0 lg:mt-5">
           <h2 id="done-heading" className="font-headline text-xl font-semibold">
             You've seen every library question for these settings
           </h2>
@@ -347,18 +538,22 @@ export function Quiz() {
                 type="button"
                 onClick={() => void generate()}
                 disabled={busy !== null}
-                className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-on-primary disabled:opacity-50"
+                className="min-h-10 rounded-sm bg-primary px-4 text-sm font-semibold text-on-primary disabled:opacity-50"
               >
                 {busy === "generate" ? "Writing a question…" : `Generate a new question (${quota.generations.remaining} left this month)`}
+                <Kbd light>↵</Kbd>
               </button>
             )}
             <button
               type="button"
               onClick={() => void nextQuestion(true)}
               disabled={busy !== null}
-              className="rounded-sm bg-surface-container-high px-4 py-2 text-sm font-semibold disabled:opacity-50"
+              className="min-h-10 rounded-sm bg-surface-container-high px-4 text-sm font-semibold disabled:opacity-50"
             >
               Go round again
+            </button>
+            <button type="button" onClick={end} className="min-h-10 rounded-sm px-3 text-sm font-semibold text-primary underline">
+              Change topics
             </button>
           </div>
           {!signedIn && (
@@ -373,163 +568,254 @@ export function Quiz() {
       )}
 
       {question && (
-        <article aria-labelledby="question-heading" className="space-y-4 rounded-sm bg-surface-container-lowest p-5">
-          <p className="font-mono text-xs uppercase tracking-widest text-on-surface-variant">
-            {question.origin === "live" ? "Newly generated" : "From the question library"} · {question.difficulty} ·{" "}
-            {question.documentTitle}
-          </p>
-          <h2 id="question-heading" className="font-headline text-xl font-semibold leading-snug">
-            {question.text}
-          </h2>
+        <article
+          aria-labelledby="question-heading"
+          className="grid min-h-0 flex-1 grid-rows-[auto_auto_minmax(0,1fr)_auto_auto] gap-x-6 px-4 pt-4 [grid-template-areas:'q'_'tabs'_'work'_'side'_'act'] lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:grid-rows-[auto_minmax(0,1fr)_auto] lg:px-0 lg:pt-5 lg:[grid-template-areas:'q_side'_'work_side'_'act_side']"
+        >
+          <div className="[grid-area:q]">
+            <p className="mb-2 font-mono text-xs uppercase tracking-widest text-on-surface-variant">
+              {question.origin === "live" ? "Newly generated" : "From the question library"} · {question.difficulty} · {question.documentTitle}
+            </p>
+            <h2
+              id="question-heading"
+              className={`mb-3 font-headline font-semibold text-pretty lg:mb-5 ${question.text.length > 220 ? "text-lg leading-snug lg:text-2xl" : "text-xl leading-snug lg:text-[1.75rem] lg:leading-tight"}`}
+            >
+              {question.text}
+            </h2>
+          </div>
 
-          {!result && (
-            <form onSubmit={(e) => void mark(e)} className="space-y-3">
-              <label className="block text-sm">
-                <span className="mb-1 block font-medium">Your answer</span>
+          {marked && (
+            <div role="group" aria-label="Show" className="mb-3 grid grid-cols-2 rounded-sm bg-surface-container-high p-1 [grid-area:tabs] lg:hidden">
+              {(["marking", "source"] as const).map((t) => (
+                <button
+                  key={t}
+                  type="button"
+                  aria-pressed={tab === t}
+                  onClick={() => setTab(t)}
+                  className={`min-h-10 rounded-sm text-sm font-semibold ${tab === t ? "bg-surface-container-lowest text-on-surface" : "text-on-surface-variant"}`}
+                >
+                  {t === "marking" ? "Marking" : "Source"}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className={`min-h-0 flex-col [grid-area:work] lg:flex ${workPhone}`}>
+            {!answered ? (
+              <>
+                <div className="mb-1 flex justify-between text-xs uppercase tracking-widest text-on-surface-variant">
+                  <label htmlFor="quiz-answer">Your answer</label>
+                  <span aria-hidden="true" className="hidden normal-case tracking-normal [@media(pointer:fine)]:inline">
+                    Shift + Enter for a new line
+                  </span>
+                </div>
                 <textarea
+                  id="quiz-answer"
+                  ref={answerBox}
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
-                  rows={5}
+                  onKeyDown={onAnswerKey}
+                  readOnly={busy === "mark"}
                   maxLength={4000}
-                  className="w-full rounded-sm bg-surface-container-low p-2"
+                  aria-keyshortcuts="Enter"
+                  placeholder="Answer from memory…"
+                  className="ruled min-h-24 w-full flex-1 resize-none outline-none read-only:text-on-surface-variant"
                 />
-              </label>
-              <div className="flex flex-wrap items-center gap-2">
+              </>
+            ) : (
+              <>
+                <p className="mb-1 text-xs uppercase tracking-widest text-on-surface-variant">Your answer</p>
+                <div className="ruled mb-3 max-h-[30%] flex-none overflow-auto whitespace-pre-wrap text-on-surface-variant">
+                  {submitted || "No answer typed."}
+                </div>
+                <SourcePanel
+                  sourceText={result.sourceText}
+                  sourceQuote={marked?.sourceQuote}
+                  citation={result.citation}
+                  documentId={result.documentId}
+                  documentTitle={result.documentTitle}
+                />
+              </>
+            )}
+          </div>
+
+          <aside aria-label="Marking" className={`min-h-0 flex-col gap-2 overflow-auto pb-3 lg:flex lg:pb-0 lg:[grid-area:side] ${sidePhone}`}>
+            {busy === "mark" ? (
+              <div className="space-y-3 rounded-sm bg-surface-container-low p-5" role="status">
+                <p className="text-sm font-semibold">Marking your answer…</p>
+                <div className="space-y-2" aria-hidden="true">
+                  {["w-11/12", "w-3/4", "w-5/6", "w-3/5"].map((w) => (
+                    <div key={w} className={`h-3 animate-pulse rounded-sm bg-surface-container-high motion-reduce:animate-none ${w}`} />
+                  ))}
+                </div>
+              </div>
+            ) : marked ? (
+              <>
+                <div className="rounded-sm bg-surface-container-low p-4 lg:p-5">
+                  <MarkPanel
+                    score={marked.score}
+                    corrected={corrected}
+                    summary={marked.feedbackSummary}
+                    correctElements={marked.correctElements}
+                    missingOrWrong={marked.missingOrWrong}
+                    onCorrect={signedIn && marked.attemptId ? (s) => void correct(s) : null}
+                    disabled={busy !== null}
+                  />
+                </div>
+                {disclaimer}
+              </>
+            ) : answered ? (
+              <>
+                <div className="space-y-2 rounded-sm bg-surface-container-low p-4 lg:p-5">
+                  {canSelfMark && <SelfMark value={selfScore} onChoose={(s) => void grade(s)} disabled={busy !== null} />}
+                  <p className="hidden text-sm text-on-surface-variant lg:block">
+                    Compare your answer with the guideline text. {canSelfMark ? "Your choice counts toward your progress." : ""}
+                  </p>
+                </div>
+                <div className="hidden lg:block">{disclaimer}</div>
+              </>
+            ) : (
+              <div className="flex flex-1 flex-col justify-center gap-3 rounded-sm p-6 outline-1 -outline-offset-1 outline-on-surface-variant/25 outline-dashed">
+                <h3 className="font-headline text-xl font-semibold text-primary">{signedIn ? "Your marking appears here" : "Mark yourself here"}</h3>
+                <p className="max-w-[40ch] text-on-surface-variant">
+                  Answer from memory first. The guideline text then opens under your answer
+                  {signedIn ? ", and the marking lands in this space." : " so you can compare and mark yourself."}
+                </p>
+                {!signedIn && (
+                  <p className="text-sm">
+                    <Link to="/sign-in" className="text-primary underline">
+                      Sign in
+                    </Link>{" "}
+                    for AI marking.
+                  </p>
+                )}
+                <p className="hidden text-sm text-on-surface-variant [@media(pointer:fine)]:block">
+                  Press <kbd className="rounded-sm bg-on-surface/10 px-1.5 font-mono text-xs">?</kbd> for keyboard shortcuts.
+                </p>
+              </div>
+            )}
+          </aside>
+
+          <div className="-mx-4 flex flex-none flex-wrap items-center gap-2 bg-surface px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-1px_0_rgb(0_0_0/0.08)] [grid-area:act] lg:mx-0 lg:px-0 lg:pb-0 lg:shadow-none">
+            {!answered ? (
+              <>
                 {signedIn && (
                   <button
-                    type="submit"
-                    disabled={busy !== null || !answer.trim() || marksLeft === 0}
-                    className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-on-primary disabled:opacity-50"
+                    type="button"
+                    onClick={() => void reveal()}
+                    disabled={busy !== null}
+                    aria-label={busy === "reveal" ? "Loading…" : "Reveal reference"}
+                    aria-keyshortcuts="Alt+R"
+                    className="min-h-12 flex-1 rounded-sm bg-surface-container-high px-4 text-sm font-semibold disabled:opacity-50 lg:min-h-10 lg:flex-none lg:bg-transparent lg:hover:bg-surface-container"
                   >
-                    {busy === "mark" ? "Marking…" : `Mark my answer (${marksLeft} left)`}
+                    {busy === "reveal" ? (
+                      "Loading…"
+                    ) : (
+                      <>
+                        Reveal<span className="max-sm:hidden"> reference</span>
+                      </>
+                    )}
+                    <Kbd>⌥R</Kbd>
                   </button>
                 )}
                 <button
                   type="button"
-                  onClick={() => void reveal()}
+                  onClick={() => void nextQuestion()}
                   disabled={busy !== null}
-                  className="rounded-sm bg-surface-container-high px-4 py-2 text-sm font-semibold disabled:opacity-50"
+                  aria-keyshortcuts="Alt+S"
+                  className="min-h-12 rounded-sm px-4 text-sm font-semibold hover:bg-surface-container disabled:opacity-50 lg:min-h-10"
                 >
-                  {busy === "reveal" ? "Loading…" : "Reveal reference"}
+                  Skip
+                  <Kbd>⌥S</Kbd>
                 </button>
-              </div>
-              {!signedIn && (
-                <p className="text-sm text-on-surface-variant">
-                  <Link to="/sign-in" className="underline">
-                    Sign in
-                  </Link>{" "}
-                  for AI marking. Guests check their own answer against the reference.
-                </p>
-              )}
-            </form>
-          )}
-
-          {result && (
-            <Feedback
-              answer={submitted}
-              data={{
-                marked: "correctElements" in result,
-                score: "correctElements" in result ? result.score : null,
-                ...("correctElements" in result
-                  ? {
-                      feedbackSummary: result.feedbackSummary,
-                      correctElements: result.correctElements,
-                      missingOrWrong: result.missingOrWrong,
-                      sourceQuote: result.sourceQuote,
-                    }
-                  : {}),
-                sourceText: result.sourceText,
-                citation: result.citation,
-                documentId: result.documentId,
-                documentTitle: result.documentTitle,
-              }}
-            />
-          )}
-          {result && !("correctElements" in result) && (signedIn ? Boolean(result.attemptId) : true) && (
-            <SelfGrade value={selfScore} onChoose={(s) => void grade(s)} disabled={busy !== null} />
-          )}
-
-          <ReportQuestion key={question.id} questionId={question.id} />
+                <span className="hidden flex-1 lg:block" />
+                {signedIn ? (
+                  <button
+                    type="button"
+                    onClick={() => void mark()}
+                    disabled={busy !== null || !answer.trim() || marksLeft === 0}
+                    aria-label={busy === "mark" ? "Marking…" : `Mark my answer (${marksLeft} left)`}
+                    aria-keyshortcuts="Enter"
+                    className="min-h-12 flex-[2] rounded-sm bg-primary px-4 text-sm font-semibold text-on-primary disabled:opacity-50 lg:min-h-10 lg:flex-none"
+                  >
+                    {busy === "mark" ? (
+                      "Marking…"
+                    ) : (
+                      <>
+                        Mark<span className="max-sm:hidden"> my answer</span> ({marksLeft} left)
+                      </>
+                    )}
+                    <Kbd light>↵</Kbd>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => void reveal()}
+                    disabled={busy !== null}
+                    aria-keyshortcuts="Enter"
+                    className="min-h-12 flex-[2] rounded-sm bg-primary px-4 text-sm font-semibold text-on-primary disabled:opacity-50 lg:min-h-10 lg:flex-none"
+                  >
+                    {busy === "reveal" ? "Loading…" : "Reveal reference"}
+                    <Kbd light>↵</Kbd>
+                  </button>
+                )}
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setReportOpen(true)}
+                  disabled={reported}
+                  aria-keyshortcuts="F"
+                  className="min-h-12 rounded-sm bg-surface-container-high px-4 text-sm font-semibold disabled:opacity-50 lg:min-h-10 lg:bg-transparent lg:hover:bg-surface-container"
+                >
+                  {reported ? "Reported" : "Report a problem"}
+                  <Kbd>F</Kbd>
+                </button>
+                <a
+                  href={documentPath(result.documentId)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-keyshortcuts="G"
+                  className="hidden min-h-10 items-center rounded-sm px-4 text-sm font-semibold hover:bg-surface-container lg:inline-flex"
+                >
+                  Read guideline
+                  <Kbd>G</Kbd>
+                </a>
+                <span className="hidden flex-1 lg:block" />
+                <button
+                  ref={nextButton}
+                  type="button"
+                  onClick={() => void nextQuestion()}
+                  disabled={busy !== null && busy !== "grade"}
+                  aria-keyshortcuts="Enter"
+                  className="min-h-12 flex-1 rounded-sm bg-primary px-5 text-sm font-semibold text-on-primary disabled:opacity-50 lg:min-h-10 lg:flex-none"
+                >
+                  {busy === "next" ? "Finding a question…" : "Next question"}
+                  <Kbd light>↵</Kbd>
+                </button>
+              </>
+            )}
+            {reported && (
+              <p role="status" className="w-full text-sm text-on-surface-variant">
+                Thanks. The question has been reported for review.
+              </p>
+            )}
+          </div>
         </article>
       )}
-    </div>
-  );
-}
 
-function ReportQuestion({ questionId }: { questionId: string }) {
-  const [open, setOpen] = useState(false);
-  const [reason, setReason] = useState<ReportReason | "">("");
-  const [detail, setDetail] = useState("");
-  const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
-  const [error, setError] = useState<string | null>(null);
-
-  if (state === "sent") {
-    return (
-      <p role="status" className="text-sm text-on-surface-variant">
-        Thanks. The question has been reported for review.
-      </p>
-    );
-  }
-  if (!open) {
-    return (
-      <button type="button" onClick={() => setOpen(true)} className="text-sm text-on-surface-variant underline">
-        Report a problem with this question
-      </button>
-    );
-  }
-
-  async function submit(e: FormEvent) {
-    e.preventDefault();
-    if (!reason) return;
-    setState("sending");
-    setError(null);
-    try {
-      await api.report(questionId, reason, detail);
-      setState("sent");
-    } catch (err) {
-      setError(message(err));
-      setState("idle");
-    }
-  }
-
-  return (
-    <form onSubmit={(e) => void submit(e)} className="space-y-3 rounded-sm bg-surface-container-low p-4">
-      <fieldset className="space-y-1">
-        <legend className="text-sm font-semibold">What's wrong?</legend>
-        {REASONS.map((r) => (
-          <label key={r.value} className="flex items-center gap-2 text-sm">
-            <input type="radio" name="reason" value={r.value} checked={reason === r.value} onChange={() => setReason(r.value)} />
-            {r.label}
-          </label>
-        ))}
-      </fieldset>
-      <label className="block text-sm">
-        <span className="mb-1 block">Details (optional)</span>
-        <textarea
-          value={detail}
-          onChange={(e) => setDetail(e.target.value)}
-          rows={2}
-          maxLength={1000}
-          className="w-full rounded-sm bg-surface-container-lowest p-2"
+      {reportOpen && question && (
+        <ReportDialog
+          questionId={question.id}
+          onClose={closeReport}
+          onSent={() => {
+            setReportOpen(false);
+            setReported(true);
+          }}
         />
-      </label>
-      {error && (
-        <p role="alert" className="text-sm text-error">
-          {error}
-        </p>
       )}
-      <div className="flex gap-2">
-        <button
-          type="submit"
-          disabled={!reason || state === "sending"}
-          className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-on-primary disabled:opacity-50"
-        >
-          {state === "sending" ? "Sending…" : "Send report"}
-        </button>
-        <button type="button" onClick={() => setOpen(false)} className="rounded-sm px-4 py-2 text-sm font-semibold">
-          Cancel
-        </button>
-      </div>
-    </form>
+      {helpOpen && <ShortcutHelp onClose={closeHelp} />}
+    </div>
   );
 }

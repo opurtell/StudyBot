@@ -31,7 +31,10 @@ const lists = {
 };
 
 beforeEach(() => localStorage.clear());
-afterEach(() => vi.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
 
 function body(init: RequestInit | undefined) {
   return JSON.parse(String(init?.body)) as Record<string, unknown>;
@@ -161,6 +164,85 @@ describe("quiz", () => {
     expect(await screen.findByText("Partly correct")).toBeInTheDocument();
     expect(screen.getByText("Units: mmol/L")).toBeInTheDocument();
     expect(screen.getByText("Give the units.")).toBeInTheDocument();
+  });
+
+  it("lets a signed-in user correct the AI's mark and see the quoted line highlighted", async () => {
+    const graded: Record<string, unknown>[] = [];
+    mockApi({
+      "GET /api/me": signedIn,
+      ...lists,
+      "POST /api/quiz/next": { question, exhausted: false, canGenerate: true, quota: signedIn.quota },
+      [`POST /api/quiz/questions/${question.id}/mark`]: {
+        ...reveal,
+        attemptId: "att-1",
+        score: "partial",
+        correctElements: ["Below 4"],
+        missingOrWrong: ["Units: mmol/L"],
+        sourceQuote: "BGL below 4 mmol/L",
+        feedbackSummary: "Give the units.",
+        quota: { ...signedIn.quota, marking: { used: 1, limit: 30, remaining: 29 } },
+      },
+      "POST /api/quiz/attempts/att-1/self-grade": (init: RequestInit | undefined) => {
+        graded.push(body(init));
+        return { body: { ok: true, score: "correct" } };
+      },
+    });
+    const { container } = renderAt("/quiz");
+    await userEvent.click(await screen.findByRole("button", { name: "Start" }));
+    await userEvent.type(await screen.findByRole("textbox", { name: "Your answer" }), "Below 4 mmol/L");
+    await userEvent.click(screen.getByRole("button", { name: /mark my answer/i }));
+    expect((await screen.findByText("BGL below 4 mmol/L")).tagName).toBe("MARK");
+    expect(screen.queryByRole("button", { name: "I was partly correct" })).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole("button", { name: "I was correct" }));
+    expect(await screen.findByText(/Mark changed to Correct/)).toBeInTheDocument();
+    expect(graded).toEqual([{ score: "correct" }]);
+    expect(await axeViolations(container)).toEqual([]);
+  });
+
+  it("runs a question from the keyboard", async () => {
+    vi.stubGlobal("matchMedia", (query: string) => ({ matches: query.includes("pointer: fine"), media: query }) as MediaQueryList);
+    const graded: Record<string, unknown>[] = [];
+    let served = 0;
+    mockApi({
+      "GET /api/me": signedIn,
+      ...lists,
+      "POST /api/quiz/next": () => {
+        served += 1;
+        return { body: { question, exhausted: false, canGenerate: true, quota: signedIn.quota } };
+      },
+      [`POST /api/quiz/questions/${question.id}/reveal`]: { ...reveal, attemptId: "att-2" },
+      "POST /api/quiz/attempts/att-2/self-grade": (init: RequestInit | undefined) => {
+        graded.push(body(init));
+        return { body: { ok: true, score: "partial" } };
+      },
+    });
+    renderAt("/quiz");
+    await userEvent.click(await screen.findByRole("button", { name: "Start" }));
+    const box = await screen.findByRole("textbox", { name: "Your answer" });
+    expect(box).toHaveFocus();
+    await userEvent.type(box, "Below 4{Shift>}{Enter}{/Shift}mmol");
+    expect(box).toHaveValue("Below 4\nmmol");
+
+    await userEvent.keyboard("{Alt>}r{/Alt}");
+    expect(await screen.findByText(/BGL below 4 mmol\/L/)).toBeInTheDocument();
+    await userEvent.keyboard("2");
+    expect(await screen.findByText("Saved to your progress.")).toBeInTheDocument();
+    expect(graded).toEqual([{ score: "partial" }]);
+
+    await userEvent.keyboard("?");
+    expect(screen.getByRole("dialog", { name: "Keyboard shortcuts" })).toBeInTheDocument();
+    await userEvent.keyboard("{Escape}");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+
+    await userEvent.keyboard("{Enter}");
+    await screen.findByRole("textbox", { name: "Your answer" });
+    expect(served).toBe(2);
+    await userEvent.keyboard("{Alt>}s{/Alt}");
+    await screen.findByRole("heading", { name: question.text });
+    expect(served).toBe(3);
+
+    await userEvent.keyboard("{Escape}");
+    expect(await screen.findByRole("button", { name: "Start" })).toBeInTheDocument();
   });
 
   it("shows why an answer wasn't scored", async () => {

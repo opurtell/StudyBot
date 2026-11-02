@@ -130,7 +130,7 @@ describe("quiz topic picker", () => {
     await screen.findByRole("heading", { name: question.text });
     expect(sent[0]).toMatchObject({ kinds: ["cmg", "med"], documentIds: ["CMG_16_ACS", "MED_03_Adrenaline", "MED_29_Salbutamol"], excludeDocumentIds: [] });
 
-    await userEvent.click(screen.getByRole("button", { name: "Next question" }));
+    await userEvent.click(screen.getByRole("button", { name: "Skip" }));
     expect(sent[1]).toMatchObject({ documentIds: ["CMG_16_ACS", "MED_03_Adrenaline", "MED_29_Salbutamol"] });
     await userEvent.click(screen.getByRole("button", { name: "Change topics" }));
     expect(screen.getByRole("checkbox", { name: /Suspected ACS/ })).toBeChecked();

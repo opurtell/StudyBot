@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import { Feedback, ScoreBadge } from "../components/Feedback";
+import { Feedback, SCORE_LABEL, ScoreBadge } from "../components/Feedback";
 import { HistoryList } from "../components/HistoryList";
 import { api, type HistoryItem } from "../lib/api";
 import { useGuestAttempts } from "../lib/guestProgress";
@@ -101,6 +101,7 @@ const dateFormat = new Intl.DateTimeFormat("en-AU", { dateStyle: "medium", timeS
 export function AttemptView() {
   const { id = "" } = useParams();
   const { data, error, loading } = useLoad(() => api.attempt(id), [id]);
+  const aiScore = data?.evaluation?.score ?? null;
 
   return (
     <div className="space-y-6">
@@ -138,13 +139,18 @@ export function AttemptView() {
               )}
             </p>
           )}
+          {data.kind === "marked" && data.score && aiScore && aiScore !== data.score && (
+            <p className="text-sm text-on-surface-variant">
+              You changed the AI&apos;s mark from {SCORE_LABEL[aiScore]} to {SCORE_LABEL[data.score]}.
+            </p>
+          )}
           <h2 className="sr-only">Your result</h2>
           <Feedback
             answer={data.answer}
             data={{
               marked: data.kind === "marked",
-              score: data.score,
               ...(data.evaluation ?? {}),
+              score: data.score,
               sourceText: data.sourceText,
               citation: data.citation,
               documentId: data.documentId,

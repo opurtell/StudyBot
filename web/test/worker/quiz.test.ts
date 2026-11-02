@@ -172,6 +172,23 @@ describe("AI marking", () => {
     expect(ledger).toEqual({ kind: "eval", outcome: "ok", tokens_in: 1000, cost_usd_micros: 550 });
   });
 
+  it("lets the user correct the AI mark without changing the stored evaluation", async () => {
+    const { cookie, email } = await signIn();
+    geminiReply(GOOD_MARK);
+    const mark = (await (await postJson(`/api/quiz/questions/${Q_AP}/mark`, { view: "ap", answer: "Give oral glucose" }, { cookie })).json()) as {
+      attemptId: string;
+    };
+    const res = await postJson(`/api/quiz/attempts/${mark.attemptId}/self-grade`, { score: "correct" }, { cookie });
+    expect(res.status).toBe(200);
+    const user = await userRow(email);
+    const attempt = await env.DB.prepare(`SELECT kind, score, evaluation_json FROM attempts WHERE user_id = ?1`)
+      .bind(user?.id)
+      .first<{ kind: string; score: string; evaluation_json: string }>();
+    expect(attempt).toMatchObject({ kind: "marked", score: "correct" });
+    expect(JSON.parse(attempt!.evaluation_json)).toMatchObject({ score: "partial" });
+    expect(user?.free_eval_used).toBe(1);
+  });
+
   it("does not score or charge for an unreadable reply", async () => {
     const { cookie, email } = await signIn();
     for (const reply of ["Looks good to me!", JSON.stringify({ score: "great" }), JSON.stringify([{ score: "correct" }])]) {

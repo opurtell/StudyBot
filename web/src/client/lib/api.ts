@@ -188,6 +188,7 @@ export interface AttemptDetail {
   elapsedMs: number | null;
   at: number;
   evaluation: {
+    score?: Score;
     correctElements?: string[];
     missingOrWrong?: string[];
     sourceQuote?: string;
