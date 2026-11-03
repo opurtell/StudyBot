@@ -373,3 +373,44 @@ def test_per_chunk_limit_spreads_difficulties_across_general_chunks(mixed):
     assert len(one) == len(full) and all(len(t.difficulties) == 1 for t in one)
     assert all(t.difficulties[0] in f.difficulties for t, f in zip(one, full))
     assert qb.plan(corpus, "guidelines", per_chunk=1) == qb.plan(corpus, "guidelines")
+
+
+def test_a_billing_error_stops_the_run_and_unchecked_questions_are_retried(tmp_path, mixed):
+    import io
+    import urllib.error
+
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+    calls = []
+
+    def broke(url, body, api_key):
+        calls.append(body)
+        if body["systemInstruction"]["parts"][0]["text"] == qb.PROMPTS["conflictSystem"]:
+            raise urllib.error.HTTPError(url, 402, "Payment Required", {}, io.BytesIO(b""))
+        return FakeGemini()(url, body, api_key)
+
+    runner = qb.Runner(corpus, tmp_path, "key", broke, max_usd=100)
+    runner.run(tasks, workers=1, progress=lambda _: None)
+    assert runner.halted and "402" in runner.halted
+    assert len(calls) == 2
+    assert qb.load_raw(tmp_path / "raw.jsonl") == []
+
+    fake = FakeGemini()
+    resumed = qb.Runner(corpus, tmp_path, "key", fake, max_usd=100)
+    resumed.run(tasks, workers=1, progress=lambda _: None)
+    assert not resumed.halted and resumed.made == sum(len(t.difficulties) for t in tasks)
+
+
+def test_resume_retries_general_questions_whose_check_failed(tmp_path, mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+    qb.Runner(corpus, tmp_path, "key", FakeGemini(), max_usd=100).run(tasks, workers=1, progress=lambda _: None)
+    raw = tmp_path / "raw.jsonl"
+    records = qb.load_raw(raw)
+    records[0].pop("check")
+    raw.write_text("".join(json.dumps(r) + "\n" for r in records), encoding="utf-8")
+    fake = FakeGemini()
+    qb.Runner(corpus, tmp_path, "key", fake, max_usd=100).run(tasks, workers=1, progress=lambda _: None)
+    assert len(fake.calls) == 2

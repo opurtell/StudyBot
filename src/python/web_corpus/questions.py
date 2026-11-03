@@ -68,7 +68,12 @@ ICP_MENTION = re.compile(PROMPTS["icpMentionPattern"], re.IGNORECASE)
 
 
 class GenerationError(Exception):
-    pass
+    def __init__(self, message: str, fatal: bool = False):
+        super().__init__(message)
+        self.fatal = fatal
+
+
+FATAL_HTTP = frozenset({400, 401, 402, 403})
 
 
 @dataclass(frozen=True)
@@ -283,7 +288,7 @@ def call_gemini(transport: Transport, api_key: str, system: str, user: str, retr
             break
         except urllib.error.HTTPError as exc:
             if exc.code not in (429, 500, 502, 503, 504) or attempt == retries - 1:
-                raise GenerationError(f"Gemini returned HTTP {exc.code}") from exc
+                raise GenerationError(f"Gemini returned HTTP {exc.code}", fatal=exc.code in FATAL_HTTP) from exc
         except (urllib.error.URLError, TimeoutError) as exc:
             if attempt == retries - 1:
                 raise GenerationError(f"Gemini request failed: {exc}") from exc
@@ -396,7 +401,9 @@ class Runner:
         self.max_usd = max_usd
         self.lock = threading.Lock()
         existing = load_raw(self.raw_path)
-        self.done = {(r["chunk_id"], r["difficulty"], bool(r.get("focus"))) for r in existing if r.get("ok")}
+        self.done = {(r["chunk_id"], r["difficulty"], bool(r.get("focus"))) for r in existing if r.get("ok")
+                     and (r.get("check") or not str(r.get("prompt_version", "")).startswith("general"))}
+        self.halted: str | None = None
         self.previous: dict[str, list[str]] = {}
         for r in existing:
             if r.get("ok"):
@@ -426,6 +433,8 @@ class Runner:
                                           schema=PROMPTS["conflictSchema"])
             except GenerationError as exc:
                 record["check_error"] = str(exc)
+                if exc.fatal:
+                    self.halted = str(exc)
                 return
             record["cost_usd"] += usage_cost(usage)
             parsed = parse_check(text)
@@ -450,7 +459,7 @@ class Runner:
         for difficulty in task.difficulties:
             if (chunk.id, difficulty, bool(task.focus)) in self.done:
                 continue
-            if self.spent >= self.max_usd:
+            if self.spent >= self.max_usd or self.halted:
                 return
             previous = self.previous.setdefault(chunk.id, [])
             record = {
@@ -475,6 +484,8 @@ class Runner:
                     )
                 except GenerationError as exc:
                     record["error"] = str(exc)
+                    if exc.fatal:
+                        self.halted = str(exc)
                     break
                 record["cost_usd"] += usage_cost(usage)
                 parsed = parse_generation(text)
@@ -487,6 +498,8 @@ class Runner:
                 previous.append(parsed["question_text"])
                 if task.general:
                     self.check(parsed["question_text"], chunk, record)
+            if self.halted and not record.get("check"):
+                return
             self._write(record)
 
     def run(self, tasks: list[Task], workers: int, progress: Callable[[str], None] = print) -> None:
@@ -815,6 +828,9 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
             return 1
         runner = Runner(corpus, args.out, args.api_key or api_key_from_settings(), transport, args.max_usd)
         runner.run(tasks, args.workers)
+        if runner.halted:
+            print(f"Stopped: {runner.halted}. Check the key's billing, then re-run; finished work is skipped.")
+            return 1
         print(f"Spent US${runner.spent:.2f} this run (US${runner.spent_before + runner.spent:.2f} in raw.jsonl overall).")
         if runner.spent >= args.max_usd:
             print(f"Stopped at the US${args.max_usd:.2f} cap for this run. Re-run to continue; finished work is skipped.")
