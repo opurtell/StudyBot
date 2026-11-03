@@ -547,7 +547,7 @@ def test_statpearls_keeps_only_recognition_sections_unaltered(tmp_path):
     assert len(docs) == 1
     doc = docs[0]
     body = doc["content_markdown"]
-    assert "Hyperkalemia is a serum potassium above 5.5 mEq/L" in body and "peaked T waves" in body
+    assert "with a risk of fatal arrhythmia [1]." in body and "peaked T waves" in body
     assert "calcium gluconate" not in body and "10% of inpatients" not in body
     assert doc["licence"] == "CC BY-NC-ND 4.0" and doc["url"].endswith("/books/n/statpearls/article-23071/")
     assert "Leslie V. Simon" in doc["attribution"] and "unaltered" in doc["attribution"]

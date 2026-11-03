@@ -424,11 +424,11 @@ def drop_excluded_columns(table: ET.Element) -> None:
                 parent.remove(row)
 
 
-def bits_to_html(elem: ET.Element, depth: int) -> str:
+def bits_to_html(elem: ET.Element, depth: int, verbatim: bool = False) -> str:
     tag = elem.tag
-    if tag == "table":
+    if tag == "table" and not verbatim:
         drop_excluded_columns(elem)
-    if tag == "xref" and elem.get("ref-type") == "bibr":
+    if tag == "xref" and elem.get("ref-type") == "bibr" and not verbatim:
         tail = elem.tail or ""
         return "" if re.fullmatch(r"\s*[,–-]\s*", tail) else escape(tail)
     if tag in _BITS_SKIP:
@@ -436,7 +436,7 @@ def bits_to_html(elem: ET.Element, depth: int) -> str:
     if tag == "sec":
         title = elem.find("title")
         heading = "".join(title.itertext()).strip() if title is not None else ""
-        body = "".join(bits_to_html(c, depth + 1) for c in elem if c.tag != "title")
+        body = "".join(bits_to_html(c, depth + 1, verbatim) for c in elem if c.tag != "title")
         level = min(depth, 6)
         head = f"<h{level}>{escape(heading)}</h{level}>" if heading else ""
         return f"<section>{head}{body}</section>" + escape(elem.tail or "")
@@ -444,7 +444,7 @@ def bits_to_html(elem: ET.Element, depth: int) -> str:
         return "<br>" + escape(elem.tail or "")
     if tag == "term":
         return escape("".join(elem.itertext()).strip().rstrip(":")) + ": " + escape(elem.tail or "")
-    inner = escape(elem.text or "") + "".join(bits_to_html(c, depth) for c in elem)
+    inner = escape(elem.text or "") + "".join(bits_to_html(c, depth, verbatim) for c in elem)
     html_tag = _BITS_HTML.get(tag)
     wrapped = f"<{html_tag}>{inner}</{html_tag}>" if html_tag else inner
     return wrapped + escape(elem.tail or "")
@@ -550,14 +550,14 @@ def statpearls_article(xml: bytes, file_name: str) -> dict | None:
     for sec in body.findall("sec"):
         heading = re.sub(r"\s+", " ", "".join(sec.find("title").itertext())).strip() if sec.find("title") is not None else ""
         if heading.lower() in keep:
-            html += bits_to_html(sec, 2)
+            html += bits_to_html(sec, 2, verbatim=True)
     slug = file_name.rsplit(".", 1)[0]
     return {
         "title": title,
         "authors": _names(root.find(".//contrib-group") if root.find(".//contrib-group") is not None else root),
         "url": f"{NCBI_BOOKS_ROOT}/n/statpearls/{slug}/",
         "slug": slug,
-        "markdown": drop_figure_references(html_to_markdown(html)),
+        "markdown": html_to_markdown(html),
     }
 
 
