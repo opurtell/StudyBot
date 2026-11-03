@@ -80,11 +80,16 @@ class Book:
     editors: str
     section: str
     chapter_pattern: str
+    excluded: tuple[tuple[str, str], ...] = ()
 
 
 OPENRN_BOOKS = (
     Book("HA", "NBK613078", "Health Alterations", "Kimberly Ernstmeyer and Elizabeth Christman", "Pathophysiology",
-         chapter_pattern=r"^(?:[3-9]|1[01])\.\d+$"),
+         chapter_pattern=r"^(?:[3-9]|1[01])\.\d+$",
+         excluded=(("4.3", "Cancer"), ("6.8", "Lung Cancer"), ("8.10", "Urinary Incontinence"),
+                   ("8.12", "Benign Prostate Hypertrophy"), ("8.13", "Bladder and Prostate Cancer"), ("10.5", "Amputation"),
+                   ("10.7", "Osteoarthritis"), ("10.8", "Osteoporosis"), ("11.12", "Irritable Bowel Syndrome"),
+                   ("11.14", "Hernia"))),
     Book("NAS", "NBK594492", "Nursing Advanced Skills", "Kimberly Ernstmeyer and Elizabeth Christman", "ECGs",
          chapter_pattern=r"^7\.[2-4]$"),
 )
@@ -421,6 +426,8 @@ def openrn_sections(xml: bytes, book: Book) -> list[dict]:
         title_el = sec.find("title")
         title = tidy_title("".join(title_el.itertext())) if title_el is not None else ""
         if not label or not title or sec.find("sec") is None or not re.match(book.chapter_pattern, label):
+            continue
+        if any(label == n or title.lower() == t.lower() for n, t in book.excluded):
             continue
         if EXCLUDED_CHAPTER.search(title) or EXCLUDED_HEADING.search(title):
             continue

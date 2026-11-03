@@ -155,6 +155,16 @@ def test_openrn_book_ranges_and_titles():
     assert gs.tidy_title("COPD") == "COPD"
 
 
+def test_excluded_openrn_subchapters_are_skipped_by_number_or_title():
+    book = gs.OPENRN_BOOKS[0]
+    assert {n for n, _ in book.excluded} == {"4.3", "6.8", "8.10", "8.12", "8.13", "10.5", "10.7", "10.8", "11.12", "11.14"}
+    by_number = gs.Book(**{**book.__dict__, "excluded": (("5.8", "Something else"),)})
+    by_title = gs.Book(**{**book.__dict__, "excluded": (("9.9", "Heart Failure"),)})
+    assert gs.openrn_sections(_bits_chapter(), by_number) == []
+    assert gs.openrn_sections(_bits_chapter(), by_title) == []
+    assert gs.openrn_sections(_bits_chapter(), book)
+
+
 def test_litarch_path_comes_from_the_file_list():
     class Lister:
         def get(self, url):
