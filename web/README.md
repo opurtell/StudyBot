@@ -132,7 +132,8 @@ source hierarchy, below the CMGs, and cover pathophysiology, physiology and ECG 
 4. **Export for review:** `PYTHONPATH=src/python python3 -m web_corpus.questions export --only general`
    *Writes `questions-general.sql`, `report-general.json`, `review-sample-general.csv` and `dropped-general.csv` in
    `web/corpus-build/questions/`, leaving the CMG `questions.sql` alone.*
-5. **Full run:** step 3 without `--limit`, with `--max-usd 10`, then step 4 again.
+5. **Full run:** step 3 without `--limit`, with `--per-chunk 1 --max-usd 13`, then step 4 again.
+   *`--per-chunk 1` writes one question per chunk, alternating easy and medium. About US$0.012 per question with its check.*
 6. **Production** (Oscar runs): `cd web && npm run deploy:production` (applies migration 0007), `npm run corpus:build`,
    `npm run corpus:load:production`, `npm run bank:load:general:production`, then Account > Guideline corpus > Sync
    search index.

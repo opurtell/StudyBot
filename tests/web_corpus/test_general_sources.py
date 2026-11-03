@@ -363,3 +363,13 @@ def test_spend_cap_counts_only_this_run(tmp_path, mixed):
     runner = qb.Runner(corpus, tmp_path, "key", fake, max_usd=1)
     runner.run(qb.plan(corpus, "general"), workers=1, progress=lambda _: None)
     assert fake.calls and runner.spent < 1 and runner.spent_before == 50.0
+
+
+def test_per_chunk_limit_spreads_difficulties_across_general_chunks(mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    full = qb.plan(corpus, "general")
+    one = qb.plan(corpus, "general", per_chunk=1)
+    assert len(one) == len(full) and all(len(t.difficulties) == 1 for t in one)
+    assert all(t.difficulties[0] in f.difficulties for t, f in zip(one, full))
+    assert qb.plan(corpus, "guidelines", per_chunk=1) == qb.plan(corpus, "guidelines")

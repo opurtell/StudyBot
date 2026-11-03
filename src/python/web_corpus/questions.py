@@ -59,7 +59,7 @@ MIN_FOCUS_CHARS = 30
 EST_INPUT_TOKENS = 750
 EST_OUTPUT_TOKENS = 450
 EST_CHECK_INPUT_TOKENS = 1800
-EST_CHECK_OUTPUT_TOKENS = 250
+EST_CHECK_OUTPUT_TOKENS = 600
 CONFLICT_CMG_CHUNKS = 4
 GENERAL_TYPES = ("recall", "definition", "scenario")
 
@@ -135,8 +135,16 @@ def icp_focus(chunk: Chunk, siblings: list[Chunk], doc_lines: frozenset[str] = f
     return tuple(line for line in lines if line not in shared)
 
 
-def plan(corpus: Corpus, only: str | None = None) -> list[Task]:
-    tasks = _plan(corpus)
+def _limit_general(task: Task, per_chunk: int | None) -> Task:
+    if not task.general or per_chunk is None or len(task.difficulties) <= per_chunk:
+        return task
+    start = int(hashlib.sha256(task.chunk.id.encode("utf-8")).hexdigest(), 16) % len(task.difficulties)
+    rotated = task.difficulties[start:] + task.difficulties[:start]
+    return Task(task.chunk, task.gen_view, rotated[:per_chunk], task.focus)
+
+
+def plan(corpus: Corpus, only: str | None = None, per_chunk: int | None = None) -> list[Task]:
+    tasks = [_limit_general(t, per_chunk) for t in _plan(corpus)]
     if only == "general":
         return [t for t in tasks if t.general]
     if only == "guidelines":
@@ -774,11 +782,13 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
     parser.add_argument("--sample", type=int, default=60)
     parser.add_argument("--api-key", default=None)
     parser.add_argument("--only", choices=["general", "guidelines"], default=None)
+    parser.add_argument("--per-chunk", type=int, default=None,
+                        help="questions per general-reference chunk (difficulty spread by chunk)")
     parser.add_argument("--exclude-source", action="append", default=[], choices=sorted(general_sources.SOURCES))
     args = parser.parse_args(argv)
 
     corpus = build(exclude_sources=frozenset(args.exclude_source))
-    tasks = plan(corpus, args.only)
+    tasks = plan(corpus, args.only, args.per_chunk)
     if args.limit is not None:
         tasks = random.Random(7).sample(tasks, min(args.limit, len(tasks)))
     args.out.mkdir(parents=True, exist_ok=True)
