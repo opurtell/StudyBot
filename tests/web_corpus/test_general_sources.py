@@ -470,3 +470,53 @@ def test_local_server_down_halts_the_run(tmp_path, mixed):
     runner = qb.Runner(corpus, tmp_path, "", None, max_usd=100, generate=down, model_id="lmstudio:m")
     runner.run(tasks, workers=1, progress=lambda _: None)
     assert runner.halted and qb.load_raw(tmp_path / "raw.jsonl") == []
+
+
+def test_glucose_values_are_also_given_in_mmol_l():
+    text, changed = gs.convert_glucose_units(
+        "Hypoglycemia is blood glucose below 70 mg/dL.\nFasting glucose of 100 to 125 milligrams per deciliter (mg/dL).\n"
+        "Calcium 9 mg/dL.")
+    assert changed
+    assert "70 mg/dL [3.9 mmol/L]" in text and "(mg/dL) [5.6–6.9 mmol/L]" in text and "Calcium 9 mg/dL." in text
+    assert gs.convert_glucose_units(text) == (text, False)
+
+
+def test_open_rn_documents_split_into_core_and_broader_topics():
+    assert gs.section_for({"source": "openrn", "number": "HA 3.8", "section": "Pathophysiology"}) == \
+        gs.BROADER_SECTION
+    assert gs.section_for({"source": "openrn", "number": "HA 6.5", "section": "Pathophysiology"}) == \
+        "Pathophysiology"
+    assert gs.section_for({"source": "litfl", "number": "HA 3.8", "section": "ECGs"}) == "ECGs"
+
+
+def test_general_questions_get_australian_spelling_and_must_be_questions():
+    assert qb.australian_spelling("Which hemoglobin causes anemia and edema in a client?") == \
+        "Which haemoglobin causes anaemia and oedema in a patient?"
+    assert qb.australian_spelling("What electrocardiographic sign follows chemotherapy?") == \
+        "What ECG sign follows chemotherapy?"
+    assert qb.parse_generation(json.dumps({"question_text": "A widened QRS with right axis deviation."}),
+                               require_question=True) is None
+
+
+def test_deferred_checks_run_later_with_another_model(tmp_path, mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+    writer, checker = FakeGemini(), FakeGemini(conflict=True)
+    qb.Runner(corpus, tmp_path, "", None, max_usd=100, generate=_as_complete(writer), model_id="lmstudio:writer",
+              defer_check=True).run(tasks, workers=1, progress=lambda _: None)
+    records = qb.load_raw(tmp_path / "raw.jsonl")
+    assert records and all(r["check_deferred"] and "check" not in r for r in records)
+    assert all(c["systemInstruction"]["parts"][0]["text"] != qb.PROMPTS["conflictSystem"] for c in writer.calls)
+    again = FakeGemini()
+    qb.Runner(corpus, tmp_path, "", None, max_usd=100, generate=_as_complete(again), model_id="lmstudio:writer",
+              defer_check=True).run(tasks, workers=1, progress=lambda _: None)
+    assert again.calls == []
+    left = qb.Runner(corpus, tmp_path, "", None, max_usd=100, generate=_as_complete(checker),
+                     model_id="lmstudio:checker").check_pending(1, progress=lambda _: None)
+    assert left == 0
+    checked = qb.load_raw(tmp_path / "raw.jsonl")
+    assert len(checked) == len(records)
+    assert all(r["check"]["conflict"] and r["check_model_id"] == "lmstudio:checker" and "check_deferred" not in r
+               for r in checked)
+    assert all(r["model_id"] == "lmstudio:writer" for r in checked)

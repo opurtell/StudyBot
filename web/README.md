@@ -134,7 +134,16 @@ source hierarchy, below the CMGs, and cover pathophysiology, physiology and ECG 
    `web/corpus-build/questions/`, leaving the CMG `questions.sql` alone.*
 5. **Full run:** step 3 without `--limit`, with `--per-chunk 1 --max-usd 13`, then step 4 again.
    *`--per-chunk 1` writes one question per chunk, alternating easy and medium. About US$0.012 per question with its check.*
-6. **Production** (Oscar runs): `cd web && npm run deploy:production` (applies migration 0007), `npm run corpus:build`,
+6. **Free local run (LM Studio on the Mac, two passes):**
+   *Qwen3.6 and Qwen3.8 don't fit in 32 GB together, so one writes and the other checks afterwards. Don't run the two
+   passes at once: `check` rewrites `raw.jsonl`.*
+   1. Write: `PYTHONPATH=src/python python3 -m web_corpus.questions generate --only general --local qwen/qwen3.6-35b-a3b --defer-check`
+   2. Check: `PYTHONPATH=src/python python3 -m web_corpus.questions check --local qwen/qwen3.8-27b`
+   3. Export as in step 4. Unchecked questions are never exported.
+   *Records carry `lmstudio:<model>` as `model_id` and `check_model_id`. Open RN topics outside core paramedic practice
+   go in the "Broader pathophysiology" section (`BROADER_TOPICS` in `general_sources.py`), which users can leave out in
+   the topic picker.*
+7. **Production** (Oscar runs): `cd web && npm run deploy:production` (applies migration 0007), `npm run corpus:build`,
    `npm run corpus:load:production`, `npm run bank:load:general:production`, then Account > Guideline corpus > Sync
    search index.
 

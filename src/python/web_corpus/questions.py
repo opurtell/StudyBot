@@ -235,12 +235,42 @@ def parse_json_object(text: str) -> dict | None:
     return None
 
 
-def parse_generation(text: str) -> dict | None:
+_AU_SPELLING = (
+    (r"(?<![a-z])h(a)?em(?=o|a)", "haem"), (r"an(a)?emi", "anaemi"), (r"(?<![a-z])(o)?edem", "oedem"),
+    (r"isch(a)?emi", "ischaemi"), (r"(o)?esophag", "oesophag"), (r"leuk(a)?emi", "leukaemi"),
+    (r"(?<=[a-z])(a)?emia\b", "aemia"), (r"(?<=[a-z])glyc(a)?emi", "glycaemi"), (r"septic(a)?emi", "septicaemi"),
+    (r"p(a)?ediatric", "paediatric"), (r"orthop(a)?edic", "orthopaedic"), (r"an(a)?esthe", "anaesthe"),
+    (r"diarrh(o)?ea", "diarrhoea"), (r"c(o)?eliac", "coeliac"), (r"(o)?estrogen", "oestrogen"),
+    (r"tumor", "tumour"), (r"color", "colour"), (r"behavior", "behaviour"), (r"fiber", "fibre"),
+    (r"liter\b", "litre"), (r"center", "centre"), (r"client", "patient"),
+    (r"electrocardiograph(ic|y)", "ECG"), (r"electrocardiogram", "ECG"),
+)
+_AU_PATTERNS = [(re.compile(p, re.IGNORECASE), r) for p, r in _AU_SPELLING]
+
+
+def _match_case(word: str, replacement: str) -> str:
+    if word.isupper() and len(word) > 1:
+        return replacement.upper()
+    if word[:1].isupper() and replacement[:1].islower():
+        return replacement[:1].upper() + replacement[1:]
+    return replacement
+
+
+def australian_spelling(text: str) -> str:
+    for pattern, replacement in _AU_PATTERNS:
+        text = pattern.sub(lambda m: m[0] if m[0].lower().startswith(replacement.lower())
+                           else _match_case(m[0], replacement), text)
+    return text
+
+
+def parse_generation(text: str, require_question: bool = False) -> dict | None:
     parsed = parse_json_object(text)
     if not parsed:
         return None
     question = parsed.get("question_text")
     if not isinstance(question, str) or len(question.strip()) < 10:
+        return None
+    if require_question and not question.strip().endswith("?"):
         return None
     qtype = parsed.get("question_type")
     return {
@@ -424,7 +454,7 @@ def load_raw(path: Path) -> list[dict]:
 class Runner:
     def __init__(self, corpus: Corpus, out_dir: Path, api_key: str, transport: Transport, max_usd: float,
                  generate: Complete | None = None, check: Complete | None = None, model_id: str = MODEL_ID,
-                 check_model_id: str | None = None):
+                 check_model_id: str | None = None, defer_check: bool = False):
         self.corpus = corpus
         self.raw_path = out_dir / "raw.jsonl"
         self.generate = generate or gemini_complete(transport, api_key)
@@ -432,10 +462,11 @@ class Runner:
         self.model_id = model_id
         self.check_model_id = check_model_id or model_id
         self.max_usd = max_usd
+        self.defer_check = defer_check
         self.lock = threading.Lock()
         existing = load_raw(self.raw_path)
         self.done = {(r["chunk_id"], r["difficulty"], bool(r.get("focus"))) for r in existing if r.get("ok")
-                     and (r.get("check") or not str(r.get("prompt_version", "")).startswith("general"))}
+                     and (r.get("check") or r.get("check_deferred") or not str(r.get("prompt_version", "")).startswith("general"))}
         self.halted: str | None = None
         self.previous: dict[str, list[str]] = {}
         for r in existing:
@@ -524,7 +555,7 @@ class Runner:
                     break
                 record["cost_usd"] += usage_cost(usage)
                 record["seconds"] = round(usage.get("seconds", 0.0), 1)
-                parsed = parse_generation(text)
+                parsed = parse_generation(text, require_question=task.general)
                 if parsed:
                     break
                 record["error"] = f"unparseable: {text[:200]}"
@@ -532,11 +563,48 @@ class Runner:
                 record.update(parsed, ok=True)
                 record.pop("error", None)
                 previous.append(parsed["question_text"])
-                if task.general:
+                if task.general and self.defer_check:
+                    record["check_deferred"] = True
+                elif task.general:
                     self.check(parsed["question_text"], chunk, record)
-            if self.halted and not record.get("check"):
+            if self.halted and not record.get("check") and not record.get("check_deferred"):
                 return
             self._write(record)
+
+    def check_pending(self, workers: int, progress: Callable[[str], None] = print) -> int:
+        records = load_raw(self.raw_path)
+        chunks = {c.id: c for c in self.corpus.chunks}
+        pending = [r for r in records if r.get("ok") and not r.get("check") and r["chunk_id"] in chunks
+                   and str(r.get("prompt_version", "")).startswith("general")
+                   and chunks[r["chunk_id"]].embed_text == r["source_text"]]
+        done = 0
+
+        def save() -> None:
+            tmp = self.raw_path.with_suffix(".jsonl.tmp")
+            tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in records), encoding="utf-8")
+            tmp.replace(self.raw_path)
+
+        def one(record: dict) -> None:
+            nonlocal done
+            if self.spent >= self.max_usd or self.halted:
+                return
+            before = record.get("cost_usd", 0.0)
+            self.check(record["question_text"], chunks[record["chunk_id"]], record)
+            with self.lock:
+                self.spent += record.get("cost_usd", 0.0) - before
+                if record.get("check"):
+                    record.pop("check_deferred", None)
+                done += 1
+                if done % 25 == 0:
+                    save()
+                    progress(f"{done}/{len(pending)} checked, US${self.spent:.2f}")
+
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            list(pool.map(one, pending))
+        with self.lock:
+            save()
+        progress(f"{done}/{len(pending)} checked, US${self.spent:.2f}")
+        return len(pending) - sum(1 for r in pending if r.get("check"))
 
     def run(self, tasks: list[Task], workers: int, progress: Callable[[str], None] = print) -> None:
         with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -630,7 +698,8 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
     planned = {t.chunk.id for t in tasks}
     focused = focus_chunk_ids(tasks)
     stats = {"stale": 0, "unplanned": 0, "where_questions": 0, "exact_duplicates": 0, "near_duplicates": 0,
-             "ap_restricted": 0, "general_unchecked": 0, "general_conflicts": 0, "general_out_of_scope": 0}
+             "ap_restricted": 0, "general_unchecked": 0, "general_conflicts": 0, "general_out_of_scope": 0,
+             "general_not_questions": 0}
     dropped: list[dict] = []
     kept: list[dict] = []
     hashes: set[str] = set()
@@ -650,6 +719,11 @@ def select_questions(corpus: Corpus, records: list[dict]) -> tuple[list[dict], d
             stats["where_questions"] += 1
             continue
         if is_general(chunk):
+            r["question_text"] = australian_spelling(r["question_text"])
+            if not r["question_text"].rstrip().endswith("?"):
+                stats["general_not_questions"] += 1
+                dropped.append({**r, "drop_reason": "general_not_questions", "document_title": docs[chunk.document_id].title})
+                continue
             check = r.get("check")
             reason = ("general_unchecked" if not check else "general_conflicts" if check["conflict"]
                       else "general_out_of_scope" if check["out_of_scope"] or r["question_type"] not in GENERAL_TYPES
@@ -822,7 +896,7 @@ def api_key_from_settings() -> str:
 
 def main(argv: list[str] | None = None, transport: Transport = http_transport) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("command", choices=["plan", "generate", "export"])
+    parser.add_argument("command", choices=["plan", "generate", "check", "export"])
     parser.add_argument("--out", type=Path, default=OUT_DIR)
     parser.add_argument("--yes", action="store_true", help="confirm spending money on generation")
     parser.add_argument("--limit", type=int, default=None, help="only the first N chunks (for a trial run)")
@@ -839,6 +913,8 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
     parser.add_argument("--check-with", choices=["same", "gemini"], default="same",
                         help="with --local, run the CMG conflict check on the local model or on Gemini")
     parser.add_argument("--lmstudio-url", default="")
+    parser.add_argument("--defer-check", action="store_true",
+                        help="write general questions without the CMG check; run the check command later")
     args = parser.parse_args(argv)
 
     corpus = build(exclude_sources=frozenset(args.exclude_source))
@@ -862,17 +938,34 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
         }, indent=2))
         return 0
 
+    if args.command == "check":
+        if not args.local and not args.yes:
+            print("This runs the CMG check on Gemini. Re-run with --yes to go ahead, or pass --local MODEL.")
+            return 1
+        if args.local:
+            check = local_complete(args.local, args.lmstudio_url)
+            runner = Runner(corpus, args.out, "", transport, args.max_usd, generate=check,
+                            model_id=LOCAL_PREFIX + args.local)
+        else:
+            runner = Runner(corpus, args.out, args.api_key or api_key_from_settings(), transport, args.max_usd)
+        left = runner.check_pending(1 if args.local else args.workers)
+        if runner.halted:
+            print(f"Stopped: {runner.halted}. Re-run to continue; finished checks are kept.")
+            return 1
+        print(f"{left} questions still unchecked." if left else "All general questions are checked.")
+        return 0
+
     if args.command == "generate":
-        uses_gemini = not args.local or args.check_with == "gemini"
+        uses_gemini = (not args.local or args.check_with == "gemini") and not args.defer_check
         if uses_gemini and not args.yes:
             print(f"This makes up to {sum(len(t.difficulties) for t in tasks)} Gemini calls "
                   f"(about US${estimate_cost(tasks):.2f}). Re-run with --yes to go ahead.")
             return 1
         api_key = (args.api_key or api_key_from_settings()) if uses_gemini else ""
-        options: dict = {}
+        options: dict = {"defer_check": args.defer_check}
         if args.local:
             local = local_complete(args.local, args.lmstudio_url)
-            options = {"generate": local, "model_id": LOCAL_PREFIX + args.local}
+            options.update(generate=local, model_id=LOCAL_PREFIX + args.local)
             if args.check_with == "gemini":
                 options.update(check=gemini_complete(transport, api_key), check_model_id=MODEL_ID)
         runner = Runner(corpus, args.out, api_key, transport, args.max_usd, **options)

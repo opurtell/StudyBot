@@ -28,7 +28,7 @@ export const POOLS: { kind: DocumentKind; label: string; noun: string }[] = [
   { kind: "ref", label: "Pathophysiology and ECGs", noun: "references" },
 ];
 
-const REFERENCE_SECTION_ORDER = ["Pathophysiology", "ECGs"];
+const REFERENCE_SECTION_ORDER = ["Pathophysiology", "ECGs", "Broader pathophysiology"];
 
 export const EVERYTHING: Selection = { pools: POOLS.map((p) => p.kind), mode: "only", picked: [] };
 

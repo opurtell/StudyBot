@@ -298,12 +298,17 @@ def build_general_document(data: dict) -> tuple[Document, list[Chunk]]:
     if data.get("licence") != source.licence:
         raise CorpusBuildError(f"{data['id']}: licence {data.get('licence')!r} does not match {source.name}")
     content = normalise_markdown_syntax(general_sources.clean(data.get("content_markdown") or ""))
+    attribution = data["attribution"]
+    if source.adaptable:
+        content, converted = general_sources.convert_glucose_units(content)
+        if converted:
+            attribution = f"{attribution} {general_sources.UNIT_NOTE}"
     doc = Document(
         id=data["id"],
         kind=GENERAL_KIND,
         number=str(data.get("number") or source.name),
         title=data.get("title", ""),
-        section=data.get("section") or "General",
+        section=general_sources.section_for(data),
         scope="all",
         version_date=(data.get("fetched_at") or "")[:10] or None,
         checksum=data.get("checksum") or hashlib.sha256(content.encode("utf-8")).hexdigest(),
@@ -311,7 +316,7 @@ def build_general_document(data: dict) -> tuple[Document, list[Chunk]]:
         context=f"[{source.name}: {data.get('title', '')}]",
         source_type=GENERAL_SOURCE_TYPE,
         licence=source.licence,
-        attribution=data["attribution"],
+        attribution=attribution,
         source_url=data["url"],
         general_source=source.id,
     )

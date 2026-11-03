@@ -50,6 +50,7 @@ class GeneralSource:
     licence_url: str
     home_url: str
     commercial_use: bool
+    adaptable: bool = True
 
 
 SOURCES: dict[str, GeneralSource] = {
@@ -93,6 +94,52 @@ OPENRN_BOOKS = (
     Book("NAS", "NBK594492", "Nursing Advanced Skills", "Kimberly Ernstmeyer and Elizabeth Christman", "ECGs",
          chapter_pattern=r"^7\.[2-4]$"),
 )
+CORE_SECTION = "Pathophysiology"
+BROADER_SECTION = "Broader pathophysiology"
+BROADER_TOPICS = {
+    "openrn": frozenset({
+        "HA 3.2", "HA 3.6", "HA 3.7", "HA 3.8", "HA 3.9", "HA 3.10", "HA 3.11", "HA 3.12", "HA 4.6", "HA 5.9",
+        "HA 5.10", "HA 5.13", "HA 6.9", "HA 6.11", "HA 7.6", "HA 7.8", "HA 8.2", "HA 8.7", "HA 8.8", "HA 8.9",
+        "HA 9.5", "HA 9.6", "HA 9.10", "HA 9.11", "HA 9.12", "HA 10.9", "HA 10.10", "HA 11.8", "HA 11.9", "HA 11.11",
+        "HA 11.15", "HA 11.16",
+    }),
+}
+
+
+def section_for(data: dict) -> str:
+    section = data.get("section") or "General"
+    if section == CORE_SECTION and data.get("number") in BROADER_TOPICS.get(data.get("source", ""), frozenset()):
+        return BROADER_SECTION
+    return section
+
+
+UNIT_NOTE = "Blood glucose values are also given in mmol/L (converted from mg/dL)."
+_GLUCOSE_LINE = re.compile(r"glucose|glyc|blood sugar|\bBGL\b", re.IGNORECASE)
+_MG_DL = re.compile(
+    r"(?P<a>\d+(?:\.\d+)?)(?:(?P<sep>\s*(?:to|-|–|—)\s*)(?P<b>\d+(?:\.\d+)?))?"
+    r"\s*(?:milligrams per decilit(?:er|re)\s*\(mg/dL\)|mg/dL)(?!\s*\[)",
+    re.IGNORECASE,
+)
+MG_DL_PER_MMOL_L = 18.0
+
+
+def _mmol(value: str) -> str:
+    return f"{float(value) / MG_DL_PER_MMOL_L:.1f}"
+
+
+def convert_glucose_units(markdown: str) -> tuple[str, bool]:
+    changed = False
+
+    def convert(match: re.Match) -> str:
+        nonlocal changed
+        changed = True
+        si = _mmol(match["a"]) + (f"–{_mmol(match['b'])}" if match["b"] else "")
+        return f"{match[0]} [{si} mmol/L]"
+
+    lines = [_MG_DL.sub(convert, line) if _GLUCOSE_LINE.search(line) else line for line in markdown.split("\n")]
+    return "\n".join(lines), changed
+
+
 LITARCH_ROOT = "https://ftp.ncbi.nlm.nih.gov/pub/litarch"
 NCBI_BOOKS_ROOT = "https://www.ncbi.nlm.nih.gov/books"
 OPENRN_LICENCE_URL = re.compile(r"^https?://creativecommons\.org/licenses/by/4\.0/?$")
