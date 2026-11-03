@@ -110,6 +110,9 @@ source hierarchy, below the CMGs, and cover pathophysiology, physiology and ECG 
 
 - **Fetching** (`src/python/web_corpus/general_sources.py`) keeps one JSON document per chapter or LITFL page in
   `data/general_refs/<source>/`. Treatment, medicine, nursing and procedure sections, references and all images are dropped.
+  Open RN comes from the NCBI Bookshelf open-access bulk download (`pub/litarch`, BITS XML; the book sites block scripts):
+  *Health Alterations* (NBK613078) subchapters 3.x–11.x and *Nursing Advanced Skills* (NBK594492) 7.2–7.4. Each chapter's
+  XML must carry the CC BY 4.0 licence, and table columns or rows headed by an excluded topic are dropped.
 - **Corpus:** documents have kind `ref` and `source_type` `general_reference`, carry their own licence and attribution,
   and are visible in every scope. Sections are `Pathophysiology` and `ECGs`. Readable at `/references`; licences at `/sources`.
 - **Questions are bank-only.** Live generation never uses `ref` chunks, so every served general question has passed the
