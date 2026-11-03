@@ -1,4 +1,5 @@
 import json
+import re
 import sqlite3
 
 import pytest
@@ -81,6 +82,89 @@ def test_page_authors_are_deduplicated_across_meta_tags():
     html = ('<meta name="author" content="Ed Burns"><meta name="author" content="Robert Buttner">'
             '<meta name="author" content="Ed Burns and Robert Buttner" />')
     assert gs.page_authors(html) == "Ed Burns and Robert Buttner"
+
+
+def _bits_chapter(licence="http://creativecommons.org/licenses/by/4.0/"):
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book-part-wrapper PUBLIC "-//NLM//DTD BITS Book Interchange DTD v2.0 20151225//EN" "BITS-book2.dtd">
+<book-part-wrapper xmlns:xlink="http://www.w3.org/1999/xlink" id="ch5cardio" content-type="chapter">
+<book-meta><book-id book-id-type="pmcid">openrnha</book-id>
+<permissions><license license-type="open-access" xlink:href="{licence}"><license-p>CC BY</license-p></license></permissions>
+</book-meta>
+<book-part book-part-type="chapter"><book-part-meta><book-part-id book-part-id-type="pmcid">ch5cardio</book-part-id>
+<title-group><title>Chapter 5 Cardiovascular Alterations</title></title-group></book-part-meta>
+<body>
+<sec id="ch5cardio.sec5.1"><label>5.1</label><title>Cardiovascular Introduction</title>
+<sec id="ch5cardio.o"><title>Learning Objectives</title><p>Apply the nursing process.</p></sec></sec>
+<sec id="ch5cardio.sec5.4"><label>5.4</label><title>Common Cardiovascular Disorders</title><p>Each is discussed below.</p></sec>
+<sec id="ch5cardio.sec5.8"><label>5.8</label><title>Heart Failure</title>
+<sec id="ch5cardio.Overview_3"><title>Overview</title>
+<p>Heart failure occurs when the heart loses its effectiveness in pumping blood, reducing cardiac output and causing
+fatigue, dyspnoea and oedema as fluid backs up behind the failing ventricle.[<xref ref-type="bibr" rid="r1">1</xref>]
+See <xref ref-type="fig" rid="f1">Figure 5.21</xref> for an illustration.</p>
+<p>Malignant cells grow without control.[3] View a supplementary YouTube video on cardiac output: View an image of oedema.</p>
+<boxed-text><p>View a supplementary YouTube video on heart failure.</p></boxed-text>
+<fig id="f1"><label>Figure 5.21</label><caption><p>Image credit: someone</p></caption><graphic xlink:href="x"/></fig>
+<table-wrap><table><thead><tr><th>Side</th><th>Signs</th><th colspan="1">Nursing Interventions</th><th>Treatment</th></tr></thead>
+<tbody><tr><td>Left</td><td><list><list-item><p>Orthopnoea</p></list-item></list></td><td>Sit upright</td><td>Frusemide</td></tr>
+<tr><td>Management</td><td>Diuretics</td><td>x</td><td>y</td></tr>
+</tbody></table></table-wrap>
+<p>Causes include the following,<xref ref-type="bibr" rid="r2">2</xref>,<xref ref-type="bibr" rid="r3">3</xref>: ischaemia and
+hypertension.<xref ref-type="bibr" rid="r4">4</xref>,<xref ref-type="bibr" rid="r5">5</xref></p>
+<p>Left-sided failure raises pulmonary venous pressure, so fluid moves into the alveoli and causes crackles and
+pulmonary oedema, while right-sided failure causes peripheral oedema, hepatomegaly and jugular venous distension.</p>
+</sec>
+<sec id="ch5cardio.Medication_Therapy_2"><title>Medication Therapy</title><p>Give a diuretic at a dose.</p></sec>
+<sec id="ch5cardio.Nursing_Interventions_3"><title>Nursing Interventions</title><p>Weigh daily.</p></sec>
+<sec id="ch5cardio.References_6"><title>References</title><ref-list><ref><mixed-citation>A ref.</mixed-citation></ref></ref-list></sec>
+</sec>
+<sec id="ch5cardio.sec5.14"><label>5.14</label><title>Learning Activities</title><sec><title>Quiz</title><p>Q.</p></sec></sec>
+<sec id="ch5cardio.Glossary"><label>V</label><title>Glossary</title><def-list><def-item><term>HF</term><def><p>x</p></def></def-item></def-list></sec>
+</body></book-part></book-part-wrapper>""".encode("utf-8")
+
+
+def test_openrn_chapters_keep_pathophysiology_and_drop_care_figures_and_references():
+    book = gs.OPENRN_BOOKS[0]
+    sections = gs.openrn_sections(_bits_chapter(), book)
+    assert [(s["label"], s["title"]) for s in sections] == [("5.8", "Heart Failure")]
+    assert sections[0]["url"] == "https://www.ncbi.nlm.nih.gov/books/n/openrnha/ch5cardio/#ch5cardio.sec5.8"
+    doc = gs.make_document(gs.SOURCES["openrn"], doc_id="OPENRN_HA_5_8_Heart_Failure", number="HA 5.8",
+                           title="Heart Failure", section=book.section, url=sections[0]["url"],
+                           attribution=gs.openrn_attribution(book, "5.8 Heart Failure", sections[0]["url"]),
+                           markdown=sections[0]["markdown"], fetched_at=FETCHED)
+    md = doc["content_markdown"]
+    assert "## Overview" in md and "cardiac output" in md and "Side | Signs" in md and "Orthopnoea" in md
+    assert "jugular venous distension" in md
+    assert "Malignant cells grow without control.\n" in md
+    assert "Side | Signs\n" in md and "following: ischaemia and hypertension.\n" in md
+    for gone in ("[1]", "[3]", "[]", "Figure", "YouTube", "image of", "Image credit", "diuretic", "Sit upright", "Frusemide", "Diuretics", ",,", "Weigh daily", "A ref.", "Quiz"):
+        assert gone not in md
+    assert "NCBI Bookshelf" in doc["attribution"] and "CC BY 4.0" in doc["attribution"]
+
+
+def test_openrn_chapters_must_carry_the_cc_by_licence():
+    with pytest.raises(ValueError, match="not CC BY 4.0"):
+        gs.openrn_sections(_bits_chapter("http://creativecommons.org/licenses/by-nc/4.0/"), gs.OPENRN_BOOKS[0])
+
+
+def test_openrn_book_ranges_and_titles():
+    assert re.match(gs.OPENRN_BOOKS[0].chapter_pattern, "11.16") and not re.match(gs.OPENRN_BOOKS[0].chapter_pattern, "12.2")
+    assert not re.match(gs.OPENRN_BOOKS[0].chapter_pattern, "2.3")
+    assert re.match(gs.OPENRN_BOOKS[1].chapter_pattern, "7.4") and not re.match(gs.OPENRN_BOOKS[1].chapter_pattern, "7.5")
+    assert gs.tidy_title("ECG PATTERNS AND DYSRHYTHMIAS") == "ECG Patterns and Dysrhythmias"
+    assert gs.tidy_title("COPD") == "COPD"
+
+
+def test_litarch_path_comes_from_the_file_list():
+    class Lister:
+        def get(self, url):
+            assert url.endswith("/file_list.csv")
+            return ("File,Title,Publisher,Publication Year,Accession ID,Last Updated (YYYY-MM-DD HH:MM:SS)\n"
+                    "b9/2a/openrnha_NBK613078.tar.gz,Health Alterations,Chippewa Valley Technical College,2024,"
+                    "NBK613078,2026-11-01 04:35:22\n")
+    assert gs.litarch_path(Lister(), "NBK613078") == "b9/2a/openrnha_NBK613078.tar.gz"
+    with pytest.raises(ValueError):
+        gs.litarch_path(Lister(), "NBK1")
 
 
 def _general_doc(source="litfl", doc_id="LITFL_atrial_flutter", **overrides):
