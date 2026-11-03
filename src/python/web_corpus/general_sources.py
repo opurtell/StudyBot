@@ -1,4 +1,4 @@
-"""Fetch the general open references (Open RN, LITFL ECG Library) for the web corpus.
+"""Fetch the general open references (Open RN, LITFL ECG Library, StatPearls) for the web corpus.
 
 Open RN comes from the NCBI Bookshelf open-access bulk download (``pub/litarch``), not the book websites.
 
@@ -6,7 +6,11 @@ Run on a machine that can reach the sites, from the repo root:
 
     PYTHONPATH=src/python python3 -m web_corpus.general_sources fetch openrn [--limit N]
     PYTHONPATH=src/python python3 -m web_corpus.general_sources fetch litfl [--limit N]
+    PYTHONPATH=src/python python3 -m web_corpus.general_sources fetch statpearls [--cache data/statpearls_cache]
     PYTHONPATH=src/python python3 -m web_corpus.general_sources list
+
+StatPearls (CC BY-NC-ND 4.0) is read from article XML extracted once from the NCBI litarch archive, limited to the
+topics in ``statpearls_topics.tsv``. Its text is never adapted: only whole sections are kept, and unit conversion is off.
 
 Each page becomes one JSON document in ``data/general_refs/<source>/``. Only pathophysiology, physiology and ECG
 recognition text is kept: treatment, medication, nursing and procedure sections are dropped, because the ACTAS CMGs
@@ -69,6 +73,15 @@ SOURCES: dict[str, GeneralSource] = {
         licence_url="https://creativecommons.org/licenses/by-nc-sa/4.0/",
         home_url="https://litfl.com/ecg-library/",
         commercial_use=False,
+    ),
+    "statpearls": GeneralSource(
+        id="statpearls",
+        name="StatPearls",
+        licence="CC BY-NC-ND 4.0",
+        licence_url="https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        home_url="https://www.ncbi.nlm.nih.gov/books/NBK430685/",
+        commercial_use=False,
+        adaptable=False,
     ),
 }
 
@@ -140,6 +153,13 @@ def convert_glucose_units(markdown: str) -> tuple[str, bool]:
     return "\n".join(lines), changed
 
 
+STATPEARLS_TOPICS_PATH = Path(__file__).with_name("statpearls_topics.tsv")
+STATPEARLS_CACHE_DIR = GENERAL_REFS_DIR.parent / "statpearls_cache"
+STATPEARLS_LICENCE_URL = re.compile(r"^https?://creativecommons\.org/licenses/by-nc-nd/4\.0/?$")
+STATPEARLS_SECTIONS = frozenset({"introduction", "definition/introduction", "etiology", "pathophysiology",
+                                 "toxicokinetics", "history and physical"})
+STATPEARLS_PHYSIOLOGY_SECTIONS = frozenset({"cellular level", "organ systems involved", "function", "mechanism",
+                                            "clinical significance"})
 LITARCH_ROOT = "https://ftp.ncbi.nlm.nih.gov/pub/litarch"
 NCBI_BOOKS_ROOT = "https://www.ncbi.nlm.nih.gov/books"
 OPENRN_LICENCE_URL = re.compile(r"^https?://creativecommons\.org/licenses/by/4\.0/?$")
@@ -331,6 +351,13 @@ def openrn_attribution(book: Book, chapter_title: str, url: str) -> str:
             f"questions; Australian spelling and terminology applied.")
 
 
+def statpearls_attribution(title: str, authors: str | None, url: str) -> str:
+    by = f" by {authors}" if authors else ""
+    return (f"\"{title}\"{by}, StatPearls (StatPearls Publishing, Treasure Island, FL), via NCBI Bookshelf ({url}), "
+            f"licensed under CC BY-NC-ND 4.0. Excerpts are reproduced unaltered; quiz questions are written separately "
+            f"from the facts.")
+
+
 def litfl_attribution(title: str, authors: str | None, url: str) -> str:
     by = f" by {authors}" if authors else ""
     return (f"\"{title}\"{by}, LITFL ECG Library, Life in the Fast Lane ({url}), licensed under CC BY-NC-SA 4.0. "
@@ -486,6 +513,86 @@ def openrn_sections(xml: bytes, book: Book) -> list[dict]:
             "markdown": drop_figure_references(html_to_markdown(html)),
         })
     return sections
+
+
+def _names(root: ET.Element) -> str | None:
+    names = []
+    for name in root.iter("name"):
+        given, surname = (name.findtext("given-names") or "").strip(), (name.findtext("surname") or "").strip()
+        if surname:
+            names.append(f"{given} {surname}".strip())
+    names = list(dict.fromkeys(names))
+    if len(names) > 3:
+        return f"{', '.join(names[:3])} et al."
+    if len(names) > 1:
+        return f"{', '.join(names[:-1])} and {names[-1]}"
+    return names[0] if names else None
+
+
+def statpearls_article(xml: bytes, file_name: str) -> dict | None:
+    root = ET.fromstring(xml)
+    licence = root.find(".//license")
+    href = licence.get(_XLINK_HREF) if licence is not None else None
+    if not href or not STATPEARLS_LICENCE_URL.match(href):
+        raise ValueError(f"{file_name}: licence {href!r} is not CC BY-NC-ND 4.0")
+    title_el = root.find(".//book-part-meta//title-group/title")
+    if title_el is None:
+        title_el = root.find(".//title-group/title")
+    title = re.sub(r"\s+", " ", "".join(title_el.itertext())).strip() if title_el is not None else ""
+    body = root.find(".//body")
+    if not title or body is None or "(Archived)" in title:
+        return None
+    keep = STATPEARLS_SECTIONS | (STATPEARLS_PHYSIOLOGY_SECTIONS if title.startswith("Physiology,") else frozenset())
+    html = ""
+    for sec in body.findall("sec"):
+        heading = re.sub(r"\s+", " ", "".join(sec.find("title").itertext())).strip() if sec.find("title") is not None else ""
+        if heading.lower() in keep:
+            html += bits_to_html(sec, 2)
+    slug = file_name.rsplit(".", 1)[0]
+    return {
+        "title": title,
+        "authors": _names(root.find(".//contrib-group") if root.find(".//contrib-group") is not None else root),
+        "url": f"{NCBI_BOOKS_ROOT}/n/statpearls/{slug}/",
+        "slug": slug,
+        "markdown": drop_figure_references(html_to_markdown(html)),
+    }
+
+
+def statpearls_topics(path: Path = STATPEARLS_TOPICS_PATH) -> list[dict]:
+    with path.open(encoding="utf-8") as fh:
+        return [row for row in csv.DictReader(fh, delimiter="\t") if row.get("file")]
+
+
+def fetch_statpearls(cache_dir: Path, out_dir: Path, limit: int | None, fetched_at: str,
+                     topics_path: Path = STATPEARLS_TOPICS_PATH) -> list[dict]:
+    source = SOURCES["statpearls"]
+    docs: list[dict] = []
+    for topic in statpearls_topics(topics_path):
+        if limit is not None and len(docs) >= limit:
+            break
+        path = cache_dir / topic["file"]
+        if not path.is_file():
+            print(f"skip {topic['file']}: not in {cache_dir}", file=sys.stderr)
+            continue
+        article = statpearls_article(path.read_bytes(), topic["file"])
+        if not article:
+            print(f"skip {topic['file']}: archived or empty", file=sys.stderr)
+            continue
+        doc = make_document(
+            source,
+            doc_id=f"STATPEARLS_{_slug_id(article['slug'])}_{_slug_id(article['title'])}",
+            number="StatPearls",
+            title=article["title"],
+            section=topic.get("section") or CORE_SECTION,
+            url=article["url"],
+            attribution=statpearls_attribution(article["title"], article["authors"], article["url"]),
+            markdown=article["markdown"],
+            fetched_at=fetched_at,
+        )
+        if doc:
+            write_document(out_dir, doc)
+            docs.append(doc)
+    return docs
 
 
 def litarch_path(fetcher: Fetcher, accession: str) -> str:
@@ -662,6 +769,8 @@ def main(argv: list[str] | None = None) -> int:
     fetch.add_argument("--limit", type=int, default=None, help="stop after N documents (for a trial)")
     fetch.add_argument("--out", type=Path, default=GENERAL_REFS_DIR)
     fetch.add_argument("--keep", action="store_true", help="keep documents from an earlier fetch")
+    fetch.add_argument("--cache", type=Path, default=STATPEARLS_CACHE_DIR,
+                       help="StatPearls: folder of article-*.nxml files extracted from the NCBI litarch archive")
     sub.add_parser("list")
     args = parser.parse_args(argv)
 
@@ -676,9 +785,11 @@ def main(argv: list[str] | None = None) -> int:
         for old in out_dir.glob("*.json"):
             old.unlink()
     fetched_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    fetcher = Fetcher()
-    run = fetch_openrn if args.source == "openrn" else fetch_litfl
-    docs = run(fetcher, out_dir, args.limit, fetched_at)
+    if args.source == "statpearls":
+        docs = fetch_statpearls(args.cache, out_dir, args.limit, fetched_at)
+    else:
+        run = fetch_openrn if args.source == "openrn" else fetch_litfl
+        docs = run(Fetcher(), out_dir, args.limit, fetched_at)
     chars = sum(len(d["content_markdown"]) for d in docs)
     print(json.dumps({"source": args.source, "documents": len(docs), "chars": chars, "out": str(out_dir)}, indent=2))
     return 0 if docs else 1

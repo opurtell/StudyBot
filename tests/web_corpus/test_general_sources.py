@@ -520,3 +520,39 @@ def test_deferred_checks_run_later_with_another_model(tmp_path, mixed):
     assert all(r["check"]["conflict"] and r["check_model_id"] == "lmstudio:checker" and "check_deferred" not in r
                for r in checked)
     assert all(r["model_id"] == "lmstudio:writer" for r in checked)
+
+
+STATPEARLS_XML = b"""<?xml version="1.0"?>
+<book-part-wrapper xmlns:xlink="http://www.w3.org/1999/xlink">
+<book-meta><permissions><license xlink:href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><p>CC BY-NC-ND</p></license></permissions></book-meta>
+<book-part><book-part-meta><title-group><title>Hyperkalemia</title></title-group>
+<contrib-group><contrib><name><surname>Simon</surname><given-names>Leslie V.</given-names></name></contrib></contrib-group>
+</book-part-meta><body>
+<sec><title>Introduction</title><p>Hyperkalemia is a serum potassium above 5.5 mEq/L, and it is a common electrolyte disturbance seen in emergency care with a risk of fatal arrhythmia <xref ref-type="bibr" rid="r1">[1]</xref>.</p></sec>
+<sec><title>Pathophysiology</title><p>Raised extracellular potassium reduces the resting membrane potential gradient, which shortens repolarisation and produces peaked T waves on the ECG, then widening of the QRS complex as conduction slows across the myocardium.</p></sec>
+<sec><title>Treatment / Management</title><p>Give calcium gluconate immediately.</p></sec>
+<sec><title>Epidemiology</title><p>About 10% of inpatients are affected.</p></sec>
+</body></book-part></book-part-wrapper>"""
+
+
+def test_statpearls_keeps_only_recognition_sections_unaltered(tmp_path):
+    cache = tmp_path / "cache"
+    cache.mkdir()
+    (cache / "article-23071.nxml").write_bytes(STATPEARLS_XML)
+    topics = tmp_path / "topics.tsv"
+    topics.write_text("file\ttitle\tsection\narticle-23071.nxml\tHyperkalemia\tPathophysiology\n", encoding="utf-8")
+    docs = gs.fetch_statpearls(cache, tmp_path / "out" / "statpearls", None, FETCHED, topics)
+    assert len(docs) == 1
+    doc = docs[0]
+    body = doc["content_markdown"]
+    assert "Hyperkalemia is a serum potassium above 5.5 mEq/L" in body and "peaked T waves" in body
+    assert "calcium gluconate" not in body and "10% of inpatients" not in body
+    assert doc["licence"] == "CC BY-NC-ND 4.0" and doc["url"].endswith("/books/n/statpearls/article-23071/")
+    assert "Leslie V. Simon" in doc["attribution"] and "unaltered" in doc["attribution"]
+    built, chunks = corpus_build.build_general_document(doc)
+    assert built.attribution == doc["attribution"] and all("hyperkalaemia" not in c.text.lower() for c in chunks)
+
+
+def test_statpearls_rejects_another_licence(tmp_path):
+    with pytest.raises(ValueError):
+        gs.statpearls_article(STATPEARLS_XML.replace(b"by-nc-nd", b"by-nc"), "article-1.nxml")

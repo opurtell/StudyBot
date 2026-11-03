@@ -106,7 +106,7 @@ export function DocumentView({
       {doc && general && (
         <footer className="space-y-1 text-xs text-on-surface-variant">
           <p>
-            Adapted from {doc.attribution}{" "}
+            {general.adaptable ? "Adapted from" : "Excerpt from"} {doc.attribution}{" "}
             <a className="underline" href={doc.sourceUrl} rel="noopener noreferrer" target="_blank">
               Read the original
             </a>

@@ -6,7 +6,7 @@ import { ScopeBadge } from "./ScopeBadge";
 export function documentLabel(doc: Pick<DocumentSummary, "kind" | "number">): string {
   if (doc.kind === "med") return `MED ${doc.number}`;
   if (doc.kind === "csm") return doc.number;
-  if (doc.kind === "ref") return doc.number === "LITFL" ? "LITFL" : `Open RN ${doc.number}`;
+  if (doc.kind === "ref") return doc.number === "LITFL" || doc.number === "StatPearls" ? doc.number : `Open RN ${doc.number}`;
   return `CMG ${doc.number}`;
 }
 

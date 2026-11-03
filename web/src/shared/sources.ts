@@ -1,5 +1,5 @@
 export interface GeneralSource {
-  id: "openrn" | "litfl";
+  id: "openrn" | "litfl" | "statpearls";
   idPrefix: string;
   name: string;
   publisher: string;
@@ -8,6 +8,7 @@ export interface GeneralSource {
   licenceUrl: string;
   homeUrl: string;
   commercialUse: boolean;
+  adaptable: boolean;
 }
 
 export const GENERAL_SOURCES: GeneralSource[] = [
@@ -21,6 +22,7 @@ export const GENERAL_SOURCES: GeneralSource[] = [
     licenceUrl: "https://creativecommons.org/licenses/by/4.0/",
     homeUrl: "https://wtcs.pressbooks.pub/healthalts/",
     commercialUse: true,
+    adaptable: true,
   },
   {
     id: "litfl",
@@ -32,6 +34,19 @@ export const GENERAL_SOURCES: GeneralSource[] = [
     licenceUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     homeUrl: "https://litfl.com/ecg-library/",
     commercialUse: false,
+    adaptable: true,
+  },
+  {
+    id: "statpearls",
+    idPrefix: "STATPEARLS_",
+    name: "StatPearls",
+    publisher: "StatPearls Publishing, Treasure Island (FL), via NCBI Bookshelf",
+    works: "StatPearls: about 160 articles on conditions paramedics see, plus core physiology",
+    licence: "CC BY-NC-ND 4.0",
+    licenceUrl: "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    homeUrl: "https://www.ncbi.nlm.nih.gov/books/NBK430685/",
+    commercialUse: false,
+    adaptable: false,
   },
 ];
 

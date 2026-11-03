@@ -28,7 +28,7 @@ export function Attribution({ documentId, attribution }: { documentId: string; a
   if (!source || !attribution) return null;
   return (
     <p className="text-xs text-on-surface-variant">
-      Adapted from {attribution}{" "}
+      {source.adaptable ? "Adapted from" : "Excerpt from"} {attribution}{" "}
       <a className="underline" href={source.licenceUrl} rel="noopener noreferrer license" target="_blank">
         Licence terms
       </a>

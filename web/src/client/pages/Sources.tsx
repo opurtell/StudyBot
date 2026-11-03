@@ -51,12 +51,14 @@ export function Sources() {
           ))}
         </ul>
         <p className="text-sm">
-          The source text has been adapted: treatment, medicine and procedure sections and all images were removed, the
-          text was split into sections, and questions were written from it with AI and localised to Australian English.
-          Neither publisher endorses this app. Each question shows the page it was adapted from.
+          Open RN and LITFL text has been adapted: treatment, medicine and procedure sections and all images were removed,
+          the text was split into sections, Open RN blood glucose values are also given in mmol/L, and questions were
+          written from it with AI and localised to Australian English. StatPearls text is never altered: only whole
+          sections are shown, exactly as published (including US spelling), and its questions are written separately
+          from the facts. No publisher endorses this app. Each question shows the page it came from.
         </p>
         <p className="text-sm">
-          The pathophysiology and ECG questions and their adapted source text are shared under{" "}
+          The Open RN and LITFL questions and their adapted source text are shared under{" "}
           <a className="underline" href={GENERAL_QUESTION_LICENCE.url} rel="noopener noreferrer license" target="_blank">
             {GENERAL_QUESTION_LICENCE.name}
           </a>
