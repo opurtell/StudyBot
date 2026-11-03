@@ -428,7 +428,10 @@ def bits_to_html(elem: ET.Element, depth: int) -> str:
     tag = elem.tag
     if tag == "table":
         drop_excluded_columns(elem)
-    if tag in _BITS_SKIP or (tag == "xref" and elem.get("ref-type") == "bibr"):
+    if tag == "xref" and elem.get("ref-type") == "bibr":
+        tail = elem.tail or ""
+        return "" if re.fullmatch(r"\s*[,–-]\s*", tail) else escape(tail)
+    if tag in _BITS_SKIP:
         return escape(elem.tail or "")
     if tag == "sec":
         title = elem.find("title")
@@ -451,7 +454,7 @@ def drop_figure_references(markdown: str) -> str:
     lines = []
     for line in markdown.splitlines():
         line = re.sub(r"\s*\[\s*(?:\d+(?:\s*[,–-]\s*\d+)*)?\s*\]", "", line)
-        line = re.sub(r"([.!?:;])\s*,+", r"\1", re.sub(r",{2,}", "", line))
+        line = re.sub(r",{2,}", "", line)
         line = re.sub(r",+(?=:)", "", line)
         line = re.sub(r"\s*\((?:see |refer to )?[^()]*\b(?:Figure|Fig\.)\s*\d[^()]*\)", "", line, flags=re.I)
         if _FIGURE_REF.search(line):

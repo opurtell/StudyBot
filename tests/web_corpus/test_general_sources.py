@@ -111,6 +111,7 @@ See <xref ref-type="fig" rid="f1">Figure 5.21</xref> for an illustration.</p>
 </tbody></table></table-wrap>
 <p>Causes include the following,<xref ref-type="bibr" rid="r2">2</xref>,<xref ref-type="bibr" rid="r3">3</xref>: ischaemia and
 hypertension.<xref ref-type="bibr" rid="r4">4</xref>,<xref ref-type="bibr" rid="r5">5</xref></p>
+<p>Some causes (e.g., ischaemia, i.e., reduced supply) recur.</p>
 <p>Left-sided failure raises pulmonary venous pressure, so fluid moves into the alveoli and causes crackles and
 pulmonary oedema, while right-sided failure causes peripheral oedema, hepatomegaly and jugular venous distension.</p>
 </sec>
@@ -137,6 +138,7 @@ def test_openrn_chapters_keep_pathophysiology_and_drop_care_figures_and_referenc
     assert "jugular venous distension" in md
     assert "Malignant cells grow without control.\n" in md
     assert "Side | Signs\n" in md and "following: ischaemia and hypertension.\n" in md
+    assert "(e.g., ischaemia, i.e., reduced supply)" in md
     for gone in ("[1]", "[3]", "[]", "Figure", "YouTube", "image of", "Image credit", "diuretic", "Sit upright", "Frusemide", "Diuretics", ",,", "Weigh daily", "A ref.", "Quiz"):
         assert gone not in md
     assert "NCBI Bookshelf" in doc["attribution"] and "CC BY 4.0" in doc["attribution"]
