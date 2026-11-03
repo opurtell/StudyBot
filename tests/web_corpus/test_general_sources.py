@@ -414,3 +414,59 @@ def test_resume_retries_general_questions_whose_check_failed(tmp_path, mixed):
     fake = FakeGemini()
     qb.Runner(corpus, tmp_path, "key", fake, max_usd=100).run(tasks, workers=1, progress=lambda _: None)
     assert len(fake.calls) == 2
+
+
+def _as_complete(fake):
+    def complete(system, user, schema):
+        data = fake("local", {"systemInstruction": {"parts": [{"text": system}]},
+                              "contents": [{"role": "user", "parts": [{"text": user}]}]}, "")
+        return data["candidates"][0]["content"]["parts"][0]["text"], {"input": 0, "output": 0, "thinking": 0,
+                                                                      "seconds": 2.0}
+    return complete
+
+
+def test_local_generation_records_the_local_model_and_costs_nothing(tmp_path, mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+    local = FakeGemini()
+
+    def no_gemini(url, body, api_key):
+        raise AssertionError("Gemini should not be called")
+
+    runner = qb.Runner(corpus, tmp_path, "", no_gemini, max_usd=0.0001, generate=_as_complete(local),
+                       model_id=qb.LOCAL_PREFIX + "openai/gpt-oss-20b")
+    runner.run(tasks, workers=1, progress=lambda _: None)
+    records = qb.load_raw(tmp_path / "raw.jsonl")
+    assert records and all(r["model_id"] == "lmstudio:openai/gpt-oss-20b" for r in records)
+    assert all(r["check_model_id"] == "lmstudio:openai/gpt-oss-20b" and r["check"] for r in records)
+    assert all(r["cost_usd"] == 0 and r["seconds"] == 2.0 and r["check_seconds"] == 2.0 for r in records)
+    questions, _ = qb.select_questions(corpus, records)
+    assert questions and all(q["model_id"] == "lmstudio:openai/gpt-oss-20b" for q in questions)
+
+
+def test_local_generation_can_check_with_gemini(tmp_path, mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+    local, gemini = FakeGemini(), FakeGemini()
+    runner = qb.Runner(corpus, tmp_path, "key", gemini, max_usd=100, generate=_as_complete(local),
+                       check=qb.gemini_complete(gemini, "key"), model_id="lmstudio:m", check_model_id=qb.MODEL_ID)
+    runner.run(tasks, workers=1, progress=lambda _: None)
+    records = qb.load_raw(tmp_path / "raw.jsonl")
+    assert len(local.calls) == len(gemini.calls) == len(records)
+    assert all(r["model_id"] == "lmstudio:m" and r["check_model_id"] == qb.MODEL_ID for r in records)
+    assert all(r["cost_usd"] > 0 for r in records)
+
+
+def test_local_server_down_halts_the_run(tmp_path, mixed):
+    cmg, root = mixed
+    corpus = corpus_build.build(cmg, built_at=FETCHED, general_dir=root)
+    tasks = qb.plan(corpus, "general")
+
+    def down(system, user, schema):
+        raise qb.GenerationError("LM Studio: start the server", fatal=True)
+
+    runner = qb.Runner(corpus, tmp_path, "", None, max_usd=100, generate=down, model_id="lmstudio:m")
+    runner.run(tasks, workers=1, progress=lambda _: None)
+    assert runner.halted and qb.load_raw(tmp_path / "raw.jsonl") == []

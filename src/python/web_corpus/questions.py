@@ -10,6 +10,9 @@ Run from the repo root with a Gemini key in config/settings.json (providers.goog
 general source out. Every general-reference question is checked against the closest CMG text before it can be
 exported; a conflict, an out-of-scope question or a failed check drops it (the CMG wins).
 
+``--local MODEL`` generates with an LM Studio model instead (free; ``--check-with gemini`` keeps the CMG check on
+Gemini). Records carry ``lmstudio:<model>`` as their model id, so local questions can be told apart later.
+
 ``plan`` makes no API calls. ``generate`` appends to ``raw.jsonl`` and skips work already done, so it can be
 stopped and resumed. ``export`` writes ``questions.sql`` (load with ``npm run bank:load:<env>`` in ``web/``),
 ``review-sample.csv`` for clinical review and ``report.json``.
@@ -306,6 +309,32 @@ def call_gemini(transport: Transport, api_key: str, system: str, user: str, retr
     return text, usage
 
 
+Complete = Callable[[str, str, "dict | None"], tuple[str, dict]]
+LOCAL_PREFIX = "lmstudio:"
+
+
+def gemini_complete(transport: Transport, api_key: str) -> Complete:
+    return lambda system, user, schema: call_gemini(transport, api_key, system, user, schema=schema)
+
+
+def local_complete(model: str, base_url: str = "") -> Complete:
+    from llm.base import ErrorCategory, LLMError
+    from llm.lmstudio_provider import LMStudioProvider
+
+    provider = LMStudioProvider(default_model=model, base_url=base_url)
+
+    def complete(system: str, user: str, schema: dict | None) -> tuple[str, dict]:
+        start = time.monotonic()
+        try:
+            text = provider.complete([{"role": "system", "content": system}, {"role": "user", "content": user}],
+                                     response_schema=schema)
+        except LLMError as exc:
+            raise GenerationError(f"LM Studio: {exc}", fatal=exc.category == ErrorCategory.TIMEOUT) from exc
+        return text, {"input": 0, "output": 0, "thinking": 0, "seconds": time.monotonic() - start}
+
+    return complete
+
+
 def usage_cost(usage: dict) -> float:
     return (usage["input"] * PRICE_PER_MILLION[0] + (usage["output"] + usage["thinking"]) * PRICE_PER_MILLION[1]) / 1_000_000
 
@@ -393,11 +422,15 @@ def load_raw(path: Path) -> list[dict]:
 
 
 class Runner:
-    def __init__(self, corpus: Corpus, out_dir: Path, api_key: str, transport: Transport, max_usd: float):
+    def __init__(self, corpus: Corpus, out_dir: Path, api_key: str, transport: Transport, max_usd: float,
+                 generate: Complete | None = None, check: Complete | None = None, model_id: str = MODEL_ID,
+                 check_model_id: str | None = None):
         self.corpus = corpus
         self.raw_path = out_dir / "raw.jsonl"
-        self.api_key = api_key
-        self.transport = transport
+        self.generate = generate or gemini_complete(transport, api_key)
+        self.checker = check or self.generate
+        self.model_id = model_id
+        self.check_model_id = check_model_id or model_id
         self.max_usd = max_usd
         self.lock = threading.Lock()
         existing = load_raw(self.raw_path)
@@ -426,17 +459,18 @@ class Runner:
         hits = self.index.search(f"{question}\n{chunk.heading}\n{chunk.text}")
         cmg = [(f"{_doc_label(docs[h.document_id])} {docs[h.document_id].title}", h.text) for h in hits]
         record["check_chunks"] = [h.id for h in hits]
+        record["check_model_id"] = self.check_model_id
         for _ in range(2):
             try:
-                text, usage = call_gemini(self.transport, self.api_key, PROMPTS["conflictSystem"],
-                                          conflict_user(question, chunk.embed_text, cmg),
-                                          schema=PROMPTS["conflictSchema"])
+                text, usage = self.checker(PROMPTS["conflictSystem"], conflict_user(question, chunk.embed_text, cmg),
+                                           PROMPTS["conflictSchema"])
             except GenerationError as exc:
                 record["check_error"] = str(exc)
                 if exc.fatal:
                     self.halted = str(exc)
                 return
             record["cost_usd"] += usage_cost(usage)
+            record["check_seconds"] = round(usage.get("seconds", 0.0), 1)
             parsed = parse_check(text)
             if parsed:
                 record["check"] = parsed
@@ -467,7 +501,7 @@ class Runner:
                 "document_id": chunk.document_id,
                 "difficulty": difficulty,
                 "gen_view": task.gen_view,
-                "model_id": MODEL_ID,
+                "model_id": self.model_id,
                 "prompt_version": prompt_version(task.general),
                 "corpus_version": self.corpus.version,
                 "source_text": chunk.embed_text,
@@ -478,9 +512,10 @@ class Runner:
             parsed = None
             for _ in range(2):
                 try:
-                    text, usage = call_gemini(
-                        self.transport, self.api_key, system_prompt(task.gen_view, task.general),
+                    text, usage = self.generate(
+                        system_prompt(task.gen_view, task.general),
                         user_prompt(chunk.embed_text, difficulty, previous, task.focus, task.general),
+                        None,
                     )
                 except GenerationError as exc:
                     record["error"] = str(exc)
@@ -488,6 +523,7 @@ class Runner:
                         self.halted = str(exc)
                     break
                 record["cost_usd"] += usage_cost(usage)
+                record["seconds"] = round(usage.get("seconds", 0.0), 1)
                 parsed = parse_generation(text)
                 if parsed:
                     break
@@ -798,6 +834,11 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
     parser.add_argument("--per-chunk", type=int, default=None,
                         help="questions per general-reference chunk (difficulty spread by chunk)")
     parser.add_argument("--exclude-source", action="append", default=[], choices=sorted(general_sources.SOURCES))
+    parser.add_argument("--local", metavar="MODEL", default=None,
+                        help="generate with this LM Studio model instead of Gemini (free; the server must be running)")
+    parser.add_argument("--check-with", choices=["same", "gemini"], default="same",
+                        help="with --local, run the CMG conflict check on the local model or on Gemini")
+    parser.add_argument("--lmstudio-url", default="")
     args = parser.parse_args(argv)
 
     corpus = build(exclude_sources=frozenset(args.exclude_source))
@@ -822,14 +863,23 @@ def main(argv: list[str] | None = None, transport: Transport = http_transport) -
         return 0
 
     if args.command == "generate":
-        if not args.yes:
+        uses_gemini = not args.local or args.check_with == "gemini"
+        if uses_gemini and not args.yes:
             print(f"This makes up to {sum(len(t.difficulties) for t in tasks)} Gemini calls "
                   f"(about US${estimate_cost(tasks):.2f}). Re-run with --yes to go ahead.")
             return 1
-        runner = Runner(corpus, args.out, args.api_key or api_key_from_settings(), transport, args.max_usd)
-        runner.run(tasks, args.workers)
+        api_key = (args.api_key or api_key_from_settings()) if uses_gemini else ""
+        options: dict = {}
+        if args.local:
+            local = local_complete(args.local, args.lmstudio_url)
+            options = {"generate": local, "model_id": LOCAL_PREFIX + args.local}
+            if args.check_with == "gemini":
+                options.update(check=gemini_complete(transport, api_key), check_model_id=MODEL_ID)
+        runner = Runner(corpus, args.out, api_key, transport, args.max_usd, **options)
+        runner.run(tasks, 1 if args.local else args.workers)
         if runner.halted:
-            print(f"Stopped: {runner.halted}. Check the key's billing, then re-run; finished work is skipped.")
+            print(f"Stopped: {runner.halted}. Check the key's billing or the LM Studio server, then re-run; "
+                  "finished work is skipped.")
             return 1
         print(f"Spent US${runner.spent:.2f} this run (US${runner.spent_before + runner.spent:.2f} in raw.jsonl overall).")
         if runner.spent >= args.max_usd:
