@@ -139,6 +139,7 @@ def bundled_service_structured_dir(service_id: str) -> Path:
     return service_structured_dir(service_id)
 
 
+GENERAL_REFS_DIR = APP_ROOT / "data" / "general_refs"
 REFDOCS_DIR = APP_ROOT / "docs" / "REFdocs"
 CPDDOCS_DIR = APP_ROOT / "docs" / "CPDdocs"
 NOTABILITY_NOTE_DOCS_DIR = APP_ROOT / "docs" / "notabilityNotes" / "noteDocs"

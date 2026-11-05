@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_apical_hypertrophic_cardiomyopathy_ahc",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Apical hypertrophic cardiomyopathy (AHC)",
+  "section": "ECGs",
+  "url": "https://litfl.com/apical-hypertrophic-cardiomyopathy-ahc/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Apical hypertrophic cardiomyopathy (AHC)\" by Robert Buttner and Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/apical-hypertrophic-cardiomyopathy-ahc/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "12071903a5897a72943ad98e223fdaf5ccb8df5851e8da4ed300eab291c42745",
+  "content_markdown": "##### ECG features of AHC\n\n- The classic ECG finding in apical HCM is giant T-wave inversion in the precordial leads. Inverted T waves are also commonly observed in the inferior and lateral leads\n- Localised hypertrophy of LV apex, causing an “ace of spades” configuration of the LV cavity on ventriculography\n\nNon-obstructive variant of Hypertrophic Cardiomyopathy (HCM). This relatively uncommon form of HCM is seen most frequently in Japanese patients (13-25% of all HCM cases in Japan).\n\nAlso known as Yamaguchi syndrome after the Hiroshi Yamaguchi MD and his original papers on hypertrophic non-obstructive cardiomyopathy with giant negative T waves (apical hypertrophy) in 1976 and 1979.\n\n1979 Yamaguchi et al reviewed 1,002 consecutive left heart catheterization patients. Of the total, 30 patients exhibited the pathognomonic “ace of spades” shape of the left ventricle (LV).\n\n2003 Kitaoka et al. showed a prevalence of 15% in an unselected Japanese cohort compared with 3% in an unselected Minneapolis cohort. They found an increased incidence among men, confirmed by Husser et al (2018) who found the incidence increased with age and further favoured men as age increased\n\n##### Ace-of-spades sign\n\nPathognomonic left ventricule configuration seen in apical hypertrophic cardiomyopathy. Marked ventricular wall thickening at the apex resulting in cavity narrowing at the apex with a relatively normal appearance of the mid-ventricular to basal wall and cavity.\n\nThe sign can be demonstrated on echocardiography, ventriculography, and cardiac MRI\n\n###### Cardiac MRI\n\nA cardiac MRI with findings suggestive of apical hypertrophic cardiomyopathy. The left ventricle is observed in the right view at the end of diastole with “ace of spades” shape, characteristic of Yamaguchi syndrome\n\n##### Examples\n\n###### Example 1\n\nThis ECG shows the typical pattern of apical HCM:\n\n- Large precordial voltages.\n- Giant T wave inversions in the precordial leads\n- Inverted T waves are also seen in the inferior and lateral leads.\n\nThis great ECG is reproduced from Hansen & Merchant (2007).\n\n###### Example 2\n\nThis ECG shows the typical pattern of apical HCM:\n\n- T wave inversions in leads I, II, and V2-V6\n\n##### Videos\n\nHCM video education\n"
+}

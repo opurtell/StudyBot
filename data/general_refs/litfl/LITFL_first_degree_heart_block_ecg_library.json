@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_first_degree_heart_block_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "First Degree Heart Block",
+  "section": "ECGs",
+  "url": "https://litfl.com/first-degree-heart-block-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"First Degree Heart Block\" by John Larkin and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/first-degree-heart-block-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "8f0b0d50052a71db4976388835a928593353a4c5802649da560d4059704367e3",
+  "content_markdown": "##### Definition\n\nPR interval > 200ms (five small squares)\n\n- There is delay, without interruption, in conduction from atria to ventricles\n\n- ‘Marked’ first degree heart block is present if PR interval > 300ms\n\n##### Causes of First Degree Heart Block\n\n- Increased vagal tone\n\n- Athletic training\n\n- Inferior MI\n\n- Mitral valve surgery\n\n- Myocarditis (e.g. Lyme disease)\n\n- Electrolyte disturbances (e.g. Hyperkalaemia)\n\n- AV nodal blocking drugs (beta-blockers, calcium channel blockers, digoxin, amiodarone)\n\n- May be a normal variant\n\n##### Clinical significance\n\n- As an isolated finding this is a benign entity that does not cause haemodynamic instability\n\n- No specific treatment is required\n\n##### ECG Examples\n\n###### Example 1\n\n- Marked first degree heart block\n\n- PR interval > 300 ms, P waves are buried in the preceding T wave\n\n###### Example 2\n\n- Sinus bradycardia with 1st degree AV block\n\n- PR interval > 300 ms\n\n###### Example 3\n\n- Normal sinus rhythm with 1st degree AV block\n\n- PR interval 260 ms\n"
+}

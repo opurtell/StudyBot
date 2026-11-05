@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_hypothermia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Hypothermia",
+  "section": "ECGs",
+  "url": "https://litfl.com/hypothermia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Hypothermia\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/hypothermia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "f6c57c9dbd5ac5031b290c65c79f19b3f822a61c8f70116b29efa1169d2de835",
+  "content_markdown": "##### ECG Changes in Hypothermia\n\n- Bradyarrhythmias (see below)\n\n- Osborne Waves (= J waves)\n\n- Prolonged PR, QRS and QT intervals\n\n- Shivering artefact\n\n- Ventricular ectopics\n\n- Cardiac arrest due to VT, VF or asystole\n\n##### Classification of hypothermia\n\nHypothermia is defined as a core body temperature of < 35 °C [degrees centigrade]:\n\n- Mild hypothermia is 32-35 °C\n\n- Moderate hypothermia is 29-32 °C\n\n- Severe hypothermia is < 29 °C\n\n##### Bradyarrhythmias\n\nBradycardia is a common finding in hypothermia. Patients may manifest a variety of bradyarrhythmias:\n\n- Sinus bradycardia (may be marked)\n\n- Atrial fibrillation with slow ventricular response\n\n- Slow junctional rhythms\n\n- Varying degrees of AV block (1st-3rd)\n\n##### Example ECGs\n\n###### Example 3\n\n- ECG with the classic features of hypothermia: bradycardia, Osborn waves and shivering artefact.\n\n##### Osborn Waves\n\nThe Osborn wave (J wave) is a positive deflection at the J point (negative in aVR and V1).\n\n- It is usually most prominent in the precordial leads.\n\n- The height of the Osborn wave is roughly proportional to the degree of hypothermia\n\n###### Example 4\n\n- Subtle J waves in mild hypothermia [Temp: 32.5°C (90.5°F)]\n\n- The height of the J wave is roughly proportional to the degree of hypothermia\n\n##### Shivering Artefact\n\n- Shivering artefact is seen as a “fuzziness” of the ECG baseline\n\n- It is not specific to hypothermia and may be seen with other conditions associated with tremor (e.g. Parkinson’s disease)\n\n###### Example 9\n\n- Shivering artefact in a patient with hypothermia (note also the Osborn waves, bradycardia, prolonged QT)\n"
+}

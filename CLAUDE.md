@@ -39,7 +39,8 @@ The app supports more than one ambulance service. The user picks the active serv
 
 A Cloudflare-native rewrite for a hosted multi-user version lives in `web/` (TypeScript Worker + React, D1). It has its
 own `package.json`, tests and CI (`.github/workflows/web-*.yml`); the desktop app and its checks ignore it. Read
-`web/README.md` and `docs/web-port-plan.md` before working there. The web corpus is ACTAS guideline content only.
+`web/README.md` and `docs/web-port-plan.md` before working there. The web corpus is ACTAS guideline content plus the
+approved general open references (Open RN, LITFL ECG Library) for pathophysiology and ECG questions; never personal material.
 
 ---
 
@@ -79,6 +80,7 @@ When sources conflict, resolve using this order. Never break this unless the use
 | 2 | REF docs | `docs/REFdocs/` (2 files — ACTAS policies, CMG reference tables) |
 | 3 | CPD docs | `docs/CPDdocs/` (9 files — clinical study notes, ECGs, assessments) |
 | 4 | Notability Notes | `docs/notabilityNotes/` (handwritten OCR, may contain errors) |
+| 5 | General open references (Open RN, LITFL ECG Library) | `data/general_refs/` (web app only; pathophysiology, physiology and ECG recognition only) |
 
 If no source exists for a piece of information, **do not fabricate it**. Say you don't have the information.
 

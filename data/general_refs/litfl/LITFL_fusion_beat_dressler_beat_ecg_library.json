@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_fusion_beat_dressler_beat_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Fusion Beats",
+  "section": "ECGs",
+  "url": "https://litfl.com/fusion-beat-dressler-beat-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Fusion Beats\" by Ed Burns, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/fusion-beat-dressler-beat-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "bf763298efdea7f498d1466d51cf0f4015261b8a8d9322d154c2f09a08201362",
+  "content_markdown": "#### Fusion Beats\n\nA fusion beat occurs when a supraventricular and a ventricular impulse coincide to produce a hybrid complex. It indicates that there are two foci of pacemaker cells firing simultaneously: a supraventricular pacemaker (e.g. the sinus node) and a competing ventricular pacemaker (source of ventricular ectopics).\n\n- The fusion beats are of intermediate width and morphology to the supraventricular and ventricular complexes.\n\n- Originally described by William Dressler in 1952\n\n#### Causes\n\n###### Fusion beats are seen with:\n\n- Ventricular tachycardia\n\n- Accelerated idioventricular rhythm (AIVR)\n"
+}

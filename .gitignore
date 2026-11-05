@@ -46,3 +46,5 @@ data/personal_docs/
 stitchDesign/
 .worktrees/
 tmp/
+
+data/statpearls_cache/

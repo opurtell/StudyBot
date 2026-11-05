@@ -155,6 +155,7 @@ export function AttemptView() {
               citation: data.citation,
               documentId: data.documentId,
               documentTitle: data.documentTitle,
+              attribution: data.attribution,
             }}
           />
           <Link to={`/quiz?document=${encodeURIComponent(data.documentId)}`} className="inline-block text-sm underline">

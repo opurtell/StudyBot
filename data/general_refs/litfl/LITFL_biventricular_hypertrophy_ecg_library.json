@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_biventricular_hypertrophy_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Biventricular Hypertrophy",
+  "section": "ECGs",
+  "url": "https://litfl.com/biventricular-hypertrophy-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Biventricular Hypertrophy\" by Ed Burns, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/biventricular-hypertrophy-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "724efaa96671eed05a64ad975678e0df696ca3abf956bbc3351536ddbb3dfb34",
+  "content_markdown": "##### Biventricular Hypertrophy\n\nHypertrophy of both the left and right ventricles.\n\nThe ECG has a low sensitivity for the diagnosis of biventricular hypertrophy (BVH), as the opposing left and right ventricular forces tend to cancel each other out.\n\n- There may be signs of both Left Ventricular Hypertrophy (LVH) and Right Ventricular Hypertrophy (RVH) on the same ECG – e.g. positive diagnostic criteria for LVH with some additional features suggestive of RVH.\n- The Katz-Wachtel phenomenon – large biphasic QRS complexes in V2-5. This is the classic ECG pattern of BVH, most commonly seen in children with congenital heart disease e.g. ventricular septal defect (VSD).\n\nIn the presence of LVH – Additional signs indicating RVH include\n\n- Right atrial enlargement.\n- Right axis deviation.\n- Tall biphasic QRS complexes in multiple leads.\n- Deep S waves in V5-6.\n\nIn the presence of RVH – Additional signs indicating LVH include:\n\n- Tall R waves and deep S waves in V2-5.\n- QRS amplitude > 50 mm.\n\nKatz-Wachtel phenomenon\n\n- Large biphasic QRS complexes (tall R waves + deep S waves) in V2-5.\n\n##### ECG Examples\n\n###### Biventricular hypertrophy:\n\n- Large biphasic QRS complexes in V2-5.\n- LVH: Voltage criteria for LVH (S V2 + R V5 = 35 mm, R aVL > 11 mm) with signs of LV strain (T-wave inversion in V4-6).\n- Persistent S waves in V5-6 suggestive of associated RVH.\n\n###### Biventricular hypertrophy\n\n- Katz-Wachtel phenomenon — biphasic QRS complexes in the precordial leads.\n- Enormous voltages — QRS amplitude > 50 mm in V2.\n- Easily meets voltage criteria for LVH and there are associated features of LV strain (ST depression and T-wave inversion in V4-6).\n- Signs of right atrial enlargement — peaked P waves in lead II.\n\n###### Example 3\n\nBiventricular hypertrophy in a child with VSD:\n\n- Katz-Wachtel phenomenon – large biphasic QRS complexes in V2-5.\n- Enormous QRS voltages.\n- Right axis deviation and T-wave inversion in V1-3 are normal findings on the paediatric ECG.\n"
+}

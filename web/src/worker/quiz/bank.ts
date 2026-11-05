@@ -36,11 +36,14 @@ export interface PublicQuestion {
   origin: "bank" | "live";
 }
 
+export type SourceType = "guideline" | "general_reference";
+
 export interface StoredQuestion extends PublicQuestion {
   status: "active" | "flagged" | "retired";
   sourceText: string;
   attribution: string;
   licence: string;
+  sourceType: SourceType;
 }
 
 interface QuestionRow {
@@ -59,10 +62,11 @@ interface QuestionRow {
   source_text: string;
   attribution: string;
   licence: string;
+  source_type: SourceType;
 }
 
 const SELECT_QUESTION = `SELECT q.id, q.question_text, q.question_type, q.difficulty, q.category, q.source_citation, q.document_id,
-  d.number, d.title, d.section, q.origin, q.status, q.source_text, q.attribution, q.licence
+  d.number, d.title, d.section, q.origin, q.status, q.source_text, q.attribution, q.licence, q.source_type
   FROM question_bank q
   JOIN corpus_documents d ON d.id = q.document_id
   JOIN corpus_chunks c ON c.id = q.chunk_id AND c.retired_at IS NULL AND c.embed_text = q.source_text`;
@@ -84,7 +88,14 @@ function toPublic(row: QuestionRow): PublicQuestion {
 }
 
 function toStored(row: QuestionRow): StoredQuestion {
-  return { ...toPublic(row), status: row.status, sourceText: row.source_text, attribution: row.attribution, licence: row.licence };
+  return {
+    ...toPublic(row),
+    status: row.status,
+    sourceText: row.source_text,
+    attribution: row.attribution,
+    licence: row.licence,
+    sourceType: row.source_type,
+  };
 }
 
 function exclusionSql(sections: string, documents: string): string {
@@ -245,7 +256,7 @@ export async function candidateChunks(
     .prepare(
       `SELECT c.id, c.document_id, c.embed_text, d.section, c.vis_ap, c.vis_ap_pacer, c.vis_icp, c.vis_icp_pacer
        FROM corpus_chunks c JOIN corpus_documents d ON d.id = c.document_id
-       WHERE c.retired_at IS NULL AND c.${vis} = 1 AND length(c.text) >= 200 AND d.service = ?1
+       WHERE c.retired_at IS NULL AND c.${vis} = 1 AND length(c.text) >= 200 AND d.service = ?1 AND d.kind != 'ref' 
          AND (?2 IS NULL OR c.document_id = ?2)
          AND (?3 IS NULL OR d.section = ?3)
          ${exclusionSql("?5", "?6")}

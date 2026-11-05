@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_digoxin_toxicity_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Digoxin Toxicity",
+  "section": "ECGs",
+  "url": "https://litfl.com/digoxin-toxicity-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Digoxin Toxicity\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/digoxin-toxicity-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "938564fdcceb104ae8df78698c55afd83679ba289c5c18d19e93ae08239bff46",
+  "content_markdown": "##### ECG Features of Digoxin Toxicity\n\nThe classic digoxin toxic dysrhythmia combines:\n\n- Supraventricular tachycardia (due to increased automaticity)\n\n- Slow ventricular response (due to decreased AV conduction)\n\nOther common dysrhythmias associated with digoxin toxicity include:\n\n- Frequent PVCs (the most common abnormality), including ventricular bigeminy and trigeminy\n\n- Sinus bradycardia\n\n- Slow Atrial Fibrillation\n\n- Any type of AV block (1st degree, 2nd degree & 3rd degree)\n\n- Regularised AF = AF with complete heart block and a junctional or ventricular escape rhythm\n\n- Ventricular tachycardia, including polymorphic and bidirectional VT\n\n##### Pathophysiology\n\nDigoxin can cause a multitude of dysrhythmias due to:\n\n- Increased automaticity (increased intracellular calcium)\n\n- Decreased AV conduction (increased vagal effects at the AV node)\n\n##### Clinical features of Digoxin Toxicity\n\n- GIT: Nausea, vomiting, anorexia, diarrhoea\n\n- Visual: Blurred vision, yellow/green discolouration, haloes\n\n- CVS: Palpitations, syncope, dyspnoea\n\n- CNS: Confusion, dizziness, delirium, fatigue\n\n##### ECG Examples\n\n###### Bigeminy\n\n- Sinus rhythm with frequent PVCs in a pattern of ventricular bigeminy\n\n###### Paroxysmal atrial tachycardia with block\n\n- Atrial tachycardia with high-grade AV block and PVCs\n\n###### Regularised AF\n\n- Coarse atrial fibrillation with 3rd degree AV block and a junctional escape rhythm.\n\n###### Regularised AF\n\n- Another example of regularised AF.\n\n###### “Paroxysmal” atrial tachycardia with block and frequent PVCs\n\n- This is a classic ECG of digoxin toxicity showing atrial tachycardia (P waves at 150 bpm), high-grade 2nd degree AV block (A:V ratio of 4:1) with frequent premature ventricular complexes.\n\n###### Atrial flutter with AV block\n\n- Atrial flutter with a slow ventricular rate due to digoxin toxicity.\n\n###### Bidirectional Ventricular Tachycardia (VT)\n\n- Example of Bidirectional VT.\n\n- There is a broad complex tachycardia with a frontal-plane axis that alternates by 180 degrees with each successive beat.\n"
+}

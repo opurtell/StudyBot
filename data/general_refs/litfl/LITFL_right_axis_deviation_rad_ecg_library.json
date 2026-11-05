@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_right_axis_deviation_rad_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Right Axis Deviation (RAD)",
+  "section": "ECGs",
+  "url": "https://litfl.com/right-axis-deviation-rad-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Right Axis Deviation (RAD)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/right-axis-deviation-rad-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "2286c0f171358d94de601c4e8d641836a6c85c6a9af64a13de1ad3dd592c1ccb",
+  "content_markdown": "###### Right Axis Deviation RAD Overview\n\nRight Axis Deviation = QRS axis greater than +90°\n\n- Normal Axis = QRS axis between -30° and +90°\n\n- Left Axis Deviation = QRS axis less than -30°\n\n- Extreme Axis Deviation = QRS axis between -90° and 180° (AKA “Northwest Axis”)\n\n###### How to recognise right axis deviation\n\nThree Lead analysis\n\n- QRS is POSITIVE (dominant R wave) in Lead II, Lead III and aVF\n\n- QRS is NEGATIVE (dominant S wave) in Lead I\n\n###### Example ECG of RAD\n\nRAD: leads II, III and aVF are POSITIVE; Leads I and aVL are NEGATIVE\n\n##### Causes\n\n- Left posterior fascicular block\n\n- Lateral myocardial infarction\n\n- Right ventricular hypertrophy\n\n- Acute lung disease (e.g. Pulmonary Embolus)\n\n- Chronic lung disease (e.g. COPD)\n\n- Ventricular ectopy\n\n- Hyperkalaemia\n\n- Sodium-channel blocker toxicity\n\n- WPW syndrome\n\n- Normal in children or thin adults with a vertically positioned heart\n"
+}

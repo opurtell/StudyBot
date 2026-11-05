@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_junctional_escape_rhythm_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Junctional Escape Rhythm",
+  "section": "ECGs",
+  "url": "https://litfl.com/junctional-escape-rhythm-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Junctional Escape Rhythm\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/junctional-escape-rhythm-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "bd3ce5d9a3120ef172fea072f4381f53194e3c48063bd015ef68a22af8afdc8d",
+  "content_markdown": "##### ECG features of Junctional Escape Rhythm\n\n- Junctional rhythm with a rate of 40-60 bpm\n\n- QRS complexes are typically narrow (< 120 ms)\n\n- No relationship between the QRS complexes and any preceding atrial activity (e.g. P-waves, flutter waves, fibrillatory waves)\n\n##### Mechanism\n\nPacemaker cells are found at various sites throughout the conducting system, with each site capable of independently sustaining the heart rhythm. The rate of spontaneous depolarisation of pacemaker cells decreases down the conducting system:\n\n- SA node (60-100 bpm)\n\n- Atria (< 60 bpm)\n\n- AV node (40-60 bpm)\n\n- Ventricles (20-40 bpm)\n\nUnder normal conditions, subsidiary pacemakers are suppressed by the more rapid impulses from above (i.e. sinus rhythm). Junctional and ventricular escape rhythms arise when the rate of supraventricular impulses arriving at the AV node or ventricle is less than the intrinsic rate of the ectopic pacemaker.\n\n##### Causes\n\nConditions leading to the emergence of a junctional or ventricular escape rhythm include:\n\n- Severe sinus bradycardia\n\n- Sinus arrest\n\n- Sino-atrial exit block\n\n- High-grade second degree AV block\n\n- Third degree AV block\n\n- Hyperkalaemia\n\n- Drugs: beta-blocker, calcium-channel blocker or digoxin poisoning\n\n##### ECG Examples\n\n###### Example 1\n\nAtrial fibrillation with 3rd degree AV block and a junctional escape rhythm (“regularised AF”)\n\n- Coarse atrial fibrillation (irregular baseline with atrial complexes at rate > 400 bpm)\n\n- Regular narrow complex rhythm at 60 bpm\n\n- The combination of atrial fibrillation with a regular rhythm (“regularised AF”) indicates that none of the atrial impulses are conducted to the ventricles, i.e. complete heart block is present\n\n- The narrow complex rhythm is therefore a junctional escape rhythm\n\n- Regularised AF is characteristically seen as a consequence of digoxin toxicity\n\n##### Terminology of junctional rhythms\n\n- Junctional bradycardia = junctional rhythm at a rate of < 40 bpm\n\n- Junctional escape rhythm = junctional rhythm at a rate of 40-60 bpm\n\n- Accelerated junctional rhythm = junctional rhythm at 60-100 bpm\n\n- Junctional tachycardia = junctional rhythm at > 100 bpm\n"
+}

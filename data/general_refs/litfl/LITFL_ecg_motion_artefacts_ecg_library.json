@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_ecg_motion_artefacts_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "ECG Motion Artefacts",
+  "section": "ECGs",
+  "url": "https://litfl.com/ecg-motion-artefacts-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"ECG Motion Artefacts\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/ecg-motion-artefacts-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "d3fa14ee5fcc5a2fe45c00830101b6c12101c2360a4f3d1301078c45e2b8990c",
+  "content_markdown": "##### ECG Motion Artefacts Overview\n\n- Motion artefact due to tremor or shivering can obscure the waveforms of the ECG or simulate pathology, making ECG interpretation difficult\n\n- In certain circumstances (e.g. hypothermia), the presence of shivering artefact may actually aid diagnosis\n\n##### Causes of Tremor\n\n- Benign Essential Tremor (physiological tremor)\n\n- Parkinson’s Disease (resting tremor)\n\n- Cerebellar disease (intention tremor)\n\n- Alcohol / Benzodiazepine withdrawal\n\n- Anxiety\n\n- Thyrotoxicosis\n\n- Multiple sclerosis\n\n- Drugs: Amphetamines, cocaine, beta-agonists (adrenaline, salbutamol), theophylline, caffeine, lithium.\n\n##### Other types of motion artefact\n\n- Fever (rigors)\n\n- Hypothermia (shivering)\n\n- Cardiopulmonary resuscitation (chest compressions)\n\n- A non-compliant, mobile, talkative patient (= the most common cause)!\n\n##### ECG Examples\n\n###### Hypothermia:\n\n- This ECG displays the classic features of hypothermia: bradycardia, Osborn waves and shivering artefact\n\n###### Parkinsonian tremor:\n\n- The irregular baseline in this ECG gives the appearance of atrial fibrillation\n\n- The slow regular rhythm even suggests the possibility of atrial fibrillation with complete heart block and a junctional escape rhythm\n\n- However, on closer inspection there are visible P waves in V3 (circled)\n\n- This patient had sinus bradycardia and a resting tremor due to Parkinson’s disease\n\n###### Chest compressions during CPR:\n\n- The high amplitude oscillations at the start of the rhythm strip are produced by movement artefact due to chest compressions during cardiopulmonary resuscitation\n\n- The second half of the rhythm strip shows ventricular fibrillation – presumably at this point the resuscitating team have stopped CPR to reassess the rhythm!\n\n###### Precordial thump:\n\n- This ECG demonstrates the movement artefact produced by a precordial thump!\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "OPENRN_HA_5_13_Infective_Endocarditis",
+  "source": "openrn",
+  "source_type": "general_reference",
+  "number": "HA 5.13",
+  "title": "Infective Endocarditis",
+  "section": "Pathophysiology",
+  "url": "https://www.ncbi.nlm.nih.gov/books/n/openrnha/ch5cardio/#ch5cardio.sec5.13",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"5.13 Infective Endocarditis\" from Health Alterations by Open Resources for Nursing (Open RN), edited by Kimberly Ernstmeyer and Elizabeth Christman, Chippewa Valley Technical College, via NCBI Bookshelf (https://www.ncbi.nlm.nih.gov/books/n/openrnha/ch5cardio/#ch5cardio.sec5.13), licensed under CC BY 4.0. Adapted into quiz questions; Australian spelling and terminology applied.",
+  "commercial_use": true,
+  "fetched_at": "2026-11-03T00:46:00+00:00",
+  "checksum": "abac704f8c6bf492d5d976f83057c14bc2ff945bb1501f424ceafab8ab7c57e7",
+  "content_markdown": "## Overview\n\nInfective endocarditis (IE) is an infection of the inner lining of the heart chambers and valves caused by bacteria or fungi. IE can lead to the formation of vegetations (clumps of infected material) on heart valves, causing damage to the valves that can impair cardiac function. Risk factors for IE include congenital heart disease, prosthetic heart valves, intravenous drug use, and dental procedures that result in transmission of bacteria into the bloodstream.\n\n## Assessment\n\nPhysical assessment findings for infective endocarditis (IE) can vary depending on the stage of the infection, causative microorganism, and the presence of complications. See Table 5.13 for potential clinical manifestations of IE.\n\nBody System | Description\nCardiovascular | – New or changing heart murmurs (indicating valve involvement)\n– Tachycardia (elevated heart rate)\n– Irregular heart rhythms (arrhythmias)\n– New signs of heart failure\nNeurological | – Altered mental status\n– Weakness, numbness, paralysis, or slurred speech\nRespiratory | – Dyspnea\n– Cough, fever, or respiratory distress\nIntegumentary | – Petechiae (small, red or purple spots)\n– Splinter hemorrhages (linear hemorrhages under nails)\n– Osler's nodes (tender subcutaneous nodules, often on fingertips)\n– Janeway lesions (nontender, red or hemorrhagic macules, often on palms or soles)\n– Roth spots (retinal hemorrhages; visible on fundoscopy)\nGeneral | – Fever, chills, night sweats, fatigue, joint pain\n\n### Diagnostic Testing`\n\nThe diagnosis of infective endocarditis (IE) typically involves a combination of clinical evaluation, laboratory tests, and imaging studies. These tests help confirm the presence of IE, identify the causative microorganism, and guide treatment.\n\nBlood cultures are collected from individuals suspected of having IE to identify the causative microorganism.\n\nEchocardiography is also used to examine cardiac structures and look for the presence of vegetation on heart values.\n\nComplete blood cell count and C-reactive protein blood tests may be used to detect systemic infection and inflammation.\n"
+}

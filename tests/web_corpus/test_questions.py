@@ -158,7 +158,9 @@ def test_export_dedupes_drops_stale_rows_and_loads_into_d1_schema(tmp_path, corp
     ]
     questions, stats = qb.select_questions(corpus, records)
     assert [q["question_text"] for q in questions] == ["What is the patient's first priority?", "Which adenosine dose is used?"]
-    assert stats == {"stale": 1, "unplanned": 0, "where_questions": 0, "exact_duplicates": 1, "near_duplicates": 1, "ap_restricted": int("ap" in second.views)}
+    assert stats == {"stale": 1, "unplanned": 0, "where_questions": 0, "exact_duplicates": 1, "near_duplicates": 1,
+                     "ap_restricted": int("ap" in second.views), "general_unchecked": 0, "general_conflicts": 0,
+                     "general_out_of_scope": 0, "general_not_questions": 0, "dropped": []}
     assert questions[0]["source_citation"].startswith("ACTAS ")
     assert questions[0]["id"] == questions[0]["content_hash"][:16]
 

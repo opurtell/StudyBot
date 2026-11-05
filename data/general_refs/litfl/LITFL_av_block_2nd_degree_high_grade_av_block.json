@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_av_block_2nd_degree_high_grade_av_block",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "AV block: 2nd degree, “high-grade” AV block",
+  "section": "ECGs",
+  "url": "https://litfl.com/av-block-2nd-degree-high-grade-av-block/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"AV block: 2nd degree, “high-grade” AV block\" by Ed Burns, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/av-block-2nd-degree-high-grade-av-block/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "007ec5ad16535894ff269868e9f801c4324d5f06cde5fbffe2df8967414ba7de",
+  "content_markdown": "##### High Grade AV block\n\nSecond degree heart block with a P:QRS ratio of 3:1 or higher, producing an extremely slow ventricular rate.\n\n- Unlike 3rd degree heart block there is still some relationship between the P waves and the QRS complexes.\n\n- High-grade AV block may result from either Mobitz I or Mobitz II AV block.\n\n###### ECG Example of High-grade AV block\n\n- High-grade AV block (4:1 conduction ratio).\n\n- Atrial rate is approximately 140 bpm.\n\n- Ventricular rate is approximately 35 bpm.\n\n- Broad QRS complexes suggest that this may be due to Mobitz II block (see “fixed ratio blocks” for a discussion of this concept).\n"
+}

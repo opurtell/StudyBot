@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_katz_wachtel_phenomenon",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Katz-Wachtel phenomenon",
+  "section": "ECGs",
+  "url": "https://litfl.com/katz-wachtel-phenomenon/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Katz-Wachtel phenomenon\" by Mike Cadogan and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/katz-wachtel-phenomenon/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "32c516212cec3a7a0346fcc25da748305877b54485100a1e9c834f01f7cba47d",
+  "content_markdown": "Katz-Wachtel phenomenon: Tall diphasic QRS complexes (>50 mm in height) in the mid-precordial leads (leads V2, V3 or V4) typically associated with Biventricular Hypertrophy (BVH).\n\nThis is the classic ECG pattern of BVH, most commonly seen in children with congenital heart disease e.g. ventricular septal defect (VSD).\n\nThe QRS amplitude is often confusingly large overlapping other precordial leads. Repeat the ECG at half standard calibration (5mm/mV instead of 10mm/mV) allows capture of the full QRS complex without overlapping with other leads.\n\n##### History of Katz-Wachtel phenomenon\n\n1937 – Katz and Wachtel suggested that large diphasic complexes in the standard limb leads were pathognomnic of congenital heart disease. They examined the ECGs of 43 children with congenital heart disease and proposed that the QRS contour may represent combined right and left ventricular ‘strain‘\n\nA biphasic QRS (with the size of the two phases being of the order of less than 1 to 4) was a frequent finding in congenital heart disease. The presence of such a diphasic QRS is confirmatory of this diagnosis, and, when the two phases are large and of equal extent, the finding is pathognomonic of congenital heart disease.\n\nKatz and Wachtel, 1937\n\n1963 – Elliott reviewed electrographic and vectorcardiographic criteris for biventricular hypertrophy. They found…\n\nThe vectorcardiograms and electrocardiograms in 10 infants with congenital malformations of the heart have been described. Each malformation demonstrated combined ventricular hypertrophy…One common denominator in each of the 10 patients was large large diphasic complexes over 50 mm in either leads V2, V3, V4 were observed in the electrocardiogram of each case of biventricular hypertrophy studied.\n\nThese tall mid-precordial QRS complexes have been called the Katz-Wachtel phenomenon and presumably reflect combined ventricular hypertrophy.\n\nElliott 1963\n\n##### Alternative names\n\n- Katz-Wachtel sign\n\n## eponymictionary\n\nthe names behind the name\n\nmore eponyms…\n"
+}

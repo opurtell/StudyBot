@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_hypercalcaemia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Hypercalcaemia",
+  "section": "ECGs",
+  "url": "https://litfl.com/hypercalcaemia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Hypercalcaemia\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/hypercalcaemia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "f726f69d204066ef28cdbdae6205d0d1bcca4fdcc3c859deefda046933081748",
+  "content_markdown": "##### ECG Changes in Hypercalcaemia\n\n- The main ECG abnormality seen with hypercalcaemia is shortening of the QT interval\n\n- In severe hypercalcaemia, Osborn waves (J waves) may be seen\n\n- Ventricular irritability and VF arrest has been reported with extreme hypercalcaemia\n\n##### Hypercalcaemia Overview\n\n- Normal serum corrected calcium = 2.1 – 2.6 mmol/L\n\n- Mild hypercalcaemia = 2.7 – 2.9 mmol/L\n\n- Moderate hypercalcaemia = 3.0 – 3.4 mmol/L\n\n- Severe hypercalcaemia = greater than 3.4 mmol/L\n\n##### Causes of Hypercalcaemia\n\n- Hyperparathyroidism (primary and tertiary)\n\n- Myeloma\n\n- Bony metastases\n\n- Paraneoplastic syndromes\n\n- Milk-alkali syndrome\n\n- Sarcoidosis\n\n- Excess vitamin D (e.g. iatrogenic)\n\n##### ECG Examples\n\n###### Hypercalcaemia\n\n- Osborn waves in severe hypercalcaemia (4.1 mmol/L)\n\n- Image reproduced from Otero & Lenihan [PMC101092]\n\n###### Example 2\n\n- Hypercalcaemia causing marked shortening of the QT interval (260ms).\n\n- Image originally featured in Kyuhyun (K.) Wang’s excellent Atlas of Electrocardiography\n\n###### Example 3\n\nThis is the ECG of a 41-year old man with a parathyroid adenoma who presented to ED critically unwell with a serum calcium of 6.1 mmol/L. He suffered a VF arrest not long after this ECG was taken. The ECG shows:\n\n- Bizarre-looking QRS complexes\n\n- Very short QT interval\n\n- J waves = notching of the terminal QRS, best seen in lead V1\n"
+}

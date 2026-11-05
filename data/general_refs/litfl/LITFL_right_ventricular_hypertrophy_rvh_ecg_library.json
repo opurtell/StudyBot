@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_right_ventricular_hypertrophy_rvh_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Right Ventricular Hypertrophy (RVH)",
+  "section": "ECGs",
+  "url": "https://litfl.com/right-ventricular-hypertrophy-rvh-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Right Ventricular Hypertrophy (RVH)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/right-ventricular-hypertrophy-rvh-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "c61afa53792b9df9424d71e9f3f8ee76166cffeff498ab83bf2ba30e84c01031",
+  "content_markdown": "#### Electrocardiographic Features\n\n##### Diagnostic criteria\n\n- Right axis deviation of +110° or more.\n\n- Dominant R wave in V1 (> 7mm tall or R/S ratio > 1).\n\n- Dominant S wave in V5 or V6 (> 7mm deep or R/S ratio < 1).\n\n- QRS duration < 120ms (i.e. changes not due to RBBB).\n\n##### Supporting criteria\n\n- Right atrial enlargement (P pulmonale).\n\n- Right ventricular strain pattern = ST depression / T wave inversion in the right precordial (V1-4) and inferior (II, III, aVF) leads.\n\n- S1 S2 S3 pattern = far right axis deviation with dominant S waves in leads I, II and III.\n\n- Deep S waves in the lateral leads (I, aVL, V5-V6).\n\n##### Other abnormalities caused by RVH\n\n- Right bundle branch block (complete or incomplete).\n\n#### ECG Pearl\n\nThere are no universally accepted criteria for diagnosing RVH in the presence of RBBB; the standard voltage criteria do not apply.\n\nHowever, the presence of incomplete / complete RBBB with a tall R wave in V1, right axis deviation of +110° or more and supporting criteria (such as RV strain pattern or P pulmonale) would be considered suggestive of RVH.\n\n#### Causes\n\n- Pulmonary hypertension\n\n- Mitral stenosis\n\n- Pulmonary embolism\n\n- Chronic lung disease (cor pulmonale)\n\n- Congenital heart disease (e.g. Tetralogy of Fallot, pulmonary stenosis)\n\n- Arrhythmogenic right ventricular cardiomyopathy\n\n#### ECG Examples\n\n##### Example 1\n\nTypical appearance of RVH:\n\n- Right axis deviation (+150 degrees).\n\n- Dominant R wave in V1 (> 7 mm tall; R/S ratio > 1)\n\n- Dominant S wave in V6 (> 7 mm deep; R/S ratio < 1).\n\n- Right ventricular strain pattern with ST depression and T-wave inversion in V1-4.\n\n##### Example 2\n\n- Right axis deviation (+150 degrees)\n\n- P pulmonale (P wave in lead II > 2.5 mm)\n\n- Incomplete RBBB\n\n- Right ventricular strain pattern with T-wave inversion and ST depression in the right precordial (V1-3) and inferior (II, III, aVF) leads.\n\nThis ECG was originally posted by Johnson Francis on Cardiophile.org.\n\n##### Example 4\n\nRight ventricular hypertrophy in a patient with arrhythmogenic right ventricular cardiomyopathy (ARVC):\n\n- Right axis deviation.\n\n- R/S ratio in V1 > 1\n\n- Right ventricular strain pattern with T-wave inversion and ST depression in the right precordial (V1-3) and inferior (II, III, aVF) leads.\n\nThis ECG was originally posted by Jayachandran Thejus on the website HeartPearls.com.\n"
+}

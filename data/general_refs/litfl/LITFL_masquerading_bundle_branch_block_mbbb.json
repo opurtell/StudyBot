@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_masquerading_bundle_branch_block_mbbb",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Masquerading Bundle Branch Block (MBBB)",
+  "section": "ECGs",
+  "url": "https://litfl.com/masquerading-bundle-branch-block-mbbb/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Masquerading Bundle Branch Block (MBBB)\" by Robert Buttner and Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/masquerading-bundle-branch-block-mbbb/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "f8e5b32a401a5ca81b3b33425012719b758b783a49754554588a79462d0db498",
+  "content_markdown": "ECG Library Homepage\n\nMixed pattern of complete right bundle branch block (RBBB) in precordial leads and complete left bundle branch block (LBBB) in limb leads, indicating severe and diffuse conducting system disease with a poor prognosis\n\n- Compared with typical bifascicular block, these patients have more extensive fibrosis and degeneration of left bundle pathways\n- Consequent high-grade left anterior fascicular block (LAFB), often associated left ventricular enlargement, manifests as a complete LBBB. This is partially masqueraded by concurrent RBBB\n- Patients have a higher risk of progression to complete AV block than typical bifascicular block\n- A second, precordial type of MBBB has also been described (see below)\n\n##### Diagnostic criteria\n\nStandard or Precordial Masquerading Bundle Branch Block (MBBB). In both types, RBBB is shown by typical RSR’ pattern in lead V1.\n\n###### Standard MBBB:\n\n- RBBB pattern in precordial leads\n- LBBB pattern in limb leads\n- Small or absent S wave in lead I\n\n###### Precordial MBBB:\n\n- RBBB pattern in leads V1-3\n- LBBB pattern in V4-6\n- Absent S wave in leads V5-6\n\n##### Clinical significance\n\nCompared with a typical bifascicular block pattern, MBBB indicates more extensive disease of the left bundle pathway and left ventricle, and carries a poorer prognosis:\n\n- Rate of progression to complete heart block over a four-year period in patients with MBBB was observed at 59% (Barrado et al), compared to 11% over a five-year period in typical bifascicular block (RBBB + LAFB)\n- A large scale review of 600,000 ECGs found the rare MBBB pattern was associated with high mortality (41% over four years) and pacemaker insertion (39% over the same period)\n- These observations were regardless of the presence or absence of trifascicular block\n- Close follow-up of these patients and consideration of PPM insertion is essential even if asymptomatic\n\nDifferentiating from typical bifascicular block pattern relies mainly on the absence of prominent S waves in leads I and aVL.\n\n##### Disease associations\n\n- Ischaemic heart disease, in particular severe triple vessel disease\n- Lenègre-Lev disease\n- Chaga’s myocarditis\n"
+}

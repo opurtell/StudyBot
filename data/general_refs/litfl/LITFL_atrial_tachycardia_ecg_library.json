@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_atrial_tachycardia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Focal Atrial Tachycardia (FAT)",
+  "section": "ECGs",
+  "url": "https://litfl.com/atrial-tachycardia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Focal Atrial Tachycardia (FAT)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/atrial-tachycardia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "a6ffd6581463f13440bc8b0716a270b92f0f5cc27c25ee86c29f24e5fef59879",
+  "content_markdown": "##### Definition\n\nFocal atrial tachycardia (FAT) is a form of supraventricular tachycardia (SVT) originating from a single ectopic focus within the atria but outside of the sinus node\n\n- The term FAT is commonly used synonymously with atrial tachycardia, a broader term referring to any form of SVT originating within the atria but outside of the sinus node\n\n- FAT, atrial flutter and multifocal atrial tachycardia (MAT) are all forms of atrial tachycardia\n\n- Management of the three types varies and thus distinguishing between them is clinically important\n\n##### Pathophysiology of FAT\n\n- Due to a single ectopic focus\n\n- The underlying mechanism can involve increased automaticity, triggered activity or reentry\n\n- May be paroxysmal or sustained\n\n- Multiple causes including:\n\n  - Digoxin toxicity\n\n  - Atrial scarring due to ischaemic heart disease\n\n  - Catecholamine excess\n\n  - Stimulants including cocaine, caffeine\n\n  - Alcohol\n\n  - Congenital abnormalities\n\n  - Idiopathic\n\n- Sustained atrial tachycardia may rarely be seen and can progress to tachycardia-induced cardiomyopathy\n\n##### ECG Features of Atrial Tachycardia\n\n- Atrial rate > 100 bpm\n\n- Abnormal P wave morphology and axis (e.g. inverted in inferior leads) due to ectopic origin\n\n- Unifocal, identical P waves\n\n- Isoelectric baseline (unlike atrial flutter)\n\n- Normal QRS morphology (unless pre-existing bundle branch block, accessory pathway, or rate-related aberrant conduction)\n\nAV block may be present — this is generally a physiological response to the rapid atrial rate, except in digoxin toxicity where there is AV nodal suppression due to vagotonic effects of digoxin, resulting in a slow ventricular rate (“PAT with block”).\n\n##### ECG Examples\n\n###### Focal atrial tachycardia:\n\n- There is a narrow complex tachycardia at 120 bpm\n\n- Each QRS complex is preceded by an abnormal P wave — upright in V1, inverted in the inferior leads II, III and aVF\n\n- P wave morphology is consistent throughout\n\n##### Example 2\n\n###### Focal atrial tachycardia:\n\n- There is a narrow complex tachycardia at 95 bpm\n\n- Each QRS complex is preceded by an abnormal P wave — biphasic in V1; inverted in the inferior leads II, III and aVF; and inverted V3-V6\n\n- P wave morphology is consistent throughout\n"
+}

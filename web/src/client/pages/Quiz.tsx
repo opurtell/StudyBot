@@ -634,6 +634,7 @@ export function Quiz() {
                   citation={result.citation}
                   documentId={result.documentId}
                   documentTitle={result.documentTitle}
+                  attribution={result.attribution}
                 />
               </>
             )}

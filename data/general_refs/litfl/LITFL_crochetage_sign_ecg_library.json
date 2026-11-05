@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_crochetage_sign_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Crochetage sign",
+  "section": "ECGs",
+  "url": "https://litfl.com/crochetage-sign-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Crochetage sign\" by Robert Buttner and Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/crochetage-sign-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "5547820c5319b0b2addbb92a663ea89f59522e9ef247406de1503c87ab7fdbcd",
+  "content_markdown": "Notch near the apex of the R wave of inferior leads (II, III, aVF) seen in a large proportion of patients with an ostium secundum atrial septal defect (ASD), the most common form of ASD\n\n1958 – First described by Toscano et al, the electrophysiological mechanism behind this ECG change remains unknown\n\n1996 – Heller et al described the crochetage pattern of the R wave in inferior limb leads as frequent in patients with atrial septal defect, correlating with shunt severity and being independent of the right bundle branch block pattern.\n\nThe retrospective case study observed this pattern in at least one inferior lead of 73% of patients with a secundum ASD; and 36% of patients with ventricular septal defect (VSD), compared with 7% of the general population. Specificity for the diagnosis of ASD increased to 92-100% when associated with an incomplete RBBB pattern, or when present in all three inferior leads\n\nIn ASD, the incidence of Crochetage sign increases with larger anatomic defect or greater left-to-right shunt\n\n1998 – Ay et al concluded that the finding of an ECG crochetage pattern may help to identify stroke patients with PFO, may help to streamline their diagnostic workup, and may warrant future studies to determine its value in stratifying stroke risk in patients with PFO.\n\nThe sensitivity (36%) and specificity (91%) of the crochetage pattern for diagnosis of PFO in cryptogenic stroke with had a positive predictive value was 77%.\n\n2018 – Lei Shen found 28% of patients with ASD had the characteristic R wave notching in all three inferior leads compared to just 2% of age matched controls\n\n##### ECG features of secundum ASD\n\n- Characteristic R wave notching in inferior leads (Crochetage sign)\n- Slight right axis deviation (RAD)\n- Voltage evidence of right ventricular hypertrophy (RVH), often in the form of “incomplete” right bundle branch block (RBBB)\n\n##### ECG Examples of Crochetage sign\n\n###### Example 1\n\n- Right axis deviation\n- Incomplete RBBB pattern\n- Crochetage sign in leads II, III and aVF\n\nThis patient was found to have a 20mm ostium secundum ASD. There was resolution of crochetage sign following operative repair\n\n###### Example 3\n\n- Right axis deviation\n- Crochetage sign in leads II, III and aVF\n"
+}

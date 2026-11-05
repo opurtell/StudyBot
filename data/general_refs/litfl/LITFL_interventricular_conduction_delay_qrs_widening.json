@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_interventricular_conduction_delay_qrs_widening",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Intraventricular Conduction Delay (QRS widening)",
+  "section": "ECGs",
+  "url": "https://litfl.com/interventricular-conduction-delay-qrs-widening/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Intraventricular Conduction Delay (QRS widening)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/interventricular-conduction-delay-qrs-widening/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "a156c30570d12de1c7b4665f612e997123aaa5c23f11b52e9c28e12372a740c2",
+  "content_markdown": "##### Definition of QRS widening\n\nQRS duration > 100 ms in the presence of a supraventricular rhythm. Most commonly due to bundle branch block or left ventricular hypertrophy.\n\nThe most important life-threatening causes of QRS widening are:\n\n- Hyperkalaemia\n\n- Tricyclic antidepressant poisoning.\n\n##### Causes of Intraventricular Conduction Delay\n\n###### Fascicular and bundle-branch blocks\n\n- Left anterior fascicular block\n\n- Left posterior fascicular block\n\n- Left bundle branch block\n\n- Right bundle branch block\n\n- Bifascicular block\n\n- Trifascicular block\n\n###### Ventricular hypertrophy and dilatation\n\n- Left ventricular hypertrophy\n\n- Right ventricular hypertrophy\n\n- Biventricular enlargement\n\n- Dilated cardiomyopathy\n\n###### Electrolyte abnormalities\n\n- Hyperkalaemia\n\n###### Toxins\n\n- Sodium-channel blocker toxicity (e.g. TCA overdose) – wide QRS plus positive R’ wave in aVR.\n\n###### Pre-excitation\n\n- Wolff-Parkinson-White syndrome – wide QRS plus delta waves.\n\n###### Arrhythmogenic cardiac conditions\n\n- Brugada syndrome – localised QRS widening in V1-2 with RBBB morphology.\n\n- Arrhythmogenic right ventricular dysplasia (AVRD) – localised QRS widening in V1-2 plus epsilon waves and variable signs of right ventricular hypertrophy.\n\n###### “Non-specific” IVCD\n\n- Not due to any of the causes above — Before making this diagnosis, be sure to check the serum potassium level and scrutinise the ECG for any signs of TCA toxicity.\n\n##### Differential Diagnosis\n\n###### Ventricular Rhythms\n\n- Ventricular tachycardia\n\n- Accelerated idioventricular rhythm\n\n- Ventricular escape rhythm\n\n- Ventricular-paced rhythm\n"
+}

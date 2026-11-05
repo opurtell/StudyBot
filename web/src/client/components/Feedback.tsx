@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import type { Score } from "../lib/api";
+import { generalSourceFor } from "../../shared/sources";
 
 export const SCORE_LABEL: Record<Score, string> = { correct: "Correct", partial: "Partly correct", incorrect: "Incorrect" };
 export const SCORE_CLASS: Record<Score, string> = {
@@ -18,7 +19,22 @@ export function ScoreBadge({ score, self = false }: { score: Score; self?: boole
 }
 
 export function documentPath(documentId: string): string {
-  return `/${documentId.startsWith("MED_") ? "medications" : "guidelines"}/${encodeURIComponent(documentId)}`;
+  const base = generalSourceFor(documentId) ? "references" : documentId.startsWith("MED_") ? "medications" : "guidelines";
+  return `/${base}/${encodeURIComponent(documentId)}`;
+}
+
+export function Attribution({ documentId, attribution }: { documentId: string; attribution?: string }) {
+  const source = generalSourceFor(documentId);
+  if (!source || !attribution) return null;
+  return (
+    <p className="text-xs text-on-surface-variant">
+      {source.adaptable ? "Adapted from" : "Excerpt from"} {attribution}{" "}
+      <a className="underline" href={source.licenceUrl} rel="noopener noreferrer license" target="_blank">
+        Licence terms
+      </a>
+      . General reference, not an ACTAS guideline: the CMGs take precedence. <Link className="underline" to="/sources">Sources</Link>
+    </p>
+  );
 }
 
 export interface FeedbackData {
@@ -32,6 +48,7 @@ export interface FeedbackData {
   citation: string;
   documentId: string;
   documentTitle: string;
+  attribution?: string;
 }
 
 function List({ title, items }: { title: string; items: string[] }) {
@@ -59,6 +76,7 @@ function Source({ data }: { data: FeedbackData }) {
           Read {data.documentTitle}
         </Link>
       </p>
+      <Attribution documentId={data.documentId} attribution={data.attribution} />
     </div>
   );
 }

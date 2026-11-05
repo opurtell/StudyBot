@@ -30,11 +30,11 @@ export type Me =
 export type CorpusView = "ap" | "ap_pacer" | "icp" | "icp_pacer";
 export type DocumentScope = "all" | "mixed" | "icp" | "pacer";
 
-export type DocumentKind = "cmg" | "csm" | "med";
+export type DocumentKind = "cmg" | "csm" | "med" | "ref";
 
 export interface DocumentSummary {
   id: string;
-  kind: "cmg" | "csm" | "med";
+  kind: DocumentKind;
   number: string;
   title: string;
   section: string;
@@ -128,6 +128,8 @@ export interface Reveal {
   documentId: string;
   documentTitle: string;
   attribution: string;
+  licence?: string;
+  sourceType?: "guideline" | "general_reference";
 }
 
 export interface Mark extends Reveal {
@@ -249,6 +251,9 @@ export const api = {
   medications: () => request<DocumentList>("/medications"),
   medication: (id: string, view: CorpusView) =>
     request<DocumentDetail>(`/medications/${encodeURIComponent(id)}?view=${view}`),
+  references: () => request<DocumentList>("/references"),
+  reference: (id: string, view: CorpusView) =>
+    request<DocumentDetail>(`/references/${encodeURIComponent(id)}?view=${view}`),
   corpusStatus: () => request<CorpusStatus>("/admin/corpus"),
   syncCorpus: () => request<SyncResult>("/admin/corpus/sync", { method: "POST", body: "{}" }),
   nextQuestion: (filters: QuizFilters, exclude: string[], repeat = false) =>

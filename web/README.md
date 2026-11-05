@@ -102,6 +102,51 @@ Run from the repo root on an up-to-date `main`, with `wrangler` logged in.
 
 After a rescrape, repeat steps 3, 4 and 6.
 
+## General references (pathophysiology and ECGs)
+
+**What goes in:** Open RN (*Health Alterations*; *Nursing Advanced Skills* chapter 7, ECGs), CC BY 4.0, and the LITFL ECG
+Library, CC BY-NC-SA 4.0. Research and licence terms: memory `general-sources-research`. They are the lowest tier of the
+source hierarchy, below the CMGs, and cover pathophysiology, physiology and ECG recognition only.
+
+- **Fetching** (`src/python/web_corpus/general_sources.py`) keeps one JSON document per chapter or LITFL page in
+  `data/general_refs/<source>/`. Treatment, medicine, nursing and procedure sections, references and all images are dropped.
+  Open RN comes from the NCBI Bookshelf open-access bulk download (`pub/litarch`, BITS XML; the book sites block scripts):
+  *Health Alterations* (NBK613078) subchapters 3.x–11.x and *Nursing Advanced Skills* (NBK594492) 7.2–7.4. Each chapter's
+  XML must carry the CC BY 4.0 licence, and table columns or rows headed by an excluded topic are dropped.
+- **Corpus:** documents have kind `ref` and `source_type` `general_reference`, carry their own licence and attribution,
+  and are visible in every scope. Sections are `Pathophysiology` and `ECGs`. Readable at `/references`; licences at `/sources`.
+- **Questions are bank-only.** Live generation never uses `ref` chunks, so every served general question has passed the
+  CMG conflict check. The generator uses `generalGenerationSystem` (no treatment or dose questions), then checks each
+  question against the four closest CMG chunks (BM25) with `conflictSystem`. A conflict, an out-of-scope question or a
+  failed check drops it. Dropped questions are listed in `dropped-general.csv`.
+- **Dropping LITFL** (if the app ever becomes paid): rebuild with `--exclude-source litfl` and load the corpus. Its
+  documents are deleted and its chunks retired, and the daily cron retires its questions.
+
+### Fetching and generating (Oscar's Mac)
+
+1. **Fetch:** `PYTHONPATH=src/python python3 -m web_corpus.general_sources fetch openrn` then `... fetch litfl`
+   *Polite (one request a second). Check with `... general_sources list`, then commit `data/general_refs/`.*
+2. **Plan:** `PYTHONPATH=src/python python3 -m web_corpus.questions plan --only general`
+3. **Trial:** `PYTHONPATH=src/python python3 -m web_corpus.questions generate --only general --yes --limit 20 --max-usd 1`
+   *`--max-usd` caps this run's spend only, not earlier runs in `raw.jsonl`.*
+4. **Export for review:** `PYTHONPATH=src/python python3 -m web_corpus.questions export --only general`
+   *Writes `questions-general.sql`, `report-general.json`, `review-sample-general.csv` and `dropped-general.csv` in
+   `web/corpus-build/questions/`, leaving the CMG `questions.sql` alone.*
+5. **Full run:** step 3 without `--limit`, with `--per-chunk 1 --max-usd 13`, then step 4 again.
+   *`--per-chunk 1` writes one question per chunk, alternating easy and medium. About US$0.012 per question with its check.*
+6. **Free local run (LM Studio on the Mac, two passes):**
+   *Qwen3.6 and Qwen3.8 don't fit in 32 GB together, so one writes and the other checks afterwards. Don't run the two
+   passes at once: `check` rewrites `raw.jsonl`.*
+   1. Write: `PYTHONPATH=src/python python3 -m web_corpus.questions generate --only general --local qwen/qwen3.6-35b-a3b --defer-check`
+   2. Check: `PYTHONPATH=src/python python3 -m web_corpus.questions check --local qwen/qwen3.8-27b`
+   3. Export as in step 4. Unchecked questions are never exported.
+   *Records carry `lmstudio:<model>` as `model_id` and `check_model_id`. Open RN topics outside core paramedic practice
+   go in the "Broader pathophysiology" section (`BROADER_TOPICS` in `general_sources.py`), which users can leave out in
+   the topic picker.*
+7. **Production** (Oscar runs): `cd web && npm run deploy:production` (applies migration 0007), `npm run corpus:build`,
+   `npm run corpus:load:production`, `npm run bank:load:general:production`, then Account > Guideline corpus > Sync
+   search index.
+
 ## The quiz
 
 **Who gets what**

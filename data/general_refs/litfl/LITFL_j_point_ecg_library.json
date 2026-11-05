@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_j_point_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "J point",
+  "section": "ECGs",
+  "url": "https://litfl.com/j-point-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"J point\" by Chris Nickson and Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/j-point-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "197119007da1ce8e897b206f9f157561ed36624f64860df8864b0abe651a1ea5",
+  "content_markdown": "The J point is the the junction between the termination of the QRS complex and the beginning of the ST segment.\n\nThe J (junction) point in the ECG is the point where the QRS complex joins the ST segment. It represents the approximate end of depolarization and the beginning of repolarization as determined by the surface ECG. There is an overlap of around 10ms.\n\nThe J point marks the end of the QRS complex, and is often situated above the baseline, particularly in healthy young males. The J point may deviate from the baseline in early repolarization, epicardial or endocardial ischaemia or injury, pericarditis, RBBB, LBBB, RVH, LVH or digitalis effect.\n\nOn most ECGs the determination of the J point as a demarcation between QRS and the start of the ST is clear. However with the advance of electrophysiological studies and scrutiny of the cellular/ionic mechanisms at each stage of the ECG – these lines become blurred.\n\nFor simplicity:\n\n- J point is present in all ECGs and marks the transition of QRS complex to ST segment\n\n- J wave deflection occurs before the J point\n\n- The position of the J point in relation to a slurred terminal QRS is still debated.\n\nNote: The letter J on the ECG defines 2 totally different and unrelated events. The J point is a point in time marking the end of the QRS and the onset of the ST segment present on all ECG’s; the J wave is a much less common long slow deflection of uncertain origin originally described in relation to hypothermia.\n\n###### Abnormalities of the J point\n\n- Elevation or depression of the J point is seen with the various causes of ST segment abnormality. It may be elevated as a result of injury currents during acute myocardial ischemia and pericarditis, as well as in various other patterns of both normal and abnormal ECGs\n\n- Elevation of the J point occurs with benign early repolarisation\n\n- A positive deflection prior to the J point is termed a J wave (Osborn wave) and is characteristically seen with hypothermia.\n\n##### ECG Library Basics\n\n- P Wave\n\n- PR Interval\n\n- PR Segment\n\n- Q Wave\n\n- QRS Segment\n\n- QT Interval\n\n- J Point\n\n- ST Segment\n\n- R Wave\n\n- T Wave\n\n- U Wave\n\n- Osborn Wave\n\n- Epsilon Wave\n\n- Delta Wave\n"
+}

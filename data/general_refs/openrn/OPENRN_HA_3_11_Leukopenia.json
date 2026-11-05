@@ -1,0 +1,16 @@
+{
+  "id": "OPENRN_HA_3_11_Leukopenia",
+  "source": "openrn",
+  "source_type": "general_reference",
+  "number": "HA 3.11",
+  "title": "Leukopenia",
+  "section": "Pathophysiology",
+  "url": "https://www.ncbi.nlm.nih.gov/books/n/openrnha/ch3hematological/#ch3hematological.sec3.11",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"3.11 Leukopenia\" from Health Alterations by Open Resources for Nursing (Open RN), edited by Kimberly Ernstmeyer and Elizabeth Christman, Chippewa Valley Technical College, via NCBI Bookshelf (https://www.ncbi.nlm.nih.gov/books/n/openrnha/ch3hematological/#ch3hematological.sec3.11), licensed under CC BY 4.0. Adapted into quiz questions; Australian spelling and terminology applied.",
+  "commercial_use": true,
+  "fetched_at": "2026-11-03T00:46:00+00:00",
+  "checksum": "cf5f18e7b2dc45ff5026ea4c67f370d277650ac51c23f285801d328dd13db3ac",
+  "content_markdown": "Leukopenia refers to an abnormally low number of circulating white blood cells (WBC). Neutropenia refers to an abnormally low level of neutrophils. Neutrophils are the immune system’s first line of defense. Without enough white blood cells, including enough neutrophils, the client is vulnerable to developing infections and can rapidly become septic.\n\nLeukopenia and neutropenia are caused by other conditions such as autoimmune disease, malignancy, chemotherapy, or immunosuppressive medications.\n\n## Assessment\n\n### Physical Examination\n\nLeukopenia does not have specific symptoms. Clinical manifestations are related to infections that develop as a result of leukopenia, such as the following:\n\nFever and chills\n\nMalaise\n\nSore throat\n\nProductive cough of purulent sputum\n\nPainful urination and/or malodorous urine\n\nWounds with purulent drainage\n\nTachycardia and tachypnea\n\nNew onset confusion in older adults\n\n### Diagnostic Testing\n\nLeukopenia is diagnosed by evaluating a CBC. In general, a WBC count less than 4,000 mm3 is considered leukopenia, although the range can vary slightly by gender and age. Health care providers may order additional tests to evaluate suspected infection, such as a urinalysis/urine culture for a urinary tract infection, or a chest X-ray for suspected pneumonia.\n\nA common reference range for neutrophils is called the absolute neutrophil count (ANC), which is calculated based on the percentage of neutrophils in the white blood cell count. The risk of opportunistic infection increases as the ANC falls below 1500/μL, and the risk of serious infection increases as the ANC falls to the severely neutropenic range (< 500/µL).\n\nIt is important to treat suspected infection very quickly in clients who have leukopenia and/or neutropenia because infections can quickly become severe and life-threatening due to their decreased immune response.\n"
+}

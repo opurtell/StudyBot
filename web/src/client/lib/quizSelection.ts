@@ -25,7 +25,10 @@ export const POOLS: { kind: DocumentKind; label: string; noun: string }[] = [
   { kind: "cmg", label: "Guidelines", noun: "guidelines" },
   { kind: "med", label: "Medications", noun: "medications" },
   { kind: "csm", label: "Skills", noun: "skills" },
+  { kind: "ref", label: "Pathophysiology and ECGs", noun: "references" },
 ];
+
+const REFERENCE_SECTION_ORDER = ["Pathophysiology", "ECGs", "Broader pathophysiology"];
 
 export const EVERYTHING: Selection = { pools: POOLS.map((p) => p.kind), mode: "only", picked: [] };
 
@@ -73,7 +76,12 @@ export function buildGroups(topics: Topic[]): PickerGroup[] {
   for (const topic of topics) {
     for (const d of topic.documents) {
       const doc: PickerDoc = { ...d, section: topic.section };
-      const sub = doc.kind === "cmg" ? { id: topic.section, label: topic.section } : doc.kind === "med" ? { id: "all", label: "All medications" } : skillGroup(doc);
+      const sub =
+        doc.kind === "cmg" || doc.kind === "ref"
+          ? { id: topic.section, label: topic.section }
+          : doc.kind === "med"
+            ? { id: "all", label: "All medications" }
+            : skillGroup(doc);
       const key = `${doc.kind}:${sub.id}`;
       const group = groups.get(key) ?? { key, label: sub.label, kind: doc.kind, docs: [] };
       group.docs.push(doc);
@@ -82,7 +90,9 @@ export function buildGroups(topics: Topic[]): PickerGroup[] {
   }
   const order = (g: PickerGroup) => {
     const id = g.key.slice(g.kind.length + 1);
-    return g.kind === "cmg" ? rank(SECTION_ORDER, id) : g.kind === "csm" ? rank(SKILL_GROUPS.map(([c]) => c), id) : 0;
+    if (g.kind === "cmg") return rank(SECTION_ORDER, id);
+    if (g.kind === "ref") return rank(REFERENCE_SECTION_ORDER, id);
+    return g.kind === "csm" ? rank(SKILL_GROUPS.map(([c]) => c), id) : 0;
   };
   const kindRank = (k: DocumentKind) => POOLS.findIndex((p) => p.kind === k);
   const list = [...groups.values()];

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_aslanger_pattern",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Aslanger Pattern: Another OMI?",
+  "section": "ECGs",
+  "url": "https://litfl.com/aslanger-pattern/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Aslanger Pattern: Another OMI?\" by Robert Buttner and Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/aslanger-pattern/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "cc0116dafec4d0b97add442263d9f7612b6f361a8d5514aba6359084038ea241",
+  "content_markdown": "13.3% of inferior MIs may present with Aslanger Pattern, and due to being incorrectly labelled as an NSTEMI, be deprived of emergent revascularisation therapy\n\nAslanger 2020\n\nIn April 2020, Aslanger et al identified a specific ECG pattern concerning for acute inferior occlusion MI (OMI) in patients with concomitant multi-vessel disease, that does not display contiguous ST-segment elevation or fulfil STEMI criteria. The publishers reviewed ECG and angiography findings from 1000 NSTEMI, 1000 control (no myocardial infarction), as well as inferior STEMI patients presenting during the same time period. The Aslanger Pattern was observed in 6.3% of NSTEMI patients and found to be a predictor of larger infarct size and higher mortality.\n\n#### ECG Criteria\n\n1) Inferior STE isolated to lead III\n2) Concomitant ST depression in any of V4-V6, with a positive/terminally positive T-wave\n3) ST segment in V1 > V2\n\n##### Why is there not contiguous ST elevation?\n\n- In cases of limited inferior wall injury, the ST vector of inferior MI localises the area of infarction and is typically directed inferiorly and rightwards (yellow arrow)\n- The ST vector of subendocardial ischaemia does not localise to the ischaemia and regardless of involved coronary region directs to lead aVR (blue arrow)\n- The resultant average ST vector directs rightwards, causing ST elevation only in lead III and aVR\n\n##### Clinical significance\n\n- Concurrent multi-vessel disease predisposes these patients to poor outcomes if there is delayed time to emergent reperfusion, and prompt recognition of this potential OMI should improve outcomes\n- Identification of the culprit lesion at the time of angiography may be difficult if there is multiple critical stenoses, and this pattern would guide lesions supplying the inferior wall to be opened first\n\n##### Limitations\n\n- The pattern was found to be present in 0.5% of patients without acute MI, which may be a result of chronic change from a previous ischaemic insult\n- Acute inferior MI in the presence of previous infarctions may also change the overall orientation of the lesion vector causing a similiar pattern\n- This is an isolated, retrospective study and warrants a further analysis as a predictor of occlusion MI that would be responsive to emergent reperfusion therapy\n\n##### Further Examples\n\n###### Example 1\n\n57 yo female, without previous heart disease except hypertension, presents with chest pain.\n"
+}

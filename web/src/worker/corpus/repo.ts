@@ -1,7 +1,7 @@
 export const CORPUS_SERVICE = "actas";
 export const VIEWS = ["ap", "ap_pacer", "icp", "icp_pacer"] as const;
 export type CorpusView = (typeof VIEWS)[number];
-export type DocumentKind = "cmg" | "csm" | "med";
+export type DocumentKind = "cmg" | "csm" | "med" | "ref";
 export const DEFAULT_VIEW: CorpusView = "icp_pacer";
 
 export function parseView(value: string | undefined): CorpusView | null {

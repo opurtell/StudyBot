@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_pr_segment_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "PR segment",
+  "section": "ECGs",
+  "url": "https://litfl.com/pr-segment-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"PR segment\" by Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/pr-segment-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "61702790f1750e7b15996b335d10e6098ee8221a2d4b39c15d44f5eb5c3ead67",
+  "content_markdown": "The PR segment is the flat, usually isoelectric segment between the end of the P wave and the start of the QRS complex.\n\n#### PR segment abnormalities\n\nThese occur in two main conditions:\n\n- Pericarditis\n\n- Atrial ischaemia\n\n#### Pericarditis\n\nThe characteristic changes of acute pericarditis are:\n\n- PR segment depression.\n\n- Widespread concave (‘saddle-shaped’) ST elevation.\n\n- Reciprocal ST depression and PR elevation in aVR and V1\n\n- Absence of reciprocal ST depression elsewhere.\n\nNB. PR segment changes are relative to the baseline formed by the T-P segment.\n\n###### Typical ECG of acute pericarditis.\n\nPR segment depression in V5 due to acute pericarditis (note also some concave ST elevation)\n\nPR elevation in aVR due to acute pericarditis (note the reciprocal ST depression)\n\n#### Atrial ischaemia\n\n- PR segment elevation or depression in patients with myocardial infarction indicates concomitant atrial ischaemia or infarction.\n\n- This finding has been associated with poor outcomes following MI, increased risk for the development of atrioventricular block, supraventricular arrhythmias and cardiac free-wall rupture.\n\n###### Liu’s criteria for diagnosing atrial ischaemia / infarction include:\n\n- PR elevation >0.5 mm in V5 & V6 with reciprocal PR depression in V1 & V2\n\n- PR elevation >0.5 mm in lead I with reciprocal PR depression in leads II & III\n\n- PR depression >1.5 mm in the precordial leads\n\n- PR depression >1.2 mm in leads I, II, & III\n\n- Abnormal P wave morphology: M-shaped,W-shaped,irregular,or notched (minor criteria)\n\n##### PR depression in inferior STEMI indicating concomitant atrial infarction\n\nProfound PR-segment depression in inferior leads: (A) with clear-cut TP segment; and (B) without clear-cut TP segment; in acute inferior myocardial infarction. Note also ST-segment elevation in inferior leads. (Reproduced from Jim et al.)\n\n##### Measurement of PR depression\n\n- Measurement of PR-segment depression: (A) with clear-cut TP segment; and (B) without clear-cut TP segment. (Reproduced from Jim et al.)\n\n##### ECG Library Basics\n\n- P Wave\n\n- PR Interval\n\n- PR Segment\n\n- Q Wave\n\n- QRS Segment\n\n- QT Interval\n\n- J Point\n\n- ST Segment\n\n- R Wave\n\n- T Wave\n\n- U Wave\n\n- Osborn Wave\n\n- Epsilon Wave\n\n- Delta Wave\n"
+}

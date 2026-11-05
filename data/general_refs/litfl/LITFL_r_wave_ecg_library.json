@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_r_wave_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "R wave",
+  "section": "ECGs",
+  "url": "https://litfl.com/r-wave-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"R wave\" by Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/r-wave-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "012a1dafe72369fd99a1f518618d4bdaf6cf7f6056a5c952432715e56dafabb1",
+  "content_markdown": "#### R wave Overview\n\nThe R wave is the first upward deflection after the P wave. The R wave represents early ventricular depolarisation\n\n#### Abnormalities of the R wave\n\nThere are three key R wave abnormalities:\n\n- Dominant R wave in V1\n\n- Dominant R wave in aVR\n\n- Poor R wave progression\n\n### 1. Dominant R wave in V1\n\n##### Causes of Dominant R wave in V1\n\n- Normal in children and young adults\n\n- Right Ventricular Hypertrophy (RVH)\n\n  - Pulmonary Embolus\n\n  - Persistence of infantile pattern\n\n  - Left to right shunt\n\n- Right Bundle Branch Block (RBBB)\n\n- Posterior Myocardial Infarction (ST elevation in Leads V7, V8, V9)\n\n- Wolff-Parkinson-White (WPW) Type A\n\n- Incorrect lead placement (e.g. V1 and V3 reversed)\n\n- Dextrocardia\n\n- Hypertrophic cardiomyopathy\n\n- Dystrophy\n\n  - Myotonic dystrophy\n\n  - Duchenne Muscular dystrophy\n\n##### Leads V1 and V3 reversed\n\n- Note biphasic P wave (typically seen in only in V1) in lead “V3”\n\n### 2. Dominant R wave in aVR\n\n- Poisoning with sodium-channel blocking drugs (e.g. TCAs)\n\n- Dextrocardia\n\n- Incorrect lead placement (left/right arm leads reversed)\n\n- Commonly elevated in ventricular tachycardia (VT)\n\n#### Examples of Dominant R wave in aVR\n\n##### Dextrocardia\n\nThis ECG shows all the classic features of dextrocardia:\n\n- Positive QRS complexes (with upright P and T waves) in aVR\n\n- Negative QRS complexes (with inverted P and T waves) in lead I\n\n- Marked right axis deviation\n\n- Absent R-wave progression in the chest leads (dominant S waves throughout)\n\n##### Left arm/right arm lead reversal\n\nThe most common cause of a dominant R wave in aVR is incorrect limb lead placement, with reversal of the left and right arm electrodes. This produces a similar pattern to dextrocardia in the limb leads but with normal R-wave progression in the chest leads. With LA/RA lead reversal:\n\n- Lead I becomes inverted\n\n- Leads aVR and aVL switch places\n\n- Leads II and III switch places\n\n### 3. Poor R wave progression\n\nPoor R wave progression is described with an R wave ≤ 3 mm inV3 and is caused by:\n\n- Prior anteroseptal MI\n\n- LVH\n\n- Inaccurate lead placement\n\n- May be a normal variant\n\nNote that absent R wave progression is characteristically seen in dextrocardia (see previous ECG).\n\n##### ECG Library Basics\n\n- P Wave\n\n- PR Interval\n\n- PR Segment\n\n- Q Wave\n\n- QRS Segment\n\n- QT Interval\n\n- J Point\n\n- ST Segment\n\n- R Wave\n\n- T Wave\n\n- U Wave\n\n- Osborn Wave\n\n- Epsilon Wave\n\n- Delta Wave\n"
+}

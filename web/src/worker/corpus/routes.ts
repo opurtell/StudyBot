@@ -37,6 +37,11 @@ export const medicationRoutes = new Hono<AppEnv>();
 medicationRoutes.get("/", (c) => listHandler(c, ["med"]));
 medicationRoutes.get("/:id", (c) => detailHandler(c, ["med"]));
 
+export const referenceRoutes = new Hono<AppEnv>();
+
+referenceRoutes.get("/", (c) => listHandler(c, ["ref"]));
+referenceRoutes.get("/:id", (c) => detailHandler(c, ["ref"]));
+
 export const adminCorpusRoutes = new Hono<AppEnv>();
 
 adminCorpusRoutes.use("*", async (c, next) => {

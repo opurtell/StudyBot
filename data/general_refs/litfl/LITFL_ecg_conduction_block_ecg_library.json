@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_ecg_conduction_block_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "ECG Conduction Blocks",
+  "section": "ECGs",
+  "url": "https://litfl.com/ecg-conduction-block-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"ECG Conduction Blocks\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/ecg-conduction-block-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "acd64b9918cb3ccfd3f38db8dc57fec5e3dd95b47fda77666b4631d67205673b",
+  "content_markdown": "ECG Library summary of the different types of conduction disturbance, with links to read more about each type of conduction block\n\n#### Conduction Blocks\n\n##### First-degree block\n\n- First-degree block PR interval >200 msec (1 large square)\n\n##### Second-degree block\n\n- Mobitz Type I (Wenckebach Block): progressive prolongation of the PR interval before the missed QRS complex\n\n- Mobitz Type II (Hay Block): absence of progressive prolongation of the PR interval before the missed QRS complex\n\n- Fixed ratio blocks (e.g. 2:1, 3:1): constant relationship between P waves and QRS complexes (e.g. 2:1 = 2 P waves for each QRS complex).\n\n- High grade AV block: 2nd degree AV block with a high P:QRS ratio, producing a very slow ventricular rate\n\n##### Third-degree block\n\n- Third-degree block: absence of any relationship between P waves of sinus origin and QRS complexes (AV dissociation)\n\n#### Fascicular Blocks\n\n##### Left anterior fascicular block (LAFB)\n\n- Left axis deviation\n\n- qR complexes in leads I, aVL\n\n- rS complexes in leads II, III, aVF\n\n- Prolonged R wave peak time in aVL > 45ms\n\n##### Left posterior fascicular block (LPFB)\n\n- Right axis deviation\n\n- rS complexes in leads I, aVL\n\n- qR complexes in leads II, III, aVF\n\n- Prolonged R wave peak time in aVF\n\n##### Right bundle branch block\n\n- QRS > 120 ms\n\n- Dominant R wave in V1\n\n- RSR’ pattern (“M”) in V1 with wide, slurred S wave (“W”) in V6 (=MaRRoW)\n\n##### Left bundle branch block\n\n- QRS > 120 ms\n\n- Dominant S wave in V1\n\n- Deep S wave (“W”) in V1 with broad R wave (“M”) in V6 (=WiLLiaM)\n\n##### Bifascicular block\n\n- RBBB plus either LAFB or LPFB\n\n##### Trifascicular block\n\n- Bifascicular block plus 3rd degree AV block\n\n##### Interventricular conduction disturbance\n\n- QRS > 100 ms, not due to LBBB or RBBB. Most important causes are hyperkalaemia or tricyclic antidepressant poisoning\n"
+}

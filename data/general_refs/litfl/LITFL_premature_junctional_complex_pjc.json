@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_premature_junctional_complex_pjc",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Premature Junctional Complex (PJC)",
+  "section": "ECGs",
+  "url": "https://litfl.com/premature-junctional-complex-pjc/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Premature Junctional Complex (PJC)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/premature-junctional-complex-pjc/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "67c39ed88d842b6c061940761b909dc195ad41062bbf1444f548a927e4a85e9b",
+  "content_markdown": "##### Premature Junctional Complex (PJC)\n\nA premature beat arising from an ectopic focus within the Atrioventricular (AV) junction.\n\nAKA: Junctional Ectopics, Junctional Extrasystoles, Junctional Premature Beats, Junctional Premature Depolarisations\n\n###### Origin of Ectopic Beats\n\n- Groups of pacemaker cells throughout the conducting system are capable of spontaneous depolarisation.\n\n- The rate of depolarisation decreases from top to bottom: fastest at the sinoatrial node; slowest within the ventricles.\n\n- Ectopic impulses from subsidiary pacemakers are normally suppressed by more rapid impulses from above.\n\n- However, if an ectopic focus depolarises early enough — before the arrival of the next sinus impulse — it may “capture” the ventricles, producing a premature contraction.\n\n- Premature contractions (“ectopics”) are classified by their origin — atrial (PACs), junctional (PJCs) or ventricular (PVCs).\n\n##### Junctional Ectopics\n\n- Junctional ectopics are much less common than PACs or PVCs.\n\n- These arise from the region of the AV node, so the ventricles are usually activated normally.\n\n##### Electrocardiographic Features\n\nPJCs have the following features:\n\n- Narrow QRS complex, either (1) without a preceding P wave or (2) with a retrograde P wave which may appear before, during, or after the QRS complex. If before, there is a short PR interval of < 120 ms and the “retrograde” P waves are usually inverted in leads II, III and aVF.\n\n- Occurs sooner than would be expected for the next sinus impulse.\n\n- Followed by a compensatory pause.\n\n- PJCs that arrive early in the cycle may be conducted aberrantly, most commonly with a RBBB morphology.\n\n##### ECG Example\n\n###### Typical appearance of PJCs:\n\n- Premature QRS complexes without a preceding P wave.\n\n- The QRS morphology is very similar to the sinus complexes.\n"
+}

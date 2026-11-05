@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_left_axis_deviation_lad_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Left Axis Deviation (LAD)",
+  "section": "ECGs",
+  "url": "https://litfl.com/left-axis-deviation-lad-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Left Axis Deviation (LAD)\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/left-axis-deviation-lad-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "c4ad4fad7d441aea4914e5803d342ecf11cb89d2775870508f645c6bc2091d3b",
+  "content_markdown": "#### Left Axis Deviation LAD\n\nLeft Axis Deviation = QRS axis less than -30°.\n\n- Normal Axis = QRS axis between -30° and +90°\n\n- Right Axis Deviation = QRS axis greater than +90°\n\n- Extreme Axis Deviation = QRS axis between -90° and 180° (AKA “Northwest Axis”)\n\n#### How to recognise left axis deviation\n\n##### Three Lead analysis\n\n- QRS is POSITIVE (dominant R wave) in Lead I\n\n- QRS is NEGATIVE (dominant S wave) in leads II, III and aVF\n\n##### Example ECG of LAD\n\n###### Left Axis Deviation:\n\n- Leads I and aVL are positive; leads II and aVF are negative\n\n##### Causes of LAD\n\n- Left anterior fascicular block\n\n- Left bundle branch block\n\n- Left ventricular hypertrophy\n\n- Inferior MI\n\n- Ventricular ectopy\n\n- Paced rhythm\n\n- Wolff-Parkinson White syndrome\n"
+}

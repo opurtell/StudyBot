@@ -42,8 +42,10 @@ def _write(directory: Path, data: dict) -> None:
 
 
 def test_only_guideline_content_enters_the_corpus(corpus):
-    assert {d.source_type for d in corpus.documents} == {"guideline"}
-    assert corpus_build.manifest(corpus)["documents_by_kind"] == {"cmg": 56, "csm": 104, "med": 35}
+    assert {d.source_type for d in corpus.documents} <= {"guideline", "general_reference"}
+    assert all(d.kind == "ref" for d in corpus.documents if d.source_type == "general_reference")
+    by_kind = corpus_build.manifest(corpus)["documents_by_kind"]
+    assert {k: n for k, n in by_kind.items() if k != "ref"} == {"cmg": 56, "csm": 104, "med": 35}
     structured = service_structured_dir("actas").resolve()
     for path in corpus_build.input_files(structured):
         assert structured in path.resolve().parents or path.resolve().parent == structured
@@ -75,7 +77,7 @@ def test_cli_exits_non_zero_without_writing_output(tmp_path):
 def test_bodies_match_the_desktop_scope_rules(corpus):
     files = {p.stem: p for p in corpus_build.input_files(service_structured_dir("actas"))}
     for doc in corpus.documents:
-        if doc.id == corpus_build.REFERENCE_CARDS_ID:
+        if doc.id == corpus_build.REFERENCE_CARDS_ID or doc.source_type == "general_reference":
             continue
         data = json.loads(files[doc.id].read_text(encoding="utf-8"))
         content = normalise_markdown_syntax(corpus_build.decode_literal_escapes(data["content_markdown"]))
@@ -158,9 +160,9 @@ def test_reload_with_changed_content_retires_old_chunks(tmp_path):
 def test_real_corpus_loads_into_the_d1_schema(corpus):
     db = _db()
     db.executescript(corpus_build.to_sql(corpus))
-    assert db.execute("SELECT COUNT(*) FROM corpus_documents").fetchone() == (195,)
+    assert db.execute("SELECT COUNT(*) FROM corpus_documents WHERE source_type = 'guideline'").fetchone() == (195,)
     assert db.execute("SELECT COUNT(*) FROM corpus_chunks").fetchone() == (len(corpus.chunks),)
-    assert db.execute("SELECT DISTINCT source_type FROM corpus_chunks").fetchall() == [("guideline",)]
+    assert db.execute("SELECT COUNT(*) FROM corpus_chunks WHERE source_type NOT IN ('guideline', 'general_reference')").fetchone() == (0,)
 
 
 def test_literal_escapes_from_the_scrape_are_decoded(corpus):

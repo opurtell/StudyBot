@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_av_block_2nd_degree_fixed_ratio_blocks",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "AV block: 2nd degree, “fixed ratio” blocks",
+  "section": "ECGs",
+  "url": "https://litfl.com/av-block-2nd-degree-fixed-ratio-blocks/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"AV block: 2nd degree, “fixed ratio” blocks\" by Ed Burns and Mike Cadogan, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/av-block-2nd-degree-fixed-ratio-blocks/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "cddea4f9057aa88bead90d9cfa3ce34793a623c7979cf61638d34394ffa0294a",
+  "content_markdown": "##### Fixed Ratio AV blocks\n\n- Second degree heart block with a fixed ratio of P waves: QRS complexes (e.g. 2:1, 3:1, 4:1).\n- Fixed ratio blocks can be the result of either Mobitz I or Mobitz II conduction.\n\n##### 2:1 block\n\n- The atrial rate is approximately 75 bpm.\n- The ventricular rate is approximately 38 bpm.\n- Non-conducted P waves are superimposed on the end of each T wave.\n\n##### 3:1 block\n\n- The atrial rate (purple arrows) is approximately 90 bpm.\n- The ventricular rate rate is approximately 30 bpm.\n- Note how every third P wave is almost entirely concealed within the T wave.\n\n###### 4:1 block\n\n- High-grade AV block (4:1 conduction ratio)\n- Atrial rate is approximately 140 bpm.\n- Ventricular rate is approximately 35 bpm.\n- See High Grade AV Block\n\n###### Mobitz I or II?\n\n- It is not always possible to determine the type of conduction disturbance producing a fixed ratio block, although clues may be present.\n- Mobitz I conduction is more likely to produce narrow QRS complexes, as the block is located at the level of the AV node. This type of fixed ratio block tends to improve with atropine and has an overall more benign prognosis.\n- Mobitz II conduction typically produces broad QRS complexes, as it usually occurs in the context of pre-existing LBBB or bifascicular block. This type of fixed ratio block tends to worsen with atropine and is more likely to progress to 3rd degree heart block or asystole.\n- However, this distinction is not infallible. In approximately 25% of cases of Mobitz II, the block is located in the Bundle of His, producing a narrow QRS complex. Furthermore, Mobitz I may occur in the presence of a pre-existing bundle branch block or interventricular conduction delay, producing a broad QRS complex.\n- The only way to be certain is to observe the patient for a period of time (e.g. watch the cardiac monitor, print a long rhythm strip, take serial ECGs) and observe what happens to the PR intervals. Often, periods of 2:1 or 3:1 block will be interspersed with more characteristic Wenckebach sequences or runs of Mobitz II.\n"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_myocarditis_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Myocarditis",
+  "section": "ECGs",
+  "url": "https://litfl.com/myocarditis-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Myocarditis\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/myocarditis-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "d30dd759498d66f902c24b729c648d7dd248cbc5602d35dcfefa0b84dace0af3",
+  "content_markdown": "##### ECG changes in Myocarditis\n\nThe most common ECG abnormalities seen in myocarditis are:\n\n- Sinus tachycardia\n\n- Non-specific ST segment and T waves changes\n\nOther ECG changes are variable, and may include:\n\n- Prolonged QRS\n\n- QT prolongation\n\n- Diffuse T wave inversion\n\n- Ventricular arrhythmias\n\n- AV conduction defects\n\n- With inflammation of the adjacent pericardium, ECG features of pericarditis can also been seen (= myopericarditis)\n\n##### Myocarditis Overview\n\n- Myocardial inflammation in the absence of ischaemia\n\n- Often associated with pericarditis , termed myopericarditis\n\n- Usually a benign disease without serious long-term complications\n\n- In the acute setting can cause arrhythmias, cardiac failure, cardiogenic shock and death\n\n- May result in delayed dilated cardiomyopathy\n\n##### Causes of Myocarditis\n\n- Viral – including coxsackie B virus, HIV, influenza A, HSV, adenovirus, coronavirus (COVID19)\n\n- Bacteria – including mycoplasma, rickettsia, leptospira\n\n- Immune mediated – including sarcoidosis, scleroderma, SLE, Kawasaki’s disease\n\n- Drugs / toxins – including clozapine, amphetamines\n\n##### ECG Examples\n\n###### Example 1\n\n- Sinus tachycardia with non-specific ST segment changes\n\n###### Myopericarditis:\n\n- Widespread concave ST elevation (pericarditic changes) in a child with viral myocarditis\n"
+}

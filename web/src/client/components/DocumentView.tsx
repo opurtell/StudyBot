@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import type { CorpusView, DocumentDetail } from "../lib/api";
 import { QUALIFICATION_OPTIONS, useScopeChoice, viewFor } from "../lib/scopeView";
 import { useLoad } from "../lib/useLoad";
+import { generalSourceFor } from "../../shared/sources";
 import { documentLabel } from "./DocumentList";
 import { ScopeBadge } from "./ScopeBadge";
 import { ScopePicker } from "./ScopePicker";
@@ -53,6 +54,7 @@ export function DocumentView({
   const [choice, setChoice] = useScopeChoice();
   const view = viewFor(choice);
   const { data: doc, error, loading } = useLoad(() => load(id, view), [id, view]);
+  const general = generalSourceFor(id);
 
   return (
     <article className="space-y-6">
@@ -69,14 +71,24 @@ export function DocumentView({
       {doc && (
         <header className="space-y-2">
           <p className="font-mono text-xs uppercase tracking-widest text-on-surface-variant">
-            ACTAS {documentLabel(doc)} · {doc.section}
+            {general ? `${general.name} · ${doc.section}` : `ACTAS ${documentLabel(doc)} · ${doc.section}`}
           </p>
           <h1 className="font-headline text-3xl font-semibold leading-tight">{doc.title}</h1>
-          <ScopeBadge scope={doc.scope} />
+          {general ? (
+            <p className="rounded-sm bg-surface-container-low p-3 text-sm text-on-surface-variant">
+              General reference, not an ACTAS guideline. Only the pathophysiology and ECG recognition text is kept;
+              treatment, medicine and procedure sections and images are left out. Where it differs from the CMGs, the
+              CMGs take precedence.
+            </p>
+          ) : (
+            <ScopeBadge scope={doc.scope} />
+          )}
         </header>
       )}
 
-      <ScopePicker level={choice.level} pacer={choice.pacer} options={QUALIFICATION_OPTIONS} onChange={setChoice} legend="Your qualification" />
+      {!general && (
+        <ScopePicker level={choice.level} pacer={choice.pacer} options={QUALIFICATION_OPTIONS} onChange={setChoice} legend="Your qualification" />
+      )}
 
       {loading && !doc && <p className="text-on-surface-variant">Loading…</p>}
 
@@ -91,7 +103,23 @@ export function DocumentView({
           <p className="rounded-sm bg-surface-container-low p-4 text-on-surface-variant">{emptyMessage(doc)}</p>
         ))}
 
-      {doc && (
+      {doc && general && (
+        <footer className="space-y-1 text-xs text-on-surface-variant">
+          <p>
+            {general.adaptable ? "Adapted from" : "Excerpt from"} {doc.attribution}{" "}
+            <a className="underline" href={doc.sourceUrl} rel="noopener noreferrer" target="_blank">
+              Read the original
+            </a>
+            {" · "}
+            <a className="underline" href={general.licenceUrl} rel="noopener noreferrer license" target="_blank">
+              {general.licence}
+            </a>
+            {doc.versionDate ? `. Retrieved ${doc.versionDate}.` : "."}
+          </p>
+        </footer>
+      )}
+
+      {doc && !general && (
         <footer className="space-y-1 text-xs text-on-surface-variant">
           <p>
             Source: {doc.attribution},{" "}

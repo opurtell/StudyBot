@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_sinus_tachycardia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Sinus tachycardia",
+  "section": "ECGs",
+  "url": "https://litfl.com/sinus-tachycardia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Sinus tachycardia\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/sinus-tachycardia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "a1808ae3796e44fdd0ec93a6bbfd7e0b29b2add39bf966b429f03154ef3ef6f0",
+  "content_markdown": "##### Definition\n\nSinus rhythm with resting heart rate (HR) > 100 bpm in adults, or above the normal range for age in children\n\n##### Normal heart rates in children\n\n- Newborn: 110 – 150 bpm\n\n- 2 years: 85 – 125 bpm\n\n- 4 years: 75 – 115 bpm\n\n- 6 years+: 60 – 100 bpm\n\n##### Causes\n\nSinus tachycardia is usually a secondary condition. Inappropriate sinus tachycardia is a primary condition diagnosed in patients with symptomatic persisting sinus tachycardia in which the below causes have been excluded.\n\n##### Example ECG\n\n###### Sinus tachycardia:\n\n- Heart rate 150 bpm.\n\n- P waves are hidden within each preceding T wave.\n\n###### Handy Tip\n\nWith very fast heart rates the P waves may be hidden in the preceding T wave, producing a ‘camel hump’ appearance.\n"
+}

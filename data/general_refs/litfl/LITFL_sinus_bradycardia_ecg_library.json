@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_sinus_bradycardia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Sinus Bradycardia",
+  "section": "ECGs",
+  "url": "https://litfl.com/sinus-bradycardia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Sinus Bradycardia\" by Ed Burns, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/sinus-bradycardia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "07271201343f1a4a26aed782fe82addd290c488c4aa2ed203fe76d321acc2682",
+  "content_markdown": "##### Sinus Bradycardia Overview\n\nSinus rhythm with a resting heart rate of < 60 bpm in adults, or below the normal range for age in children.\n\n###### Normal heart rates in children\n\n- Newborn: 110 – 150 bpm\n\n- 2 years: 85 – 125 bpm\n\n- 4 years: 75 – 115 bpm\n\n- 6 years+: 60 – 100 bpm\n\n##### Differential Diagnosis\n\n- Sinus bradycardia may be indistinguishable from type II sino-atrial block.\n\n##### ECG Example\n\n###### Sinus bradycardia secondary to anorexia nervosa\n\n- Sinus bradycardia (35 bpm) in a 15-year old girl with anorexia nervosa.\n\n- Note the prominent U waves in the precordial leads, a common finding in sinus bradycardia.\n"
+}

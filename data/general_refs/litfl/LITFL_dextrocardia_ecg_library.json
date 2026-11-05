@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_dextrocardia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Dextrocardia",
+  "section": "ECGs",
+  "url": "https://litfl.com/dextrocardia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Dextrocardia\" by Chris Nickson and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/dextrocardia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "96a78423ad4ab3261f17a74a31c4063a3a8c64661bfbc0560b104e3f0668f984",
+  "content_markdown": "ECG Library Homepage\n\n##### ECG Features of Dextrocardia\n\n- Right axis deviation\n- Positive QRS complexes (with upright P and T waves) in aVR\n- Lead I: inversion of all complexes, aka ‘global negativity’ (inverted P wave, negative QRS, inverted T wave)\n- Absent R-wave progression in the chest leads (dominant S waves throughout)\n\nThese changes can be reversed by placing the precordial leads in a mirror-image position on the right side of the chest and reversing the left and right arm leads.\n\n##### ECG Examples\n\n###### Dextrocardia:\n\n- Marked right axis deviation\n- Global negativity in lead I and global positivity in aVR\n- Absent R wave progression in precordial leads\n\n##### Differential Diagnosis\n\nAccidental lead reversal, specifically reversal of the left and right arm electrodes may produce a similar picture to dextrocardia in the limb leads (but with normal appearances in the precordial leads).\n"
+}

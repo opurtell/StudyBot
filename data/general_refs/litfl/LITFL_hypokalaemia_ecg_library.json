@@ -1,0 +1,16 @@
+{
+  "id": "LITFL_hypokalaemia_ecg_library",
+  "source": "litfl",
+  "source_type": "general_reference",
+  "number": "LITFL",
+  "title": "Hypokalaemia",
+  "section": "ECGs",
+  "url": "https://litfl.com/hypokalaemia-ecg-library/",
+  "licence": "CC BY-NC-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "\"Hypokalaemia\" by Ed Burns and Robert Buttner, LITFL ECG Library, Life in the Fast Lane (https://litfl.com/hypokalaemia-ecg-library/), licensed under CC BY-NC-SA 4.0. Adapted into quiz questions, which are shared under the same licence.",
+  "commercial_use": false,
+  "fetched_at": "2026-11-02T11:08:09+00:00",
+  "checksum": "48d6d5e88c29abd58ca6717631b948e987704f2f31ac2170da9378acee3c6ee2",
+  "content_markdown": "Hypokalaemia is defined as a serum potassium level of < 3.5 mmol/L. ECG changes generally do not manifest until there is a moderate degree of hypokalaemia (2.5-2.9 mmol/L). The earliest ECG manifestation of hypokalaemia is a decrease in T wave amplitude.\n\n##### ECG features of hypokalaemia (K < 2.7 mmol/L)\n\n- Increased P wave amplitude\n\n- Prolongation of PR interval\n\n- Widespread ST depression and T wave flattening/inversion\n\n- Prominent U waves (best seen in the precordial leads V2-V3)\n\n- Apparent long QT interval due to fusion of T and U waves (= long QU interval)\n\n###### With worsening hypokalaemia…\n\n- Frequent supraventricular and ventricular ectopics\n\n- Supraventricular tachyarrhythmias: AF, atrial flutter, atrial tachycardia\n\n- Potential to develop life-threatening ventricular arrhythmias, e.g. VT, VF and Torsades de Pointes\n\n##### The push-pull effect\n\n- Hypokalaemia creates the illusion that the T wave is “pushed down”, with resultant T-wave flattening/inversion, ST depression, and prominent U waves\n\n- In hyperkalaemia, the T wave is “pulled upwards”, creating tall “tented” T waves, and stretching the remainder of the ECG to cause P wave flattening, PR prolongation, and QRS widening\n\n##### Pathophysiology\n\nPotassium is vital for regulating the normal electrical activity of the heart. Decreased extracellular potassium causes myocardial hyperexcitability with the potential to develop re-entrant arrhythmias.\n\n##### Handy tips\n\n- Hypokalaemia is often associated with hypomagnesaemia, which increases the risk of malignant ventricular arrhythmias\n\n- Check both potassium and magnesium levels in any patient with an arrhythmia\n\n- Replace potassium to ≥ 4.0 mmol/L and magnesium to ≥ 1.0 mmol/L to stabilise the myocardium and protect against arrhythmias – this is standard practice in most CCUs and ICUs\n\n##### ECG Examples\n\n###### Hypokalaemia:\n\n- Widespread ST depression and T wave inversion\n\n- Prominent U waves\n\n- Long QU interval\n\nThis patient had a serum K+ of 1.7\n\n###### Hypokalaemia\n\n- ST depression and T wave inversion best noted in inferior leads\n\n- Prominent U waves\n\n- Long QU interval\n\nThe serum K+ was 1.9 mmol/L.\n\n###### Example 3\n\nHypokalaemia causing Torsades de Pointes\n\n- Another ECG from the same patient\n\n- Note the atrial ectopic causing ‘R on T’ (or is it ‘R on U’?) that initiates the paroxysm of TdP\n"
+}
