@@ -72,7 +72,10 @@
     "production": {
       "name": "studybot-web",
       "workers_dev": false,
-      "routes": [{ "pattern": "study.paramedtools.com", "custom_domain": true }],
+      "routes": [
+        { "pattern": "quiz.paramedtools.com", "custom_domain": true },
+        { "pattern": "study.paramedtools.com", "custom_domain": true }
+      ],
       "triggers": { "crons": ["17 16 * * *"] },
       "vars": {
         "ENVIRONMENT": "production",

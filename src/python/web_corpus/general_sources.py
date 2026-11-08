@@ -40,7 +40,7 @@ from pathlib import Path
 from paths import GENERAL_REFS_DIR
 
 SOURCE_TYPE = "general_reference"
-USER_AGENT = "StudyBot-corpus-fetch/1.0 (free non-commercial paramedic study app; https://study.paramedtools.com)"
+USER_AGENT = "StudyBot-corpus-fetch/1.0 (free non-commercial paramedic study app; https://quiz.paramedtools.com)"
 REQUEST_DELAY = 1.0
 RETRY_AFTER = 15.0
 MIN_DOC_CHARS = 300
