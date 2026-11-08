@@ -3,7 +3,8 @@
 The Cloudflare-native web version (plan: `docs/web-port-plan.md`, review: `docs/review/web-port-review.md`). Generation and marking behaviour to port: `web/docs/prompts.md`.
 One Worker serves the React app as static assets and the API under `/api/*`, so the API is same-origin and needs no CORS.
 
-**Live:** https://study.paramedtools.com (production).
+**Live:** https://quiz.paramedtools.com (production). The old address, `study.paramedtools.com`, stays attached to the
+Worker only so a Cloudflare Redirect Rule can send it to `quiz.paramedtools.com` (see "Domains" below).
 
 **Status:** Phase 6 (hardening and launch, `docs/launch.md`): security review, load test (`npm run test:load`), abuse tests, backup drill, privacy page and soft-launch checklist. Earlier phases: Sign-in, accounts, rate limiting, logging and the AI Gateway client
 (Phase 2); the ACTAS guideline corpus with guideline, skill and medication pages (Phase 3); the quiz with a pre-generated
@@ -270,3 +271,17 @@ Each builds with `CLOUDFLARE_ENV` set, applies pending D1 migrations to that env
 
 After editing `wrangler.jsonc`, run `npm run cf-typegen` and commit `src/worker/worker-configuration.d.ts`.
 CI fails if the generated types are stale.
+
+## Domains
+
+Production is served at `quiz.paramedtools.com`. `study.paramedtools.com` was the first address and now only redirects.
+
+- Both hosts are Worker custom domains in `wrangler.jsonc` (`env.production.routes`). Keeping the old one attached keeps
+  its proxied DNS record, which the redirect needs.
+- A zone Redirect Rule (Rules > Redirect Rules) sends `study.paramedtools.com` to `https://quiz.paramedtools.com` with the
+  same path and query, 301. Redirect Rules run before the Worker, so the app never serves the old host.
+- Sign-in builds its callback URL from the request host, so no code names the domain. The Google OAuth client must list
+  `https://quiz.paramedtools.com` as an authorised JavaScript origin and
+  `https://quiz.paramedtools.com/api/auth/google/callback` as a redirect URI.
+- Session cookies are host-only, so moving hosts signs everyone out once. Progress is stored against the account, not
+  the cookie, so nothing is lost.

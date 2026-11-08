@@ -6,7 +6,7 @@
 one Worker serving the React shell and `/api/*`, Google sign-in (OAuth + PKCE), sessions in D1, rate limiting, CSRF
 guard, structured logs, a Gemini-through-AI-Gateway client that reports token usage, Web CI and a deploy workflow.
 
-**Live (2026-11-01):** production is deployed at https://study.paramedtools.com (Worker `studybot-web`, D1 `studybot-production` in `oc`). Deployed from Oscar's Mac with `npm run deploy:production`. Staging isn't set up; GitHub deploy secrets aren't set, so the Actions deploy job skips. GEMINI_API_KEY and the AI Gateway aren't set yet (needed from Phase 4).
+**Live (2026-11-01):** production is deployed at https://quiz.paramedtools.com (moved from study.paramedtools.com on 2026-11-08; the old host redirects) (Worker `studybot-web`, D1 `studybot-production` in `oc`). Deployed from Oscar's Mac with `npm run deploy:production`. Staging isn't set up; GitHub deploy secrets aren't set, so the Actions deploy job skips. GEMINI_API_KEY and the AI Gateway aren't set yet (needed from Phase 4).
 
 **Was blocked on Oscar (now done for production):** the one-time setup in `web/README.md` ("One-time Cloudflare setup"): a Google OAuth client,
 D1 databases (`--location=oc`), AI Gateways with a spend limit, Worker secrets, GitHub secrets/environments. All on free
