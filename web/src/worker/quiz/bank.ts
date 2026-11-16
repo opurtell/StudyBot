@@ -44,6 +44,7 @@ export interface StoredQuestion extends PublicQuestion {
   attribution: string;
   licence: string;
   sourceType: SourceType;
+  answerQuotes: string[];
 }
 
 interface QuestionRow {
@@ -63,10 +64,11 @@ interface QuestionRow {
   attribution: string;
   licence: string;
   source_type: SourceType;
+  answer_quotes?: string | null;
 }
 
 const SELECT_QUESTION = `SELECT q.id, q.question_text, q.question_type, q.difficulty, q.category, q.source_citation, q.document_id,
-  d.number, d.title, d.section, q.origin, q.status, q.source_text, q.attribution, q.licence, q.source_type
+  d.number, d.title, d.section, q.origin, q.status, q.source_text, q.attribution, q.licence, q.source_type, q.answer_quotes
   FROM question_bank q
   JOIN corpus_documents d ON d.id = q.document_id
   JOIN corpus_chunks c ON c.id = q.chunk_id AND c.retired_at IS NULL AND c.embed_text = q.source_text`;
@@ -95,7 +97,20 @@ function toStored(row: QuestionRow): StoredQuestion {
     attribution: row.attribution,
     licence: row.licence,
     sourceType: row.source_type,
+    answerQuotes: answerQuotes(row.answer_quotes, row.source_text),
   };
+}
+
+export function answerQuotes(raw: string | null | undefined, sourceText: string): string[] {
+  if (!raw) return [];
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return [];
+  }
+  if (!Array.isArray(parsed)) return [];
+  return parsed.filter((q): q is string => typeof q === "string" && q.trim().length > 0 && sourceText.includes(q));
 }
 
 function exclusionSql(sections: string, documents: string): string {

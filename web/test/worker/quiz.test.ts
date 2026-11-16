@@ -134,6 +134,19 @@ describe("reveal", () => {
     expect(spy).not.toHaveBeenCalled();
     expect((await postJson(`/api/quiz/questions/${Q_ICP}/reveal`, { view: "ap" })).status).toBe(404);
   });
+
+  it("returns stored answer quotes that are in the source, dropping any that are not", async () => {
+    const empty = (await (await postJson(`/api/quiz/questions/${Q_AP}/reveal`, { view: "ap" })).json()) as { answerQuotes: string[] };
+    expect(empty.answerQuotes).toEqual([]);
+    await env.DB.prepare(`UPDATE question_bank SET answer_quotes = ?1 WHERE id = ?2`)
+      .bind(JSON.stringify(["ch_ap xxxx", "not in the source", 7]), Q_AP)
+      .run();
+    const body = (await (await postJson(`/api/quiz/questions/${Q_AP}/reveal`, { view: "ap" })).json()) as { answerQuotes: string[] };
+    expect(body.answerQuotes).toEqual(["ch_ap xxxx"]);
+    await env.DB.prepare(`UPDATE question_bank SET answer_quotes = 'not json' WHERE id = ?1`).bind(Q_AP).run();
+    const broken = (await (await postJson(`/api/quiz/questions/${Q_AP}/reveal`, { view: "ap" })).json()) as { answerQuotes: string[] };
+    expect(broken.answerQuotes).toEqual([]);
+  });
 });
 
 const GOOD_MARK = JSON.stringify({
