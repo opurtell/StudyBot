@@ -27,6 +27,11 @@
     "answers:export": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.answers export",
     "answers:load:local": "wrangler d1 execute DB --local --file corpus-build/answers/answers.sql",
     "answers:load:production": "CLOUDFLARE_ENV=production wrangler d1 execute DB --remote --file corpus-build/answers/answers.sql",
+    "quality:score": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.quality score",
+    "quality:calibrate": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.quality calibrate --labels docs/review/question-quality/sample-labels.csv",
+    "quality:export": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.quality export",
+    "quality:load:local": "wrangler d1 execute DB --local --file corpus-build/quality/quality.sql",
+    "quality:load:production": "CLOUDFLARE_ENV=production wrangler d1 execute DB --remote --file corpus-build/quality/quality.sql",
     "check": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
