@@ -236,7 +236,7 @@ quizRoutes.post("/generate", async (c) => {
     await refundCredit(c.env.DB, user.id, "gen", new Date(now));
     await ledgerStatement(c.env.DB, { userId: user.id, kind: "gen", outcome: "error", modelId: MODELS.generation, now }).run();
     if (err instanceof LlmError) {
-      log.warn("generation_failed", { kind: err.kind, status: err.status ?? null, model: MODELS.generation });
+      log.warn("generation_failed", { kind: err.kind, status: err.status ?? null, model: MODELS.generation, detail: err.message.slice(0, 300) });
       return llmFailure(c, err, "gen");
     }
     throw err;
@@ -372,7 +372,7 @@ quizRoutes.post("/questions/:id/mark", async (c) => {
     await refundCredit(c.env.DB, user.id, "eval", new Date(now));
     await ledgerStatement(c.env.DB, { userId: user.id, kind: "eval", outcome: "error", modelId: MODELS.marking, questionId: question.id, now }).run();
     if (err instanceof LlmError) {
-      log.warn("marking_failed", { kind: err.kind, status: err.status ?? null, model: MODELS.marking });
+      log.warn("marking_failed", { kind: err.kind, status: err.status ?? null, model: MODELS.marking, detail: err.message.slice(0, 300) });
       return llmFailure(c, err, "eval");
     }
     throw err;
