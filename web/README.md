@@ -199,6 +199,26 @@ Run from the repo root on an up-to-date `main`, after the corpus is loaded. Need
 6. **Load:** `npm run bank:load:production`
    *Rows whose source chunk doesn't match the loaded corpus are skipped, so a bank built against an old corpus can't load stale questions.*
 
+### Answer highlighting (Oscar's Mac)
+
+When a question is revealed or marked, the source panel renders the source Markdown and highlights the lines that hold the answer. The AI's quote wins
+when marking finds one; otherwise the stored `question_bank.answer_quotes` (a JSON array of verbatim source lines) is
+used, so highlighting works with AI marking switched off. Quotes not found in the source are dropped. Questions without
+quotes (including live-generated ones) show the source unhighlighted.
+
+The quotes are found offline with a free local LM Studio model (`src/python/web_corpus/answers.py`). The source is split
+into numbered lines and the model only picks line numbers, so it can never invent a quote.
+
+1. **Export the questions** *(read only)*:
+   `cd web && mkdir -p corpus-build/answers && CLOUDFLARE_ENV=production npx wrangler d1 execute DB --remote --json --command "SELECT id, question_text, source_text FROM question_bank WHERE answer_quotes IS NULL" > corpus-build/answers/questions.json`
+2. **Trial run** *(LM Studio server running)*: `npm run answers:locate -- --limit 40`
+3. **Full run:** `npm run answers:locate`
+   *Resumable: re-running skips questions already done. `--model` picks another LM Studio model (default `openai/gpt-oss-20b`).*
+4. **Export:** `npm run answers:export`
+   *Writes `answers.sql` and `review-sample.csv` (60 highlighted questions to spot-check) to `corpus-build/answers/`.*
+5. **Load** *(after the `0008_answer_quotes` migration is deployed)*: `npm run answers:load:production`
+   *Each update only applies if every quote is still in the question's source text.*
+
 ## How sign-in works
 
 Sign-in is **Google only** (OpenID Connect, authorisation code flow with PKCE). No emails are sent and no passwords are stored.

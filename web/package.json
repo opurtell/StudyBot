@@ -23,6 +23,10 @@
     "bank:load:production": "CLOUDFLARE_ENV=production wrangler d1 execute DB --remote --file corpus-build/questions/questions.sql",
     "bank:load:general:local": "wrangler d1 execute DB --local --file corpus-build/questions/questions-general.sql",
     "bank:load:general:production": "CLOUDFLARE_ENV=production wrangler d1 execute DB --remote --file corpus-build/questions/questions-general.sql",
+    "answers:locate": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.answers locate",
+    "answers:export": "cd .. && PYTHONPATH=src/python python3 -m web_corpus.answers export",
+    "answers:load:local": "wrangler d1 execute DB --local --file corpus-build/answers/answers.sql",
+    "answers:load:production": "CLOUDFLARE_ENV=production wrangler d1 execute DB --remote --file corpus-build/answers/answers.sql",
     "check": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {

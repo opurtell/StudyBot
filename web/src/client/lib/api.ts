@@ -124,6 +124,7 @@ export interface Reveal {
   questionId: string;
   section?: string;
   sourceText: string;
+  answerQuotes?: string[];
   citation: string;
   documentId: string;
   documentTitle: string;

@@ -631,6 +631,7 @@ export function Quiz() {
                 <SourcePanel
                   sourceText={result.sourceText}
                   sourceQuote={marked?.sourceQuote}
+                  answerQuotes={result.answerQuotes}
                   citation={result.citation}
                   documentId={result.documentId}
                   documentTitle={result.documentTitle}

@@ -1,4 +1,6 @@
-import { useEffect, useLayoutEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
+import Markdown, { type Components, type Options } from "react-markdown";
+import { rehypeHighlightRanges } from "../lib/highlightMarkdown";
 import { api, type ReportReason, type Score } from "../lib/api";
 import { Attribution, documentPath, SCORE_CLASS, SCORE_LABEL, SELF_LABEL } from "./Feedback";
 
@@ -44,9 +46,37 @@ function locate(text: string, quote: string | undefined): [number, number] | nul
   return lower >= 0 ? [lower, lower + q.length] : null;
 }
 
+export function highlightRanges(text: string, sourceQuote?: string, answerQuotes: string[] = []): { ranges: [number, number][]; quoted: boolean } {
+  const quoted = locate(text, sourceQuote);
+  if (quoted) return { ranges: [quoted], quoted: true };
+  const ranges: [number, number][] = [];
+  for (const quote of answerQuotes) {
+    const range = locate(text, quote);
+    if (range) ranges.push(range);
+  }
+  ranges.sort((a, b) => a[0] - b[0]);
+  const merged: [number, number][] = [];
+  for (const range of ranges) {
+    const last = merged[merged.length - 1];
+    if (last && range[0] <= last[1]) last[1] = Math.max(last[1], range[1]);
+    else merged.push([range[0], range[1]]);
+  }
+  return { ranges: merged, quoted: false };
+}
+
+const sourceComponents: Components = {
+  a: ({ children, href }) => (
+    <a href={href} rel="noopener noreferrer" target="_blank">
+      {children}
+    </a>
+  ),
+  img: () => null,
+};
+
 export function SourcePanel({
   sourceText,
   sourceQuote,
+  answerQuotes,
   citation,
   documentId,
   documentTitle,
@@ -54,40 +84,42 @@ export function SourcePanel({
 }: {
   sourceText: string;
   sourceQuote?: string;
+  answerQuotes?: string[];
   citation: string;
   documentId: string;
   documentTitle: string;
   attribution?: string;
 }) {
   const body = useRef<HTMLDivElement>(null);
-  const mark = useRef<HTMLElement>(null);
-  const range = locate(sourceText, sourceQuote);
+  const { ranges, quoted } = highlightRanges(sourceText, sourceQuote, answerQuotes);
+  const rangeKey = ranges.flat().join(",");
+  const plugins = useMemo(
+    () => [[rehypeHighlightRanges, { markdown: sourceText, ranges }]] as Options["rehypePlugins"],
+    [sourceText, rangeKey],
+  );
 
   useLayoutEffect(() => {
-    if (body.current && mark.current) body.current.scrollTop = Math.max(0, mark.current.offsetTop - body.current.offsetTop - 12);
-  }, [sourceText, sourceQuote]);
+    const first = body.current?.querySelector("mark");
+    if (body.current && first instanceof HTMLElement) {
+      body.current.scrollTop = Math.max(0, first.getBoundingClientRect().top - body.current.getBoundingClientRect().top + body.current.scrollTop - 12);
+    }
+  }, [sourceText, rangeKey]);
 
   return (
     <section aria-label="From the source" className="flex min-h-40 flex-1 flex-col rounded-sm bg-surface-container-lowest">
       <div className="flex justify-between gap-2 px-4 pt-3 pb-1 text-xs font-medium uppercase tracking-widest text-on-surface-variant">
         <h3>From the source</h3>
-        {range && <span className="hidden normal-case tracking-normal sm:inline">Quoted line highlighted</span>}
+        {ranges.length > 0 && (
+          <span className="hidden normal-case tracking-normal sm:inline">{quoted ? "Quoted line highlighted" : "Answer highlighted"}</span>
+        )}
       </div>
-      {sourceQuote && !range && (
+      {sourceQuote && !quoted && ranges.length === 0 && (
         <blockquote className="mx-4 mb-2 border-l-4 border-highlight pl-3 text-sm italic">{sourceQuote}</blockquote>
       )}
-      <div ref={body} tabIndex={0} aria-label="Guideline extract" className="min-h-0 flex-1 overflow-auto px-4 pb-3 text-sm leading-relaxed whitespace-pre-wrap">
-        {range ? (
-          <>
-            {sourceText.slice(0, range[0])}
-            <mark ref={mark} className="bg-highlight/70 text-on-surface">
-              {sourceText.slice(range[0], range[1])}
-            </mark>
-            {sourceText.slice(range[1])}
-          </>
-        ) : (
-          sourceText
-        )}
+      <div ref={body} tabIndex={0} aria-label="Guideline extract" className="source-body min-h-0 flex-1 overflow-auto px-4 pb-3 text-sm">
+        <Markdown components={sourceComponents} rehypePlugins={plugins} skipHtml>
+          {sourceText}
+        </Markdown>
       </div>
       <p className="flex flex-wrap justify-between gap-2 rounded-b-sm bg-surface-container px-4 py-2 text-xs text-on-surface-variant">
         <span>Ref: {citation}</span>

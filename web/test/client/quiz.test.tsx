@@ -65,6 +65,7 @@ describe("quiz", () => {
 
     await userEvent.click(screen.getByRole("button", { name: "Reveal reference" }));
     expect(await screen.findByText(/BGL below 4 mmol\/L/)).toBeInTheDocument();
+    expect(container.querySelector("mark")).toBeNull();
     expect(screen.getByRole("link", { name: /Read Diabetic Emergencies/ })).toHaveAttribute("href", "/guidelines/CMG_10_Diabetic");
 
     await userEvent.click(screen.getByRole("button", { name: /report a problem/i }));
