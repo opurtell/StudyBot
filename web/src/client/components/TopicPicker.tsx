@@ -71,6 +71,14 @@ export function TopicPicker({
 
   const setPicked = (ids: string[]) => onChange({ ...selection, picked: ids });
   const toggleDoc = (id: string) => setPicked(picked.has(id) ? selection.picked.filter((p) => p !== id) : [...selection.picked, id]);
+  const toggleAll = (docs: PickerDoc[], untick: boolean) => {
+    const ids = new Set(selection.picked);
+    for (const d of docs) {
+      if (untick) ids.delete(d.id);
+      else ids.add(d.id);
+    }
+    setPicked([...ids]);
+  };
 
   const pools = POOLS.filter((p) => selection.pools.includes(p.kind)).map((pool) => {
     const poolGroups = groups
@@ -84,7 +92,9 @@ export function TopicPicker({
       })
       .filter((g) => !q || g.shown.length > 0);
     const picks = groups.filter((g) => g.kind === pool.kind).reduce((n, g) => n + g.docs.filter((d) => picked.has(d.id)).length, 0);
-    return { pool, groups: poolGroups, picks };
+    const eligible = poolGroups.flatMap((g) => (q ? g.eligible.filter((d) => g.shown.includes(d)) : g.eligible));
+    const n = eligible.filter((d) => picked.has(d.id)).length;
+    return { pool, groups: poolGroups, picks, eligible, isAll: n > 0 && n === eligible.length, isSome: n > 0 && n < eligible.length };
   });
 
   const offNames = [
@@ -229,10 +239,28 @@ export function TopicPicker({
 
             {pools
               .filter((p) => p.groups.length > 0)
-              .map(({ pool, groups: poolGroups, picks }) => (
+              .map(({ pool, groups: poolGroups, picks, eligible: poolEligible, isAll: poolAll, isSome: poolSome }) => (
                 <div key={pool.kind} className="space-y-1.5 pt-2">
-                  <div className="flex items-baseline justify-between px-0.5">
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-primary sm:font-headline sm:text-xl sm:normal-case sm:tracking-normal">{pool.label}</h3>
+                  <div className="flex items-center justify-between gap-3 pr-0.5">
+                    <div className="flex items-center">
+                      <label className="flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center">
+                        <span className="sr-only">
+                          {poolAll ? "Untick all of" : only ? "Pick all of" : "Leave out all of"} {pool.label}
+                          {q ? " matching the search" : ""}
+                        </span>
+                        <input
+                          type="checkbox"
+                          checked={poolAll}
+                          ref={(el) => {
+                            if (el) el.indeterminate = poolSome;
+                          }}
+                          disabled={poolEligible.length === 0}
+                          onChange={() => toggleAll(poolEligible, poolAll)}
+                          className={`h-5 w-5 ${only ? "accent-primary" : "accent-error"}`}
+                        />
+                      </label>
+                      <h3 className="text-xs font-semibold uppercase tracking-widest text-primary sm:font-headline sm:text-xl sm:normal-case sm:tracking-normal">{pool.label}</h3>
+                    </div>
                     <span className="font-mono text-xs text-on-surface-variant">
                       {picks ? `${picks} ${only ? "picked" : "left out"}` : only ? "nothing ticked · whole pool" : "nothing left out"}
                     </span>
@@ -256,14 +284,7 @@ export function TopicPicker({
                                 if (el) el.indeterminate = isSome;
                               }}
                               disabled={eligible.length === 0}
-                              onChange={() => {
-                                const ids = new Set(selection.picked);
-                                for (const d of eligible) {
-                                  if (isAll) ids.delete(d.id);
-                                  else ids.add(d.id);
-                                }
-                                setPicked([...ids]);
-                              }}
+                              onChange={() => toggleAll(eligible, isAll)}
                               className={`h-5 w-5 ${only ? "accent-primary" : "accent-error"}`}
                             />
                           </label>

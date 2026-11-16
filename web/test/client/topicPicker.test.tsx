@@ -153,4 +153,29 @@ describe("quiz topic picker", () => {
     await screen.findByRole("heading", { name: question.text });
     expect(sent[0]).toMatchObject({ view: "ap", kinds: null, documentIds: null, excludeDocumentIds: ["CMG_4_Arrest", "CMG_16_ACS"] });
   });
+
+  it("ticks and unticks every topic under a pool heading at once", async () => {
+    const sent = setup();
+    renderAt("/quiz");
+    await userEvent.click(await screen.findByRole("button", { name: /^Guidelines/ }));
+    const pickAll = await screen.findByRole("checkbox", { name: "Pick all of Guidelines" });
+    await userEvent.click(screen.getByRole("checkbox", { name: "Pick all of Cardiac" }));
+    expect(pickAll).not.toBeChecked();
+    expect((pickAll as HTMLInputElement).indeterminate).toBe(true);
+
+    await userEvent.click(pickAll);
+    const untickAll = screen.getByRole("checkbox", { name: "Untick all of Guidelines" });
+    expect(untickAll).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "Untick all of Airway Management" })).toBeChecked();
+
+    await userEvent.click(untickAll);
+    expect(screen.getByRole("checkbox", { name: "Pick all of Guidelines" })).not.toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "Pick all of Cardiac" })).not.toBeChecked();
+
+    await userEvent.type(screen.getByRole("searchbox", { name: "Search topics" }), "acs");
+    await userEvent.click(screen.getByRole("checkbox", { name: "Pick all of Guidelines matching the search" }));
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    await screen.findByRole("heading", { name: question.text });
+    expect(sent[0]).toMatchObject({ kinds: ["cmg"], documentIds: ["CMG_16_ACS"] });
+  });
 });
