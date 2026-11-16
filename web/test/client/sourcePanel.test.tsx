@@ -42,6 +42,29 @@ describe("SourcePanel", () => {
     expect(screen.getByLabelText("Guideline extract")).toHaveTextContent(/Hypoglycaemia is a BGL below 4 mmol\/L\./);
   });
 
+  it("renders the Markdown and highlights inside it", () => {
+    const md = "[ACTAS CMG 10]\n#### Management\n\n- Give **oral glucose** 15 g.\n- Recheck BGL\n  in 15 minutes.\n- Call for backup.";
+    const { container } = render(
+      <MemoryRouter>
+        <SourcePanel
+          sourceText={md}
+          answerQuotes={["- Give **oral glucose** 15 g.", "- Recheck BGL\n  in 15 minutes."]}
+          citation="ACTAS CMG 10"
+          documentId="CMG_10_Diabetic"
+          documentTitle="Diabetic Emergencies"
+        />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("heading", { name: "Management" })).toBeInTheDocument();
+    expect(container.querySelector("strong")).toHaveTextContent("oral glucose");
+    expect(container.textContent).not.toMatch(/\*\*|####/);
+    const items = [...container.querySelectorAll("li")];
+    expect(items).toHaveLength(3);
+    expect([...items[0]!.querySelectorAll("mark")].map((m) => m.textContent).join("")).toBe("Give oral glucose 15 g.");
+    expect([...items[1]!.querySelectorAll("mark")].map((m) => m.textContent).join("")).toBe("Recheck BGL\nin 15 minutes.");
+    expect(items[2]!.querySelector("mark")).toBeNull();
+  });
+
   it("shows the source plainly when there is nothing to highlight", () => {
     const { container } = panel({});
     expect(container.querySelector("mark")).toBeNull();

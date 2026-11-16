@@ -201,7 +201,7 @@ Run from the repo root on an up-to-date `main`, after the corpus is loaded. Need
 
 ### Answer highlighting (Oscar's Mac)
 
-When a question is revealed or marked, the source panel highlights the lines that hold the answer. The AI's quote wins
+When a question is revealed or marked, the source panel renders the source Markdown and highlights the lines that hold the answer. The AI's quote wins
 when marking finds one; otherwise the stored `question_bank.answer_quotes` (a JSON array of verbatim source lines) is
 used, so highlighting works with AI marking switched off. Quotes not found in the source are dropped. Questions without
 quotes (including live-generated ones) show the source unhighlighted.
