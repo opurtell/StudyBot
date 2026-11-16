@@ -33,13 +33,14 @@ from web_corpus.questions import parse_json_object
 OUT_DIR = APP_ROOT / "web" / "corpus-build" / "answers"
 DEFAULT_MODEL = "openai/gpt-oss-20b"
 LONG_LINE = 220
-MAX_LINES = 6
+MAX_LINES = 8
 MAX_SHARE = 0.6
 
 SYSTEM = """You find where the answer to a paramedic quiz question is stated in its source text.
 The source is split into numbered lines. Return the numbers of the lines that state the answer: the lines a marker
-would read to check a student's answer. Usually that is 1 to 3 lines, never more than 6. Do not include headings or
-lines that only mention the topic. If no line states the answer, return an empty list.
+would read to check a student's answer. Usually that is 1 to 3 lines. If the question asks several things, include
+the line for each part, but never more than 8 lines. Do not include headings or lines that only mention the topic.
+If no line states the answer, return an empty list.
 
 Respond with valid JSON only:
 {"lines": [3, 4]}"""
@@ -114,6 +115,7 @@ def locate_one(complete: Complete, question: dict) -> dict:
     if lines is None:
         record["status"] = "unreadable"
         return record
+    lines = [n for n in lines if not text[spans[n - 1][0]:spans[n - 1][1]].startswith("#")]
     record["lines"] = lines
     record["quotes"] = quotes_for(text, spans, lines)
     if record["quotes"]:

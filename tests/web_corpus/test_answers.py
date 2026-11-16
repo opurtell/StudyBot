@@ -58,7 +58,8 @@ def test_locate_one_reports_status():
     assert "[2] - Hypoglycaemia is a BGL below 4 mmol/L." in prompts[0]
     assert answers.locate_one(lambda s, u: "garbage", q)["status"] == "unreadable"
     assert answers.locate_one(lambda s, u: '{"lines": []}', q)["status"] == "no_answer"
-    assert answers.locate_one(lambda s, u: '{"lines": [1, 2, 3, 4]}', q)["status"] == "too_broad"
+    assert answers.locate_one(lambda s, u: '{"lines": [1, 2]}', q)["lines"] == [2]
+    assert answers.locate_one(lambda s, u: '{"lines": [2, 3, 4]}', q)["status"] == "too_broad"
 
 
 def test_run_locate_resumes_and_export_writes_guarded_sql(tmp_path):
