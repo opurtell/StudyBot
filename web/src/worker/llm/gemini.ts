@@ -104,9 +104,11 @@ export async function complete(env: GatewayEnv, req: LlmRequest, fetcher: typeof
 
   if (!res.ok) {
     const detail = (await res.text()).slice(0, 500);
+    if (res.status === 402 || (res.status === 429 && /spend|budget|prepay|credit|billing/i.test(detail))) {
+      throw new LlmError(`Provider refused the request for billing (${res.status}): ${detail}`, "spend_limit", res.status);
+    }
     if (res.status === 429) {
-      const kind = /spend|budget/i.test(detail) ? "spend_limit" : "rate_limited";
-      throw new LlmError(`AI Gateway refused the request (${kind})`, kind, 429);
+      throw new LlmError("AI Gateway refused the request (rate_limited)", "rate_limited", 429);
     }
     throw new LlmError(`Gemini request failed with ${res.status}: ${detail}`, "upstream", res.status);
   }

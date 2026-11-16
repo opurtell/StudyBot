@@ -73,6 +73,22 @@ describe("Gemini via AI Gateway", () => {
     });
   });
 
+  it("treats depleted Gemini prepaid credit as a spend limit", async () => {
+    const body = JSON.stringify({ error: { code: 402, status: "RESOURCE_EXHAUSTED", message: "Your prepayment credits are depleted." } });
+    const fetcher = vi.fn<typeof fetch>().mockResolvedValue(new Response(body, { status: 402 }));
+    await expect(complete(gatewayEnv, { role: "marking", system: "s", user: "u" }, fetcher)).rejects.toMatchObject({
+      kind: "spend_limit",
+      status: 402,
+    });
+  });
+
+  it("keeps a plain 429 as rate limited", async () => {
+    const fetcher = vi.fn<typeof fetch>().mockResolvedValue(new Response("Too many requests", { status: 429 }));
+    await expect(complete(gatewayEnv, { role: "marking", system: "s", user: "u" }, fetcher)).rejects.toMatchObject({
+      kind: "rate_limited",
+    });
+  });
+
   it("treats an empty candidate as an error, not a blank answer", async () => {
     const fetcher = vi.fn<typeof fetch>().mockResolvedValue(okResponse({ candidates: [{ content: { parts: [] } }] }));
     await expect(complete(gatewayEnv, { role: "marking", system: "s", user: "u" }, fetcher)).rejects.toMatchObject({
