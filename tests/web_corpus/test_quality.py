@@ -53,9 +53,9 @@ def test_parse_scores_validates_and_coerces():
 def test_rubric_reasons_follow_thresholds():
     assert quality.rubric_reasons(rec("a")) == []
     assert quality.rubric_reasons(rec("a", relevance=2)) == ["low relevance (2/5)"]
-    assert quality.rubric_reasons(rec("a", asks=3)) == ["3 separate asks"]
-    assert quality.rubric_reasons(rec("a", scenario=True, scenario_needed=False, list_recital=True)) == [
-        "scenario does not change a list answer"]
+    assert quality.rubric_reasons(rec("a", asks=3)) == []
+    assert quality.rubric_reasons(rec("a", asks=4)) == ["4 separate asks"]
+    assert quality.rubric_reasons(rec("a", scenario=True, scenario_needed=False, list_recital=True)) == []
     assert quality.rubric_reasons(rec("a", scenario=True, scenario_needed=False)) == []
     assert quality.rubric_reasons(rec("a", trivia="device", relevance=3)) == ["trivia: device"]
     assert quality.rubric_reasons(rec("a", trivia="device", relevance=4)) == []

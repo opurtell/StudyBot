@@ -41,13 +41,13 @@ from paths import APP_ROOT
 from web_corpus.questions import content_hash, normalise, parse_json_object
 
 OUT_DIR = APP_ROOT / "web" / "corpus-build" / "quality"
-DEFAULT_MODEL = "openai/gpt-oss-20b"
+DEFAULT_MODEL = "qwen/qwen3.8-27b"
 MAX_SOURCE_SHARE = 0.35
 KEEP_SAMPLE = 50
 DUPLICATE_SIMILARITY = 0.6
 
 MIN_RELEVANCE = 3
-MAX_ASKS = 2
+MAX_ASKS = 3
 TRIVIA_RELEVANCE_LIMIT = 3
 
 TRIVIA = ["none", "device", "administration", "vocabulary", "genetics_histology", "statistics", "hospital_only",
@@ -63,47 +63,77 @@ CAPS: list[tuple[str, int, tuple[str, ...]]] = [
 ]
 
 SYSTEM = """You review questions in a study app for Australian ambulance paramedics. You score one question against
-its source text. You never rewrite the question. Score strictly: most questions are fine, but flag the weak ones.
+its source text. You never rewrite the question.
 
-Answer each check:
+Many questions in this bank were generated from textbooks and equipment manuals, and a large share are weak. Your job is
+to find them. A question being accurate and answerable does not make it good. Equally, do not mark down core
+clinical knowledge: the labels below are for the narrow kinds of trivia they describe, and most clinical questions
+are "none".
+Judge what the student is asked to recall, not the topic it sits under. A question in a cardiac or resuscitation
+guideline can still be trivia.
 
-relevance (1 to 5): would a working paramedic need this from memory on scene, or does it explain something they will
-see in patients?
-  5 = core prehospital knowledge (doses, indications, recognising a life threat, key management steps)
-  4 = useful clinical knowledge or pathophysiology that explains what a paramedic sees
+Work in this order.
+
+1. trivia: decide first what kind of fact the answer is. Pick the first label that fits, or "none" only if none fits:
+  genetics_histology = the answer is a gene, mutation or inheritance pattern, or a change that can only be seen
+    under a microscope (fibrosis, sclerosis, infiltration or degeneration of a named microscopic structure).
+    Mechanisms of disease, sequences such as ischaemia leading to necrosis, gross pathology, anatomy and physiology
+    (which muscles, hormones, receptors or organs are involved) are "none"
+  hospital_only = the answer is a laboratory value or blood test result (blood count indices, serum levels), a
+    hospital investigation, or a complication of hospital care (prolonged infusions, ward procedures, bedside
+    measurement techniques a paramedic does not use)
+  not_australian = the question names a drug that is withdrawn, no longer marketed, or not used in Australia, or
+    uses a US drug name or US term where Australia uses another (acetaminophen, epinephrine, albuterol, complete
+    blood count)
+  statistics = the answer is a percentage, proportion, prevalence, incidence or demographic figure describing a
+    population. A clinical threshold or criterion that changes management is not statistics
+  vocabulary = the question asks what a word, prefix or acronym means, or for another name of a condition. The
+    expansion of a clinical assessment tool used on scene (a stroke or trauma mnemonic), and a diagnostic
+    threshold, ECG criterion or the definition of an ECG rhythm or measurement, are not vocabulary
+  device = the answer is about the machine or equipment itself: how to mount, attach, release, unlock, secure, store,
+    check, clean, label or carry it, its controls, or a tolerance or limit of the equipment. A device question stays
+    device even when it is wrapped in a patient case. Test: if the answer depends on the patient (their size, age,
+    condition or rhythm), it is not device. Choosing what to give the patient is "none": a drug or oxygen dose,
+    volume or flow rate, an airway or cannula size for a patient, where to place ECG electrodes, which ECG leads
+    show a finding, or a step performed on the patient's body
+  administration = documentation, forms, stamps, reporting, rosters, policy logistics
+  none = a clinical fact: assessment, recognition, a drug's dose, indication or contraindication, a management step,
+    or pathophysiology that explains what a paramedic sees in a patient
+
+2. relevance (1 to 5): would a working paramedic need this from memory on scene, or does it explain something they
+will see in patients?
+  5 = core prehospital knowledge (doses, indications, recognising a life threat, key management steps, choosing an
+    airway, cannula or oxygen flow for a patient)
+  4 = useful clinical knowledge, ECG interpretation, or pathophysiology that explains what a paramedic sees
   3 = background knowledge, rarely needed but reasonable to know
-  2 = trivia: how to operate or store a device, paperwork, cleaning, exact percentages, definitions of words
+  2 = trivia, a detail a paramedic would look up rather than recall, or a question so obvious that anyone without
+    training could answer it
   1 = irrelevant to a paramedic: genes, histology, laboratory tests, hospital-only care, drugs not used in Australia
+  A question that restates its own premise as the answer (asks for symptoms the question already names, or where
+  something occurs when the question already says where) is 2.
 
-asks: how many separate things must the student answer? Count each distinct item asked for ("state X, outline Y and
-explain Z" is 3). Parts of one idea ("the dose and route") count as 1.
+3. asks: how many separate things must the student answer? Count each distinct item asked for ("state X, outline Y
+and explain Z" is 3). Parts of one idea ("the dose and route", "your management of this patient") count as 1.
 
-scenario: true if the question opens with a patient case (age, vitals, presentation).
+4. scenario: true if the question opens with a patient case (age, vitals, presentation).
 
-scenario_needed: for a scenario, true if the patient details change the answer. false if the case is decoration and
-the answer would be the same without it. For a non-scenario, true.
+5. scenario_needed: for a scenario, true if the patient details change the answer. false if the case is decoration
+and the answer would be the same without it (the answer is the same table, list or device step for any patient).
+For a non-scenario, true.
 
-list_recital: true if the answer is mainly a list copied from the page (steps, criteria, contents of a table).
+6. list_recital: true if the answer is mainly a list copied from the page (steps, criteria, contents of a table).
 
-stands_alone: false if the question refers to something the student cannot see ("Example 3", "the figure", "the
-provided text", "this ECG"), or if the question gives away its own answer.
+7. stands_alone: false if the question refers to something the student cannot see ("Example 3", "the figure", "the
+provided text", "this ECG"), or if the question gives away its own answer. Naming a guideline ("according to the
+ACTAS ... guideline") is fine: the student is expected to know the guidelines.
 
-answerable: true if the source text states the answer.
+8. answerable: true if the source text states the answer.
 
-trivia: one label for the main kind of trivia, or "none":
-  device = operating, storing, checking or cleaning equipment
-  administration = documentation, forms, reporting, rosters, policy logistics
-  vocabulary = asks what a word or prefix means or what an acronym stands for
-  genetics_histology = genes, mutations, cell structure under a microscope
-  statistics = percentages, prevalence, incidence, demographics
-  hospital_only = laboratory results, hospital investigations or treatments a paramedic never gives
-  not_australian = drugs or practices not used in Australia, or US-only terms
+9. reason: one short sentence a reviewer can read, naming the main weakness (or "No issues").
 
-reason: one short sentence a reviewer can read, naming the main weakness (or "No issues").
-
-Respond with valid JSON only:
-{"relevance": 4, "asks": 1, "scenario": false, "scenario_needed": true, "list_recital": false, "stands_alone": true,
- "answerable": true, "trivia": "none", "reason": "No issues"}"""
+Respond with valid JSON only, in this key order:
+{"trivia": "none", "relevance": 4, "asks": 1, "scenario": false, "scenario_needed": true, "list_recital": false,
+ "stands_alone": true, "answerable": true, "reason": "No issues"}"""
 
 SCHEMA = {
     "type": "object",
@@ -317,8 +347,6 @@ def rubric_reasons(record: dict) -> list[str]:
         reasons.append(f"low relevance ({record['relevance']}/5)")
     if record["asks"] > MAX_ASKS:
         reasons.append(f"{record['asks']} separate asks")
-    if record["scenario"] and not record["scenario_needed"] and record["list_recital"]:
-        reasons.append("scenario does not change a list answer")
     if not record["stands_alone"]:
         reasons.append("does not stand alone")
     if not record["answerable"]:
