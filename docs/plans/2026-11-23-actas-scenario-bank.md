@@ -357,8 +357,7 @@ Settled (Oscar, 2026-11-23):
 
 Open:
 
-1. **Quota weights:** which guidelines matter most for scenarios (a first draft of `scenario_quotas.tsv` will be
-   proposed from the CMG list for Oscar to edit).
+1. **Guideline weights:** draft in Appendix A for Oscar to edit before the pilot run (step 5).
 
 ## 14. Implementation work packages
 
