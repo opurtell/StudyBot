@@ -256,9 +256,11 @@ for the general references (`--defer-check`, then `check`).
 - `export` writes `web/corpus-build/scenarios/scenarios.sql`, `review.html` (each scenario with cited lines
   highlighted, easier to read than CSV for multi-stage cases) and `report.json` (counts by category, difficulty,
   view, drops by reason).
-- **Oscar reviews every scenario in the pilot and the first full run.** Scenarios are longer and riskier than single
-  questions, and 300 is a manageable read. Rejections and notes are written back to `review.csv`; only approved rows
-  get `reviewed_by` / `reviewed_at` and are exported. Later top-ups can move to sampling once the reject rate is known.
+- **Oscar reviews a sample first** (his call, 2026-11-23): a stratified sample across category, difficulty and scope
+  from the pilot. Rejections and notes go back into `review.csv`; reviewed rows get `reviewed_by` / `reviewed_at`.
+  The reject rate and reasons decide whether prompts change, whether the full run goes ahead, and how much of the
+  full run he samples.
+- **No generation run starts without Oscar's go-ahead**, including the Phase 0 bench and the pilot.
 
 ## 7. Load to production
 
@@ -325,9 +327,9 @@ Stages are released one at a time so the next stage's findings don't give away t
 | Phase | What | Where it runs | Exit criteria |
 |---|---|---|---|
 | 0. Model bench | 10 blueprints written by Inkling 2 Mini (oMLX, no-think) and qwen3.6; checked by qwen3.8; Oscar rates blind | Oscar's Mac (Remote Control) | A writer with no fabricated rubric points and at least 8/10 rated usable |
-| 1. Pipeline + schema | `scenarios.py` (plan, write, check, export, review.html), tests, migration 0009, Worker read routes | Cloud thread, PR | Tests pass; pilot of 30 generated, Oscar reviews all |
+| 1. Pipeline + schema | `scenarios.py` (plan, write, check, export, review.html), tests, migration 0009, Worker read routes | Cloud thread, PR | Tests pass; pilot of 30 generated on Oscar's go-ahead, Oscar reviews a sample |
 | 2. Admin-only release | UI behind an admin flag; pilot loaded to production | PR, deploy | Oscar and a few testers complete pilot scenarios; no accuracy reports |
-| 3. Public release | Full run (~300 AP + ICP-only set), Oscar reviews, load, flag off | Mac, then deploy | Bank live; watch reports and completion for two weeks |
+| 3. Public release | Full run (~300 AP + ICP-only set) on Oscar's go-ahead, Oscar samples, load, flag off | Mac, then deploy | Bank live; watch reports and completion for two weeks |
 | 4. Extensions | AI stage marking, mastery integration, patient-group filter, AT scenarios via the service registry | Later | Each is its own PR |
 
 Rough effort: Phase 0 one session; Phase 1 two to three PRs; Phase 2 one PR plus mock-ups; Phase 3 about 6 hours of
@@ -337,7 +339,7 @@ writing plus about 3 to 4 hours of checking for 300 scenarios (overnight on the 
 
 | Risk | Mitigation |
 |---|---|
-| Invented vitals that point to a different pathway than the rubric | Prompt rule + checker question 3 + Oscar's full review |
+| Invented vitals that point to a different pathway than the rubric | Prompt rule + checker question 3 + Oscar's sample review + user reports |
 | Model writes plausible doses not in the source | Line-id citations, number-in-cited-lines check, reference cards for weight bands |
 | ICP content leaking to AP users | All-sources visibility rule + `icpMentionPattern` + Worker re-check |
 | Small local model can't hold a multi-document pack | Bench in Phase 0; cap the pack (primary guideline + up to 2 linked docs); split long CMGs by heading |
@@ -350,9 +352,9 @@ Settled (Oscar, 2026-11-23):
 
 - **Skill set means scope of practice:** AP, ICP, ICP only, plus PACER.
 - **Writer model:** Inkling 2 Mini, subject to the Phase 0 writing check. Benchmarks are in `~/claudeCode/onthismac/localai/`.
+- **Review:** Oscar reviews a sample first, and no generation run starts until he says so.
 
 Open:
 
-1. **Review load:** happy to review all ~300 scenarios before public release, or sample after the pilot?
-2. **Quota weights:** which guidelines matter most for scenarios (a first draft of `scenario_quotas.tsv` will be
+1. **Quota weights:** which guidelines matter most for scenarios (a first draft of `scenario_quotas.tsv` will be
    proposed from the CMG list for Oscar to edit).
