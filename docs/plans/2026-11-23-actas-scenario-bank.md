@@ -1,6 +1,6 @@
 # Scenario bank plan (web app, ACTAS first)
 
-*Status: plan for review, 2026-11-23. Nothing here is built yet.*
+*Status: ready to implement, 2026-11-23. Nothing is built or generated until Oscar says go (section 15).*
 
 ## 1. Goal
 
@@ -191,8 +191,9 @@ plan      →  write (model A)  →  deterministic checks  →  model check (mod
   Management had 3 questions, Palliative Care 58). A `scenario_quotas.tsv` holds the weights; Oscar edits it.
 - **Linked documents:** medicine monographs for medicines the guideline names, the relevant CSMs, and the reference
   card band when the patient is paediatric. Found from mentions in the guideline text (the naming code already does this).
-- **Pilot size:** 10 guidelines x 3 difficulties = 30 scenarios (AP view). Full bank target: about 300 (roughly 5 per
-  CMG, weighted), plus ICP-only scenarios for the ICP-heavy guidelines (cardiac arrest, ROSC, arrhythmias, airway).
+- **Pilot size:** 10 guidelines x 3 difficulties = 30 AP scenarios, plus 3 ICP-only (33). Full bank target: about
+  340 from the weights in Appendix A, plus about 15 ICP-only scenarios for the ICP-heavy guidelines (cardiac arrest,
+  ROSC, arrhythmias, airway, anaphylaxis, major trauma).
 
 ### 6.2 Write
 
@@ -358,3 +359,122 @@ Open:
 
 1. **Quota weights:** which guidelines matter most for scenarios (a first draft of `scenario_quotas.tsv` will be
    proposed from the CMG list for Oscar to edit).
+
+## 14. Implementation work packages
+
+Each package is one PR to `main`, with `npm run check` (in `web/`), `npx tsc --noEmit`, `npx vitest run` and
+`PYTHONPATH=src/python python3 -m pytest tests/ -v` passing (known failures excepted). No package runs a model.
+
+### WP1: generation pipeline (Python)
+
+| File | Change |
+|---|---|
+| `src/python/web_corpus/scenarios.py` | New. Subcommands `plan`, `write`, `check`, `export`, `bench`. Resumable `raw.jsonl` in `web/corpus-build/scenarios/` |
+| `src/python/web_corpus/scenario_quotas.tsv` | New. Appendix A, one row per guideline: id, weight, patient groups, pilot flag |
+| `web/src/worker/quiz/prompts.json` | Add `scenarioPromptVersion`, `scenarioSystem` (AP and ICP variants), `scenarioSchema`, `scenarioCheckSystem`, `scenarioCheckSchema` (drafts in Appendix B) |
+| `web/package.json` | `scenarios:plan`, `scenarios:write`, `scenarios:check`, `scenarios:export`, `scenarios:bench`, `scenarios:load:local`, `scenarios:load:production` |
+| `tests/web_corpus/test_scenarios.py` | New. Fake `complete` functions, no network |
+| `web/README.md` | "Scenario bank (Oscar's Mac)" runbook, as for answer highlighting |
+
+Reuses `build()`, `segments()` / `numbered()` from `answers.py`, `local_complete(model, base_url)` (points at oMLX
+with `--base-url http://127.0.0.1:8084/v1`; the provider already sends `reasoning_effort: "none"`),
+`australian_spelling`, `name_documents`, `visibility`, `content_hash`, `parse_json_object`.
+
+Tests cover: blueprint counts from the quotas file; line-id resolution to verbatim text and chunk ids; each
+deterministic check in 6.3 rejecting a crafted bad scenario (unknown line id, number not in cited lines, ICP
+mention in an AP scenario, ICP scenario with no ICP-only line, wrong stage count, US drug name, missing critical
+point, near duplicate); checker verdict handling; resume skipping finished blueprints; SQL export guarded by chunk
+hashes; `bench` writing a blinded rating sheet and key.
+
+### WP2: database and Worker API
+
+| File | Change |
+|---|---|
+| `web/migrations/0009_scenarios.sql` | Tables in section 5, `rand_key` trigger, `scenario_id` on `question_reports` and `marking_overrides` (nullable) |
+| `web/src/worker/scenarios/bank.ts` | Pick (filters, unseen, random start, fallbacks), get, stale check, `retireStaleScenarios` |
+| `web/src/worker/scenarios/routes.ts` | Routes in section 8; admin routes under `/api/admin/scenarios` |
+| `web/src/worker/app.ts`, `index.ts` | Mount routes; add `retireStaleScenarios` to the daily cron |
+| `app_flags` | `scenarios_enabled` (`admins` or `everyone`); routes answer 404 to non-admins while it is `admins` |
+| `web/test/worker/scenarios.test.ts` | Scope never relaxed; AP never gets ICP-only scenarios; stages released in order; stale scenarios not served; guest and signed-in seen handling; reports; flag gating |
+
+### WP3: web UI
+
+| File | Change |
+|---|---|
+| `web/src/client/pages/Scenarios.tsx` | Picker, case screen and debrief (section 9) |
+| `web/src/client/components/ScenarioPicker.tsx`, `ScenarioStage.tsx`, `RubricChecklist.tsx` | New; reuse `ScopePicker` and the answer-highlight source panel |
+| `Layout.tsx`, `Home.tsx` | Nav item and dashboard card, shown only when the flag allows |
+| `QuestionAdmin.tsx` (or new `ScenarioAdmin.tsx`) | List, retire, restore, flag switch |
+| `web/test/client/scenarios.test.tsx` | Flow tests plus the axe check every page has |
+
+A mock-up artifact is posted at the start of WP3. Building carries on with the recommended layout while Oscar
+looks, since the feature stays admin-only until he switches it on.
+
+## 15. Go runbook
+
+Oscar's one "go" starts steps 1 to 4. Each later gate is his call.
+
+| Step | Who / where | What | Gate |
+|---|---|---|---|
+| 1 | Cloud thread | WP1 PR: pipeline code and tests. Merge once checks pass | **"Go"** |
+| 2 | Oscar's Mac, Remote Control | **Phase 0 bench:** start oMLX with the no-think variant; `npm run scenarios:bench -- --n 10` writes 10 pilot blueprints with Inkling and with qwen3.6 (one server at a time), checks both with qwen3.8, and makes a blinded `rating-sheet.csv` | Covered by "go" |
+| 3 | Oscar | Rate the sheet (accuracy, scope, usefulness 1-5, notes). Pick the writer | Oscar's ratings |
+| 4 | Cloud thread, alongside 2-3 | WP2 and WP3 PRs, merged once checks pass. Not deployed yet | Covered by "go" |
+| 5 | Mac | **Pilot:** `scenarios:write` (33 blueprints) then `scenarios:check`, then `scenarios:export` with a review sample | **Oscar OKs the pilot run** after step 3 |
+| 6 | Oscar | Review the sample in `review.html` and mark it in `review.csv` | Oscar's review |
+| 7 | Mac | Back up prod, deploy (migration 0009), `scenarios:load:production`, flag `admins`. Oscar tries it | Standing deploy permission; load confirmed in thread |
+| 8 | Mac | **Full run** (~355 scenarios, overnight), export, Oscar samples, load, flag `everyone` | **Oscar OKs the full run**, then the release |
+
+Mac setup the Remote Control session follows (from `~/claudeCode/onthismac/localai/SETUP.md`):
+
+1. Quit LM Studio models (nothing else heavy running). Free disk for the oMLX SSD cache.
+2. `T=~/claudeCode/experiments/tests; $T/_runtimes/omlx/.venv/bin/omlx serve --model-dir $T/_inkling/models --host 127.0.0.1 --port 8084 --paged-ssd-cache-max-size 10GB`
+3. Write pass: `npm run scenarios:write -- --model Inkling-2-Mini-oQ4e-mtp-nothink --base-url http://127.0.0.1:8084/v1`
+   *Run from `web/` with the repo `.venv` Python.*
+4. Stop oMLX by port: `kill $(lsof -ti tcp:8084 -sTCP:LISTEN)`.
+5. Check pass: load `qwen/qwen3.8-27b` in LM Studio, then `npm run scenarios:check -- --model qwen/qwen3.8-27b`.
+6. `npm run scenarios:export`. Delete `$T/_runtimes/omlx/ssd-cache` when finished.
+
+## Appendix A: draft guideline weights
+
+Weight 3 = 9 scenarios (3 per difficulty), 2 = 6, 1 = 3. **P** = in the pilot. My draft from how often and how
+critically each presentation comes up; Oscar to edit before step 5.
+
+| Weight | Guidelines |
+|---|---|
+| 3 | 2 Pain Management **P**; 4 Cardiac Arrest: Adult; 5 Cardiac Arrest: Paediatric; 7 Bradyarrhythmias; 8 Tachyarrhythmias; 9 Respiratory Distress **P**; 10 Diabetic Emergencies **P**; 14 Shock and Hypoperfusion; 16 Suspected ACS **P**; 22 Seizures; 23 Stroke **P**; 29 Allergic and Anaphylactic Reactions **P**; 35A Poisoning and Overdose **P**; 37 Combative and Agitated Patients; 38 Sepsis; 39 Major Trauma **P** |
+| 2 | 3 Airway Management; 4A ROSC: Adult; 5A ROSC: Paediatric; 5B Neonate Resuscitation; 6 Cardiac Arrhythmias; 11A Heat Abnormalities; 11B Hypothermia; 12 Upper Airway Obstruction; 13 Abdominal Emergencies; 15 Altered Level of Consciousness; 17 Chest Injuries; 18 Spinal Injuries; 19 Limb Injuries; 21 Burns; 26A Unscheduled Normal Field Birth **P**; 26B Complicated Birth; 26C Other Obstetric and Gynaecological Emergencies; 27 Hyperkalaemia; 30 Crush Syndrome; 33 Behavioural and Mental Health Emergencies; 35B Bites and Stings; 38A Meningococcal Disease; 41 Nausea and Vomiting; 42 Falls; 43 Adrenal Crisis; 44 Febrile Paediatric **P** |
+| 1 | 1 General Care; 3A RSI (ICP only); 3C Preexisting Tracheostomy Management; 18A Autonomic Dysreflexia; 20 Eye Emergencies; 22a PNES; 24 Drowning; 25 Diving Emergencies; 28 Home Dialysis Emergencies; 31 Electric Shock; 32 Assault; 34 CBRN / HAZMAT Incident; 45 Palliative Care and VAD |
+| 0 | 3B Intubation Algorithm (covered by RSI scenarios) |
+
+Pilot ICP-only scenarios: 4 Cardiac Arrest: Adult, 8 Tachyarrhythmias, 29 Allergic and Anaphylactic Reactions.
+Clinical skills and medicine monographs are linked documents, never primary.
+
+## Appendix B: prompt drafts
+
+**`scenarioSystem` (AP; the ICP variant swaps the scope paragraph for one requiring at least one ICP-only decision):**
+
+```
+You write case-based study scenarios for ACT Ambulance Service ambulance paramedics.
+You are given a source pack: guideline text split into numbered lines with ids such as G12, M3 and R7.
+
+Write one scenario for the blueprint given (primary guideline, difficulty, patient group, number of stages).
+- The scenario must be answerable from the source pack alone. Never use outside clinical knowledge.
+- You may invent patient details (age, sex, setting, history, exact observations), but they must not contradict the
+  pack, and any observation a stage tests must clearly fall on one side of the guideline's threshold.
+- Each stage gives new findings and asks one question a paramedic would face at that point.
+- Each rubric point is something the answer must contain. Give the line ids it rests on in "cites". Never write a
+  quote yourself. Mark a point critical if missing it would harm the patient.
+- Doses, routes, rates and thresholds in a rubric point must appear in its cited lines.
+- No device, administrative or which-guideline-says-what questions. Do not open with "According to".
+- If you name a guideline, skill or medicine guideline, use its title, never only its number or code.
+- Australian English and ACTAS terms (adrenaline, haemorrhage, ambulance paramedic).
+- The user is an Ambulance Paramedic (AP). Do not include ICP-only medicines, procedures or decisions.
+
+Respond with valid JSON only, matching the schema.
+```
+
+**`scenarioCheckSystem`:** for each stage, answer yes or no with a one-line reason: every rubric point supported by
+its cited lines; no invented detail contradicts the pack or changes the right answer; the rubric gives the action
+the guideline gives for these findings and misses nothing critical; everything is within the stated scope. Any "no"
+fails the scenario. JSON only, validated against `scenarioCheckSchema`.
