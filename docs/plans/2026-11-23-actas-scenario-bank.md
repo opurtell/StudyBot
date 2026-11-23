@@ -71,9 +71,9 @@ The deterministic checks enforce the stage and guideline counts, so a "hard" lab
 
 ### Skill set
 
-**Assumed meaning: scope of practice**, the same choices as the quiz screen: AP, ICP (AP + ICP content), ICP only,
-plus the PACER toggle. Stored as the existing `gen_view` and `vis_*` flags. *If Oscar meant clinical focus instead
-(assessment, pharmacology, airway, trauma skills), that becomes a `focus` tag on each stage; see the open questions.*
+**Scope of practice** (confirmed by Oscar), the same choices as the quiz screen: AP, ICP (AP + ICP content), ICP
+only, plus the PACER toggle. Stored as the existing `gen_view` and `vis_*` flags. Each stage also carries a `focus`
+tag (assessment, pharmacology, airway and so on) for reporting, not shown in the picker.
 
 - AP scenarios are written from the `ap` view of each document.
 - ICP scenarios are written from the `icp` view and must include at least one stage whose rubric cites an ICP-only line;
@@ -227,13 +227,27 @@ for the general references (`--defer-check`, then `check`).
 
 ### 6.5 Models
 
-- **Writer: Inkling 2 Mini (candidate).** Its benchmark results aren't in the repo or project files, so Phase 0 runs a
-  small scenario bench before committing to it: 10 blueprints, Oscar rates each output for accuracy, scope and
-  usefulness (blinded, like `scripts/bench-local-generation.py`). Compare against `qwen/qwen3.6-35b-a3b`, which already
-  writes the general questions.
-- **Checker: `qwen/qwen3.8-27b`.** It was the only local model that followed a rubric reliably in the question-quality
-  calibration (gpt-oss-20b ignored rules). Slow (about 25 s a question), but scenarios are few.
-- Writer and checker don't fit in 32 GB together, so they run as two passes, never at once.
+- **Writer: Inkling 2 Mini.** Oscar's local benchmarks (`~/claudeCode/onthismac/localai/BENCHMARKING.md`,
+  2026-11-22) make it the strongest local model on StudyBot's marking bench: perfect JSON, 10/10 accuracy twice and
+  near-perfect verbatim quotes, with the fewest fabrications. That bench measured marking, not writing, so Phase 0
+  still checks it can write scenarios (10 blueprints, Oscar rates blind against `qwen/qwen3.6-35b-a3b`, as
+  `scripts/bench-local-generation.py` does).
+- **How it runs:** only on **oMLX** with the **no-think template variant** (`Inkling-2-Mini-oQ4e-mtp-nothink`,
+  `http://127.0.0.1:8084/v1`, `reasoning_effort: "none"`, `max_tokens` at least 4096). LM Studio's MLX engine can't
+  load it, and the GGUF build gets stuck reasoning. The generator takes a `--base-url` and model id, which the
+  existing `--lmstudio-url` option and OpenAI-compatible provider already allow. Stop the server by port afterwards
+  (`omlx serve` leaves an `omlx-server` process holding about 16 GB) and cap the oMLX SSD cache.
+- **Speed:** it decodes about 21 tok/s but prefills slowly (about 340 tok/s on oMLX, against about 1,000 for
+  qwen3.6). A source pack of about 5k tokens waits about 15 s before the first token. With about 1,000 output tokens,
+  expect roughly 60 to 75 s a scenario, so about 6 hours for 300. Keep packs tight (primary guideline plus up to two
+  linked documents, long CMGs split by heading). The oMLX prefix cache helps when several scenarios share a guideline,
+  so the generator writes all of one guideline's blueprints in a row.
+- **Checker: `qwen/qwen3.8-27b` in LM Studio**, a different model from the writer so it doesn't wave its own work
+  through. It followed the quality rubric best before Inkling was tested (about 40 s a call). If Phase 0 shows
+  qwen3.6 writes better scenarios than Inkling, swap the roles: qwen3.6 writes and Inkling checks, which suits its
+  grading strength.
+- Inkling (about 16 GB) and qwen3.8 (about 16 GB) don't fit in 32 GB together, and oMLX evicts Inkling if a large
+  LM Studio model loads. Run the passes one after the other with only one server up.
 - **Bench on a quiet Mac** (CLAUDE.md finding 2) and keep a held-out set of guidelines for any prompt tuning (finding 3).
 - All runs go through Remote Control on Oscar's Mac, in the repo `.venv`.
 
@@ -310,14 +324,14 @@ Stages are released one at a time so the next stage's findings don't give away t
 
 | Phase | What | Where it runs | Exit criteria |
 |---|---|---|---|
-| 0. Model bench | 10 blueprints written by Inkling 2 Mini and qwen3.6; checked by qwen3.8; Oscar rates blind | Oscar's Mac (Remote Control) | A writer with no fabricated rubric points and at least 8/10 rated usable |
+| 0. Model bench | 10 blueprints written by Inkling 2 Mini (oMLX, no-think) and qwen3.6; checked by qwen3.8; Oscar rates blind | Oscar's Mac (Remote Control) | A writer with no fabricated rubric points and at least 8/10 rated usable |
 | 1. Pipeline + schema | `scenarios.py` (plan, write, check, export, review.html), tests, migration 0009, Worker read routes | Cloud thread, PR | Tests pass; pilot of 30 generated, Oscar reviews all |
 | 2. Admin-only release | UI behind an admin flag; pilot loaded to production | PR, deploy | Oscar and a few testers complete pilot scenarios; no accuracy reports |
 | 3. Public release | Full run (~300 AP + ICP-only set), Oscar reviews, load, flag off | Mac, then deploy | Bank live; watch reports and completion for two weeks |
 | 4. Extensions | AI stage marking, mastery integration, patient-group filter, AT scenarios via the service registry | Later | Each is its own PR |
 
-Rough effort: Phase 0 one session; Phase 1 two to three PRs; Phase 2 one PR plus mock-ups; Phase 3 depends on model
-speed (300 scenarios x two passes; measured in Phase 0).
+Rough effort: Phase 0 one session; Phase 1 two to three PRs; Phase 2 one PR plus mock-ups; Phase 3 about 6 hours of
+writing plus about 3 to 4 hours of checking for 300 scenarios (overnight on the Mac), confirmed in Phase 0.
 
 ## 12. Risks
 
@@ -330,12 +344,15 @@ speed (300 scenarios x two passes; measured in Phase 0).
 | Bank skews to long guidelines again | Importance-weighted quotas file, reviewed by Oscar |
 | Self-marking is generous | Critical points, highlighted source lines, AI marking later |
 
-## 13. Open questions for Oscar
+## 13. Decisions and open questions
 
-1. **"Skill set":** scope of practice (AP / ICP / PACER), as assumed here, or clinical focus (assessment, pharmacology,
-   airway, trauma skills)? Both are possible; this changes the picker.
-2. **Review load:** happy to review all ~300 scenarios before public release, or sample after the pilot?
-3. **Inkling 2 Mini:** where are its benchmark results (the repo has none)? Phase 0 re-runs a scenario-specific bench
-   either way.
-4. **Quota weights:** which guidelines matter most for scenarios (a first draft of `scenario_quotas.tsv` will be
+Settled (Oscar, 2026-11-23):
+
+- **Skill set means scope of practice:** AP, ICP, ICP only, plus PACER.
+- **Writer model:** Inkling 2 Mini, subject to the Phase 0 writing check. Benchmarks are in `~/claudeCode/onthismac/localai/`.
+
+Open:
+
+1. **Review load:** happy to review all ~300 scenarios before public release, or sample after the pilot?
+2. **Quota weights:** which guidelines matter most for scenarios (a first draft of `scenario_quotas.tsv` will be
    proposed from the CMG list for Oscar to edit).
