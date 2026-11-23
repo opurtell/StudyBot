@@ -355,9 +355,9 @@ Settled (Oscar, 2026-11-23):
 - **Writer model:** Inkling 2 Mini, subject to the Phase 0 writing check. Benchmarks are in `~/claudeCode/onthismac/localai/`.
 - **Review:** Oscar reviews a sample first, and no generation run starts until he says so.
 
-Open:
+- **Guideline weights:** Appendix A approved as drafted.
 
-1. **Guideline weights:** draft in Appendix A for Oscar to edit before the pilot run (step 5).
+Nothing else is open.
 
 ## 14. Implementation work packages
 
@@ -436,8 +436,7 @@ Mac setup the Remote Control session follows (from `~/claudeCode/onthismac/local
 
 ## Appendix A: draft guideline weights
 
-Weight 3 = 9 scenarios (3 per difficulty), 2 = 6, 1 = 3. **P** = in the pilot. My draft from how often and how
-critically each presentation comes up; Oscar to edit before step 5.
+Weight 3 = 9 scenarios (3 per difficulty), 2 = 6, 1 = 3. **P** = in the pilot. Approved by Oscar, 2026-11-23.
 
 | Weight | Guidelines |
 |---|---|
