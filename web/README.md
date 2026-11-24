@@ -243,6 +243,14 @@ pass, stop its server, then the next.
    *Rejected rows are left out; approved rows are stored as reviewed.*
 8. **Load** *(after migration `0009_scenarios` is deployed)*: `RUN=pilot npm run scenarios:load:production`
 
+**Serving** (`src/worker/scenarios/`, migration `0009_scenarios.sql`): `/api/scenarios/options`, `/next` (filters
+`category`, `difficulty`, `patientGroup`, `icpOnly`; returns stage 1 only), `/:id/stages/:n/reveal` (that stage's
+rubric and the next stage), `/:id/attempts` (signed in; the server scores the ticks: every critical point plus half the
+rest is correct, a missed critical point is incorrect), `/:id/report`. Scope works as for questions and is never
+relaxed. A scenario whose cited chunk is retired is never served, and the daily cron retires it. **The feature is
+admins-only** until an admin posts `{"audience": "everyone"}` to `/api/admin/scenarios/audience` (flag
+`scenarios_enabled` in `app_flags`); other users get 404.
+
 **Comparing writers:** write the same blueprints into two runs (`--run bench-inkling --bench 10`, then
 `--run bench-qwen36 ... --model qwen/qwen3.6-35b-a3b` with LM Studio), check both, then
 `npm run scenarios:sheet -- --runs bench-inkling bench-qwen36` for a blinded `bench/rating-sheet.csv` (key in
