@@ -243,7 +243,7 @@ export function SelfMark({ value, onChoose, disabled }: { value: Score | null; o
   );
 }
 
-const REASONS: { value: ReportReason; label: string }[] = [
+export const REASONS: { value: ReportReason; label: string }[] = [
   { value: "incorrect", label: "Clinically wrong" },
   { value: "not_in_source", label: "Answer isn't in the guideline" },
   { value: "out_of_scope", label: "Outside my scope of practice" },

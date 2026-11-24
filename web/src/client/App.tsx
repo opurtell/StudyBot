@@ -10,6 +10,7 @@ import { NotFound } from "./pages/NotFound";
 import { Privacy } from "./pages/Privacy";
 import { Quiz } from "./pages/Quiz";
 import { ReferenceDetail, References } from "./pages/References";
+import { Scenarios } from "./pages/Scenarios";
 import { Settings } from "./pages/Settings";
 import { SignIn } from "./pages/SignIn";
 import { Sources } from "./pages/Sources";
@@ -22,6 +23,7 @@ export function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="quiz" element={<Quiz />} />
+            <Route path="scenarios" element={<Scenarios />} />
             <Route path="history" element={<History />} />
             <Route path="history/:id" element={<AttemptView />} />
             <Route path="sign-in" element={<SignIn />} />

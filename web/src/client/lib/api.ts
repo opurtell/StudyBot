@@ -1,4 +1,5 @@
 import type { ProgressSummary, Score, Topic } from "../../shared/progress";
+import type { PatientGroup, RubricPoint } from "../../shared/scenarios";
 
 export type { MasteryStatus, ProgressSummary, Score, SectionMastery, Topic } from "../../shared/progress";
 
@@ -218,6 +219,47 @@ export interface PublicConfig {
   devSignIn: boolean;
 }
 
+export interface ScenarioStage {
+  ordinal: number;
+  reveal: string;
+  question: string;
+  focus: string;
+}
+
+export interface ScenarioSummary {
+  id: string;
+  title: string;
+  dispatch: string;
+  category: string;
+  difficulty: "easy" | "medium" | "hard";
+  patientGroup: PatientGroup;
+  documentId: string;
+  documentTitle: string | null;
+  stageCount: number;
+  stage: ScenarioStage | null;
+}
+
+export interface ScenarioFilters {
+  view: CorpusView;
+  icpOnly: boolean;
+  category: string | null;
+  difficulty: "easy" | "medium" | "hard" | null;
+  patientGroup: PatientGroup | null;
+}
+
+export interface ScenarioOption {
+  category: string;
+  difficulty: "easy" | "medium" | "hard";
+  patientGroup: PatientGroup;
+  count: number;
+}
+
+export interface StageReveal {
+  ordinal: number;
+  rubric: RubricPoint[];
+  next: ScenarioStage | null;
+}
+
 export class ApiError extends Error {
   constructor(
     readonly status: number,
@@ -301,6 +343,22 @@ export const api = {
   questionAdmin: () => request<QuestionAdminStatus>("/admin/questions"),
   setLiveAi: (enabled: boolean) =>
     request<{ liveAi: boolean }>("/admin/questions/live-ai", { method: "POST", body: JSON.stringify({ enabled }) }),
+  scenarioOptions: (view: CorpusView, icpOnly: boolean) =>
+    request<{ options: ScenarioOption[] }>(`/scenarios/options?view=${view}${icpOnly ? "&icpOnly=true" : ""}`),
+  nextScenario: (filters: ScenarioFilters, exclude: string[], repeat = false) =>
+    request<{ scenario: ScenarioSummary | null; exhausted: boolean; canRepeat?: boolean }>("/scenarios/next", {
+      method: "POST",
+      body: JSON.stringify({ ...filters, exclude, repeat }),
+    }),
+  revealStage: (id: string, ordinal: number, view: CorpusView) =>
+    request<StageReveal>(`/scenarios/${id}/stages/${ordinal}/reveal`, { method: "POST", body: JSON.stringify({ view }) }),
+  saveScenarioAttempt: (id: string, view: CorpusView, stages: { ordinal: number; ticked: number[]; answer: string }[]) =>
+    request<{ attemptId: string; score: Score }>(`/scenarios/${id}/attempts`, { method: "POST", body: JSON.stringify({ view, stages }) }),
+  reportScenario: (id: string, reason: ReportReason, detail: string, stage: number | null) =>
+    request<{ ok: true; withdrawn: boolean }>(`/scenarios/${id}/report`, {
+      method: "POST",
+      body: JSON.stringify({ reason, detail, stage }),
+    }),
   setQuestionStatus: (id: string, status: "active" | "retired") =>
     request<{ ok: true }>(`/admin/questions/${id}/status`, { method: "POST", body: JSON.stringify({ status }) }),
 };
