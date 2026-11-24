@@ -219,6 +219,35 @@ into numbered lines and the model only picks line numbers, so it can never inven
 5. **Load** *(after the `0008_answer_quotes` migration is deployed)*: `npm run answers:load:production`
    *Each update only applies if every quote is still in the question's source text.*
 
+### Scenario bank (Oscar's Mac)
+
+Multi-stage patient cases for the coming Scenarios screen (plan: `docs/plans/2026-11-23-actas-scenario-bank.md`).
+`src/python/web_corpus/scenarios.py` writes them with a local model and checks them with a second one. The writer only
+picks numbered source lines for each rubric point and the build copies the text, so rubrics quote the guidelines
+verbatim. Blueprints (guideline, difficulty, scope, patient group, linked medicines) come from
+`scenario_quotas.tsv`. Output goes to `corpus-build/scenarios/runs/<run>/`.
+
+**Nothing here runs without Oscar's go-ahead for that run.** Writer and checker don't fit in 32 GB together: run one
+pass, stop its server, then the next.
+
+1. **Plan** *(no model calls)*: `npm run scenarios:plan -- --pilot`
+2. **Start Inkling** *(oMLX, no-think variant; see `~/claudeCode/onthismac/localai/SETUP.md`)*:
+   `T=~/claudeCode/experiments/tests; $T/_runtimes/omlx/.venv/bin/omlx serve --model-dir $T/_inkling/models --host 127.0.0.1 --port 8084 --paged-ssd-cache-max-size 10GB`
+3. **Write:** `npm run scenarios:write -- --run pilot --pilot --model Inkling-2-Mini-oQ4e-mtp-nothink --base-url http://127.0.0.1:8084/v1`
+   *Resumable. `--limit N` for a trial. Use the repo `.venv` Python if the system one lacks the dependencies.*
+4. **Stop oMLX by port:** `kill $(lsof -ti tcp:8084 -sTCP:LISTEN)`
+5. **Check** *(LM Studio, `qwen/qwen3.8-27b` loaded)*: `npm run scenarios:check -- --run pilot`
+6. **Export:** `npm run scenarios:export -- --run pilot`
+   *Writes `scenarios.sql`, `review.html` and `review.csv` (a stratified sample), `dropped.csv` and `report.json`.*
+7. **Review:** Oscar fills `approve (Y/N)` in `review.csv`, then `npm run scenarios:export -- --run pilot --reviewed corpus-build/scenarios/runs/pilot/review.csv`
+   *Rejected rows are left out; approved rows are stored as reviewed.*
+8. **Load** *(after migration `0009_scenarios` is deployed)*: `RUN=pilot npm run scenarios:load:production`
+
+**Comparing writers:** write the same blueprints into two runs (`--run bench-inkling --bench 10`, then
+`--run bench-qwen36 ... --model qwen/qwen3.6-35b-a3b` with LM Studio), check both, then
+`npm run scenarios:sheet -- --runs bench-inkling bench-qwen36` for a blinded `bench/rating-sheet.csv` (key in
+`rating-key.json`; don't open it until the rating is done).
+
 ## How sign-in works
 
 Sign-in is **Google only** (OpenID Connect, authorisation code flow with PKCE). No emails are sent and no passwords are stored.
