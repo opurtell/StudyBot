@@ -149,6 +149,7 @@ def test_numbers_must_appear_in_cited_lines(corpus):
     _, reasons = sc.resolve(bp, corpus, pack, good)
     assert not [r for r in reasons if "number_not_in_source" in r]
     assert sc._numbers("Perform a 12 lead ECG") == set()
+    assert sc._numbers("Follow Major Trauma (CMG 39) and CMG 3A; see MED_13") == set()
 
 
 def test_headings_have_no_line_id(corpus):
