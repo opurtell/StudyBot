@@ -71,6 +71,7 @@ US_TERMS = re.compile(
 )
 _NUMBER = re.compile(r"\d+(?:[.,]\d+)*")
 _LEAD = re.compile(r"\b12[\s-]?lead\b", re.IGNORECASE)
+_CODE = re.compile(r"\b(?:CMG|MED|CSM)[\s._-]*[A-Z]?\d+[A-Z]?\b", re.IGNORECASE)
 _LINE_ID = re.compile(r"^([GABR])(\d+)$")
 
 Complete = Callable[[str, str, dict | None], tuple[str, dict]]
@@ -311,7 +312,7 @@ def writer_prompt(bp: Blueprint, corpus: Corpus, pack: Pack, previous: list[str]
 
 
 def _numbers(text: str) -> set[str]:
-    return {n.replace(",", "") for n in _NUMBER.findall(_LEAD.sub("", text))}
+    return {n.replace(",", "") for n in _NUMBER.findall(_CODE.sub("", _LEAD.sub("", text)))}
 
 
 def _scenario_text(s: dict) -> str:
@@ -419,7 +420,9 @@ def visibility(bp: Blueprint, docs: dict[str, Document], scenario: dict, text: s
 
 
 def check_prompt(bp: Blueprint, corpus: Corpus, pack: Pack, scenario: dict) -> tuple[str, str]:
-    lines = [f"Scope: {'ICP' if bp.icp else 'AP'}", f"Dispatch: {scenario['dispatch']}", ""]
+    scope = ("Intensive Care Paramedic (ICP): AP care and ICP-only medicines and procedures are all in scope" if bp.icp
+             else "Ambulance Paramedic (AP): ICP-only medicines, procedures and decisions are out of scope")
+    lines = [f"Scope: {scope}", f"Dispatch: {scenario['dispatch']}", ""]
     for st in scenario["stages"]:
         lines.append(f"Stage {st['ordinal']}")
         lines.append(f"Findings: {st['reveal']}")
