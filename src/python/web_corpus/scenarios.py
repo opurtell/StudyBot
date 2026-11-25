@@ -272,9 +272,12 @@ def build_pack(corpus: Corpus, bp: Blueprint) -> Pack:
             if prefix == "R":
                 out.append(f"(Weight band: {chunk.heading})")
             for a, b in segments(chunk.text):
-                n += 1
                 text = chunk.text[a:b]
-                line = Line(f"{prefix}{n}", chunk.id, doc.id, text, text.lstrip().startswith("#"))
+                if text.lstrip().startswith("#"):
+                    out.append(text)  # headings carry no id, so they can't be cited
+                    continue
+                n += 1
+                line = Line(f"{prefix}{n}", chunk.id, doc.id, text, False)
                 pack.lines[line.id] = line
                 out.append(f"[{line.id}] {text}")
         out.append("")
@@ -338,11 +341,13 @@ def resolve(bp: Blueprint, corpus: Corpus, pack: Pack, raw: dict | None) -> tupl
     out_stages = []
     cited_docs: set[str] = set()
     cited_chunks: dict[str, str] = {}
+    shown = _clean(raw["dispatch"], titles)
     for ordinal, stage in enumerate(stages, 1):
         if not isinstance(stage, dict) or not isinstance(stage.get("rubric"), list):
             return None, ["schema"]
         question = _clean(stage.get("question", ""), titles)
         findings = _clean(stage.get("findings", ""), titles)
+        shown += "\n" + findings
         if not question or not findings:
             reasons.append(f"stage{ordinal}:empty")
         if re.match(r"\s*according to\b", question, re.IGNORECASE):
@@ -361,15 +366,12 @@ def resolve(bp: Blueprint, corpus: Corpus, pack: Pack, raw: dict | None) -> tupl
                 if line is None or not _LINE_ID.match(cid):
                     reasons.append(f"stage{ordinal}:unknown_line:{cid}")
                     continue
-                if line.heading:
-                    reasons.append(f"stage{ordinal}:cites_heading:{cid}")
-                    continue
                 cites.append({"line": cid, "chunk_id": line.chunk_id, "document_id": line.document_id, "quote": line.text})
             if not cites:
                 reasons.append(f"stage{ordinal}:uncited_point")
             point = _clean(p["point"], titles)
             cited_text = " ".join(c["quote"] for c in cites)
-            missing = sorted(_numbers(point) - _numbers(cited_text))
+            missing = sorted(_numbers(point) - _numbers(cited_text) - _numbers(shown))
             if cites and missing:
                 reasons.append(f"stage{ordinal}:number_not_in_source:{','.join(missing)}")
             for c in cites:
@@ -471,7 +473,40 @@ def _rewrite(path: Path, records: dict[str, dict]) -> None:
     tmp.replace(path)
 
 
-def write_one(complete: Complete, corpus: Corpus, bp: Blueprint, previous: list[str], model_id: str) -> dict:
+_REASON_TEXT = {
+    "stage_count": "the scenario must have exactly the number of stages in the blueprint",
+    "empty": "every stage needs findings and a question",
+    "according_to": 'do not open a question with "According to"',
+    "point_count": f"give {MIN_POINTS} to {MAX_POINTS} rubric points per stage",
+    "unknown_line": "cite only line ids that appear in the pack, such as G12 (headings have no id)",
+    "uncited_point": "every rubric point must cite at least one line",
+    "number_not_in_source": "a number in a rubric point is not in its cited lines or the findings; cite the line that "
+                            "states it, or remove it",
+    "no_critical_point": "every stage needs at least one critical point",
+    "primary_not_cited": "cite the primary guideline (G lines) at least once",
+    "too_many_documents": "cite only the documents the blueprint allows",
+    "us_term": "use Australian terms and drug names",
+    "out_of_scope": "keep to the user's scope; remove care outside it",
+    "no_icp_only_content": "an ICP scenario must test at least one ICP-only medicine, procedure or decision",
+}
+
+
+def _explain(reason: str) -> str:
+    parts = reason.split(":")
+    key = parts[1] if parts[0].startswith("stage") and len(parts) > 1 else parts[0]
+    where = f"Stage {parts[0][5:]}: " if parts[0].startswith("stage") else ""
+    detail = f" ({parts[-1]})" if len(parts) > (2 if where else 1) else ""
+    return f"- {where}{_REASON_TEXT.get(key, key)}{detail}"
+
+
+def repair_prompt(user: str, previous: str, reasons: list[str]) -> str:
+    problems = "\n".join(dict.fromkeys(_explain(r) for r in reasons))
+    return (f"{user}\n\nYour previous reply:\n{previous}\n\nIt failed these checks:\n{problems}\n\n"
+            "Fix every problem and return the whole corrected scenario as valid JSON only.")
+
+
+def write_one(complete: Complete, corpus: Corpus, bp: Blueprint, previous: list[str], model_id: str,
+              repair: bool = True) -> dict:
     pack = build_pack(corpus, bp)
     system, user = writer_prompt(bp, corpus, pack, previous)
     record = {"blueprint": bp.id, "document_id": bp.document_id, "view": bp.view, "difficulty": bp.difficulty,
@@ -479,9 +514,17 @@ def write_one(complete: Complete, corpus: Corpus, bp: Blueprint, previous: list[
               "corpus_version": corpus.version}
     start = time.monotonic()
     text, _ = complete(system, user, PROMPTS["scenarioSchema"])
-    record["seconds"] = round(time.monotonic() - start, 1)
     raw = parse_json_object(text)
     scenario, reasons = resolve(bp, corpus, pack, raw)
+    if scenario is not None and reasons and repair:
+        record["first_reasons"] = reasons
+        text2, _ = complete(system, repair_prompt(user, text, reasons), PROMPTS["scenarioSchema"])
+        raw2 = parse_json_object(text2)
+        scenario2, reasons2 = resolve(bp, corpus, pack, raw2)
+        if scenario2 is not None:
+            text, raw, scenario, reasons = text2, raw2, scenario2, reasons2
+            record["repaired"] = True
+    record["seconds"] = round(time.monotonic() - start, 1)
     record.update(raw=raw if raw is not None else text[:4000], scenario=scenario, reasons=reasons,
                   status="ok" if scenario is not None and not reasons else "dropped" if scenario is not None else "unreadable")
     return record

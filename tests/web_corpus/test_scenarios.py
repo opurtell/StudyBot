@@ -113,7 +113,6 @@ def test_ap_scenario_is_visible_to_icps_when_its_lines_are_in_the_icp_view(corpu
 @pytest.mark.parametrize("mutate, reason", [
     (lambda s, ids: s["stages"].pop(), "stage_count"),
     (lambda s, ids: s["stages"][0]["rubric"][0]["cites"].__setitem__(0, "G999"), "unknown_line"),
-    (lambda s, ids: s["stages"][0]["rubric"][0]["cites"].__setitem__(0, ids["heading"]), "cites_heading"),
     (lambda s, ids: s["stages"][0]["rubric"][0].__setitem__("point", "Give 900 mg of something"), "number_not_in_source"),
     (lambda s, ids: [p.__setitem__("critical", False) for p in s["stages"][1]["rubric"]], "no_critical_point"),
     (lambda s, ids: s["stages"][0].__setitem__("question", "According to the guideline, what next?"), "according_to"),
@@ -125,9 +124,8 @@ def test_deterministic_checks_reject_bad_scenarios(corpus, mutate, reason):
     bp = _bp(corpus, difficulty="easy")
     pack = sc.build_pack(corpus, bp)
     ecg = _line_with(pack, "12 lead ECG")
-    heading = next(l.id for l in pack.lines.values() if l.heading)
     raw = _scenario([_stage([ecg]), _stage([ecg])])
-    mutate(raw, {"heading": heading})
+    mutate(raw, {})
     _, reasons = sc.resolve(bp, corpus, pack, raw)
     assert any(reason in r for r in reasons), reasons
 
@@ -151,6 +149,46 @@ def test_numbers_must_appear_in_cited_lines(corpus):
     _, reasons = sc.resolve(bp, corpus, pack, good)
     assert not [r for r in reasons if "number_not_in_source" in r]
     assert sc._numbers("Perform a 12 lead ECG") == set()
+
+
+def test_headings_have_no_line_id(corpus):
+    pack = sc.build_pack(corpus, _bp(corpus, difficulty="easy"))
+    rows = pack.text.splitlines()
+    assert any(r.startswith("#") for r in rows)
+    assert not any(r.startswith("[") and "] #" in r for r in rows)
+    assert not any(l.heading for l in pack.lines.values())
+
+
+def test_numbers_may_come_from_the_findings(corpus):
+    bp = _bp(corpus, difficulty="easy")
+    pack = sc.build_pack(corpus, bp)
+    ecg = _line_with(pack, "12 lead ECG")
+    stage = _stage([ecg], point="HR 96 with chest pain needs a 12 lead ECG")
+    _, reasons = sc.resolve(bp, corpus, pack, _scenario([stage, _stage([ecg])]))
+    assert not [r for r in reasons if "number_not_in_source" in r]
+    later = _stage([ecg], point="HR 140 needs a 12 lead ECG")
+    _, reasons = sc.resolve(bp, corpus, pack, _scenario([later, _stage([ecg])]))
+    assert [r for r in reasons if "number_not_in_source" in r]
+
+
+def test_writer_gets_one_repair_turn(corpus):
+    bp = _bp(corpus, difficulty="easy")
+    pack = sc.build_pack(corpus, bp)
+    ecg = _line_with(pack, "12 lead ECG")
+    bad = _scenario([_stage([ecg]), _stage([ecg])])
+    bad["stages"][1]["rubric"][0]["cites"] = ["G999"]
+    good = _scenario([_stage([ecg]), _stage([ecg])])
+    prompts = []
+
+    def complete(system, user, schema):
+        prompts.append(user)
+        return json.dumps(bad if len(prompts) == 1 else good), {}
+
+    record = sc.write_one(complete, corpus, bp, [], "lmstudio:test")
+    assert len(prompts) == 2 and "failed these checks" in prompts[1] and "Stage 2" in prompts[1]
+    assert record["status"] == "ok" and record["repaired"] and record["first_reasons"]
+    record = sc.write_one(complete, corpus, bp, [], "lmstudio:test", repair=False)
+    assert len(prompts) == 3
 
 
 def test_icp_scenario_must_cite_icp_only_lines(corpus):
